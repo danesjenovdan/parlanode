@@ -92,7 +92,6 @@ export default {
       currentBack: null,
       transitionClass: null,
       previousHeight: null,
-      slugs: this.$root.$options.contextData.slugs,
       mountId: this.$root.$options.contextData.mountId,
       hasGenerator: this.$slots.generator?.()?.length,
       showGenerator: this.$root.$options.contextData.cardState?.generator,

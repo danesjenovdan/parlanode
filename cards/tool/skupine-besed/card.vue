@@ -1,114 +1,106 @@
 <template>
-  <div :id="$options.cardData.mountId">
-    <generator>
-      <template #generator>
-        <tools-tabs current-tool="wordGroups" />
-      </template>
-      <card-wrapper
-        :content-class="{ 'is-loading': loading }"
-        :card-url="generatedCardUrl"
-        :header-config="headerConfig"
-        :og-config="ogConfig"
-      >
-        <template #info>
-          <p v-t="'info.lead'" class="info-text lead"></p>
-          <p v-t="'info.methodology'" class="info-text heading"></p>
-          <p v-t="'info.text'" class="info-text"></p>
-        </template>
+  <card-wrapper
+    :content-class="{ 'is-loading': loading }"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
+    <template #generator>
+      <tools-tabs current-tool="wordGroups" />
+    </template>
 
-        <div id="skupine-besed">
-          <text-frame class="skupine-besed">
-            <div class="skupine-besed-text">
-              <i18n-t keypath="wordgroups-text" tag="p">
-                <span place="words">
-                  <tag
-                    v-for="(word, index) in words"
-                    :key="index + word"
-                    :text="word"
-                    @click="removeWord(word)"
-                  />
-                  <plus @click="toggleModal(true)" />
-                </span>
-              </i18n-t>
-              <div class="searchfilter-checkboxes">
-                <div class="searchfilter-checkbox">
-                  <input
-                    id="show-relative"
-                    :checked="showRelative"
-                    type="checkbox"
-                    class="checkbox"
-                    @click="changeShowRelative"
-                  />
-                  <label v-t="'show-relative'" for="show-relative"></label>
-                </div>
-              </div>
-            </div>
-            <div class="skupine-besed-button">
-              <div class="spacer"></div>
-              <span place="load" class="load-button">
-                <load-link :text="$t('load')" @click="loadResults(true)" />
+    <div id="skupine-besed">
+      <text-frame class="skupine-besed">
+        <div class="skupine-besed-text">
+          <i18n-t keypath="wordgroups-text" tag="p">
+            <template #words>
+              <span>
+                <tag
+                  v-for="(word, index) in words"
+                  :key="index + word"
+                  @click="removeWord(word)"
+                >
+                  {{ word }}
+                </tag>
+                <plus @click="toggleModal(true)" />
               </span>
-              <div class="spacer"></div>
+            </template>
+          </i18n-t>
+          <div class="searchfilter-checkboxes">
+            <div class="searchfilter-checkbox">
+              <input
+                id="show-relative"
+                :checked="showRelative"
+                type="checkbox"
+                class="checkbox"
+                @click="changeShowRelative"
+              />
+              <label v-t="'show-relative'" for="show-relative"></label>
             </div>
-          </text-frame>
-
-          <p-tabs :start-tab="selectedTab" @switch="focusTab">
-            <p-tab :label="$t('speakers')">
-              <scroll-shadow ref="shadow">
-                <div
-                  class="results"
-                  @scroll="$refs.shadow.check($event.currentTarget)"
-                >
-                  <bar-chart
-                    v-if="results.people.length"
-                    :data="
-                      showRelative ? resultsRelative.people : results.people
-                    "
-                    :show-percentage="!showRelative"
-                    show-numbers
-                    flexible-labels
-                  />
-                  <empty-circle v-else :text="emptyText" />
-                </div>
-              </scroll-shadow>
-            </p-tab>
-            <p-tab :label="$t('parties')">
-              <scroll-shadow ref="shadowPS">
-                <div
-                  class="results"
-                  @scroll="$refs.shadowPS.check($event.currentTarget)"
-                >
-                  <bar-chart
-                    v-if="results.parties.length"
-                    :data="
-                      showRelative ? resultsRelative.parties : results.parties
-                    "
-                    :show-percentage="!showRelative"
-                    show-numbers
-                    flexible-labels
-                  />
-                  <empty-circle v-else :text="emptyText" />
-                </div>
-              </scroll-shadow>
-            </p-tab>
-          </p-tabs>
-
-          <modal
-            v-if="modalShown"
-            :header="$t('input-words')"
-            :button="$t('confirm')"
-            @close="toggleModal(false)"
-            @ok="toggleModal(false, true)"
-          >
-            <search-field
-              v-model="modalInputText"
-              @enter="toggleModal(false, true)"
-            />
-          </modal>
+          </div>
         </div>
-      </card-wrapper>
-    </generator>
-  </div>
+        <div class="skupine-besed-button">
+          <div class="spacer"></div>
+          <span class="load-button">
+            <load-link @click="loadResults(true)">
+              {{ $t('load') }}
+            </load-link>
+          </span>
+          <div class="spacer"></div>
+        </div>
+      </text-frame>
+
+      <p-tabs :start-tab="selectedTab" @switch="focusTab">
+        <p-tab :label="$t('speakers')">
+          <scroll-shadow ref="shadow">
+            <div
+              class="results"
+              @scroll="$refs.shadow.check($event.currentTarget)"
+            >
+              <bar-chart
+                v-if="results.people.length"
+                :data="showRelative ? resultsRelative.people : results.people"
+                :show-percentage="!showRelative"
+                show-numbers
+                flexible-labels
+              />
+              <empty-circle v-else :text="emptyText" />
+            </div>
+          </scroll-shadow>
+        </p-tab>
+        <p-tab :label="$t('parties')">
+          <scroll-shadow ref="shadowPS">
+            <div
+              class="results"
+              @scroll="$refs.shadowPS.check($event.currentTarget)"
+            >
+              <bar-chart
+                v-if="results.parties.length"
+                :data="showRelative ? resultsRelative.parties : results.parties"
+                :show-percentage="!showRelative"
+                show-numbers
+                flexible-labels
+              />
+              <empty-circle v-else :text="emptyText" />
+            </div>
+          </scroll-shadow>
+        </p-tab>
+      </p-tabs>
+
+      <modal
+        v-if="modalShown"
+        :header="$t('input-words')"
+        :button="$t('confirm')"
+        @close="toggleModal(false)"
+        @ok="toggleModal(false, true)"
+      >
+        <search-field
+          v-model="modalInputText"
+          @enter="toggleModal(false, true)"
+        />
+      </modal>
+    </div>
+  </card-wrapper>
 </template>
 
 <script>
@@ -118,7 +110,6 @@ import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import stateLoader from '@/_helpers/stateLoader.js';
 import common from '@/_mixins/common.js';
-import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
@@ -135,7 +126,6 @@ import ScrollShadow from '@/_components/ScrollShadow.vue';
 export default {
   name: 'SkupineBesed',
   components: {
-    Generator,
     ToolsTabs,
     BarChart,
     EmptyCircle,
@@ -150,11 +140,14 @@ export default {
     ScrollShadow,
   },
   mixins: [common, links],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
-    const loadFromState = stateLoader(this.$options.cardData.parlaState);
+    const loadFromState = stateLoader(this.$options.contextData.cardState);
 
     return {
-      data: this.$options.cardData.data,
+      data: this.$options.contextData.cardData,
       emptyText: this.$t('empty-text'),
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
@@ -197,8 +190,9 @@ export default {
     },
   },
   created() {
-    const { template, siteMap: sm } = this.$options.cardData;
-    template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.wordGroups}`;
+    // TODO:
+    // const { template, siteMap: sm } = this.$options.cardData;
+    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.wordGroups}`;
   },
   mounted() {
     if (this.words.length) {
@@ -265,7 +259,6 @@ export default {
             .filter((party) => party.party.acronym !== 'unknown')
             .map((party) => ({
               label: party.party.acronym,
-              // eslint-disable-next-line max-len
               value: Number(
                 (
                   party.score /
@@ -347,13 +340,13 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
-::v-deep .card-content {
+:deep(.card-content) {
   min-height: 660px;
 }
 
 #skupine-besed {
-  ::v-deep .p-tabs .p-tabs-content,
-  ::v-deep .p-tabs .p-tabs-content .tab-content {
+  :deep(.p-tabs .p-tabs-content),
+  :deep(.p-tabs .p-tabs-content .tab-content) {
     overflow-y: visible;
     overflow-x: visible;
   }
@@ -364,7 +357,7 @@ export default {
     overflow-y: auto;
     margin-top: 6px;
 
-    ::v-deep .word-list {
+    :deep(.word-list) {
       max-height: none;
     }
   }

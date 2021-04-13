@@ -1,196 +1,180 @@
 <template>
-  <div :id="$options.cardData.mountId">
-    <generator>
-      <template #generator>
-        <tools-tabs current-tool="voteComparator" />
-      </template>
-      <card-wrapper
-        :content-class="{ 'is-loading': loading }"
-        :card-url="generatedCardUrl"
-        :header-config="headerConfig"
-        :og-config="ogConfig"
-      >
-        <template #info>
-          <p v-t="'info.methodology'" class="info-text heading"></p>
-          <p v-t="'info.text[0]'" class="info-text"></p>
-          <p v-t="'info.text[1]'" class="info-text"></p>
-          <div class="info-text">
-            <ul>
-              <li v-t="'info.list[0]'"></li>
-              <li v-t="'info.list[1]'"></li>
-              <li v-t="'info.list[2]'"></li>
-            </ul>
-          </div>
-        </template>
+  <card-wrapper
+    :content-class="{ 'is-loading': loading }"
+    :card-url="generatedCardUrl"
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+  >
+    <template #generator>
+      <tools-tabs current-tool="voteComparator" />
+    </template>
 
-        <div id="primerjalnik">
-          <text-frame class="primerjalnik">
-            <div class="primerjalnik-text">
-              <i18n-t keypath="comparator-text" tag="p">
-                <span place="same" class="primerjalnik-for">
-                  <tag
-                    v-for="party in sameParties"
-                    :key="party.id"
-                    :text="party.acronym"
-                    class="tag"
-                    @click="togglePartySame(party)"
-                  />
-                  <tag
-                    v-for="person in selectedSamePeople"
-                    :key="person.id"
-                    :text="person.label"
-                    class="tag"
-                    @click="removePerson(person)"
-                  />
-                  <plus @click="toggleModal('same', true)" />
-                </span>
-                <span place="different" class="primerjalnik-against">
-                  <tag
-                    v-for="party in differentParties"
-                    :key="party.id"
-                    :text="party.acronym"
-                    class="tag"
-                    @click="togglePartyDifferent(party)"
-                  />
-                  <tag
-                    v-for="person in selectedDifferentPeople"
-                    :key="person.id"
-                    :text="person.name"
-                    class="tag"
-                    @click="removePerson(person)"
-                  />
-                  <plus @click="toggleModal('different', true)" />
-                </span>
-              </i18n-t>
-              <div class="searchfilter-checkboxes">
-                <div class="searchfilter-checkbox">
-                  <input
-                    id="ignore-absent"
-                    :checked="special"
-                    type="checkbox"
-                    class="checkbox"
-                    @click="toggleSpecial"
-                  />
-                  <label v-t="'ignore-absent'" for="ignore-absent"></label>
-                </div>
-              </div>
-            </div>
-            <div class="primerjalnik-button">
-              <div class="spacer"></div>
-              <span place="load" class="load-button">
-                <load-link :text="$t('load')" @click="loadResults" />
-              </span>
-              <div>
-                <i18n-t
-                  keypath="comparator-vote-percent"
-                  tag="p"
-                  class="summary"
+    <div id="primerjalnik">
+      <text-frame class="primerjalnik">
+        <div class="primerjalnik-text">
+          <i18n-t keypath="comparator-text" tag="p">
+            <template #same>
+              <span class="primerjalnik-for">
+                <tag
+                  v-for="party in sameParties"
+                  :key="party.id"
+                  @click="togglePartySame(party)"
                 >
-                  <strong place="num">{{ votes.length }}</strong>
-                  <strong place="percent">
-                    {{
-                      total === 0 ? 0 : round((votes.length / total) * 100, 2)
-                    }}%
-                  </strong>
-                </i18n-t>
-              </div>
+                  {{ party.acronym }}
+                </tag>
+                <tag
+                  v-for="person in selectedSamePeople"
+                  :key="person.id"
+                  @click="removePerson(person)"
+                >
+                  {{ person.label }}
+                </tag>
+                <plus @click="toggleModal('same', true)" />
+              </span>
+            </template>
+            <template #different>
+              <span class="primerjalnik-against">
+                <tag
+                  v-for="party in differentParties"
+                  :key="party.id"
+                  @click="togglePartyDifferent(party)"
+                >
+                  {{ party.acronym }}
+                </tag>
+                <tag
+                  v-for="person in selectedDifferentPeople"
+                  :key="person.id"
+                  @click="removePerson(person)"
+                >
+                  {{ person.name }}
+                </tag>
+                <plus @click="toggleModal('different', true)" />
+              </span>
+            </template>
+          </i18n-t>
+          <div class="searchfilter-checkboxes">
+            <div class="searchfilter-checkbox">
+              <input
+                id="ignore-absent"
+                :checked="special"
+                type="checkbox"
+                class="checkbox"
+                @click="toggleSpecial"
+              />
+              <label v-t="'ignore-absent'" for="ignore-absent"></label>
             </div>
-          </text-frame>
-
-          <p-tabs :start-tab="selectedTab" @switch="focusTab">
-            <p-tab :label="$t('tabs.vote-list')">
-              <empty-circle
-                v-if="votes.length === 0"
-                :text="$t('empty-state-text')"
-              />
-              <div v-else class="glasovanja">
-                <seznam-glasovanj
-                  :data="voteObject"
-                  :show-filters="false"
-                  :virtualize-remain="4"
-                  virtualize
-                />
-              </div>
-            </p-tab>
-            <p-tab :label="$t('tabs.time-chart')">
-              <empty-circle
-                v-if="votes.length === 0"
-                :text="$t('empty-state-text')"
-              />
-              <time-chart v-else :data="data" />
-            </p-tab>
-            <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
-              <div class="mdt-wrapper">
-                <empty-circle
-                  v-if="votes.length === 0"
-                  :text="$t('empty-state-text')"
-                />
-                <bar-chart v-else :data="barChartData" show-numbers />
-              </div>
-            </p-tab>
-          </p-tabs>
-
-          <modal
-            v-show="sameModalVisible"
-            :header="$t('select-parties-people')"
-            :button="$t('confirm')"
-            @ok="toggleModal('same', false)"
-            @close="toggleModal('same', false)"
-          >
-            <p>
-              <span
-                v-for="party in parties"
-                :key="party.id"
-                :class="['primerjalnik-ps-switch', { on: party.isSame }]"
-                :data-id="party.id"
-                :data-acronym="party.acronym"
-                @click="togglePartySame(party)"
-              >
-                {{ party.acronym }}
-              </span>
-            </p>
-            <p-search-dropdown
-              v-model="samePeople"
-              :placeholder="samePeoplePlaceholder"
-            />
-          </modal>
-
-          <modal
-            v-show="differentModalVisible"
-            :header="$t('select-parties-people')"
-            :button="$t('confirm')"
-            @ok="toggleModal('different', false)"
-            @close="toggleModal('different', false)"
-          >
-            <p>
-              <span
-                v-for="party in parties"
-                :key="party.id"
-                :class="['primerjalnik-ps-switch', { on: party.isDifferent }]"
-                :data-id="party.id"
-                :data-acronym="party.acronym"
-                @click="togglePartyDifferent(party)"
-              >
-                {{ party.acronym }}
-              </span>
-            </p>
-            <p-search-dropdown
-              v-model="differentPeople"
-              :placeholder="differentPeoplePlaceholder"
-            />
-          </modal>
+          </div>
         </div>
-      </card-wrapper>
-    </generator>
-  </div>
+        <div class="primerjalnik-button">
+          <div class="spacer"></div>
+          <span place="load" class="load-button">
+            <load-link @click="loadResults">
+              {{ $t('load') }}
+            </load-link>
+          </span>
+          <div>
+            <i18n-t keypath="comparator-vote-percent" tag="p" class="summary">
+              <strong place="num">{{ votes.length }}</strong>
+              <strong place="percent">
+                {{ total === 0 ? 0 : round((votes.length / total) * 100, 2) }}%
+              </strong>
+            </i18n-t>
+          </div>
+        </div>
+      </text-frame>
+
+      <p-tabs :start-tab="selectedTab" @switch="focusTab">
+        <p-tab :label="$t('tabs.vote-list')">
+          <empty-circle
+            v-if="votes.length === 0"
+            :text="$t('empty-state-text')"
+          />
+          <div v-else class="glasovanja">
+            <seznam-glasovanj
+              :data="voteObject"
+              :show-filters="false"
+              :virtualize-remain="4"
+              virtualize
+            />
+          </div>
+        </p-tab>
+        <p-tab :label="$t('tabs.time-chart')">
+          <empty-circle
+            v-if="votes.length === 0"
+            :text="$t('empty-state-text')"
+          />
+          <time-chart v-else :data="data" />
+        </p-tab>
+        <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
+          <div class="mdt-wrapper">
+            <empty-circle
+              v-if="votes.length === 0"
+              :text="$t('empty-state-text')"
+            />
+            <bar-chart v-else :data="barChartData" show-numbers />
+          </div>
+        </p-tab>
+      </p-tabs>
+
+      <modal
+        v-show="sameModalVisible"
+        :header="$t('select-parties-people')"
+        :button="$t('confirm')"
+        @ok="toggleModal('same', false)"
+        @close="toggleModal('same', false)"
+      >
+        <p>
+          <span
+            v-for="party in parties"
+            :key="party.id"
+            :class="['primerjalnik-ps-switch', { on: party.isSame }]"
+            :data-id="party.id"
+            :data-acronym="party.acronym"
+            @click="togglePartySame(party)"
+          >
+            {{ party.acronym }}
+          </span>
+        </p>
+        <p-search-dropdown
+          v-model="samePeople"
+          :placeholder="samePeoplePlaceholder"
+        />
+      </modal>
+
+      <modal
+        v-show="differentModalVisible"
+        :header="$t('select-parties-people')"
+        :button="$t('confirm')"
+        @ok="toggleModal('different', false)"
+        @close="toggleModal('different', false)"
+      >
+        <p>
+          <span
+            v-for="party in parties"
+            :key="party.id"
+            :class="['primerjalnik-ps-switch', { on: party.isDifferent }]"
+            :data-id="party.id"
+            :data-acronym="party.acronym"
+            @click="togglePartyDifferent(party)"
+          >
+            {{ party.acronym }}
+          </span>
+        </p>
+        <p-search-dropdown
+          v-model="differentPeople"
+          :placeholder="differentPeoplePlaceholder"
+        />
+      </modal>
+    </div>
+  </card-wrapper>
 </template>
 
 <script>
+import axios from 'axios';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultDynamicHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
-import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
@@ -209,7 +193,6 @@ import generators from '@/_mixins/generatePeopleAndParties.js';
 export default {
   name: 'PrimerjalnikGlasovanj',
   components: {
-    Generator,
     ToolsTabs,
     BarChart,
     EmptyCircle,
@@ -225,19 +208,22 @@ export default {
     SeznamGlasovanj,
   },
   mixins: [common, links, generators],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
     return {
-      parentOrgId: this.$options.cardData.data.parent_org_id,
+      parentOrgId: this.$options.contextData.cardData.parent_org_id,
       loading: true,
       parties: [],
       samePeople: [],
       differentPeople: [],
-      special: !!this.$options.cardData.parlaState.special,
+      special: !!this.$options.contextData.cardState.special,
       data: [],
       total: 0,
       sameModalVisible: false,
       differentModalVisible: false,
-      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
+      selectedTab: this.$options.contextData.cardState.selectedTab || 0,
       headerConfig: defaultDynamicHeaderConfig(this, {
         circleIcon: 'primerjalnik',
       }),
@@ -357,13 +343,11 @@ export default {
     },
   },
   mounted() {
-    const self = this;
-    // used to be PGPromise
-    const sameParties = this.$options.cardData.parlaState.sameParties || [];
+    const sameParties = this.$options.contextData.cardState.sameParties || [];
     const differentParties =
-      this.$options.cardData.parlaState.differentParties || [];
+      this.$options.contextData.cardState.differentParties || [];
 
-    this.parties = this.generateParties(this.$options.cardData.data).map(
+    this.parties = this.generateParties(this.$options.contextData.cardData).map(
       (party) => ({
         id: party.properId,
         acronym: party.acronym,
@@ -374,86 +358,33 @@ export default {
       })
     );
 
-    // used to be peoplePromise
-    const samePeople = this.$options.cardData.parlaState.samePeople || [];
+    const samePeople = this.$options.contextData.cardState.samePeople || [];
     const differentPeople =
-      this.$options.cardData.parlaState.differentPeople || [];
+      this.$options.contextData.cardState.differentPeople || [];
 
-    this.samePeople = this.generatePeople(this.$options.cardData.data).map(
-      (person) => ({
-        selected: samePeople.indexOf(person.id) > -1,
-        label: person.label,
-        id: person.id,
-        image: person.image,
-      })
-    );
-    self.differentPeople = this.generatePeople(this.$options.cardData.data).map(
-      (person) => ({
-        selected: differentPeople.indexOf(person.id) > -1,
-        label: person.label,
-        id: person.id,
-        image: person.image,
-      })
-    );
+    this.samePeople = this.generatePeople(
+      this.$options.contextData.cardData
+    ).map((person) => ({
+      selected: samePeople.indexOf(person.id) > -1,
+      label: person.label,
+      id: person.id,
+      image: person.image,
+    }));
+    this.differentPeople = this.generatePeople(
+      this.$options.contextData.cardData
+    ).map((person) => ({
+      selected: differentPeople.indexOf(person.id) > -1,
+      label: person.label,
+      id: person.id,
+      image: person.image,
+    }));
 
     this.loadResults();
-    // const PGPromise = $.ajax({
-    //   url: `${this.slugs.urls.data}/getAllPGs/`,
-    //   method: 'GET',
-    //   success: (data) => {
-    //     const sameParties = this.$options.cardData.parlaState.sameParties || [];
-    //     const differentParties = this.$options.cardData.parlaState.differentParties || [];
-    //     self.parties = Object.keys(data).map(partyId => ({
-    //       id: data[partyId].id,
-    //       acronym: data[partyId].acronym,
-    //       isCoalition: data[partyId].isCoalition,
-    //       name: data[partyId].name,
-    //       isSame: sameParties.indexOf(data[partyId].id) > -1,
-    //       isDifferent: differentParties.indexOf(data[partyId].id) > -1,
-    //     }));
-    //   },
-    //   error(error) {
-    //     // eslint-disable-next-line no-console
-    //     console.log(error);
-    //   },
-    // });
-    // const peoplePromise = $.ajax({
-    //   url: `${this.slugs.urls.data}/getMPs/`,
-    //   method: 'GET',
-    //   success: (data) => {
-    //     const samePeople = this.$options.cardData.parlaState.samePeople || [];
-    //     const differentPeople = this.$options.cardData.parlaState.differentPeople || [];
-    //     const sameData = JSON.parse(JSON.stringify(data));
-    //     self.samePeople = sameData.map(person => ({
-    //       selected: samePeople.indexOf(person.id) > -1,
-    //       label: person.name,
-    //       id: person.id,
-    //       image: self.getPersonPortrait(person),
-    //     }));
-
-    //     const differentData = JSON.parse(JSON.stringify(data));
-    //     self.differentPeople = differentData.map(person => ({
-    //       selected: differentPeople.indexOf(person.id) > -1,
-    //       label: person.name,
-    //       id: person.id,
-    //       image: self.getPersonPortrait(person),
-    //     }));
-
-    //     this.loadResults();
-    //   },
-    //   error(error) {
-    //     // eslint-disable-next-line no-console
-    //     console.log(error);
-    //   },
-    // });
-
-    // Promise.all([peoplePromise]).then(() => {
-    //   this.loadResults();
-    // });
   },
   created() {
-    const { template, siteMap: sm } = this.$options.cardData;
-    template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.voteComparator}`;
+    // TODO:
+    // const { template, siteMap: sm } = this.$options.cardData;
+    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.voteComparator}`;
   },
   methods: {
     toggleSpecial() {
@@ -478,20 +409,18 @@ export default {
     },
     loadResults() {
       this.loading = true;
-      $.ajax({
-        url: this.queryUrl,
-        method: 'GET',
-        success: (data) => {
-          this.data = data.results;
-          this.total = data.total;
+      axios
+        .get(this.queryUrl)
+        .then((response) => {
+          this.data = response.data.results;
+          this.total = response.data.total;
           this.loading = false;
-        },
-        error(error) {
+        })
+        .catch((error) => {
           // eslint-disable-next-line no-console
           console.log(error);
           this.loading = false;
-        },
-      });
+        });
     },
     focusTab(tabindex) {
       this.selectedTab = tabindex;
@@ -505,22 +434,24 @@ export default {
 @import 'parlassets/scss/colors';
 @import 'parlassets/scss/helper';
 
-::v-deep .card-content {
+:deep(.card-content) {
   min-height: 660px;
 }
 
 #primerjalnik {
-  ::v-deep .p-tabs .p-tabs-content,
-  ::v-deep .p-tabs .p-tabs-content .tab-content {
-    overflow-y: visible;
-    overflow-x: visible;
+  :deep(.p-tabs) {
+    .p-tabs-content,
+    .p-tabs-content .tab-content {
+      overflow-y: visible;
+      overflow-x: visible;
+    }
+
+    .p-tabs-content {
+      margin-top: 6px;
+    }
   }
 
-  ::v-deep .p-tabs .p-tabs-content {
-    margin-top: 6px;
-  }
-
-  ::v-deep .word-list {
+  :deep(.word-list) {
     max-height: none;
     height: 420px;
     overflow-y: auto;
@@ -539,13 +470,13 @@ export default {
   }
 
   .glasovanja {
-    ::v-deep #votingCard {
+    :deep(#votingCard) {
       height: 420px;
     }
   }
 
   .mdt-wrapper {
-    ::v-deep .progress-bar {
+    :deep(.progress-bar) {
       background-color: $third;
     }
   }

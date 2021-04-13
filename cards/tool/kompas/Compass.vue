@@ -192,8 +192,8 @@ export default {
 
       let tooltip;
 
-      const tooltipHover = (rect) => {
-        rect
+      const tooltipHover = (dot) => {
+        dot
           .on('mouseover', (e, d) => {
             const bbox = tooltip
               .select('text')

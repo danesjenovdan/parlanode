@@ -1,7 +1,4 @@
 {
-  "_id": "c_primerjalnik",
   "dataUrl": "{analizeV2}/p/getListOfMembers",
-  "lastUpdate": "2019-04-26T13:01:05.978Z",
-  "big": true,
-  "high": true
+  "lastUpdate": "2019-04-26T13:01:05.978Z"
 }

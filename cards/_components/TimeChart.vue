@@ -1,10 +1,10 @@
 <template>
-  <div class="timechart" @click="renderChart"></div>
+  <div ref="chart" class="time-chart"></div>
 </template>
 
 <script>
-import d3 from 'd3v3';
-import getD3Locale from 'i18n/d3locales';
+import * as d3 from 'd3';
+import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
   name: 'TimeChart',
@@ -24,216 +24,214 @@ export default {
   },
   methods: {
     renderChart() {
-      $('.timechart svg').remove();
+      // empty the chart container
+      this.$refs.chart.textContent = '';
 
-      // global stuff for the chart
-      const margin = {
-        top: 50,
-        right: 30,
-        bottom: 30,
-        left: 30,
-      };
-      const width = 960 - margin.left - margin.right;
-      const height = 400 - margin.top - margin.bottom;
+      d3.timeFormatDefaultLocale(getD3Locale(import.meta.env.VITE_CARD_LANG));
 
-      const locale = d3.locale(getD3Locale(import.meta.env.VITE_CARD_LANG));
+      const dateParser = d3.timeParse('%d.%m.%Y');
+      const monthFormat = d3.timeFormat('%b %y');
+      const dateFormat = d3.timeFormat('%x'); // %x = locale date format
 
-      const bisectDate = d3.bisector((d) => d.date).left;
-      const parseDate = d3.time.format('%d.%m.%Y').parse;
-
-      const data = this.data
-        .reduce((acc, d) => {
-          if (acc.indexOf(d.results.date) === -1) {
-            acc.push(d.results.date);
-          }
-          return acc;
-        }, [])
+      const data = Array.from(new Set(this.data.map((d) => d.results.date)))
         .map((date) => ({
-          date: parseDate(date),
-          occurences: this.data.filter((d) => d.results.date === date).length,
+          date: dateParser(date),
+          value: this.data.filter((d) => d.results.date === date).length,
         }))
         .sort((a, b) => a.date - b.date);
 
+      const width = 940;
+      const height = 420;
+      const margin = { top: 35, right: 10, bottom: 25, left: 10 };
+
       const svg = d3
-        .select('.timechart')
+        .select(this.$refs.chart)
         .append('svg')
-        .attr('class', 'smalldata')
-        .attr('viewBox', '0 0 960 400')
-        .attr('preserveAspectRatio', 'xMidYMid meet')
-        .append('g')
-        .attr('transform', `translate(${margin.left},${margin.top})`);
+        .attr('viewBox', [0, 0, width, height]);
 
-      let focus;
+      const x = d3
+        .scaleTime()
+        .domain(d3.extent(data.map((d) => d.date)))
+        .range([margin.left, width - margin.right]);
 
-      const x = d3.time.scale().range([0, width]);
+      const y = d3
+        .scaleLinear()
+        .domain([0, d3.max(data, (d) => d.value)])
+        .rangeRound([height - margin.bottom, margin.top]);
 
-      const y = d3.scale.linear().range([height, 0]);
-
-      x.domain(d3.extent(data, (d) => d.date));
-      y.domain([0, d3.max(data, (d) => d.occurences)]);
-
-      function mousemove() {
-        const x0 = x.invert(d3.mouse(this)[0] - margin.left);
-        const i = bisectDate(data, x0, 1);
-        const d0 = data[i - 1];
-        const d1 = data[i];
-        if (i < data.length) {
-          const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-
-          const circle =
-            x0 - d0.date > d1.date - x0
-              ? d3.selectAll('.dot circle')[0][i]
-              : d3.selectAll('.dot circle')[0][i - 1];
-
-          if (d3.select(circle).classed('hovered')) {
-            //
-          } else {
-            d3.select('.dot circle.hovered')
-              .classed('hovered', false)
-              .transition()
-              .duration(200)
-              .attr('r', 4);
-
-            d3.select(circle)
-              .classed('hovered', true)
-              .transition()
-              .duration(200)
-              .ease('linear')
-              .attr('r', 7);
-          }
-
-          if (i > 2 && i < data.length - 3.5) {
-            focus.attr(
-              'transform',
-              `translate(${x(d.date)},${y(d.occurences)})`
-            );
-          } else if (i < 3) {
-            focus.attr(
-              'transform',
-              `translate(${x(data[2].date)},${y(d.occurences)})`
-            );
-          } else {
-            focus.attr(
-              'transform',
-              `translate(${x(data[data.length - 4].date)},${y(d.occurences)})`
-            );
-          }
-
-          focus
-            .select('text')
-            .text(`${locale.timeFormat('%x')(d.date)} | ${d.occurences}`);
-        }
-      }
-
-      d3.select(svg.node().parentNode)
-        .append('rect')
-        .attr('class', 'overlay')
-        .attr('width', '100%')
-        .attr('height', '100%')
-        .style('fill', 'transparent')
-        .on('mouseover', () => {
-          focus.style('display', null);
-        })
-        .on('mouseout', () => {
-          focus.style('display', 'none');
-        })
-        .on('mousemove', mousemove);
-
-      const xAxis = d3.svg
-        .axis()
-        .scale(x)
-        .orient('bottom')
-        .tickFormat(locale.timeFormat('%b %y'));
-
+      // bottom axis
       svg
         .append('g')
-        .attr('class', 'x axis bigdata')
-        .attr('transform', `translate(0,${height})`)
-        .call(xAxis);
+        .attr('class', 'axis-bottom')
+        .attr('transform', `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x).tickFormat(monthFormat))
+        .call((g) => g.selectAll('.domain').remove());
 
-      const line = d3.svg
+      const line = d3
         .line()
         .x((d) => x(d.date))
-        .y((d) => y(d.occurences));
+        .y((d) => y(d.value));
 
-      svg.append('path').datum(data).attr('class', 'line').attr('d', line);
-
+      // line
       svg
-        .selectAll('g.dot')
-        .data(data)
-        .enter()
         .append('g')
+        .append('path')
+        .datum(data)
+        .attr('fill', 'none')
+        .attr('stroke', '#000')
+        .attr('stroke-width', 2)
+        .attr('d', line);
+
+      const bisectDate = d3.bisector((d) => d.date).left;
+
+      let dots;
+      let tooltip;
+      let tooltipLine;
+      let lastTooltipDatum = null;
+      let lastTooltipWidth = 0;
+
+      const tooltipHover = (elem) => {
+        elem
+          .on('mousemove', (e) => {
+            const [pointerX, pointerY] = d3.pointer(e, elem.node());
+            const hoveredDate = x.invert(pointerX);
+            const i = bisectDate(data, hoveredDate);
+            if (i >= data.length) {
+              return;
+            }
+
+            // work out which date value is closest
+            const [index, d, lineX] = (() => {
+              const d1 = data[i];
+              const lineX1 = x(d1.date);
+              if (i === 0) {
+                return [i, d1, lineX1];
+              }
+              const d0 = data[i - 1];
+              const lineX0 = x(d0.date);
+              if (Math.abs(pointerX - lineX0) < Math.abs(pointerX - lineX1)) {
+                return [i - 1, d0, lineX0];
+              }
+              return [i, d1, lineX1];
+            })();
+
+            if (lastTooltipDatum !== d) {
+              lastTooltipDatum = d;
+
+              const bbox = tooltip
+                .select('text')
+                .text(`${dateFormat(d.date)} | ${d.value}`)
+                .node()
+                .getBBox();
+
+              const padX = 8;
+              const padY = 4;
+
+              lastTooltipWidth = tooltip
+                .select('rect')
+                .attr('x', bbox.x - padX)
+                .attr('y', bbox.y - padY * 1.25)
+                .attr('width', bbox.width + padX * 2)
+                .attr('height', bbox.height + padY * 2)
+                .node()
+                .getBBox().width;
+
+              tooltipLine.attr('x1', lineX).attr('x2', lineX);
+
+              dots
+                .attr('r', (d_, idx) => (idx === index ? 4 : 2))
+                .classed('hovered', (d_, idx) => idx === index);
+            }
+
+            const xPos = Math.max(
+              0 + lastTooltipWidth / 2,
+              Math.min(x(lastTooltipDatum.date), width - lastTooltipWidth / 2)
+            );
+            const yPos = Math.max(
+              margin.top,
+              Math.min(height - margin.bottom, pointerY)
+            );
+
+            tooltip.attr('transform', `translate(${xPos},${yPos - 15})`);
+          })
+          .on('mouseover', () => {
+            tooltip
+              .interrupt()
+              .transition()
+              .duration(150)
+              .style('opacity', 1)
+              .style('display', null);
+            tooltipLine.style('display', null);
+          })
+          .on('mouseout', () => {
+            tooltip
+              .transition()
+              .duration(150)
+              .style('opacity', 0)
+              .transition()
+              .style('display', 'none');
+            tooltipLine.style('display', 'none');
+            dots.attr('r', 2).classed('hovered', false);
+            lastTooltipDatum = null;
+          });
+      };
+
+      tooltipLine = svg
+        .append('line')
+        .attr('x1', -100)
+        .attr('x2', -100)
+        .attr('y1', margin.top - 20)
+        .attr('y2', height - margin.bottom)
+        .style('stroke-width', 1)
+        .style('stroke', '#888')
+        .style('stroke-dasharray', '4 4')
+        .style('fill', 'none');
+
+      // dots
+      dots = svg
+        .append('g')
+        .selectAll('.dot')
+        .data(data)
+        .join('circle')
         .attr('class', 'dot')
-        .append('circle')
-        .attr('r', 4)
+        .attr('r', 2)
         .attr('cx', (d) => x(d.date))
-        .attr('cy', (d) => y(d.occurences));
+        .attr('cy', (d) => y(d.value));
 
-      focus = svg.append('g').attr('class', 'focus').style('display', 'none');
+      tooltip = svg
+        .append('g')
+        .attr('class', 'time-tooltip')
+        .style('pointer-events', 'none')
+        .style('user-select', 'none')
+        .style('display', 'none');
 
-      focus
-        .append('rect')
-        .attr('width', 150)
-        .attr('height', 25)
-        .attr('y', -35)
-        .attr('x', -75)
-        .style('rx', 3)
-        .style('yx', 3);
-
-      focus
+      tooltip.append('rect').attr('fill', '#000').attr('rx', 3);
+      tooltip
         .append('text')
-        .style('fill', '#fff')
-        .attr('text-anchor', 'middle')
-        .attr('y', -18);
+        .attr('fill', '#fff')
+        .attr('font-size', 14)
+        .attr('text-anchor', 'middle');
+
+      svg.call(tooltipHover);
     },
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import 'parlassets/scss/colors';
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: grey;
-  stroke-width: 1;
-  shape-rendering: crispEdges;
-  stroke-dasharray: 1, 3;
-}
+.time-chart :deep(svg) {
+  path {
+    stroke: $time-chart-passive;
+  }
 
-.tick line {
-  stroke-width: 0;
-}
+  .dot {
+    fill: $time-chart-passive;
 
-.bigdata .tick text {
-  opacity: 0;
-  transition: all 0.2s ease-in;
-}
-
-.smalldata .line {
-  fill: none;
-  stroke-width: 2;
-  stroke: $first;
-}
-
-.smalldata .dot {
-  fill: $first;
-}
-
-.focus rect {
-  border: 0px;
-  background-color: $font-placeholder;
-  border-radius: 3px;
-  padding: 2px 10px;
-  color: $white;
-}
-
-.focus circle {
-  fill: $first;
-}
-
-.tabs-header:hover {
-  text-decoration: none;
+    &.hovered {
+      fill: $time-chart-active;
+    }
+  }
 }
 </style>

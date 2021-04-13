@@ -1,5 +1,5 @@
-<template functional>
-  <span class="plus" v-on="listeners">+</span>
+<template>
+  <span class="plus">+</span>
 </template>
 
 <style lang="scss">

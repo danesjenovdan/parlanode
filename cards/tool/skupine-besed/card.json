@@ -1,7 +1,4 @@
 {
-  "_id": "c_skupine-besed",
   "dataUrl": "{data}/getNumberOfSpeeches/",
-  "lastUpdate": "2019-04-09T14:22:09.727Z",
-  "big": true,
-  "high": true
+  "lastUpdate": "2019-04-09T14:22:09.727Z"
 }

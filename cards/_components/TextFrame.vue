@@ -1,5 +1,5 @@
-<template functional>
-  <div :class="'text-frame ' + data.staticClass">
+<template>
+  <div class="text-frame">
     <slot />
   </div>
 </template>

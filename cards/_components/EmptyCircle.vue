@@ -29,7 +29,7 @@ export default {
   .circle {
     $size: 220px;
     border-radius: 50%;
-    background-image: url("#{getConfig('urls.cdn')}/img/orodja/primerjalnik.svg");
+    background-image: url("#{get-config-value('urls.cdn')}/img/orodja/primerjalnik.svg");
     background-color: $light-background;
     background-size: $size / 2.5;
     background-position: center 40px;

@@ -9,6 +9,8 @@
    no-nested-ternary, quote-props, prefer-template, function-paren-newline,
    no-underscore-dangle, prefer-rest-params */
 
+import { h } from 'vue';
+
 var _debounce = function (func, wait, immediate) {
   var timeout;
   return function () {
@@ -203,7 +205,7 @@ export default {
       if (typeof this.variable === 'function') {
         return this.variable(index) || 0;
       } else {
-        var slot = this.$slots.default[index];
+        var slot = this.$slots.default()[index];
         var style = slot && slot.data && slot.data.style;
         if (style && style.height) {
           var shm = style.height.match(/^(.*)px$/);
@@ -303,7 +305,7 @@ export default {
     // filter the shown items base on `start` and `end`.
     filter: function () {
       var { delta } = this;
-      var slots = this.$slots.default;
+      var slots = this.$slots.default();
 
       if (!slots) {
         slots = [];
@@ -382,7 +384,7 @@ export default {
     }
   },
 
-  render: function (h) {
+  render: function () {
     var list = this.filter();
     var { delta } = this;
     var dbc = this.debounce;

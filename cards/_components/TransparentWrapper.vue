@@ -1,8 +1,13 @@
 <template>
-  <div class="card-container transparent">
-    <div class="card-content">
-      <div v-cloak class="card-content-front">
-        <slot />
+  <div :id="mountId">
+    <template v-if="hasGenerator && showGenerator">
+      <slot name="generator" />
+    </template>
+    <div class="card-container transparent">
+      <div class="card-content">
+        <div v-cloak class="card-content-front">
+          <slot />
+        </div>
       </div>
     </div>
   </div>
@@ -11,9 +16,12 @@
 <script>
 export default {
   name: 'TransparentCardWrapper',
-  props: {},
   data() {
-    return {};
+    return {
+      mountId: this.$root.$options.contextData.mountId,
+      hasGenerator: this.$slots.generator?.()?.length,
+      showGenerator: this.$root.$options.contextData.cardState?.generator,
+    };
   },
 };
 </script>

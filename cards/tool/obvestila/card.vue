@@ -1,439 +1,479 @@
 <template>
-  <div :id="$options.cardData.mountId">
-    <generator>
-      <template #generator>
-        <tools-tabs current-tool="notifications" />
-      </template>
-      <transparent-wrapper
-        :card-url="url"
-        :header-config="headerConfig"
-        :og-config="ogConfig"
-      >
-        <div v-if="state.settings && state.uid">
-          <form id="obvestilaData">
-            <div class="content">
-              <div class="">
-                <div class="narrow-inner-container">
-                  <div class="ainnersmall">
-                    <div class="replaceme padding15">
-                      <hr />
-                      <div
-                        v-for="keyword in keywords"
-                        :key="keyword.id"
-                        :class="[
-                          'obvestiladatatpl',
-                          'clearfix',
-                          { updatedid: keyword.id === updatedId },
-                        ]"
-                      >
-                        <div class="">
-                          <div class="search">
-                            <div
-                              v-if="keyword.id === updatedId"
-                              class="updatedText"
-                            >
-                              <h4>
-                                <span class="glyphicon glyphicon-ok"></span>
-                                Uspešno potrjeno!
-                              </h4>
-                            </div>
+  <transparent-wrapper>
+    <template #generator>
+      <tools-tabs current-tool="notifications" />
+    </template>
+    <div v-if="state.settings && state.uid">
+      <form id="obvestilaData">
+        <div class="content">
+          <div class="">
+            <div class="narrow-inner-container">
+              <div class="ainnersmall">
+                <div class="replaceme padding15">
+                  <hr />
+                  <div
+                    v-for="keyword in keywords"
+                    :key="keyword.id"
+                    :class="[
+                      'obvestiladatatpl',
+                      'clearfix',
+                      { updatedid: keyword.id === updatedId },
+                    ]"
+                  >
+                    <div class="">
+                      <div class="search">
+                        <div
+                          v-if="keyword.id === updatedId"
+                          class="updatedText"
+                        >
+                          <h4>
+                            <span class="glyphicon glyphicon-ok"></span>
+                            Uspešno potrjeno!
+                          </h4>
+                        </div>
 
-                            <div class="parta3">
-                              <div
-                                :id="`obvestilaKeyword_${keyword.id}`"
-                                class="obvestilaKeyword"
-                              >
-                                {{ keyword.keyword }}
-                              </div>
-                              <input
-                                :id="`keyword${keyword.id}`"
-                                :value="keyword.keyword"
-                                type="hidden"
-                              />
-                            </div>
+                        <div class="parta3">
+                          <div
+                            :id="`obvestilaKeyword_${keyword.id}`"
+                            class="obvestilaKeyword"
+                          >
+                            {{ keyword.keyword }}
+                          </div>
+                          <input
+                            :id="`keyword${keyword.id}`"
+                            :value="keyword.keyword"
+                            type="hidden"
+                          />
+                        </div>
 
-                            <div class="parta4" @click="deleteKeyword(keyword)">
-                              <div class="obvestiladelete">
-                                <div
-                                  class="exclude-presiding checkbox-twolines"
-                                >
-                                  <!-- <span
+                        <div class="parta4" @click="deleteKeyword(keyword)">
+                          <div class="obvestiladelete">
+                            <div class="exclude-presiding checkbox-twolines">
+                              <!-- <span
                                     :id="`delete${keyword.id}`"
                                     data-deleted="false"
                                     class="glyphicon glyphicon-remove"
                                   ></span> -->
-                                  <!-- eslint-disable-next-line -->
-                                  <svg width="100%" height="100%" fill="#fff" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" x="0px" y="0px" viewBox="0 0 100 100"><g transform="translate(0,-952.36218)"><path style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;opacity:1;color:#000000;fill:#fff;fill-opacity:1;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" d="M 39 5 C 35.173892 5 32 8.17389 32 12 L 32 15 L 13 15 A 3.0003 3.0003 0 0 0 12.6875 15 A 3.0040663 3.0040663 0 1 0 13 21 L 76.9375 21 L 75 87.90625 C 74.97939 88.61725 74.605076 89 74 89 L 26 89 C 25.394924 89 25.020608 88.61725 25 87.90625 L 23.25 27.9375 A 3.0010171 3.0010171 0 1 0 17.25 28.09375 L 19 88.0625 C 19.107812 91.7818 22.17308 95 26 95 L 74 95 C 77.82692 95 80.892188 91.7818 81 88.0625 L 82.9375 21 L 87 21 A 3.0003 3.0003 0 1 0 87 15 L 68 15 L 68 12 C 68 8.17389 64.826108 5 61 5 L 39 5 z M 39 11 L 61 11 C 61.605888 11 62 11.39411 62 12 L 62 15 L 38 15 L 38 12 C 38 11.39411 38.394112 11 39 11 z M 35.96875 30.9375 A 3.0003 3.0003 0 0 0 33 34 L 33 76 A 3.0003 3.0003 0 1 0 39 76 L 39 34 A 3.0003 3.0003 0 0 0 35.96875 30.9375 z M 49.96875 30.9375 A 3.0003 3.0003 0 0 0 47 34 L 47 76 A 3.0003 3.0003 0 1 0 53 76 L 53 34 A 3.0003 3.0003 0 0 0 49.96875 30.9375 z M 63.96875 30.9375 A 3.0003 3.0003 0 0 0 61 34 L 61 76 A 3.0003 3.0003 0 1 0 67 76 L 67 34 A 3.0003 3.0003 0 0 0 63.96875 30.9375 z " transform="translate(0,952.36218)"></path></g></svg>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="parta1">
-                              <div class="search-dropdown">
-                                <select
-                                  :id="`reminder${keyword.id}`"
-                                  :name="`reminder${keyword.id}`"
-                                  class="search-dropdown-input reminder"
-                                >
-                                  <option
-                                    :selected="keyword.reminder === 'event'"
-                                    value="event"
-                                    @click="reminderCallback(keyword, 'event')"
-                                  >
-                                    {{ $t('events.event') }}
-                                  </option>
-                                  <option
-                                    :selected="keyword.reminder === 'day'"
-                                    value="day"
-                                    @click="reminderCallback(keyword, 'day')"
-                                  >
-                                    {{ $t('events.day') }}
-                                  </option>
-                                  <option
-                                    :selected="keyword.reminder === 'week'"
-                                    value="week"
-                                    @click="reminderCallback(keyword, 'week')"
-                                  >
-                                    {{ $t('events.week') }}
-                                  </option>
-                                </select>
-                              </div>
-                            </div>
-
-                            <div class="parta2">
-                              <div class="search-dropdown">
-                                <select
-                                  :id="`match_mode${keyword.keyword}`"
-                                  :name="`match_mode${keyword.keyword}`"
-                                  class="search-dropdown-input match_mode"
-                                >
-                                  <option
-                                    :selected="keyword.mode === 'natancno'"
-                                    value="natancno"
-                                    @click="modeCallback(keyword, 'natancno')"
-                                  >
-                                    {{ $t('modes.precise') }}
-                                  </option>
-                                  <option
-                                    :selected="keyword.mode === 'siroko'"
-                                    value="obe"
-                                    @click="modeCallback(keyword, 'siroko')"
-                                  >
-                                    {{ $t('modes.broad') }}
-                                  </option>
-                                </select>
-                              </div>
+                              <!-- eslint-disable-next-line -->
+                              <svg
+                                width="100%"
+                                height="100%"
+                                fill="#fff"
+                                xmlns:dc="http://purl.org/dc/elements/1.1/"
+                                xmlns:cc="http://creativecommons.org/ns#"
+                                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                xmlns:svg="http://www.w3.org/2000/svg"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                                version="1.1"
+                                x="0px"
+                                y="0px"
+                                viewBox="0 0 100 100"
+                              >
+                                <g transform="translate(0,-952.36218)">
+                                  <path
+                                    style="
+                                      font-size: medium;
+                                      font-style: normal;
+                                      font-variant: normal;
+                                      font-weight: normal;
+                                      font-stretch: normal;
+                                      text-indent: 0;
+                                      text-align: start;
+                                      text-decoration: none;
+                                      line-height: normal;
+                                      letter-spacing: normal;
+                                      word-spacing: normal;
+                                      text-transform: none;
+                                      direction: ltr;
+                                      block-progression: tb;
+                                      writing-mode: lr-tb;
+                                      text-anchor: start;
+                                      baseline-shift: baseline;
+                                      opacity: 1;
+                                      color: #000000;
+                                      fill: #fff;
+                                      fill-opacity: 1;
+                                      stroke: none;
+                                      stroke-width: 6;
+                                      marker: none;
+                                      visibility: visible;
+                                      display: inline;
+                                      overflow: visible;
+                                      enable-background: accumulate;
+                                      font-family: Sans;
+                                      -inkscape-font-specification: Sans;
+                                    "
+                                    d="M 39 5 C 35.173892 5 32 8.17389 32 12 L 32 15 L 13 15 A 3.0003 3.0003 0 0 0 12.6875 15 A 3.0040663 3.0040663 0 1 0 13 21 L 76.9375 21 L 75 87.90625 C 74.97939 88.61725 74.605076 89 74 89 L 26 89 C 25.394924 89 25.020608 88.61725 25 87.90625 L 23.25 27.9375 A 3.0010171 3.0010171 0 1 0 17.25 28.09375 L 19 88.0625 C 19.107812 91.7818 22.17308 95 26 95 L 74 95 C 77.82692 95 80.892188 91.7818 81 88.0625 L 82.9375 21 L 87 21 A 3.0003 3.0003 0 1 0 87 15 L 68 15 L 68 12 C 68 8.17389 64.826108 5 61 5 L 39 5 z M 39 11 L 61 11 C 61.605888 11 62 11.39411 62 12 L 62 15 L 38 15 L 38 12 C 38 11.39411 38.394112 11 39 11 z M 35.96875 30.9375 A 3.0003 3.0003 0 0 0 33 34 L 33 76 A 3.0003 3.0003 0 1 0 39 76 L 39 34 A 3.0003 3.0003 0 0 0 35.96875 30.9375 z M 49.96875 30.9375 A 3.0003 3.0003 0 0 0 47 34 L 47 76 A 3.0003 3.0003 0 1 0 53 76 L 53 34 A 3.0003 3.0003 0 0 0 49.96875 30.9375 z M 63.96875 30.9375 A 3.0003 3.0003 0 0 0 61 34 L 61 76 A 3.0003 3.0003 0 1 0 67 76 L 67 34 A 3.0003 3.0003 0 0 0 63.96875 30.9375 z "
+                                    transform="translate(0,952.36218)"
+                                  ></path>
+                                </g>
+                              </svg>
                             </div>
                           </div>
                         </div>
+
+                        <div class="parta1">
+                          <div class="search-dropdown">
+                            <select
+                              :id="`reminder${keyword.id}`"
+                              :name="`reminder${keyword.id}`"
+                              class="search-dropdown-input reminder"
+                            >
+                              <option
+                                :selected="keyword.reminder === 'event'"
+                                value="event"
+                                @click="reminderCallback(keyword, 'event')"
+                              >
+                                {{ $t('events.event') }}
+                              </option>
+                              <option
+                                :selected="keyword.reminder === 'day'"
+                                value="day"
+                                @click="reminderCallback(keyword, 'day')"
+                              >
+                                {{ $t('events.day') }}
+                              </option>
+                              <option
+                                :selected="keyword.reminder === 'week'"
+                                value="week"
+                                @click="reminderCallback(keyword, 'week')"
+                              >
+                                {{ $t('events.week') }}
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="parta2">
+                          <div class="search-dropdown">
+                            <select
+                              :id="`match_mode${keyword.keyword}`"
+                              :name="`match_mode${keyword.keyword}`"
+                              class="search-dropdown-input match_mode"
+                            >
+                              <option
+                                :selected="keyword.mode === 'natancno'"
+                                value="natancno"
+                                @click="modeCallback(keyword, 'natancno')"
+                              >
+                                {{ $t('modes.precise') }}
+                              </option>
+                              <option
+                                :selected="keyword.mode === 'siroko'"
+                                value="obe"
+                                @click="modeCallback(keyword, 'siroko')"
+                              >
+                                {{ $t('modes.broad') }}
+                              </option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
-                      <!--Nastavitve so spremenjene.-->
-                    </div>
-                    <div class="padding15 new-trigger-container">
-                      <br />
-                      <br />
-                      <br />
-                      <a
-                        v-t="'add_new_trigger'"
-                        href="#"
-                        class="btn btn-default naprej"
-                        @click.prevent="state.settings = false"
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div v-else>
-          <div class="headernew">
-            <div class="line"></div>
-
-            <div :class="['hstepboxnew', 'hstep1', { act: currentStep === 1 }]">
-              <div class="fakeleft"></div>
-              <div class="circlebg">1</div>
-              <div class="glyphicon glyphicon-ok"></div>
-              <div v-t="'trigger'" class="circlebgtext"></div>
-            </div>
-            <div :class="['hstepboxnew', 'hstep2', { act: currentStep === 2 }]">
-              <div class="circlebg">2</div>
-              <div class="glyphicon glyphicon-ok"></div>
-              <div v-t="'match'" class="circlebgtext"></div>
-            </div>
-            <div :class="['hstepboxnew', 'hstep3', { act: currentStep === 3 }]">
-              <div class="circlebg">3</div>
-              <div class="glyphicon glyphicon-ok"></div>
-              <div v-t="'interval'" class="circlebgtext"></div>
-            </div>
-            <div :class="['hstepboxnew', 'hstep4', { act: currentStep === 4 }]">
-              <div class="circlebg">4</div>
-              <div class="glyphicon glyphicon-ok"></div>
-              <div class="fakeright"></div>
-              <div v-t="'email'" class="circlebgtext"></div>
-            </div>
-          </div>
-
-          <div class="content">
-            <div v-if="currentStep === 1" class="step step1">
-              <div class="narrow-inner-container">
-                <div class="ainnerbig">
-                  <h2 v-t="'add_trigger'"></h2>
-                  <div class="input-group search1">
-                    <input
-                      v-model="keyword"
-                      type="text"
-                      name="keyword"
-                      class="form-control simplebox keyword"
-                      @keyup.enter="firstAction"
-                    />
-                    <div class="input-group-btn" style="padding-left: 10px">
-                      <button
-                        v-t="'add'"
-                        class="action btn btn-default naprej"
-                        @click="firstAction"
-                      ></button>
                     </div>
                   </div>
-
-                  <div class="row">
-                    <div class="col-md-12">
-                      <br />
-                      <br />
-                      <span
-                        ><img
-                          :src="`${slugs.urls.cdn}/img/obvestila/ena.png`"
-                        />
-                      </span>
-                      <p v-t="'steps[0].textfirst'"></p>
-                    </div>
-                    <div class="col-md-12">
-                      <br />
-                      <br />
-                      <span
-                        ><img :src="`${slugs.urls.cdn}/img/obvestila/dva.png`"
-                      /></span>
-                      <p v-t="'steps[0].textsecond'"></p>
-                    </div>
-                  </div>
+                  <!--Nastavitve so spremenjene.-->
                 </div>
-              </div>
-            </div>
-
-            <div v-if="currentStep === 2" class="step step2">
-              <div class="narrow-inner-container">
-                <div class="ainnersmall">
-                  <h2 v-t="'steps[1].textfirst'" class="left"></h2>
-                  <ul>
-                    <li>
-                      <div class="exclude-presiding checkbox-twolines">
-                        <input
-                          id="modenatancno"
-                          v-model="matchType"
-                          type="radio"
-                          name="match_mode[]"
-                          value="natancno"
-                          checked="checked"
-                          class="radio"
-                        />
-                        <label for="modenatancno">
-                          {{ $t('steps[1].firstbullet') }}
-                          <span class="fillkeyword">"{{ keyword }}"</span>
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="exclude-presiding checkbox-twolines">
-                        <input
-                          id="modesiroko"
-                          v-model="matchType"
-                          type="radio"
-                          name="match_mode[]"
-                          value="siroko"
-                          class="radio"
-                        />
-                        <label for="modesiroko">
-                          {{ $t('steps[1].secondbullet') }}
-                          <span class="fillkeyword">{{ keyword }}</span>
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <button
-                    class="action btn btn-default nazaj top50 w50"
-                    @click="currentStep -= 1"
-                  >
-                    <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
-                    {{ $t('back') }}
-                  </button>
-                  <button
-                    class="action btn btn-default naprej top50 w50"
-                    @click="currentStep += 1"
-                  >
-                    {{ $t('continue') }}
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div v-if="currentStep === 3" class="step step3">
-              <div class="narrow-inner-container">
-                <div class="ainnersmall">
-                  <h2 v-t="'steps[2].textfirst'" class="left"></h2>
-                  <ul>
-                    <li>
-                      <div class="exclude-presiding checkbox-twolines">
-                        <input
-                          id="reminderevent"
-                          v-model="frequency"
-                          type="radio"
-                          name="reminder[]"
-                          value="event"
-                          class="radio"
-                          checked="checked"
-                        />
-                        <label
-                          v-t="'steps[2].textsecond'"
-                          for="reminderevent"
-                        ></label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="exclude-presiding checkbox-twolines">
-                        <input
-                          id="reminderday"
-                          v-model="frequency"
-                          type="radio"
-                          name="reminder[]"
-                          value="day"
-                          class="radio"
-                        />
-                        <label
-                          v-t="'steps[2].textthird'"
-                          for="reminderday"
-                        ></label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="exclude-presiding checkbox-twolines">
-                        <input
-                          id="reminderweek"
-                          v-model="frequency"
-                          type="radio"
-                          name="reminder[]"
-                          value="week"
-                          class="radio"
-                        />
-                        <label
-                          v-t="'steps[2].textfourth'"
-                          for="reminderweek"
-                        ></label>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <button
-                    class="action btn btn-default nazaj top50 w50"
-                    @click="currentStep -= 1"
-                  >
-                    <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
-                    {{ $t('back') }}
-                  </button>
-                  <button
-                    class="action btn btn-default naprej top50 w50"
-                    @click="currentStep += 1"
-                  >
-                    {{ $t('continue') }}
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div v-if="currentStep === 4" class="step step4">
-              <div class="narrow-inner-container">
-                <div class="ainnersmall">
-                  <h2 v-t="'steps[3].textfirst'"></h2>
-                  <div>
-                    <input
-                      v-model="email"
-                      :class="[
-                        'form-control',
-                        'simplebox email',
-                        { errored: errored },
-                      ]"
-                      type="text"
-                      name="email"
-                      required
-                    />
-                    <button
-                      class="action btn btn-default nazaj top50 w50"
-                      @click="currentStep -= 1"
-                    >
-                      <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
-                      {{ $t('back') }}
-                    </button>
-                    <button
-                      class="action btn btn-default naprej top50 w50"
-                      @click="submitTrigger"
-                    >
-                      {{ $t('confirm_trigger') }}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div v-if="currentStep === 5" class="step step5">
-              <div class="narrow-inner-container">
-                <div class="ainnersmall">
-                  <h2>
-                    <img :src="`${slugs.urls.cdn}/img/obvestila/yij.png`" />
-                    {{ $t('steps[4].textfirst') }}
-                  </h2>
-
-                  <p class="replaceme centermytext">
-                    {{ $t('steps[4].textsecond') }}
-                    <b>{{ email }}</b>
-                    {{ $t('steps[4].textthird') }} {{ keyword }}.
-                    {{ $t('steps[4].textfourth') }}
-                  </p>
-
-                  <div style="text-align: center">
-                    <div
-                      v-t="'add_new_trigger'"
-                      class="action btn btn-default naprej top50"
-                      @click="
-                        currentStep = 1;
-                        keyword = '';
-                      "
-                    ></div>
-                  </div>
+                <div class="padding15 new-trigger-container">
+                  <br />
+                  <br />
+                  <br />
+                  <a
+                    v-t="'add_new_trigger'"
+                    href="#"
+                    class="btn btn-default naprej"
+                    @click.prevent="state.settings = false"
+                  ></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </transparent-wrapper>
-    </generator>
-  </div>
+      </form>
+    </div>
+    <div v-else>
+      <div class="headernew">
+        <div class="line"></div>
+
+        <div :class="['hstepboxnew', 'hstep1', { act: currentStep === 1 }]">
+          <div class="fakeleft"></div>
+          <div class="circlebg">1</div>
+          <div class="glyphicon glyphicon-ok"></div>
+          <div v-t="'trigger'" class="circlebgtext"></div>
+        </div>
+        <div :class="['hstepboxnew', 'hstep2', { act: currentStep === 2 }]">
+          <div class="circlebg">2</div>
+          <div class="glyphicon glyphicon-ok"></div>
+          <div v-t="'match'" class="circlebgtext"></div>
+        </div>
+        <div :class="['hstepboxnew', 'hstep3', { act: currentStep === 3 }]">
+          <div class="circlebg">3</div>
+          <div class="glyphicon glyphicon-ok"></div>
+          <div v-t="'interval'" class="circlebgtext"></div>
+        </div>
+        <div :class="['hstepboxnew', 'hstep4', { act: currentStep === 4 }]">
+          <div class="circlebg">4</div>
+          <div class="glyphicon glyphicon-ok"></div>
+          <div class="fakeright"></div>
+          <div v-t="'email'" class="circlebgtext"></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div v-if="currentStep === 1" class="step step1">
+          <div class="narrow-inner-container">
+            <div class="ainnerbig">
+              <h2 v-t="'add_trigger'"></h2>
+              <div class="input-group search1">
+                <input
+                  v-model="keyword"
+                  type="text"
+                  name="keyword"
+                  class="form-control simplebox keyword"
+                  @keyup.enter="firstAction"
+                />
+                <div class="input-group-btn" style="padding-left: 10px">
+                  <button
+                    v-t="'add'"
+                    class="action btn btn-default naprej"
+                    @click="firstAction"
+                  ></button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <br />
+                  <br />
+                  <span
+                    ><img :src="`${slugs.urls.cdn}/img/obvestila/ena.png`" />
+                  </span>
+                  <p v-t="'steps[0].textfirst'"></p>
+                </div>
+                <div class="col-md-12">
+                  <br />
+                  <br />
+                  <span
+                    ><img :src="`${slugs.urls.cdn}/img/obvestila/dva.png`"
+                  /></span>
+                  <p v-t="'steps[0].textsecond'"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="currentStep === 2" class="step step2">
+          <div class="narrow-inner-container">
+            <div class="ainnersmall">
+              <h2 v-t="'steps[1].textfirst'" class="left"></h2>
+              <ul>
+                <li>
+                  <div class="exclude-presiding checkbox-twolines">
+                    <input
+                      id="modenatancno"
+                      v-model="matchType"
+                      type="radio"
+                      name="match_mode[]"
+                      value="natancno"
+                      checked="checked"
+                      class="radio"
+                    />
+                    <label for="modenatancno">
+                      {{ $t('steps[1].firstbullet') }}
+                      <span class="fillkeyword">"{{ keyword }}"</span>
+                    </label>
+                  </div>
+                </li>
+                <li>
+                  <div class="exclude-presiding checkbox-twolines">
+                    <input
+                      id="modesiroko"
+                      v-model="matchType"
+                      type="radio"
+                      name="match_mode[]"
+                      value="siroko"
+                      class="radio"
+                    />
+                    <label for="modesiroko">
+                      {{ $t('steps[1].secondbullet') }}
+                      <span class="fillkeyword">{{ keyword }}</span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+
+              <button
+                class="action btn btn-default nazaj top50 w50"
+                @click="currentStep -= 1"
+              >
+                <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
+                {{ $t('back') }}
+              </button>
+              <button
+                class="action btn btn-default naprej top50 w50"
+                @click="currentStep += 1"
+              >
+                {{ $t('continue') }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="currentStep === 3" class="step step3">
+          <div class="narrow-inner-container">
+            <div class="ainnersmall">
+              <h2 v-t="'steps[2].textfirst'" class="left"></h2>
+              <ul>
+                <li>
+                  <div class="exclude-presiding checkbox-twolines">
+                    <input
+                      id="reminderevent"
+                      v-model="frequency"
+                      type="radio"
+                      name="reminder[]"
+                      value="event"
+                      class="radio"
+                      checked="checked"
+                    />
+                    <label
+                      v-t="'steps[2].textsecond'"
+                      for="reminderevent"
+                    ></label>
+                  </div>
+                </li>
+                <li>
+                  <div class="exclude-presiding checkbox-twolines">
+                    <input
+                      id="reminderday"
+                      v-model="frequency"
+                      type="radio"
+                      name="reminder[]"
+                      value="day"
+                      class="radio"
+                    />
+                    <label v-t="'steps[2].textthird'" for="reminderday"></label>
+                  </div>
+                </li>
+                <li>
+                  <div class="exclude-presiding checkbox-twolines">
+                    <input
+                      id="reminderweek"
+                      v-model="frequency"
+                      type="radio"
+                      name="reminder[]"
+                      value="week"
+                      class="radio"
+                    />
+                    <label
+                      v-t="'steps[2].textfourth'"
+                      for="reminderweek"
+                    ></label>
+                  </div>
+                </li>
+              </ul>
+
+              <button
+                class="action btn btn-default nazaj top50 w50"
+                @click="currentStep -= 1"
+              >
+                <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
+                {{ $t('back') }}
+              </button>
+              <button
+                class="action btn btn-default naprej top50 w50"
+                @click="currentStep += 1"
+              >
+                {{ $t('continue') }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="currentStep === 4" class="step step4">
+          <div class="narrow-inner-container">
+            <div class="ainnersmall">
+              <h2 v-t="'steps[3].textfirst'"></h2>
+              <div>
+                <input
+                  v-model="email"
+                  :class="[
+                    'form-control',
+                    'simplebox email',
+                    { errored: errored },
+                  ]"
+                  type="text"
+                  name="email"
+                  required
+                />
+                <button
+                  class="action btn btn-default nazaj top50 w50"
+                  @click="currentStep -= 1"
+                >
+                  <span class="glyphicon glyphicon-arrow-left">&nbsp;</span>
+                  {{ $t('back') }}
+                </button>
+                <button
+                  class="action btn btn-default naprej top50 w50"
+                  @click="submitTrigger"
+                >
+                  {{ $t('confirm_trigger') }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="currentStep === 5" class="step step5">
+          <div class="narrow-inner-container">
+            <div class="ainnersmall">
+              <h2>
+                <img :src="`${slugs.urls.cdn}/img/obvestila/yij.png`" />
+                {{ $t('steps[4].textfirst') }}
+              </h2>
+
+              <p class="replaceme centermytext">
+                {{ $t('steps[4].textsecond') }}
+                <b>{{ email }}</b>
+                {{ $t('steps[4].textthird') }} {{ keyword }}.
+                {{ $t('steps[4].textfourth') }}
+              </p>
+
+              <div style="text-align: center">
+                <div
+                  v-t="'add_new_trigger'"
+                  class="action btn btn-default naprej top50"
+                  @click="
+                    currentStep = 1;
+                    keyword = '';
+                  "
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transparent-wrapper>
 </template>
 
 <script>
 import axios from 'axios';
 import common from '@/_mixins/common.js';
 import TransparentWrapper from '@/_components/TransparentWrapper.vue';
-import Generator from '@/_components/Generator.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 
 export default {
   name: 'Obvestila',
   components: {
     TransparentWrapper,
-    Generator,
     ToolsTabs,
   },
   mixins: [common],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
     return {
       currentStep: 1,
@@ -441,21 +481,7 @@ export default {
       matchType: 'siroko',
       frequency: 'event',
       email: '',
-      data: this.$options.cardData.data,
-      headerConfig: {
-        // TODO: fix this when developing card
-        // best if you include a mixin from '@/_mixins/altHeaders'
-        circleIcon: 'og-list',
-        heading: '&nbsp;',
-        subheading: '',
-        alternative: this.$options.cardData.cardData.altHeader === 'true',
-        title: this.$t('card.title'),
-      },
-      ogConfig: {
-        // TODO: fix this when developing card
-        // best if you include a mixin from '@/_mixins/ogImages'
-      },
-      state: this.$options.cardData.parlaState,
+      state: this.$options.contextData.cardState,
       keywords: [],
       updatedId: '',
       errored: false,
@@ -472,10 +498,8 @@ export default {
     });
   },
   created() {
-    console.log(this.slugs.urls.notifications_api);
     this.$notifApi = axios.create({
-      baseURL: 'https://obvestila.nov.parlameter.si',
-      // baseURL: this.slugs.urls.notifications_api,
+      baseURL: this.slugs.urls.notifications_api,
     });
 
     if (this.state.kid) {

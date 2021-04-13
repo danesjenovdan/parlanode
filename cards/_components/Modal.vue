@@ -30,6 +30,7 @@ export default {
       default: true,
     },
   },
+  emits: ['close', 'ok'],
 };
 </script>
 

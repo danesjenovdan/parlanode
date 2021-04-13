@@ -1,17 +1,7 @@
 {
   "card": {
-    "title": "Primerjalnik glasovanj"
-  },
-  "info": {
-    "text": [
-      "Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.",
-      "Rezultate prikazujemo na tri načine:"
-    ],
-    "list": [
-      "kot seznam vseh glasovanj,",
-      "kot črtni grafikon ki predstavlja število glasovanj na dan,",
-      "kot histogram s seštevki glasovanj glede na matično delovno telo."
-    ]
+    "title": "Primerjalnik glasovanj",
+    "info": "# Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako, da preštejemo za katero opcijo je glasovalo največ poslancev poslanske skupine.\n\nRezultate prikazujemo na tri načine:\n\n* kot seznam vseh glasovanj,\n* kot črtni grafikon ki predstavlja število glasovanj na dan,\n* kot histogram s seštevki glasovanj glede na matično delovno telo."
   },
   "comparator-text": "Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa drugače od njih. {load}",
   "ignore-absent": "Ignoriraj \"odsotne\" glasovnice",
