@@ -1,103 +1,87 @@
-import { defineConfig } from "vite";
-import { readFileSync } from "fs";
-import { resolve } from "path";
-import vue from "@vitejs/plugin-vue";
-import virtual from "@rollup/plugin-virtual";
-// import legacy from "@vitejs/plugin-legacy";
+import { defineConfig, loadEnv } from 'vite';
+import { fileURLToPath } from 'url';
+import { readFileSync } from 'fs';
+import { resolve, dirname } from 'path';
 import glob from 'glob';
+import vue from '@vitejs/plugin-vue';
+import virtual from '@rollup/plugin-virtual';
+import scssFunctions from './scss-functions.js';
 
-const buildClient = readFileSync("./cards/entry-client.js", "utf-8");
+const dir = dirname(fileURLToPath(import.meta.url));
+const root = resolve(dir, '..');
 
-const files = glob.sync('./cards/**/card.json');
-// console.log(files)
+const isSSR = Boolean(process.env.SSR);
+const entryFile = isSSR ? 'card-entry-server.js' : 'card-entry-client.js';
+const entrySource = readFileSync(resolve(dir, entryFile), 'utf-8');
 
-const inputs = files.reduce((prev, curr) => {
-  const cardName = curr.split('/').slice(-3, -1).join('/');
-  prev[cardName] = `entry_${cardName.replace(/\//g, '_')}`;
-  return prev;
+// TODO: build all cards
+// const files = glob.sync('./cards/**/card.json');
+const files = glob.sync('./cards/{person,group,tool}/**/card.json');
+
+const inputs = files.reduce((acc, file) => {
+  const cardName = file.split('/').slice(-3, -1).join('/');
+  acc[cardName] = cardName;
+  return acc;
 }, {});
-console.log(inputs);
 
-const virtuals = files.reduce((prev, curr) => {
-  const cardName = curr.split('/').slice(-3, -1).join('/');
-  prev[`entry_${cardName.replace(/\//g, '_')}`] = buildClient.replace(/{cardName}/g, cardName);
-  return prev;
+const virtuals = files.reduce((acc, file) => {
+  const cardName = file.split('/').slice(-3, -1).join('/');
+  acc[cardName] = entrySource.replace(/{cardName}/g, cardName);
+  return acc;
 }, {});
-// console.log(virtuals)
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  clearScreen: false,
-  // root: './cards/_/simple-test-card',
-  build: {
-    manifest: true,
-    target: "es2015",
-    cssCodeSplit: false,
-    assetsInlineLimit: Number.MAX_SAFE_INTEGER,
-    rollupOptions: {
-      // input: './cards/p/osnovne-informacije/card.vue',
-      // input: {
-      //   "p/osnovne-informacije": "entryPOsnovneInformacije",
-      //   "ps/osnovne-informacije": "entryPSOsnovneInformacije",
-      // },
-      input: {...inputs, index: './cards/index.html'},
-      // output: {
-      //   // inlineDynamicImports: true,
-			// 	manualChunks(id, {getModuleInfo}) {
-      //     if (id.includes('node_modules')) {
-      //       return 'vendor';
-      //     }
+// TODO: this is a hack to ssr render v-t and i18n component
+//       replace this stub with actual plugin/implementation
+const ssrTransformCustomDir = () => {
+  return {
+    props: [],
+    needRuntime: true,
+  };
+};
 
-      //   //   console.log('---START');
-      //   //   console.log(id);
-      //   //   const dependentEntryPoints = [];
-
-      //   //   // we use a Set here so we handle each module at most once. This
-      //   //   // prevents infinite loops in case of circular dependencies
-      //   //   // const idsToHandle = new Set(getModuleInfo(id).dynamicImporters);
-
-      //   //   // for (const moduleId of idsToHandle) {
-      //   //   //   const { isEntry, dynamicImporters, importers } = getModuleInfo(moduleId);
-      //   //   //   if (isEntry || dynamicImporters.length > 0) dependentEntryPoints.push(moduleId);
-
-      //   //   //   // The Set iterator is intelligent enough to iterate over elements that
-      //   //   //   // are added during iteration
-      //   //   //   for (const importerId of importers) idsToHandle.add(importerId);
-      //   //   // }
-      //   //   console.log('isEntry', getModuleInfo(id).isEntry);
-      //   //   console.log('dynamicImporters', getModuleInfo(id).dynamicImporters);
-      //   //   console.log('importers', getModuleInfo(id).importers);
-      //   //   console.log('---END');
-
-      //     return 'everythingelse';
-      //   },
-			// },
+export default defineConfig(({ mode }) => {
+  Object.assign(process.env, loadEnv(mode, root));
+  return {
+    clearScreen: false,
+    root,
+    build: {
+      manifest: true,
+      assetsDir: '',
+      rollupOptions: {
+        input: inputs,
+        output: {
+          inlineDynamicImports: false,
+          entryFileNames: isSSR ? '[name].cjs' : '[name].[hash].js',
+          chunkFileNames: isSSR ? '[name].cjs' : '[name].[hash].js',
+        },
+      },
     },
-  },
-  plugins: [
-    virtual(virtuals),
-    // virtual({
-    //   entryPOsnovneInformacije: buildClient
-    //     .replace(/{cardName}/g, "p/osnovne-informacije"),
-    //   entryPSOsnovneInformacije: buildClient
-    //     .replace(/{cardName}/g, "ps/osnovne-informacije"),
-    // }),
-    vue(),
-    // legacy({
-    //   targets: ["defaults", "not IE 11"],
-    // }),
-  ],
-  resolve: {
-    alias: {
-      // TODO: use ~ and/or @ alias for all of these
-      components: resolve("cards", "_components"),
-      helpers: resolve("cards", "_helpers"),
-      mixins: resolve("cards", "_mixins"),
-      directives: resolve("cards", "_directives"),
-      i18n: resolve("cards", "_i18n"),
-      // 'i18n/card.json$': i18nCardPath,
-      // 'i18n/defaults.json$': i18nDefaultPath,
-      parlassets: resolve("parlassets"),
+    plugins: [
+      vue({
+        template: {
+          compilerOptions: {
+            directiveTransforms: {
+              t: ssrTransformCustomDir,
+              'infinite-scroll': ssrTransformCustomDir,
+              'click-outside': ssrTransformCustomDir,
+            },
+          },
+        },
+      }),
+      virtual(virtuals),
+    ],
+    resolve: {
+      alias: {
+        '@': resolve(root, 'cards'),
+        parlassets: resolve(root, 'parlassets'),
+      },
     },
-  },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          functions: scssFunctions,
+        },
+      },
+    },
+  };
 });

@@ -35,7 +35,8 @@ window.card = createApp({ ...Card, contextData });
 window.card.use(i18n);
 window.card.mount('#card');
 
-// eslint-disable-next-line no-underscore-dangle
-window.card._container.parentElement.className =
-  // eslint-disable-next-line no-underscore-dangle
-  window.card._component.contextData.template.frameContainerClass;
+/* eslint-disable no-underscore-dangle */
+const element = window.card._container.parentElement;
+const { template } = window.card._component.contextData;
+/* eslint-enable no-underscore-dangle */
+element.className = template.frameContainerClass;
