@@ -3,10 +3,17 @@ import path from 'path';
 import { fastify } from 'fastify';
 import fastifyStatic from 'fastify-static';
 
+const createError = (statusCode, error, message) => ({
+  message,
+  error,
+  statusCode,
+});
+
 const server = fastify({ logger: true });
 
 server.register(fastifyStatic, {
   root: path.resolve('./dist/client'),
+  prefix: '/assets/',
 });
 
 const template = fs.readFileSync('./build/card-entry-client.html', 'utf-8');
@@ -18,9 +25,9 @@ const siteMap = fs.readJSONSync('./data/siteMap.default.json');
 const getClientAssets = (cardName) => {
   const assets = new Set();
   const chunk = manifest[`\u0000virtual:${cardName}`];
-  assets.add(chunk.file);
+  assets.add(`/assets/${chunk.file}`);
   if (Array.isArray(chunk.css)) {
-    assets.add(...chunk.css);
+    assets.add(...chunk.css.map((css) => `/assets/${css}`));
   }
   return assets;
 };
@@ -31,7 +38,7 @@ const getRelatedAssets = (modules) => {
     const files = ssrManifest[module];
     if (files) {
       files.forEach((file) => {
-        assets.add(file);
+        assets.add(`/assets${file}`);
       });
     }
   });
@@ -65,6 +72,19 @@ const renderInitialState = (state) => {
 };
 
 const renderCard = async (cardName) => {
+  let render;
+  try {
+    render = (await import(`../dist/server/${cardName}.cjs`)).default.default;
+  } catch (error) {
+    if (error.code !== 'ERR_MODULE_NOT_FOUND') {
+      server.log.error(error);
+      throw error;
+    }
+  }
+  if (!render) {
+    return [createError(404, 'Not Found', `Card ${cardName} not found`)];
+  }
+
   const locale = 'sl'; // TODO: from request
   const [cardData, cardState, i18nDefault, i18nCard] = await Promise.all([
     fs.readJSON(`./cards/${cardName}/data.json`), // TODO: fetch
@@ -72,10 +92,6 @@ const renderCard = async (cardName) => {
     fs.readJSON(`./cards/_i18n/${locale}/defaults.json`), // TODO: preload on start
     fs.readJSON(`./cards/_i18n/${locale}/${cardName}.json`), // TODO: preload on start
   ]);
-
-  const {
-    default: { default: render },
-  } = await import(`../dist/server/${cardName}.cjs`);
 
   const uid = Math.random().toString(36).slice(2);
   const mountId = `${cardName.replace(/\//g, '_')}__${uid}`;
@@ -107,12 +123,18 @@ const renderCard = async (cardName) => {
       contextData.template.frameContainerClass
     );
 
-  return html;
+  return [null, html];
 };
 
-server.get('/test', async (request, reply) => {
-  const html = await renderCard('group/osnovne-informacije');
-  reply.type('text/html').send(html);
+server.get('/:group/:method', async (request, reply) => {
+  const { group, method } = request.params;
+  const cardName = `${group}/${method}`;
+  const [error, html] = await renderCard(cardName);
+  if (!error) {
+    reply.type('text/html').send(html);
+  } else {
+    reply.status(error.statusCode ?? 500).send(error);
+  }
 });
 
 (async () => {
