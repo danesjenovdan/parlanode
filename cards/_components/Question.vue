@@ -30,8 +30,11 @@
     <div v-if="isAnswered" class="question-row progress-row">
       <div class="parlaicon"></div> <!-- just a spacer -->
       <div class="progress-text">
-        <div class="progress-text-left">
+        <div v-if="daysSinceAsked > 0" class="progress-text-left">
           Na pitanje odgovoreno u roku od {{ daysSinceAsked }} dana.
+        </div>
+        <div v-else class="progress-text-left">
+          Na pitanje odgovoreno na aktualnom prijepodnevu.
         </div>
       </div>
     </div>
