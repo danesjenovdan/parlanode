@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Użyte w klubie parlamentarnym"
-  },
-  "info": {
-    "lead": "Częstotliwość użycia szukanej frazy przez klub parlamentarny.",
-    "text": "Dla każdej szukanej frazy liczymy, ile razy pojawia się w wystąpieniach posłów. Podsumowujemy wyniki ze względu na klub parlamentarny i przedstawiamy na wykresie kołowym."
-  }
-}

@@ -1,0 +1,14 @@
+card:
+  title: Słowa, które charakteryzują posiedzenie
+  info: >-
+    # Lista 10 słów i wyrażeń, które były używane częściej podczas tego
+    posiedzenia niż podczas innych posiedzeń.
+
+
+    Używamy następujących statystyk
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) do przeprowadzania
+    analiz.
+
+
+    Korpus prezentuje wszystkie wystąpienia, a dokument odnosi się do wszystkich
+    wystąpień podczas danego posiedzenia.

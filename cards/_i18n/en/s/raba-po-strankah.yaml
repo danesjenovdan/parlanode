@@ -1,0 +1,8 @@
+card:
+  title: Use by parliamentary groups
+  info: >-
+    # Frequency of use of searched query by parliamentary group.
+
+
+    For every searched query we count the number of times it appears in MPs'
+    speeches. The results are displayed in a pie chart by parliamentary groups.

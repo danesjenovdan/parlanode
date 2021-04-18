@@ -1,0 +1,28 @@
+card:
+  title: Parliamentary compass
+  info: >-
+    # All MPs are positioned in a coordinate space by how similar their voting
+    patterns are. The further apart two MPs are the greater the discord in their
+    voting patterns.
+
+
+    For each MP we gather information about their voting history (or times when
+    they where absent). We compare each MP's voting history with the voting
+    history of all other MPs and we count how many times each two MPs voted the
+    same. Results are represented in a two dimensional matrix (columns and lines
+    are MPs, Xi,j value represents the number of times two MPs voted the same -
+    MPs are marked as i and j). Then the matrix is split into sub-matrices each
+    holding their respective value. 
+
+
+    The algorithm returns three matrices - u, s and V-transpose. The best way to
+    think about V-transpose is as a new selection of MPs' coordinates. We select
+    the two coordinates from V-transpose that explain the previous matrix the
+    best and visualise them in a two dimensional coordinate system.
+
+
+    The first matrix is best described as representing MPs in an N-dimensional
+    space (N is the number of voting events that are being compared). The
+    algorithm maps N dimensions to 2 dimensions, with the priority of
+    maintaining the distance between the MPs. Further apart the two MPs, greater
+    the difference in their voting history.

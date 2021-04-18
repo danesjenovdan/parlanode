@@ -1,0 +1,13 @@
+card:
+  title: Słowa, które charakteryzują posła
+  info: >-
+    # Lista 10 słów i zwrotów, które poseł używa częściej niż reszta posłów w
+    Sejmie.
+
+
+    Używamy następujących statystyk
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) do przeprowadzania analiz.
+
+
+    Korpus prezentuje wszystkie przemowy, a dokument odnosi się do wszystkich
+    wystąpień posła/posłanki.

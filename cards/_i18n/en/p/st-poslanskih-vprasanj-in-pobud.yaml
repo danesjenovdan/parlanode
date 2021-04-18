@@ -1,0 +1,9 @@
+card:
+  title: Number of parliamentary questions and initiatives
+  info: >-
+    # The number of parliamentary questions and initiatives by the MP in this
+    sitting of the National Assembly compared to the average and maximum value.
+
+
+    Data is retrieved from the web site [National Assembly of the Republic of
+    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/).

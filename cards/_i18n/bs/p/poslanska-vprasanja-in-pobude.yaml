@@ -1,0 +1,9 @@
+card:
+  title: Zastupnička pitanja i inicijative
+  info: >-
+    # Prikaz svih zastupničkih pitanja i inicijativa koje je zastupnik postavio
+    u tom sazivu Parlamenta.
+
+
+    Podaci se preuzimaju s web stranice [Parlament
+    BiH](http://parlament.ba/oQuestion/GetORQuestions).

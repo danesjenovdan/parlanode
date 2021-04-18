@@ -1,0 +1,11 @@
+card:
+  title: Lista posłów
+  info: >-
+    # Zestawienie wszystkich obecnie aktywnych posłów, odpowiadający zapytaniu
+    użytkownika ({parties}; {districts}). Lista jest uszeregowana według
+    {sortBy}.
+
+
+    Kolumna "Analiza" odzwierciedla wynik sumaryczny, a kolumna "Zmiana"
+    odzwierciedla różnicę w porównaniu do poprzednich danych, które zostały
+    zebrane. Kolumna "Zmień" jest odświeżana pod koniec każdego posiedzenia.

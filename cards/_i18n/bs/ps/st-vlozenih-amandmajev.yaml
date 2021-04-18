@@ -1,0 +1,11 @@
+card:
+  title: Br. podnesenih amandmana
+  info: >-
+    # Br. amandmana koje je uložio odabrani klub u poređenju sa prosjekom i
+    maksimalnom vrijednosti među svim klubovima.
+
+
+    Identificiramo broj zastupnika u klubu tako što izbrojimo sve trenutno
+    aktivne članove kluba. Informacije o aktivnosti zastupnika se dobijaju sa
+    web stranica [Parlament
+    BiH](http://parlament.ba/Content/Read/64?title=KluboviposlanikauPredstavni%C4%8Dkomdomu).

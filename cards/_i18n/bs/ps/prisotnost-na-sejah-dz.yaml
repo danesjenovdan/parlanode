@@ -1,0 +1,11 @@
+card:
+  title: Prisutnost
+  info: >-
+    # Prisutnost kluba na sjednicama Parlamenta BiH u odnosu na prosječnu i
+    maksimalnu vrijednost.
+
+
+    Za svaku sjednicu i svaki klub provjerava se koliko je članova barem jednom
+    govorilo i/ili glasalo na sjednici. Kad se sve sjednice saberu, dobiveni
+    rezultat dijeli se s brojem sjednica i množi s brojem zastupnika u klubu.
+    Rezultat se na kraju normalizira (min 1 - max 100).

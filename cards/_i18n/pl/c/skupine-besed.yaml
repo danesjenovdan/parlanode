@@ -1,0 +1,12 @@
+card:
+  title: Grupy słów
+  info: >-
+    # Karta obrazuje, który mówca, którego klubu parlamentarnego absolutnie i
+    relatywnie najwięcej mówi o określonym temacie lub przy użyciu określonej
+    grupy słów.
+
+
+    Liczymy ile razy mówca wypowiedział co najmniej dwie szukane frazy. Ci,
+    którzy wypowiedzieli je przynajmniej raz, są uszeregowani zgodnie z liczbą
+    wystąpień podzieloną przez liczbę wszystkich wystąpień tego mówcy lub klubu
+    parlamentarnego oraz całkowitą liczbę wszystkich wystąpień.

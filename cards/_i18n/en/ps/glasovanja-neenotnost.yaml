@@ -1,0 +1,14 @@
+card:
+  title: 'List of voting events according to '
+  info: >-
+    # A list of all voting events in the National Assembly, corresponding to
+    user query ({text}), for selected committees responsible ({wbs}), sorted by
+    {sortBy}.
+
+
+    Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila
+    objavljena na spletnem mestu [National Assembly of the Republic of
+    Slovenia](http://www.dz-rs.si) ter ustrezajo uporabniškemu vnosu.
+
+
+    The results are sorted either by discord or by date.

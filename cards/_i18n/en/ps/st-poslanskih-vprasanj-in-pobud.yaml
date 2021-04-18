@@ -1,0 +1,9 @@
+card:
+  title: The number of parliamentary questions and initiatives
+  info: >-
+    # We count all the parliamentary questions and initiatives by the
+    parliamentary group's MPs in this sitting of the National Assembly.
+
+
+    Data is retrieved from web site [National Assembly of the Republic of
+    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/).

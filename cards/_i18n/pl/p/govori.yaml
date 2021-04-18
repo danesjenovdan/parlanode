@@ -1,0 +1,11 @@
+card:
+  title: Wystąpienia
+  info: >-
+    # Zestawienie linków do wszystkich wystąpień w tym posiedzeniu, zgodnie z
+    zapytaniem użytkownika, ułożone wedle dat.
+
+
+    Załączamy linki do wszystkich wystąpień wybranego posła, uzyskanych ze
+    strony internetowej Sejmu Rzeczypospolitej Polskiej, a następnie wyświetlamy
+    te, które odpowiadają zapytaniu użytkownika (okres czasu, rodzaj
+    posiedzenia).

@@ -1,0 +1,25 @@
+card:
+  title: Najrzadziej głosują tak samo
+  info: >-
+    # Lista 5 posłów, którzy najrzadziej głosują tak samo jak "głos klubu
+    parlamentarnego". Sklasyfikowano w kolejności malejącej. Im większa wartość,
+    tym mniejsze dopasowanie głosów.
+
+
+    Obliczamy odległość euklidesową pomiędzy wynikami głosowania klubu
+    parlamentarnego i głosami wszystkich innych posłów (przy czym wartość
+    oddanych głosów konwertujemy do wartości liczbowych pomiędzy -1 i 1).
+
+
+    Podczas obliczania "odległości" pomiędzy wszystkimi posłami, klasyfikujemy
+    ich zgodnie z wynikiem i pokazujemy pierwszą piątkę.
+
+
+    Wartości liczbowe głosów
+
+
+    * -1: przeciw
+
+    * 0: wstrzymał/a się lub nie jest obecny/a
+
+    * 1: za

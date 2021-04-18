@@ -1,0 +1,13 @@
+card:
+  title: Prosječan broj govora po sjednici
+  info: >-
+    # Prosječan broj govora zastupnika po sjednici u odnosu na prosječnu i
+    maksimalnu vrijednost.
+
+
+    Prebroje se govori zastupnika, preuzeti iz stenograma [Parlament
+    BiH](http://parlament.ba/session/Read?ConvernerId=1), i broj se podijeli s
+    brojem sjednica na kojima je zastupnik bio prisutan. Broj svih govora
+    najprije se dijeli s brojem zastupnika, a zatim s brojem svih sjednica (na
+    kojima se raspravljalo). Individualni rezultat uspoređujemo s prosječnim i
+    maksimalnim vrijednostima.

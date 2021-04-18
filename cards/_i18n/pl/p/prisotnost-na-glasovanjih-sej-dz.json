@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Obecność na głosowaniach Sejmu RP"
-  },
-  "info": {
-    "lead": "Obecność posła/posłanki na głosowaniach w porównaniu do wartości średniej i maksymalnej.",
-    "text": "Liczymy wszystkie oddane przez posła głosy i dzielimy je przez liczbę wszystkich głosowań, w których powinien uczestniczyć poseł. Wynik jest ukazany razem ze średnią i maksymalną wartością."
-  }
-}

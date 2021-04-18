@@ -1,0 +1,460 @@
+card-errored: Pri nalaganju kartice je prišlo do napake.
+card-in-development: Ta kartica je še v razvoju.
+under-consideration: Currently in procedure
+recently-passed: Recently passed
+most-discussed: Največ reakcij
+all-legislation: All legislation
+select-mps: Choose MPs
+selected-mps: 'Chosen: {num}'
+search_placeholder: Search
+trigger: trigger
+match: match
+interval: interval
+email: email
+add_trigger: Add a trigger
+add: Add
+continue: Next
+back: Back
+confirm_trigger: Confirm the trigger
+add_new_trigger: Add new trigger
+steps:
+  - textfirst: Set a trigger for a word or a phrase you want to be notified about.
+    textsecond: >-
+      You will get an email notification not long after the word or the phrase
+      is used in the House of Commons.
+  - textfirst: Chose the match
+    firstbullet: 'exact match:'
+    secondbullet: 'broad match:'
+  - textfirst: How often do you want to be notified?
+    textsecond: as it happens
+    textthird: maximum once per day
+    textfourth: maximum once per week
+  - textfirst: The last thing we need is your email address
+  - textfirst: Confirmed!
+    textsecond: To email address
+    textthird: subscription to Parlameter notifications for key word sent
+    textfourth: Check your inbox!
+events:
+  event: as it happens
+  day: maximum once per day
+  week: maximum once per week
+modes:
+  precise: 'exact match:'
+  broad: 'broad match:'
+comparator-text: >-
+  I want to know, when {same} voted the same, but {different} voted differently.
+  {load}
+ignore-absent: Ignore "absent" votes
+comparator-vote-percent: '{num} filtered voting events represents {percent} of all voting events.'
+tabs:
+  vote-list: List of voting events
+  time-chart: Timeline
+  bar-chart: Working body dynamics
+select-parties-people: Select parliamentary groups or add individual MPs.
+empty-state-text: To view voting events add at least two agents.
+speakers: Speakers
+input-words: Enter a word or multiple words separated by a comma.
+empty-text: To view results add at least two words.
+wordgroups-text: 'Show me who talks about the most: {words} {load}'
+show-relative: Display relative metric
+select-working-body-placeholder: Select working body
+only-abstracts: Only with abstracts
+only-with-votes: Only with votes
+icon: Icon
+exposed: Izpostavljeno
+create-commentality: Ustvari na Commentality
+edit-info: Edit information
+only-parties: Only parliamentary groups
+edit-memberships: Edit membership
+only-current: Only current
+add-member: Add a member
+edit-membership: Edit membership
+save-membership: Save membership
+member: Member
+add-membership: Add membership
+only-mps: MPs only
+display-name: Name to display
+update-session: Update session
+tags: Tags
+add-tag: Add a tag
+votes: Votes
+'yes': 'YES'
+'no': 'NO'
+copy: Copy
+copied: Copied!
+load: Load
+confirm: Confirm
+data-currently-unavailable: Data currently unavailable.
+data-not-published:
+  link-text: Opozori jih tukaj!
+  link-url: http://example.com/
+  data-not-available: Parlament teh podatkov ne objavlja.
+  show-of-hands: Parlament ne objavlja poimenskih rezultatov glasovanja z dvigom rok.
+  parlamentary-questions: Parlament ne objavlja poslanskih vprašanj in pobud.
+search: Išči
+title-search: Search by title
+contents-search: Search by content
+working-body: Working body responsible
+vote-types: Vote types
+select-placeholder: Choose
+selected-placeholder: 'Chosen: {num}'
+data: Podatki
+name: Name
+epa: Government ID
+change: Change
+status: Status
+result: Result
+age: Age
+education-level: Educational level attained
+education: Education
+number-of-votes: Number of votes
+number-of-points: Število točk
+number-of-terms: Number of terms of office
+previous-occupation: Previous status
+district: District
+birth-date: Date of birth
+gender: Spol
+social-media: Social media
+analysis: Analysis
+vote-passed: Passed
+vote-not-passed: Rejected
+vote-under-consideration: Under procedure
+vote-unknown: Neznano
+vote-result--enacted: Passed
+vote-result--submitted: Submitted
+vote-result--rejected: Rejected
+vote-result--retracted: Retracted
+vote-result--adopted: Passed
+vote-result--received: Received
+vote-result--in_procedure: In procedure
+average: Average
+maximum: Most
+coalition: coalition
+opposition: opposition
+vote-for: For
+vote-against: Against
+vote-abstain: Abstained
+vote-abstain--m: Abstained
+vote-abstain--f: Abstained
+vote-abstain-plural: Abstained
+vote-absent: Absent
+vote-absent-plural: Absent
+vote-no-majority: No majority vote
+voted-for--f: Voted FOR
+voted-for--m: Voted FOR
+voted-for--plural: Voted FOR
+voted-against--f: Voted AGAINST
+voted-against--m: Voted AGAINST
+voted-against--plural: Voted AGAINST
+voted-abstain--f: Abstained from voting on
+voted-abstain--m: Abstained from voting on
+voted-abstain--plural: Abstained from voting on
+voted-absent--f: Was absent at
+voted-absent--m: Was absent at
+voted-absent--plural: Didn't vote on
+sort-by: Order by
+sort-by--inequality: Discord
+sort-by--date: Date
+filtered-to-none: Brez zadetkov
+mps: MPs
+party: Parliamentary group
+parties: Parliamentary groups
+time-period: Time frame
+session-type: Session type
+no-results: No hits.
+no-speeches: No speeches.
+no-abstract: We apologise there is no summary for this law.
+present--f: Present
+present--m: Present
+present--plural: Present
+absent--f: Absent
+absent--m: Absent
+absent--plural: Absent
+no-term: No mandate
+inequality: Discord
+everybody: All
+show: Show
+full-speech: Whole speech
+session-processing: Session is being processed.
+organization: Organisation
+start: Beginning
+legislation: Legislation
+laws: Laws
+acts: Acts
+votings: Voting events
+save: Save
+save-all: Shrani vse
+saved: Shranjeno
+generate: Generate
+edit-abstract: Edit summary
+abstract: Povzetek
+acronym: Kratica
+classification: Klasifikacija
+info:
+  title: Info
+  methodology: METHODOLOGY
+share:
+  title: Share
+  direct-link: Direct link to card
+embed:
+  title: Embed
+  always-refresh: Data should keep refreshing
+previous:
+  title: Previous versions
+membership-list:
+  no-memberships: No memberships.
+style-scores:
+  elevated-vocabulary: Elevated speech
+  simple-vocabulary: Simple speech
+  excessive-vocabulary: Excessive speech
+question:
+  asked--m: Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.
+  asked--f: Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.
+  asked--plural: Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.
+  asked--with-name--m: >-
+    {name} je zastavil vprašanje {title}, na katerega mora odgovoriti
+    {recipient}.
+  asked--with-name--f: >-
+    {name} je zastavila vprašanje {title}, na katerega mora odgovoriti
+    {recipient}.
+  asked--with-name--plural: >-
+    {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
+    {recipient}.
+event:
+  ballot--for--m: Voted FOR {title}
+  ballot--for--f: Voted FOR {title}
+  ballot--against--m: Voted AGAINST {title}
+  ballot--against--f: Voted AGAINST {title}
+  ballot--absent--m: Was ABSENT at {title}
+  ballot--absent--f: Was ABSENT at {title}
+  ballot--abstain--m: ABSTAINED from voting on {title}
+  ballot--abstain--f: ABSTAINED from voting on {title}
+  speech--m: Spoke at {session} {org}
+  speech--f: Spoke at {session} {org}
+months:
+  - January
+  - February
+  - March
+  - April
+  - May
+  - June
+  - July
+  - August
+  - September
+  - Oktober
+  - November
+  - December
+vote_types:
+  agenda: agenda
+  whole_law: vote about the law in its entirety
+  amendment: amendment
+  no_confidence: Vote of no-confidence
+  record_conclusion: evidenčni sklep
+  conclusion_proposal: predlog sklepa
+  ratification: zakon o ratifikaciji
+  naming: imenovanje
+  call_proposal: predlog za razpis
+  recommendation: priporočilo
+  report: poročilo
+  procedural_proposal: proceduralni predlog
+  personal_property_decree: odlok o načrtu ravnanja s stvarnim premoženjem
+  other: other
+tools:
+  notifications: Parlameter notifications
+  vote-comparator: Vote comparator
+  discord: Discord analysis
+  compass: Parliamentary compass
+  word-groups: Word groups
+frame:
+  show-in-context: Show card in the context of this web page
+ogText: >-
+  Parlameter analyses voting and speeches in the parliament to help you monitor
+  your politicians.
+committees: Delovna telesa
+councils: Delovna telesa
+commissions: Delovna telesa
+delegations: Druga članstva
+friendship_groups: Druga članstva
+investigative_comissions: Preiskovalne komisije
+elected-to-district: 'Št. glasov: {numVotes}, {district}'
+elected-to-district--m: Prejel {numVotes} glasov v okraju {district}
+elected-to-district--f: Prejela {numVotes} glasov v okraju {district}
+elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
+elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
+age--years: '{age} years'
+no-social-media: no social media.
+select-district-placeholder: Select district
+select-parties-placeholder: Select parliamentary group
+all-parties: all parliamentary groups
+all-voting-districts: all electoral districts
+missing-district: the district is not entered
+voting-district: electoral district
+sort-by--name: alphabet
+sort-by--district: district
+sort-by--party: parliamentary groups
+sort-by--analysis: analysis results {analysis}
+sort-by--change: an update of the results of the analysis {analysis}
+sort-by--age: age
+sort-by--education: level of education
+sort-by--terms: number of terms of office
+analysis-texts:
+  demographics:
+    label: Demographics
+  presence_votes:
+    label: Attendance at voting events
+    titleSuffix: ' attendance at voting events in the National Assembly'
+    explanation: >-
+      The number of voting events where the representative was present is
+      divided by the number of all voting events and normalised (min 1-max 100).
+  number_of_questions:
+    label: Number of parliamentary questions
+    titleSuffix: ' the number of parliamentary questions and initiatives'
+    explanation: >-
+      The number of parliamentary questions and initiatives by the MP in this
+      sitting of the National Assembly compared to the average and maximum
+      value.
+  speeches_per_session:
+    label: Number of speeches per session
+    titleSuffix: ' no. speeches at the session'
+    explanation: >-
+      We count the MP's speeches and divide it by the number of sessions where
+      the MP spoke. We divide the number of all speeches first by the number of
+      all the MPs and then by the number of all sessions (where speeches were
+      made). We compare the individual result with the average and maximum
+      values.
+  spoken_words:
+    label: Number of spoken words
+    titleSuffix: ' no. spoken words'
+    explanation: >-
+      The number of words by the MEP said in all his previous speeches in the
+      DZ.
+  mismatch_of_pg:
+    label: Deviation from the parliamentary group
+    titleSuffix: ' deviation from the parliamentary group'
+    explanation: Derogation from the majority voice of ballots group in the DZ.
+all-votes: all voting events
+all-working-bodies: all committees responsible
+everyone: All
+parliament: parliament
+analysis-not-available: Ta analiza ni na voljo.
+party-leader-m: Leader
+party-leader-f: Leader
+deputy-leader-m: Deputy
+deputy-leader-f: Deputy
+number-of-seats: 'Number of seats in the parliament:'
+contact: 'Contact:'
+mp: MP
+addressee: Addressed to
+analysis-texts--party:
+  seat_count:
+    label: Number of seats
+    titleSuffix: ' number of seats'
+    explanation: >-
+      We get the number of seats for a parliamentary group by counting all of
+      their active members.
+  presence_sessions:
+    label: Attendance at sessions
+    titleSuffix: ' the results of the analysis with the presence of the DZ'
+    explanation: >-
+      We count all the sessions and check every member of that parliamentary
+      group if they voted at least once at that session. In case they voted at
+      least once, they are counted as present. The sum of all attendance is
+      divided with the number of representatives in the parliamentary group,
+      this result is then divided with the number of sessions and normalised
+      (min 1 - max 100).
+  presence_votes:
+    label: Attendance at voting events
+    titleSuffix: ' the results of the analysis with the presence at voting events'
+    explanation: >-
+      We count all the voting events as well as the number of representatives
+      from the parliamentary group was present at any given voting. The sum of
+      all submitted ballots is divided with the number of representatives in the
+      parliamentary group and the number of votings. The result is then
+      normalised (min 1 - max 100).
+  number_of_questions:
+    label: Number of parliamentary questions
+    titleSuffix: ' number of MPs'' questions'
+    explanation: >-
+      We count all the parliamentary questions and initiatives by the
+      parliamentary group's MPs in this sitting of the National Assembly.
+  number_of_amendments:
+    label: Št. vloženih amandmajev
+    titleSuffix: ' glede na rezultate analize po št. vloženih amandmajev'
+    explanation: ''
+  intra_disunion:
+    label: Neenotnost glasovanj
+    titleSuffix: ' glede na neenotnost glasovanj'
+    explanation: ''
+  vocabulary_size:
+    label: Vocabulary strength
+    titleSuffix: ' vocabulary strength'
+    explanation: >-
+      We count all unique words in an MP's speech. Then we count the number of
+      occurrences or this words. We join them based on the number of
+      occurrences. In the end we calculate a coefficient best explained with an
+      example: For the phrase "Today is a new day and today is a day for
+      Parlameter" the result is 7 / ((3*2^2) + (4*1^2)) = 0,4375<br><br>We sum
+      the individual results for every parliamentary group and divide it with
+      the number of representatives in the group. We divide individual sums with
+      the common sum and normalise (min 1 - max 100).
+  privzdignjeno:
+    label: Elevated speech
+    titleSuffix: ' elevated speech'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Privzdignjeno besedje<br>Kvalifikatorji iz
+      SSKJ<br>evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.),
+      knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>Kvalifikatorji
+      iz SNB<br>/<br><br>Za vsako poslansko skupino seštejemo rezultate
+      poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
+      s skupnim seštevkom in normaliziramo (min 1 - max 100).
+  preprosto:
+    label: Simple speech
+    titleSuffix: ' simple speech'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Preprosto besedje<br>Kvalifikatorji iz SSKJ<br>narečno
+      (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>Kvalifikatorji
+      iz SNB<br>pogovorno (pog.)<br><br>Za vsako poslansko skupino seštejemo
+      rezultate poslancev in delimo s številom poslancev v njej. Posamezne
+      seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).
+  problematicno:
+    label: Excessive speech
+    titleSuffix: ' excessive speech'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Ekscesno besedje<br>Kvalifikatorji iz SSKJ
+      <br>vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično
+      (iron.), otroško (otr.) <br>Kvalifikatorji iz SNB<br>slabšalno (slabš.),
+      vulgarno (vulg.)<br><br>Za vsako poslansko skupino seštejemo rezultate
+      poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
+      s skupnim seštevkom in normaliziramo (min 1 - max 100).
+accepted: passed
+rejected: not passed
+gov-side: Government or Opposition
+summary: Summary
+all-mps: All MPs
+whole-term: The whole term of office
+last-year: Previous year
+limited-to-last-five: ', the list is limited to top five sessions'
+just-last-five: Only the last 5
+sort-by--updated: date when last update was made
+sort-by--workingBody: name of the organisation
+title: Name
+other-procedures: Drugi postopki

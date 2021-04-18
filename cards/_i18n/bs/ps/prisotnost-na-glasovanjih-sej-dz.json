@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Prisutnost na glasanjima"
-  },
-  "info": {
-    "lead": "Prisutnost kluba na glasanjima na sjednicama Parlamenta BiH u odnosu na prosječnu i maksimalnu vrijednost.",
-    "text": "Broj glasanja, ako je klub prisutan na sjednici, podijeli se s brojem svih glasanja na sjednici i normalizira (min 1 - max 100)."
-  }
-}

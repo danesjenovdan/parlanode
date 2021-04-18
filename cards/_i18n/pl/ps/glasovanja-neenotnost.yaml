@@ -1,0 +1,14 @@
+card:
+  title: 'Lista głosowań według '
+  info: >-
+    # Lista wszystkich głosowań Sejmu RP, odpowiadających zapytaniom użytkownika
+    ({text}), dla wybranych odpowiedzialnych komisji ({wbs}), uszeregowanych
+    według {sortBy}.
+
+
+    Lista wszystkich głosowań, które odbyły się w aktualnym posiedzeniu sejmu i
+    które zostały zamieszczone na stronie [Sejm RP](http://www.sejm.gov.pl/) i
+    odpowiadają zapytaniu użytkownika.
+
+
+    Wyniki są sklasyfikowane według rozbieżności danego organu lub według daty.

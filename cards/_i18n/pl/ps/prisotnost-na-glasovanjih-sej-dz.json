@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Obecność na głosowaniach"
-  },
-  "info": {
-    "lead": "Obecność klubu parlamentarnego w głosowaniach w porównaniu do wartości średniej i maksymalnej.",
-    "text": "Liczba głosowań, jeśli klub parlamentarny był obecny, jest dzielona przez liczbę wszystkich głosowań i normalizowana (min 1-max 100)."
-  }
-}

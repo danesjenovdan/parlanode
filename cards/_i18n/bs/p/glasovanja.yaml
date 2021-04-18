@@ -1,0 +1,12 @@
+card:
+  title: Glasanja
+  info: >-
+    # Pregled svih glasanja na sjednici.
+
+
+    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
+    SUZDRŽANA) i broj zastupnika koji nisu glasali i ispišu rezultati.
+
+
+    Zbirka glasanja preuzima se s web stranica Parlamenta BiH [Parlament
+    BiH](http://parlament.ba/session/Read?ConvernerId=1).

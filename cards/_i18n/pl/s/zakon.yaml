@@ -1,0 +1,11 @@
+card:
+  title: Ustawa
+  info: >-
+    # Abstrakt ustawy lub aktu prawnego i wszystkich powiązanych z nim głosowań.
+
+
+    Pobieramy głosowania z odpowiednim numerem identyfikacyjnym z
+    [www.sejm.gov.pl](http://www.sejm.gov.pl/). Głosowania dotyczące tego samego
+    numeru identyfikacyjnego są łączone razem i powiązane z odpowiednią ustawą
+    lub aktem prawnym. Karta zawiera również streszczenie ustawy, które jest
+    przez nas przygotowane.

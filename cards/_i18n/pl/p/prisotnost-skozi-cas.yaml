@@ -1,0 +1,11 @@
+card:
+  title: Obecność na głosowaniach Sejmu RP w czasie
+  info: >-
+    # Obecność posła/posłanki na głosowaniach Sejmu RP w czasie.
+
+
+    Każdego miesiąca liczymy wszystkie karty do głosowania oddane przez
+    posła/posłankę i dzielimy je przez liczbę wszystkich głosowań w danym
+    miesiącu, w których poseł/posłanka powinien/powinna uczestniczyć. W
+    przypadkach, gdy poseł/posłanka nie miał/a mandatu w wybranym miesiącu,
+    pokazujemy procent głosów, w których nie miał/a on/a prawa głosu.

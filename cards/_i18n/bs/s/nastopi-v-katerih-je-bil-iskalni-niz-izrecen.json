@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Nastupi u kojima je pretraživani niz izgovoren"
-  },
-  "info": {
-    "lead": "Lista linkova do svih govora koji sadrže pretraživani niz.",
-    "text": "Prema stenogramima svih sjednica pretražuju se i prikazuju linkovi na sve govore u kojima se pojavljuje pretraživani niz, razvrstani po datumu od najnovijeg do najstarijeg. Obuhvaćenu skupinu zastupnika određuje korisnički izbor filtera, prema vremenskom razdoblju, izabranom zastupniku, klubu ili sjednici."
-  }
-}

@@ -1,0 +1,10 @@
+card:
+  title: Najczęściej używane pojęcie
+  info: >-
+    # Lista 5 posłów, którzy używali szukanej frazy najczęściej, uszeregowana od
+    nawiększej do najmniejszej wartości.
+
+
+    Liczymy, ile razy każdy poseł użył szukanej frazy. Szeregujemy wszystkich
+    posłów, którzy używali szukanej frazy co najmniej raz. Pokazujemy pięciu,
+    którzy mają najwyższy wynik.

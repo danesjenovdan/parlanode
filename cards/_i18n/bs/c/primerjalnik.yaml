@@ -1,0 +1,16 @@
+card:
+  title: Usporedba glasanja
+  info: >-
+    Kartica prikazuje sva glasanja koja odgovaraju odabranim uslovima. Kada se
+    uspoređuju klubovi koristi se izračunata većina glasova dobivena tako da se
+    prebroji za koju je opciju glasao najveći broj zastupnika iz istog kluba.
+
+
+    Rezultati su prikazani na tri načina:
+
+
+    * kao popis svih glasova,
+
+    * kao linijski grafikon koji predstavlja broj glasova dnevno,
+
+    * kao histogram s ukupnim brojem glasova u odnosu na matično radno tijelo.

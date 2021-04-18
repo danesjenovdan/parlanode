@@ -1,0 +1,17 @@
+card:
+  title: Vote comparator
+  info: >-
+    The card displays all voting events that match selected criteria. When
+    comparing parliamentary groups it calculates the majority vote by counting
+    the number of votes for each option and selecting the one with the highest
+    number of votes.
+
+
+    Results are displayed in three ways:
+
+
+    * as a list of all voting events,
+
+    * as a line chart that shows the number of votes on any given day,
+
+    * as a histogram showing sums of votes based on working bodies.

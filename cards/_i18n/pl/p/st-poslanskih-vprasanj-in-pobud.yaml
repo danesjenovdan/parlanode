@@ -1,0 +1,9 @@
+card:
+  title: Liczba poselskich zapytań i inicjatyw
+  info: >-
+    # Liczba zapytań i inicjatyw poselskich podejmowanych przez posła na tym
+    posiedzeniu Sejmu RP w porównaniu ze średnią i maksymalną wartością.
+
+
+    Dane są pobrane ze strony internetowej [Sejm
+    RP](http://www.sejm.gov.pl/Sejm8.nsf/interpelacje.xsp).

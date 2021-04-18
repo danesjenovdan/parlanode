@@ -1,0 +1,11 @@
+card:
+  title: Głosowania, które zawierają szukaną frazę
+  info: >-
+    # Przegląd wszystkich głosowań, które zawierają szukaną frazę, uszeregowane
+    chronologicznie.
+
+
+    Spośród głosowań we wszystkich posiedzeniach, znajdujemy i wyświetlamy linki
+    do wszystkich głosowań, w których pojawia się szukana fraza, a następnie
+    sortujemy według daty (od najnowszej do najstarszej) oraz podobieństwa z
+    szukaną frazą.

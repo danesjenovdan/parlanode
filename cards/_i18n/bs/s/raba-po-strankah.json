@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Korištenje u klubovima"
-  },
-  "info": {
-    "lead": "Pregled učestalosti pojavljivanja pretraživanog niza u govorima ovisno o klubu.",
-    "text": "Za svaki pronađeni pretraživani niz provjeri se u koliko se govora zastupnica i zastupnika kluba pojavljuje. Rezultat se sabira s obzirom na klub i prikazuje u kružnom grafikonu."
-  }
-}

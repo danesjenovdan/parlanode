@@ -1,0 +1,13 @@
+card:
+  title: Słowa, które charakteryzują klub
+  info: >-
+    # Lista 10 słów i zwrotów, które klub parlamentarny używa częściej niż
+    reszta klubów w Sejmie.
+
+
+    Używamy następujących statystyk do przeprowadzania analiz
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+
+
+    Korpus przedstawia wszystkie wystąpienia, a dokument odnosi się do
+    wszystkich wystąpień członków klubu parlamentarnego.

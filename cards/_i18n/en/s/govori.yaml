@@ -1,0 +1,7 @@
+card:
+  title: Transcript
+  info: >-
+    We mechanically break up transcripts of sessions, published as an HTML
+    document on the web page [National Assembly of the Republic of
+    Slovenia](http://www.dz-rs.si), into separate speeches. Speeches are then
+    combined in their original order in a card transcript.

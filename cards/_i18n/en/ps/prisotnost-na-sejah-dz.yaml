@@ -1,0 +1,12 @@
+card:
+  title: Attendance at the National Assembly sessions
+  info: >-
+    # Parliamentary groups's attendance at the National Assembly sessions
+    compared to average and maximum value.
+
+
+    For each session and for each parliamentary group we count the number of MPs
+    who voted or spoken at least once per session. When all sessions are added
+    together we divide the result by the number of all sessions times the number
+    of MPs in the parliamentary group. The result is then normalised (min 1 -
+    max 100).

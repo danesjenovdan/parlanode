@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Prisutnost na glasanjima"
-  },
-  "info": {
-    "lead": "Prisutnost na glasanjima u odnosu na prosječnu i maksimalnu vrijednost.",
-    "text": "Prebroje se svi glasovi zastupnika i taj broj se podijeli sa zbirom svih glasanja sa sjednica na kojima se moralo glasati. Rezultat se ispiše skupa s prosječnom i maksimalnom vrijednošću."
-  }
-}

@@ -1,0 +1,10 @@
+card:
+  title: Obecność na głosowaniach Sejmu RP
+  info: >-
+    # Obecność posła/posłanki na głosowaniach w porównaniu do wartości średniej
+    i maksymalnej.
+
+
+    Liczymy wszystkie oddane przez posła głosy i dzielimy je przez liczbę
+    wszystkich głosowań, w których powinien uczestniczyć poseł. Wynik jest
+    ukazany razem ze średnią i maksymalną wartością.

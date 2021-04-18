@@ -1,6 +1,0 @@
-{
-  "card": {
-    "title": "Najmanjkrat glasujejo enako",
-    "info": "# Seznam 5 poslancev, ki najmanjkrat glasujejo enako kot izbrani/-a poslanec/-ka. Poslanci so razvrščeni glede na vrednosti od največje proti najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.\n\nIzračunamo [evklidsko razdaljo](https://en.wikipedia.org/wiki/Euclidean_distance) med rezultati poslančevih/-kinih glasovanj in rezultati vseh ostalih (pri čemer vrednosti glasov pretvorimo v številčne vrednosti med -1 in 1).\n\nKo izračunamo \"razdaljo\" med vsemi poslanci, jih razvrstimo glede na rezultat in prikažemo zadnjih oz. najbolj oddaljenih pet.\n\nŠtevilčne vrednosti glasov\n\n* -1: proti\n* 0: vzdržan/-a ali ni prisoten/-na\n* 1: za"
-  }
-}

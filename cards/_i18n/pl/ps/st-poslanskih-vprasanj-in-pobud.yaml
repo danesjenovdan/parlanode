@@ -1,0 +1,9 @@
+card:
+  title: Liczba poselskich zapytań i inicjatyw
+  info: >-
+    # Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków danego
+    klubu parlamentarnego w trakcie tego posiedzenia Sejmu RP.
+
+
+    Dane pochodzą ze strony internetowej [Sejm Rzeczypospolitej
+    Polskiej](http://www.sejm.gov.pl/Sejm8.nsf/agent.xsp?symbol=Zapstat2&Nrkadencji=8).

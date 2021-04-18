@@ -1,0 +1,11 @@
+card:
+  title: Prisutnost
+  info: >-
+    # Prisutnost zastupnica u odnosu na prosječnu i maksimalnu vrijednost.
+
+
+    Prebroje se sve sjednice i provjerava se da li je zastupnica glasala na bar
+    jednom glasanju na pojedinoj sjednici. Ako je glasala barem jednom smatra se
+    kako je bila prisutna na sjednici. Broj sjednica na kojima je bila prisutna
+    podijeli se s ukupnim brojem sjednica, a rezultat normalizira (min 1 – max
+    100).

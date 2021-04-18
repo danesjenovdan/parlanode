@@ -1,0 +1,16 @@
+card:
+  title: 'Popis glasanja po '
+  info: >-
+    # Popis svih glasanja Parlamenta BiH koja odgovaraju korisničkom izboru
+    ({text}), za izabrana matična radna tijela ({wbs}), razvrstana prema
+    {sortBy}.
+
+
+    Popis svih glasanja koja su se dogodila u aktuelnom sazivu Parlamenta BiH i
+    bila objavljena na stranicama [Parlament
+    BiH](http://parlament.ba/session/Read?ConvernerId=1) te odgovaraju
+    korisničkom izboru.
+
+
+    Rezultati se klasifikuju bilo po razjedinjenosti odabranog tijela, bilo po
+    datumu.

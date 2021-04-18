@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Najčešće su pojam koristile"
-  },
-  "info": {
-    "lead": "Popis pet zastupnika koji su najčešće koristili pretraživani niz riječi, razvrstani od najveće do najmanje vrijednosti.",
-    "text": "Prebroji se koliko puta je pojedini zastupnik izrekao pretraživani niz i osobe koje su ga barem jednom upotrijebile rangirane su prema broju ponavljanja. Prikazuje se pet s najvećim zbirom."
-  }
-}

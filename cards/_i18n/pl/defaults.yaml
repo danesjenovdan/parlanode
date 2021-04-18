@@ -1,0 +1,469 @@
+card-errored: Pri nalaganju kartice je prišlo do napake.
+card-in-development: W rozwoju.
+under-consideration: Obecnie w trakcie obrad
+recently-passed: Niedawno przyjęte
+most-discussed: Največ reakcij
+all-legislation: Wszystkie ustawy
+select-mps: Wybierz posła
+selected-mps: 'Wybrano: {num}'
+search_placeholder: Szukaj
+trigger: wyzwalacz
+match: dopasowanie
+interval: interwał
+email: e-mail
+add_trigger: Dodaj wyzwalacz
+add: Dodaj
+continue: Dalej
+back: Wstecz
+confirm_trigger: Ustaw przypomnienie
+add_new_trigger: Dodaj nowe przypomnienie
+steps:
+  - textfirst: Ustaw wyzwalacz dla słowa lub frazy o których chcesz być powiadomiony.
+    textsecond: >-
+      Dostaniesz wiadomość e-mail zaraz po tym, gdy słowo lub fraza zostanie
+      użyte w trakcie posiedzenia sejmu.
+  - textfirst: Wybierz metodę dopasowania
+    firstbullet: 'dokładne dopasowanie:'
+    secondbullet: 'szerokie dopasowanie:'
+  - textfirst: Jak często chcesz otrzymywać powiadomienia?
+    textsecond: kiedy coś się dzieje
+    textthird: maksymalnie raz dziennie
+    textfourth: maksymalnie raz tygodniowo
+  - textfirst: Potrzebujemy już tylko twój adres e-mail
+  - textfirst: Zapisano!
+    textsecond: Na adres e-mail
+    textthird: >-
+      wysłano zgłoszenie do Parlametru w sprawie powiadomień o słowach
+      kluczowych
+    textfourth: Zajrzyj do skrzynki odbiorczej!
+events:
+  event: kiedy coś się dzieje
+  day: maksymalnie raz dziennie
+  week: maksymalnie raz tygodniowo
+modes:
+  precise: 'dokładne dopasowanie:'
+  broad: 'szerokie dopasowanie:'
+comparator-text: >-
+  Chcę wiedzieć, na których głosowaniach {same} głosowali jednakowo, a
+  {different} głosowali inaczej od nich. {load}
+ignore-absent: Zignoruj "nieobecne" głosy
+comparator-vote-percent: '{num} wyszukane głosowania reprezentują {percent} wszystkich głosowań.'
+tabs:
+  vote-list: Lista głosowań
+  time-chart: Oś czasu
+  bar-chart: Dynamika w odniesieniu do komisji
+select-parties-people: Wybierz klub parlamentarny lub dodaj poszczególnego posła.
+empty-state-text: Aby wyświetlić głosowania, dodaj przynajmniej dwóch przedstawicieli.
+speakers: Mówcy
+input-words: Wprowadż słowo lub kilka słów oddzielonych przecinkiem.
+empty-text: Aby wyświetlić wyniki, dodaj przynajmniej dwa słowa.
+wordgroups-text: 'Pokaż mi, kto naczęściej używa następujących grup wyrazów: {words}{load}'
+show-relative: Pokaż relatywną metrykę
+select-working-body-placeholder: Wybrana komisja
+only-abstracts: Tylko ze streszczeniem
+only-with-votes: Samo z glasovanji
+icon: Ikona
+exposed: Izpostavljeno
+create-commentality: Ustvari na Commentality
+edit-info: Edytuj dane
+only-parties: Tylko kluby parlamentarne
+edit-memberships: Edytuj członkostwo
+only-current: Samo trenutna
+add-member: Dodaj člana
+edit-membership: Uredi članstvo
+save-membership: Shrani članstvo
+member: Član
+add-membership: Dodaj članstvo
+only-mps: Tylko posłowie
+display-name: Ime za prikaz
+update-session: Zaktualizuj posiedzenie
+tags: Oznaczenia
+add-tag: Dodaj oznaczenie
+votes: Głosy
+'yes': TAK
+'no': NIE
+copy: Kopiuj
+copied: Skopiowano!
+load: Załaduj
+confirm: Zatwierdź
+data-currently-unavailable: Dane chwilowo niedostępne.
+data-not-published:
+  link-text: Opozori jih tukaj!
+  link-url: http://example.com/
+  data-not-available: Parlament teh podatkov ne objavlja.
+  show-of-hands: Parlament ne objavlja poimenskih rezultatov glasovanja z dvigom rok.
+  parlamentary-questions: Parlament ne objavlja poslanskih vprašanj in pobud.
+search: Išči
+title-search: Szukaj według tytułu
+contents-search: Szukaj według treści wystąpień
+working-body: Odpowiedzialna komisja
+vote-types: Typy głosowania
+select-placeholder: Wybierz
+selected-placeholder: 'Wybrano: {num}'
+data: Podatki
+name: Imię
+epa: EPA
+change: Zmień
+status: Status
+result: Wynik
+age: Wiek
+education-level: Poziom wykształcenia
+education: Edukacja
+number-of-votes: Liczba głosów
+number-of-points: Število točk
+number-of-terms: Liczba kadencji
+previous-occupation: Poprzedni status
+district: Okręg wyborczy
+birth-date: Data urodzenia
+gender: Spol
+social-media: Media społecznościowe
+analysis: Analiza
+vote-passed: Przyjęto
+vote-not-passed: Odrzucono
+vote-under-consideration: W czytaniu
+vote-unknown: Neznano
+vote-result--enacted: Przyjęto
+vote-result--submitted: Przedłożono
+vote-result--rejected: Odrzucono
+vote-result--retracted: Wycofano
+vote-result--adopted: Przyjęto
+vote-result--received: Otrzymano
+vote-result--in_procedure: W czytaniu
+average: Średnia
+maximum: Większość
+coalition: koalicja
+opposition: opozycja
+vote-for: Za
+vote-against: Przeciw
+vote-abstain: Wstrzymano
+vote-abstain--m: Wstrzymano
+vote-abstain--f: Wstrzymano
+vote-abstain-plural: Wstrzymano
+vote-absent: Nieobecny
+vote-absent-plural: Nieobecni
+vote-no-majority: Brak głosu większości
+voted-for--f: Głosowała ZA
+voted-for--m: Głosował ZA
+voted-for--plural: Głosowali ZA
+voted-against--f: Głosowała PRZECIW
+voted-against--m: Głosował PRZECIW
+voted-against--plural: Głosowali PRZECIW
+voted-abstain--f: Głosowała KVORUM
+voted-abstain--m: Głosował KWORUM
+voted-abstain--plural: Głosowali KWORUM
+voted-absent--f: Nie głosowała na
+voted-absent--m: Nie głosował na
+voted-absent--plural: Nie głosowali na
+sort-by: Uporządkuj według
+sort-by--inequality: Niezgodności
+sort-by--date: Daty
+filtered-to-none: Brez zadetkov
+mps: Posłowie
+party: Klub poselski
+parties: Kluby poselskie
+time-period: Okres czasu
+session-type: Typu posiedzenia
+no-results: Bez trafień.
+no-speeches: Bez wystąpień.
+no-abstract: Przepraszamy, dla tej ustawy nie mamy streszczenia.
+present--f: Obecna
+present--m: Obecny
+present--plural: Obecni
+absent--f: Nieobecna
+absent--m: Nieobecny
+absent--plural: Nieobecni
+no-term: Bez mandatu
+inequality: Niezgodność
+everybody: Wszystko
+show: Pokaż
+full-speech: Całe wystąpienie
+session-processing: Posiedzenie w toku.
+organization: Organizacja
+start: Start
+legislation: Ustawodawstwo
+laws: Ustawy
+acts: Akty
+votings: Głosowania
+save: Zapisz
+save-all: Shrani vse
+saved: Shranjeno
+generate: Utwórz
+edit-abstract: Edytuj streszczenie
+abstract: Povzetek
+acronym: Kratica
+classification: Klasifikacija
+info:
+  title: Info
+  methodology: METODOLOGIA
+share:
+  title: Udostępnij
+  direct-link: Bezpośredni link do tej strony
+embed:
+  title: Umieść
+  always-refresh: Dane powinny być zawsze odświeżane
+previous:
+  title: Poprzednia wersja
+membership-list:
+  no-memberships: Bez członkostwa.
+style-scores:
+  elevated-vocabulary: Podniosłe słownictwo
+  simple-vocabulary: Proste słownictwo
+  excessive-vocabulary: Przesadne słownictwo
+question:
+  asked--m: Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.
+  asked--f: Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.
+  asked--plural: Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.
+  asked--with-name--m: >-
+    {name} je zastavil vprašanje {title}, na katerega mora odgovoriti
+    {recipient}.
+  asked--with-name--f: >-
+    {name} je zastavila vprašanje {title}, na katerega mora odgovoriti
+    {recipient}.
+  asked--with-name--plural: >-
+    {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
+    {recipient}.
+event:
+  ballot--for--m: Głosował ZA {title}
+  ballot--for--f: Głosowała ZA {title}
+  ballot--against--m: Głosował PRZECIW {title}
+  ballot--against--f: Głosowała PRZECIW {title}
+  ballot--absent--m: Nie głosował za {title}
+  ballot--absent--f: Nie głosowała za {title}
+  ballot--abstain--m: WSTRZYMAŁ się od głosowania na {title}
+  ballot--abstain--f: WSTRZYMAŁA się od głosowania na {title}
+  speech--m: Przemawiał na {session} {org}
+  speech--f: Przemawiała na {session} {org}
+months:
+  - styczeń
+  - luty
+  - marzec
+  - kwiecień
+  - maj
+  - czerwiec
+  - lipiec
+  - sierpień
+  - wrzesień
+  - październik
+  - listopad
+  - grudzień
+vote_types:
+  agenda: porządek dnia
+  whole_law: głosowanie nad ustawą w całości
+  amendment: poprawka
+  no_confidence: interpelacja
+  record_conclusion: pierwsze czytanie
+  conclusion_proposal: przedłożenie ustawy
+  ratification: ustawa o ratyfikacji
+  naming: mianowanie
+  call_proposal: wniosek o rozpisanie
+  recommendation: zalecenie
+  report: raport
+  procedural_proposal: wniosek proceduralny
+  personal_property_decree: dekret w sprawie planu zarządzania nieruchomościami
+  other: inne
+tools:
+  notifications: Parlametr powiadomienia
+  vote-comparator: Komparator głosowań
+  discord: Analiza niezgodności
+  compass: Sejmowy kompas
+  word-groups: Grupy słów
+frame:
+  show-in-context: Pokaż kartę w kontekście tej strony internetowej
+ogText: >-
+  Parametr jest narzędziem, które analizując głosowania i zapisy wystąpień,
+  ułatwia monitorowanie pracy Sejmu RP.
+committees: Delovna telesa
+councils: Delovna telesa
+commissions: Delovna telesa
+delegations: Druga članstva
+friendship_groups: Druga članstva
+investigative_comissions: Preiskovalne komisije
+elected-to-district: 'Št. glasov: {numVotes}, {district}'
+elected-to-district--m: Prejel {numVotes} glasov v okraju {district}
+elected-to-district--f: Prejela {numVotes} glasov v okraju {district}
+elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
+elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
+age--years: '{age} lat'
+no-social-media: brak mediów społecznościowych
+select-district-placeholder: Wybierz okręg
+select-parties-placeholder: Wybierz klub
+all-parties: wszystkie kluby parlamentarne
+all-voting-districts: wszystkie okręgi wyborcze
+missing-district: okręg nie został wprowadzony
+voting-district: okręg wyborczy
+sort-by--name: alfabetycznie
+sort-by--district: okręgi
+sort-by--party: kluby parlamentarne
+sort-by--analysis: analiza wyników {analysis}
+sort-by--change: aktualne zmiany w wynikach analizy {analysis}
+sort-by--age: wiek
+sort-by--education: poziom wykształcenia
+sort-by--terms: liczba kadencji
+analysis-texts:
+  demographics:
+    label: Demografia
+  presence_votes:
+    label: Obecność na głosowaniach Sejmu RP
+    titleSuffix: ' według obecności na głosowaniach Sejmu RP'
+    explanation: >-
+      Liczba głosowań, gdzie poseł był obecny, jest dzielona przez liczbę
+      wszystkich głosowań i normalizowana (min 1 - max 100).
+  number_of_questions:
+    label: Liczba poselskich zapytań i inicjatyw
+    titleSuffix: ' według liczby poselskich zapytań i inicjatyw'
+    explanation: >-
+      Liczba zapytań i inicjatyw poselskich podejmowanych przez posła na tym
+      posiedzeniu Sejmu RP w porównaniu ze średnią i maksymalną wartością.
+  speeches_per_session:
+    label: Liczba wystąpień na posiedzenie
+    titleSuffix: ' według liczby wystąpień na posiedzenie'
+    explanation: >-
+      Liczymy wstąpienia posłów i dzielimy je przez liczbę posiedzeń, w trakcie
+      których poseł przemawiał. Liczbę wszystkich wystąpień dzielimy najpierw
+      przez liczbę wszystkich posłów, a następnie przez liczbę wszystkich
+      posiedzeń (gdzie wygłaszano przemówienia). Porównujemy indywidualny wynik
+      z wartością średnią i maksymalną.
+  spoken_words:
+    label: Liczba wypowiedzianych słów
+    titleSuffix: ' według liczby wypowiedzianych słów'
+    explanation: >-
+      Liczba słów wypowiedzianych przez poseła w trakcie wszystkich swoich
+      wystąpień w Sejmie.
+  mismatch_of_pg:
+    label: Odchylenie od klubu parlamentarnego
+    titleSuffix: ' według odchylenia od klubu parlamentarnego'
+    explanation: >-
+      Odstępstwo od głosu większości klubu parlamentarnego na głosowaniach Sejmu
+      RP.
+all-votes: wszystkie głosowania
+all-working-bodies: wszystkie odpowiedzialne komisje
+everyone: Wszystko
+parliament: sejm
+analysis-not-available: Ta analiza ni na voljo.
+party-leader-m: Lider klubu
+party-leader-f: Lider klubu
+deputy-leader-m: Zastępca
+deputy-leader-f: Zastępczyni
+number-of-seats: 'Liczba miejsc w parlamencie:'
+contact: 'Kontakt:'
+mp: Poseł/Posłanka
+addressee: Adresat/-ka
+analysis-texts--party:
+  seat_count:
+    label: Liczba miejsc
+    titleSuffix: ' według liczby miejsc'
+    explanation: >-
+      Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie
+      wszystkich jego aktywnych członków.
+  presence_sessions:
+    label: Obecność na posiedzeniach Sejmu RP
+    titleSuffix: ' zgodnie z wynikami analizy obecności na posiedzeniach Sejmu RP'
+    explanation: >-
+      Liczymy wszystkie posiedzenia i sprawdzamy każdego członka tego klubu
+      parlamentarnego, jeśli głosowali co najmniej raz w trakcie tego
+      posiedzenia. W przypadku, gdy głosują co najmniej raz, są liczeni jako
+      obecni. Suma wszystkich uczestników jest podzielona przez liczbę
+      przedstawicieli w klubie parlamentarnym, wynik ten jest następnie dzielony
+      przez liczbę posiedzeń i normalizowany (min. 1 - maks. 100).
+  presence_votes:
+    label: Obecność na głosowaniach
+    titleSuffix: ' zgodnie z wynikami analizy obecności na głosowaniach Sejmu RP'
+    explanation: >-
+      Liczymy wszystkie głosowania, a także liczbę posłów klubu parlamentarnego
+      obecnych przy każdym głosowaniu. Suma wszystkich oddanych głosów jest
+      dzielona przez liczbę posłów w klubie parlamentarnym i liczbę głosowań.
+      Wynik jest następnie normalizowany (min. 1 - maks. 100).
+  number_of_questions:
+    label: Liczba poselskich zapytań i inicjatyw
+    titleSuffix: ' zgodnie z wynikami analizy według liczby zapytań i inicjatyw poselskich'
+    explanation: >-
+      Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków
+      wybranego klubu parlamentarnego w odniesieniu do Sejmu. Dane uzyskujemy ze
+      strony internetowej Sejmu RP.
+  number_of_amendments:
+    label: Št. vloženih amandmajev
+    titleSuffix: ' glede na rezultate analize po št. vloženih amandmajev'
+    explanation: ''
+  intra_disunion:
+    label: Neenotnost glasovanj
+    titleSuffix: ' glede na neenotnost glasovanj'
+    explanation: ''
+  vocabulary_size:
+    label: Różnorodność słownictwa
+    titleSuffix: ' zgodnie z wynikami analizy różnorodności słownictwa'
+    explanation: >-
+      W każdym wystąpieniu poselskim liczymy unikalne słowa i liczbę wszystkich
+      wypowiedzianych słów. Następnie liczymy ile razy pojawia się każde
+      unikalne słowo. Dzielimy je na kategorie, łącząc wszystkie słowa, które
+      powtarzają się raz, dwa razy, trzy razy itd. Na koniec obliczamy
+      współczynnik, w którym liczba wszystkich unikalnych wypowiedzianych słów
+      jest umieszczona powyżej linii ułamka, a pod linią liczba słów
+      powtarzających się z określoną częstotliwością (raz, dwa, trzy razy...)
+      jest mnożona przez częstotliwość na kwadrat (jeden na kwadrat, dwa na
+      kwadrat, trzy na kwadrat...). Zdanie "Dzisiaj jest nowy dzień i dzisiaj
+      jest dzień dla Parlametru" daje wynik: 7 / ((3 * 2 ^ 2) + (4 * 1 ^ 2)) =
+      0,4375 <br> <br> Sumujemy poszczególne wyniki dla każdego klubu
+      parlamentarnego i dzielimy przez liczbę reprezentantów klubu. Dzielimy
+      poszczególne sumy przez sumę całkowitą i normalizujemy (min 1 - maks.
+      100).
+  privzdignjeno:
+    label: Podniosłe słownictwo
+    titleSuffix: ' zgodnie z wynikami analizy podniosłego słownictwa'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Privzdignjeno besedje<br>Kvalifikatorji iz
+      SSKJ<br>evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.),
+      knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>Kvalifikatorji
+      iz SNB<br>/<br><br>Za vsako poslansko skupino seštejemo rezultate
+      poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
+      s skupnim seštevkom in normaliziramo (min 1 - max 100).
+  preprosto:
+    label: Proste słownictwo
+    titleSuffix: ' zgodnie z wynikami analizy prostego słownictwa'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Preprosto besedje<br>Kvalifikatorji iz SSKJ<br>narečno
+      (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>Kvalifikatorji
+      iz SNB<br>pogovorno (pog.)<br><br>Za vsako poslansko skupino seštejemo
+      rezultate poslancev in delimo s številom poslancev v njej. Posamezne
+      seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).
+  problematicno:
+    label: Przesadne słownictwo
+    titleSuffix: ' zgodnie z wynikami analizy przesadnego słownictwa'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Ekscesno besedje<br>Kvalifikatorji iz SSKJ
+      <br>vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično
+      (iron.), otroško (otr.) <br>Kvalifikatorji iz SNB<br>slabšalno (slabš.),
+      vulgarno (vulg.)<br><br>Za vsako poslansko skupino seštejemo rezultate
+      poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
+      s skupnim seštevkom in normaliziramo (min 1 - max 100).
+accepted: przyjęto
+rejected: odrzucono
+gov-side: Strona rządząca
+summary: Podsumowanie
+all-mps: Wszyscy posłowie
+whole-term: Cała kadencja
+last-year: Poprzedni rok
+limited-to-last-five: ', lista jest ograniczonona do pierwszych pięciu posiedzeń'
+just-last-five: Tylko ostatnich 5
+sort-by--updated: data ostatniej aktualizacji danych o posiedzeniu
+sort-by--workingBody: nazwa organizacji
+title: Nazwa
+other-procedures: Drugi postopki

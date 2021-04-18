@@ -1,0 +1,17 @@
+card:
+  title: Komparator głosowań
+  info: >-
+    Karta zawiera listę wszystkich głosowań, które odpowiadają wybranym
+    kryteriom. Przy porównaniu klubów parlamentarnych stosuje się obliczoną
+    większość głosów, uzyskaną przez zliczenie, za którą opcją głosuje większość
+    posłów.
+
+
+    Wyniki przedstawiamy na trzy sposoby:
+
+
+    * jako lista wszystkich głosowań
+
+    * jako wykres liniowy pokazujący liczbę głosowań w danym dniu,
+
+    * jako histogram przedstawiający sumy głosowań w odniesieniu do komisji.

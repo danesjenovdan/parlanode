@@ -1,0 +1,13 @@
+card:
+  title: Głosowania
+  info: >-
+    # Przegląd wszystkich głosowań, które miały miejsce w trakcie posiedzenia.
+
+
+    Dla wszystkich głosowań na posiedzeniu liczymy głosy (ZA, PRZECIW,
+    WSTRZYMANO SIĘ) i liczbę członków, którzy nie głosowali oraz przedstawiamy
+    wyniki.
+
+
+    Uzyskujemy zapisy głosowań ze strony internetowej [Sejm Rzeczypospolitej
+    Polskiej](http://www.sejm.gov.pl/Sejm8.nsf/terminarz.xsp).

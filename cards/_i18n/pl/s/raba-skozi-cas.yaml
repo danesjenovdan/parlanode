@@ -1,0 +1,8 @@
+card:
+  title: Użyte w czasie
+  info: >-
+    # Częstotliwość użycia szukanej frazy w czasie.
+
+
+    Liczbę wystąpień szukanej frazy obliczamy według miesiąca. Następnie
+    wyświetlamy wyniki dla całej kadencji lub poprzedniego roku.

@@ -1,0 +1,11 @@
+card:
+  title: Govori
+  info: >-
+    # Ispis linkova na sve govore zastupnika u jednom sazivu, a koji odgovaraju
+    korisničkom izboru, razvrstani prema datumu.
+
+
+    Učitavaju se linkovi na sve govore odabranog kluba koji se mogu naći u
+    stenogramima objavljenim na web stranicama Parlamenta BiH, i prikazuju oni
+    koji odgovaraju korisničkom izboru (zastupnici, vremensko razdoblje, vrsta
+    sjednice).

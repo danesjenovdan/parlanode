@@ -1,0 +1,29 @@
+card:
+  title: Ostatnie posiedzenie
+  info: >-
+    # Przegląd analizy ostatniego posiedzenia, którego dane dostępne są na
+    stronie internetowej: [Sejm Rzeczypospolitej
+    Polskiej](http://www.sejm.gov.pl/sejm8.nsf/terminarz.xsp).
+
+
+    # Słowa, którymi charakteryzowało się posiedzenie
+
+
+    Analiza jest przeprowadzana zgodnie ze statystykami {words-link}. Korpus
+    prezentuje wszystkie przemówienia, a dokument wszystkie przemówienia w
+    trakcie danej sesji.
+
+
+    # Obecność klubu parlamentarnego na głosowaniach
+
+
+    Kluby parlamentarne są uszeregowane wedle odsetka głosowań w których
+    uczestniczyli ich członkowie.
+
+
+    # Głosowania
+
+
+    Dla wszystkich głosowań na posiedzeniu liczymy poszczególne głosy (ZA,
+    PRZECIW, WSTRZYMANO SIĘ) i liczbę członków, którzy nie głosowali oraz
+    przedstawiamy wyniki.

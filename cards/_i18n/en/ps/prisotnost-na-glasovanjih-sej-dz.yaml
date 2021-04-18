@@ -1,0 +1,9 @@
+card:
+  title: Attendance at voting in the National Assembly
+  info: >-
+    # Parliamentary group's attendance at voting in the National Assembly
+    compared to the average and maximum value.
+
+
+    The number of voting events where the parliamentary group was present is
+    divided by the number of all voting events and normalised (min 1-max 100).

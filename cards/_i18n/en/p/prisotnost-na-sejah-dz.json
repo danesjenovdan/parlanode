@@ -1,9 +1,0 @@
-{
-  "card": {
-    "title": "Attendance at the National Assembly sessions"
-  },
-  "info": {
-    "lead": "MP's attendance at the National Assembly sessions compared to the average and maximum value.",
-    "text": "We count all sessions and check whether the MP voted at least once during an individual session. If they voted at least once we count them as present at that specific session. We divide the number of sessions where the MP was present with the number of all sessions and normalise the number (min 1 - max 100)."
-  }
-}

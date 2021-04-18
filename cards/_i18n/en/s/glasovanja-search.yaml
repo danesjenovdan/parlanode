@@ -1,0 +1,9 @@
+card:
+  title: Voting events which contain the query
+  info: >-
+    # A list of all voting events which contain the query, sorted by time.
+
+
+    From all voting events we identify and print out links to all votes where
+    the searched query was mentioned. Results are then sorted by date (newer to
+    older) and similarity with the query.

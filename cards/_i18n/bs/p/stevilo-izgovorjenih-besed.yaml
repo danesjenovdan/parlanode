@@ -1,0 +1,9 @@
+card:
+  title: Broj izgovorenih riječi
+  info: >-
+    # Broj riječi koje je zastupnik izgovorio u svim svojim govorima u
+    Parlamentu u odnosu na prosječnu i maksimalnu vrijednost.
+
+
+    Sabiru se riječi u govorima zastupnika preuzetim iz stenograma objavljenih
+    na [Parlament BiH](http://parlament.ba/session/Read?ConvernerId=1).

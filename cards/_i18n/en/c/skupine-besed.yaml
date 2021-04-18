@@ -1,0 +1,11 @@
+card:
+  title: Word groups
+  info: >-
+    # The card shows which speakers or which parliamentary groups absolutely and
+    relatively talk about a group of words the most.
+
+
+    We count the times a speaker says at least two search queries. Those, that
+    said it at least once are ranked according to the number of occurrences
+    divided by the number of all speeches of this speaker or parliamentary group
+    and the total number of all speeches.
