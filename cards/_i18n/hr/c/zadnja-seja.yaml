@@ -8,8 +8,9 @@ card:
     # Riječi koje označavaju sjednicu
 
 
-    Statistike se izračunavaju pomoću modela {words-link}. Korpus čine svi
-    govori, a dokument svi govori na sjednici.
+    Statistike se izračunavaju pomoću modela
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf). Korpus čine svi govori, a
+    dokument svi govori na sjednici.
 
 
     # Prisutnost klubova na sjednici na glasanju

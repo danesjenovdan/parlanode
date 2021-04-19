@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite';
 import { fileURLToPath } from 'url';
 import { resolve, dirname } from 'path';
+import yaml from '@rollup/plugin-yaml';
 import vue from '@vitejs/plugin-vue';
 import serveDevCards from './plugin-serve-dev-cards.js';
 import scssFunctions from './scss-functions.js';
@@ -13,7 +14,7 @@ export default defineConfig(({ mode }) => {
   return {
     clearScreen: false,
     root,
-    plugins: [vue(), serveDevCards()],
+    plugins: [yaml(), vue(), serveDevCards()],
     resolve: {
       alias: {
         '@': resolve(root, 'cards'),

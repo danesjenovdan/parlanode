@@ -9,9 +9,9 @@ card:
     # Words that marked the session
 
 
-    We perform the analysis according to the {words-link} statistic. The corpus
-    are all speeches while the document are all speeches at this particular
-    session.
+    We perform the analysis according to the
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) statistic. The corpus are all
+    speeches while the document are all speeches at this particular session.
 
 
     # Attendance at voting events by parliamentary group

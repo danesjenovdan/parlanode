@@ -1,0 +1,202 @@
+{
+  "created_for": "12.02.2021",
+  "classifications": { "1": "agenda", "8": "naming", "14": "other" },
+  "tags": [
+    "Odbor za finance",
+    "Odbor za infrastrukturo, okolje in prostor",
+    "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+    "Komisija za peticije, \u010dlovekove pravice in enake mo\u017enosti",
+    "Mandatno-volilna komisija",
+    "Kolegij predsednika Dr\u017eavnega zbora",
+    "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb",
+    "Odbor za zadeve Evropske unije",
+    "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino",
+    "Komisija za poslovnik",
+    "Skupni odbor",
+    "Kvorum",
+    "Eviden\u010dni sklep",
+    "Vsi odbori",
+    "Odbor za zunanjo politiko",
+    "Odbor za pravosodje",
+    "Odbor za gospodarstvo",
+    "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti",
+    "Odbor za finance in monetarno politiko",
+    "Odbor za obrambo",
+    "Odbor za kmetijstvo, gozdarstvo in prehrano",
+    "Odbor za zdravstvo",
+    "imenovanja",
+    "fb",
+    "social",
+    "tw",
+    "Proceduralna glasovanja",
+    "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
+    "Poslanska vpra\u0161anja",
+    "Komisija za nadzor javnih financ",
+    "Interpelacija",
+    "Odbor za kulturo",
+    "Preiskovalna komisija o ugotavljanju odgovornosti nosilcev javnih funkcij",
+    "Preiskovalna komisija o ugovljanju zlorab in negospodarnega ravnanja v DUTB",
+    "Ustavna obto\u017eba"
+  ],
+  "created_at": "16.02.2021",
+  "results": [
+    {
+      "session": {
+        "name": "61. izredna seja",
+        "orgs": [
+          {
+            "name": "Dr\u017eavni zbor",
+            "classification": "dz",
+            "acronym": "DZ",
+            "has_voters": true,
+            "is_coalition": false,
+            "id": 1
+          }
+        ],
+        "date": "12. 2. 2021",
+        "org": {
+          "name": "Dr\u017eavni zbor",
+          "classification": "dz",
+          "acronym": "DZ",
+          "has_voters": true,
+          "is_coalition": false,
+          "id": 1
+        },
+        "date_ts": "2021-02-12T01:00:00",
+        "updated_at": "16. 2. 2021",
+        "in_review": false,
+        "id": 1333
+      },
+      "results": {
+        "abstain": 0,
+        "classification": "1",
+        "tags": [],
+        "text": "Dnevni red v celoti",
+        "is_outlier": false,
+        "agenda_items": [],
+        "result": true,
+        "absent": 14,
+        "for": 76,
+        "against": 0,
+        "has_votes": true,
+        "motion_id": 6219,
+        "has_outliers": false,
+        "epa": null
+      }
+    },
+    {
+      "session": {
+        "name": "61. izredna seja",
+        "orgs": [
+          {
+            "name": "Dr\u017eavni zbor",
+            "classification": "dz",
+            "acronym": "DZ",
+            "has_voters": true,
+            "is_coalition": false,
+            "id": 1
+          }
+        ],
+        "date": "12. 2. 2021",
+        "org": {
+          "name": "Dr\u017eavni zbor",
+          "classification": "dz",
+          "acronym": "DZ",
+          "has_voters": true,
+          "is_coalition": false,
+          "id": 1
+        },
+        "date_ts": "2021-02-12T01:00:00",
+        "updated_at": "16. 2. 2021",
+        "in_review": false,
+        "id": 1333
+      },
+      "results": {
+        "abstain": 2,
+        "classification": "8",
+        "tags": [],
+        "text": "Predlog za izvolitev novega predsednika Vlade Republike Slovenije - Glasovanje o sestavi komisije za tajno glasovanje",
+        "is_outlier": false,
+        "agenda_items": [],
+        "result": true,
+        "absent": 16,
+        "for": 72,
+        "against": 0,
+        "has_votes": true,
+        "motion_id": 6218,
+        "has_outliers": false,
+        "epa": "1658-VIII"
+      }
+    },
+    {
+      "session": {
+        "name": "61. izredna seja",
+        "orgs": [
+          {
+            "name": "Dr\u017eavni zbor",
+            "classification": "dz",
+            "acronym": "DZ",
+            "has_voters": true,
+            "is_coalition": false,
+            "id": 1
+          }
+        ],
+        "date": "12. 2. 2021",
+        "org": {
+          "name": "Dr\u017eavni zbor",
+          "classification": "dz",
+          "acronym": "DZ",
+          "has_voters": true,
+          "is_coalition": false,
+          "id": 1
+        },
+        "date_ts": "2021-02-12T01:00:00",
+        "updated_at": "16. 2. 2021",
+        "in_review": false,
+        "id": 1333
+      },
+      "results": {
+        "abstain": 2,
+        "classification": "14",
+        "tags": [],
+        "text": "Sklep o razre\u0161itvi podpredsednika in imenovanju podpredsednice delovnega telesa Dr\u017eavnega zbora - Glasovanje o aktu v celoti",
+        "is_outlier": false,
+        "agenda_items": [],
+        "result": true,
+        "absent": 18,
+        "for": 70,
+        "against": 0,
+        "has_votes": true,
+        "motion_id": 6217,
+        "has_outliers": false,
+        "epa": "1657-VIII"
+      }
+    }
+  ],
+  "session": {
+    "name": "61. izredna seja",
+    "orgs": [
+      {
+        "name": "Dr\u017eavni zbor",
+        "classification": "dz",
+        "acronym": "DZ",
+        "has_voters": true,
+        "is_coalition": false,
+        "id": 1
+      }
+    ],
+    "date": "12. 2. 2021",
+    "org": {
+      "name": "Dr\u017eavni zbor",
+      "classification": "dz",
+      "acronym": "DZ",
+      "has_voters": true,
+      "is_coalition": false,
+      "id": 1
+    },
+    "date_ts": "2021-02-12T01:00:00",
+    "updated_at": "16. 2. 2021",
+    "in_review": false,
+    "id": 1333
+  }
+}

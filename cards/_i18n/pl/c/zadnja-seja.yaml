@@ -9,9 +9,9 @@ card:
     # Słowa, którymi charakteryzowało się posiedzenie
 
 
-    Analiza jest przeprowadzana zgodnie ze statystykami {words-link}. Korpus
-    prezentuje wszystkie przemówienia, a dokument wszystkie przemówienia w
-    trakcie danej sesji.
+    Analiza jest przeprowadzana zgodnie ze statystykami
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf). Korpus prezentuje wszystkie
+    przemówienia, a dokument wszystkie przemówienia w trakcie danej sesji.
 
 
     # Obecność klubu parlamentarnego na głosowaniach

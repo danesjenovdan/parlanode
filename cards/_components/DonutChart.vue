@@ -1,25 +1,25 @@
 <template>
   <svg viewBox="0 0 2 2" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <mask :id="`donut-hole${_uid}`">
+      <mask :id="`donut-hole${uid}`">
         <circle cx="1" cy="1" r="1" fill="white" />
         <circle cx="1" cy="1" r="0.7" fill="black" />
       </mask>
     </defs>
-    <!-- eslint-disable max-len -->
     <path
       v-for="sector in sectors"
       :key="sector.class"
       :class="sector.class"
       :d="`M${sector.L},${sector.L} L${sector.L},0 A${sector.L},${sector.L} 0 ${sector.arcSweep},1 ${sector.X}, ${sector.Y} z`"
       :transform="`rotate(${sector.R}, ${sector.L}, ${sector.L})`"
-      :mask="`url(#donut-hole${_uid})`"
+      :mask="`url(#donut-hole${uid})`"
     />
-    <!-- eslint-enable max-len -->
   </svg>
 </template>
 
 <script>
+import { uniqueId } from 'lodash-es';
+
 export default {
   name: 'DonutChart',
   props: {
@@ -28,9 +28,12 @@ export default {
       default: () => [],
     },
   },
-  data: () => ({
-    size: 100,
-  }),
+  data() {
+    return {
+      size: 100,
+      uid: uniqueId('donut'),
+    };
+  },
   computed: {
     sectors() {
       let a = 0; // Angle

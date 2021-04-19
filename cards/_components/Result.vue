@@ -76,7 +76,7 @@ export default {
     margin: 0 8px 0 30px;
     width: 58px;
 
-    $icon-path: "#{getConfig('urls.cdn')}/icons";
+    $icon-path: "#{get-config-value('urls.cdn')}/icons";
     &.option-for {
       background-image: url(#{$icon-path}/za_v2.svg);
     }

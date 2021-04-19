@@ -1,7 +1,0 @@
-{
-  "_id": "s_tfidf",
-  "dataUrl": "{analize}/s/getTFIDF",
-  "lastUpdate": "2018-09-13T15:10:45.433Z",
-  "big": true,
-  "high": false
-}

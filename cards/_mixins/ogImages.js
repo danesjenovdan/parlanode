@@ -55,8 +55,8 @@ export const searchOgImage = {
 export const sessionOgImage = {
   computed: {
     ogConfig() {
-      const cardData = this.cardData || this.$options.cardData;
-      const session = cardData.data.session || cardData.data.results.session;
+      const { cardData } = this.$root.$options.contextData;
+      const session = cardData.session ?? cardData.results.session;
       const sessionName = session.name;
 
       // TODO: this needs to be generic and not sl
