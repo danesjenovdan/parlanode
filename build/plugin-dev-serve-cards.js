@@ -7,9 +7,9 @@ import { groupBy, mapValues } from 'lodash-es';
 const dir = dirname(fileURLToPath(import.meta.url));
 const cardsPath = resolve(dir, '..', 'cards');
 
-export default function serveDevCards() {
+export default function devServeCards() {
   return {
-    name: 'serve-dev-cards',
+    name: 'dev-serve-cards',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         if (req.url === '/') {

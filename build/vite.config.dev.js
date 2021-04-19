@@ -3,8 +3,9 @@ import { fileURLToPath } from 'url';
 import { resolve, dirname } from 'path';
 import yaml from '@rollup/plugin-yaml';
 import vue from '@vitejs/plugin-vue';
-import serveDevCards from './plugin-serve-dev-cards.js';
+import devServeCards from './plugin-dev-serve-cards.js';
 import scssFunctions from './scss-functions.js';
+import { processLocaleMarkdown } from './process-locale-markdown.js';
 
 const dir = dirname(fileURLToPath(import.meta.url));
 const root = resolve(dir, '..');
@@ -14,7 +15,16 @@ export default defineConfig(({ mode }) => {
   return {
     clearScreen: false,
     root,
-    plugins: [yaml(), vue(), serveDevCards()],
+    plugins: [
+      yaml({
+        transform(data) {
+          processLocaleMarkdown(data);
+          return data;
+        },
+      }),
+      vue(),
+      devServeCards(),
+    ],
     resolve: {
       alias: {
         '@': resolve(root, 'cards'),

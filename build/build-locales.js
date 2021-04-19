@@ -3,6 +3,7 @@ import jsYaml from 'js-yaml';
 import glob from 'glob';
 import { resolve, dirname, join, relative } from 'path';
 import { fileURLToPath } from 'url';
+import { processLocaleMarkdown } from './process-locale-markdown.js';
 
 const dir = dirname(fileURLToPath(import.meta.url));
 const localesPath = resolve(dir, '..', 'cards', '_i18n');
@@ -16,12 +17,18 @@ glob.sync(join(localesPath, '**/*.yaml')).forEach((file) => {
   const locale = fileParts[0];
   const yamlText = fs.readFileSync(file, 'utf-8');
   const data = jsYaml.load(yamlText);
+
   locales[locale] = locales[locale] ?? {};
   locales[locale][cardName] = data;
 });
 
 Object.keys(locales).forEach((locale) => {
-  const data = locales[locale];
+  const localeData = locales[locale];
+
+  Object.keys(localeData).forEach((cardName) => {
+    processLocaleMarkdown(localeData[cardName]);
+  });
+
   fs.ensureDirSync(outPath);
-  fs.writeJSONSync(join(outPath, `${locale}.json`), data);
+  fs.writeJSONSync(join(outPath, `${locale}.json`), localeData);
 });

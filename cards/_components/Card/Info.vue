@@ -2,27 +2,18 @@
   <div class="card-content-info">
     <div class="card-back-content">
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="card-back-info" v-html="infoHTML"></div>
+      <div class="card-back-info" v-html="info"></div>
     </div>
   </div>
 </template>
 
 <script>
-import { Remarkable } from 'remarkable';
-
 export default {
   name: 'CardInfo',
   props: {
     info: {
       type: String,
       default: '',
-    },
-  },
-  computed: {
-    infoHTML() {
-      // TODO: prerender markdown for build
-      const md = new Remarkable();
-      return md.render(this.info);
     },
   },
 };

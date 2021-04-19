@@ -28,6 +28,7 @@ const loadLocale = async (locale) => {
       if (error.code !== 'ENOENT') {
         throw error;
       }
+      localeCache[locale] = null;
     }
   }
   return localeCache[locale];
