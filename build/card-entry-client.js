@@ -8,11 +8,11 @@ import Card from '@/{cardName}/card.vue';
 // eslint-disable-next-line no-underscore-dangle
 const { contextData, i18nData } = window.__INITIAL_STATE__;
 
-const { locale, i18nDefault, i18nCard } = i18nData;
+const { locale, defaultMessages, cardMessages } = i18nData;
 const i18n = createI18n({
   locale,
   messages: {
-    [locale]: merge({}, i18nDefault, i18nCard),
+    [locale]: merge({}, defaultMessages, cardMessages),
   },
 });
 

@@ -4,8 +4,8 @@ import { merge } from 'lodash-es';
 import slugs from '@/../data/slugs.dev.json';
 import siteMap from '@/../data/siteMap.default.json';
 /* eslint-disable import/no-unresolved */
-import i18nDefault from '@/_i18n/{cardLang}/defaults.yaml';
-import i18nCard from '@/_i18n/{cardLang}/{cardName}.yaml';
+import defaultMessages from '@/_i18n/{cardLang}/defaults.yaml';
+import cardMessages from '@/_i18n/{cardLang}/{cardName}.yaml';
 import Card from './card.vue';
 import cardData from './data.json';
 import cardState from './state.json';
@@ -15,7 +15,7 @@ const locale = '{cardLang}';
 const i18n = createI18n({
   locale,
   messages: {
-    [locale]: merge({}, i18nDefault, i18nCard),
+    [locale]: merge({}, defaultMessages, cardMessages),
   },
 });
 

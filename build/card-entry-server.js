@@ -6,11 +6,12 @@ import { merge } from 'lodash-es';
 import Card from '@/{cardName}/card.vue';
 /* eslint-enable import/no-unresolved */
 
-export default async (contextData, { locale, i18nDefault, i18nCard }) => {
+export default async (contextData, i18nData) => {
+  const { locale, defaultMessages, cardMessages } = i18nData;
   const i18n = createI18n({
     locale,
     messages: {
-      [locale]: merge({}, i18nDefault, i18nCard),
+      [locale]: merge({}, defaultMessages, cardMessages),
     },
   });
 

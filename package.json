@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config build/vite.config.dev.js",
-    "build": "yarn build:client && yarn build:server",
+    "build": "yarn build:client && yarn build:server && yarn build:locales",
     "build:client": "vite build --config build/vite.config.build.js --ssrManifest --outDir dist/client",
     "build:server": "SSR=1 vite build --config build/vite.config.build.js --ssr --outDir dist/server",
+    "build:locales": "node build/build-locales.js",
     "start": "node server/index.js",
     "lint": "eslint cards --ext js,vue"
   },
@@ -36,7 +37,6 @@
     "fastify-cors": "^5.2.0",
     "fastify-static": "^4.0.1",
     "fs-extra": "^9.1.0",
-    "glob": "^7.1.6",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "make-promises-safe": "^5.1.0",
@@ -58,6 +58,8 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.8.0",
+    "glob": "^7.1.6",
+    "js-yaml": "^4.1.0",
     "prettier": "^2.2.1",
     "remarkable": "^2.0.1"
   }
