@@ -54,7 +54,7 @@ const renderAssets = (cardName, modules) => {
 
 const renderInitialState = (state) => {
   const json = JSON.stringify(state);
-  return `<script>window.__INITIAL_STATE__=${json};</script>`;
+  return `<script type="module">window.__INITIAL_STATE__=${json};</script>`;
 };
 
 const renderCard = async (cardName, locale) => {
