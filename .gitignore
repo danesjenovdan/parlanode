@@ -3,25 +3,19 @@
 
 # package manager files
 node_modules/
-bower_components/
 *.log
 
 # editor configs
 .idea
 .vscode
 
+# TODO: fix this when config works
 # configs
 config/development.js
 config/production.js
 
 # compiled bundles
 dist/
-
-# auto-downloaded assets
-/data/*
-
-# generated images
-/og
 
 # dotenv
 .env.local
