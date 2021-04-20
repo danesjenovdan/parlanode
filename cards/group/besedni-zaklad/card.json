@@ -1,4 +1,3 @@
 {
-  "dataUrl": "{analize}/pg/getVocabularySize",
-  "lastUpdate": "2018-07-27T14:59:30.003Z"
+  "dataUrl": "{analize}/pg/getVocabularySize"
 }

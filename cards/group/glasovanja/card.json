@@ -1,4 +1,3 @@
 {
-  "dataUrl": "{analize}/pg/getTaggedBallots",
-  "lastUpdate": "2019-04-29T13:24:10.487Z"
+  "dataUrl": "{analize}/pg/getTaggedBallots"
 }

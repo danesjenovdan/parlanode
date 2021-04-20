@@ -1,4 +1,3 @@
 {
-  "dataUrl": "{analize}/p/getAverageNumberOfSpeechesPerSession",
-  "lastUpdate": "2018-07-27T14:58:45.512Z"
+  "dataUrl": "{analize}/p/getAverageNumberOfSpeechesPerSession"
 }

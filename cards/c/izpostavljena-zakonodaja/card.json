@@ -1,7 +1,3 @@
 {
-  "_id": "c_izpostavljena-zakonodaja",
-  "dataUrl": "{analize}/s/getExposedLegislation",
-  "lastUpdate": "2020-02-11T14:30:26.885Z",
-  "big": true,
-  "high": false
+  "dataUrl": "{analize}/s/getExposedLegislation"
 }

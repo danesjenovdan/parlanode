@@ -1,7 +1,3 @@
 {
-  "_id": "c_vsa-glasovanja",
-  "dataUrl": "{analize}/s/getAllVotes",
-  "lastUpdate": "2018-09-16T20:18:51.270Z",
-  "big": true,
-  "high": true
+  "dataUrl": "{analize}/s/getAllVotes"
 }
