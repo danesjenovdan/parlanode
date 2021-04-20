@@ -4,7 +4,63 @@ under-consideration: Trenutno v obravnavi
 recently-passed: Nedavno sprejeto
 most-discussed: Največ reakcij
 all-legislation: Vsa zakonodaja
+select-mps: Izberi poslance
+selected-mps: 'Izbranih: {num}'
 search_placeholder: Išči
+trigger: sprožilec
+match: ujemanje
+interval: pogostost
+email: email
+add_trigger: Dodaj sprožilec
+add: Dodaj
+continue: Nadaljuj
+back: Nazaj
+confirm_trigger: Nastavi opomnik
+add_new_trigger: Dodaj nov opomnik
+steps:
+  - textfirst: >-
+      Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
+      obvestimo.
+    textsecond: >-
+      Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
+      teles, ti to sporočimo po e-pošti.
+  - textfirst: Izberi način ujemanja
+    firstbullet: 'natančno ujemanje:'
+    secondbullet: 'široko ujemanje:'
+  - textfirst: Kako pogosto naj ti pišemo?
+    textsecond: ob dogodku
+    textthird: največ enkrat na dan
+    textfourth: največ enkrat na teden
+  - textfirst: Samo še tvoj e-naslov
+  - textfirst: Zabeleženo!
+    textsecond: Na e-naslov
+    textthird: si vklopil/-a obvestila za iskalni niz
+    textfourth: >-
+      Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+      mejlu.
+events:
+  event: ob dogodku
+  day: največ enkrat na dan
+  week: največ enkrat na teden
+modes:
+  precise: 'natančno ujemanje:'
+  broad: 'široko ujemanje:'
+comparator-text: >-
+  Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa
+  drugače od njih. {load}
+ignore-absent: Ignoriraj "odsotne" glasovnice
+comparator-vote-percent: '{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.'
+tabs:
+  vote-list: Seznam glasovanj
+  time-chart: Dinamika skozi čas
+  bar-chart: Dinamika glede na MDT
+select-parties-people: Vklopi cele poslanske skupine ali dodaj posamezne poslance.
+empty-state-text: Za prikaz glasovanj dodaj vsaj dva akterja.
+speakers: Govorci
+input-words: Vnesi posamezno besedo ali več besed, ločenih z vejico.
+empty-text: Za prikaz rezultatov dodaj vsaj dve besedi.
+wordgroups-text: 'Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}'
+show-relative: Prikaži relativno metriko
 select-working-body-placeholder: Izberi delovno telo
 only-abstracts: Samo s povzetki
 only-with-votes: Samo z glasovanji
@@ -179,6 +235,19 @@ event:
   ballot--abstain--f: VZDRŽALA se je glasovanja o {title}
   speech--m: Govoril na {session} {org}
   speech--f: Govorila na {session} {org}
+months:
+  - januar
+  - februar
+  - marec
+  - april
+  - maj
+  - junij
+  - julij
+  - avgust
+  - september
+  - oktober
+  - november
+  - december
 vote_types:
   agenda: dnevni red
   whole_law: glasovanje o zakonu v celoti
@@ -205,17 +274,81 @@ frame:
 ogText: >-
   Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša
   spremljanje dela v Državnem zboru.
-empty-state-text: Za prikaz glasovanj dodaj vsaj dva akterja.
+committees: Delovna telesa
+councils: Delovna telesa
+commissions: Delovna telesa
+delegations: Druga članstva
+friendship_groups: Druga članstva
+investigative_comissions: Preiskovalne komisije
+elected-to-district: 'Št. glasov: {numVotes}, {district}'
+elected-to-district--m: Prejel {numVotes} glasov v okraju {district}
+elected-to-district--f: Prejela {numVotes} glasov v okraju {district}
+elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
+elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
+age--years: '{age} let'
+no-social-media: ni družbenih omrežij.
+select-district-placeholder: Izberi okraj
+select-parties-placeholder: Izberi poslansko skupino
+all-parties: vse poslanske skupine
+all-voting-districts: vsi volilni okraji
+missing-district: okraj ni vnešen
+voting-district: volilni okraj
+sort-by--name: abecedi
+sort-by--district: okrajih
+sort-by--party: poslanskih skupinah
+sort-by--analysis: rezultatu analize {analysis}
+sort-by--change: aktualni spremembi v rezultatu analize {analysis}
+sort-by--age: starosti
+sort-by--education: stopnji izobrazbe
+sort-by--terms: številu mandatov
+analysis-texts:
+  demographics:
+    label: Demografija
+  presence_votes:
+    label: Prisotnost na glasovanjih sej DZ
+    titleSuffix: ' po prisotnosti na glasovanjih sej DZ'
+    explanation: >-
+      Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh
+      glasovanj in normaliziramo (min 1 - max 100).
+  number_of_questions:
+    label: Št. poslanskih vprašanj in pobud
+    titleSuffix: ' po št. poslanskih vprašanj in pobud'
+    explanation: >-
+      Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v
+      tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.
+  speeches_per_session:
+    label: Št. govorov na sejo
+    titleSuffix: ' po št. govorov na sejo'
+    explanation: >-
+      Preštejemo poslančeve govore in število delimo s številom sej, na katerih
+      je poslanec govoril. Število vseh govorov delimo najprej s številom
+      poslancev, potem pa še s številom vseh sej (na katerih se je govorilo).
+      Individualni rezultat primerjamo s povprečnim.
+  spoken_words:
+    label: Št. izgovorjenih besed
+    titleSuffix: ' po št. izgovorjenih besed'
+    explanation: >-
+      Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih
+      govorih v DZ.
+  mismatch_of_pg:
+    label: Neujemanje s poslansko skupino
+    titleSuffix: ' po neujemanju s poslansko skupino'
+    explanation: Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ.
+all-votes: vsa glasovanja
+all-working-bodies: vsa matična delovna telesa
+everyone: Vsi
+parliament: sabor
+analysis-not-available: Ta analiza ni na voljo.
 party-leader-m: Vodja poslanske skupine
 party-leader-f: Vodja poslanske skupine
 deputy-leader-m: Namestnik
 deputy-leader-f: Namestnica
 number-of-seats: 'Število poslanskih sedežev:'
 contact: 'Kontakt:'
-no-social-media: ni družbenih omrežij.
 mp: Poslanec/-ka
 addressee: Naslovljenec/-ka
-analysis-texts:
+analysis-texts--party:
   seat_count:
     label: Število sedežev
     titleSuffix: ' po številu sedežev'
@@ -317,133 +450,16 @@ analysis-texts:
       vulgarno (vulg.)<br><br>Za vsako poslansko skupino seštejemo rezultate
       poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
       s skupnim seštevkom in normaliziramo (min 1 - max 100).
-committees: Delovna telesa
-councils: Delovna telesa
-commissions: Delovna telesa
-delegations: Druga članstva
-friendship_groups: Druga članstva
-investigative_comissions: Preiskovalne komisije
-elected-to-district: 'Št. glasov: {numVotes}, {district}'
-elected-to-district--m: Prejel {numVotes} glasov v okraju {district}
-elected-to-district--f: Prejela {numVotes} glasov v okraju {district}
-elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
-elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
-elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
-age--years: '{age} let'
-select-district-placeholder: Izberi okraj
-select-parties-placeholder: Izberi poslansko skupino
-all-parties: vse poslanske skupine
-all-voting-districts: vsi volilni okraji
-missing-district: okraj ni vnešen
-voting-district: volilni okraj
-sort-by--name: abecedi
-sort-by--district: okrajih
-sort-by--party: poslanskih skupinah
-sort-by--analysis: rezultatu analize {analysis}
-sort-by--change: aktualni spremembi v rezultatu analize {analysis}
-sort-by--age: starosti
-sort-by--education: stopnji izobrazbe
-sort-by--terms: številu mandatov
-analysis-texts--party:
-  demographics:
-    label: Demografija
-  presence_votes:
-    label: Prisotnost na glasovanjih sej DZ
-    titleSuffix: ' po prisotnosti na glasovanjih sej DZ'
-    explanation: >-
-      Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh
-      glasovanj in normaliziramo (min 1 - max 100).
-  number_of_questions:
-    label: Št. poslanskih vprašanj in pobud
-    titleSuffix: ' po št. poslanskih vprašanj in pobud'
-    explanation: >-
-      Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v
-      tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.
-  speeches_per_session:
-    label: Št. govorov na sejo
-    titleSuffix: ' po št. govorov na sejo'
-    explanation: >-
-      Preštejemo poslančeve govore in število delimo s številom sej, na katerih
-      je poslanec govoril. Število vseh govorov delimo najprej s številom
-      poslancev, potem pa še s številom vseh sej (na katerih se je govorilo).
-      Individualni rezultat primerjamo s povprečnim.
-  spoken_words:
-    label: Št. izgovorjenih besed
-    titleSuffix: ' po št. izgovorjenih besed'
-    explanation: >-
-      Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih
-      govorih v DZ.
-  mismatch_of_pg:
-    label: Neujemanje s poslansko skupino
-    titleSuffix: ' po neujemanju s poslansko skupino'
-    explanation: Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ.
+accepted: sprejeti
+rejected: zavrnjeni
 gov-side: Stran vlade
 summary: Povzetek
 all-mps: Vsi poslanci
 whole-term: Cel mandat
 last-year: Zadnje leto
-other-procedures: Drugi postopki
 limited-to-last-five: ', izpis pa omejen samo na zgornjih pet sej'
 just-last-five: Samo zadnjih 5
 sort-by--updated: datumu zadnje spremembe podatkov o seji
 sort-by--workingBody: imenu organizacije
 title: Ime
-all-votes: vsa glasovanja
-all-working-bodies: vsa matična delovna telesa
-everyone: Vsi
-parliament: sabor
-select-mps: Izberi poslance
-selected-mps: 'Izbranih: {num}'
-trigger: sprožilec
-match: ujemanje
-interval: pogostost
-email: email
-add_trigger: Dodaj sprožilec
-add: Dodaj
-continue: Nadaljuj
-back: Nazaj
-confirm_trigger: Nastavi opomnik
-add_new_trigger: Dodaj nov opomnik
-steps:
-  - textfirst: >-
-      Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
-      obvestimo.
-    textsecond: >-
-      Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
-      teles, ti to sporočimo po e-pošti.
-  - textfirst: Izberi način ujemanja
-    firstbullet: 'natančno ujemanje:'
-    secondbullet: 'široko ujemanje:'
-  - textfirst: Kako pogosto naj ti pišemo?
-    textsecond: ob dogodku
-    textthird: največ enkrat na dan
-    textfourth: največ enkrat na teden
-  - textfirst: Samo še tvoj e-naslov
-  - textfirst: Zabeleženo!
-    textsecond: Na e-naslov
-    textthird: si vklopil/-a obvestila za iskalni niz
-    textfourth: >-
-      Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
-      mejlu.
-events:
-  event: ob dogodku
-  day: največ enkrat na dan
-  week: največ enkrat na teden
-modes:
-  precise: 'natančno ujemanje:'
-  broad: 'široko ujemanje:'
-comparator-text: >-
-  Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa
-  drugače od njih. {load}
-ignore-absent: Ignoriraj "odsotne" glasovnice
-comparator-vote-percent: '{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.'
-tabs:
-  vote-list: Seznam glasovanj
-  time-chart: Dinamika skozi čas
-  bar-chart: Dinamika glede na MDT
-select-parties-people: Vklopi cele poslanske skupine ali dodaj posamezne poslance.
-speakers: Govorci
-input-words: Vnesi posamezno besedo ali več besed, ločenih z vejico.
-empty-text: Za prikaz rezultatov dodaj vsaj dve besedi.
-wordgroups-text: 'Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}'
-show-relative: Prikaži relativno metriko
+other-procedures: Drugi postopki
