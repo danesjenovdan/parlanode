@@ -80,7 +80,7 @@ export default {
         assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
       );
 
-    const { months } = getD3Locale(import.meta.env.VITE_CARD_LANG);
+    const { months } = getD3Locale(this.$i18n.locale);
     let allMonths = this.generateMonths(months);
     let allMPs = this.contextData.cardData.all_authors.map((author) => ({
       id: author.id,

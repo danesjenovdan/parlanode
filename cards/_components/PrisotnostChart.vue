@@ -94,7 +94,7 @@ export default {
       }
     },
     renderChart() {
-      d3.timeFormatDefaultLocale(getD3Locale(import.meta.env.VITE_CARD_LANG));
+      d3.timeFormatDefaultLocale(getD3Locale(this.$i18n.locale));
 
       const dateParser = d3.timeParse('%Y-%m-%dT%H:%M:%S');
       const monthFormat = d3.timeFormat('%b %y');

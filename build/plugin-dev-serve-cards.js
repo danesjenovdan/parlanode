@@ -12,7 +12,8 @@ export default function devServeCards() {
     name: 'dev-serve-cards',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (req.url === '/') {
+        const url = new URL(req.url, `http://${req.headers.host}/`);
+        if (url.pathname === '/') {
           const cards = glob
             .sync(join(cardsPath, '**/card.json'))
             .map((file) => file.split('/').slice(-3, -1));
@@ -37,8 +38,8 @@ export default function devServeCards() {
             )
             .join('\n');
           res.end(cardRows);
-        } else if (req.url.slice(1).split('/').length === 2) {
-          const [group, method] = req.url.slice(1).split('/');
+        } else if (url.pathname.slice(1).split('/').length === 2) {
+          const [group, method] = url.pathname.slice(1).split('/');
           const cardName = `${group}/${method}`;
           if (existsSync(join(cardsPath, cardName, 'card.json'))) {
             const html = readFileSync(
@@ -46,7 +47,10 @@ export default function devServeCards() {
               'utf-8'
             )
               .replace(/{cardName}/g, cardName)
-              .replace(/{cardEntry}/g, `/${cardName}/card-entry-dev.js`);
+              .replace(
+                /{cardEntry}/g,
+                `/${cardName}/card-entry-dev.js${url.search}`
+              );
             server
               .transformIndexHtml(`${cardsPath}/${cardName}/index.html`, html)
               .then((transformedHtml) => {
@@ -62,23 +66,25 @@ export default function devServeCards() {
       });
     },
     resolveId(id) {
-      if (id.endsWith('/card-entry-dev.js')) {
+      if (id.includes('/card-entry-dev.js')) {
         return join(cardsPath, id.slice(1));
       }
       return undefined;
     },
     load(id) {
-      if (id.endsWith('/card-entry-dev.js')) {
-        const [group, method] = id.split('/').slice(-3, -1);
+      if (id.includes('/card-entry-dev.js')) {
+        const [path, search] = id.split('?');
+        const [group, method] = path.split('/').slice(-3, -1);
         const cardName = `${group}/${method}`;
         if (existsSync(join(cardsPath, cardName, 'card.json'))) {
+          const searchParams = new URLSearchParams(search);
           const entryTemplate = readFileSync(
             resolve(dir, 'card-entry-dev.js'),
             'utf-8'
           );
           return entryTemplate
             .replace(/{cardName}/g, cardName)
-            .replace(/{cardLang}/g, process.env.VITE_CARD_LANG || 'sl');
+            .replace(/{cardLang}/g, searchParams.get('locale') || 'sl');
         }
       }
       return undefined;

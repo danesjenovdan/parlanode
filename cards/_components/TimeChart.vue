@@ -27,7 +27,7 @@ export default {
       // empty the chart container
       this.$refs.chart.textContent = '';
 
-      d3.timeFormatDefaultLocale(getD3Locale(import.meta.env.VITE_CARD_LANG));
+      d3.timeFormatDefaultLocale(getD3Locale(this.$i18n.locale));
 
       const dateParser = d3.timeParse('%d.%m.%Y');
       const monthFormat = d3.timeFormat('%b %y');

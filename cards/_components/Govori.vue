@@ -124,7 +124,7 @@ export default {
 
     const allPeople = [];
 
-    const { months } = getD3Locale(import.meta.env.VITE_CARD_LANG);
+    const { months } = getD3Locale(this.$i18n.locale);
     const start = this.contextData?.cardData?.facet_counts?.facet_ranges
       ?.start_time?.start;
     const allMonths = this.generateMonths(months, start);
