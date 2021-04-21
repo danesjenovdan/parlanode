@@ -150,7 +150,7 @@ hr {
   }
 
   .main-law-label {
-    background-image: url("#{get-config-value('urls.cdn')}/icons/zakon.svg");
+    background-image: url("#{get-parlassets-url()}/icons/zakon.svg");
     background-size: 20px 19px;
     background-repeat: no-repeat;
     font-family: Roboto, sans-serif;
@@ -308,7 +308,7 @@ hr {
     margin: auto;
     margin-top: 100px;
     display: block;
-    background-image: url("#{get-config-value('urls.cdn')}/icons/missing-excerpt.svg");
+    background-image: url("#{get-parlassets-url()}/icons/missing-excerpt.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

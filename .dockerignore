@@ -22,8 +22,3 @@ Dockerfile
 jsconfig.json
 node_modules/
 dist/
-
-# TODO: fix this when config works
-# configs
-# config/development.js
-# config/production.js

@@ -519,7 +519,7 @@ export default {
     }
 
     .text-filter-input {
-      background-image: url("#{get-config-value('urls.cdn')}/icons/search.svg");
+      background-image: url("#{get-parlassets-url()}/icons/search.svg");
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
@@ -558,7 +558,7 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: $white url("#{get-config-value('urls.cdn')}/img/loader.gif")
+      background: $white url("#{get-parlassets-url()}/img/loader.gif")
         no-repeat center center;
       content: '';
       height: 100%;

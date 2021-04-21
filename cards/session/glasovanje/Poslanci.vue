@@ -291,7 +291,7 @@ export default {
       width: 125px;
     }
 
-    $icon-path: "#{get-config-value('urls.cdn')}/icons";
+    $icon-path: "#{get-parlassets-url()}/icons";
     &.option-for {
       background-image: url(#{$icon-path}/za_v2.svg);
     }

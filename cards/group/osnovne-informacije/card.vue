@@ -181,16 +181,16 @@ export default {
 @import 'parlassets/scss/colors';
 
 .parlaicon-vodja {
-  background-image: url("#{get-config-value('urls.cdn')}/icons/vodja.svg");
+  background-image: url("#{get-parlassets-url()}/icons/vodja.svg");
 }
 .parlaicon-namestnik {
-  background-image: url("#{get-config-value('urls.cdn')}/icons/namestnik.svg");
+  background-image: url("#{get-parlassets-url()}/icons/namestnik.svg");
 }
 .parlaicon-sedezi {
-  background-image: url("#{get-config-value('urls.cdn')}/icons/sedezi.svg");
+  background-image: url("#{get-parlassets-url()}/icons/sedezi.svg");
 }
 .parlaicon-kontakt {
-  background-image: url("#{get-config-value('urls.cdn')}/icons/kontakt.svg");
+  background-image: url("#{get-parlassets-url()}/icons/kontakt.svg");
 }
 .parlaicon-omrezja {
   width: 30px;

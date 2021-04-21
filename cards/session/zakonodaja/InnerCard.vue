@@ -151,7 +151,7 @@ export default {
       &.icon-abstract {
         width: 20px !important;
         height: 25px;
-        background: url("#{get-config-value('urls.cdn')}/icons/abstract.svg");
+        background: url("#{get-parlassets-url()}/icons/abstract.svg");
         background-size: contain !important;
         background-repeat: no-repeat;
         background-position: center;
@@ -160,7 +160,7 @@ export default {
       &.icon-votes {
         width: 27px !important;
         height: 25px;
-        background: url("#{get-config-value('urls.cdn')}/icons/votes.svg");
+        background: url("#{get-parlassets-url()}/icons/votes.svg");
         background-size: contain !important;
         background-repeat: no-repeat;
         background-position: center;
