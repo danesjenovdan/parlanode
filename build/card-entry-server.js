@@ -24,4 +24,4 @@ export default async (contextData, i18nData) => {
   return [html, ctx];
 };
 
-export const dataUrl = cardJson?.dataUrl ?? null;
+export const dataUrl = cardJson.dataUrl ?? null;

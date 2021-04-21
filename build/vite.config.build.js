@@ -16,7 +16,7 @@ const entrySource = readFileSync(resolve(dir, entryFile), 'utf-8');
 
 // TODO: build all cards
 // const files = glob.sync('./cards/**/card.json');
-const files = glob.sync('./cards/{person,group,tool}/**/card.json');
+const files = glob.sync('./cards/{person,group,tool,session}/**/card.json');
 
 const inputs = files.reduce((acc, file) => {
   const cardName = file.split('/').slice(-3, -1).join('/');
