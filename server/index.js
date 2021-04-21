@@ -12,18 +12,21 @@ fastify.register(fastifyStatic, {
   prefix: '/assets/',
 });
 
-fastify.get('/:group/:method', async (request, reply) => {
-  const { group, method } = request.params;
-  const { locale } = request.query;
+const renderCardHandler = async (request, reply) => {
+  const { group, method, id } = request.params;
+  const { locale, state } = request.query;
   const cardName = `${group}/${method}`;
-  const [error, html] = await renderCard(cardName, locale);
+  const [error, html] = await renderCard({ cardName, id, locale, state });
   if (!error) {
     reply.type('text/html').send(html);
   } else {
     fastify.log.error(error);
     reply.status(error.statusCode ?? 500).send(error);
   }
-});
+};
+
+fastify.get('/:group/:method', renderCardHandler);
+fastify.get('/:group/:method/:id', renderCardHandler);
 
 fastify.listen(process.env.PORT || 3000, '0.0.0.0', (error) => {
   if (error) {

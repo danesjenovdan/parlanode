@@ -1,11 +1,17 @@
 import fs from 'fs-extra';
-import { createError, loadLocale, loadCardModule } from './utils.js';
+import {
+  createError,
+  loadLocale,
+  loadCardModule,
+  fetchCardData,
+  parseCardState,
+} from './utils.js';
 
 const template = fs.readFileSync('./build/card-entry-client.html', 'utf-8');
 const manifest = fs.readJSONSync('./dist/client/manifest.json');
 const ssrManifest = fs.readJSONSync('./dist/client/ssr-manifest.json');
 
-const slugs = fs.readJSONSync('./data/slugs.dev.json'); // TODO: get from data
+const slugs = fs.readJSONSync('./data/slugs.dev.json'); // TODO: get from parladata
 const siteMap = fs.readJSONSync('./data/siteMap.default.json'); // TODO: get from parlasite
 
 const getClientAssets = (cardName) => {
@@ -57,8 +63,8 @@ const renderInitialState = (state) => {
   return `<script type="module">window.__INITIAL_STATE__=${json};</script>`;
 };
 
-const renderCard = async (cardName, locale) => {
-  const [render, localeData] = await Promise.all([
+const renderCard = async ({ cardName, id, locale, state }) => {
+  const [{ render, dataUrl }, localeData] = await Promise.all([
     await loadCardModule(cardName),
     await loadLocale(locale),
   ]);
@@ -73,18 +79,20 @@ const renderCard = async (cardName, locale) => {
   const defaultMessages = localeData.defaults ?? {};
   const cardMessages = localeData[cardName] ?? {};
 
-  const [cardData, cardState] = await Promise.all([
-    fs.readJSON(`./cards/${cardName}/data.json`), // TODO: fetch
-    fs.readJSON(`./cards/${cardName}/state.json`), // TODO: from request
-  ]);
+  const cardData = await fetchCardData(`${dataUrl}${id ? `/${id}` : ''}`);
+  const cardState = parseCardState(state);
 
   const uid = Math.random().toString(36).slice(2);
   const mountId = `${cardName.replace(/\//g, '_')}__${uid}`;
   const contextData = {
     mountId,
     cardName,
-    cardData,
-    cardState,
+    // TODO: use cardData directly
+    // this is a hack until error/empty states are implemented in cards
+    cardData: cardData.data,
+    // TODO: use cardState directly
+    // this is a hack until error/empty states are implemented in cards
+    cardState: cardState.data,
     slugs,
     siteMap,
   };

@@ -4,6 +4,7 @@ import { renderToString } from '@vue/server-renderer';
 import { merge } from 'lodash-es';
 /* eslint-disable import/no-unresolved */
 import Card from '@/{cardName}/card.vue';
+import cardJson from '@/{cardName}/card.json';
 /* eslint-enable import/no-unresolved */
 
 export default async (contextData, i18nData) => {
@@ -22,3 +23,5 @@ export default async (contextData, i18nData) => {
   const html = await renderToString(app, ctx);
   return [html, ctx];
 };
+
+export const dataUrl = cardJson?.dataUrl ?? null;
