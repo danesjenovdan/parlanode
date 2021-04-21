@@ -1,4 +1,5 @@
 import 'make-promises-safe';
+import './load-env.js';
 import { resolve } from 'path';
 import { fastify as createFastify } from 'fastify';
 import fastifyStatic from 'fastify-static';
@@ -24,7 +25,7 @@ fastify.get('/:group/:method', async (request, reply) => {
   }
 });
 
-fastify.listen(3000, '0.0.0.0', (error) => {
+fastify.listen(process.env.PORT || 3000, '0.0.0.0', (error) => {
   if (error) {
     fastify.log.error(error);
     process.exit(1);

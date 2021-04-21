@@ -38,5 +38,9 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
+    server: {
+      port: process.env.VITE_PORT || 3000,
+      strictPort: true,
+    },
   };
 });
