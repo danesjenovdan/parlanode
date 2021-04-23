@@ -18,6 +18,7 @@ Dockerfile
 .env.local
 .env.*.local
 .eslintrc.cjs
+.eslintignore
 .prettierrc.json
 jsconfig.json
 node_modules/
