@@ -7,10 +7,10 @@
   "confirm": "Potvrdi",
   "data-currently-unavailable": "Podaci trenutno nisu dostupni.",
   "data-not-published": {
-    "link-text": "Kliknite za otvaranje Sabora.",
-    "link-url": "https://parlametar.hr/otvaranje-sabora/",
+    "link-text": "Promijeni to. Piši Saboru.",
+    "link-url": "https://parlametar.hr/korona-nije-opravdanje/",
     "data-not-available": "Hrvatski sabor prestao je s 18.3.2020. objavljivati kako je glasao koji zastupnik i tko je bio na glasanju",
-    "show-of-hands": "Vaše pretraživanje nema rezultata jer Hrvatski sabor nije otvorio podatke koje tražite. Želite to promijeniti?",
+    "show-of-hands": "Hrvatski sabor jedini je parlament u EU koji je, zbog korone, prestao objavljivati kako je glasala koja zastupnica i zastupnik.",
     "parlamentary-questions": "Vaše pretraživanje nema rezultata jer Hrvatski sabor nije otvorio podatke koje tražite. Želite to promijeniti?"
   },
   "search": "Traži",
