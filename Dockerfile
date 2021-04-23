@@ -24,7 +24,7 @@ WORKDIR /app
 
 # install production dependencies only
 COPY package.json yarn.lock ./
-ARG NODE_ENV=production
+ENV NODE_ENV=production
 RUN yarn && yarn cache clean
 
 # copy all needed files from build stage image
