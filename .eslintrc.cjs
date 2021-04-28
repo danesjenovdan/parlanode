@@ -13,6 +13,13 @@ module.exports = {
   plugins: ['vue', 'prettier'],
   rules: {
     'import/extensions': ['error', 'always'],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        optionalDependencies: false,
+        devDependencies: ['build/**', '**/.eslintrc.{js,cjs,mjs}'],
+      },
+    ],
     'no-param-reassign': ['off'], // TODO: fix and reenable
     'vue/no-mutating-props': ['off'], // TODO: fix and reenable
   },

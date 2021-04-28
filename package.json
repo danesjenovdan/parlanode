@@ -10,7 +10,7 @@
     "build:server": "SSR=1 vite build --config build/vite.config.build.js --ssr --outDir dist/server",
     "build:locales": "node build/build-locales.js",
     "start": "node server/index.js",
-    "lint": "eslint cards --ext js,vue"
+    "lint": "eslint . --ext js,cjs,mjs,vue"
   },
   "repository": {
     "type": "git",
