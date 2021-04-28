@@ -5,7 +5,7 @@
     :og-config="ogConfig"
     @back-change="handleBackChange"
   >
-    <div class="prisotnost-chart"></div>
+    <div ref="chart" class="prisotnost-chart"></div>
   </card-wrapper>
 </template>
 
@@ -94,6 +94,9 @@ export default {
       }
     },
     renderChart() {
+      // empty the chart container
+      this.$refs.chart.textContent = '';
+
       d3.timeFormatDefaultLocale(getD3Locale(this.$i18n.locale));
 
       const dateParser = d3.timeParse('%Y-%m-%dT%H:%M:%S');
@@ -127,7 +130,7 @@ export default {
       const margin = { top: 10, right: 10, bottom: 40, left: 40 };
 
       const svg = d3
-        .select('.prisotnost-chart')
+        .select(this.$refs.chart)
         .append('svg')
         .attr('viewBox', [0, 0, width, height]);
 

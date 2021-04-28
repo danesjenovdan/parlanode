@@ -7,7 +7,7 @@
     <template #generator>
       <tools-tabs current-tool="compass" />
     </template>
-    <compass ref="compass" :compass-data="$options.contextData.cardData.data" />
+    <compass :compass-data="$options.contextData.cardData.data" />
   </card-wrapper>
 </template>
 

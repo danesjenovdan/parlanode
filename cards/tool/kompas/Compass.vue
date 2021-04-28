@@ -7,7 +7,7 @@
       @select="onSelect"
       @clear="onClearSelection"
     />
-    <div class="compass-visualisation"></div>
+    <div ref="chart" class="compass-visualisation"></div>
   </div>
 </template>
 
@@ -139,6 +139,9 @@ export default {
         });
     },
     renderCompass() {
+      // empty the chart container
+      this.$refs.chart.textContent = '';
+
       const width = 940;
       const height = 493;
       const margin = { top: 10, right: 10, bottom: 10, left: 10 };
@@ -164,7 +167,7 @@ export default {
         });
 
       const svg = d3
-        .select('.compass-visualisation')
+        .select(this.$refs.chart)
         .append('svg')
         .attr('viewBox', [0, 0, width, height])
         .call(zoom);
