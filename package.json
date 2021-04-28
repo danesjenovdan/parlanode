@@ -1,7 +1,8 @@
 {
   "name": "parlanode",
-  "version": "1.0.0",
-  "description": "Parlameter frontend server for serving embeds",
+  "version": "0.0.0",
+  "author": "Danes je nov dan",
+  "license": "Unlicense",
   "type": "module",
   "scripts": {
     "dev": "vite --config build/vite.config.dev.js",
@@ -12,16 +13,6 @@
     "start": "node server/index.js",
     "lint": "eslint . --ext js,cjs,mjs,vue"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danesjenovdan/parlanode.git"
-  },
-  "author": "danesjenovdan",
-  "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/danesjenovdan/parlanode/issues"
-  },
-  "homepage": "https://github.com/danesjenovdan/parlanode#readme",
   "dependencies": {
     "@intlify/vite-plugin-vue-i18n": "^2.1.2",
     "@intlify/vue-i18n-extensions": "^2.0.1",
