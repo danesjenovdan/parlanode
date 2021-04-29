@@ -56,8 +56,8 @@ a:focus, button:focus{
     outline: none;
 }
 
-$cdn_home_img: getConfig('urls.cdn') + '/img/';
-$cdn_home_icon: getConfig('urls.cdn') + '/icons/';
+$cdn_home_img: get-parlassets-url() + '/img/';
+$cdn_home_icon: get-parlassets-url() + '/icons/';
 
 .nopadding {
   padding: 0 !important;

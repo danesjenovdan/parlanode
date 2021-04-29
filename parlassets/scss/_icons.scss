@@ -59,6 +59,7 @@
     line-height: 22px;
     position: relative;
     bottom: -5px;
+    background-image: url($cdn_home_icon + 'facebook.svg');
 }
 .parlaicon-twitter {
     width: 22px;
@@ -66,6 +67,7 @@
     line-height: 22px;
     position: relative;
     bottom: -5px;
+    background-image: url($cdn_home_icon + 'twitter.svg');
 }
 .parlaicon-linkedin {
     width: 22px;
