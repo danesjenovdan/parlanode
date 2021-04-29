@@ -1,7 +1,7 @@
 export const memberTitle = {
   created() {
     const { template, cardData } = this.$root.$options.contextData;
-    template.pageTitle = `${this.$t('card.title')} - ${cardData.person.name}`;
+    template.pageTitle = `${this.$t('card.title')} - ${cardData?.name}`;
   },
 };
 

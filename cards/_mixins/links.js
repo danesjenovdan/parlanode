@@ -23,12 +23,7 @@ export default {
         return null;
       }
       const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      if (!slugs.party[party.id]) {
-        return '';
-      }
-      return `${slugs.urls.base}/${sm.party.base}/${
-        slugs.party[party.id].acronym
-      }`;
+      return `${slugs.urls.base}/${sm.party.base}/${party?.slug}`;
     },
     getPersonPartyLink(person) {
       return this.getPartyLink(person.party);

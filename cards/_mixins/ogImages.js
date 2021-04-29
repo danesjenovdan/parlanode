@@ -4,14 +4,17 @@ export const memberOgImage = {
   computed: {
     ogConfig() {
       const { cardData } = this.$root.$options.contextData;
-      const coalitionText = cardData.person.party.is_coalition
-        ? this.$t('coalition')
-        : this.$t('opposition');
+      let coalitionText;
+      if (cardData?.organization) {
+        coalitionText = cardData.organization.is_coalition
+          ? this.$t('coalition')
+          : this.$t('opposition');
+      }
       return {
         name: 'circle',
-        image: cardData.person.gov_id,
-        h1: cardData.person.name,
-        h2: `${cardData.person.party.acronym} | ${coalitionText}`,
+        image: cardData?.image,
+        h1: cardData?.name,
+        h2: `${cardData?.organization.acronym} | ${coalitionText}`,
         title: this.$t('card.title'),
       };
     },

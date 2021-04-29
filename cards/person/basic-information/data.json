@@ -1,0 +1,43 @@
+{
+  "id": 2,
+  "parser_names": null,
+  "created_at": "2021-04-28T12:39:23.958071",
+  "updated_at": "2021-04-28T12:39:23.958161",
+  "name": "Marjeta Coalition",
+  "slug": "marjeta-coalition",
+  "honorific_prefix": null,
+  "honorific_suffix": null,
+  "previous_occupation": "CTO",
+  "education": "PhD",
+  "education_level": "9",
+  "number_of_mandates": 1,
+  "email": null,
+  "preferred_pronoun": "she",
+  "date_of_birth": "1968-01-01T00:00:00",
+  "date_of_death": null,
+  "image": null,
+  "number_of_voters": 200,
+  "number_of_points": null,
+  "active": true,
+  "districts": [1],
+  "social_media": [
+    { "type": "facebook", "url": "https://fb.me/test" },
+    { "type": "twitter", "url": "https://fb.me/test" },
+    { "type": "linkedin", "url": "https://fb.me/test" }
+  ],
+  "organization": {
+    "id": 4,
+    "created_at": "2021-04-28T12:39:23.746447",
+    "updated_at": "2021-04-28T12:39:23.746481",
+    "name": "Party from coalition",
+    "acronym": "PFC",
+    "slug": "pfc",
+    "gov_id": "13",
+    "classification": "pg",
+    "dissolution_date": null,
+    "founding_date": null,
+    "description": null,
+    "parent": null,
+    "has_voters": false
+  }
+}

@@ -60,9 +60,7 @@ export const memberOverview = {
       cardData,
       siteMap: sm,
     } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${
-      slugs.person[cardData.person.id].slug
-    }`;
+    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${cardData?.slug}`;
   },
 };
 

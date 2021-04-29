@@ -4,14 +4,17 @@ export const memberHeader = {
   computed: {
     headerConfig() {
       const { cardData, cardState } = this.$root.$options.contextData;
-      const coalitionText = cardData.person.party.is_coalition
-        ? this.$t('coalition')
-        : this.$t('opposition');
+      let coalitionText;
+      if (cardData?.organization) {
+        coalitionText = cardData.organization.is_coalition
+          ? this.$t('coalition')
+          : this.$t('opposition');
+      }
       return {
-        circleImage: cardData.person.gov_id,
-        heading: cardData.person.name,
-        subheading: `${cardData.person.party.acronym} | ${coalitionText}`,
-        alternative: cardState.altHeader,
+        circleImage: cardData?.image,
+        heading: cardData?.name,
+        subheading: `${cardData?.organization?.acronym} | ${coalitionText}`,
+        alternative: cardState?.altHeader,
         title: this.$t('card.title'),
       };
     },
