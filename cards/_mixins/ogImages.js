@@ -25,15 +25,14 @@ export const partyOgImage = {
   computed: {
     ogConfig() {
       const { cardData } = this.$root.$options.contextData;
-      const party = cardData.party ?? cardData.organization;
-      const coalitionText = party.is_coalition
+      const coalitionText = cardData?.is_coalition
         ? this.$t('coalition')
         : this.$t('opposition');
       return {
         name: 'circle',
-        acronym: party.acronym,
-        h1: party.name,
-        h2: `${party.acronym} | ${coalitionText}`,
+        acronym: cardData?.acronym,
+        h1: cardData?.name,
+        h2: `${cardData?.acronym} | ${coalitionText}`,
         title: this.$t('card.title'),
       };
     },

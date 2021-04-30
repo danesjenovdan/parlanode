@@ -8,12 +8,11 @@ export const memberTitle = {
 export const partyTitle = {
   created() {
     const { template, cardData } = this.$root.$options.contextData;
-    const partyObject = cardData.party || cardData.organization;
-    const coalitionText = partyObject.is_coalition
+    const coalitionText = cardData.is_coalition
       ? this.$t('coalition')
       : this.$t('opposition');
     template.pageTitle = `${this.$t('card.title')} - ${
-      partyObject.acronym
+      cardData?.acronym
     } | ${coalitionText}`;
   },
 };

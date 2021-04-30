@@ -8,10 +8,7 @@ export const partyOverview = {
       cardData,
       siteMap: sm,
     } = this.$root.$options.contextData;
-    const party = cardData.party || cardData.organization;
-    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${
-      slugs.party[party.id].acronym
-    }`;
+    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${cardData?.slug}`;
   },
 };
 

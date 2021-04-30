@@ -3,27 +3,24 @@ import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 export default {
   methods: {
     getPersonLink(person) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      if (!slugs.person[person.id]) {
-        return '';
+      if (!person.slug) {
+        return null;
       }
-      return `${slugs.urls.base}/${sm.member.base}/${
-        slugs.person[person.id].slug
-      }`;
+      const { slugs, siteMap: sm } = this.$root.$options.contextData;
+      return `${slugs.urls.base}/${sm.member.base}/${person.slug}`;
     },
     getPersonPortrait(person) {
-      const { slugs } = this.$root.$options.contextData;
-      return `${slugs.urls.cdn}/img/people/square/${person.gov_id}.png`;
+      return person.image;
     },
     getPartyLink(party) {
-      if (!party.acronym) {
+      if (!party.slug) {
         return null;
       }
       if ('classification' in party && party.classification !== 'pg') {
         return null;
       }
       const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.party.base}/${party?.slug}`;
+      return `${slugs.urls.base}/${sm.party.base}/${party.slug}`;
     },
     getPersonPartyLink(person) {
       return this.getPartyLink(person.party);
