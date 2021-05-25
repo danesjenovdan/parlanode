@@ -6,16 +6,57 @@
   >
     <div class="poslanec osnovne-informacije-poslanca">
       <div
-        v-for="(person, index) in organization.people"
+        v-for="(person, index) in group.presidents"
         :key="person.slug"
         class="row"
       >
         <div class="parlaicon-container parlaicon-containermp">
           <span
-            :class="[
-              'parlaicon',
-              `parlaicon-${index === 0 ? 'vodja' : 'namestnik'}`,
-            ]"
+            :class="['parlaicon', 'parlaicon-vodja']"
+            aria-hidden="true"
+          ></span>
+        </div>
+        <div class="bordertop">
+          <div class="verticalmember">
+            <div class="row">
+              <a :href="getPersonLink(person)" :title="person.name">
+                <img
+                  :src="getPersonPortrait(person)"
+                  class="img-circle img-responsive"
+                  alt=""
+                />
+              </a>
+              <div class="member_data">
+                <h3>
+                  <a
+                    :href="getPersonLink(person)"
+                    class="funblue-light-hover"
+                    >{{ person.name }}</a
+                  >
+                </h3>
+                <h4
+                  v-if="index === 0 && person.preferred_pronoun === 'she'"
+                  v-t="'party-leader--f'"
+                ></h4>
+                <h4 v-else-if="index === 0" v-t="'party-leader--m'"></h4>
+                <h4
+                  v-else-if="person.preferred_pronoun === 'she'"
+                  v-t="'deputy-leader--f'"
+                ></h4>
+                <h4 v-else v-t="'deputy-leader--m'"></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        v-for="(person, index) in group.deputies"
+        :key="person.slug"
+        class="row"
+      >
+        <div class="parlaicon-container parlaicon-containermp">
+          <span
+            :class="['parlaicon', 'parlaicon-namestnik']"
             aria-hidden="true"
           ></span>
         </div>
@@ -60,7 +101,7 @@
         <div class="bordertop0">
           <span class="key">
             <span v-t="'number-of-seats'"></span>:
-            <strong>{{ organization.number_of_seats }}</strong>
+            <strong>{{ group.number_of_members }}</strong>
           </span>
         </div>
       </div>
@@ -73,7 +114,7 @@
           <span class="key">
             <span v-t="'contact'"></span>:
             <a
-              :href="`mailto:${organization.email}`"
+              :href="`mailto:${group.email}`"
               target="_blank"
               class="funblue-light-hover"
               >{{ shortEmail }}</a
@@ -89,18 +130,18 @@
         <div class="bordertop0">
           <span class="key">
             <span v-t="'social-media'"></span>:
-            <template v-if="organization.social_media?.length">
+            <template v-if="group.social_networks?.length">
               <template
-                v-for="social_media in organization.social_media"
-                :key="`${social_media?.type}_${social_media?.url}`"
+                v-for="social_network in group.social_networks"
+                :key="`${social_network?.type}_${social_network?.url}`"
               >
                 <a
-                  :href="social_media?.url"
+                  :href="social_network?.url"
                   class="socialicon-container"
                   target="_blank"
                 >
                   <div
-                    :class="['parlaicon', `parlaicon-${social_media?.type}`]"
+                    :class="['parlaicon', `parlaicon-${social_network?.type}`]"
                   />
                 </a>
               </template>
@@ -129,21 +170,21 @@ export default {
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
   data() {
     return {
-      organization: this.$options.contextData.cardData || {},
+      group: this.cardData.data?.results || {},
     };
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.organization.id}?altHeader=true`;
+      return `${this.url}${this.group.id}?altHeader=true`;
     },
     shortEmail() {
-      if (this.organization.email?.length) {
-        if (this.organization.email.length < 26) {
-          return this.organization.email;
+      if (this.group.email?.length) {
+        if (this.group.email.length < 26) {
+          return this.group.email;
         }
-        const [addr, domain] = this.organization.email?.split('@');
+        const [addr, domain] = this.group.email?.split('@');
         if (addr.length < 18) {
-          return this.organization.email;
+          return this.group.email;
         }
         return `${addr.slice(0, 17)}...@${domain}`;
       }

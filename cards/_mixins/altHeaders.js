@@ -3,18 +3,17 @@ import { assign } from 'lodash-es';
 export const personHeader = {
   computed: {
     headerConfig() {
-      const { cardData, cardState } = this.$root.$options.contextData;
       let coalitionText;
-      if (cardData?.organization) {
-        coalitionText = cardData.organization.is_coalition
+      if (this.cardData.organization) {
+        coalitionText = this.cardData.organization.is_coalition
           ? this.$t('coalition')
           : this.$t('opposition');
       }
       return {
-        circleImage: cardData?.image,
-        heading: cardData?.name,
-        subheading: `${cardData?.organization?.acronym} | ${coalitionText}`,
-        alternative: cardState?.altHeader,
+        circleImage: this.cardData.image,
+        heading: this.cardData.name,
+        subheading: `${this.cardData.organization?.acronym} | ${coalitionText}`,
+        alternative: this.cardState.altHeader,
         title: this.$t('card.title'),
       };
     },
@@ -24,18 +23,17 @@ export const personHeader = {
 export const partyHeader = {
   computed: {
     headerConfig() {
-      const { cardData, cardState } = this.$root.$options.contextData;
-      const coalitionText = cardData?.is_coalition
+      const coalitionText = this.cardData.is_coalition
         ? this.$t('coalition')
         : this.$t('opposition');
       return {
         mediaImage: 'party',
-        circleClass: `${cardData?.acronym
+        circleClass: `${(this.cardData.acronym || '')
           .replace(/[ +,]/g, '_')
           .toLowerCase()}-background`,
-        heading: cardData?.name,
-        subheading: `${cardData?.acronym} | ${coalitionText}`,
-        alternative: cardState?.altHeader,
+        heading: this.cardData.name,
+        subheading: `${this.cardData.acronym} | ${coalitionText}`,
+        alternative: this.cardState.altHeader,
         title: this.$t('card.title'),
       };
     },
