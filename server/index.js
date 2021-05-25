@@ -5,7 +5,7 @@ import { fastify as createFastify } from 'fastify';
 import fastifyStatic from 'fastify-static';
 import { renderCard } from './render-card.js';
 
-const fastify = createFastify({ logger: true });
+const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
 
 fastify.register(fastifyStatic, {
   root: resolve('./dist/client'),
