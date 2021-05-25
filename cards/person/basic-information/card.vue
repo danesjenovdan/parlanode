@@ -11,22 +11,10 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            <template v-if="organization.classification === 'pg'">
-              <span v-t="'party'"></span>:
-              <a
-                v-if="organization.classification === 'pg'"
-                :href="getPartyLink(organization)"
-                class="funblue-light-hover"
-              >
-                {{ organization.acronym }}
-              </a>
-            </template>
-            <template v-else>
-              <span v-t="'organization'"></span>:
-              <span>
-                {{ organization.acronym }}
-              </span>
-            </template>
+            <span v-t="'party'"></span>:
+            <a :href="getPartyLink(group)" class="funblue-light-hover">
+              {{ group.acronym }}
+            </a>
           </span>
         </div>
       </div>
@@ -41,7 +29,7 @@
               <b>{{ person.number_of_points || person.number_of_voters }}</b>
             </template>
             <template #district>
-              <b>{{ person?.districts?.join(', ') }}</b>
+              <b>{{ person?.districts?.map((d) => d.name).join(', ') }}</b>
             </template>
           </i18n-t>
         </div>
@@ -100,18 +88,18 @@
         <div class="bordertop0">
           <span class="key">
             <span v-t="'social-media'"></span>:
-            <template v-if="person.social_media?.length">
+            <template v-if="person.social_networks?.length">
               <template
-                v-for="social_media in person.social_media"
-                :key="`${social_media?.type}_${social_media?.url}`"
+                v-for="social_network in person.social_networks"
+                :key="`${social_network?.type}_${social_network?.url}`"
               >
                 <a
-                  :href="social_media?.url"
+                  :href="social_network?.url"
                   class="socialicon-container"
                   target="_blank"
                 >
                   <div
-                    :class="['parlaicon', `parlaicon-${social_media?.type}`]"
+                    :class="['parlaicon', `parlaicon-${social_network?.type}`]"
                   />
                 </a>
               </template>
@@ -147,8 +135,8 @@ export default {
   ],
   data() {
     return {
-      person: this.$options.contextData.cardData ?? {},
-      organization: this.$options.contextData.cardData?.organization ?? {},
+      person: this.$options.contextData.cardData.data?.results ?? {},
+      group: this.$options.contextData.cardData.data?.results?.group ?? {},
     };
   },
   computed: {

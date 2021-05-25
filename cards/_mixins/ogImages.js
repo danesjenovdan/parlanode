@@ -14,7 +14,7 @@ export const memberOgImage = {
         name: 'circle',
         image: cardData?.image,
         h1: cardData?.name,
-        h2: `${cardData?.organization.acronym} | ${coalitionText}`,
+        h2: `${cardData?.organization?.acronym} | ${coalitionText}`,
         title: this.$t('card.title'),
       };
     },

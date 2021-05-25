@@ -51,8 +51,8 @@ function getCardDataUrl(cardName, id, date) {
   if (date) {
     searchParams.set('date', date);
   }
-  const queryString = searchParams.toString();
-  return `{parladata}/${cardName}/${queryString ? `?${queryString}` : ''}`;
+  const qs = searchParams.toString();
+  return `{parladata}/cards/${cardName}/${qs ? `?${qs}` : ''}`;
 }
 
 function expandUrl(dataUrl) {

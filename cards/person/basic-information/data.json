@@ -10,17 +10,17 @@
       "preferred_pronoun": null,
       "group": {
         "name": "Socialni demokrati ",
-        "acronym": "",
+        "acronym": "SD",
         "slug": "6-socialni-demokrati"
       },
       "image": null,
-      "education": null,
-      "education_level": null,
-      "previous_occupation": null,
-      "number_of_mandates": null,
-      "date_of_birth": null,
+      "education": "Magister ekonomije",
+      "education_level": "VII/2",
+      "previous_occupation": "Pilot",
+      "number_of_mandates": 2,
+      "date_of_birth": "1970-02-05",
       "date_of_death": null,
-      "number_of_voters": null,
+      "number_of_voters": 900,
       "districts": [
         {
           "name": "Center",
