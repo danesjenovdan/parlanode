@@ -71,10 +71,10 @@ const renderCard = async ({ cardName, id, date, locale, state }) => {
   ]);
 
   if (!render) {
-    return [createError(404, 'Not Found', `Card ${cardName} not found`)];
+    throw createError(404, 'Not Found', `Card ${cardName} not found`);
   }
   if (!localeData) {
-    return [createError(404, 'Not Found', `Locale ${locale} not found`)];
+    throw createError(404, 'Not Found', `Locale ${locale} not found`);
   }
 
   const defaultMessages = localeData.defaults ?? {};
@@ -116,7 +116,7 @@ const renderCard = async ({ cardName, id, date, locale, state }) => {
       contextData.template.frameContainerClass
     );
 
-  return [null, html];
+  return html;
 };
 
 // eslint-disable-next-line import/prefer-default-export

@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :id="$options.cardData.mountId"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    :content-class="contentClass"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="errored">
       <div class="icon"></div>
       <div v-t="'card-errored'" class="content"></div>
@@ -19,17 +14,17 @@ import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 
 export default {
-  name: 'InDevelopment',
+  name: 'Error',
   mixins: [common],
   data() {
-    const state = this.$options.cardData.parlaState;
+    const state = this.$options.contextData.cardState;
     const title = state.title || this.$t('card.title');
     const message = state.message || '';
-    const height = state.height || 1;
+    // const height = state.height || 1;
     return {
       title,
       message,
-      contentClass: height === 2 ? 'full' : 'half',
+      // contentClass: height === 2 ? 'full' : 'half',
       headerConfig: defaultHeaderConfig(this, {
         title,
       }),
@@ -39,9 +34,9 @@ export default {
     };
   },
   beforeCreate() {
-    const state = this.$options.cardData.parlaState;
-    const width = state.width || 1;
-    this.$root.$options.cardData.cardData.big = width === 2;
+    // const state = this.$options.contextData.cardState;
+    // const width = state.width || 1;
+    // this.$root.$options.cardData.cardData.big = width === 2;
   },
 };
 </script>
@@ -59,7 +54,7 @@ export default {
   .icon {
     width: 100%;
     padding-top: 100px;
-    background-image: url("#{getConfig('urls.cdn')}/icons/missing-file.svg");
+    background-image: url('#{get-parlassets-url()}/icons/missing-file.svg');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -86,9 +81,11 @@ export default {
   }
 }
 
-.card-container ::v-deep .card-footer > *,
-.card-container::before {
-  visibility: hidden;
-  display: none;
+:deep(.card-container) {
+  &::before,
+  .card-footer > * {
+    visibility: hidden;
+    display: none;
+  }
 }
 </style>

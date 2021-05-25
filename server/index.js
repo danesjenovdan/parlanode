@@ -14,15 +14,32 @@ fastify.register(fastifyStatic, {
 
 const renderCardHandler = async (request, reply) => {
   const { group, method } = request.params;
-  const { id, date, locale, state } = request.query;
+  const { id, date, locale, ...state } = request.query;
   const cardName = `${group}/${method}`;
-  const [error, html] = await renderCard({ cardName, id, date, locale, state });
-  if (!error) {
-    reply.type('text/html').send(html);
-  } else {
+  let html;
+  try {
+    html = await renderCard({ cardName, id, date, locale, state });
+  } catch (error) {
     fastify.log.error(error);
-    reply.status(error.statusCode ?? 500).send(error);
+    try {
+      html = await renderCard({
+        cardName: 'misc/error',
+        locale,
+        state: {
+          ...state,
+          cardName,
+          id,
+          date,
+          locale,
+          error,
+        },
+      });
+    } catch (error2) {
+      fastify.log.error(error2);
+      reply.status(error2.statusCode ?? 500).send(error2);
+    }
   }
+  reply.type('text/html').send(html);
 };
 
 fastify.get('/:group/:method', renderCardHandler);

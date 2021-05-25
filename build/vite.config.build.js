@@ -16,7 +16,7 @@ const entrySource = readFileSync(resolve(dir, entryFile), 'utf-8');
 
 // TODO: build all cards
 // const files = glob.sync('./cards/**/card.vue');
-const files = glob.sync('./cards/{person,group,tool,session}/**/card.vue');
+const files = glob.sync('./cards/{person,group,tool,session,misc}/**/card.vue');
 
 const inputs = files.reduce((acc, file) => {
   const cardName = file.split('/').slice(-3, -1).join('/');
