@@ -151,14 +151,16 @@ export default {
       },
     ];
 
-    let allTags = this.contextData.cardData.all_tags.map((tag) => ({
-      id: tag,
-      label: tag,
-      selected: false,
-    }));
+    let allTags = (this.contextData.cardData.data?.all_tags || []).map(
+      (tag) => ({
+        id: tag,
+        label: tag,
+        selected: false,
+      })
+    );
 
     let allClassifications = [];
-    Object.keys(this.contextData.cardData.classifications).forEach(
+    Object.keys(this.contextData.cardData.data?.classifications || {}).forEach(
       (classificationKey) => {
         allClassifications.push({
           id: classificationKey,
@@ -193,7 +195,7 @@ export default {
     }
 
     return {
-      votingDays: this.contextData.cardData.results,
+      votingDays: this.contextData.cardData.data?.results,
       selectedSort: 'date',
       sortOptions: {
         maximum: this.$t('sort-by--inequality'),
@@ -263,9 +265,9 @@ export default {
 
       const personOrParty =
         this.type === 'person'
-          ? this.contextData.cardData.person
-          : this.contextData.cardData.party;
-      return `${this.url}${personOrParty.id}/?state=${encodeURIComponent(
+          ? this.contextData.cardData.data?.person
+          : this.contextData.cardData.data?.group;
+      return `${this.url}${personOrParty?.id}/?state=${encodeURIComponent(
         JSON.stringify(state)
       )}&altHeader=true`;
     },
@@ -415,7 +417,7 @@ export default {
     width: 100%;
 
     .text-filter-input {
-      background-image: url("#{get-parlassets-url()}/icons/search.svg");
+      background-image: url('#{get-parlassets-url()}/icons/search.svg');
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
