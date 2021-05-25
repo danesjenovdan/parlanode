@@ -117,26 +117,26 @@
 <script>
 import { parseISO, differenceInCalendarYears } from 'date-fns';
 import common from '@/_mixins/common.js';
-import { memberOverview } from '@/_mixins/contextUrls.js';
-import { memberTitle } from '@/_mixins/titles.js';
-import { memberHeader } from '@/_mixins/altHeaders.js';
-import { memberOgImage } from '@/_mixins/ogImages.js';
+import { personOverview } from '@/_mixins/contextUrls.js';
+import { personTitle } from '@/_mixins/titles.js';
+import { personHeader } from '@/_mixins/altHeaders.js';
+import { personOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
 
 export default {
   name: 'OsnovneInformacijePoslanca',
   mixins: [
     common,
-    memberOverview,
-    memberTitle,
-    memberHeader,
-    memberOgImage,
+    personOverview,
+    personTitle,
+    personHeader,
+    personOgImage,
     links,
   ],
   data() {
     return {
-      person: this.$options.contextData.cardData.data?.results ?? {},
-      group: this.$options.contextData.cardData.data?.results?.group ?? {},
+      person: this.cardData.data?.results ?? {},
+      group: this.cardData.data?.results?.group ?? {},
     };
   },
   computed: {

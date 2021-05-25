@@ -1,6 +1,6 @@
 import { assign } from 'lodash-es';
 
-export const memberHeader = {
+export const personHeader = {
   computed: {
     headerConfig() {
       const { cardData, cardState } = this.$root.$options.contextData;

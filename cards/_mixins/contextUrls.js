@@ -49,7 +49,7 @@ export const partyList = {
   },
 };
 
-export const memberOverview = {
+export const personOverview = {
   created() {
     const {
       template,
@@ -61,7 +61,7 @@ export const memberOverview = {
   },
 };
 
-export const memberVotes = {
+export const personVotes = {
   created() {
     const {
       template,
@@ -75,7 +75,7 @@ export const memberVotes = {
   },
 };
 
-export const memberSpeeches = {
+export const personSpeeches = {
   created() {
     const {
       template,

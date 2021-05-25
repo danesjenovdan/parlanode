@@ -9,15 +9,15 @@
           :color="vote.id"
           :selected="vote.selected"
           :small-text="vote.label"
-          :text="String(memberVotes[vote.id])"
-          :disabled="memberVotes[vote.id] === 0"
+          :text="String(personVotes[vote.id])"
+          :disabled="personVotes[vote.id] === 0"
           @click="toggleVote(vote.id)"
         />
       </div>
       <result
         :score="result.value"
         :option="result.max_opt"
-        :chart-data="mapVotes(memberVotes)"
+        :chart-data="mapVotes(personVotes)"
       />
     </div>
     <scroll-shadow ref="shadow">
@@ -91,7 +91,7 @@ export default {
       type: Array,
       default: () => [],
     },
-    memberVotes: {
+    personVotes: {
       type: Object,
       default: () => ({}),
     },
@@ -209,7 +209,7 @@ export default {
     },
     toggleVote(id) {
       const clickedVote = find(this.votes, { id });
-      if (this.memberVotes[id] !== 0) {
+      if (this.personVotes[id] !== 0) {
         this.votes.forEach((vote) => {
           if (vote === clickedVote) {
             vote.selected = !vote.selected;

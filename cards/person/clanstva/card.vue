@@ -30,10 +30,10 @@
 <script>
 import { reduce } from 'lodash-es';
 import common from '@/_mixins/common.js';
-import { memberOverview } from '@/_mixins/contextUrls.js';
-import { memberHeader } from '@/_mixins/altHeaders.js';
-import { memberOgImage } from '@/_mixins/ogImages.js';
-import { memberTitle } from '@/_mixins/titles.js';
+import { personOverview } from '@/_mixins/contextUrls.js';
+import { personHeader } from '@/_mixins/altHeaders.js';
+import { personOgImage } from '@/_mixins/ogImages.js';
+import { personTitle } from '@/_mixins/titles.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 import MembershipList from '@/_components/MembershipList.vue';
@@ -45,7 +45,7 @@ export default {
     PTabs,
     MembershipList,
   },
-  mixins: [common, memberHeader, memberOgImage, memberOverview, memberTitle],
+  mixins: [common, personHeader, personOgImage, personOverview, personTitle],
   data() {
     return {
       data: this.$options.contextData.cardData,

@@ -10,10 +10,10 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { memberOverview } from '@/_mixins/contextUrls.js';
-import { memberHeader } from '@/_mixins/altHeaders.js';
-import { memberOgImage } from '@/_mixins/ogImages.js';
-import { memberTitle } from '@/_mixins/titles.js';
+import { personOverview } from '@/_mixins/contextUrls.js';
+import { personHeader } from '@/_mixins/altHeaders.js';
+import { personOgImage } from '@/_mixins/ogImages.js';
+import { personTitle } from '@/_mixins/titles.js';
 import QuestionList from '@/_components/QuestionList.vue';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   components: {
     QuestionList,
   },
-  mixins: [common, memberOverview, memberTitle, memberHeader, memberOgImage],
+  mixins: [common, personOverview, personTitle, personHeader, personOgImage],
   data() {
     return {
       data: this.$options.contextData.cardData,

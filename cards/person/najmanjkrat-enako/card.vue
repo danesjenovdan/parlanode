@@ -10,10 +10,10 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { memberVotes } from '@/_mixins/contextUrls.js';
-import { memberTitle } from '@/_mixins/titles.js';
-import { memberHeader } from '@/_mixins/altHeaders.js';
-import { memberOgImage } from '@/_mixins/ogImages.js';
+import { personVotes } from '@/_mixins/contextUrls.js';
+import { personTitle } from '@/_mixins/titles.js';
+import { personHeader } from '@/_mixins/altHeaders.js';
+import { personOgImage } from '@/_mixins/ogImages.js';
 import PersonList from '@/_components/PersonList.vue';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   components: {
     PersonList,
   },
-  mixins: [common, memberVotes, memberHeader, memberOgImage, memberTitle],
+  mixins: [common, personVotes, personHeader, personOgImage, personTitle],
   data() {
     const people = this.$options.contextData.cardData.results.map((o) => {
       const { person } = o;

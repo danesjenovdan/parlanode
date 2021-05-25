@@ -87,10 +87,10 @@ import Toggle from '@/_components/Toggle.vue';
 import Ballot from '@/_components/Ballot.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import common from '@/_mixins/common.js';
-import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
-import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
-import { memberVotes, partyVotes } from '@/_mixins/contextUrls.js';
-import { memberTitle, partyTitle } from '@/_mixins/titles.js';
+import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
+import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
+import { personVotes, partyVotes } from '@/_mixins/contextUrls.js';
+import { personTitle, partyTitle } from '@/_mixins/titles.js';
 
 export default {
   components: {
@@ -271,20 +271,20 @@ export default {
     },
     headerConfig() {
       if (this.type === 'person') {
-        return memberHeader.computed.headerConfig.call(this);
+        return personHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
     },
     ogConfig() {
       if (this.type === 'person') {
-        return memberOgImage.computed.ogConfig.call(this);
+        return personOgImage.computed.ogConfig.call(this);
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
   },
   created() {
-    (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
-    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
+    (this.type === 'person' ? personVotes : partyVotes).created.call(this);
+    (this.type === 'person' ? personTitle : partyTitle).created.call(this);
   },
   methods: {
     toggleOption(optionId) {

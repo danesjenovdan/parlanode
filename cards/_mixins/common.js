@@ -7,7 +7,8 @@ export default {
   data() {
     return {
       cardName: this.$root.$options.contextData.cardName,
-      cardData: this.$root.$options.contextData.cardData,
+      cardData: this.$root.$options.contextData.cardData ?? {},
+      cardState: this.$root.$options.contextData.cardState ?? {},
       slugs: this.$root.$options.contextData.slugs,
     };
   },

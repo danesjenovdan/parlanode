@@ -12,7 +12,7 @@
 <script>
 import links from '@/_mixins/links.js';
 import common from '@/_mixins/common.js';
-import { memberTitle } from '@/_mixins/titles.js';
+import { personTitle } from '@/_mixins/titles.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
 import Speech from '@/_components/Speech.vue';
@@ -26,7 +26,7 @@ export default {
   directives: {
     quotable,
   },
-  mixins: [common, links, memberTitle, sessionHeader, sessionOgImage],
+  mixins: [common, links, personTitle, sessionHeader, sessionOgImage],
   cardInfo: {
     doubleWidth: true,
   },

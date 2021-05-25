@@ -13,10 +13,10 @@
 import * as d3 from 'd3';
 import CardWrapper from '@/_components/Card/Wrapper.vue';
 import common from '@/_mixins/common.js';
-import { memberTitle, partyTitle } from '@/_mixins/titles.js';
-import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
-import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
-import { memberOverview, partyOverview } from '@/_mixins/contextUrls.js';
+import { personTitle, partyTitle } from '@/_mixins/titles.js';
+import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
+import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
+import { personOverview, partyOverview } from '@/_mixins/contextUrls.js';
 import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
@@ -47,13 +47,13 @@ export default {
   computed: {
     headerConfig() {
       if (this.type === 'person') {
-        return memberHeader.computed.headerConfig.call(this);
+        return personHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
     },
     ogConfig() {
       if (this.type === 'person') {
-        return memberOgImage.computed.ogConfig.call(this);
+        return personOgImage.computed.ogConfig.call(this);
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
@@ -79,8 +79,8 @@ export default {
     },
   },
   created() {
-    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
-    (this.type === 'person' ? memberOverview : partyOverview).created.call(
+    (this.type === 'person' ? personTitle : partyTitle).created.call(this);
+    (this.type === 'person' ? personOverview : partyOverview).created.call(
       this
     );
   },

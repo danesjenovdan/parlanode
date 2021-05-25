@@ -1,6 +1,6 @@
 import { assign } from 'lodash-es';
 
-export const memberOgImage = {
+export const personOgImage = {
   computed: {
     ogConfig() {
       const { cardData } = this.$root.$options.contextData;

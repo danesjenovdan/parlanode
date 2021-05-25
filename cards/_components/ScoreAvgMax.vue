@@ -105,16 +105,16 @@
 <script>
 import common from '@/_mixins/common.js';
 import {
-  memberOverview,
+  personOverview,
   partyOverview,
-  memberVotes,
+  personVotes,
   partyVotes,
-  memberSpeeches,
+  personSpeeches,
   partySpeeches,
 } from '@/_mixins/contextUrls.js';
-import { memberTitle, partyTitle } from '@/_mixins/titles.js';
-import { memberHeader, partyHeader } from '@/_mixins/altHeaders.js';
-import { memberOgImage, partyOgImage } from '@/_mixins/ogImages.js';
+import { personTitle, partyTitle } from '@/_mixins/titles.js';
+import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
+import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import PersonPin from '@/_components/PersonPin.vue';
 import PartyPin from '@/_components/PartyPin.vue';
 
@@ -160,13 +160,13 @@ export default {
     },
     headerConfig() {
       if (this.type === 'person') {
-        return memberHeader.computed.headerConfig.call(this);
+        return personHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
     },
     ogConfig() {
       if (this.type === 'person') {
-        return memberOgImage.computed.ogConfig.call(this);
+        return personOgImage.computed.ogConfig.call(this);
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
@@ -194,15 +194,15 @@ export default {
     },
   },
   created() {
-    (this.type === 'person' ? memberTitle : partyTitle).created.call(this);
+    (this.type === 'person' ? personTitle : partyTitle).created.call(this);
     if (this.context === 'overview') {
-      (this.type === 'person' ? memberOverview : partyOverview).created.call(
+      (this.type === 'person' ? personOverview : partyOverview).created.call(
         this
       );
     } else if (this.context === 'votings') {
-      (this.type === 'person' ? memberVotes : partyVotes).created.call(this);
+      (this.type === 'person' ? personVotes : partyVotes).created.call(this);
     } else if (this.context === 'speeches') {
-      (this.type === 'person' ? memberSpeeches : partySpeeches).created.call(
+      (this.type === 'person' ? personSpeeches : partySpeeches).created.call(
         this
       );
     }

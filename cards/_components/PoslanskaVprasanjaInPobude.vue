@@ -49,8 +49,8 @@ import generateMonths from '@/_mixins/generateMonths.js';
 import common from '@/_mixins/common.js';
 import { partyOverview } from '@/_mixins/contextUrls.js';
 import { partyTitle } from '@/_mixins/titles.js';
-import { partyHeader, memberHeader } from '@/_mixins/altHeaders.js';
-import { partyOgImage, memberOgImage } from '@/_mixins/ogImages.js';
+import { partyHeader, personHeader } from '@/_mixins/altHeaders.js';
+import { partyOgImage, personOgImage } from '@/_mixins/ogImages.js';
 import CardWrapper from '@/_components/Card/Wrapper.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import QuestionList from '@/_components/QuestionList.vue';
@@ -198,13 +198,13 @@ export default {
     },
     headerConfig() {
       if (this.type === 'person') {
-        return memberHeader.computed.headerConfig.call(this);
+        return personHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
     },
     ogConfig() {
       if (this.type === 'person') {
-        return memberOgImage.computed.ogConfig.call(this);
+        return personOgImage.computed.ogConfig.call(this);
       }
       return partyOgImage.computed.ogConfig.call(this);
     },

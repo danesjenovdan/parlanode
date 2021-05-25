@@ -1,4 +1,4 @@
-export const memberTitle = {
+export const personTitle = {
   created() {
     const { template, cardData } = this.$root.$options.contextData;
     template.pageTitle = `${this.$t('card.title')} - ${cardData?.name}`;
