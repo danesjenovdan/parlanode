@@ -97,7 +97,7 @@ export default {
   },
   data() {
     // get all working bodies from result data
-    let allWorkingBodies = this.$options.contextData.cardData.results
+    let allWorkingBodies = (this.cardData.data?.wbs || [])
       .map((x) => x.mdt)
       .filter((x) => x.id > 0);
     // prepare for dropdown ui component
@@ -114,12 +114,12 @@ export default {
       .reverse()
       .map(JSON.parse);
 
-    const state = this.$options.contextData.cardState || {};
+    const state = this.cardState || {};
 
     const tabs = legislationTabs;
     return {
       tabs,
-      data: this.$options.contextData.cardData.results,
+      data: this.cardData.data?.results,
       filters: tabs.map((e) => ({ id: e.title, label: e.title })),
       currentFilter: state.type || (state.generator ? tabs[0].title : null),
       currentSort: 'updated',
