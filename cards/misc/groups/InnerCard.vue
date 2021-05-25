@@ -9,8 +9,8 @@
       class="labeled-chart"
     >
       <div class="column chart-label">
-        <a :href="getPartyLink(party.party)" class="funblue-light-hover">
-          {{ party.party.acronym }}
+        <a :href="getPartyLink(party)" class="funblue-light-hover">
+          {{ party.acronym }}
         </a>
       </div>
       <div class="column chart">

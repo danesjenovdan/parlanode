@@ -1,0 +1,43 @@
+{
+  "url": "data.json",
+  "error": false,
+  "data": {
+    "results": [
+      {
+        "name": "Lista Zorana Jankovića ",
+        "acronym": "LZJ",
+        "slug": "12-lista-zorana-jankovica"
+      },
+      {
+        "name": "Slovenska demokratska stranka ",
+        "acronym": "SDS",
+        "slug": "11-slovenska-demokratska-stranka"
+      },
+      {
+        "name": "Svetniški klub samostojnih svetnikov ",
+        "acronym": "SKSS",
+        "slug": "8-svetniski-klub-samostojnih-svetnikov"
+      },
+      {
+        "name": "Levica ",
+        "acronym": "Levica",
+        "slug": "10-levica"
+      },
+      {
+        "name": "Nova Slovenija – Krščanski demokrati ",
+        "acronym": "NSi",
+        "slug": "9-nova-slovenija-krscanski-demokrati"
+      },
+      {
+        "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+        "acronym": "SSLKP",
+        "slug": "7-samostojni-svetnik-liste-kolesarjev-in-pescev"
+      },
+      {
+        "name": "Socialni demokrati ",
+        "acronym": "SD",
+        "slug": "6-socialni-demokrati"
+      }
+    ]
+  }
+}
