@@ -58,7 +58,6 @@ import stableSort from 'stable';
 import { find } from 'lodash-es';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
 import axios from 'axios';
-import stateLoader from '@/_helpers/stateLoader.js';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
@@ -114,19 +113,15 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const loadFromState = stateLoader(this.$options.contextData.cardState);
-
-    const selectedDistrictIds = loadFromState('districts') || [];
-    const districts = this.$options.contextData.cardData.districts.map(
-      (district) => {
-        const id = Object.keys(district)[0];
-        return {
-          id,
-          label: district[id],
-          selected: selectedDistrictIds.indexOf(id) !== -1,
-        };
-      }
-    );
+    const selectedDistrictIds = this.cardState.districts || [];
+    const districts = (this.cardData.districts || []).map((district) => {
+      const id = Object.keys(district)[0];
+      return {
+        id,
+        label: district[id],
+        selected: selectedDistrictIds.indexOf(id) !== -1,
+      };
+    });
 
     const genders = [
       { id: 'm', label: 'moški', selected: false },
@@ -147,18 +142,18 @@ export default {
     }));
 
     return {
-      memberData: this.$options.contextData.cardData.data,
-      currentAnalysis: loadFromState('analysis') || 'demographics',
-      currentSort: loadFromState('sort') || 'name',
-      currentSortOrder: loadFromState('sortOrder') || 'asc',
-      currentPage: loadFromState('page') || 1,
+      memberData: this.cardData.data?.results,
+      currentAnalysis: this.cardState.analysis || 'demographics',
+      currentSort: this.cardState.sort || 'name',
+      currentSortOrder: this.cardState.sortOrder || 'asc',
+      currentPage: this.cardState.page || 1,
       analyses,
       parties: [],
-      selectedPartiesState: loadFromState('parties') || [],
-      textFilter: loadFromState('textFilter') || '',
+      selectedPartiesState: this.cardState.parties || [],
+      textFilter: this.cardState.textFilter || '',
       districts,
       genders,
-      selectedGenders: loadFromState('genders') || [],
+      selectedGenders: this.cardState.genders || [],
     };
   },
   computed: {
@@ -247,7 +242,10 @@ export default {
       if (this.currentAnalysis !== 'demographics') {
         analysisMax = this.memberData.reduce(
           (biggest, member) =>
-            Math.max(biggest, member.results[this.currentAnalysis].score || 0),
+            Math.max(
+              biggest,
+              member.results?.[this.currentAnalysis].score || 0
+            ),
           0
         );
       }
@@ -288,7 +286,7 @@ export default {
         })
         .map((member) => {
           const newMember = JSON.parse(JSON.stringify(member));
-          if (!newMember.person.district || !newMember.person.district.length) {
+          if (!newMember.district?.length) {
             newMember.formattedDistrict = this.$t('missing-district');
           } else {
             newMember.formattedDistrict = newMember.person.district
@@ -299,22 +297,18 @@ export default {
               .join(', ');
           }
 
-          newMember.partylink = newMember.person.party.classification === 'pg';
-          newMember.age =
-            getAge(
-              newMember.results.birth_date && newMember.results.birth_date.score
-            ) || '';
-          const education =
-            newMember.results.education && newMember.results.education.score;
+          newMember.partylink = newMember.party?.classification === 'pg';
+          newMember.age = getAge(newMember.date_of_birth) || '';
+          const education = newMember.education_level;
           newMember.education = String(education || 0);
-          newMember.terms = newMember.results.mandates.score || 1;
+          newMember.terms = newMember.number_of_mandates || 1;
           if (this.currentAnalysis !== 'demographics') {
-            const score = newMember.results[this.currentAnalysis].score || 0;
+            const score = newMember.results?.[this.currentAnalysis].score || 0;
             newMember.analysisValue = Math.round(score * 10) / 10;
             newMember.analysisPercentage =
               analysisMax > 0 ? (score / analysisMax) * 100 : 0;
             const diff =
-              Math.round(newMember.results[this.currentAnalysis].diff * 10) /
+              Math.round(newMember.results?.[this.currentAnalysis].diff * 10) /
               10;
             newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
           }
@@ -326,16 +320,16 @@ export default {
         let b;
         switch (this.currentSort) {
           case 'change':
-            a = memberA.results[this.currentAnalysis].diff;
-            b = memberB.results[this.currentAnalysis].diff;
+            a = memberA.results?.[this.currentAnalysis].diff;
+            b = memberB.results?.[this.currentAnalysis].diff;
             return a - b;
           case 'analysis':
-            a = memberA.results[this.currentAnalysis].score || 0;
-            b = memberB.results[this.currentAnalysis].score || 0;
+            a = memberA.results?.[this.currentAnalysis].score || 0;
+            b = memberB.results?.[this.currentAnalysis].score || 0;
             return a - b;
           case 'name':
-            a = memberA.person.name;
-            b = memberB.person.name;
+            a = memberA.name;
+            b = memberB.name;
             return a.localeCompare(b, 'sl');
           case 'district':
             a = memberA.formattedDistrict;

@@ -71,26 +71,26 @@ export default {
       if (this.demographics) {
         return this.processedMembers.map((member) => [
           {
-            link: this.getMemberLink(member),
-            image: this.getMemberPortrait(member),
+            link: this.getPersonLink(member),
+            image: this.getPersonPortrait(member),
           },
-          { link: this.getMemberLink(member), text: member.person.name },
+          { link: this.getPersonLink(member), text: member.name },
           member.age,
           member.education,
           member.terms,
           {
             link: member.partylink ? this.getMemberPartyLink(member) : '',
-            text: member.person.party.acronym,
+            text: member.party?.acronym,
           },
           member.formattedDistrict,
         ]);
       }
       return this.processedMembers.map((member) => [
         {
-          link: this.getMemberLink(member),
-          image: this.getMemberPortrait(member),
+          link: this.getPersonLink(member),
+          image: this.getPersonPortrait(member),
         },
-        { link: this.getMemberLink(member), text: member.person.name },
+        { link: this.getPersonLink(member), text: member.name },
         {
           barchart: true,
           value: member.analysisValue,

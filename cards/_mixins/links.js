@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-properties */
 import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 
 export default {
@@ -21,27 +22,6 @@ export default {
       }
       const { slugs, siteMap: sm } = this.$root.$options.contextData;
       return `${slugs.urls.base}/${sm.party.base}/${party.slug}`;
-    },
-    getPersonPartyLink(person) {
-      return this.getPartyLink(person.party);
-    },
-    getMemberLink(member) {
-      return this.getPersonLink(member.person);
-    },
-    getMemberPortrait(member) {
-      return this.getPersonPortrait(member.person);
-    },
-    getMemberPartyLink(member) {
-      return this.getPersonPartyLink(member.person);
-    },
-    getMemberPartyIdLink(member) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      if (!slugs.party[member.party_id]) {
-        return '';
-      }
-      return `${slugs.urls.base}/${sm.party.base}/${
-        slugs.party[member.party_id].acronym
-      }`;
     },
     getSessionLegislationLink(session) {
       const { slugs, siteMap: sm } = this.$root.$options.contextData;
