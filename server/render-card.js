@@ -3,6 +3,7 @@ import {
   createError,
   loadLocale,
   loadCardModule,
+  getCardDataUrl,
   fetchCardData,
   parseCardState,
 } from './utils.js';
@@ -63,8 +64,8 @@ const renderInitialState = (state) => {
   return `<script type="module">window.__INITIAL_STATE__=${json};</script>`;
 };
 
-const renderCard = async ({ cardName, id, locale, state }) => {
-  const [{ render, dataUrl }, localeData] = await Promise.all([
+const renderCard = async ({ cardName, id, date, locale, state }) => {
+  const [{ render }, localeData] = await Promise.all([
     await loadCardModule(cardName),
     await loadLocale(locale),
   ]);
@@ -79,7 +80,10 @@ const renderCard = async ({ cardName, id, locale, state }) => {
   const defaultMessages = localeData.defaults ?? {};
   const cardMessages = localeData[cardName] ?? {};
 
-  const cardData = await fetchCardData(`${dataUrl}${id ? `/${id}` : ''}`);
+  // TODO: support custom data url?
+  const dataUrl = getCardDataUrl(cardName, id, date);
+
+  const cardData = await fetchCardData(dataUrl);
   const cardState = parseCardState(state);
 
   const uid = Math.random().toString(36).slice(2);
@@ -87,12 +91,8 @@ const renderCard = async ({ cardName, id, locale, state }) => {
   const contextData = {
     mountId,
     cardName,
-    // TODO: use cardData directly
-    // this is a hack until error/empty states are implemented in cards
-    cardData: cardData.data,
-    // TODO: use cardState directly
-    // this is a hack until error/empty states are implemented in cards
-    cardState: cardState.data,
+    cardData,
+    cardState,
     slugs,
     siteMap,
   };

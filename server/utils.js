@@ -24,7 +24,6 @@ const loadCardModule = async (cardName) => {
   }
   return {
     render: module?.default?.default,
-    dataUrl: module?.default?.dataUrl,
   };
 };
 
@@ -44,12 +43,21 @@ const loadLocale = async (locale) => {
   return localeCache[locale];
 };
 
+function getCardDataUrl(cardName, id, date) {
+  const searchParams = new URLSearchParams();
+  if (id) {
+    searchParams.set('id', id);
+  }
+  if (date) {
+    searchParams.set('date', date);
+  }
+  const queryString = searchParams.toString();
+  return `{parladata}/${cardName}/${queryString ? `?${queryString}` : ''}`;
+}
+
 function expandUrl(dataUrl) {
   if (typeof dataUrl === 'string') {
-    return dataUrl
-      .replace('{analize}', process.env.VITE_PARLALIZE_V1_URL)
-      .replace('{analizeV2}', process.env.VITE_PARLALIZE_V2_URL)
-      .replace('{data}', process.env.VITE_PARLADATA_V1_URL);
+    return dataUrl.replace(/^{parladata}/, process.env.VITE_PARLADATA_URL);
   }
   return null;
 }
@@ -125,6 +133,7 @@ export {
   createError,
   loadCardModule,
   loadLocale,
+  getCardDataUrl,
   fetchCardData,
   parseCardState,
 };

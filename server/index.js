@@ -13,10 +13,10 @@ fastify.register(fastifyStatic, {
 });
 
 const renderCardHandler = async (request, reply) => {
-  const { group, method, id } = request.params;
-  const { locale, state } = request.query;
+  const { group, method } = request.params;
+  const { id, date, locale, state } = request.query;
   const cardName = `${group}/${method}`;
-  const [error, html] = await renderCard({ cardName, id, locale, state });
+  const [error, html] = await renderCard({ cardName, id, date, locale, state });
   if (!error) {
     reply.type('text/html').send(html);
   } else {
@@ -26,7 +26,6 @@ const renderCardHandler = async (request, reply) => {
 };
 
 fastify.get('/:group/:method', renderCardHandler);
-fastify.get('/:group/:method/:id', renderCardHandler);
 
 fastify.listen(process.env.PORT || 3000, '0.0.0.0', (error) => {
   if (error) {
