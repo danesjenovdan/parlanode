@@ -94,7 +94,6 @@
 </template>
 
 <script>
-/* eslint-disable no-underscore-dangle */
 import DashButton from '@/_components/Dashboard/Button.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import parlapi from '@/_mixins/parlapi.js';

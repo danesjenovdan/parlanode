@@ -74,7 +74,6 @@
 </template>
 
 <script>
-/* eslint-disable no-underscore-dangle */
 import { assign, sortBy, zip, groupBy, map } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';

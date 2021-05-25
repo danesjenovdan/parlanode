@@ -120,7 +120,6 @@ export default {
           );
           this.orgs = orderBy(res.data.results, ['_name']).map((org) => ({
             id: org.id,
-            // eslint-disable-next-line no-underscore-dangle
             label: org._name,
             selected: orgId ? org.id === orgId : false,
           }));

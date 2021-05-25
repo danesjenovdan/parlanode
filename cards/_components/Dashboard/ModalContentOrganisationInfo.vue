@@ -170,7 +170,6 @@
 </template>
 
 <script>
-/* eslint-disable no-underscore-dangle */
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 
 export default {

@@ -20,6 +20,7 @@ module.exports = {
         devDependencies: ['build/**', '**/.eslintrc.{js,cjs,mjs}'],
       },
     ],
+    'no-underscore-dangle': ['error', { allow: ['__INITIAL_STATE__'] }],
     'no-param-reassign': ['off'], // TODO: fix and reenable
     'vue/no-mutating-props': ['off'], // TODO: fix and reenable
   },
