@@ -1,0 +1,27 @@
+{
+  "url": "data.json",
+  "id": 6,
+  "error": false,
+  "data": {
+    "results": {
+      "name": "Socialni demokrati ",
+      "acronym": "",
+      "slug": "6-socialni-demokrati",
+      "members": [
+        {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
+        }
+      ]
+    }
+  }
+}

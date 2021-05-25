@@ -80,10 +80,8 @@ const renderCard = async ({ cardName, id, date, locale, state }) => {
   const defaultMessages = localeData.defaults ?? {};
   const cardMessages = localeData[cardName] ?? {};
 
-  // TODO: support custom data url?
   const dataUrl = getCardDataUrl(cardName, id, date);
-
-  const cardData = await fetchCardData(dataUrl);
+  const cardData = await fetchCardData(dataUrl, id, date);
   const cardState = parseCardState(state);
 
   const uid = Math.random().toString(36).slice(2);

@@ -62,7 +62,7 @@ function expandUrl(dataUrl) {
   return null;
 }
 
-const fetchCardData = async (dataUrl) => {
+const fetchCardData = async (dataUrl, id, date) => {
   const expandedUrl = expandUrl(dataUrl);
   if (expandedUrl) {
     let response;
@@ -71,6 +71,8 @@ const fetchCardData = async (dataUrl) => {
     } catch (error) {
       return {
         url: expandedUrl,
+        id,
+        date,
         error: createError(
           error.response?.status ?? 0,
           error.name,
@@ -83,6 +85,8 @@ const fetchCardData = async (dataUrl) => {
     if (typeof response.data !== 'object') {
       return {
         url: expandedUrl,
+        id,
+        date,
         error: createError(
           response.status ?? 0,
           'Error',
@@ -93,12 +97,16 @@ const fetchCardData = async (dataUrl) => {
     }
     return {
       url: expandedUrl,
+      id,
+      date,
       error: false,
       data: response.data,
     };
   }
   return {
     url: expandedUrl,
+    id,
+    date,
     error: false,
     data: null,
   };

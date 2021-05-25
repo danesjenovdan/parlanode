@@ -4,7 +4,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <person-list :people="data.results" />
+    <person-list :people="data.members" />
   </card-wrapper>
 </template>
 
@@ -24,12 +24,12 @@ export default {
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage],
   data() {
     return {
-      data: this.$options.contextData.cardData,
+      data: this.cardData.data.results,
     };
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.data.party.id}?altHeader=true`;
+      return `${this.url}${this.cardData.id}?altHeader=true`;
     },
   },
 };

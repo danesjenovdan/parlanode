@@ -5,11 +5,13 @@ export default {
     CardWrapper,
   },
   data() {
+    // eslint-disable-next-line no-restricted-properties
+    const { contextData } = this.$root.$options;
     return {
-      cardName: this.$root.$options.contextData.cardName,
-      cardData: this.$root.$options.contextData.cardData ?? {},
-      cardState: this.$root.$options.contextData.cardState ?? {},
-      slugs: this.$root.$options.contextData.slugs,
+      cardName: contextData.cardName,
+      cardData: contextData.cardData ?? {},
+      cardState: contextData.cardState ?? {},
+      slugs: contextData.slugs,
     };
   },
   created() {
