@@ -15,7 +15,7 @@ export default function devServeCards() {
         const url = new URL(req.url, `http://${req.headers.host}/`);
         if (url.pathname === '/') {
           const cards = glob
-            .sync(join(cardsPath, '**/card.json'))
+            .sync(join(cardsPath, '**/card.vue'))
             .map((file) => file.split('/').slice(-3, -1));
           const cardsByGroup = mapValues(
             groupBy(cards, ([g]) => g),
@@ -41,7 +41,7 @@ export default function devServeCards() {
         } else if (url.pathname.slice(1).split('/').length === 2) {
           const [group, method] = url.pathname.slice(1).split('/');
           const cardName = `${group}/${method}`;
-          if (existsSync(join(cardsPath, cardName, 'card.json'))) {
+          if (existsSync(join(cardsPath, cardName, 'card.vue'))) {
             const html = readFileSync(
               resolve(dir, 'card-entry-dev.html'),
               'utf-8'
@@ -76,7 +76,7 @@ export default function devServeCards() {
         const [path, search] = id.split('?');
         const [group, method] = path.split('/').slice(-3, -1);
         const cardName = `${group}/${method}`;
-        if (existsSync(join(cardsPath, cardName, 'card.json'))) {
+        if (existsSync(join(cardsPath, cardName, 'card.vue'))) {
           const searchParams = new URLSearchParams(search);
           const entryTemplate = readFileSync(
             resolve(dir, 'card-entry-dev.js'),
