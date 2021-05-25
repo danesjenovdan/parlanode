@@ -1,0 +1,23 @@
+{
+  "data": {
+    "results": {
+      "score": 0.0,
+      "average": 0.000954854359723662,
+      "maximum": {
+        "score": 0.0044464584100371,
+        "groups": [
+          {
+            "name": "Svetniški klub samostojnih svetnikov ",
+            "acronym": "SKSS",
+            "slug": "8-svetniski-klub-samostojnih-svetnikov"
+          }
+        ]
+      }
+    },
+    "group": {
+      "name": "Socialni demokrati ",
+      "acronym": "SD",
+      "slug": "6-socialni-demokrati"
+    }
+  }
+}

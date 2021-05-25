@@ -183,12 +183,7 @@ export default {
       return this.results?.maximum?.score ?? 0;
     },
     getMaxPGs() {
-      if (this.results.max) {
-        return this.results.max.pgs
-          ? this.results.max.pgs
-          : this.results.max.parties;
-      }
-      return this.results.maxPG;
+      return this.results?.maximum?.groups ?? [];
     },
   },
   created() {

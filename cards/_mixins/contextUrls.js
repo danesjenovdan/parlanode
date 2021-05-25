@@ -29,16 +29,8 @@ export const partyVotes = {
 
 export const partySpeeches = {
   created() {
-    const {
-      template,
-      slugs,
-      cardData,
-      siteMap: sm,
-    } = this.$root.$options.contextData;
-    const party = cardData.party || cardData.organization;
-    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${
-      slugs.party[party.id].acronym
-    }/${sm.party.speeches}`;
+    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${this.cardData.data?.group?.slug}/${sm.party.speeches}`;
   },
 };
 
