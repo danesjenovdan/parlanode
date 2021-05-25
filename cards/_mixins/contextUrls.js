@@ -77,15 +77,8 @@ export const personVotes = {
 
 export const personSpeeches = {
   created() {
-    const {
-      template,
-      slugs,
-      cardData,
-      siteMap: sm,
-    } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${
-      slugs.person[cardData.person.id].slug
-    }/${sm.member.speeches}`;
+    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${this.cardData.data?.person?.slug}/${sm.member.speeches}`;
   },
 };
 

@@ -72,7 +72,7 @@
                 <span class="sr-only">{{ getMaxValue }}%</span>
                 <template v-if="type === 'person'">
                   <person-pin
-                    v-for="mp in results.max.mps"
+                    v-for="mp in results.maximum.mps"
                     :key="mp.gov_id"
                     :person="mp"
                   />
@@ -177,12 +177,10 @@ export default {
       return `${this.url}${this.party.id}?altHeader=true`;
     },
     getScore() {
-      return this.results.score != null
-        ? this.results.score
-        : this.results.organization_value;
+      return this.results?.score ?? 0;
     },
     getMaxValue() {
-      return this.results.max ? this.results.max.score : this.results.maximum;
+      return this.results?.maximum?.score ?? 0;
     },
     getMaxPGs() {
       if (this.results.max) {

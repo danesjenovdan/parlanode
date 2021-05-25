@@ -1,0 +1,35 @@
+{
+  "data": {
+    "results": {
+      "score": 0.0,
+      "average": 0.0733454852137613,
+      "maximum": {
+        "score": 0.592592592592593,
+        "mps": [
+          {
+            "slug": "26-jozka-hegler",
+            "name": "Jožka Hegler",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": null,
+            "image": null
+          }
+        ]
+      }
+    },
+    "person": {
+      "slug": "6-marko-koprivc",
+      "name": "Marko Koprivc",
+      "honorific_prefix": null,
+      "honorific_suffix": null,
+      "preferred_pronoun": null,
+      "group": {
+        "name": "Socialni demokrati ",
+        "acronym": "",
+        "slug": "6-socialni-demokrati"
+      },
+      "image": null
+    }
+  }
+}
