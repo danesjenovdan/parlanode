@@ -47,22 +47,25 @@ export default {
       return this.processedSessions.map((session) => [
         {
           link: this.getSessionUrl(session),
-          image: `${this.slugs.urls.cdn}/icons/seja-${
-            session.name.split(' ')[1]
+          image: `${this.$root.slugs.urls.cdn}/icons/seja-${
+            session.classification || 'redna'
           }.svg`,
         },
         { link: this.getSessionUrl(session), text: session.name },
-        formatDate(session.date_ts),
-        formatDate(session.updated_at_ts),
+        session.start_time ? formatDate(session.start_time) : '',
+        session.end_time ? formatDate(session.end_time) : '',
         {
-          contents: session.orgs.map((org) => ({ text: org.name, link: null })),
+          contents: session.organizations.map((org) => ({
+            text: org.name,
+            link: null,
+          })),
         },
       ]);
     },
   },
   methods: {
     getSessionUrl(session) {
-      if (!this.slugs || session.link_to === 'nothing') {
+      if (!this.$root.slugs || session.link_to === 'nothing') {
         return '';
       }
       return this.getSessionLegislationLink(session);

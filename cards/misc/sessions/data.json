@@ -1,0 +1,411 @@
+{
+  "data": {
+    "results": [
+      {
+        "name": "13. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-06-15T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "1. izredna seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-01-21T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "2. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-02-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "3. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-04-15T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "4. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-05-20T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "5. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-06-17T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "6. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-07-08T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "7. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-09-23T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "2. izredna seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-09-23T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "8. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-10-21T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "3. izredna seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-10-21T17:40:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "9. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-11-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "10. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-12-16T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "4. izredna seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2019-12-16T19:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "11. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-02-03T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "12. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-05-04T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "14. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-07-06T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "15. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-09-21T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "16. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-10-19T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "17. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-11-16T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "18. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-12-14T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "19. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2021-01-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "20. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2021-02-15T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "21. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2021-03-29T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "22. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2021-04-19T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "1. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2018-12-17T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "Session 1.",
+        "gov_id": null,
+        "start_time": "2020-01-01T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": "MS MOL",
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      }
+    ]
+  }
+}

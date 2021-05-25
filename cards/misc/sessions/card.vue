@@ -51,14 +51,14 @@ import InnerCard from './InnerCard.vue';
 
 // TODO: get from config
 const sessionListTabs = [
-  {
-    title: 'Seje DZ',
-    org_ids: [1],
-  },
-  {
-    title: 'Seje kolegija predsednika DZ',
-    org_ids: [15],
-  },
+  // {
+  //   title: 'Seje DZ',
+  //   org_ids: [1],
+  // },
+  // {
+  //   title: 'Seje kolegija predsednika DZ',
+  //   org_ids: [15],
+  // },
   {
     title: 'Seje delovnih teles',
   },
@@ -79,14 +79,13 @@ export default {
     const tabs = sessionListTabs;
     return {
       tabs,
-      sessions: this.$options.contextData.cardData.sessions,
+      sessions: this.cardData.data?.results,
       workingBodies: [],
       filters: tabs.map((e) => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter:
-        get(this.$options.contextData.cardState, 'filters') || tabs[0].title,
-      justFive: get(this.$options.contextData.cardState, 'justFive') || false,
+      currentFilter: get(this.cardState, 'filters') || tabs[0].title,
+      justFive: get(this.cardState, 'justFive') || false,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
@@ -137,18 +136,18 @@ export default {
           );
           if (selectedTab) {
             if (selectedTab.org_ids && selectedTab.org_ids.length) {
-              return session.orgs.filter(
+              return session.organizations.filter(
                 (org) => selectedTab.org_ids.indexOf(org.id) !== -1
               ).length;
             }
             // if no selectedTab.org_ids
             let match = false;
             if (this.currentWorkingBodies.length === 0) {
-              session.orgs.forEach((org) => {
+              session.organizations.forEach((org) => {
                 match = match || this.organisationIsWorkingBody(org.id);
               });
             } else {
-              session.orgs.forEach((org) => {
+              session.organizations.forEach((org) => {
                 match = match || this.currentWorkingBodies.indexOf(org.id) > -1;
               });
             }
@@ -187,8 +186,8 @@ export default {
               // never return 0, chrome and firefox sort differently and that can break SSR
               return sessionA.id - sessionB.id;
             case 'workingBody':
-              a = sessionA.orgs[0].name;
-              b = sessionB.orgs[0].name;
+              a = sessionA.organizations[0].name;
+              b = sessionB.organizations[0].name;
               return a.localeCompare(b, 'sl');
             default:
               // never return 0, chrome and firefox sort differently and that can break SSR
@@ -246,7 +245,7 @@ export default {
       .get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
       .then((response) => {
         const existingWorkingBodies =
-          get(this.$options.contextData.cardState, 'workingBodies') || [];
+          get(this.cardState, 'workingBodies') || [];
         this.workingBodies = response.data.map((workingBody) => ({
           id: workingBody.id,
           label: workingBody.name,
