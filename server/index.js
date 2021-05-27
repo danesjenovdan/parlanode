@@ -14,11 +14,11 @@ fastify.register(fastifyStatic, {
 
 const renderCardHandler = async (request, reply) => {
   const { group, method } = request.params;
-  const { id, date, locale, ...state } = request.query;
+  const { id, date, locale, template, ...state } = request.query;
   const cardName = `${group}/${method}`;
   let html;
   try {
-    html = await renderCard({ cardName, id, date, locale, state });
+    html = await renderCard({ cardName, id, date, locale, template, state });
   } catch (error) {
     fastify.log.error(error);
     try {

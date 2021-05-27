@@ -8,7 +8,20 @@ import {
   parseCardState,
 } from './utils.js';
 
-const template = fs.readFileSync('./build/card-entry-client.html', 'utf-8');
+const templates = {
+  raw: '<!--ssr-outlet-->',
+  dev: fs.readFileSync('./build/card-template-dev.html', 'utf-8'),
+  // frame: fs.readFileSync('./build/card-template-frame.html', 'utf-8'),
+  // embed: fs.readFileSync('./build/card-template-embed.html', 'utf-8'),
+};
+
+const getTemplate = (template) => {
+  if (Object.prototype.hasOwnProperty.call(templates, template)) {
+    return templates[template];
+  }
+  return templates.dev;
+};
+
 const manifest = fs.readJSONSync('./dist/client/manifest.json');
 const ssrManifest = fs.readJSONSync('./dist/client/ssr-manifest.json');
 
@@ -64,7 +77,7 @@ const renderInitialState = (state) => {
   return `<script type="module">window.__INITIAL_STATE__=${json};</script>`;
 };
 
-const renderCard = async ({ cardName, id, date, locale, state }) => {
+const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const [{ render }, localeData] = await Promise.all([
     await loadCardModule(cardName),
     await loadLocale(locale),
@@ -104,7 +117,7 @@ const renderCard = async ({ cardName, id, date, locale, state }) => {
   const initialState = renderInitialState({ contextData, i18nData });
   const { preloads, styles, scripts } = renderAssets(cardName, ctx.modules);
 
-  const html = template
+  const html = getTemplate(template)
     .replace(
       `<!--ssr-outlet-->`,
       styles + preloads + cardHtml + initialState + scripts
