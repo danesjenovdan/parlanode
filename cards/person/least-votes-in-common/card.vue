@@ -23,9 +23,9 @@ export default {
   },
   mixins: [common, personVotes, personHeader, personOgImage, personTitle],
   data() {
-    const people = this.$options.contextData.cardData.results.map((o) => {
+    const people = this.cardData.data?.results?.map((o) => {
       const { person } = o;
-      person.score = `${(o.ratio || 0).toFixed(2).replace('.', ',')}`;
+      person.score = `${(o.value || 0).toFixed(2).replace('.', ',')}`;
       return person;
     });
     return {
@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.$options.contextData.cardData.person.id}?altHeader=true`;
+      return `${this.url}${this.cardData.id}?altHeader=true`;
     },
   },
 };
