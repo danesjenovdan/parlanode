@@ -14,7 +14,7 @@ export default {
       return person.image;
     },
     getPartyLink(party) {
-      if (!party.slug) {
+      if (!party?.slug) {
         return null;
       }
       if ('classification' in party && party.classification !== 'pg') {

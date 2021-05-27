@@ -13,14 +13,14 @@
             <template v-if="showPartyLink">
               <br />
               <a
-                v-if="getPersonPartyLink(person)"
-                :href="getPersonPartyLink(person)"
+                v-if="getPartyLink(person.group)"
+                :href="getPartyLink(person.group)"
                 class="funblue-light-hover"
               >
-                {{ person.party.acronym }}
+                {{ person.group?.acronym }}
               </a>
               <span v-else>
-                {{ person.party.acronym }}
+                {{ person.group?.acronym }}
               </span>
             </template>
           </div>
