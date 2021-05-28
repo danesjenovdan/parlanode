@@ -34,11 +34,38 @@ localeNames.forEach((localeName) => {
   });
 });
 
-if (missingLocaleFiles > 0) {
+const localeFiles = glob.sync('./cards/_i18n/**', { nodir: true });
+
+let extraLocaleFiles = 0;
+
+localeFiles.forEach((localeFile) => {
+  const possibleCardName = localeFile
+    .replace(/^\.\/cards\/_i18n\//, '')
+    .replace(new RegExp(`^(${localeNames.join('|')})/`), '')
+    .replace(/\.yaml$/i, '');
+
+  if (
+    !cardNames.includes(possibleCardName) &&
+    possibleCardName !== 'defaults' &&
+    possibleCardName !== 'd3locales.js'
+  ) {
+    // eslint-disable-next-line no-console
+    console.error(
+      `EXTRA LOCALE FILE (no card "${possibleCardName}"): ${path.resolve(
+        localeFile
+      )}`
+    );
+    extraLocaleFiles += 1;
+  }
+});
+
+const allErrors = missingLocaleFiles + extraLocaleFiles;
+
+if (allErrors > 0) {
   // eslint-disable-next-line no-console
-  console.error(`\nMISSING LOCALE FILES: ${missingLocaleFiles}\n`);
+  console.error(`\nLOCALE FILE NAME ERRORS: ${allErrors}\n`);
   process.exit(1);
 } else {
   // eslint-disable-next-line no-console
-  console.error(`\nNO MISSING LOCALE FILES\n`);
+  console.error(`\nNO LOCALE FILE NAME ERRORS\n`);
 }
