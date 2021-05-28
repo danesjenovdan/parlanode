@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parlacards-deployment
+  labels:
+    app: parlacards
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parlacards
+  template:
+    metadata:
+      labels:
+        app: parlacards
+    spec:
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: parlacards
+          image: parlacards
+          ports:
+            - containerPort: 3000
