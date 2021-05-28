@@ -212,7 +212,7 @@ import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
 
 export default {
-  name: 'GlasovanjeSeje',
+  name: 'CardSessionGlasovanje',
   components: {
     Poslanci,
     PoslanskeSkupine,

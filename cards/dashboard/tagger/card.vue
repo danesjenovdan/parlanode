@@ -75,7 +75,7 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import parlapi from '@/_mixins/parlapi.js';
 
 export default {
-  name: 'DashboardVotings',
+  name: 'CardDashboardTagger',
   components: {
     DashWrapper,
     DashTable,

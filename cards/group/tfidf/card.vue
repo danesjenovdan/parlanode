@@ -19,7 +19,7 @@ import { partyOgImage } from '@/_mixins/ogImages.js';
 import BarChart from '@/_components/BarChart.vue';
 
 export default {
-  name: 'PSTFIDF',
+  name: 'CardGroupTfidf',
   components: {
     BarChart,
   },

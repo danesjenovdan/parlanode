@@ -19,7 +19,7 @@ import { personSpeeches } from '@/_mixins/contextUrls.js';
 import BarChart from '@/_components/BarChart.vue';
 
 export default {
-  name: 'PoslanecTFIDF',
+  name: 'CardPersonTfidf',
   components: {
     BarChart,
   },

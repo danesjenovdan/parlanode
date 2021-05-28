@@ -65,7 +65,7 @@ const sessionListTabs = [
 ];
 
 export default {
-  name: 'SeznamSej',
+  name: 'CardMiscSessions',
   components: {
     InnerCard,
     PSearchDropdown,

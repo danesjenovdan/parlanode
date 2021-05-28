@@ -46,7 +46,7 @@ import Pagination from '@/_components/Pagination.vue';
 import quotable from '@/_directives/quotable.js';
 
 export default {
-  name: 'Govori',
+  name: 'CardSessionGovori',
   components: {
     Speech,
     Pagination,

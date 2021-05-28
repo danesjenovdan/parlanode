@@ -88,7 +88,7 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import parlapi from '@/_mixins/parlapi.js';
 
 export default {
-  name: 'DashboardPeople',
+  name: 'CardDashboardPeople',
   components: {
     DashWrapper,
     DashTable,

@@ -12,7 +12,7 @@
 import ScoreAvgMax from '@/_components/ScoreAvgMax.vue';
 
 export default {
-  name: 'NeenotnostGlasovanj',
+  name: 'CardGroupNeenotnostGlasovanj',
   components: {
     ScoreAvgMax,
   },

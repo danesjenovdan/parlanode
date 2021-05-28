@@ -191,7 +191,7 @@ import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 import generators from '@/_mixins/generatePeopleAndParties.js';
 
 export default {
-  name: 'PrimerjalnikGlasovanj',
+  name: 'CardToolPrimerjalnik',
   components: {
     ToolsTabs,
     BarChart,

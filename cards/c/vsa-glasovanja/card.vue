@@ -63,7 +63,7 @@ import { defaultOgImage } from '@/_mixins/ogImages.js';
 import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 
 export default {
-  name: 'VsaGlasovanja',
+  name: 'CardCVsaGlasovanja',
   components: {
     SeznamGlasovanj,
   },

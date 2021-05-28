@@ -165,7 +165,7 @@ import { partyOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'OsnovneInformacijePS',
+  name: 'CardGroupBasicInformation',
   components: {},
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
   data() {

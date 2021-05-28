@@ -124,7 +124,7 @@ import TextFrame from '@/_components/TextFrame.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 
 export default {
-  name: 'SkupineBesed',
+  name: 'CardToolSkupineBesed',
   components: {
     ToolsTabs,
     BarChart,

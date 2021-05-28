@@ -144,7 +144,7 @@ import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
 import axios from 'axios';
 
 export default {
-  name: 'GlasovanjaNeenotnost',
+  name: 'CardToolGlasovanjaNeenotnost',
   components: {
     ToolsTabs,
     DateRow,

@@ -20,7 +20,7 @@ import { defaultOgImage } from '@/_mixins/ogImages.js';
 import AgendaItem from '@/_components/AgendaItem.vue';
 
 export default {
-  name: 'AgendaItemCard',
+  name: 'CardSessionAgendaItem',
   components: {
     AgendaItem,
   },

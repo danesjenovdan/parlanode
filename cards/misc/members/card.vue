@@ -100,7 +100,7 @@ const analysesIDs = [
 ];
 
 export default {
-  name: 'SeznamPoslancev',
+  name: 'CardMiscMembers',
   components: {
     BlueButtonList,
     InnerCard,

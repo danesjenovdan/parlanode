@@ -72,7 +72,7 @@ import mapVotes from '@/_helpers/mapVotes.js';
 import fixAbstractHtml from '@/_helpers/fixAbstractHtml.js';
 
 export default {
-  name: 'Zakon',
+  name: 'CardSessionZakon',
   components: {
     PTab,
     PTabs,
