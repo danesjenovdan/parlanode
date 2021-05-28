@@ -49,6 +49,16 @@ localeFiles.forEach((localeFile) => {
     possibleCardName !== 'defaults' &&
     possibleCardName !== 'd3locales.js'
   ) {
+    // const cardLocaleFile = path.resolve(localeFile);
+    // if (possibleCardName.includes('group/seznam-poslanskih-skupin')) {
+    //   const newCardLocaleFile = cardLocaleFile.replace('group/seznam-poslanskih-skupin', 'misc/groups');
+    //   const newDirName = path.dirname(newCardLocaleFile);
+    //   if (!fs.existsSync(newDirName)) {
+    //     fs.mkdirSync(newDirName);
+    //   }
+    //   fs.renameSync(cardLocaleFile, newCardLocaleFile);
+    // }
+
     // eslint-disable-next-line no-console
     console.error(
       `EXTRA LOCALE FILE (no card "${possibleCardName}"): ${path.resolve(
