@@ -13,6 +13,7 @@ const templates = {
   dev: fs.readFileSync('./build/card-template-dev.html', 'utf-8'),
   // frame: fs.readFileSync('./build/card-template-frame.html', 'utf-8'),
   // embed: fs.readFileSync('./build/card-template-embed.html', 'utf-8'),
+  site: fs.readFileSync('./build/card-template-site.html', 'utf-8'),
 };
 
 const getTemplate = (template) => {
@@ -31,9 +32,10 @@ const siteMap = fs.readJSONSync('./data/siteMap.default.json'); // TODO: get fro
 const getClientAssets = (cardName) => {
   const assets = new Set();
   const chunk = manifest[`\u0000virtual:${cardName}`];
-  assets.add(`/assets/${chunk.file}`);
+  // TODO make this dynamic
+  assets.add(`${process.env.VITE_PARLACARDS_URL}/assets/${chunk.file}`);
   if (Array.isArray(chunk.css)) {
-    assets.add(...chunk.css.map((css) => `/assets/${css}`));
+    assets.add(...chunk.css.map((css) => `${process.env.VITE_PARLACARDS_URL}/assets/${css}`));
   }
   return assets;
 };
@@ -44,7 +46,7 @@ const getRelatedAssets = (modules) => {
     const files = ssrManifest[module];
     if (files) {
       files.forEach((file) => {
-        assets.add(`/assets${file}`);
+        assets.add(`${process.env.VITE_PARLACARDS_URL}/assets${file}`);
       });
     }
   });

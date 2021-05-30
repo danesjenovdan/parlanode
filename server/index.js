@@ -4,8 +4,14 @@ import { resolve } from 'path';
 import { fastify as createFastify } from 'fastify';
 import fastifyStatic from 'fastify-static';
 import { renderCard } from './render-card.js';
+import fastifyCors from 'fastify-cors';
 
 const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
+
+fastify.register(fastifyCors, { 
+  // put your options here
+  origin: '*',
+})
 
 fastify.register(fastifyStatic, {
   root: resolve('./dist/client'),
@@ -25,6 +31,7 @@ const renderCardHandler = async (request, reply) => {
       html = await renderCard({
         cardName: 'misc/error',
         locale,
+        template,
         state: {
           ...state,
           cardName,
