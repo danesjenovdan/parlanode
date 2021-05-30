@@ -100,7 +100,7 @@ const analysesIDs = [
 ];
 
 export default {
-  name: 'SeznamPoslancev',
+  name: 'CardMiscMembers',
   components: {
     BlueButtonList,
     InnerCard,
@@ -391,20 +391,23 @@ export default {
     },
   },
   created() {
-    axios
-      .get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
-      .then((response) => {
-        this.parties = response.data.data.map((party) => ({
-          id: party.party.id,
-          label: party.party.name,
-          acronym: party.party.acronym,
-          selected:
-            this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
-          colorClass: `${party.party.acronym
-            .toLowerCase()
-            .replace(/[ +,]/g, '_')}-background`,
-        }));
-      });
+    // TODO rewrite this so it works with the new api
+    //
+    //
+    // axios
+    //   .get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
+    //   .then((response) => {
+    //     this.parties = response.data.data.map((party) => ({
+    //       id: party.party.id,
+    //       label: party.party.name,
+    //       acronym: party.party.acronym,
+    //       selected:
+    //         this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
+    //       colorClass: `${party.party.acronym
+    //         .toLowerCase()
+    //         .replace(/[ +,]/g, '_')}-background`,
+    //     }));
+    //   });
   },
   methods: {
     selectGender(id) {

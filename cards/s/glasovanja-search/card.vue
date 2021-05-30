@@ -27,7 +27,7 @@ import { searchTitle } from '@/_mixins/titles.js';
 import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
-  name: 'GlasovanjaIskanje',
+  name: 'CardSGlasovanjaSearch',
   components: {
     SeznamGlasovanj,
   },

@@ -9,7 +9,7 @@
 import PoslanskaVprasanjaInPobude from '@/_components/PoslanskaVprasanjaInPobude.vue';
 
 export default {
-  name: 'PoslanskaVprasanjaInPobudePoslanskeSkupine',
+  name: 'CardGroupPoslanskaVprasanjaInPobude',
   components: {
     PoslanskaVprasanjaInPobude,
   },

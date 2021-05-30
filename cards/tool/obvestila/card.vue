@@ -465,7 +465,7 @@ import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 
 export default {
-  name: 'Obvestila',
+  name: 'CardToolObvestila',
   components: {
     TransparentWrapper,
     ToolsTabs,

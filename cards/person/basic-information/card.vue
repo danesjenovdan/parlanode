@@ -124,7 +124,7 @@ import { personOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'OsnovneInformacijePoslanca',
+  name: 'CardPersonBasicInformation',
   mixins: [
     common,
     personOverview,

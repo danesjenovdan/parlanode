@@ -10,7 +10,7 @@
 import PrisotnostChart from '@/_components/PrisotnostChart.vue';
 
 export default {
-  name: 'PrisotnostSkoziCas',
+  name: 'CardGroupPrisotnostSkoziCas',
   components: {
     PrisotnostChart,
   },

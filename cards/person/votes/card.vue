@@ -6,7 +6,7 @@
 import Glasovanja from '@/_components/Glasovanja.vue';
 
 export default {
-  name: 'GlasovanjaPoslanca',
+  name: 'CardPersonVotes',
   components: {
     Glasovanja,
   },

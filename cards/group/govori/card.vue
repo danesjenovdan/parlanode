@@ -6,7 +6,7 @@
 import Govori from '@/_components/Govori.vue';
 
 export default {
-  name: 'GovoriPoslanskeSkupine',
+  name: 'CardGroupGovori',
   components: {
     Govori,
   },

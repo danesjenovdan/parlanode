@@ -17,7 +17,7 @@ import { partyTitle } from '@/_mixins/titles.js';
 import PersonList from '@/_components/PersonList.vue';
 
 export default {
-  name: 'ClaniPoslanskeSkupine',
+  name: 'CardGroupMembers',
   components: {
     PersonList,
   },

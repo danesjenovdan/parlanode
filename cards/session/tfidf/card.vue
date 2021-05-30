@@ -22,7 +22,7 @@ import BarChart from '@/_components/BarChart.vue';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'BesedeKiSoZaznamovaleSejo',
+  name: 'CardSessionTfidf',
   components: {
     BarChart,
   },

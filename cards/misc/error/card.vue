@@ -14,7 +14,7 @@ import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 
 export default {
-  name: 'Error',
+  name: 'CardMiscError',
   mixins: [common],
   data() {
     const state = this.$options.contextData.cardState;

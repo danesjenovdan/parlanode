@@ -85,7 +85,7 @@ import ModalContentOrganisationMemberships from '@/_components/Dashboard/ModalCo
 import parlapi from '@/_mixins/parlapi.js';
 
 export default {
-  name: 'DashboardOrgs',
+  name: 'CardDashboardOrganisations',
   components: {
     DashWrapper,
     DashTable,

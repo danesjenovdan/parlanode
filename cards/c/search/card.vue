@@ -19,7 +19,7 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'Search',
+  name: 'CardCSearch',
   components: {
     TransparentWrapper,
     PSearchDropdown,

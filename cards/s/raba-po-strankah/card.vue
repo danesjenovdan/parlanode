@@ -34,7 +34,7 @@ import PieChart from '@/_components/PieChart.vue';
 import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
-  name: 'RabaPoPoslanskihSkupinah',
+  name: 'CardSRabaPoStrankah',
   components: {
     PieChart,
   },

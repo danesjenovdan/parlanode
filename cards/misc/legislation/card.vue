@@ -84,7 +84,7 @@ const legislationTabs = [
 ];
 
 export default {
-  name: 'Zakonodaja',
+  name: 'CardMiscLegislation',
   components: {
     PSearchField,
     InnerCard,

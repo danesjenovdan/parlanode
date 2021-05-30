@@ -37,7 +37,7 @@ import TimeBarChart from '@/_components/TimeBarChart.vue';
 import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
-  name: 'RabaSkoziCas',
+  name: 'CardSRabaSkoziCas',
   components: {
     PTabs,
     PTab,

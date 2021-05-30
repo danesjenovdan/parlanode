@@ -11,7 +11,10 @@
     "build:server": "SSR=1 vite build --config build/vite.config.build.js --ssr --outDir dist/server",
     "build:locales": "node build/build-locales.js",
     "start": "node server/index.js",
-    "lint": "eslint . --ext js,cjs,mjs,vue"
+    "lint": "yarn lint:eslint && yarn lint:card-names && yarn lint:locale-names",
+    "lint:eslint": "eslint . --ext js,cjs,mjs,vue || exit 0",
+    "lint:card-names": "node build/lint-card-names.js",
+    "lint:locale-names": "node build/lint-locale-names.js"
   },
   "dependencies": {
     "@intlify/vite-plugin-vue-i18n": "^2.1.2",

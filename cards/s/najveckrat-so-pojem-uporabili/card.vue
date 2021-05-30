@@ -32,7 +32,7 @@ import PersonList from '@/_components/PersonList.vue';
 import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
-  name: 'NajveckratSoPojemUporabili',
+  name: 'CardSNajveckratSoPojemUporabili',
   components: {
     PersonList,
   },

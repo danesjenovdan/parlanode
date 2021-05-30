@@ -111,7 +111,7 @@ import parlapi from '@/_mixins/parlapi.js';
 import commentapi from '@/_mixins/commentapi.js';
 
 export default {
-  name: 'DashboardLegislation',
+  name: 'CardDashboardLegislation',
   components: {
     DashWrapper,
     DashTable,

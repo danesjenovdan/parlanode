@@ -137,7 +137,7 @@ import ModalContentAbstract from '@/_components/Dashboard/ModalContentAbstract.v
 import parlapi from '@/_mixins/parlapi.js';
 
 export default {
-  name: 'DashboardVotings',
+  name: 'CardDashboardVotings',
   components: {
     DashWrapper,
     DashTable,

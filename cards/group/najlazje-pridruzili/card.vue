@@ -17,7 +17,7 @@ import { partyOgImage } from '@/_mixins/ogImages.js';
 import PersonList from '@/_components/PersonList.vue';
 
 export default {
-  name: 'NajveckratGlasujejoEnako',
+  name: 'CardGroupNajlazjePridruzili',
   components: {
     PersonList,
   },
