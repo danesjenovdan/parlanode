@@ -1,18 +1,16 @@
-const _ = require('lodash');
-
 const env = process.env.NODE_ENV;
-let config;
 
-const defaultConfig = {
+const config = {
   port: 3066,
   serverTimeout: 120000,
   urls: {
-    cdn: 'https://cdn.parlameter.si/v1/parlassets',
-    analize: 'https://analize.parlameter.si/v1',
-    // data: 'https://data.parlameter.si/v1',
-    // isci: 'https://isci.parlameter.si',
-    // glej: 'https://glej.parlameter.si',
-    // base: 'https://parlameter.si',
+    cdn: 'https://cdn.parlameter.si/v1/parlassets', // TODO
+    analize: 'https://parladata.lb.djnd.si/v3/cards', // TODO
+    data: 'https://parladata.lb.djnd.si/v3', // TODO
+    isci: 'https://isci.parlameter.si', // TODO
+    glej: 'https://parlacards.lb.djnd.si', // TODO
+    // base: 'https://parlasite.lb.djnd.si', // TODO
+    base: 'http://localhost:3066',
   },
   siteLang: 'sl',
   siteMap: {
@@ -64,16 +62,4 @@ const defaultConfig = {
   },
 };
 
-if (env === 'production') {
-  // eslint-disable-next-line global-require, import/no-unresolved
-  config = require('./production');
-} else if (env === 'development') {
-  // eslint-disable-next-line global-require, import/no-unresolved
-  config = require('./development');
-  console.log(config);
-} else {
-  // eslint-disable-next-line global-require
-  config = require('./sample');
-}
-
-module.exports = _.merge({}, defaultConfig, config);
+module.exports = config;

@@ -4,22 +4,23 @@
 
 <div class="row">
   <div class="col-md-12">
+    <!-- TODO -->
     <%- await fetchCard('/p/govori/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/p/tfidf/', mp.id) %>
+    <%- await fetchNewCard(`/person/tfidf/?id=${mp.id}&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/p/stevilo-izgovorjenih-besed/', mp.id) %>
+    <%- await fetchNewCard(`/person/stevilo-izgovorjenih-besed/?id=${mp.id}&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/p/povprecno-stevilo-govorov-na-sejo/', mp.id) %>
+    <%- await fetchNewCard(`/person/povprecno-stevilo-govorov-na-sejo/?id=${mp.id}&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/p/besedni-zaklad/', mp.id) %>
+    <%- await fetchNewCard(`/person/vocabulary-size/?id=${mp.id}&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/p/stilne-analize/', mp.id) %>
+    <%- await fetchNewCard(`/person/stilne-analize/?id=${mp.id}&locale=sl`) %>
   </div>
 </div>
 

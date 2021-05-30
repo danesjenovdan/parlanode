@@ -3,6 +3,7 @@ const data = require('../data');
 const { asyncRender: ar } = require('../utils');
 const { siteMap: sm } = require('../../config');
 const { i18n } = require('../server');
+const fetch = require('node-fetch');
 
 const router = express.Router();
 
@@ -15,46 +16,65 @@ function getData(idParam, slugParam) {
   return (id && mp && slug) ? { mp, party, slug } : null;
 }
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.member.overview}`, '/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], ar((render, req, res, next) => {
-  const mpData = getData(req.params.id, req.params.slug);
-  if (mpData) {
-    render('poslanec/pregled', {
-      activeMenu: 'mp',
-      pageTitle: `${i18n('general.overview')} - ${mpData.mp.name}`,
-      activeTab: 'pregled',
-      ...mpData,
-    });
-  } else {
-    next();
+async function getNewData(slug) {
+  const id = parseInt(slug.split('-')[0]);
+  // TODO this shouldn't be hard-coded
+  const response = await fetch(`https://parladata.lb.djnd.si/v3/cards/person/basic-information?id=${id}`);
+  if (response.ok && response.status >= 200 && response.status < 400) {
+    let data = await response.json();
+    return {
+      mp: data.results
+    };
   }
+  return false;
+}
+
+router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.member.overview}`, '/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], ar((render, req, res, next) => {
+  const mpData = getNewData(req.params.slug).then((mpData) => {
+    console.log(mpData);
+    if (mpData) {
+      render('poslanec/pregled', {
+        activeMenu: 'mp',
+        pageTitle: `${i18n('general.overview')} - ${mpData.mp.name}`,
+        activeTab: 'pregled',
+        ...mpData,
+      });
+    } else {
+      next();
+    }
+  });
 }));
 
 router.get([`/:id(\\d+)/${sm.member.votings}`, `/:slug([a-z0-9-]+)/${sm.member.votings}`], ar((render, req, res, next) => {
-  const mpData = getData(req.params.id, req.params.slug);
-  if (mpData) {
-    render('poslanec/glasovanja', {
-      activeMenu: 'mp',
-      pageTitle: `${i18n('general.voting')} - ${mpData.mp.name}`,
-      activeTab: 'glasovanja',
-      ...mpData,
-    });
-  } else {
-    next();
-  }
+  const mpData = getNewData(req.params.slug).then((mpData) => {
+    console.log(mpData);
+    if (mpData) {
+      render('poslanec/glasovanja', {
+        activeMenu: 'mp',
+        pageTitle: `${i18n('general.voting')} - ${mpData.mp.name}`,
+        activeTab: 'glasovanja',
+        ...mpData,
+      });
+    } else {
+      next();
+    }
+  });
 }));
 
 router.get([`/:id(\\d+)/${sm.member.speeches}`, `/:slug([a-z0-9-]+)/${sm.member.speeches}`], ar((render, req, res, next) => {
-  const mpData = getData(req.params.id, req.params.slug);
-  if (mpData) {
-    render('poslanec/govori', {
-      activeMenu: 'mp',
-      pageTitle: `${i18n('general.speeches')} - ${mpData.mp.name}`,
-      activeTab: 'govori',
-      ...mpData,
-    });
-  } else {
-    next();
-  }
+  const mpData = getNewData(req.params.slug).then((mpData) => {
+    console.log(mpData);
+    if (mpData) {
+      render('poslanec/govori', {
+        activeMenu: 'mp',
+        pageTitle: `${i18n('general.speeches')} - ${mpData.mp.name}`,
+        activeTab: 'govori',
+        ...mpData,
+      });
+    } else {
+      next();
+    }
+  });
 }));
 
 module.exports = router;

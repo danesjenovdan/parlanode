@@ -4,16 +4,16 @@
 
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/p/glasovanja/', mp.id) %>
+    <%- await fetchNewCard(`/person/votes/?id=${mp.id}&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/p/najveckrat-enako/', mp.id) %>
+    <%- await fetchNewCard(`/person/most-votes-in-common/?id=${mp.id}&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/p/najmanjkrat-enako/', mp.id) %>
+    <%- await fetchNewCard(`/person/least-votes-in-common/?id=${mp.id}&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/p/neujemanje-s-poslansko-skupino/', mp.id) %>
+    <%- await fetchNewCard(`/person/neujemanje-s-poslansko-skupino/?id=${mp.id}&locale=sl`) %>
   </div>
 </div>
 

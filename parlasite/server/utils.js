@@ -19,6 +19,41 @@ function stringifyParams(params) {
   return '';
 }
 
+async function fetchNewCard(cardPath) {
+  // TODO this should come from config
+  const cardUrl = `${data.urls.urls.glej}${cardPath}`;
+
+  console.log('FETCHNEWCARD');
+  console.log(cardUrl);
+
+  try {
+    // TODO: if fetch errors dont show 500 but return like for non ok response
+    const res = await fetch(cardUrl);
+    if (res.ok) {
+      const text = await res.text();
+      return text;
+    }
+    const text = await res.text();
+    // eslint-disable-next-line no-console
+    console.error(`Failed to fetch card: status=${res.status} text=${text}`);
+
+    // TODO do we need this?
+    if (cardPath === '/c/errored') {
+      return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath} (${res.status}) ${text}</div>`;
+    }
+    return fetchCard.call(this, '/c/errored', { state: { message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` } });
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Failed to fetch card:', error);
+
+    if (cardPath === '/c/errored') {
+      return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
+    }
+
+    return fetchCard.call(this, '/c/errored', { state: { message: `Failed to fetch card: ${cardPath}` } });
+  }
+}
+
 async function fetchCard(cardPath, id, params = {}) {
   // optional second argument
   if (typeof id === 'object') {
@@ -71,6 +106,7 @@ const asyncRender = fn => (req, res, next) => {
     const options = {
       ...opts,
       fetchCard: fetchCard.bind({ req, res }),
+      fetchNewCard: fetchNewCard.bind({ req, res }),
       async: true,
     };
     res.render(view, options, (error, promise) => {
@@ -129,6 +165,7 @@ function i18n(lang) {
 
 module.exports = {
   fetchCard,
+  fetchNewCard,
   asyncRoute,
   asyncRender,
   i18n,
