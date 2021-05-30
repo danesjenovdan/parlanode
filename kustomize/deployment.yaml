@@ -21,3 +21,6 @@ spec:
           image: parlacards
           ports:
             - containerPort: 3000
+          env:
+            - name: VITE_PARLADATA_URL
+              value: https://parladata.lb.djnd.si/v3
