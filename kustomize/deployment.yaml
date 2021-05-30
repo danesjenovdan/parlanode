@@ -24,3 +24,5 @@ spec:
           env:
             - name: VITE_PARLADATA_URL
               value: https://parladata.lb.djnd.si/v3
+            - name: VITE_PARLACARDS_URL
+              value: https://parlacards.lb.djnd.si
