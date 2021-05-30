@@ -5,7 +5,7 @@
     "notifications_api": "https://obvestila.nov.parlameter.si",
     "isci": "https://isci.nov.parlameter.si",
     "analize": "https://analize.nov.parlameter.si/v1",
-    "base": "https://nov.parlameter.si",
+    "base": "https://parlasite.lb.djnd.si",
     "data": "https://data.nov.parlameter.si/v1",
     "cdn": "https://cdn.nov.parlameter.si/v1/parlassets"
   }
