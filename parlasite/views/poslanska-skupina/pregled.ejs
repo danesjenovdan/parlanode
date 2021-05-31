@@ -4,25 +4,25 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%- await fetchNewCard(`/group/basic-information/?id=group.id&locale=sl`) %>
+    <%- await fetchCard('/group/basic-information/', group.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/group/members/?id=group.id&locale=sl`) %>
+    <%- await fetchCard('/group/members/', group.id) %>
   </div>
   <div class="col-md-12">
-    <%- await fetchNewCard(`/group/questions/?id=group.id&locale=sl`) %>
+    <%- await fetchCard('/group/questions/', group.id) %>
   </div>
   <div class="col-md-12">
-    <%- await fetchNewCard(`/group/presence-through-time/?id=group.id&locale=sl`) %>
+    <%- await fetchCard('/group/presence-through-time/', group.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/group/st-vlozenih-amandmajev/?id=group.id&locale=sl`) %>
+    <%- await fetchCard('/group/st-vlozenih-amandmajev/', group.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/group/number-of-questions/?id=group.id&locale=sl`) %>
+    <%- await fetchCard('/group/number-of-questions/', group.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/group/prisotnost-na-glasovnajih-sej-dz/?id=group.id&locale=sl`) %>
+    <%- await fetchCard('/group/prisotnost-na-glasovnajih-sej-dz/', group.id) %>
   </div>
 </div>
 

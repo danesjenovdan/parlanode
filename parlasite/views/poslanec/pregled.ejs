@@ -4,25 +4,25 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/basic-information/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/basic-information/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/zadnje-aktivnosti/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/recent-activity/', mp.id) %>
   </div>
   <div class="col-md-12">
-    <%- await fetchNewCard(`/person/prisotnost-skozi-cas/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/monthly-vote-attendance/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/poslanska-vprasanja-in-pobude/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/questions/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/stevilo-poslanskih-vprasanj-in-pobud/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/number-of-questions/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/prisotnost-na-glasovanjih-sej/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/vote-attendance/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/clanstva/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/memberships/', mp.id) %>
   </div>
 </div>
 

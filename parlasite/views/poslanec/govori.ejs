@@ -5,22 +5,22 @@
 <div class="row">
   <div class="col-md-12">
     <!-- TODO -->
-    <%- await fetchCard('/p/govori/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
+    <%- await fetchCard('/person/govori/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/tfidf/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/tfidf/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/stevilo-izgovorjenih-besed/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/stevilo-izgovorjenih-besed/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/povprecno-stevilo-govorov-na-sejo/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/povprecno-stevilo-govorov-na-sejo/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/vocabulary-size/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/vocabulary-size/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchNewCard(`/person/stilne-analize/?id=${mp.id}&locale=sl`) %>
+    <%- await fetchCard('/person/stilne-analize/', mp.id) %>
   </div>
 </div>
 

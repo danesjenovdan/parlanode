@@ -19,42 +19,6 @@ function stringifyParams(params) {
   return '';
 }
 
-async function fetchNewCard(cardPath) {
-  // TODO this should come from config
-  // TODO locale should be added automatically
-  const cardUrl = `${data.urls.urls.glej}${cardPath}&template=site`;
-
-  console.log('FETCHNEWCARD');
-  console.log(cardUrl);
-
-  try {
-    // TODO: if fetch errors dont show 500 but return like for non ok response
-    const res = await fetch(cardUrl);
-    if (res.ok) {
-      const text = await res.text();
-      return text;
-    }
-    const text = await res.text();
-    // eslint-disable-next-line no-console
-    console.error(`Failed to fetch card: status=${res.status} text=${text}`);
-
-    // TODO do we need this?
-    if (cardPath.includes('/misc/error')) {
-      return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath} (${res.status}) ${text}</div>`;
-    }
-    return fetchCard.call(this, `/misc/error?locale=sl&message=${encodeURIComponent(`Failed to fetch card: ${cardPath} (${res.status}) ${text}`)}`);
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('Failed to fetch card:', error);
-
-    if (cardPath.includes('/misc/error')) {
-      return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
-    }
-
-    return fetchCard.call(this, `/misc/error?locale=sl&message=${encodeURIComponent(`Failed to fetch card: ${cardPath}`)}`);
-  }
-}
-
 async function fetchCard(cardPath, id, params = {}) {
   // optional second argument
   if (typeof id === 'object') {
@@ -62,16 +26,23 @@ async function fetchCard(cardPath, id, params = {}) {
     id = undefined;
   }
 
-  if (this.req.query.lang) {
-    params.lang = this.req.query.lang;
+  if (id) {
+    params.id = id;
   }
 
-  if (this.req.query.forceRender) {
-    params.forceRender = true;
-  }
+  params.template = 'site';
 
-  const idParam = id != null ? id : '';
-  const cardUrl = `${data.urls.urls.glej}${cardPath}${idParam}${stringifyParams(params)}`;
+  params.locale = 'sl';
+  // TODO forward locale from page
+  // if (this.req.query.lang) {
+  //   params.lang = this.req.query.lang;
+  // }
+
+  // if (this.req.query.forceRender) {
+  //   params.forceRender = true;
+  // }
+
+  const cardUrl = `${data.urls.urls.glej}${cardPath}${stringifyParams(params)}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
@@ -86,17 +57,17 @@ async function fetchCard(cardPath, id, params = {}) {
     const text = await res.text();
     // eslint-disable-next-line no-console
     console.error(`Failed to fetch card: status=${res.status} text=${text}`);
-    if (cardPath === '/c/errored') {
+    if (cardPath === '/misc/error') {
       return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath} (${res.status}) ${text}</div>`;
     }
-    return fetchNewCard.call(this, `/misc/errored?locale=sl`);
+    return fetchCard.call(this, '/misc/error', { message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Failed to fetch card:', error);
-    if (cardPath === '/c/errored') {
+    if (cardPath === '/misc/error') {
       return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
     }
-    return fetchNewCard.call(this, `/misc/errored?locale=sl`);
+    return fetchCard.call(this, '/misc/error', { message: `Failed to fetch card: ${cardPath}` });
   }
 }
 
@@ -107,7 +78,6 @@ const asyncRender = fn => (req, res, next) => {
     const options = {
       ...opts,
       fetchCard: fetchCard.bind({ req, res }),
-      fetchNewCard: fetchNewCard.bind({ req, res }),
       async: true,
     };
     res.render(view, options, (error, promise) => {
@@ -166,7 +136,6 @@ function i18n(lang) {
 
 module.exports = {
   fetchCard,
-  fetchNewCard,
   asyncRoute,
   asyncRender,
   i18n,

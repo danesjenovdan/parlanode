@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchNewCard('/misc/members/?id=1&locale=sl&generator=true') %>
+<%- await fetchCard('/misc/members/', 1, { generator: true }) %>
 
 <%- await include('../_partials/footer.ejs') %>
