@@ -27,6 +27,12 @@ localeNames.forEach((localeName) => {
       `./cards/_i18n/${localeName}/${cardName}.yaml`
     );
     if (!fs.existsSync(cardLocaleFile)) {
+      // const newDirName = path.dirname(cardLocaleFile);
+      // if (!fs.existsSync(newDirName)) {
+      //   fs.mkdirSync(newDirName);
+      // }
+      // fs.writeFileSync(cardLocaleFile, '', 'utf-8');
+
       // eslint-disable-next-line no-console
       console.error(`MISSING LOCALE FILE: ${cardLocaleFile}`);
       missingLocaleFiles += 1;
