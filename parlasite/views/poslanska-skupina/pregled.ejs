@@ -4,25 +4,25 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%- await fetchCard('/ps/osnovne-informacije/', party.id) %>
+    <%- await fetchNewCard(`/group/basic-information/?id=group.id&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/ps/clanice-in-clani/', party.id) %>
+    <%- await fetchNewCard(`/group/members/?id=group.id&locale=sl`) %>
   </div>
   <div class="col-md-12">
-    <%- await fetchCard('/ps/poslanska-vprasanja-in-pobude/', party.id) %>
+    <%- await fetchNewCard(`/group/questions/?id=group.id&locale=sl`) %>
   </div>
   <div class="col-md-12">
-    <%- await fetchCard('/ps/prisotnost-skozi-cas/', party.id) %>
+    <%- await fetchNewCard(`/group/presence-through-time/?id=group.id&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/ps/st-vlozenih-amandmajev/', party.id) %>
+    <%- await fetchNewCard(`/group/st-vlozenih-amandmajev/?id=group.id&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/ps/st-poslanskih-vprasanj-in-pobud/', party.id) %>
+    <%- await fetchNewCard(`/group/number-of-questions/?id=group.id&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/ps/prisotnost-na-glasovanjih-sej-dz/', party.id) %>
+    <%- await fetchNewCard(`/group/prisotnost-na-glasovnajih-sej-dz/?id=group.id&locale=sl`) %>
   </div>
 </div>
 

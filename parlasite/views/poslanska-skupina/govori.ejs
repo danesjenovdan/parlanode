@@ -4,16 +4,16 @@
 
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/ps/govori/', party.id, { customUrl: `{isci}/search/speeches?parties=${party.id}`, state: { parties: party.id } }) %>
+    <%- await fetchCard('/ps/govori/', group.id, { customUrl: `{isci}/search/speeches?parties=${group.id}`, state: { parties: group.id } }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/ps/tfidf/', party.id) %>
+    <%- await fetchNewCard(`/group/tfidf/?id=group.id&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/ps/besedni-zaklad/', party.id) %>
+    <%- await fetchNewCard(`/group/vocabulary-size/?id=group.id&locale=sl`) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/ps/stilne-analize/', party.id) %>
+    <%- await fetchNewCard(`/group/style-scores/?id=group.id&locale=sl`) %>
   </div>
 </div>
 

@@ -3,6 +3,7 @@ const data = require('../data');
 const { asyncRender: ar } = require('../utils');
 const { siteMap: sm } = require('../../config');
 const { i18n } = require('../server');
+const fetch = require('node-fetch');
 
 const router = express.Router();
 
@@ -39,52 +40,68 @@ function getData(idParam, slugParam) {
   return (id && party) ? { party, slug } : null;
 }
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.party.overview}`, '/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.party.overview}`], ar((render, req, res, next) => {
-  const pgData = getData(req.params.id, req.params.slug);
-  if (req.params.slug && req.params.slug !== pgData.slug) {
-    res.redirect(`/${sm.party.base}/${pgData.slug}/${sm.party.overview}`);
-  } else if (pgData) {
-    render('poslanska-skupina/pregled', {
-      activeMenu: 'pg',
-      pageTitle: `${i18n('general.overview')} - ${pgData.party.name}`,
-      activeTab: 'pregled',
-      ...pgData,
-    });
-  } else {
-    next();
+async function getNewData(slug) {
+  const id = parseInt(slug.split('-')[0]);
+  // TODO this shouldn't be hard-coded
+  const response = await fetch(`https://parladata.lb.djnd.si/v3/cards/group/basic-information?id=${id}`);
+  if (response.ok && response.status >= 200 && response.status < 400) {
+    let data = await response.json();
+    return {
+      group: {
+        ...data.results,
+        id, // TODO this might be simpler if parladata would return the ID
+      }
+    };
   }
+  return false;
+}
+
+router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.party.overview}`, '/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.party.overview}`], ar((render, req, res, next) => {
+  const pgData = getNewData(req.params.slug).then((pgData) => {
+    console.log(pgData);
+    if (pgData) {
+      render('poslanska-skupina/pregled', {
+        activeMenu: 'pg',
+        pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
+        activeTab: 'pregled',
+        ...pgData,
+      });
+    } else {
+      next();
+    }
+  });
 }));
 
 router.get([`/:id(\\d+)/${sm.party.votings}`, `/:slug([a-z0-9-]+)/${sm.party.votings}`], ar((render, req, res, next) => {
-  const pgData = getData(req.params.id, req.params.slug);
-  if (req.params.slug && req.params.slug !== pgData.slug) {
-    res.redirect(`/${sm.party.base}/${pgData.slug}/${sm.party.votings}`);
-  } else if (pgData) {
-    render('poslanska-skupina/glasovanja', {
-      activeMenu: 'pg',
-      pageTitle: `${i18n('general.voting')} - ${pgData.party.name}`,
-      activeTab: 'glasovanja',
-      ...pgData,
-    });
-  } else {
-    next();
-  }
+  const pgData = getNewData(req.params.slug).then((pgData) => {
+    console.log(pgData);
+    if (pgData) {
+      render('poslanska-skupina/glasovanja', {
+        activeMenu: 'pg',
+        pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
+        activeTab: 'glasovanja',
+        ...pgData,
+      });
+    } else {
+      next();
+    }
+  });
 }));
 
 router.get([`/:id(\\d+)/${sm.party.speeches}`, `/:slug([a-z0-9-]+)/${sm.party.speeches}`], ar((render, req, res, next) => {
-  const pgData = getData(req.params.id, req.params.slug);
-  if (req.params.slug && req.params.slug !== pgData.slug) {
-    res.redirect(`/${sm.party.base}/${pgData.slug}/${sm.party.speeches}`);
-  } else if (pgData) {
-    render('poslanska-skupina/govori', {
-      activeMenu: 'pg',
-      pageTitle: `${i18n('general.speeches')} - ${pgData.party.name}`,
-      activeTab: 'govori',
-      ...pgData,
-    });
-  } else {
-    next();
-  }
+  const pgData = getNewData(req.params.slug).then((pgData) => {
+    console.log(pgData);
+    if (pgData) {
+      render('poslanska-skupina/govori', {
+        activeMenu: 'pg',
+        pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
+        activeTab: 'govori',
+        ...pgData,
+      });
+    } else {
+      next();
+    }
+  });
 }));
 
 module.exports = router;

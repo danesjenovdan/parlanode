@@ -23,7 +23,10 @@ async function getNewData(slug) {
   if (response.ok && response.status >= 200 && response.status < 400) {
     let data = await response.json();
     return {
-      mp: data.results
+      mp: {
+        ...data.results,
+        id, // TODO this might be simpler if parladata would return the ID
+      }
     };
   }
   return false;

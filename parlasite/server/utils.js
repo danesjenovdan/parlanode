@@ -21,7 +21,8 @@ function stringifyParams(params) {
 
 async function fetchNewCard(cardPath) {
   // TODO this should come from config
-  const cardUrl = `${data.urls.urls.glej}${cardPath}`;
+  // TODO locale should be added automatically
+  const cardUrl = `${data.urls.urls.glej}${cardPath}&template=site`;
 
   console.log('FETCHNEWCARD');
   console.log(cardUrl);
@@ -38,19 +39,19 @@ async function fetchNewCard(cardPath) {
     console.error(`Failed to fetch card: status=${res.status} text=${text}`);
 
     // TODO do we need this?
-    if (cardPath === '/c/errored') {
+    if (cardPath.includes('/misc/error')) {
       return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath} (${res.status}) ${text}</div>`;
     }
-    return fetchCard.call(this, '/c/errored', { state: { message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` } });
+    return fetchCard.call(this, `/misc/error?locale=sl&message=${encodeURIComponent(`Failed to fetch card: ${cardPath} (${res.status}) ${text}`)}`);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Failed to fetch card:', error);
 
-    if (cardPath === '/c/errored') {
+    if (cardPath.includes('/misc/error')) {
       return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
     }
 
-    return fetchCard.call(this, '/c/errored', { state: { message: `Failed to fetch card: ${cardPath}` } });
+    return fetchCard.call(this, `/misc/error?locale=sl&message=${encodeURIComponent(`Failed to fetch card: ${cardPath}`)}`);
   }
 }
 
@@ -88,14 +89,14 @@ async function fetchCard(cardPath, id, params = {}) {
     if (cardPath === '/c/errored') {
       return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath} (${res.status}) ${text}</div>`;
     }
-    return fetchCard.call(this, '/c/errored', { state: { message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` } });
+    return fetchNewCard.call(this, `/misc/errored?locale=sl`);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Failed to fetch card:', error);
     if (cardPath === '/c/errored') {
       return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
     }
-    return fetchCard.call(this, '/c/errored', { state: { message: `Failed to fetch card: ${cardPath}` } });
+    return fetchNewCard.call(this, `/misc/errored?locale=sl`);
   }
 }
 
