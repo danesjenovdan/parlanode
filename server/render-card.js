@@ -6,6 +6,7 @@ import {
   getCardDataUrl,
   fetchCardData,
   parseCardState,
+  getUrls,
 } from './utils.js';
 
 const templates = {
@@ -25,7 +26,6 @@ const getTemplate = (template) => {
 const manifest = fs.readJSONSync('./dist/client/manifest.json');
 const ssrManifest = fs.readJSONSync('./dist/client/ssr-manifest.json');
 
-const slugs = fs.readJSONSync('./data/slugs.dev.json'); // TODO: get from parladata
 const siteMap = fs.readJSONSync('./data/siteMap.default.json'); // TODO: get from parlasite
 
 const getClientAssets = (cardName) => {
@@ -100,6 +100,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const dataUrl = getCardDataUrl(cardName, id, date);
   const cardData = await fetchCardData(dataUrl, id, date);
   const cardState = parseCardState(state);
+  const urls = getUrls();
 
   const uid = Math.random().toString(36).slice(2);
   const mountId = `${cardName.replace(/\//g, '_')}__${uid}`;
@@ -108,7 +109,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     cardName,
     cardData,
     cardState,
-    slugs,
+    urls,
     siteMap,
   };
   const i18nData = {

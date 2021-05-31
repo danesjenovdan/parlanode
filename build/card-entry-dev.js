@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { merge } from 'lodash-es';
-import slugs from '@/../data/slugs.dev.json';
 import siteMap from '@/../data/siteMap.default.json';
 /* eslint-disable import/no-unresolved */
 import defaultMessages from '@/_i18n/{cardLang}/defaults.yaml';
@@ -27,6 +26,15 @@ import cardState from './state.json';
     },
   });
 
+  const urls = {
+    site: import.meta.env.VITE_PARLASITE_URL,
+    cards: import.meta.env.VITE_PARLACARDS_URL,
+    data: import.meta.env.VITE_PARLADATA_URL,
+    cdn: import.meta.env.VITE_PARLASSETS_URL,
+    // notifications_api: 'https://obvestila.nov.parlameter.si',
+    // isci: 'https://isci.nov.parlameter.si',
+  };
+
   const cardName = '{cardName}';
   const uid = Math.random().toString(36).slice(2);
   const mountId = `${cardName.replace(/\//g, '_')}__${uid}`;
@@ -35,7 +43,7 @@ import cardState from './state.json';
     cardName,
     cardData,
     cardState,
-    slugs,
+    urls,
     siteMap,
   };
 
