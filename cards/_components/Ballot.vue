@@ -8,16 +8,16 @@
       </div>
     </div>
     <div class="name">
-      <p>{{ ballot.motion }}</p>
+      <p>{{ ballot.motion?.text }}</p>
     </div>
     <div class="outcome">
       <i
         :class="[
           'glyphicon',
-          `glyphicon-${ballot.result === true ? 'ok' : 'remove'}`,
+          `glyphicon-${ballot.motion?.result === true ? 'ok' : 'remove'}`,
         ]"
       ></i>
-      <div class="text">{{ ballot.outcome || 'Ni podatkov' }}</div>
+      <div class="text">{{ ballot.motion?.outcome || 'Ni podatkov' }}</div>
     </div>
   </a>
 </template>

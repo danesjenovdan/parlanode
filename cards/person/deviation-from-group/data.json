@@ -1,0 +1,585 @@
+{
+  "data": {
+    "results": {
+      "score": 0.0,
+      "average": 0.0,
+      "maximum": {
+        "score": 0.0,
+        "mps": [
+          {
+            "slug": "109-urska-honzak",
+            "name": "Urška Honzak",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Levica ",
+              "acronym": "",
+              "slug": "9-levica"
+            },
+            "image": null
+          },
+          {
+            "slug": "110-janez-stariha",
+            "name": "Janez Stariha",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+              "acronym": "",
+              "slug": "10-samostojni-svetnik-liste-kolesarjev-in-pescev"
+            },
+            "image": null
+          },
+          {
+            "slug": "111-asta-vrecko",
+            "name": "Asta Vrečko",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Levica ",
+              "acronym": "",
+              "slug": "9-levica"
+            },
+            "image": null
+          },
+          {
+            "slug": "112-milan-jakopovic",
+            "name": "Milan Jakopovič",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Levica ",
+              "acronym": "",
+              "slug": "9-levica"
+            },
+            "image": null
+          },
+          {
+            "slug": "113-dr-dragan-matic",
+            "name": "dr. Dragan Matić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Svetniški klub samostojnih svetnikov ",
+              "acronym": "",
+              "slug": "11-svetniski-klub-samostojnih-svetnikov"
+            },
+            "image": null
+          },
+          {
+            "slug": "114-martina-vuk",
+            "name": "Martina Vuk",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Socialni demokrati ",
+              "acronym": "",
+              "slug": "12-socialni-demokrati"
+            },
+            "image": null
+          },
+          {
+            "slug": "115-marko-koprivc",
+            "name": "Marko Koprivc",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Socialni demokrati ",
+              "acronym": "",
+              "slug": "12-socialni-demokrati"
+            },
+            "image": null
+          },
+          {
+            "slug": "116-masa-kociper",
+            "name": "Maša Kociper",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Svetniški klub samostojnih svetnikov ",
+              "acronym": "",
+              "slug": "11-svetniski-klub-samostojnih-svetnikov"
+            },
+            "image": null
+          },
+          {
+            "slug": "117-mag-katja-damij",
+            "name": "mag. Katja Damij",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Svetniški klub samostojnih svetnikov ",
+              "acronym": "",
+              "slug": "11-svetniski-klub-samostojnih-svetnikov"
+            },
+            "image": null
+          },
+          {
+            "slug": "118-jozef-horvat",
+            "name": "Jožef Horvat",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Nova Slovenija – Krščanski demokrati ",
+              "acronym": "",
+              "slug": "13-nova-slovenija-krscanski-demokrati"
+            },
+            "image": null
+          },
+          {
+            "slug": "119-marusa-babnik",
+            "name": "Maruša Babnik",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "120-gregor-slabe",
+            "name": "Gregor Slabe",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "121-ida-medved",
+            "name": "Ida Medved",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "122-uros-minodras",
+            "name": "Uroš Minodraš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "123-ana-zagozen",
+            "name": "Ana Zagožen",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "124-ksenija-sever",
+            "name": "Ksenija Sever",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "125-dr-zvone-cadez",
+            "name": "dr. Zvone Čadež",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "126-mojca-skrinjar",
+            "name": "Mojca Škrinjar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "127-matjaz-vede",
+            "name": "Matjaž Vede",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "128-igor-horvat",
+            "name": "Igor Horvat",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "14-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
+          {
+            "slug": "129-mojca-sojar",
+            "name": "Mojca Sojar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Nova Slovenija – Krščanski demokrati ",
+              "acronym": "",
+              "slug": "13-nova-slovenija-krscanski-demokrati"
+            },
+            "image": null
+          },
+          {
+            "slug": "130-grega-ciglar",
+            "name": "Grega Ciglar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "131-jozka-hegler",
+            "name": "Jožka Hegler",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "132-anton-kastelic",
+            "name": "Anton Kastelic",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "133-emilija-mitrovic-milos",
+            "name": "Emilija Mitrović Miloš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "134-bruna-antauer",
+            "name": "Bruna Antauer",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "135-danilo-saric",
+            "name": "Danilo Šarić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "136-nada-verbic",
+            "name": "Nada Verbič",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "137-iztok-kordis",
+            "name": "Iztok Kordiš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "138-mag-mojca-lozej",
+            "name": "mag. Mojca Lozej",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "139-tone-podobnik",
+            "name": "Tone Podobnik",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "140-francka-trobec",
+            "name": "Francka Trobec",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "141-stanka-ferencak-marin",
+            "name": "Stanka Ferenčak Marin",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "142-tomaz-kucic",
+            "name": "Tomaž Kučič",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "143-julka-zibert",
+            "name": "Julka Žibert",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "144-marjan-sedmak",
+            "name": "Marjan Sedmak",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "145-dunja-piskur-kosmac",
+            "name": "Dunja Piškur Kosmač",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "146-dejan-crnek",
+            "name": "Dejan Crnek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "147-dr-marta-bon",
+            "name": "dr. Marta Bon",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "148-jelka-zekar",
+            "name": "Jelka Žekar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "149-prof-janez-kozelj",
+            "name": "prof. Janez Koželj",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "150-tjasa-ficko",
+            "name": "Tjaša Ficko",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          {
+            "slug": "151-ales-cerin",
+            "name": "Aleš Čerin",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića ",
+              "acronym": "",
+              "slug": "15-lista-zorana-jankovica"
+            },
+            "image": null
+          }
+        ]
+      }
+    },
+    "person": {
+      "slug": "151-ales-cerin",
+      "name": "Aleš Čerin",
+      "honorific_prefix": null,
+      "honorific_suffix": null,
+      "preferred_pronoun": null,
+      "group": {
+        "name": "Lista Zorana Jankovića ",
+        "acronym": "",
+        "slug": "15-lista-zorana-jankovica"
+      },
+      "image": null
+    }
+  }
+}

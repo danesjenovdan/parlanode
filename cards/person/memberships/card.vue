@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import { reduce } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { personOverview } from '@/_mixins/contextUrls.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
@@ -48,38 +47,40 @@ export default {
   mixins: [common, personHeader, personOgImage, personOverview, personTitle],
   data() {
     return {
-      data: this.$options.contextData.cardData,
+      results: this.cardData.data?.results ?? [],
     };
   },
   computed: {
     tabs() {
-      // TODO: i18n, this is so specific for slo parliament check later
-      const membershipTabMap = {
-        committee: this.$t('card.committees'),
-        council: this.$t('card.councils'),
-        commission: this.$t('card.commissions'),
-        delegation: this.$t('card.delegations'),
-        friendship_group: this.$t('card.friendship_groups'),
-        investigative_comission: this.$t('card.investigative_comissions'),
-      };
+      return { all: this.results.map((r) => r?.organization) };
 
-      return reduce(
-        this.data.memberships,
-        (tabs, membership, membershipName) => {
-          if (membershipName in membershipTabMap) {
-            const tabId = membershipTabMap[membershipName];
-            tabs[tabId] = (tabs[tabId] || []).concat(membership);
-          }
-          return tabs;
-        },
-        {}
-      );
+      // // TODO: i18n, this is so specific for slo parliament check later
+      // const membershipTabMap = {
+      //   committee: this.$t('card.committees'),
+      //   council: this.$t('card.councils'),
+      //   commission: this.$t('card.commissions'),
+      //   delegation: this.$t('card.delegations'),
+      //   friendship_group: this.$t('card.friendship_groups'),
+      //   investigative_comission: this.$t('card.investigative_comissions'),
+      // };
+
+      // return reduce(
+      //   this.results.memberships,
+      //   (tabs, membership, membershipName) => {
+      //     if (membershipName in membershipTabMap) {
+      //       const tabId = membershipTabMap[membershipName];
+      //       tabs[tabId] = (tabs[tabId] || []).concat(membership);
+      //     }
+      //     return tabs;
+      //   },
+      //   {}
+      // );
     },
     tabNames() {
       return Object.keys(this.tabs);
     },
     generatedCardUrl() {
-      return `${this.url}${this.data.person.id}?altHeader=true`;
+      return `${this.url}${this.cardData.id}?altHeader=true`;
     },
   },
 };

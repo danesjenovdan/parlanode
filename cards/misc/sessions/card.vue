@@ -241,17 +241,17 @@ export default {
     },
   },
   created() {
-    axios
-      .get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
-      .then((response) => {
-        const existingWorkingBodies =
-          get(this.cardState, 'workingBodies') || [];
-        this.workingBodies = response.data.map((workingBody) => ({
-          id: workingBody.id,
-          label: workingBody.name,
-          selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
-        }));
-      });
+    // axios
+    //   .get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
+    //   .then((response) => {
+    //     const existingWorkingBodies =
+    //       get(this.cardState, 'workingBodies') || [];
+    //     this.workingBodies = response.data.map((workingBody) => ({
+    //       id: workingBody.id,
+    //       label: workingBody.name,
+    //       selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
+    //     }));
+    //   });
   },
   methods: {
     organisationIsWorkingBody(organisationId) {

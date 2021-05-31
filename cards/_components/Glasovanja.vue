@@ -8,7 +8,7 @@
     <div v-show="false" class="card-content__empty">
       <!-- TODO this is hardcoded -->
       <div class="card-content__empty-inner">
-        <img :src="`${slugs.urls.cdn}/img/icons/no-data.svg`" />
+        <img :src="`${urls.cdn}/img/icons/no-data.svg`" />
         <p v-t="'data-currently-unavailable'"></p>
       </div>
     </div>
@@ -57,18 +57,15 @@
           class="no-results"
         />
         <div v-else>
-          <template
-            v-for="votingDay in filteredVotingDays"
-            :key="`${votingDay.date}`"
-          >
+          <template v-for="(ballots, date) in filteredVotingDays" :key="date">
             <div
               v-if="type === 'person' || selectedSort === 'date'"
               class="date"
             >
-              {{ votingDay.date }}
+              {{ date }}
             </div>
             <div>
-              <div v-for="ballot in votingDay.ballots" :key="ballot.vote_id">
+              <div v-for="ballot in ballots" :key="ballot.timestamp">
                 <ballot :ballot="ballot" type="person" />
               </div>
             </div>
@@ -80,7 +77,7 @@
 </template>
 
 <script>
-import { find, filter, assign } from 'lodash-es';
+import { find, filter, assign, groupBy, orderBy } from 'lodash-es';
 import PSearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import Toggle from '@/_components/Toggle.vue';
@@ -91,6 +88,7 @@ import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import { personVotes, partyVotes } from '@/_mixins/contextUrls.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
+import dateFormatter from '@/_helpers/dateFormatter.js';
 
 export default {
   components: {
@@ -195,7 +193,7 @@ export default {
     }
 
     return {
-      votingDays: this.contextData.cardData.data?.results,
+      results: this.contextData.cardData.data?.results ?? [],
       selectedSort: 'date',
       sortOptions: {
         maximum: this.$t('sort-by--inequality'),
@@ -212,15 +210,15 @@ export default {
       get() {
         const validTags = [];
 
-        this.getFilteredVotingDays(true).forEach((votingDay) => {
-          votingDay.ballots.forEach((ballot) => {
-            ballot.tags.forEach((tag) => {
-              if (validTags.indexOf(tag) === -1) {
-                validTags.push(tag);
-              }
-            });
-          });
-        });
+        // this.getFilteredVotingDays(true).forEach((votingDay) => {
+        //   votingDay.ballots.forEach((ballot) => {
+        //     ballot.tags.forEach((tag) => {
+        //       if (validTags.indexOf(tag) === -1) {
+        //         validTags.push(tag);
+        //       }
+        //     });
+        //   });
+        // });
 
         return filter(this.allTags, (tag) => validTags.indexOf(tag.id) > -1);
       },
@@ -244,8 +242,14 @@ export default {
         (option) => option.id
       );
     },
+    votingDays() {
+      return groupBy(orderBy(this.results, ['timestamp'], ['asc']), (o) =>
+        dateFormatter(o.timestamp)
+      );
+    },
     filteredVotingDays() {
-      return this.getFilteredVotingDays();
+      return this.votingDays;
+      // TODO: filters return this.getFilteredVotingDays();
     },
     cardUrl() {
       const state = {};
@@ -296,74 +300,74 @@ export default {
       )[0];
       clickedOption.selected = !clickedOption.selected;
     },
-    getFilteredVotingDays(onlyFilterByText = false) {
-      const filterBallots = (ballot) => {
-        const tagMatch =
-          onlyFilterByText ||
-          this.selectedTags.length === 0 ||
-          filter(ballot.tags, (tag) => this.selectedTags.indexOf(tag) > -1)
-            .length > 0;
-        const textMatch =
-          this.textFilter === '' ||
-          ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) >
-            -1;
-        const optionMatch =
-          onlyFilterByText ||
-          this.selectedOptions.length === 0 ||
-          this.selectedOptions.indexOf(ballot.option) > -1;
-        const classificationMatch =
-          onlyFilterByText ||
-          this.selectedClassifications.length === 0 ||
-          this.selectedClassifications.indexOf(ballot.classification) > -1;
-        return tagMatch && textMatch && optionMatch && classificationMatch;
-      };
+    // getFilteredVotingDays(onlyFilterByText = false) {
+    //   const filterBallots = (ballot) => {
+    //     const tagMatch =
+    //       onlyFilterByText ||
+    //       this.selectedTags.length === 0 ||
+    //       filter(ballot.tags, (tag) => this.selectedTags.indexOf(tag) > -1)
+    //         .length > 0;
+    //     const textMatch =
+    //       this.textFilter === '' ||
+    //       ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) >
+    //         -1;
+    //     const optionMatch =
+    //       onlyFilterByText ||
+    //       this.selectedOptions.length === 0 ||
+    //       this.selectedOptions.indexOf(ballot.option) > -1;
+    //     const classificationMatch =
+    //       onlyFilterByText ||
+    //       this.selectedClassifications.length === 0 ||
+    //       this.selectedClassifications.indexOf(ballot.classification) > -1;
+    //     return tagMatch && textMatch && optionMatch && classificationMatch;
+    //   };
 
-      const votingDays = filter(
-        this.votingDays.map((votingDay) => ({
-          date: votingDay.date,
-          ballots: filter(votingDay.ballots, filterBallots).map((ballot) => {
-            const ballotClone = JSON.parse(JSON.stringify(ballot));
-            const form =
-              this.type === 'person'
-                ? this.contextData.cardData.person.gender
-                : 'plural';
-            ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
+    //   const votingDays = filter(
+    //     this.votingDays.map((votingDay) => ({
+    //       date: votingDay.date,
+    //       ballots: filter(votingDay.ballots, filterBallots).map((ballot) => {
+    //         const ballotClone = JSON.parse(JSON.stringify(ballot));
+    //         const form =
+    //           this.type === 'person'
+    //             ? this.contextData.cardData.person.gender
+    //             : 'plural';
+    //         ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
 
-            if (ballot.result !== 'none' && ballot.result != null) {
-              ballotClone.outcome =
-                ballot.result === true
-                  ? this.$t('vote-passed')
-                  : this.$t('vote-not-passed');
-            }
+    //         if (ballot.result !== 'none' && ballot.result != null) {
+    //           ballotClone.outcome =
+    //             ballot.result === true
+    //               ? this.$t('vote-passed')
+    //               : this.$t('vote-not-passed');
+    //         }
 
-            return ballotClone;
-          }),
-        })),
-        (votingDay) => votingDay.ballots.length > 0
-      );
+    //         return ballotClone;
+    //       }),
+    //     })),
+    //     (votingDay) => votingDay.ballots.length > 0
+    //   );
 
-      if (this.type === 'party' && this.selectedSort === 'maximum') {
-        const sortyByDisunion = (arr) => {
-          let bag = [];
-          let i = 0;
-          while (i < arr.length) {
-            bag = bag.concat(arr[i].ballots);
-            i += 1;
-          }
-          return bag.sort(
-            (a, b) => parseInt(b.disunion, 10) - parseInt(a.disunion, 10)
-          );
-        };
+    //   if (this.type === 'party' && this.selectedSort === 'maximum') {
+    //     const sortyByDisunion = (arr) => {
+    //       let bag = [];
+    //       let i = 0;
+    //       while (i < arr.length) {
+    //         bag = bag.concat(arr[i].ballots);
+    //         i += 1;
+    //       }
+    //       return bag.sort(
+    //         (a, b) => parseInt(b.disunion, 10) - parseInt(a.disunion, 10)
+    //       );
+    //     };
 
-        return [
-          {
-            ballots: sortyByDisunion(votingDays),
-          },
-        ];
-      }
+    //     return [
+    //       {
+    //         ballots: sortyByDisunion(votingDays),
+    //       },
+    //     ];
+    //   }
 
-      return votingDays;
-    },
+    //   return votingDays;
+    // },
   },
 };
 </script>

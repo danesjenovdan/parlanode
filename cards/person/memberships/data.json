@@ -1,0 +1,45 @@
+{
+  "data": {
+    "results": [
+      {
+        "start_time": "2018-12-15T00:00:00",
+        "end_time": null,
+        "role": "Podžupan",
+        "organization": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "15-lista-zorana-jankovica"
+        },
+        "on_behalf_of": {}
+      },
+      {
+        "start_time": "2018-12-15T00:00:00",
+        "end_time": null,
+        "role": "voter",
+        "organization": {
+          "name": "Mestni svet MOL",
+          "acronym": null,
+          "slug": "1-mestni-svet-mol"
+        },
+        "on_behalf_of": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "15-lista-zorana-jankovica"
+        }
+      }
+    ],
+    "person": {
+      "slug": "151-ales-cerin",
+      "name": "Aleš Čerin",
+      "honorific_prefix": null,
+      "honorific_suffix": null,
+      "preferred_pronoun": null,
+      "group": {
+        "name": "Lista Zorana Jankovića ",
+        "acronym": "",
+        "slug": "15-lista-zorana-jankovica"
+      },
+      "image": null
+    }
+  }
+}

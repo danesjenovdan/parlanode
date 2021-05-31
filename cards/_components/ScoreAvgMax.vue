@@ -73,7 +73,7 @@
                 <template v-if="type === 'person'">
                   <person-pin
                     v-for="mp in results.maximum.mps"
-                    :key="mp.gov_id"
+                    :key="mp.slug"
                     :person="mp"
                   />
                 </template>

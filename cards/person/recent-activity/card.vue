@@ -4,7 +4,7 @@
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
-    <question-list :question-days="data.results" />
+    <question-list :question-days="cardData.data?.results" />
   </card-wrapper>
 </template>
 
@@ -22,14 +22,9 @@ export default {
     QuestionList,
   },
   mixins: [common, personOverview, personTitle, personHeader, personOgImage],
-  data() {
-    return {
-      data: this.$options.contextData.cardData,
-    };
-  },
   computed: {
     generatedCardUrl() {
-      return `${this.url}${this.data.person.id}?altHeader=true`;
+      return `${this.url}${this.cardData.id}?altHeader=true`;
     },
   },
 };
