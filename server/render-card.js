@@ -5,7 +5,6 @@ import {
   loadCardModule,
   getCardDataUrl,
   fetchCardData,
-  parseCardState,
   getUrls,
 } from './utils.js';
 
@@ -99,7 +98,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
 
   const dataUrl = getCardDataUrl(cardName, id, date);
   const cardData = await fetchCardData(dataUrl, id, date);
-  const cardState = parseCardState(state);
+  const cardState = { ...state };
   const urls = getUrls();
 
   const uid = Math.random().toString(36).slice(2);
