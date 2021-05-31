@@ -17,7 +17,7 @@ import { personOgImage } from '@/_mixins/ogImages.js';
 import QuestionList from '@/_components/QuestionList.vue';
 
 export default {
-  name: 'CardPersonPoslanskaVprasanjaInPobude',
+  name: 'CardPersonQuestions',
   components: {
     QuestionList,
   },

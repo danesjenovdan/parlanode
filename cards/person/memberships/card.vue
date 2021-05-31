@@ -38,7 +38,7 @@ import PTabs from '@/_components/Tabs.vue';
 import MembershipList from '@/_components/MembershipList.vue';
 
 export default {
-  name: 'CardPersonClanstva',
+  name: 'CardPersonMemberships',
   components: {
     PTab,
     PTabs,

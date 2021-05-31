@@ -11,7 +11,7 @@
 import ScoreAvgMax from '@/_components/ScoreAvgMax.vue';
 
 export default {
-  name: 'CardPersonNeujemanjeSPoslanskoSkupino',
+  name: 'CardPersonDeviationFromGroup',
   components: {
     ScoreAvgMax,
   },

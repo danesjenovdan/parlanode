@@ -17,7 +17,7 @@ import { personTitle } from '@/_mixins/titles.js';
 import QuestionList from '@/_components/QuestionList.vue';
 
 export default {
-  name: 'CardPersonZadnjeAktivnosti',
+  name: 'CardPersonRecentActivity',
   components: {
     QuestionList,
   },
