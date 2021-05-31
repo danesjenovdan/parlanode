@@ -11,7 +11,7 @@ export default {
       cardName: contextData.cardName,
       cardData: contextData.cardData ?? {},
       cardState: contextData.cardState ?? {},
-      slugs: contextData.slugs,
+      urls: contextData.urls,
     };
   },
   created() {
@@ -26,7 +26,7 @@ export default {
         embedContainerClass:
           (this.$root.$options.cardInfo?.doubleWidth ? ' big-card' : '') +
           (this.$root.$options.cardInfo?.fullHeight ? ' high-card' : ''),
-        contextUrl: this.slugs.urls.base,
+        contextUrl: this.urls.site,
         ogText: this.$t('ogText'),
       };
 
@@ -47,7 +47,7 @@ export default {
   },
   computed: {
     url() {
-      return `${this.slugs.urls.glej}/${this.cardName}/`;
+      return `${this.urls.cards}/${this.cardName}/`;
     },
   },
   methods: {

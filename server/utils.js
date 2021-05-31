@@ -137,6 +137,17 @@ const parseCardState = (stateString) => {
   };
 };
 
+const getUrls = () => {
+  return {
+    site: process.env.VITE_PARLASITE_URL,
+    cards: process.env.VITE_PARLACARDS_URL,
+    data: process.env.VITE_PARLADATA_URL,
+    cdn: process.env.VITE_PARLASSETS_URL,
+    // notifications_api: 'https://obvestila.nov.parlameter.si',
+    // isci: 'https://isci.nov.parlameter.si',
+  };
+};
+
 export {
   createError,
   loadCardModule,
@@ -144,4 +155,5 @@ export {
   getCardDataUrl,
   fetchCardData,
   parseCardState,
+  getUrls,
 };

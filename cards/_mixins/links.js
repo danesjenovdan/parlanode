@@ -7,8 +7,8 @@ export default {
       if (!person.slug) {
         return null;
       }
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.member.base}/${person.slug}`;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.member.base}/${person.slug}`;
     },
     getPersonPortrait(person) {
       return person.image;
@@ -20,40 +20,40 @@ export default {
       if ('classification' in party && party.classification !== 'pg') {
         return null;
       }
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.party.base}/${party.slug}`;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.party.base}/${party.slug}`;
     },
     getSessionLegislationLink(session) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.session.base}/${session.id}/${sm.session.legislation}`;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.legislation}`;
     },
     getSessionTranscriptLink(session) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.session.base}/${session.id}/${sm.session.transcript}`;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.transcript}`;
     },
     getSessionVotesLink(session) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.session.base}/${session.id}/${sm.session.otherVotings}`;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.otherVotings}`;
     },
     getSessionSpeechLink(speech, perPage = SPEECHES_PER_PAGE) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
       const pageNum = Math.floor(speech.the_order / perPage) + 1;
       const pageUrlPart = pageNum > 1 ? `/${pageNum}` : '';
-      return `${slugs.urls.base}/${sm.session.base}/${
+      return `${urls.site}/${sm.session.base}/${
         speech.session_id || speech.session.id
       }/${sm.session.transcript}${pageUrlPart}#${speech.speech_id}`;
     },
     getSpeechCardLink(speech) {
-      const { slugs } = this.$root.$options.contextData;
-      return `${slugs.urls.glej}/s/govor/${speech.results.speech_id}?frame=true`;
+      const { urls } = this.$root.$options.contextData;
+      return `${urls.cards}/s/govor/${speech.results.speech_id}?frame=true`;
     },
     getSessionVoteLink(session) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.session.base}/${session.session_id}/${sm.session.vote}/${session.vote_id}`;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.session.base}/${session.session_id}/${sm.session.vote}/${session.vote_id}`;
     },
     getSearchTermLink(term, { mps = [], pgs = [] } = {}) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      const url = `${slugs.urls.base}/${sm.landing.sessions}/${sm.sessions.search.base}`;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      const url = `${urls.site}/${sm.landing.sessions}/${sm.sessions.search.base}`;
       const query = [
         term && term.length ? `q=${encodeURIComponent(`${term}`)}` : '',
         mps && mps.length ? `mps=${mps.join(',')}` : '',
@@ -64,24 +64,24 @@ export default {
       return `${url}/?${query}`;
     },
     getLegislationLink(legislation) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.landing.legislation}/${
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.landing.legislation}/${
         legislation.epa || legislation.act_id || legislation.id
       }`;
     },
     getLegislationListLink() {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.landing.legislation}`;
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.landing.legislation}`;
     },
     getSessionAgendaLink(agenda, sessionId) {
-      const { slugs, siteMap: sm } = this.$root.$options.contextData;
-      return `${slugs.urls.base}/${sm.session.base}/${
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.session.base}/${
         sessionId || agenda.session.id
       }/${sm.session.legislation}#${agenda.id}`;
     },
     getAgendaCardLink(agenda) {
-      const { slugs } = this.$root.$options.contextData;
-      return `${slugs.urls.glej}/s/agenda-item/${agenda.id}?frame=true`;
+      const { urls } = this.$root.$options.contextData;
+      return `${urls.cards}/s/agenda-item/${agenda.id}?frame=true`;
     },
   },
 };

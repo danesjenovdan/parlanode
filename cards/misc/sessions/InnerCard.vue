@@ -47,7 +47,7 @@ export default {
       return this.processedSessions.map((session) => [
         {
           link: this.getSessionUrl(session),
-          image: `${this.$root.slugs.urls.cdn}/icons/seja-${
+          image: `${this.$root.urls.cdn}/icons/seja-${
             session.classification || 'redna'
           }.svg`,
         },

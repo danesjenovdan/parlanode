@@ -23,7 +23,6 @@ export default {
     person: {
       type: Object,
       required: true,
-      validator: (value) => value.type === 'mp',
     },
   },
   data() {

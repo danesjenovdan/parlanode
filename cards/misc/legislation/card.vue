@@ -214,7 +214,7 @@ export default {
       return `${this.url}?state=${encodeURIComponent(
         JSON.stringify(state)
       )}&altHeader=true&customUrl=${encodeURIComponent(
-        `${this.slugs.urls.analize}/s/getAllLegislation/`
+        `${'this.slugs.urls.analize'}/s/getAllLegislation/`
       )}`;
     },
     processedData() {

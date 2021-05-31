@@ -6,10 +6,10 @@ import {
   getCardDataUrl,
   fetchCardData,
   parseCardState,
+  getUrls,
 } from './utils.js';
 
 const templates = {
-  raw: '<!--ssr-outlet-->',
   dev: fs.readFileSync('./build/card-template-dev.html', 'utf-8'),
   // frame: fs.readFileSync('./build/card-template-frame.html', 'utf-8'),
   // embed: fs.readFileSync('./build/card-template-embed.html', 'utf-8'),
@@ -26,16 +26,18 @@ const getTemplate = (template) => {
 const manifest = fs.readJSONSync('./dist/client/manifest.json');
 const ssrManifest = fs.readJSONSync('./dist/client/ssr-manifest.json');
 
-const slugs = fs.readJSONSync('./data/slugs.dev.json'); // TODO: get from parladata
 const siteMap = fs.readJSONSync('./data/siteMap.default.json'); // TODO: get from parlasite
 
 const getClientAssets = (cardName) => {
   const assets = new Set();
   const chunk = manifest[`\u0000virtual:${cardName}`];
-  // TODO make this dynamic
   assets.add(`${process.env.VITE_PARLACARDS_URL}/assets/${chunk.file}`);
   if (Array.isArray(chunk.css)) {
-    assets.add(...chunk.css.map((css) => `${process.env.VITE_PARLACARDS_URL}/assets/${css}`));
+    assets.add(
+      ...chunk.css.map(
+        (css) => `${process.env.VITE_PARLACARDS_URL}/assets/${css}`
+      )
+    );
   }
   return assets;
 };
@@ -98,6 +100,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const dataUrl = getCardDataUrl(cardName, id, date);
   const cardData = await fetchCardData(dataUrl, id, date);
   const cardState = parseCardState(state);
+  const urls = getUrls();
 
   const uid = Math.random().toString(36).slice(2);
   const mountId = `${cardName.replace(/\//g, '_')}__${uid}`;
@@ -106,7 +109,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     cardName,
     cardData,
     cardState,
-    slugs,
+    urls,
     siteMap,
   };
   const i18nData = {

@@ -1,83 +1,66 @@
+/* eslint-disable no-restricted-properties */
 import links from '@/_mixins/links.js';
 
 export const partyOverview = {
   created() {
-    const {
-      template,
-      slugs,
-      cardData,
-      siteMap: sm,
-    } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${cardData?.slug}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.party.base}/${this.cardData.data?.group?.slug}`;
   },
 };
 
 export const partyVotes = {
   created() {
-    const {
-      template,
-      slugs,
-      cardData,
-      siteMap: sm,
-    } = this.$root.$options.contextData;
-    const party = cardData.party || cardData.organization;
-    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${
-      slugs.party[party.id].acronym
-    }/${sm.party.votings}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.party.base}/${this.cardData.data?.group?.slug}/${sm.party.votings}`;
   },
 };
 
 export const partySpeeches = {
   created() {
-    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.party.base}/${this.cardData.data?.group?.slug}/${sm.party.speeches}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.party.base}/${this.cardData.data?.group?.slug}/${sm.party.speeches}`;
   },
 };
 
 export const partyList = {
   created() {
-    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.landing.parties}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.landing.parties}`;
   },
 };
 
 export const personOverview = {
   created() {
-    const {
-      template,
-      slugs,
-      cardData,
-      siteMap: sm,
-    } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${cardData?.slug}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.member.base}/${this.cardData.data?.person?.slug}`;
   },
 };
 
 export const personVotes = {
   created() {
-    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${this.cardData.data?.person?.slug}/${sm.member.votings}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.member.base}/${this.cardData.data?.person?.slug}/${sm.member.votings}`;
   },
 };
 
 export const personSpeeches = {
   created() {
-    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.member.base}/${this.cardData.data?.person?.slug}/${sm.member.speeches}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.member.base}/${this.cardData.data?.person?.slug}/${sm.member.speeches}`;
   },
 };
 
 export const memberList = {
   created() {
-    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.landing.members}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.landing.members}`;
   },
 };
 
 export const sessions = {
   created() {
-    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.landing.sessions}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.landing.sessions}`;
   },
 };
 
@@ -91,7 +74,7 @@ export const search = {
 
 export const compass = {
   created() {
-    const { template, slugs, siteMap: sm } = this.$root.$options.contextData;
-    template.contextUrl = `${slugs.urls.base}/${sm.landing.tools}/${sm.tools.compass}`;
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.landing.tools}/${sm.tools.compass}`;
   },
 };
