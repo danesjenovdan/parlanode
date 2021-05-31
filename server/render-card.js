@@ -55,23 +55,23 @@ const getRelatedAssets = (modules) => {
   return assets;
 };
 
-const renderAssets = (cardName, modules) => {
-  let preloads = '';
+const renderAssets = (cardName, modules, mountId) => {
+  const preloads = '';
   let styles = '';
   let scripts = '';
   getClientAssets(cardName).forEach((asset) => {
     if (asset.endsWith('.css')) {
       styles += `<link rel="stylesheet" href="${asset}">`;
     } else if (asset.endsWith('.js')) {
-      scripts += `<script type="module" src="${asset}"></script>`;
+      scripts += `<script type="module" src="${asset}?mountId=${mountId}"></script>`;
     }
   });
   getRelatedAssets(modules).forEach((asset) => {
     if (asset.endsWith('.css')) {
       styles += `<link rel="stylesheet" href="${asset}">`;
-    } else if (asset.endsWith('.js')) {
-      preloads += `<link rel="modulepreload" href="${asset}">`;
-    }
+    } /* else if (asset.endsWith('.js')) {
+      preloads += `<link rel="modulepreload" href="${asset}?mid=${mountId}">`;
+    } */
   });
   return { preloads, styles, scripts };
 };
@@ -120,7 +120,11 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
 
   const [cardHtml, ctx] = await render(contextData, i18nData);
   const initialState = renderInitialState({ contextData, i18nData });
-  const { preloads, styles, scripts } = renderAssets(cardName, ctx.modules);
+  const { preloads, styles, scripts } = renderAssets(
+    cardName,
+    ctx.modules,
+    mountId
+  );
 
   const html = getTemplate(template)
     .replace(
