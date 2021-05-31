@@ -112,31 +112,6 @@ const fetchCardData = async (dataUrl, id, date) => {
   };
 };
 
-const parseCardState = (stateString) => {
-  if (stateString != null) {
-    let state;
-    try {
-      state = JSON.parse(stateString);
-    } catch (error) {
-      return {
-        string: stateString,
-        error: createError(0, error.name, error.message, error.code),
-        data: state,
-      };
-    }
-    return {
-      string: stateString,
-      error: false,
-      data: state,
-    };
-  }
-  return {
-    string: stateString,
-    error: false,
-    data: null,
-  };
-};
-
 const getUrls = () => {
   return {
     site: process.env.VITE_PARLASITE_URL,
@@ -154,6 +129,5 @@ export {
   loadLocale,
   getCardDataUrl,
   fetchCardData,
-  parseCardState,
   getUrls,
 };
