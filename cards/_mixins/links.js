@@ -11,7 +11,10 @@ export default {
       return `${urls.site}/${sm.member.base}/${person.slug}`;
     },
     getPersonPortrait(person) {
-      return person.image;
+      return (
+        person.image ||
+        'https://cdn.nov.parlameter.si/v1/parlassets/img/people/square/null.png'
+      );
     },
     getPartyLink(party) {
       if (!party?.slug) {
