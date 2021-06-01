@@ -3,15 +3,14 @@ import './load-env.js';
 import { resolve } from 'path';
 import { fastify as createFastify } from 'fastify';
 import fastifyStatic from 'fastify-static';
-import { renderCard } from './render-card.js';
 import fastifyCors from 'fastify-cors';
+import { renderCard } from './render-card.js';
 
 const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
 
-fastify.register(fastifyCors, { 
-  // put your options here
+fastify.register(fastifyCors, {
   origin: '*',
-})
+});
 
 fastify.register(fastifyStatic, {
   root: resolve('./dist/client'),
@@ -27,24 +26,7 @@ const renderCardHandler = async (request, reply) => {
     html = await renderCard({ cardName, id, date, locale, template, state });
   } catch (error) {
     fastify.log.error(error);
-    try {
-      html = await renderCard({
-        cardName: 'misc/error',
-        locale,
-        template,
-        state: {
-          ...state,
-          cardName,
-          id,
-          date,
-          locale,
-          error,
-        },
-      });
-    } catch (error2) {
-      fastify.log.error(error2);
-      reply.status(error2.statusCode ?? 500).send(error2);
-    }
+    reply.status(500).type('text/html').send(error.stack);
   }
   reply.type('text/html').send(html);
 };
