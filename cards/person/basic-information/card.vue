@@ -13,7 +13,7 @@
           <span class="key">
             <span v-t="'party'"></span>:
             <a :href="getPartyLink(group)" class="funblue-light-hover">
-              {{ group.acronym }}
+              {{ group.acronym || group.name || 'N/A' }}
             </a>
           </span>
         </div>
