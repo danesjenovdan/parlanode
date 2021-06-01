@@ -88,13 +88,15 @@ export default {
   },
   emits: ['back-change'],
   data() {
+    // eslint-disable-next-line no-restricted-properties
+    const { mountId, cardState } = this.$root.$options.contextData;
     return {
       currentBack: null,
       transitionClass: null,
       previousHeight: null,
-      mountId: this.$root.$options.contextData.mountId,
+      mountId,
       hasGenerator: this.$slots.generator?.()?.length,
-      showGenerator: this.$root.$options.contextData.cardState?.generator,
+      showGenerator: cardState?.generator,
     };
   },
   watch: {
@@ -148,7 +150,7 @@ export default {
 
     &::before {
       background-color: $white-hover;
-      background-image: url("#{getConfig('urls.cdn')}/img/loader.gif");
+      background-image: url('#{get-parlassets-url()}/img/loader.gif');
       background-repeat: no-repeat;
       background-position: center center;
       content: '';
