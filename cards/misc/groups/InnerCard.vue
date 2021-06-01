@@ -1,8 +1,8 @@
 <template>
-  <ul class="party-list">
-    <li v-if="processedPartyData.length === 0" class="loader">
-      <div class="nalagalnik"></div>
-    </li>
+  <div v-if="!processedPartyData?.length">
+    <div v-t="'no-results'" class="no-results" />
+  </div>
+  <ul v-else class="party-list">
     <li
       v-for="(party, index) in processedPartyData"
       :key="index"
