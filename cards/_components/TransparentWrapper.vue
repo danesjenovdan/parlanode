@@ -17,10 +17,12 @@
 export default {
   name: 'TransparentCardWrapper',
   data() {
+    // eslint-disable-next-line no-restricted-properties
+    const { mountId, cardState } = this.$root.$options.contextData;
     return {
-      mountId: this.$root.$options.contextData.mountId,
+      mountId,
       hasGenerator: this.$slots.generator?.()?.length,
-      showGenerator: this.$root.$options.contextData.cardState?.generator,
+      showGenerator: cardState?.generator,
     };
   },
 };
@@ -33,7 +35,6 @@ export default {
 
 .card-content {
   padding: 20px;
-
   overflow: visible;
 }
 
@@ -41,7 +42,6 @@ export default {
   border: none;
   background: transparent;
   box-shadow: none;
-
   overflow: visible;
 }
 </style>

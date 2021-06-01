@@ -8,7 +8,7 @@
         "name": "Martina Vuk",
         "honorific_prefix": null,
         "honorific_suffix": null,
-        "preferred_pronoun": null,
+        "preferred_pronoun": "she",
         "group": null,
         "image": null
       },
@@ -17,7 +17,7 @@
         "name": "Janez Stariha",
         "honorific_prefix": null,
         "honorific_suffix": null,
-        "preferred_pronoun": null,
+        "preferred_pronoun": "he",
         "group": null,
         "image": null
       },
@@ -26,10 +26,10 @@
         "name": "dr. Dragan Matić",
         "honorific_prefix": null,
         "honorific_suffix": null,
-        "preferred_pronoun": null,
+        "preferred_pronoun": "he",
         "group": {
           "name": "Svetniški klub samostojnih svetnikov ",
-          "acronym": "",
+          "acronym": "skss",
           "slug": "8-svetniski-klub-samostojnih-svetnikov"
         },
         "image": null
@@ -48,7 +48,7 @@
         "name": "Mojca Sojar",
         "honorific_prefix": null,
         "honorific_suffix": null,
-        "preferred_pronoun": null,
+        "preferred_pronoun": "she",
         "group": null,
         "image": null
       },
@@ -231,7 +231,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -244,7 +244,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -257,7 +257,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -270,7 +270,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -283,7 +283,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -296,7 +296,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -318,7 +318,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -331,7 +331,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -344,7 +344,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -366,7 +366,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -379,7 +379,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -392,7 +392,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -414,7 +414,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -427,7 +427,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -440,7 +440,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",
-          "acronym": "",
+          "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
         "image": null
@@ -453,7 +453,7 @@
         "preferred_pronoun": null,
         "group": {
           "name": "Socialni demokrati ",
-          "acronym": "",
+          "acronym": "sd",
           "slug": "6-socialni-demokrati"
         },
         "image": null

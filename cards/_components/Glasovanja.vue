@@ -65,7 +65,10 @@
               {{ date }}
             </div>
             <div>
-              <div v-for="ballot in ballots" :key="ballot.timestamp">
+              <div
+                v-for="ballot in ballots"
+                :key="`${ballot.timestamp}_${ballot.motion.id}`"
+              >
                 <ballot :ballot="ballot" type="person" />
               </div>
             </div>
@@ -209,17 +212,6 @@ export default {
     dropdownTags: {
       get() {
         const validTags = [];
-
-        // this.getFilteredVotingDays(true).forEach((votingDay) => {
-        //   votingDay.ballots.forEach((ballot) => {
-        //     ballot.tags.forEach((tag) => {
-        //       if (validTags.indexOf(tag) === -1) {
-        //         validTags.push(tag);
-        //       }
-        //     });
-        //   });
-        // });
-
         return filter(this.allTags, (tag) => validTags.indexOf(tag.id) > -1);
       },
       set(newTags) {
@@ -242,14 +234,42 @@ export default {
         (option) => option.id
       );
     },
-    votingDays() {
-      return groupBy(orderBy(this.results, ['timestamp'], ['asc']), (o) =>
-        dateFormatter(o.timestamp)
-      );
-    },
     filteredVotingDays() {
-      return this.votingDays;
-      // TODO: filters return this.getFilteredVotingDays();
+      let form = 'plural';
+      if (this.type === 'person') {
+        form =
+          this.contextData.cardData?.data?.person?.preferred_pronoun === 'she'
+            ? 'f'
+            : 'm';
+      }
+
+      const lowerTextFilter = String(this.textFilter || '').toLowerCase();
+
+      const filteredResults = this.results
+        .filter((r) => {
+          let textMatch = true;
+          let optionMatch = true;
+
+          if (lowerTextFilter) {
+            textMatch = r.motion.text.toLowerCase().includes(lowerTextFilter);
+          }
+
+          if (this.selectedOptions.length) {
+            optionMatch = this.selectedOptions.includes(r.option);
+          }
+
+          return textMatch && optionMatch;
+        })
+        .map((r) => ({
+          ...r,
+          label: this.$t(`voted-${r.option}--${form}`),
+        }));
+
+      const votingDays = groupBy(
+        orderBy(filteredResults, ['timestamp'], ['asc']),
+        (o) => dateFormatter(o.timestamp)
+      );
+      return votingDays;
     },
     cardUrl() {
       const state = {};
@@ -300,74 +320,6 @@ export default {
       )[0];
       clickedOption.selected = !clickedOption.selected;
     },
-    // getFilteredVotingDays(onlyFilterByText = false) {
-    //   const filterBallots = (ballot) => {
-    //     const tagMatch =
-    //       onlyFilterByText ||
-    //       this.selectedTags.length === 0 ||
-    //       filter(ballot.tags, (tag) => this.selectedTags.indexOf(tag) > -1)
-    //         .length > 0;
-    //     const textMatch =
-    //       this.textFilter === '' ||
-    //       ballot.motion.toLowerCase().indexOf(this.textFilter.toLowerCase()) >
-    //         -1;
-    //     const optionMatch =
-    //       onlyFilterByText ||
-    //       this.selectedOptions.length === 0 ||
-    //       this.selectedOptions.indexOf(ballot.option) > -1;
-    //     const classificationMatch =
-    //       onlyFilterByText ||
-    //       this.selectedClassifications.length === 0 ||
-    //       this.selectedClassifications.indexOf(ballot.classification) > -1;
-    //     return tagMatch && textMatch && optionMatch && classificationMatch;
-    //   };
-
-    //   const votingDays = filter(
-    //     this.votingDays.map((votingDay) => ({
-    //       date: votingDay.date,
-    //       ballots: filter(votingDay.ballots, filterBallots).map((ballot) => {
-    //         const ballotClone = JSON.parse(JSON.stringify(ballot));
-    //         const form =
-    //           this.type === 'person'
-    //             ? this.contextData.cardData.person.gender
-    //             : 'plural';
-    //         ballotClone.label = this.$t(`voted-${ballot.option}--${form}`);
-
-    //         if (ballot.result !== 'none' && ballot.result != null) {
-    //           ballotClone.outcome =
-    //             ballot.result === true
-    //               ? this.$t('vote-passed')
-    //               : this.$t('vote-not-passed');
-    //         }
-
-    //         return ballotClone;
-    //       }),
-    //     })),
-    //     (votingDay) => votingDay.ballots.length > 0
-    //   );
-
-    //   if (this.type === 'party' && this.selectedSort === 'maximum') {
-    //     const sortyByDisunion = (arr) => {
-    //       let bag = [];
-    //       let i = 0;
-    //       while (i < arr.length) {
-    //         bag = bag.concat(arr[i].ballots);
-    //         i += 1;
-    //       }
-    //       return bag.sort(
-    //         (a, b) => parseInt(b.disunion, 10) - parseInt(a.disunion, 10)
-    //       );
-    //     };
-
-    //     return [
-    //       {
-    //         ballots: sortyByDisunion(votingDays),
-    //       },
-    //     ];
-    //   }
-
-    //   return votingDays;
-    // },
   },
 };
 </script>

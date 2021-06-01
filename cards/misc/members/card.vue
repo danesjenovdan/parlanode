@@ -31,7 +31,7 @@
                 :key="gender.id"
                 :color="'funblue'"
                 :selected="selectedGenders.indexOf(gender.id) > -1"
-                :icon="gender.id"
+                :icon="gender.icon"
                 :stripe-position="'top'"
                 class="gender"
                 @click="selectGender(gender.id)"
@@ -55,7 +55,7 @@
 
 <script>
 import stableSort from 'stable';
-import { find } from 'lodash-es';
+import { find, uniqBy } from 'lodash-es';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
 import axios from 'axios';
 import common from '@/_mixins/common.js';
@@ -124,9 +124,25 @@ export default {
     });
 
     const genders = [
-      { id: 'm', label: 'moški', selected: false },
-      { id: 'f', label: 'ženski', selected: false },
+      { id: 'he', icon: 'm', label: 'moški', selected: false },
+      { id: 'she', icon: 'f', label: 'ženski', selected: false },
     ];
+
+    const members = this.cardData.data?.results || [];
+
+    const selectedParties = this.cardState.parties || [];
+    const parties = uniqBy(
+      members.map((m) => m.group).filter(Boolean),
+      'slug'
+    ).map((g) => ({
+      id: g.slug,
+      label: g.name,
+      acronym: g.acronym,
+      selected: selectedParties.includes(g.acronym),
+      colorClass: `${g.acronym
+        .toLowerCase()
+        .replace(/[ +,]/g, '_')}-background`,
+    }));
 
     const analyses = analysesIDs.map((a) => ({
       id: a.id,
@@ -142,14 +158,13 @@ export default {
     }));
 
     return {
-      memberData: this.cardData.data?.results,
+      members,
       currentAnalysis: this.cardState.analysis || 'demographics',
       currentSort: this.cardState.sort || 'name',
       currentSortOrder: this.cardState.sortOrder || 'asc',
       currentPage: this.cardState.page || 1,
       analyses,
-      parties: [],
-      selectedPartiesState: this.cardState.parties || [],
+      parties,
       textFilter: this.cardState.textFilter || '',
       districts,
       genders,
@@ -240,7 +255,7 @@ export default {
     processedMembers() {
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
-        analysisMax = this.memberData.reduce(
+        analysisMax = this.members.reduce(
           (biggest, member) =>
             Math.max(
               biggest,
@@ -250,23 +265,23 @@ export default {
         );
       }
 
-      const filtered = this.memberData
+      const lowerTextFilter = String(this.textFilter || '').toLowerCase();
+
+      const filtered = this.members
         .filter((member) => {
           let partyMatch = true;
           let districtMatch = true;
           let genderMatch = true;
           let textMatch = true;
 
-          if (this.textFilter.length > 0) {
-            textMatch =
-              member.person.name
-                .toLowerCase()
-                .indexOf(this.textFilter.toLowerCase()) > -1;
+          if (lowerTextFilter) {
+            textMatch = member.name.toLowerCase().includes(lowerTextFilter);
           }
           if (this.selectedParties.length > 0) {
             partyMatch =
+              member.group?.acronym &&
               this.selectedParties.find(
-                (p) => p.id === member.person.party.id
+                (p) => p.acronym === member.group?.acronym
               ) != null;
           }
           if (this.selectedDistricts.length > 0) {
@@ -278,8 +293,9 @@ export default {
             );
           }
           if (this.selectedGenders.length > 0) {
-            genderMatch =
-              this.selectedGenders.indexOf(member.person.gender) > -1;
+            genderMatch = this.selectedGenders.includes(
+              member.preferred_pronoun
+            );
           }
 
           return textMatch && partyMatch && districtMatch && genderMatch;
@@ -389,25 +405,6 @@ export default {
         this.currentSortOrder = 'desc';
       }
     },
-  },
-  created() {
-    // TODO rewrite this so it works with the new api
-    //
-    //
-    // axios
-    //   .get(`${this.slugs.urls.analize}/pg/getListOfPGs/`)
-    //   .then((response) => {
-    //     this.parties = response.data.data.map((party) => ({
-    //       id: party.party.id,
-    //       label: party.party.name,
-    //       acronym: party.party.acronym,
-    //       selected:
-    //         this.selectedPartiesState.indexOf(party.party.acronym) !== -1,
-    //       colorClass: `${party.party.acronym
-    //         .toLowerCase()
-    //         .replace(/[ +,]/g, '_')}-background`,
-    //     }));
-    //   });
   },
   methods: {
     selectGender(id) {

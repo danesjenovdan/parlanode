@@ -1,8 +1,109 @@
 {
   "data": {
-    "results": [],
+    "results": [
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 96.6666666666667,
+        "no_mandate": 0.0,
+        "absent": 3.3333333333333
+      },
+      {
+        "present": 92.8571428571429,
+        "no_mandate": 0.0,
+        "absent": 7.142857142857096
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 92.8571428571429,
+        "no_mandate": -7.14285714285714,
+        "absent": 14.285714285714235
+      },
+      {
+        "present": 85.7142857142857,
+        "no_mandate": 0.0,
+        "absent": 14.285714285714306
+      },
+      {
+        "present": 95.4545454545455,
+        "no_mandate": 0.0,
+        "absent": 4.545454545454504
+      },
+      {
+        "present": 100.0,
+        "no_mandate": -100.0,
+        "absent": 100.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": -100.0,
+        "absent": 100.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0
+      },
+      {
+        "present": 85.7142857142857,
+        "no_mandate": 0.0,
+        "absent": 14.285714285714306
+      },
+      {
+        "present": 85.1851851851852,
+        "no_mandate": 0.0,
+        "absent": 14.814814814814795
+      }
+    ],
     "person": {
-      "slug": "151-ales-cerin",
+      "slug": "259-ales-cerin",
       "name": "Aleš Čerin",
       "honorific_prefix": null,
       "honorific_suffix": null,
@@ -10,7 +111,7 @@
       "group": {
         "name": "Lista Zorana Jankovića ",
         "acronym": "",
-        "slug": "15-lista-zorana-jankovica"
+        "slug": "22-lista-zorana-jankovica"
       },
       "image": null
     }
