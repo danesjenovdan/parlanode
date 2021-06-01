@@ -23,7 +23,10 @@ export default {
   },
   mixins: [common, personVotes, personHeader, personOgImage, personTitle],
   data() {
-    const people = this.cardData.data?.results?.map((o) => {
+    const results = (this.cardData.data?.results || [])
+      .slice()
+      .sort((a, b) => a.value - b.value);
+    const people = results.map((o) => {
       const { person } = o;
       person.score = `${(o.value || 0).toFixed(2).replace('.', ',')}`;
       return person;
