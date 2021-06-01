@@ -10,7 +10,7 @@
     >
       <div class="column chart-label">
         <a :href="getPartyLink(party)" class="funblue-light-hover">
-          {{ party.acronym }}
+          {{ party.acronym || party.name || 'N/A' }}
         </a>
       </div>
       <div class="column chart">
