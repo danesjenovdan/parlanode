@@ -1,13 +1,5 @@
 <template>
   <div class="card-footer">
-    <!-- <div class="card-logo">
-      <a :href="slugs.urls.base">
-        <img
-          :src="`${slugs.urls.cdn}/img/logo-parlameter.svg`"
-          alt="parlameter logo"
-        />
-      </a>
-    </div> -->
     <div
       v-for="button in buttons"
       :key="button"
@@ -22,7 +14,6 @@
 </template>
 
 <script>
-import { get } from 'lodash-es';
 import { RIPPLE_DURATION } from '@/_helpers/constants.js';
 
 export default {
@@ -32,15 +23,13 @@ export default {
     return {
       clicksDisabled: false,
       currentBack: null,
-      slugs: this.$root.$options.contextData.slugs,
     };
   },
   computed: {
     buttons() {
-      const previous = get(
-        this.$root.$options.contextData.cardData,
-        'previous_versions'
-      );
+      // eslint-disable-next-line no-restricted-properties
+      const { cardData } = this.$root.$options.contextData;
+      const previous = cardData?.data?.previous_versions;
       if (previous && previous.length) {
         return ['share', 'embed', 'info', 'previous'];
       }
