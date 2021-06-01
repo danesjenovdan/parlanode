@@ -19,7 +19,7 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'CardCSearch',
+  name: 'CardCMenuSearch',
   components: {
     TransparentWrapper,
     PSearchDropdown,
@@ -95,8 +95,17 @@ export default {
 <style lang="scss" scoped>
 @import 'parlassets/scss/colors';
 
+.card-container :deep(.card-content) {
+  min-height: auto;
+}
+
 .search-dropdown :deep(.search-dropdown-input) {
-  background-color: $white;
+  background-color: transparent;
+}
+
+.search-dropdown {
+  border: none;
+  padding-left: 20px;
 }
 
 .search-dropdown :deep(.search-dropdown-options.empty) {
@@ -109,7 +118,7 @@ export default {
   border: none;
   font-size: 22px;
   top: 0;
-  right: 0;
+  left: 0;
   display: flex;
   height: 100%;
   width: 40px;
