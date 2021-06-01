@@ -46,12 +46,12 @@ export default {
     mappedSessions() {
       return this.processedSessions.map((session) => [
         {
-          link: this.getSessionUrl(session),
+          link: this.getSessionLink(session),
           image: `${this.$root.urls.cdn}/icons/seja-${
             session.classification || 'redna'
           }.svg`,
         },
-        { link: this.getSessionUrl(session), text: session.name },
+        { link: this.getSessionLink(session), text: session.name },
         session.start_time ? formatDate(session.start_time) : '',
         session.end_time ? formatDate(session.end_time) : '',
         {
@@ -61,14 +61,6 @@ export default {
           })),
         },
       ]);
-    },
-  },
-  methods: {
-    getSessionUrl(session) {
-      if (!this.$root.slugs || session.link_to === 'nothing') {
-        return '';
-      }
-      return this.getSessionLegislationLink(session);
     },
   },
 };
