@@ -1,6 +1,5 @@
 import fs from 'fs-extra';
 import {
-  createError,
   loadLocale,
   loadCardModule,
   getCardDataUrl,
@@ -87,10 +86,10 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   ]);
 
   if (!render) {
-    throw createError(404, 'Not Found', `Card ${cardName} not found`);
+    throw new Error(`Card ${cardName} not found`);
   }
   if (!localeData) {
-    throw createError(404, 'Not Found', `Locale ${locale} not found`);
+    throw new Error(`Locale ${locale} not found`);
   }
 
   const defaultMessages = localeData.defaults ?? {};
