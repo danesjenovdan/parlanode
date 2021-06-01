@@ -23,6 +23,10 @@ export default {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.party.base}/${party.slug}`;
     },
+    getSessionLink(session) {
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.session.base}/${session.id}`;
+    },
     getSessionLegislationLink(session) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.legislation}`;

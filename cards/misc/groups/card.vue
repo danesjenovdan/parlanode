@@ -101,7 +101,7 @@ export default {
     }));
 
     return {
-      data: this.cardData.data?.results || {},
+      results: this.cardData.data?.results || [],
       currentAnalysis: this.cardState.analysis || 'seat_count',
       analyses,
     };
@@ -125,13 +125,13 @@ export default {
       return find(this.analyses, { id: this.currentAnalysis });
     },
     processedPartyData() {
-      const maxValue = this.data.reduce(
+      const maxValue = this.results.reduce(
         (oldValue, nextParty) =>
           Math.max(oldValue, nextParty.results?.[this.currentAnalysis]),
         0
       );
 
-      return this.data.map((party) => {
+      return this.results.map((party) => {
         const rawValue = party.results?.[this.currentAnalysis];
         const newParty = JSON.parse(JSON.stringify(party));
         newParty.displayValue = (

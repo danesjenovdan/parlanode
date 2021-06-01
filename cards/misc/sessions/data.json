@@ -2,14 +2,14 @@
   "data": {
     "results": [
       {
-        "name": "13. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-06-15T15:30:00",
+        "name": "15. seja Mestnega sveta MOL",
+        "id": 15,
+        "start_time": "2020-09-21T15:30:00",
         "end_time": null,
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -24,7 +24,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -39,7 +39,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -54,7 +54,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -69,7 +69,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -84,7 +84,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -99,7 +99,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -114,7 +114,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -129,7 +129,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -144,7 +144,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -159,7 +159,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -174,7 +174,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -189,7 +189,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -204,7 +204,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -219,7 +219,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -234,7 +234,22 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol"
+          }
+        ],
+        "classification": null,
+        "in_review": false
+      },
+      {
+        "name": "13. seja Mestnega sveta MOL",
+        "gov_id": null,
+        "start_time": "2020-06-15T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -249,22 +264,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "15. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-09-21T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -279,7 +279,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -294,7 +294,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -309,7 +309,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -324,7 +324,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -339,7 +339,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -354,7 +354,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -369,7 +369,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
@@ -384,22 +384,7 @@
         "organizations": [
           {
             "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "Session 1.",
-        "gov_id": null,
-        "start_time": "2020-01-01T00:00:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": "MS MOL",
+            "acronym": null,
             "slug": "1-mestni-svet-mol"
           }
         ],
