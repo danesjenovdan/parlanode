@@ -19,7 +19,7 @@ export default {
   data() {
     const state = this.$options.contextData.cardState;
     const title = state.title || this.$t('card.title');
-    const message = state.message || '';
+    const message = state?.error?.message || state.message || '';
     // const height = state.height || 1;
     return {
       title,

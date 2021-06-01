@@ -135,7 +135,9 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
       contextData.template.frameContainerClass
     );
 
-  return html;
+  const dataUrlLink = `<a href="${cardData.url}">${cardData.url}</a>`;
+
+  return dataUrlLink + html;
 };
 
 // eslint-disable-next-line import/prefer-default-export
