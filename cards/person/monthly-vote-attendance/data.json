@@ -4,102 +4,122 @@
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2018-12-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2019-01-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2019-02-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2019-04-01"
       },
       {
         "present": 96.6666666666667,
         "no_mandate": 0.0,
-        "absent": 3.3333333333333
+        "absent": 3.3333333333333,
+        "timestamp": "2019-05-01"
+      },
+      {
+        "present": 85.7142857142857,
+        "no_mandate": 0.0,
+        "absent": 14.285714285714306,
+        "timestamp": "2019-06-01"
       },
       {
         "present": 92.8571428571429,
         "no_mandate": 0.0,
-        "absent": 7.142857142857096
+        "absent": 7.142857142857096,
+        "timestamp": "2019-07-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2019-09-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2019-10-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2019-11-01"
       },
       {
         "present": 92.8571428571429,
         "no_mandate": -7.14285714285714,
-        "absent": 14.285714285714235
+        "absent": 14.285714285714235,
+        "timestamp": "2019-12-01"
       },
       {
         "present": 85.7142857142857,
         "no_mandate": 0.0,
-        "absent": 14.285714285714306
+        "absent": 14.285714285714306,
+        "timestamp": "2020-02-01"
       },
       {
         "present": 95.4545454545455,
         "no_mandate": 0.0,
-        "absent": 4.545454545454504
+        "absent": 4.545454545454504,
+        "timestamp": "2020-06-01"
       },
       {
         "present": 100.0,
         "no_mandate": -100.0,
-        "absent": 100.0
+        "absent": 100.0,
+        "timestamp": "2020-07-01"
       },
       {
         "present": 100.0,
         "no_mandate": -100.0,
-        "absent": 100.0
+        "absent": 100.0,
+        "timestamp": "2020-09-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2020-10-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
+        "absent": 0.0,
+        "timestamp": "2020-11-01"
       },
       {
         "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 0.0
-      },
-      {
-        "present": 100.0,
-        "no_mandate": 0.0,
-        "absent": 0.0
-      },
-      {
-        "present": 85.7142857142857,
-        "no_mandate": 0.0,
-        "absent": 14.285714285714306
+        "absent": 0.0,
+        "timestamp": "2020-12-01"
       },
       {
         "present": 85.1851851851852,
         "no_mandate": 0.0,
-        "absent": 14.814814814814795
+        "absent": 14.814814814814795,
+        "timestamp": "2021-01-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2021-02-01"
       }
     ],
     "person": {

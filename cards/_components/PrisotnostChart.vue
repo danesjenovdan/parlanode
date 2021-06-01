@@ -65,9 +65,10 @@ export default {
     },
     translationKeys() {
       if (this.type === 'person') {
+        const gender = this.person.preferred_pronoun === 'she' ? 'f' : 'm';
         return {
-          present: this.$t(`present--${this.person.gender}`),
-          absent: this.$t(`absent--${this.person.gender}`),
+          present: this.$t(`present--${gender}`),
+          absent: this.$t(`absent--${gender}`),
           'no-term': this.$t(`no-term`),
         };
       }
@@ -99,7 +100,7 @@ export default {
 
       d3.timeFormatDefaultLocale(getD3Locale(this.$i18n.locale));
 
-      const dateParser = d3.timeParse('%Y-%m-%dT%H:%M:%S');
+      const dateParser = d3.timeParse('%Y-%m-%d');
       const monthFormat = d3.timeFormat('%b %y');
       const monthFormatLong = d3.timeFormat('%B %Y');
       const formatMonth = (dateString) => monthFormat(dateParser(dateString));
@@ -108,12 +109,12 @@ export default {
 
       const data = this.results
         .slice()
-        .sort((a, b) => a.date_ts.localeCompare(b.date_ts))
+        .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
         .map((obj) => {
-          const present = Math.max(0, Math.round(obj.presence)) || 0;
-          const noTerm = Math.max(0, Math.round(obj.not_member)) || 0;
+          const present = Math.max(0, Math.round(obj.present)) || 0;
+          const noTerm = Math.max(0, Math.round(obj['no-term'])) || 0;
           return {
-            date: obj.date_ts,
+            date: obj.timestamp,
             present,
             absent: 100 - (present + noTerm),
             'no-term': noTerm,
