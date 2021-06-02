@@ -56,8 +56,8 @@ localeFiles.forEach((localeFile) => {
     possibleCardName !== 'd3locales.js'
   ) {
     // const cardLocaleFile = path.resolve(localeFile);
-    // if (possibleCardName.includes('group/seznam-poslanskih-skupin')) {
-    //   const newCardLocaleFile = cardLocaleFile.replace('group/seznam-poslanskih-skupin', 'misc/groups');
+    // if (possibleCardName.includes('stilne-analize')) {
+    //   const newCardLocaleFile = cardLocaleFile.replace('stilne-analize', 'style-scores');
     //   const newDirName = path.dirname(newCardLocaleFile);
     //   if (!fs.existsSync(newDirName)) {
     //     fs.mkdirSync(newDirName);

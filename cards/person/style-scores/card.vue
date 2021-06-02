@@ -10,7 +10,7 @@
 import StyleScores from '@/_components/StyleScores.vue';
 
 export default {
-  name: 'CardPersonStilneAnalize',
+  name: 'CardPersonStyleScores',
   components: {
     StyleScores,
   },
