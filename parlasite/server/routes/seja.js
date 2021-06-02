@@ -9,9 +9,11 @@ const router = express.Router();
 
 // TODO: is there a way to preload this?
 async function isMotionValid(sessionId, motionId) {
-  const res = await fetch(`${data.urls.urls.analize}/s/getMotionOfSession/${sessionId}`);
-  const json = await res.json();
-  return json.results.findIndex(m => m.results.motion_id === motionId) !== -1;
+  return true;
+  // TODO: figure out how to know when to return 404
+  // const res = await fetch(`${data.urls.urls.analize}/s/getMotionOfSession/${sessionId}`);
+  // const json = await res.json();
+  // return json.results.findIndex(m => m.results.motion_id === motionId) !== -1;
 }
 
 function getData(idParam) {
