@@ -62,24 +62,25 @@ export default {
     const {
       results = [],
       pages = 1,
-      page = 1,
-      count,
+      page: initialPage = 1,
+      count = results?.length ?? 0,
       per_page = SPEECHES_PER_PAGE,
     } = this.cardData.data || {};
 
     const speechesPerPage = Array(pages);
-    speechesPerPage[page - 1] = results;
+    speechesPerPage[initialPage - 1] = results;
 
     // const state = this.$options.contextData.cardState;
     // let page = (state && state.page) || Number(data.page);
     // page = Math.min(Math.max(page, 0), data.pages);
-    const initialPage = 1;
+    const page = initialPage;
 
     return {
       speechesPerPage,
-      count: count ?? results?.length ?? 0,
+      count,
       perPage: per_page,
-      page: initialPage,
+      page,
+      initialPage,
       fetching: false,
     };
   },
@@ -93,10 +94,9 @@ export default {
   },
   mounted() {
     document.body.style.overflowAnchor = 'none';
-
-    // if (this.page !== Number(this.data.page)) {
-    //   this.onPageChange(this.page);
-    // }
+    if (this.page !== this.initialPage) {
+      this.onPageChange(this.page);
+    }
   },
   created() {
     // TODO:
@@ -111,38 +111,37 @@ export default {
       }
       this.page = newPage;
       this.scrollToTop();
-      // TODO: pagination
-      // if (!this.speechesPerPage[newPage - 1]) {
-      //   this.fetching = true;
-      //   axios
-      //     .get(
-      //       `${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${newPage}`
-      //     )
-      //     .then((response) => {
-      //       this.speechesPerPage[newPage - 1] = response.data.results;
-      //       this.fetching = false;
+      if (!this.speechesPerPage[newPage - 1]) {
+        this.fetching = true;
+        axios
+          .get(
+            `${this.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
+          )
+          .then((response) => {
+            this.speechesPerPage[newPage - 1] = response.data.results;
+            this.fetching = false;
 
-      //       // needed if dynamically loaded to reset the css :target and scroll to selected element
-      //       this.$nextTick(() => {
-      //         const target = document.getElementById(
-      //           window.location.hash.slice(1)
-      //         );
-      //         if (target) {
-      //           const tmp = window.location.hash;
-      //           window.location.hash = '';
-      //           window.location.hash = tmp;
-      //         }
-      //       });
-      //     });
-      // }
+            // needed if dynamically loaded to reset the css :target and scroll to selected element
+            this.$nextTick(() => {
+              const target = document.getElementById(
+                window.location.hash.slice(1)
+              );
+              if (target) {
+                const tmp = window.location.hash;
+                window.location.hash = '';
+                window.location.hash = tmp;
+              }
+            });
+          });
+      }
     },
     scrollToTop() {
-      // TODO: use ref?
-      // const id = this.$root.$options.contextData.mountId;
-      // const el = document.getElementById(id);
-      // if (el) {
-      //   el.scrollIntoView();
-      // }
+      // eslint-disable-next-line no-restricted-properties
+      const id = this.$root.$options.contextData.mountId;
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView();
+      }
     },
   },
 };
