@@ -38,7 +38,16 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
       },
       {
         "speech_id": 11118,
@@ -62,7 +71,16 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
       },
       {
         "speech_id": 11119,
@@ -86,7 +104,20 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "259-ales-cerin",
+          "name": "Aleš Čerin",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Lista Zorana Jankovića ",
+            "acronym": "",
+            "slug": "22-lista-zorana-jankovica"
+          },
+          "image": "/Screenshot_from_2020-11-03_17-38-05.png"
+        }
       },
       {
         "speech_id": 11120,
@@ -110,7 +141,16 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
       },
       {
         "speech_id": 11121,
@@ -134,7 +174,16 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
       },
       {
         "speech_id": 11122,
@@ -158,7 +207,20 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "259-ales-cerin",
+          "name": "Aleš Čerin",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Lista Zorana Jankovića ",
+            "acronym": "",
+            "slug": "22-lista-zorana-jankovica"
+          },
+          "image": "/Screenshot_from_2020-11-03_17-38-05.png"
+        }
       },
       {
         "speech_id": 11123,
@@ -182,7 +244,16 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
       },
       {
         "speech_id": 11124,
@@ -206,7 +277,20 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "237-milan-jakopovic",
+          "name": "Milan Jakopovič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Levica ",
+            "acronym": "",
+            "slug": "20-levica"
+          },
+          "image": null
+        }
       },
       {
         "speech_id": 11125,
@@ -230,7 +314,16 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
       },
       {
         "speech_id": 11126,
@@ -254,799 +347,20 @@
         "quoted_text": null,
         "start_idx": null,
         "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11127,
-        "content": "Ugotavljam navzočnost po celotni točki, za vsa glasovanja in tudi za ta postopkovni predlog. Prosim za vaš glas. 40 svetnikov. Glasujemo o postopkovnem predlogu. Se pravi za vse komisije glasujemo v paketu razen Odbora za zdravje in socialno varnost, kjer se predlaga, da se glasuje o vsakemu posebej. Jaz sem sicer SDS pozval ne, da umaknejo še ta predlog že zdaj, ne pa da se oglašajo. Izvolte prosim glas. O tem odboru glasujemo po posameznih imenih. 30 ZA. 9 PROTI. Sprejeto, hvala lepa. Gremo na prvi predlog. Sej pravim, najprej bomo šli na predlog, pri vsakem ko bom dal predlog je absolutno dopustna razprava tako, da vas prosim za to razpravo ne.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 11,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11128,
-        "content": "Ne, vse naj bo razprava za vse naenkrat.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 12,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11129,
-        "content": "Kolega Matjaž me opozarja ne, da odpiram razpravo za vse naenkrat ampak še enkrat bom prosil ne, tokrat bom po svoje naredil ne, ne bom njemu sledil ne, ker je sicer pametneje. Pri vsakem odboru bom vprašal, če je razprav ne, zato, da bomo prišli tudi do te razprave do Odbora za zdravje. Najprej gre predlog sklepa za Statutarno pravno komisijo. Imate imena gor, prosim. So, a se vidi, ne vidim. Ja. Razprava prosim. Ni razprave. Glasovanje poteka. V Statutarno pravno komisijo se imenujejo Marjan Sedmak kot predsednik, Marta Bon, Aleš Čerin, Urška Honzak, Igor Horvat kot člani in članice. Mandat imenovanih članov Statutarno pravne komisije je vezan na mandat mestnega sveta, kar je logično. Prosim za vaš glas. 41 ZA. 0 PROTI. Sprejeto. V Komisijo za pobude občanov se imenujejo. Razprava prosim. Ni razprave. Glasovanje poteka. Prosim za vaš glas. Ksenija Sever predsednica, Jožka Hegler, Marko Koprivc, Janez Stariha in Danilo Šarič, članice in člani. Velja za cel mandat. 41 ZA. 0 PROTI. Hvala lepa. Gremo na tretjo Komisijo za mednarodne odnose in se imenujejo. Gor jih imate. Razprava. Ni razprave. Glasovanje poteka. Martina Vuk kot predsednica, Daniel Avdagič, Grega Ciglar, Tjaša Ficko, Anže Miklavec, Mojca Sojar, Ana Zagožen kot člani in članice. Vezan na mandat mestnega sveta. Prosim za vaš glas. 41 ZA. 0 PROTI. Četrtič. Komisija za priznanja. Razprava. Ni razprave. Glasovanje poteka. Nada Verbič kot predsednica, Dejan Crnek, Zvone Čadež, Mojca Lozej, Mojca Sojar, Gregor Slabe, Danilo Šarič kot člani in članice. Prosim za vaš glas. 41 ZA. 0 PROTI. Odbor za finance. Razprava. Ni razprave. Glasovanje poteka po Predlogu Sklepa: Mojca Lozej, Jožka Hegler, Urška Honzak, Ingrid Kovšca Pušenjak, Tomaž Kučič, Ksenija Sever, Franc Zalar. Prosim za vaš glas. Vezan jasno na ta mandat, za vse velja ne. 41 ZA. 0 PROTI. Odbor za lokalno samoupravo. Razprava. Ni razprave. Glasovanje poteka. Asta Vrečko kot predsednica, Maruša Babnik, Stanka Ferenčak Marin, Darinka Kovačič, Žiga Oven, Tone Podobnik, Meta Škufca kot člani in članice. Vezan na mandat mestnega sveta. 41 ZA. 0 PROTI. Odbor za predšolsko vzgojo in izobraževanje. Razprava. Ni razprave. Glasovanje poteka. Francka Trober kot predsednica, Bruna Antauer, Suzana Antič, Maruša Babnik, Anton Grošelj, Urška Honzak, Irena Horvat, Iztok Kordiš, Verica Šenica Pavletič, Nada Verbič, Martina Vuk kot člani in članice. Mandat vezan na mestni svet. 41 ZA. 0 PROTI. Odbor za šport. Razprava. Ni. Glasovanje poteka. Marta Bon kot predsednica, Klemen Avbelj, Bojan Bučar, Dejan Crnek, Anže Miklavec, Gregor Slabe, Klemen Žibert kot člani in članice. 40 ZA. 0 PROTI. Sprejeto. Odbor za kulturo in raziskovalno dejavnost se imenujejo. Razprava prosim. Ni razprave. Glasovanje poteka. Dragan Matić kot predsednik, Marta Bon, Uroš Logar, Emilija Mitrović Miloš, Sonja Novak Lukanović Robert Waltl, Asta Vrečko kot člani in članice za ta mandat. Prosim. 40 ZA. 0 PROTI. Odbor za gospodarske dejavnosti, turizem in kmetijstvo. Razprava prosim. Ni razprave. Poteka glasovanje. Uroš Minodraš kot predsednik, Daniel Avdagič, Rok Kleindienst, Marko Koprovc, Dunja Piškur Kosmač, Mina Pišljar, Jelka Žekar kot člani in članice. 41 ZA. 0 PROTI. Odbor za gospodarske javne službe in promet. Razprava prosim. Ni razprave. Julka Žibert kot predsednica, Daniel Avdagič, Grega Ciglar, Anton Colarič, Emilija Mitrović Miloš, Tone Podobnik, Igor Prodanovič kot člani in članice, vezan na ta mandat. 41 ZA. 0 PROTI. Odbor za urejanje prostora. Razprava prosim. Ni razprave. Glasovanje poteka. Janez Koželj kot predsednik, Jožka Hegler, Igor Horvat, Blaž Lokar, Janez Stariha, Asta Vrečko, Jelka Žekar kot člani in članice. Prosim za vaš glas. 41 ZA. 0 PROTI. Odbor za ravnanje z nepremičninami. Razprava prosim. Ni razprave. Glasovanje poteka o predlogu. Jelka Žekar kot predsednica, Tanja Bizjan, Matej Javornik, Mojca Lozej, Mojca Kucler Dolinar, Ida Medved, Francka Trobec kot člani in članice vezan na mandat. 41 ZA. 0 PROTI. Odbor za stanovanjsko politiko. Razprava prosim. Ni razprave. Glasovanje poteka. Ana Zagožen kot predsednica, Bruna Antauer, Biserka Avsec, Danilo Hovnik, Iztok Kordiš, Tone Kastelic, Emilija Mitrović Miloš kot člani in članice v tem mandatu. 41 ZA. 0 PROTI. Odbor za varstvo okolja. Razprava. Ni razprave. Glasujemo o predlogu Jožef Horvat kot predsednik, Đorđe Berak, Grega Ciglar, Dunja Piškur Kosmač, Danilo Šarić, Barbara Vajda, Matjaž Vede kot člani in članice. 41 ZA. 0 PROTI. Odbor za zaščito, reševanje in civilno obrambo. Razprava prosim. Ni. Glasovanje poteka o predlogu. Tone Podobnik kot predsednik, Zvone Čadež, Dijana Južnič, Tone Kastelic, Anton Kolenc, Tomač Kučič, Janez Trček kot člani in članice za ta mandat. 41 ZA. 0 PROTI. Komisija za poimenovanje naselij in ulic. Razprava prosim. Ni razprave. Glasujemo o predlogu Grega Ciglar kot predsednik, Maruša Babnik, Stanka Ferenčak Marin, Karolina Korenčan, Haris Muratagić, Sašo Stojanović Lenčič, Mojca Škrinjar kot člani in članice. Mandat trajanja Komisije za poimenovanje naselij in ulic je vezan na mandat mestnega sveta Mestne občine Ljubljana. Naloga komisije je obravnava oziroma priprava predlogov za poimenovanje naselij in ulic na območju Mestne občine Ljubljana. Ta sklep začne veljati z dnem, ko ga sprejme mestni svet MOL. 41 ZA. 0 PROTI. Prehajamo na posamično glasovanje Odbora za zdravje in socialno varnost. Najprej gremo kot smo rekli za predsednico je predlagana Mojca Škrinjar. A je kaka razprava. Ni razprave. Glasovanje poteka o predlogu. Za predsednico se imenuje Mojca Škrinjar, mandat predsednice je vezan na mandat mestnega sveta. 40 ZA. 0 PROTI. Drugo, kot član se imenuje Amir Crnojević. Razprava prosim. Ni razprave. Glasovanje poteka. V Odbor za zdravje in socialno varnost se imenuje Amir Crnojević. 41 ZA. 0 PROTI. Tretji predlog. Glasovanje poteka. Prej pa razprava. Tomaž Čučnik za člana. Razprava. Ni. Glasovanje poteka. Rezultat glasovanja. 41 ZA. 0 PROTI. Sprejet. Stanka Ferenčak Marin. Razprava. Ni razprave. Glasovanje poteka o članici. 40 ZA. 0 PROTI. Peti predlog. Milan Jakopovič. Razprava. Ni razprave. Glasovanje poteka. Milan Jakopovič za člana. 41 ZA. 0 PROTI. Šesti predlog je Tone Kastelic. Razprava prosim. Ni razprave. Glasovanje poteka. Tone Kastelic. 41 ZA. 0 PROTI. Sprejet. Sedmi predlo je Peter Minodraš. Razprava. Ni razprave. Glasovanje poteka. 41 ZA. 0 PROTI. Naslednji predlog Dunja Piškur Kosmač. Razprava. Ni razprave. Glasovanje poteka. Dunja Piškur Kosmač kot članica. 41 ZA. 0 PROTI. Naslednji predlog je Lucija Šikovec Ušaj. Gregor Ciglar. Lepo prosim razprava. Mal se bom še navaju imen, lepo prosim da to ne, da ne bom kakšnega starega klicu ne, po tisti navadi iz vseh let, izvolijo.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 13,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11130,
-        "content": "Hvala gospod župan. Ja, torej v Levici smo bili pravzaprav neprijetno presenečeni nad predlogom svetniškega kluba SDS pri Odboru za socialo in zdravstvo. Predlog gospe Lucije Šikovec Ušaj, ki ni izvoljena svetnica, je za naš svetniški klub nesprejemljiv. Zakaj? Ljubljana je mesto, kjer v sožitju že desetletja živijo pripadniki različnih narodov, narodnosti, različnih religij in kultur. Lucija Ušaj pa je oseba, ki v svojih izjavah in stališčih izraža vse prej kot spoštovanje različnosti. Za najlažjo ilustracijo bom citiral samo dve izjavi, ki verjamem bosta večini v tej dvorani razjasnili zakaj na članstvo gospe Ušaj v Levici ne moremo pristat. Citiram: »Vsi, ki podpirate migrante ste v resnici pedofili, impotentni nasilneži, ki ustrahujete ženske, da sploh zmorete seksati z njimi, imate v resnici raje seks z mladimi fantki ali živalmi, da se ne osramotite.« Drugi citat: »Vsak, ki je musliman je po defoltu terorist. Kdaj vam bo to jasno, ta bolna religija to zahteva od njega.« konec citata. To sta dva citata, nadaljeval ne bom, nista osamljena primera, verjamem, da to veste. Dodatni komentarji teh nizkotnih izjav pa mislim, da niso potrebni. Še najbolj bode v oči dejstvo, da je gospa Ušaj predlagana ravno v Odbor za socialo ne. Kajti v okviru tega odbora bi se gotovo soočala z občutljivimi temami, ki so ključne za izboljšanje socialnega položaja najšibkejših, žal pa med te najšibkejše spadajo tudi ljudje, ki jih gospa Ušaj javno, odkrito in brezsramno zaničuje. Sovraštvo, rasizem, ksenofobija v Ljubljani nimajo in nikoli ne smejo imeti mesta. Zato bomo v Levici glasovali proti temu predlogu. Vse svetnike in svetnice pa pozivamo, da se nam pri tem pridružijo in tako preprečijo nadaljnja razpihovanja sovražtva v tem mestnem svetu. Hvala.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 14,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11131,
-        "content": "Hvala lepa. Gospod Koprivc izvolte.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 15,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11132,
-        "content": "Spoštovani župan, hvala lepa za besedo. Spoštovane svetnice, spoštovani svetniki, spoštovani vsi prisotni. Ja, tudi v Svetniškem klubu socialnih demokratov predloga, da bi gospa Lucija Šikovec Ušaj postala članica Odbora za socialo ter zdravstvo ne moremo podpreti. Čakali smo do zadnjega, verjeli smo, da bodo to spoznali neprimernost njenega kandidiranja v mesto odbora, da bodo spoznali predlagatelji v stranki SDS. Žal do tega spoznanja niso prišli, zato smo primorani tukaj v mestnem svetu temu predlogu nasprotovati. Tovariš Grega iz Levice je citiral nekaj njenih twittov, ki so milo rečeno neokusni in absolutno nesprejemljivi za osebo, ki bi želela sodelovati pri upravljanju našega mesta. Ljubljana je odprto in napredno mesto, je mesto heroj, ki je s takšnimi in podobnimi fašistoidnimi izpadi zaključila že davno in nikakor za tovrsne izpade v Ljubljani ni in tudi v prihodnosti ne bo prostora. Zato pozivam vse svetnice in svetnike, da pred glasovanjem razmislijo in da enotno skupaj brez delitev tovrstne nacionalistične, ksenofobne, upam si reči tudi fašistoidne izpade preprečimo in takšni osebi preprečimo, da sodeluje pri upravljanju našega mesta Ljubljane, mesta heroj. Hvala lepa.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 16,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11133,
-        "content": "Gospa Asta Vrečko.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 17,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11134,
-        "content": "Hvala za besedo. Če smem nadaljevati na tem mestu, kjer sta ostala predhodnika. Verjamem sicer, da ste vsi dobili tudi mail od hčerke Alojza Kajina Davorke Pregl in namreč gre se za to, da ne samo, da se gospa Lucija Šikovec Ušaj neprimerno izraža do pripadnikov manjšin in drugače mislečih, nedavno ob prav neprimerni priložnosti, ob pogrebu partizana Alojza Kajina, ki je bil tudi poveljnik Ljubljanske brigade,  ki je 9. maja 1945 osvobodila Ljubljano, ki je bil eden izmed tistih, ki stoji na vseh zgodovinskih fotografijah, kako prihaja na konju in osvobaja Ljubljano, da jo naredi nazaj svobodno, da  pravzaprav so ta dejanja tista, zaradi katerih smo tudi vsi mi tukaj sedaj, tudi gospa Lucija Šikovec Ušaj, in je sama delila na svojem družbenem omrežju na Twitterju twitt, citiram: »Za milimeter manj komunističnega gnoja.« In ob tem pripisala: »Smer je prava.«  In nekdo, ki lahko tako neprimerno se obnaša ob in tako nepietetno ob priložnosti pogreba tega heroja, nekoga, ki je omogočil nam vsem svobodno življenje danes, vsekakor nima mesta v odboru glavnega mesta. In zaradi tega bi posebej želela poudariti, tudi med nami danes, med mestnimi svetnicami in svetniki, je nekaj vidnih funkcionarjev zveze borcev, kar mislim, da tudi vsem nam daje nalogo, da primerno glasujemo proti takšnemu imenovanju. In kot pravi gospa Davorka Pregl, hčerka omenjenega heroja Alojza Kajina: »Kot odvetnica je natančno vedela kako kaj narediti, da kazensko ni odgovorna, pa vendarle je moralno sporna, saj je s tem užalila spomin na mojega očeta in celotno družino. Sram jo je lahko. Takšno ravnanje je treba strogo obsojati, ne pa nagrajevati z delom v najpomembnejših občinskih organih. Upam, da boste predlog zavrnili in javno obsodili njena dejanja.« konec citata. In upam tudi jaz in vas pozivam, da ta predlog skupaj zavrnemo. Hvala lepa.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 18,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11135,
-        "content": "Gospa Mojca Škrinjar.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 19,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11136,
-        "content": "Hvala lepa za besedo. Pozorno sem poskušala pretekle torej izjave. Rada bi povedala, da sem tudi v preteklem mandatu vodila Odbor za zdravje in socialno varstvo. Zdi se mi izjemno pomemben odbor..",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 20,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11137,
-        "content": "Lepo prosim no.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 21,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11138,
-        "content": "..ker so občutljiva vprašanja, predvsem o ranljivih skupinah, to so bolni, invalidi, socialno ogroženi. Jaz mislim in nobenega nasprotnega mnenja nisem dobila, da sem ta odbor vodila korektno. In se zahvaljujem za današnje zaupanje, da ste mi zopet podelili vodenje tega odbora. Na sejah tega odbora smo imeli pogosto različna mnenja, vendar je bila naša komunikacija kultura in seveda vedno strokovna in vedno vsebinska, nikoli politična. Tako bo tudi v bodoče. Seje bodo potekale korektno, na kulturen način, seje bodo vsebinsko strokovne in vse kar bi bilo drugače bi seveda jaz tako razpravo takoj prekinila. In pa seveda ukrepala kot je pač potrebno ukrepati. Nekaj je twittarjenje v zasebnem prostoru, času, twitter omrežje ali katerokoli drugo omrežje socialno je pač recimo facebook je pač omrežje, to je velika miza, za katero sedimo znanci in prijatelji. Tudi za mojo mizo doma sedijo znanci in prijatelji. To je moj zaseben prostor, o katerem pač govorimo kar govorimo. Imamo pravico do tega. Ne rečem, da so vsi zasebni pogovori tudi primerni za javnost. Tega sploh ne trdim, toda trdim, da gre za neko zasebno zadevo. Čeprav velikega kroga. Gospa Lucija Ušaj Šikovec je že drugi mandat predsednica vladne komisije za varstvo pacientovih pravic. Pod zadnje imenovanje je podpisana gospa Tea Šarabon, to je bilo imenovanje v vladi gospe Alenke Bratušek. Gospa Lucija Ušaj je mnogim pacientom, ki jo zelo podpirajo rešila eksistencialna vprašanja, ko je reševala krivice, ki so se dogodile pacientom invalidom, torej najranljivejšim skupinam. Gospa Lucija Ušaj ima izjemno veliko znanje na tem področju, poleg tega so pacienti z njo zelo zadovoljni. To je že njen drugi mandat.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 22,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11139,
-        "content": "Na zdravje.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 23,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11140,
-        "content": "Poleg tega je bila v letu 2018 izbrana kot torej je bila imenovana izmed desetih najbolj vplivnih pravnikov v državi. Jaz sem prepričana, da bi njeno znanje zdravstvenega področja zelo prispevalo h kvaliteti dela odbora in prepričana sem, da nikoli nikdar ni gledala ne na poreklo, ne na socialni status, ne na položaj človeka, kateremu se je postavila v bran po dolžnosti kot predsednica komisije varstva za pacientkove pravice. Nekaj je čvekanje ali čivkanje po twitterju, nekaj je pa resno delo. Z njo so zadovoljni vsi pacienti, ki jih je branila. Spomnite se odmevnih primerov, ki jim je priborila tisto, kar jim je po krivici nekdo vzel. In prepričana sem, bog ne daj, da bi kdo izmed nas jutri postal invalid in bi si zaželel njo kot odvetnico, ker je izredno uspešna ali predsednico te komisije, ki bi odločila v naš prid, da bi zavrnili njeno učinkovito pomoč zaradi nekaj twittov. Zato vas pozivam, da ločite zasebna mnenja in pa strokovno delo. Hvala lepa.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 24,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11141,
-        "content": "Gospod Matić. Sem vse videl, kr lepo brez skrbi. Gospod Matić izvoljo.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 25,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11142,
-        "content": "V imenu Kluba Samostojnih socialno liberalnih svetnikov najavljam, da bomo glasovali proti imenovanju Lucije Šikovec Ušaj na mesto v Odbor za zdravje in socialno varstvo, kar smo pred dnevi tudi sporočili medijem. Mi nimamo težave, da sodelujejo odbori tudi članice in člani svetniških klubov nasprotno mislečih političnih strank in tudi glede gospe Škrinjar nismo imeli nikoli nobenih pripom in mislimo, da dobro vodi svoj odbor, vendar ta idilični opis gospe Lucije Šikovec Ušaj o njeni humanosti je na žalost v drastičnem nasprotju s tistim kar je možno prebrati po socialnih omrežjih, ki jih jaz nikako ne dojemam kot neko zasebno sfero. Zasebno se lahko govori v krogu, ki je zaprt, socialna omrežja so pa odprta, povzemajo jih mediji, širijo so med ljudmi in na ta način se širi tudi sovražni govor na najbolj zavržen način, kar je bilo, če že citiramo določene primere pokazano tudi na primeru, ko je gospa Šikovec Ušaj branila vsebino neonacističnega plakata, ki se je pojavil v Velenju z besedami, da ni nič narobe, če se zavzemaš za družino in za dom, hkrati pa seveda prezrla, da je na tem plakatu bil tudi kljukasti križ. Pri tovrstnih izpadih gospe Šikovec Ušaj je treba jasno postavit mejo. Mi ne moremo podpirati kandidaturo ljudi, ki zagovarjajo skrajna stališča in dajejo skrajne izjave na pomembna mesta tokrat v Odboru za zdravje in socialno varsto in pridružujem se vsem mojim predgovornikom k temu, da se to imenovanje zavrne. Hvala.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 26,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11143,
-        "content": "Gospa Julka Žibert.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 27,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11144,
-        "content": "Oprostite. Jaz bi se tudi rada oglasila v zvezi z gospo Ušajevo in sicer jaz mislim, da taka oseba kot je gospa Ušajeva, ki beremo na twitterju kaj ona pripoveduje pravzaprav ne spada v Odbor za zdravje našega mestnega sveta. Jaz bom samo par twittov prebrala, ki jih je napisala pred kraktim in sicer že pred menoj je govorila moja kolegica svetnica o tem, kaj je izjavila pred nekaj dnevi o pogrebu našega komandanta Alojza Kajina, ki je bil poveljnik Ljubljanske brigade, ki je 9. maja vkorakala v Ljubljano in osvobodila Ljubljano. Ona je na twittu povedala: »Za milimeter bo manj komunističnega gnoja.« in pripisala: »Še smer je prava.« Na žalost to niso osamljeni primeri, predvsem se ona pravzaprav vedno pojavlja z nekimi rasističnimi in ksenofobnimi izrazi na twitterjih, vse begunce, ki se zavzemajo, za vse, ki se zavzemajo za humano in dostojno ravnanje z begunci in migranti pa je na družbenem omrežju in twitterju označila za prikrite pedofile, ki fantazirajo o spolnih odnosih z mladimi fantki in živalmi. Na istem omrežju je pred časom vse pripadnike muslimanske veroizpovedi",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 28,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11145,
-        "content": "Lepo prosim.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 29,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11146,
-        "content": "Označila za teroriste, saj naj bi jim po njenih besedah tako zapovedovala njihova vera. Jaz sem prepričana, da taki človek ne spada v Odbor za zdravstvo. Jaz sem bila v preteklem mandatu v tem odboru in upam, da bom tudi v tem prihodnjem, če me boste izvolili. Obravnavamo marsikatero vprašanje, o katerih je tudi predsednica govorila, vendar s takimi stališči pravzaprav taka oseba v ta odbor ne spada. In jaz bom glasovala proti in upam tako vsaj mislim, ker govorim v imenu naše svetniške skupine da bomo tudi mi glasovali proti taki osebi. Hvala.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 30,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11147,
-        "content": "Hvala lepa. Gospod Čerin. Zadnji prijavljen.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 31,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11148,
-        "content": "Hvala lepa. Kako bo naša svetniška skupina glasovala sem jaz že povedal za medije konec prejšnjega tedna. V edino zadoščenje pa mi je naslednje. Ker sem vedel, kako bo ta predlog, ta predlog na kakšno reakcijo bo naletel v mnogih svetniških skupinah in mnogih svetnikov sem na obeh sejah komisije oba kolega SDS-a pozval oziroma predlagal, da najdejo ustreznejše ime. Hvala lepa.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 32,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11149,
-        "content": "Zaključujem razpravo. Pa mislim, da je prav, da podam tudi svoje mnenje glede tega. Moram povedati, da tudi, če bi bila izglasovana jaz tega sklepa ne bi podpisu. Kajti dotična gospa ne more biti v odboru tega mesta. Razlogov je pa več. Jaz sem mimogrede tudi podprl prošnjo hčerke od generala Kajina da je častna straža na pogrebu, prosil tudi ministra za to, sem bil vesel, da je to narejeno. Ljubljana je mesto heroj. Rad bi še eno stvar povedal zdej. Jaz nisem v ljubezenskih odnosih z SDS-om, to veste ampak moram tle povedat, da od prisotnih v tem zadnjih mandatih ne z Mojco Škrinjar, gospo Sever, gospo Medved prav nobenih težav. Za ostala vas ne vem kaj bo ne. Imel smo različna mnenja ampak bila so na strokovnih osnovah in včasih smo zapenjal ampak konec koncev v večini primerov smo pač imeli interes mesta pred sabo tudi z različnimi pogledi. In tudi jaz sem danes prosil ne da ta predlog umaknejo kajti gospa ne twitta samo kot da je to neko opravil privatno, jst sem tu edini k ne twittam v tej sobi tko, da kar se mene tiče mojga twitta nimate. A, se opravičujem Mojca dva sva, ampak jaz ga ne znam tko da zato ne.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 33,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11150,
-        "content": "Gospa nastopa na televiziji, na dveh televizijah razlaga svoje poglede o razvoju Ljubljane in moram zdej javno se odrekam, če postanem invalid, da me ona brani. Ker, če bi jaz postal invalid, to kar je gospa rekla o meni v teh zadnjih dveh letih ne, bolj da me grejo kar na žale pelat takoj. Lejte. Ljubljana je mesto heroj, Ljubljana je mesto, ki je lahko za vzor v Evropi. Poudaril bom, da živimo skupaj, spoštujemo vse različnosti. Poudaril bom, da smo edini imel 500 postelj pripravljenih za migrante v Ljubljani, ampak popolno oskrbo, od prehrane, zdravstvene do verske oskrbe. In poudaril bom to, da že 3 leta zapored decembra meseca imamo tu ob Ljubljanici milion obiskovalcev, z vsem alkoholom, ki je zraven, brez enega incidenta. In taka oseba, ki tako govori mene prav zanima kako bi te odbori izgledali. Torej, te gospe v tem odboru, v tem mestnem svetu ne bo. Dal bom na glasovanje. Žal mi je pa to, ker ni potrebno napenjat a, ko pa že govorimo o tem, kaj je dobrega naredila za ljudi, če sem prav dojel je ona bla glavna odvetnica za referendum za drugi tir, ki je to državo stal enih 6 milionov evrov in vzel spet leto pa pol drugemu tiru. Če sem prov dojel kadar gledam to, pa ne berem twitt ampak gledal sem na televiziji. Ko se pomoje še zastopa zdej gospoda Kovačiča, Ogrina pa Pascha, ki pravijo da Lista Zorana Jankovića ne sme biti v mestnem svetu, pa da župana določi sodišče ne iz SDS-a, ker je to edina šansa, da SDS dobi župana ne, dokler je Ljubljana taka. Tako, da prehajamo na glasovanje o članici Odbora za zdravje Luciji Škovec Ušaj. Prosim za vaš glas. Ste vsi? 10 ZA. 30 PROTI. Lepa hvala. Gremo na razpravo o naslednji članici Sonja Štramec – Nemec. Ni razprave. Glasovanje poteka. Lepo prosim Sonja Štramec – Nemec. 38 ZA. 1 PROTI.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 34,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11151,
-        "content": "Se opravičujem absolutna. Izvolte še enkrat glasujemo o Sonji Štramec – Nemec. Ne vem čigav je to, jst ne poznam. 38 ZA. 1 PROTI.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 35,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11152,
-        "content": "Razprava. O gospe Julki Žibert. Ni razprave. Glasovanje poteka. Članica gospa Julka Žibert. 41 ZA. 0 PROTI. Hvala lepa za korektnost.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 36,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11153,
-        "content": "S tem smo to točko zaključili. Prehajamo na 19. Predlog SKLEPA o prenehanju mandata in imenovanju nadomestne predstavnice MOL-a v Svet Osnovne šole Ketteja in Murna. Imate predlog gor. Razprava. Ni razprave. Ugotavljam navzočnost. Rezultat navzočnosti. 36 svetnikov. Glasovanje poteka o Predlogu SKLEPA Matiji Blaganjetu preneha mandat člana Sveta Osnovne šole Ketteja in Murna. V Svet osnovne šole Ketteja in Murna se za predstavnico MOL-a imenuje Marija Nenadić. Mandat imenovanje je vezan na mandat sveta šole. Prosim za vaš glas. 39 ZA. 0 PROTI. Gremo na 20. Predlog SKLEPA o imenovnju predstavnice MOL-a v Svet Gimnazije Šentvid. Razprava. Ni razprave. Ugotavljam navzočnost. Rezultat navzočnosti. 39 svetnikov. Glasovanje poteka. V Svet Gimnazije Šentvid se imenuje Ana Zagožen. Mandat imenovane traja 4 leta. Prosim za vaš glas. 40 ZA. 0 PROTI. Čestitke. Gremo na 21. Predlog SKLEPA o imenovanju predstavnice MOL-a v Svet Zavoda za gluhe in naglušne Ljubljana. Razprava prosim. Ni razprave. Glasovanje poteka. V Svet Zavoda za gluhe in naglušne Ljubljana se imenuje Maruša Babnik. Mandat imenovane traja 4 leta. 39 ZA. 0 PROTI. Bravo. Gremo na 22. Predlog SKLEPA o imenovanju predstavnice MOL-a v Svet Zavoda  Mladinski dom Jarše. Razprava prosim. Ni razprave. Navzočnost ugotavljam. Rezultat navzočnosti. 32 svetnikov. Glasovanje poteka o Predlogu SKLEPA v Svet Zavoda Mladinski dom Jarše se imenuje Katarina Gorenc. Mandat imenovane traja 4 leta. Prosim za vaš glas. 41 ZA. 0 PROTI. Čestitke. Gremo na 23. Predlog SKLEPA o imenovanju predstavnika MOL-a v Svet lokalnih skupnosti Centra za Socialno delo Ljubljana. Razprava prosim. Ni. Glasovanje poteka o Predlogu SKLEPA v Svet lokalnih skupnosti Centra za socialno delo Ljubljana se za predstavnika MOL-a imenuje Aljoša Gadžijev. Mandat imenovanega traja 4 leta. 40 ZA. 0 PROTI. Čestitke. Gremo na 24. Predlog SKLEPA o predlogu za imenovanje predstavnika MOL v Svet javnega zavoda Cankarjev dom, kulturni in kongresni center. Razprava prosim. Ni razprave. Ugotavljam navzočnost. Rezultat navzočnosti. 38 svetnikov. Glasovanje poteka o Predlogu SKLEPA. Mestna občina predlaga, da se v Svet javnega zavoda Cankarjev dom, kulturni in kongresni center imenuje Aleš Čerin. 40 ZA. 0 PROTI. Hvala in pa srečno. 25. predlog MNENJA h kandidaturi za ravnatelja Osnovne šole Ketteja in Murna. Razprava prosim. Ni razprave. Ugotavljam navzočnost. 38. Glasovanje poteka o Predlogu SKLEPA Saši Kožuhu se da pozitivno mnenje h kandidaturi za ravnatelja Osnovne šole Ketteja in Murna. Izjemen ravnatelj je tak, da veste, pa še moja šola je. Ena od. 41 ZA. 0 PROTI. Čestitke. In smo to točko tudi izčrpal. Današnja zadnja točka. Naročili so mi, da moram vleči do pol petih zaradi hrane ne. AD 2. PREDLOG SKLEPA O FINANCIRANJU POLITIČNIH STRANK Gradivo za to točko ste prejeli s sklicem seje. Prosim gospo Polono Zupan Klopčič, Služba za organiziranje dela mestnega sveta, da poda uvodno obrazložitev.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 37,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11154,
-        "content": "Polona, izvoli.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 38,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11155,
-        "content": "Spoštovani in spoštovane. To je sklep o financiranju političnih strank. Pravna podlaga je.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 39,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11156,
-        "content": "V mikrofon dej, da te slišjo, v mikrofon govori.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 40,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11157,
-        "content": "Bolj na glas?",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 41,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11158,
-        "content": "Tko k doma.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 42,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
-      },
-      {
-        "speech_id": 11159,
-        "content": "Sklep o financiranju političnih strank ima pravno podlago v 26. členu Zakona o političnih strankah in določa, da se financiranje v politične stranke sorazmerno političnemu pač rezultatu na volitvah. Glede na število glasov se deli pač število mestnih svetnikov in če presežeš določeno kvoto so sredstva dodeljena. Sredstva se dodelijo mesečno in so predvidena vsako leto v proračunu. Predlagam, da sklep sprejmete. Kot vidite v tabeli je do sredstev upravičenih prvih 12 strank, medtem ko Lista Zorana Jankovića do sredstev ni upravičena, ker ne gre za politično stranko. Hvala lepa in predlagam, da sklep sprejmete.",
-        "session": {
-          "name": "1. izredna seja Mestnega sveta MOL",
-          "id": 77,
-          "start_time": "2019-01-21T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 43,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null
+        "quote_id": null,
+        "person": {
+          "slug": "237-milan-jakopovic",
+          "name": "Milan Jakopovič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Levica ",
+            "acronym": "",
+            "slug": "20-levica"
+          },
+          "image": null
+        }
       }
     ]
   }
