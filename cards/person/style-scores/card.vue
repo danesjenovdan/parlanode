@@ -1,8 +1,8 @@
 <template>
   <style-scores
-    :party="$options.contextData.cardData.party"
-    :results="$options.contextData.cardData.results"
-    type="party"
+    :person="$options.contextData.cardData.data?.person"
+    :results="$options.contextData.cardData.data?.results || {}"
+    type="person"
   />
 </template>
 
@@ -10,7 +10,7 @@
 import StyleScores from '@/_components/StyleScores.vue';
 
 export default {
-  name: 'CardGroupStilneAnalize',
+  name: 'CardPersonStilneAnalize',
   components: {
     StyleScores,
   },

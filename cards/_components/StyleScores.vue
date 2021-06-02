@@ -31,18 +31,18 @@
           <div class="me_poslanec">
             <div class="progress smallbar">
               <div
-                :aria-valuenow="results.privzdignjeno"
-                :style="getBarStyle('privzdignjeno')"
+                :aria-valuenow="results.sophisticated"
+                :style="getBarStyle('sophisticated')"
                 class="progress-bar funblue"
                 role="progressbar"
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
                 <span class="sr-only"
-                  >{{ results.privzdignjeno.toFixed(2) }}%</span
+                  >{{ results.sophisticated?.toFixed(2) }}%</span
                 >
                 <div class="progress_number">
-                  {{ results.privzdignjeno.toFixed(2).replace('.', ',') }}
+                  {{ results.sophisticated?.toFixed(2).replace('.', ',') }} %
                 </div>
               </div>
             </div>
@@ -50,16 +50,16 @@
           <div class="me_poslanec">
             <div class="progress smallbar">
               <div
-                :aria-valuenow="results.preprosto"
-                :style="getBarStyle('preprosto')"
+                :aria-valuenow="results.simple"
+                :style="getBarStyle('simple')"
                 class="progress-bar funblue"
                 role="progressbar"
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
-                <span class="sr-only">{{ results.preprosto.toFixed(2) }}%</span>
+                <span class="sr-only">{{ results.simple?.toFixed(2) }}%</span>
                 <div class="progress_number">
-                  {{ results.preprosto.toFixed(2).replace('.', ',') }}
+                  {{ results.simple?.toFixed(2).replace('.', ',') }} %
                 </div>
               </div>
             </div>
@@ -67,18 +67,18 @@
           <div class="me_poslanec">
             <div class="progress smallbar">
               <div
-                :aria-valuenow="results.problematicno"
-                :style="getBarStyle('problematicno')"
+                :aria-valuenow="results.problematic"
+                :style="getBarStyle('problematic')"
                 class="progress-bar funblue"
                 role="progressbar"
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
                 <span class="sr-only"
-                  >{{ results.problematicno.toFixed(2) }}%</span
+                  >{{ results.problematic?.toFixed(2) }}%</span
                 >
                 <div class="progress_number">
-                  {{ results.problematicno.toFixed(2).replace('.', ',') }}
+                  {{ results.problematic?.toFixed(2).replace('.', ',') }} %
                 </div>
               </div>
             </div>
@@ -139,9 +139,9 @@ export default {
     },
     maxValue() {
       return Math.max(
-        this.results.privzdignjeno,
-        this.results.preprosto,
-        this.results.problematicno
+        this.results.sophisticated,
+        this.results.simple,
+        this.results.problematic
       );
     },
   },
@@ -189,5 +189,7 @@ export default {
   transform: translateX(100%);
   color: $font-default;
   line-height: 30px;
+  min-width: 70px;
+  text-align: left;
 }
 </style>
