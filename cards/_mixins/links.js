@@ -46,17 +46,15 @@ export default {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       const pageNum = Math.floor(speech.the_order / perPage) + 1;
       const pageUrlPart = pageNum > 1 ? `/${pageNum}` : '';
-      return `${urls.site}/${sm.session.base}/${
-        speech.session_id || speech.session.id
-      }/${sm.session.transcript}${pageUrlPart}#${speech.speech_id}`;
+      return `${urls.site}/${sm.session.base}/${speech.session?.id}/${sm.session.transcript}${pageUrlPart}#${speech.speech_id}`;
     },
     getSpeechCardLink(speech) {
       const { urls } = this.$root.$options.contextData;
       return `${urls.cards}/s/govor/${speech.results.speech_id}?frame=true`;
     },
-    getSessionVoteLink(session) {
+    getSessionVoteLink(ballot) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
-      return `${urls.site}/${sm.session.base}/${session.session_id}/${sm.session.vote}/${session.vote_id}`;
+      return `${urls.site}/${sm.session.base}/${ballot.session?.id}/${sm.session.vote}/${ballot.motion?.id}`;
     },
     getSearchTermLink(term, { mps = [], pgs = [] } = {}) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
