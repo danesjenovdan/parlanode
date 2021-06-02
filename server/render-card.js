@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import stringify from 'html-safe-json';
 import {
   loadLocale,
   loadCardModule,
@@ -75,7 +76,7 @@ const renderAssets = (cardName, modules, mountId) => {
 };
 
 const renderInitialState = (state) => {
-  const json = JSON.stringify(state);
+  const json = stringify(state);
   return `<script type="module">window.__INITIAL_STATE__=${json};</script>`;
 };
 
