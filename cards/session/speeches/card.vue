@@ -16,7 +16,7 @@
       <div v-if="fetching" class="nalagalnik"></div>
       <speech
         v-for="speech in speeches"
-        :key="speech.results.speech_id"
+        :key="speech.speech_id"
         v-quotable
         :speech="speech"
         :per-page="perPage"
@@ -59,21 +59,27 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const data = this.$options.contextData.cardData;
+    const {
+      results = [],
+      pages = 1,
+      page = 1,
+      count,
+      per_page = SPEECHES_PER_PAGE,
+    } = this.cardData.data || {};
 
-    const state = this.$options.contextData.cardState;
-    let page = (state && state.page) || Number(data.page);
-    page = Math.min(Math.max(page, 0), data.pages);
+    const speechesPerPage = Array(pages);
+    speechesPerPage[page - 1] = results;
 
-    const speechesPerPage = Array(data.pages);
-    speechesPerPage[data.page - 1] = data.results;
+    // const state = this.$options.contextData.cardState;
+    // let page = (state && state.page) || Number(data.page);
+    // page = Math.min(Math.max(page, 0), data.pages);
+    const initialPage = 1;
 
     return {
-      data,
       speechesPerPage,
-      count: data.count,
-      perPage: data.per_page || SPEECHES_PER_PAGE,
-      page,
+      count: count ?? results?.length ?? 0,
+      perPage: per_page,
+      page: initialPage,
       fetching: false,
     };
   },
@@ -82,15 +88,15 @@ export default {
       return this.speechesPerPage[this.page - 1] || [];
     },
     generatedCardUrl() {
-      return `${this.url}${this.data.session.id}?altHeader=true`;
+      return `${this.url}${this.cardData.id}?altHeader=true`;
     },
   },
   mounted() {
     document.body.style.overflowAnchor = 'none';
 
-    if (this.page !== Number(this.data.page)) {
-      this.onPageChange(this.page);
-    }
+    // if (this.page !== Number(this.data.page)) {
+    //   this.onPageChange(this.page);
+    // }
   },
   created() {
     // TODO:
@@ -105,36 +111,38 @@ export default {
       }
       this.page = newPage;
       this.scrollToTop();
-      if (!this.speechesPerPage[newPage - 1]) {
-        this.fetching = true;
-        axios
-          .get(
-            `${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${newPage}`
-          )
-          .then((response) => {
-            this.speechesPerPage[newPage - 1] = response.data.results;
-            this.fetching = false;
+      // TODO: pagination
+      // if (!this.speechesPerPage[newPage - 1]) {
+      //   this.fetching = true;
+      //   axios
+      //     .get(
+      //       `${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${newPage}`
+      //     )
+      //     .then((response) => {
+      //       this.speechesPerPage[newPage - 1] = response.data.results;
+      //       this.fetching = false;
 
-            // needed if dynamically loaded to reset the css :target and scroll to selected element
-            this.$nextTick(() => {
-              const target = document.getElementById(
-                window.location.hash.slice(1)
-              );
-              if (target) {
-                const tmp = window.location.hash;
-                window.location.hash = '';
-                window.location.hash = tmp;
-              }
-            });
-          });
-      }
+      //       // needed if dynamically loaded to reset the css :target and scroll to selected element
+      //       this.$nextTick(() => {
+      //         const target = document.getElementById(
+      //           window.location.hash.slice(1)
+      //         );
+      //         if (target) {
+      //           const tmp = window.location.hash;
+      //           window.location.hash = '';
+      //           window.location.hash = tmp;
+      //         }
+      //       });
+      //     });
+      // }
     },
     scrollToTop() {
-      const id = this.$root.$options.contextData.mountId;
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView();
-      }
+      // TODO: use ref?
+      // const id = this.$root.$options.contextData.mountId;
+      // const el = document.getElementById(id);
+      // if (el) {
+      //   el.scrollIntoView();
+      // }
     },
   },
 };

@@ -57,9 +57,8 @@ export const searchOgImage = {
 export const sessionOgImage = {
   computed: {
     ogConfig() {
-      const { cardData } = this.$root.$options.contextData;
-      const session = cardData.session ?? cardData.results.session;
-      const sessionName = session.name;
+      const session = this.cardData.data?.results?.session;
+      const sessionName = session?.name || '';
 
       // TODO: this needs to be generic and not sl
       let imageName = 'seja-redna';
@@ -73,7 +72,7 @@ export const sessionOgImage = {
         name: 'circle',
         icon: imageName,
         h1: sessionName,
-        h2: session.date,
+        h2: session?.date,
         title: this.$t('card.title'),
       };
     },

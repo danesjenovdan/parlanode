@@ -12,7 +12,7 @@ export default {
     },
     getPersonPortrait(person) {
       return (
-        person.image ||
+        person?.image ||
         'https://cdn.nov.parlameter.si/v1/parlassets/img/people/square/null.png'
       );
     },
@@ -50,7 +50,7 @@ export default {
     },
     getSpeechCardLink(speech) {
       const { urls } = this.$root.$options.contextData;
-      return `${urls.cards}/s/govor/${speech.results.speech_id}?frame=true`;
+      return `${urls.cards}/speech/single/${speech.speech_id}?frame=true`;
     },
     getSessionVoteLink(ballot) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
