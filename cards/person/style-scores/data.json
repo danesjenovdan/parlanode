@@ -1,0 +1,22 @@
+{
+  "data": {
+    "results": {
+      "problematic": 0.211864406779661,
+      "simple": 1.35593220338983,
+      "sophisticated": 2.33050847457627
+    },
+    "person": {
+      "slug": "259-ales-cerin",
+      "name": "Aleš Čerin",
+      "honorific_prefix": null,
+      "honorific_suffix": null,
+      "preferred_pronoun": null,
+      "group": {
+        "name": "Lista Zorana Jankovića ",
+        "acronym": "",
+        "slug": "22-lista-zorana-jankovica"
+      },
+      "image": "/Screenshot_from_2020-11-03_17-38-05.png"
+    }
+  }
+}
