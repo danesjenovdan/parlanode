@@ -1,0 +1,372 @@
+{
+  "id": "77",
+  "data": {
+    "session": {
+      "name": "1. izredna seja Mestnega sveta MOL",
+      "id": 77,
+      "start_time": "2019-01-21T15:30:00",
+      "end_time": null,
+      "organizations": [
+        {
+          "name": "Mestni svet MOL",
+          "acronym": null,
+          "slug": "1-mestni-svet-mol"
+        }
+      ],
+      "classification": null,
+      "in_review": false
+    },
+    "results": [
+      {
+        "speech_id": 11117,
+        "content": "Spoštovane svetnice in svetniki, gospe in gospodje. Predlagam, da pričnemo s prvo izredno sejo mestnega sveta Mestne občine Ljubljana. Na seji nazvočih 35 svetnic in svetnikov. Odsotnost opravičili gospa Kociper, gospa Lozej, gospa Žekar in gospod Logar. Smo sklepčni, lahko pričnemo z delom. Glede na to, da nas je nekaj novih, lepo prosim, če izključite mobilne telefone, da ne motijo delo mestnega sveta. Preden nadaljujejo pa samo še obveščam, da bo imela Mestna občina Ljubljana v novem mandatu 4 podžupane in to po abecednem redu gospod Dejan Crnek, gospod Aleš Čerin, gospa Tjaša Ficko in prof. Janez Koželj. Dejan Crnek in Tjaša Ficko bosta funkcijo podžupana oziroma podžupanje opravila poklicno. V skladu s 93. členom Poslovnika mestnega sveta MOL-a odloča mestni svet o mandatih, vprašanjih na začetku seje. Prejeli ste predlog ugotovitvenega sklepa Komisije za mandatna vprašanja, volitve in imenovanja o potrditvi mandata članici mestnega sveta Mestne občine Ljubljana gospe Jožki Hegler. Gospa Jožka Hegler, kje pa si, izvoli, tamle si zdej. Prosim gospoda",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 1,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
+      },
+      {
+        "speech_id": 11118,
+        "content": "Prosim gospoda Čerina, predsednika Komisije za mandatna vprašanja, volitve in imenovanja, da poda uvodne obrazložitve.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 2,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
+      },
+      {
+        "speech_id": 11119,
+        "content": "Hvala za besedo gospod župan, cenjene kolegice in kolegi. Ker je funkcija mestnega svetnika in župana nezdružljiva, župan pa je vodil Listo Zorana Jankovića in se odpovedal mandatu preide mandat na prvega naslednika oziroma prvo naslednjo gospo Jožko Hegler. Hvala lepa.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 3,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "259-ales-cerin",
+          "name": "Aleš Čerin",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Lista Zorana Jankovića ",
+            "acronym": "",
+            "slug": "22-lista-zorana-jankovica"
+          },
+          "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-05-21_08-54-57.png"
+        }
+      },
+      {
+        "speech_id": 11120,
+        "content": "Gremo na obravnavo predloga ugotovitvenega sklepa o potrditvi mandata članici mestnega sveta Mestne občine Ljubljana. Razprava prosim. Ni razprave. Ugotavljam navzočnost. Rezultat navzočnosti. 38 svetnikov. Glasovanje poteka o PREDLOGU SKLEPA: Mestni svet Mestne občine Ljubljana potrdi mandat članici Mestnega sveta Mestne občine Ljubljana, Jožki Hegler. Mandat članice je vezan na mandat mestnega sveta. Mandat se začne z dnem sprejema tega ugotovitvenega sklepa. Prosim za vaš glas. 40 ZA. 0 PROTI.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 4,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
+      },
+      {
+        "speech_id": 11121,
+        "content": "Hvala. Zdej si pa polnopravna. Presedi se eno vrsto naprej, da te bom vidu. Al dve ali kam, ne vem kam greš. Aha, tamle greš, dobro. Prehajamo na Dnevni red današnje seje. S sklicem seje ste prejeli Predlog 1. Izredne seje Mestnega sveta Mestne občine Ljubljana in sicer z naslednjim DNEVNIM REDOM: KADROVSKE ZADEVE PREDLOG SKLEPA O FINANCIRANJU POLITIČNIH STRANK O dnevnem redu izredne seje mestni svet, skladno s 57. členom Poslovnika Mestnega sveta Mestne občine Ljubljana ne razpravlja in ne glasuje. AD 1. KADROVSKE ZADEVE Gradivo za to točko ste prejeli po sklicu seje. Prosim gospoda Čerina, predsednika Komisije za mandatna vprašanja, volitve in imenovanja, da poda uvodno obrazložitev.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 5,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
+      },
+      {
+        "speech_id": 11122,
+        "content": "Hvala za besedo tudi tokrat. Cenjene kolegice in kolegi. Komisija se je sestala na dveh sejah in sicer 9. in 16. januarja in v presojo vam predlaga 24 sklepov in 1 mnenje. Od teh 24. sklepov se jih 18 nanaša na delovna telesa mestnega sveta, na 5 komisij in 13 odborov. Moram rečt, da smo imeli srečno roko pri sestavi teh delovnih teles, iz dveh razlogov: prvič, upoštevali smo volilni izid in drugo v veliki večini primerov, želje oziroma predloge vodij svetniških skupin. Glede na volilni rezultat ima Lista Zorana Jankovića predseduje devetim delovnim telesom, če pa vključujem še to komisijo desetim. SDS štirim, levica dvema, SD in NSi ter skupina svetnikov pa vsak po enemu. Edini, ki ne predseduje nobenem delovnem telesu je stranka kolesarjev in pešcev, ki ima enega svetnika. Sam se bom izločil pri glasovanju o 24. točki, kar sem naredil tudi že na sami seji komisije in sicer, ko gre za predstavnika mesta Ljubljane v Svetu Cankarjevega doma. Hvala lepa.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 6,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "259-ales-cerin",
+          "name": "Aleš Čerin",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Lista Zorana Jankovića ",
+            "acronym": "",
+            "slug": "22-lista-zorana-jankovica"
+          },
+          "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-05-21_08-54-57.png"
+        }
+      },
+      {
+        "speech_id": 11123,
+        "content": "Sam osebno predlagam, da mestni svet o vseh Predlogih Sklepov o imenovanju članov odborov in komisij razpravlja skupaj in o njih glasuje naenkrat, razen, če je kakšna pripomba. Kar izvolijo gospod Jakopovič.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 7,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
+      },
+      {
+        "speech_id": 11124,
+        "content": "Hvala za besedo.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 8,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "237-milan-jakopovic",
+          "name": "Milan Jakopovič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Levica ",
+            "acronym": "",
+            "slug": "20-levica"
+          },
+          "image": null
+        }
+      },
+      {
+        "speech_id": 11125,
+        "content": "A, prosim, sam moment. Mikrofon, da, zaradi zapisnika. Evo. Ja.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 9,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        }
+      },
+      {
+        "speech_id": 11126,
+        "content": "Hvala lepa za besedo. Predlagam, da se da na glasovanje predlog, da se predlagani Predlog Sklepa o imenovanju v Odbor za zdravje in socialno varnost izloči iz paketa sklepov in da mestni svet o vsakem članu tega odbora glasuje posebej.",
+        "session": {
+          "name": "1. izredna seja Mestnega sveta MOL",
+          "id": 77,
+          "start_time": "2019-01-21T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        },
+        "the_order": 10,
+        "quoted_text": null,
+        "start_idx": null,
+        "end_idx": null,
+        "quote_id": null,
+        "person": {
+          "slug": "237-milan-jakopovic",
+          "name": "Milan Jakopovič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Levica ",
+            "acronym": "",
+            "slug": "20-levica"
+          },
+          "image": null
+        }
+      }
+    ],
+    "count": 43,
+    "pages": 5,
+    "page": 1,
+    "per_page": 10
+  }
+}

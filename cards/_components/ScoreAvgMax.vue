@@ -37,7 +37,7 @@
               >
                 <span class="sr-only">{{ getScore }}%</span>
                 <div class="progress_number">
-                  {{ getScore.toFixed(precision) }}
+                  {{ getScore.toFixed(precision).replace('.', ',') }}
                 </div>
               </div>
             </div>
@@ -54,7 +54,7 @@
               >
                 <span class="sr-only">{{ results.average }}%</span>
                 <div class="progress_number">
-                  {{ results.average.toFixed(precision) }}
+                  {{ results.average.toFixed(precision).replace('.', ',') }}
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@
           </div>
           <div class="other_poslanec">
             <div class="progress_number">
-              {{ getMaxValue.toFixed(precision) }}
+              {{ getMaxValue.toFixed(precision).replace('.', ',') }}
             </div>
           </div>
         </div>

@@ -1,31 +1,31 @@
 <template>
   <div
-    :id="speech.results.speech_id"
+    :id="speech.speech_id"
     :class="['speech-holder', { 'just-quote': showQuote }]"
   >
     <input :value="getSpeechContent(speech)" type="hidden" class="mywords" />
     <div class="person-session">
       <div class="person">
-        <template v-if="speech.person.type === 'mp'">
+        <template v-if="getPersonLink(speech.person)">
           <a :href="getPersonLink(speech.person)">
             <img :src="getPersonPortrait(speech.person)" class="portrait" />
           </a>
           <a :href="getPersonLink(speech.person)" class="funblue-light-hover">
-            <span class="name">{{ speech.person.name }}</span>
+            <span class="name">{{ speech.person?.name }}</span>
           </a>
         </template>
         <template v-else>
           <img :src="getPersonPortrait(speech.person)" class="portrait" />
-          <span class="name">{{ speech.person.name }}</span>
+          <span class="name">{{ speech.person?.name }}</span>
         </template>
       </div>
       <div v-if="showSession" class="session">
         <a
-          :href="getSessionTranscriptLink(speech.results.session)"
+          :href="getSessionTranscriptLink(speech.session)"
           class="funblue-light-hover"
-          >{{ speech.results.session.name }}</a
+          >{{ speech.session?.name }}</a
         ><br />
-        <span class="date">{{ speech.results.session.date }}</span>
+        <span class="date">{{ speech.session?.date }}</span>
       </div>
     </div>
     <div class="everything">
@@ -34,10 +34,10 @@
         <div class="quote-button">“</div>
       </div>
     </div>
-    <div v-if="speech.results.quoted_text" class="quote">
+    <div v-if="speech.quoted_text" class="quote">
       <div class="speech-text">
         {{ quotePaddingBefore }}
-        <span class="quote-text">{{ speech.results.quoted_text }}</span>
+        <span class="quote-text">{{ speech.quoted_text }}</span>
         {{ quotePaddingAfter }}
       </div>
       <div class="full-text-link">
@@ -51,7 +51,7 @@
       <div class="quote-button">“</div>
     </div>
     <div class="links">
-      <a :href="getSessionSpeechLink(speech.results)" class="link"></a>
+      <a :href="getSessionSpeechLink(speech)" class="link"></a>
       <a
         v-if="!showSession"
         :href="getSpeechCardLink(speech)"
@@ -91,28 +91,28 @@ export default {
   },
   computed: {
     showQuote() {
-      return this.speech.results.quoted_text && !this.hideQuote;
+      return this.speech.quoted_text && !this.hideQuote;
     },
     quotePaddingBefore() {
-      const splitQuote = this.speech.results.content
+      const splitQuote = this.speech.content
         .replace(/\n+/g, ' ')
         .trim()
-        .split(this.speech.results.quoted_text);
+        .split(this.speech.quoted_text);
       const paddingBefore = splitQuote[0].slice(-PADDING_LENGTH);
       return paddingBefore ? `...${paddingBefore}` : '';
     },
     quotePaddingAfter() {
-      const splitQuote = this.speech.results.content
+      const splitQuote = this.speech.content
         .replace(/\n+/g, ' ')
         .trim()
-        .split(this.speech.results.quoted_text);
+        .split(this.speech.quoted_text);
       const paddingAfter = splitQuote[1].slice(0, PADDING_LENGTH);
       return paddingAfter ? `${paddingAfter}...` : '';
     },
   },
   methods: {
     getSpeechContent(speech) {
-      return speech.results.content.replace(/\n+/g, ' ').trim();
+      return speech.content.replace(/\n+/g, ' ').trim();
     },
     showFullSpeech(event) {
       event.preventDefault();

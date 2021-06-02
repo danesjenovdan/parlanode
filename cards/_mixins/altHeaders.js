@@ -58,9 +58,8 @@ export const searchHeader = {
 export const sessionHeader = {
   computed: {
     headerConfig() {
-      const { cardData, cardState } = this.$root.$options.contextData;
-      const session = cardData.session || cardData.results.session;
-      const sessionName = session.name;
+      const session = this.cardData.data?.results?.session;
+      const sessionName = session?.name || '';
 
       // TODO: this needs to be generic and not sl
       let imageName = 'seja-redna';
@@ -73,8 +72,8 @@ export const sessionHeader = {
       return {
         mediaImage: imageName,
         heading: sessionName,
-        subheading: session.date,
-        alternative: cardState.altHeader,
+        subheading: session?.date,
+        alternative: this.cardState.altHeader,
         title: this.$t('card.title'),
       };
     },

@@ -16,7 +16,7 @@
       <div v-if="fetching" class="nalagalnik"></div>
       <speech
         v-for="speech in speeches"
-        :key="speech.results.speech_id"
+        :key="speech.speech_id"
         v-quotable
         :speech="speech"
         :per-page="perPage"
@@ -59,21 +59,28 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const data = this.$options.contextData.cardData;
+    const {
+      results = [],
+      pages = 1,
+      page: initialPage = 1,
+      count = results?.length ?? 0,
+      per_page = SPEECHES_PER_PAGE,
+    } = this.cardData.data || {};
 
-    const state = this.$options.contextData.cardState;
-    let page = (state && state.page) || Number(data.page);
-    page = Math.min(Math.max(page, 0), data.pages);
+    const speechesPerPage = Array(pages);
+    speechesPerPage[initialPage - 1] = results;
 
-    const speechesPerPage = Array(data.pages);
-    speechesPerPage[data.page - 1] = data.results;
+    // const state = this.$options.contextData.cardState;
+    // let page = (state && state.page) || Number(data.page);
+    // page = Math.min(Math.max(page, 0), data.pages);
+    const page = initialPage;
 
     return {
-      data,
       speechesPerPage,
-      count: data.count,
-      perPage: data.per_page || SPEECHES_PER_PAGE,
+      count,
+      perPage: per_page,
       page,
+      initialPage,
       fetching: false,
     };
   },
@@ -82,13 +89,12 @@ export default {
       return this.speechesPerPage[this.page - 1] || [];
     },
     generatedCardUrl() {
-      return `${this.url}${this.data.session.id}?altHeader=true`;
+      return `${this.url}${this.cardData.id}?altHeader=true`;
     },
   },
   mounted() {
     document.body.style.overflowAnchor = 'none';
-
-    if (this.page !== Number(this.data.page)) {
+    if (this.page !== this.initialPage) {
       this.onPageChange(this.page);
     }
   },
@@ -109,7 +115,7 @@ export default {
         this.fetching = true;
         axios
           .get(
-            `${this.slugs.urls.analize}/s/getSpeechesOfSession/${this.data.session.id}?page=${newPage}`
+            `${this.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
           )
           .then((response) => {
             this.speechesPerPage[newPage - 1] = response.data.results;
@@ -130,6 +136,7 @@ export default {
       }
     },
     scrollToTop() {
+      // eslint-disable-next-line no-restricted-properties
       const id = this.$root.$options.contextData.mountId;
       const el = document.getElementById(id);
       if (el) {
