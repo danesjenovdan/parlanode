@@ -21,7 +21,7 @@
       <i18n-t :keypath="translationKey" tag="div" class="motion">
         <template #title>
           <a :href="getSessionVoteLink(event)" class="funblue-light-hover">{{
-            event.vote_name
+            event.motion?.text
           }}</a>
         </template>
       </i18n-t>
@@ -30,11 +30,13 @@
       <i18n-t :keypath="translationKey" tag="div" class="motion">
         <template #session>
           <a :href="getSessionSpeechLink(event)" class="funblue-light-hover">{{
-            event.session.name
+            event.session?.name
           }}</a>
         </template>
         <template #org>
-          <span>{{ event.session.org.name }}</span>
+          <span>{{
+            event.session?.organizations?.map((o) => o.name).join(', ')
+          }}</span>
         </template>
       </i18n-t>
     </template>
@@ -83,14 +85,18 @@ export default {
       return '';
     },
     translationKey() {
+      const gender =
+        this.$root.cardData.data?.person?.preferred_pronoun === 'she'
+          ? 'f'
+          : 'm';
       if (this.event.type === 'question') {
-        return `question.asked--${this.$root.data.person.gender}`;
+        return `question.asked--${gender}`;
       }
       if (this.event.type === 'ballot') {
-        return `event.ballot--${this.event.option}--${this.$root.data.person.gender}`;
+        return `event.ballot--${this.event.option}--${gender}`;
       }
       if (this.event.type === 'speech') {
-        return `event.speech--${this.$root.data.person.gender}`;
+        return `event.speech--${gender}`;
       }
       return '';
     },

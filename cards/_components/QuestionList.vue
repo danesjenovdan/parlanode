@@ -7,7 +7,7 @@
       <div v-if="!questionDays?.length" v-t="'no-results'" class="no-results" />
       <div v-else>
         <div v-for="day in questionDays" :key="day.date">
-          <div class="date">{{ day.date }}</div>
+          <div class="date">{{ dateFormatter(day.date) }}</div>
           <template v-if="day.questions">
             <question
               v-for="question in day.questions"
@@ -33,6 +33,7 @@
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Question from '@/_components/Question.vue';
 import Event from '@/_components/Event.vue';
+import dateFormatter from '@/_helpers/dateFormatter.js';
 
 export default {
   name: 'QuestionList',
@@ -50,6 +51,9 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  methods: {
+    dateFormatter,
   },
 };
 </script>

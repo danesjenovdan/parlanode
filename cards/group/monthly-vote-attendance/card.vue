@@ -1,7 +1,7 @@
 <template>
   <prisotnost-chart
-    :party="$options.contextData.cardData.party"
-    :results="$options.contextData.cardData.results"
+    :party="$options.contextData.cardData.data?.group"
+    :results="$options.contextData.cardData.data?.results || []"
     type="party"
   />
 </template>
@@ -10,7 +10,7 @@
 import PrisotnostChart from '@/_components/PrisotnostChart.vue';
 
 export default {
-  name: 'CardGroupPrisotnostSkoziCas',
+  name: 'CardGroupMonthlyVoteAttendance',
   components: {
     PrisotnostChart,
   },

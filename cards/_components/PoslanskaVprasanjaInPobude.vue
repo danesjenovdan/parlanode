@@ -75,51 +75,51 @@ export default {
     },
   },
   data() {
-    const selectFromState = (items, stateItemIds) =>
-      items.map((item) =>
-        assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
-      );
+    // const selectFromState = (items, stateItemIds) =>
+    //   items.map((item) =>
+    //     assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
+    //   );
 
-    const { months } = getD3Locale(this.$i18n.locale);
-    let allMonths = this.generateMonths(months);
-    let allMPs = this.contextData.cardData.all_authors.map((author) => ({
-      id: author.id,
-      label: author.name,
-      selected: false,
-    }));
-    let allRecipients = this.contextData.cardData.all_recipients.map(
-      (recipient) => ({
-        id: recipient,
-        label: recipient,
-        selected: false,
-      })
-    );
-    let textFilter = '';
+    // const { months } = getD3Locale(this.$i18n.locale);
+    // let allMonths = this.generateMonths(months);
+    // let allMPs = this.contextData.cardData.all_authors.map((author) => ({
+    //   id: author.id,
+    //   label: author.name,
+    //   selected: false,
+    // }));
+    // let allRecipients = this.contextData.cardData.all_recipients.map(
+    //   (recipient) => ({
+    //     id: recipient,
+    //     label: recipient,
+    //     selected: false,
+    //   })
+    // );
+    // let textFilter = '';
 
-    if (this.cardData.parlaState) {
-      if (this.cardData.parlaState.text) {
-        textFilter = this.cardData.parlaState.text;
-      }
-      if (this.cardData.parlaState.months) {
-        allMonths = selectFromState(allMonths, this.cardData.parlaState.months);
-      }
-      if (this.cardData.parlaState.recipients) {
-        allRecipients = selectFromState(
-          allRecipients,
-          this.cardData.parlaState.recipients
-        );
-      }
-      if (this.cardData.parlaState.mps) {
-        allMPs = selectFromState(allMPs, this.cardData.parlaState.mps);
-      }
-    }
+    // if (this.cardData.parlaState) {
+    //   if (this.cardData.parlaState.text) {
+    //     textFilter = this.cardData.parlaState.text;
+    //   }
+    //   if (this.cardData.parlaState.months) {
+    //     allMonths = selectFromState(allMonths, this.cardData.parlaState.months);
+    //   }
+    //   if (this.cardData.parlaState.recipients) {
+    //     allRecipients = selectFromState(
+    //       allRecipients,
+    //       this.cardData.parlaState.recipients
+    //     );
+    //   }
+    //   if (this.cardData.parlaState.mps) {
+    //     allMPs = selectFromState(allMPs, this.cardData.parlaState.mps);
+    //   }
+    // }
 
     return {
-      questionDays: this.contextData.cardData.results,
-      allMonths,
-      allMPs,
-      allRecipients,
-      textFilter,
+      questionDays: this.contextData.cardData.data?.results || [],
+      allMonths: [],
+      allMPs: [],
+      allRecipients: [],
+      textFilter: '',
     };
   },
   computed: {
@@ -192,8 +192,8 @@ export default {
 
       return `${this.url}${
         this.type === 'person'
-          ? this.contextData.cardData.person.id
-          : this.contextData.cardData.party.id
+          ? this.contextData.cardData.id
+          : this.contextData.cardData.id
       }?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     headerConfig() {

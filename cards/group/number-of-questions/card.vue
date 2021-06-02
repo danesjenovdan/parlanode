@@ -1,7 +1,7 @@
 <template>
   <score-avg-max
-    :party="$options.contextData.cardData.party"
-    :results="$options.contextData.cardData.results"
+    :party="$options.contextData.cardData.data?.group"
+    :results="$options.contextData.cardData.data?.results"
     type="party"
   />
 </template>
@@ -10,7 +10,7 @@
 import ScoreAvgMax from '@/_components/ScoreAvgMax.vue';
 
 export default {
-  name: 'CardGroupStPoslanskihVprasanjInPobud',
+  name: 'CardGroupNumberOfQuestions',
   components: {
     ScoreAvgMax,
   },

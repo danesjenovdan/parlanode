@@ -24,11 +24,11 @@ const renderCardHandler = async (request, reply) => {
   let html;
   try {
     html = await renderCard({ cardName, id, date, locale, template, state });
+    reply.type('text/html').send(html);
   } catch (error) {
     fastify.log.error(error);
     reply.status(500).type('text/html').send(error.stack);
   }
-  reply.type('text/html').send(html);
 };
 
 fastify.get('/:group/:method', renderCardHandler);

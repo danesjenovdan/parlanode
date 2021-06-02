@@ -1,23 +1,23 @@
 {
   "data": {
     "results": {
-      "score": 0.0,
-      "average": 0.000954854359723662,
+      "score": 0.0010677266031577,
+      "average": 0.0187133381599554,
       "maximum": {
-        "score": 0.0044464584100371,
+        "score": 0.106492104197598,
         "groups": [
           {
-            "name": "Svetniški klub samostojnih svetnikov ",
-            "acronym": "SKSS",
-            "slug": "8-svetniski-klub-samostojnih-svetnikov"
+            "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+            "acronym": "",
+            "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev"
           }
         ]
       }
     },
     "group": {
-      "name": "Socialni demokrati ",
-      "acronym": "SD",
-      "slug": "6-socialni-demokrati"
+      "name": "Slovenska demokratska stranka ",
+      "acronym": "",
+      "slug": "21-slovenska-demokratska-stranka"
     }
   }
 }
