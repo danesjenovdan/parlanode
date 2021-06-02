@@ -1,9 +1,499 @@
 {
-  "id": 151,
+  "id": 259,
   "data": {
-    "results": [],
+    "results": [
+      {
+        "date": "2021-04-19T00:00:00",
+        "events": [
+          {
+            "motion": {
+              "id": "1030",
+              "tags": [],
+              "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah potekov ulic in o poimenovanju ulic, parkov in trga na območju Mestne občine Ljubljana.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:55:06",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "1023",
+              "tags": [],
+              "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o zazidalnem načrtu za območje urejanja VI 3/3 Biotehniška fakulteta (za funkcionalno enoto F11) – NIB.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:51:35",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "1006",
+              "tags": [],
+              "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Strategije razvoja mestnih gozdov Ljubljane 2020-2045.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:46:06",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "998",
+              "tags": [],
+              "text": "C) PREDLOG SKLEPA O SOGLASJU K SPLOŠNIM POGOJEM POSLOVANJA JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k Splošnim pogojem poslovanja Javnega stanovanjskega sklada Mestne občine Ljubljana.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:32:29",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "984",
+              "tags": [],
+              "text": "B) POROČILO O URESNIČEVANJU STANOVANJSKEGA PROGRAMA MESTNE OBČINE LJUBLJANA 2019–2022 ZA LETO 2020 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme Poročilo o uresničevanju Stanovanjskega programa Mestne občine Ljubljana 2019 – 2022 za leto 2020.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:32:03",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "979",
+              "tags": [],
+              "text": "A) LETNO POROČILO JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA ZA LETO 2020 4. PREDLOG SKLEPA: Zmanjšanje sredstev na računih iz namenskega premoženja v letu 2020 v višini 19.125 evrov se krije iz presežka prejemkov nad izdatki iz preteklih let, tako da je na dan 31. decembra 2020 izkazan presežek prihodkov nad odhodki v višini 23.253 evrov.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:31:36",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "978",
+              "tags": [],
+              "text": "A) LETNO POROČILO JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA ZA LETO 2020 3. PREDLOG SKLEPA: Presežek odhodkov nad prihodki iz upravljanja sredstev Mestne občine Ljubljana v letu 2020 v višini 2.845 evrov se krije iz presežka prihodkov nad odhodki iz preteklih let, tako da 31. decembra 2020 znaša presežek prihodkov nad odhodki 550.300 evrov.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:31:03",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "977",
+              "tags": [],
+              "text": "A) LETNO POROČILO JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA ZA LETO 2020 2. PREDLOG SKLEPA: Mestni svet Mestne občine Ljubljana sprejme Poročilo Nadzornega sveta Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2020.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:30:31",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "976",
+              "tags": [],
+              "text": "A) LETNO POROČILO JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA ZA LETO 2020 1. PREDLOG SKLEPA: Mestni svet Mestne občine Ljubljana sprejme Letno poročilo Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2020.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:30:04",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "969",
+              "tags": [],
+              "text": "PREDLOG SKLEPA O USTANOVITVI JAVNEGA ZAVODA CENTER ROG Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o ustanovitvi javnega zavoda Center Rog skupaj s sprejetim amandmajem.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:01:24",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "968",
+              "tags": [],
+              "text": "AMANDMA župana: Četrta alineja prvega odstavka 11. člena, peta alineja prvega odstavka 15. člena in peta alineja prvega odstavka 16. člena se spremenijo tako, da se glasijo: »– aktivno obvlada slovenski jezik,«. Peta alineja prvega odstavka 11. člena, šesta alineja prvega odstavka 15. člena in šesta alineja prvega odstavka 16. člena se spremenijo tako, da se glasijo: »– aktivno obvlada najmanj en svetovni jezik.«.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T18:01:00",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "961",
+              "tags": [],
+              "text": "Mestni svet Mestne občine Ljubljana sprejme Letno poročilo javnega zavoda Turizem Ljubljana za poslovno leto 2020.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T17:12:55",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "951",
+              "tags": [],
+              "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Akta o javno-zasebnem partnerstvu za projekt »Teniški center Tomačevo«.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T16:55:17",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "938",
+              "tags": [],
+              "text": "Mestni svet Mestne občine Ljubljana sprejme Zaključni račun proračuna Mestne občine Ljubljana za leto 2020.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T16:48:02",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "935",
+              "tags": [],
+              "text": "Plaketo glavnega mesta Ljubljana za leto 2021 prejmejo: - dr. Viktor Pust - Igralski kolektiv Šentjakobskega gledališča Ljubljana - Društvo prostovoljcev Vincencijeve zveze dobrote - Bojanka Genorio - Tomaž Domicelj - Kulturno društvo Ženski pevski zbor Svoboda - Janez Winkler",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T16:26:33",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "931",
+              "tags": [],
+              "text": "Nagrado glavnega mesta Ljubljana za leto 2021 prejmejo: - Gojko Zalokar - Suzana Antič - Drago Banović - Marjan Gorup - Združenje slovenskih katoliških skavtinj in skavtov",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T16:24:17",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "926",
+              "tags": [],
+              "text": "I. Za vršilko dolžnosti direktorja javnega zavoda Pionirski dom – Center za kulturo mladih se imenuje: Viktorija POTOČNIK. II. Mandat imenovane začne teči po izteku dosedanjega mandata in traja do imenovanja direktorja, vendar največ za eno leto.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T16:06:55",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "925",
+              "tags": [],
+              "text": "I. Za odgovornega urednika javnega glasila Ljubljana se imenuje: mag. Nenad SENIĆ. II. Mandat odgovornega urednika traja štiri leta.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T16:06:11",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "924",
+              "tags": [],
+              "text": "I. Dr. Uroša GRILCA se razreši z mesta odgovornega urednika javnega glasila Ljubljana. II. Imenovanega se razreši z dnem sprejema sklepa.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:55:07",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "923",
+              "tags": [],
+              "text": "Elizabeti HERNAUS BERLEC se da pozitivno mnenje h kandidaturi za ravnateljico Srednje trgovske šole Ljubljana.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:54:33",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "922",
+              "tags": [],
+              "text": "Mag. Janji JAKONČIČ, Srečku ZGAGI in Natali ŽLAJPAH se da pozitivno mnenje h kandidaturi za ravnateljico oziroma ravnatelja Gimnazije Poljane.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:54:04",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "921",
+              "tags": [],
+              "text": "Mateji PETRIČ se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Vodmat.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:53:35",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "920",
+              "tags": [],
+              "text": "Vesni ŽAGAR GABROVŠEK se da pozitivno mnenje h kandidaturi za ravnateljico OŠ Valentina Vodnika.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:53:08",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "919",
+              "tags": [],
+              "text": "Mateji ŠTIH se da pozitivno mnenje h kandidaturi za ravnateljico Vrtca Šentvid.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:52:39",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "918",
+              "tags": [],
+              "text": "I. V Svet javnega vzgojno-izobraževalnega zavoda Center IRIS se imenuje: Mina PIŠLJAR. II. Mandat imenovane traja štiri leta.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:52:14",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "917",
+              "tags": [],
+              "text": "I. V Svet Srednje vzgojiteljske šole in gimnazije Ljubljana se imenuje: dr. Mojca ŠEBART KOVAČ. II. Mandat imenovane traja štiri leta.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:51:37",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "916",
+              "tags": [],
+              "text": "I. V Svet Gimnazije Vič se imenuje: dr. Bojan ROTAR. II. Mandat imenovanega traja štiri leta.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:51:06",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "915",
+              "tags": [],
+              "text": "I. V Svet Gimnazije Ledina se imenuje: Katja ŽLAJPAH. II. Mandat imenovane traja štiri leta.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:50:38",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "914",
+              "tags": [],
+              "text": "I. V Svet Elektrotehniško-računalniško strokovne šole in gimnazije Ljubljana se imenuje : Mina PIŠLJAR. II. Mandat imenovane traja štiri leta.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:50:05",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "913",
+              "tags": [],
+              "text": "I. V Svet Glasbene šole Ljubljana Vič - Rudnik se imenujejo: -    Lan JENULL -    Josipina Pika TRPIN -    Marjana ZUPANČIČ II. Mandat imenovanih traja štiri leta.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:49:31",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "912",
+              "tags": [],
+              "text": "I. V Svet Gasilske brigade Ljubljana se kot predstavniki Mestne občine Ljubljana imenujejo: -    Nataša BOMBAČ -    Amir CRNOJEVIĆ -    dr. Zvone ČADEŽ II. V Svet Gasilske brigade Ljubljana se kot predstavnik uporabnikov oziroma zainteresirane javnosti imenuje: -    Gregor RIGLER III. Mandat imenovanih traja štiri leta.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:48:55",
+            "type": "ballot"
+          },
+          {
+            "motion": {
+              "id": "911",
+              "tags": [],
+              "text": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 21. seje Mestnega sveta Mestne občine Ljubljana z dne 29. marca 2021.",
+              "result": null,
+              "classification": null
+            },
+            "option": "for",
+            "timestamp": "2021-04-19T15:36:55",
+            "type": "ballot"
+          },
+          {
+            "speech_id": 7585,
+            "start_time": "2021-04-19T15:30:00",
+            "session": {
+              "name": "22. seja Mestnega sveta MOL",
+              "id": 54,
+              "start_time": "2021-04-19T15:30:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Mestni svet MOL",
+                  "acronym": null,
+                  "slug": "1-mestni-svet-mol"
+                }
+              ],
+              "classification": null,
+              "in_review": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 7734,
+            "start_time": "2021-04-19T15:30:00",
+            "session": {
+              "name": "22. seja Mestnega sveta MOL",
+              "id": 54,
+              "start_time": "2021-04-19T15:30:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Mestni svet MOL",
+                  "acronym": null,
+                  "slug": "1-mestni-svet-mol"
+                }
+              ],
+              "classification": null,
+              "in_review": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 7736,
+            "start_time": "2021-04-19T15:30:00",
+            "session": {
+              "name": "22. seja Mestnega sveta MOL",
+              "id": 54,
+              "start_time": "2021-04-19T15:30:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Mestni svet MOL",
+                  "acronym": null,
+                  "slug": "1-mestni-svet-mol"
+                }
+              ],
+              "classification": null,
+              "in_review": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 7738,
+            "start_time": "2021-04-19T15:30:00",
+            "session": {
+              "name": "22. seja Mestnega sveta MOL",
+              "id": 54,
+              "start_time": "2021-04-19T15:30:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Mestni svet MOL",
+                  "acronym": null,
+                  "slug": "1-mestni-svet-mol"
+                }
+              ],
+              "classification": null,
+              "in_review": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 7740,
+            "start_time": "2021-04-19T15:30:00",
+            "session": {
+              "name": "22. seja Mestnega sveta MOL",
+              "id": 54,
+              "start_time": "2021-04-19T15:30:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Mestni svet MOL",
+                  "acronym": null,
+                  "slug": "1-mestni-svet-mol"
+                }
+              ],
+              "classification": null,
+              "in_review": false
+            },
+            "type": "speech"
+          }
+        ]
+      }
+    ],
     "person": {
-      "slug": "151-ales-cerin",
+      "slug": "259-ales-cerin",
       "name": "Aleš Čerin",
       "honorific_prefix": null,
       "honorific_suffix": null,
@@ -11,9 +501,9 @@
       "group": {
         "name": "Lista Zorana Jankovića ",
         "acronym": "",
-        "slug": "15-lista-zorana-jankovica"
+        "slug": "22-lista-zorana-jankovica"
       },
-      "image": null
+      "image": "/Screenshot_from_2020-11-03_17-38-05.png"
     }
   }
 }
