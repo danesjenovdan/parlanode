@@ -1,17 +1,45 @@
 {
-  "id": 151,
+  "id": 230,
   "data": {
-    "results": [],
+    "results": [
+      {
+        "date": "2020-12-14T00:00:00",
+        "events": [
+          {
+            "timestamp": "2020-12-14T15:30:00",
+            "title": "Advent v Ljubljani",
+            "url": null,
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "she",
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka"
+                },
+                "image": null
+              }
+            ],
+            "recipient_text": "Župan",
+            "type": "question"
+          }
+        ]
+      }
+    ],
     "person": {
-      "slug": "151-ales-cerin",
-      "name": "Aleš Čerin",
+      "slug": "230-ana-zagozen",
+      "name": "Ana Zagožen",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": null,
+      "preferred_pronoun": "she",
       "group": {
-        "name": "Lista Zorana Jankovića ",
-        "acronym": "LZJ",
-        "slug": "15-lista-zorana-jankovica"
+        "name": "Slovenska demokratska stranka ",
+        "acronym": "",
+        "slug": "21-slovenska-demokratska-stranka"
       },
       "image": null
     }
