@@ -51,7 +51,7 @@ import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'CardSessionZadnjaSeja',
+  name: 'CardMiscLastSession',
   components: {
     BarChart,
     SeznamGlasovanj,

@@ -23,7 +23,7 @@ import { otherVotingsTitle } from '@/_mixins/titles.js';
 import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 
 export default {
-  name: 'CardSessionSeznamGlasovanj',
+  name: 'CardSessionVotes',
   components: {
     SeznamGlasovanj,
   },

@@ -19,7 +19,7 @@ import Speech from '@/_components/Speech.vue';
 import quotable from '@/_directives/quotable.js';
 
 export default {
-  name: 'CardSessionGovor',
+  name: 'CardSpeechSingle',
   components: {
     Speech,
   },

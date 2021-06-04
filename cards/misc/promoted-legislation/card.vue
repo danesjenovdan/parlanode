@@ -128,7 +128,7 @@ import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 
 export default {
-  name: 'CardCIzpostavljenaZakonodaja',
+  name: 'CardMiscPromotedLegislation',
   components: { PTab, PTabs },
   mixins: [common, links, commentapi],
   data() {

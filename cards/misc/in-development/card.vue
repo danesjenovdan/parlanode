@@ -17,7 +17,7 @@ import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 
 export default {
-  name: 'CardCInDevelopment',
+  name: 'CardMiscInDevelopment',
   mixins: [common],
   data() {
     const state = this.$options.cardData.parlaState;

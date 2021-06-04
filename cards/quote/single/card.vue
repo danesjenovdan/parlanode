@@ -18,7 +18,7 @@ import { sessionOgImage } from '@/_mixins/ogImages.js';
 import Speech from '@/_components/Speech.vue';
 
 export default {
-  name: 'CardSessionCitat',
+  name: 'CardQuoteSingle',
   components: {
     Speech,
   },

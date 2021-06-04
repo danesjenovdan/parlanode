@@ -44,7 +44,7 @@ import links from '@/_mixins/links.js';
 import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
-  name: 'CardSZakonodajaIskanje',
+  name: 'CardSearchLegislation',
   components: {
     SortableTable,
     ScrollShadow,

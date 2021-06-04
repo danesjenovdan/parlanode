@@ -20,7 +20,7 @@ import ToolsTabs from '@/_components/ToolsTabs.vue';
 import Compass from './Compass.vue';
 
 export default {
-  name: 'CardToolKompas',
+  name: 'CardToolCompass',
   components: {
     ToolsTabs,
     Compass,
