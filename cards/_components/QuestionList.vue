@@ -8,21 +8,12 @@
       <div v-else>
         <div v-for="day in questionDays" :key="day.date">
           <div class="date">{{ dateFormatter(day.date) }}</div>
-          <template v-if="day.questions">
-            <question
-              v-for="question in day.questions"
-              :key="question.id"
-              :question="question"
-              :show-author="showAuthor"
-            />
-          </template>
-          <template v-else-if="day.events">
-            <event
-              v-for="(event, i) in day.events"
-              :key="`${day.date}-${i}`"
-              :event="event"
-            />
-          </template>
+          <event
+            v-for="(event, i) in day.events"
+            :key="`${day.date}-${i}`"
+            :event="event"
+            :show-author="showAuthor"
+          />
         </div>
       </div>
     </div>
@@ -31,7 +22,6 @@
 
 <script>
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import Question from '@/_components/Question.vue';
 import Event from '@/_components/Event.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 
@@ -39,7 +29,6 @@ export default {
   name: 'QuestionList',
   components: {
     ScrollShadow,
-    Question,
     Event,
   },
   props: {

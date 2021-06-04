@@ -3,11 +3,21 @@
     <div :class="['parlaicon', eventIcon]"></div>
     <template v-if="event.type === 'question'">
       <i18n-t :keypath="translationKey" tag="div" class="motion">
+        <template #name>
+          <span v-if="showAuthor">
+            <span v-for="(author, index) in authors" :key="author.id">
+              <a :href="getPersonLink(author)" class="funblue-light-hover">{{
+                author.name
+              }}</a
+              ><span v-if="index + 1 < authors.length">, </span>
+            </span>
+          </span>
+        </template>
         <template #title>
           <component
-            :is="event.content_url ? 'a' : 'strong'"
-            :href="event.content_url"
-            :class="{ 'funblue-light-hover': event.content_url }"
+            :is="event.url ? 'a' : 'strong'"
+            :href="event.url"
+            :class="{ 'funblue-light-hover': event.url }"
             target="_blank"
             >{{ event.title }}</component
           >
@@ -59,6 +69,10 @@ export default {
       type: Object,
       required: true,
     },
+    showAuthor: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     eventIcon() {
@@ -84,13 +98,20 @@ export default {
       }
       return '';
     },
+    authors() {
+      if (this.$root.cardData.data?.person) {
+        return [this.$root.cardData.data?.person];
+      }
+      return this.event.authors || [];
+    },
     translationKey() {
       const gender =
         this.$root.cardData.data?.person?.preferred_pronoun === 'she'
           ? 'f'
           : 'm';
       if (this.event.type === 'question') {
-        return `question.asked--${gender}`;
+        const form = this.authors.length > 1 ? 'plural' : gender;
+        return `question.asked${this.showAuthor ? '--with-name' : ''}--${form}`;
       }
       if (this.event.type === 'ballot') {
         return `event.ballot--${this.event.option}--${gender}`;
