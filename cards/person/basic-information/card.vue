@@ -81,7 +81,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div v-if="person.social_networks?.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-omrezja" aria-hidden="true"></span>
         </div>
@@ -107,6 +107,23 @@
             <template v-else>
               <b v-t="'no-social-media'"></b>
             </template>
+          </span>
+        </div>
+      </div>
+
+      <div v-if="person.email" class="row">
+        <div class="parlaicon-container">
+          <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
+        </div>
+        <div class="bordertop0 contact-container">
+          <span class="key">
+            <span v-t="'contact'"></span>:
+            <a
+              :href="`mailto:${person.email}`"
+              target="_blank"
+              class="funblue-light-hover"
+              >{{ shortEmail }}</a
+            >
           </span>
         </div>
       </div>
@@ -158,6 +175,19 @@ export default {
       }
       return `elected-to-district${suffix}`;
     },
+    shortEmail() {
+      if (this.person.email?.length) {
+        if (this.person.email.length < 26) {
+          return this.person.email;
+        }
+        const [addr, domain] = this.person.email?.split('@');
+        if (addr.length < 18) {
+          return this.person.email;
+        }
+        return `${addr.slice(0, 17)}…@${domain}`;
+      }
+      return '';
+    },
   },
 };
 </script>
@@ -172,6 +202,10 @@ export default {
   width: 30px;
   height: 30px;
   line-height: normal;
+}
+
+.parlaicon-kontakt {
+  background-image: url('#{get-parlassets-url()}/icons/kontakt.svg');
 }
 
 .parlaicon-container {

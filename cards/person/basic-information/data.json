@@ -27,11 +27,8 @@
           "classification": "district"
         }
       ],
-      "social_networks": [
-        { "type": "facebook", "url": "https://fb.me/test" },
-        { "type": "twitter", "url": "https://fb.me/test" },
-        { "type": "linkedin", "url": "https://fb.me/test" }
-      ]
+      "social_networks": [],
+      "email": "en.ful.dolg.email.naslov@gamil.com"
     }
   }
 }

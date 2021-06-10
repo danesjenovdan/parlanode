@@ -186,7 +186,7 @@ export default {
         if (addr.length < 18) {
           return this.group.email;
         }
-        return `${addr.slice(0, 17)}...@${domain}`;
+        return `${addr.slice(0, 17)}…@${domain}`;
       }
       return '';
     },
