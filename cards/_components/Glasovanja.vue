@@ -16,14 +16,15 @@
         <div v-t="'title-search'" class="filter-label"></div>
         <p-search-field v-model="textFilter" />
       </div>
-      <div class="filter type-dropdown">
+      <!-- <div class="filter type-dropdown">
         <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown v-model="allClassifications" :alphabetise="false" />
-      </div>
-      <div class="filter tag-dropdown">
+      </div> -->
+      <!-- <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown v-model="dropdownTags" />
-      </div>
+      </div> -->
+      <div class="filter" style="flex: 1"></div>
       <div v-if="type === 'person'" class="filter option-party-buttons">
         <div
           v-for="opt in allOptions"
@@ -81,7 +82,7 @@
 <script>
 import { find, filter, assign, groupBy, orderBy } from 'lodash-es';
 import PSearchField from '@/_components/SearchField.vue';
-import PSearchDropdown from '@/_components/SearchDropdown.vue';
+// import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import Toggle from '@/_components/Toggle.vue';
 import Ballot from '@/_components/Ballot.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
@@ -94,7 +95,7 @@ import dateFormatter from '@/_helpers/dateFormatter.js';
 
 export default {
   components: {
-    PSearchDropdown,
+    // PSearchDropdown,
     PSearchField,
     Toggle,
     Ballot,
@@ -366,7 +367,7 @@ export default {
 
   .text-filter {
     @include respond-to(desktop) {
-      width: 26%;
+      width: 50%;
     }
 
     width: 100%;
