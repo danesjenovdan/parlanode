@@ -45,22 +45,22 @@
 <div id="session-search-results">
   <div class="row">
     <div class="col-md-12">
-      <%- await fetchCard('/s/nastopi-v-katerih-je-bil-iskalni-niz-izrecen/', { state: { query, mps, pgs } }) %>
+      <%- await fetchCard('/search/speeches/', { state: { query, mps, pgs } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/s/zakonodaja-iskanje/', { state: { query } }) %>
+      <%- await fetchCard('/search/legislation/', { state: { query } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/s/raba-skozi-cas/', { state: { query, mps, pgs } }) %>
+      <%- await fetchCard('/search/usage-through-time/', { state: { query, mps, pgs } }) %>
     </div>
     <div class="col-md-6">
-      <%- await fetchCard('/s/najveckrat-so-pojem-uporabili/', { state: { query, mps, pgs } }) %>
+      <%- await fetchCard('/search/most-used-by-people/', { state: { query, mps, pgs } }) %>
     </div>
     <div class="col-md-6">
-      <%- await fetchCard('/s/raba-po-strankah/', { state: { query, mps, pgs } }) %>
+      <%- await fetchCard('/search/usage-by-group/', { state: { query, mps, pgs } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/s/glasovanja-search/', { state: { query } }) %>
+      <%- await fetchCard('/search/votes/', { state: { query } }) %>
     </div>
   </div>
 </div>

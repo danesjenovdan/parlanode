@@ -5,7 +5,7 @@
 <% if (session.votes) { %>
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/s/glasovanje/', motionId) %>
+    <%- await fetchCard('/vote/single/', motionId) %>
   </div>
 </div>
 <% } else { %>

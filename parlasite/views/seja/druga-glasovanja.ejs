@@ -7,7 +7,7 @@
   <% if (session.votes) { %>
     <div class="row">
       <div class="col-md-12">
-        <%- await fetchCard('/s/seznam-glasovanj/', session.id, { state: { onlyOther: true } }) %>
+        <%- await fetchCard('/session/votes/', session.id, { state: { onlyOther: true } }) %>
       </div>
     </div>
   <% } else if (session.org.name === 'Državni zbor') { %>
