@@ -24,7 +24,7 @@
                 :alphabetise="false"
               />
             </div>
-            <div class="checkbox-filters">
+            <!-- <div class="checkbox-filters">
               <div class="filter align-checkbox">
                 <input
                   id="only-abstracts"
@@ -43,7 +43,7 @@
                 />
                 <label v-t="'only-with-votes'" for="only-with-votes"></label>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -75,12 +75,12 @@ import InnerCard from './InnerCard.vue';
 const legislationTabs = [
   {
     title: 'Zakonodaja',
-    classifications: ['zakon'],
+    // classifications: ['zakon'],
   },
-  {
-    title: 'Akti',
-    card_title: 'Seznam aktov',
-  },
+  // {
+  //   title: 'Akti',
+  //   card_title: 'Seznam aktov',
+  // },
 ];
 
 export default {
@@ -168,19 +168,19 @@ export default {
           label: this.$t('name'),
           additionalClass: 'small-text',
         },
-        {
-          id: 'data',
-          label: this.$t('data'),
-          additionalClass: 'narrow no-sort',
-        },
-        {
-          id: 'epa',
-          label: this.$t('epa'),
-          additionalClass: 'narrow',
-        },
+        // {
+        //   id: 'data',
+        //   label: this.$t('data'),
+        //   additionalClass: 'narrow no-sort',
+        // },
+        // {
+        //   id: 'epa',
+        //   label: this.$t('epa'),
+        //   additionalClass: 'narrow',
+        // },
         {
           id: 'updated',
-          label: this.$t('change'),
+          label: this.$t('date'),
         },
         {
           id: 'result',
@@ -410,7 +410,8 @@ export default {
       flex-basis: 100%;
 
       @include respond-to(desktop) {
-        flex-basis: 0%;
+        flex-basis: 50%;
+        flex-grow: 0;
       }
 
       .text-filter-input {

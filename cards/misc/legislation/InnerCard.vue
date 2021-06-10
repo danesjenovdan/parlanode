@@ -98,8 +98,8 @@ export default {
               legislation
             )}" class="funblue-light-hover">${legislation.text}</a>`,
           },
-          { html: dataIconsHtml },
-          { text: legislation.epa },
+          // { html: dataIconsHtml },
+          // { text: legislation.epa },
           { text: legislation.date },
           { html: outcomeHtml },
         ];
