@@ -20,7 +20,7 @@ import PersonList from '@/_components/PersonList.vue';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
 
 export default {
-  name: 'CardGroupNeujemanjeSPoslanskoSkupino',
+  name: 'CardGroupDeviationFromGroup',
   components: {
     PersonList,
     EmptyCircle,
