@@ -32,7 +32,7 @@ import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
 import PTabs from '@/_components/Tabs.vue';
 import PTab from '@/_components/Tab.vue';
-import TimeLineChart from '@/_components/TimeLineChart.vue';
+// import TimeLineChart from '@/_components/TimeLineChart.vue';
 import TimeBarChart from '@/_components/TimeBarChart.vue';
 import stateLoader from '@/_helpers/stateLoader.js';
 
@@ -41,7 +41,7 @@ export default {
   components: {
     PTabs,
     PTab,
-    TimeLineChart,
+    // TimeLineChart,
     TimeBarChart,
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
