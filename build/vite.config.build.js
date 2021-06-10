@@ -14,10 +14,7 @@ const isSSR = Boolean(process.env.SSR);
 const entryFile = isSSR ? 'card-entry-server.js' : 'card-entry-client.js';
 const entrySource = readFileSync(resolve(dir, entryFile), 'utf-8');
 
-const files = glob
-  .sync('./cards/**/card.vue')
-  // TODO: build all cards
-  .filter((file) => !file.includes('/s/'));
+const files = glob.sync('./cards/**/card.vue');
 
 const inputs = files.reduce((acc, file) => {
   const cardName = file.split('/').slice(-3, -1).join('/');
