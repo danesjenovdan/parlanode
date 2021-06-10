@@ -13,11 +13,13 @@
     </template>
 
     <div
-      v-if="!loading && people && people.length === 0"
+      v-if="!loading && data && data.response.numFound === 0"
       v-t="'no-results'"
       class="no-results"
     />
-    <person-list v-else :people="people" :show-party-link="true" />
+    <div v-else id="pie-chart">
+      <pie-chart :data="pieData" />
+    </div>
   </card-wrapper>
 </template>
 
@@ -28,26 +30,23 @@ import { search as searchContext } from '@/_mixins/contextUrls.js';
 import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
-import PersonList from '@/_components/PersonList.vue';
+import PieChart from '@/_components/PieChart.vue';
 import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
-  name: 'CardSNajveckratSoPojemUporabili',
+  name: 'CardSearchUsageByGroup',
   components: {
-    PersonList,
+    PieChart,
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      currentSort: '',
-      currentSortOrder: 'DESC',
-      workingBodies: [],
+      data: null,
       keywords: loadFromState('query'),
       mps: loadFromState('mps') || [],
       pgs: loadFromState('pgs') || [],
       loading: true,
-      people: [],
     };
   },
   computed: {
@@ -56,6 +55,9 @@ export default {
       return `${this.url}?state=${encodeURIComponent(
         JSON.stringify(state)
       )}&altHeader=true`;
+    },
+    pieData() {
+      return (this.data && this.data.facet_counts.facet_fields.party_id) || [];
     },
   },
   mounted() {
@@ -67,15 +69,7 @@ export default {
     axios
       .get(searchUrl)
       .then((res) => {
-        const people = res.data.facet_counts.facet_fields.person
-          .map((o) => {
-            const { person } = o;
-            person.score = `${Math.round(o.score)}`;
-            return person;
-          })
-          .filter((person) => person.score > 0)
-          .slice(0, 5);
-        this.people = people;
+        this.data = res.data;
         this.loading = false;
       })
       .catch((error) => {
@@ -87,3 +81,16 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import 'parlassets/scss/breakpoints';
+
+#pie-chart {
+  height: $full-card-height;
+
+  @include respond-to(mobile) {
+    height: auto;
+    max-height: $full-card-height;
+  }
+}
+</style>

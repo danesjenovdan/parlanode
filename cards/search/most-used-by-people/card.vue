@@ -12,14 +12,12 @@
       <p v-t="'info.text'" class="info-text"></p>
     </template>
 
-    <p-tabs v-if="!loading">
-      <p-tab :label="$t('whole-term')">
-        <time-line-chart :data="timeChartData" />
-      </p-tab>
-      <p-tab :label="$t('last-year')">
-        <time-bar-chart :data="timeChartData" />
-      </p-tab>
-    </p-tabs>
+    <div
+      v-if="!loading && people && people.length === 0"
+      v-t="'no-results'"
+      class="no-results"
+    />
+    <person-list v-else :people="people" :show-party-link="true" />
   </card-wrapper>
 </template>
 
@@ -30,50 +28,31 @@ import { search as searchContext } from '@/_mixins/contextUrls.js';
 import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
-import PTabs from '@/_components/Tabs.vue';
-import PTab from '@/_components/Tab.vue';
-import TimeLineChart from '@/_components/TimeLineChart.vue';
-import TimeBarChart from '@/_components/TimeBarChart.vue';
+import PersonList from '@/_components/PersonList.vue';
 import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
-  name: 'CardSRabaSkoziCas',
+  name: 'CardSearchMostUsedByPeople',
   components: {
-    PTabs,
-    PTab,
-    TimeLineChart,
-    TimeBarChart,
+    PersonList,
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
     const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: null,
+      currentSort: '',
+      currentSortOrder: 'DESC',
+      workingBodies: [],
       keywords: loadFromState('query'),
       mps: loadFromState('mps') || [],
       pgs: loadFromState('pgs') || [],
       loading: true,
+      people: [],
     };
   },
   computed: {
-    timeChartData() {
-      return (
-        (this.data && this.data.facet_counts.facet_ranges.start_time) || {}
-      );
-    },
     generatedCardUrl() {
-      const state = {};
-
-      if (this.keywords) {
-        state.query = this.keywords;
-      }
-      if (this.mps) {
-        state.mps = this.mps;
-      }
-      if (this.pgs) {
-        state.pgs = this.pgs;
-      }
-
+      const state = { query: this.keywords };
       return `${this.url}?state=${encodeURIComponent(
         JSON.stringify(state)
       )}&altHeader=true`;
@@ -88,7 +67,15 @@ export default {
     axios
       .get(searchUrl)
       .then((res) => {
-        this.data = res.data;
+        const people = res.data.facet_counts.facet_fields.person
+          .map((o) => {
+            const { person } = o;
+            person.score = `${Math.round(o.score)}`;
+            return person;
+          })
+          .filter((person) => person.score > 0)
+          .slice(0, 5);
+        this.people = people;
         this.loading = false;
       })
       .catch((error) => {
@@ -100,31 +87,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.timelinechart,
-.timebarchart {
-  flex: 1;
-  height: 100%;
-  display: flex;
-
-  ::v-deep svg {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-::v-deep .p-tabs {
-  height: 100%;
-
-  .p-tabs-content {
-    display: flex;
-    align-items: center;
-
-    .tab-content {
-      flex-basis: 100%;
-      height: 100%;
-    }
-  }
-}
-</style>

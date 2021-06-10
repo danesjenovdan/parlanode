@@ -12,14 +12,14 @@
       <p v-t="'info.text'" class="info-text"></p>
     </template>
 
-    <div
-      v-if="!loading && data && data.response.numFound === 0"
-      v-t="'no-results'"
-      class="no-results"
-    />
-    <div v-else id="pie-chart">
-      <pie-chart :data="pieData" />
-    </div>
+    <p-tabs v-if="!loading">
+      <p-tab :label="$t('whole-term')">
+        <time-line-chart :data="timeChartData" />
+      </p-tab>
+      <p-tab :label="$t('last-year')">
+        <time-bar-chart :data="timeChartData" />
+      </p-tab>
+    </p-tabs>
   </card-wrapper>
 </template>
 
@@ -30,13 +30,19 @@ import { search as searchContext } from '@/_mixins/contextUrls.js';
 import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
-import PieChart from '@/_components/PieChart.vue';
+import PTabs from '@/_components/Tabs.vue';
+import PTab from '@/_components/Tab.vue';
+import TimeLineChart from '@/_components/TimeLineChart.vue';
+import TimeBarChart from '@/_components/TimeBarChart.vue';
 import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
-  name: 'CardSRabaPoStrankah',
+  name: 'CardSearchUsageThroughTime',
   components: {
-    PieChart,
+    PTabs,
+    PTab,
+    TimeLineChart,
+    TimeBarChart,
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
@@ -50,14 +56,27 @@ export default {
     };
   },
   computed: {
+    timeChartData() {
+      return (
+        (this.data && this.data.facet_counts.facet_ranges.start_time) || {}
+      );
+    },
     generatedCardUrl() {
-      const state = { query: this.keywords };
+      const state = {};
+
+      if (this.keywords) {
+        state.query = this.keywords;
+      }
+      if (this.mps) {
+        state.mps = this.mps;
+      }
+      if (this.pgs) {
+        state.pgs = this.pgs;
+      }
+
       return `${this.url}?state=${encodeURIComponent(
         JSON.stringify(state)
       )}&altHeader=true`;
-    },
-    pieData() {
-      return (this.data && this.data.facet_counts.facet_fields.party_id) || [];
     },
   },
   mounted() {
@@ -83,14 +102,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
+.timelinechart,
+.timebarchart {
+  flex: 1;
+  height: 100%;
+  display: flex;
 
-#pie-chart {
-  height: $full-card-height;
+  ::v-deep svg {
+    width: 100%;
+    height: 100%;
+  }
+}
 
-  @include respond-to(mobile) {
-    height: auto;
-    max-height: $full-card-height;
+::v-deep .p-tabs {
+  height: 100%;
+
+  .p-tabs-content {
+    display: flex;
+    align-items: center;
+
+    .tab-content {
+      flex-basis: 100%;
+      height: 100%;
+    }
   }
 }
 </style>

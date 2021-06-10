@@ -80,7 +80,7 @@ import stateLoader from '@/_helpers/stateLoader.js';
 const PAGE_SIZE = 50;
 
 export default {
-  name: 'CardSNastopiVKaterihJeBilIskalniNizIzrecen',
+  name: 'CardSearchSpeeches',
   components: {
     ScrollShadow,
   },
