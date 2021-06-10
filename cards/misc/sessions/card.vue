@@ -40,7 +40,6 @@
 
 <script>
 import { find, get } from 'lodash-es';
-import axios from 'axios';
 import common from '@/_mixins/common.js';
 import { sessions as sessionsContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
@@ -49,18 +48,9 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';
 
-// TODO: get from config
 const sessionListTabs = [
-  // {
-  //   title: 'Seje DZ',
-  //   org_ids: [1],
-  // },
-  // {
-  //   title: 'Seje kolegija predsednika DZ',
-  //   org_ids: [15],
-  // },
   {
-    title: 'Seje delovnih teles',
+    title: '',
   },
 ];
 
@@ -95,17 +85,17 @@ export default {
       return [
         { id: 'image', label: '', additionalClass: 'image' },
         { id: 'name', label: this.$t('title'), additionalClass: 'wider name' },
-        { id: 'date', label: this.$t('start') },
-        {
-          id: 'updated',
-          label: this.$t('change'),
-          additionalClass: 'optional',
-        },
-        {
-          id: 'workingBody',
-          label: this.$t('organization'),
-          additionalClass: 'wider optional',
-        },
+        { id: 'date', label: this.$t('date') },
+        // {
+        //   id: 'updated',
+        //   label: this.$t('change'),
+        //   additionalClass: 'optional',
+        // },
+        // {
+        //   id: 'workingBody',
+        //   label: this.$t('organization'),
+        //   additionalClass: 'wider optional',
+        // },
       ];
     },
     currentAnalysisData() {
@@ -239,19 +229,6 @@ export default {
         this.currentFilter = otherTab.title;
       }
     },
-  },
-  created() {
-    // axios
-    //   .get(`${this.slugs.urls.analize}/s/getWorkingBodies/`)
-    //   .then((response) => {
-    //     const existingWorkingBodies =
-    //       get(this.cardState, 'workingBodies') || [];
-    //     this.workingBodies = response.data.map((workingBody) => ({
-    //       id: workingBody.id,
-    //       label: workingBody.name,
-    //       selected: existingWorkingBodies.indexOf(workingBody.id) > -1,
-    //     }));
-    //   });
   },
   methods: {
     organisationIsWorkingBody(organisationId) {

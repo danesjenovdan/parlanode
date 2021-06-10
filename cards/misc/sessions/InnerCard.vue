@@ -53,13 +53,13 @@ export default {
         },
         { link: this.getSessionLink(session), text: session.name },
         session.start_time ? formatDate(session.start_time) : '',
-        session.end_time ? formatDate(session.end_time) : '',
-        {
-          contents: session.organizations.map((org) => ({
-            text: org.name,
-            link: null,
-          })),
-        },
+        // session.end_time ? formatDate(session.end_time) : '',
+        // {
+        //   contents: session.organizations.map((org) => ({
+        //     text: org.name,
+        //     link: null,
+        //   })),
+        // },
       ]);
     },
   },
