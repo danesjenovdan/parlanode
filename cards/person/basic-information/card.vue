@@ -81,6 +81,23 @@
         </div>
       </div>
 
+      <div v-if="person.email" class="row">
+        <div class="parlaicon-container">
+          <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
+        </div>
+        <div class="bordertop0 contact-container">
+          <span class="key">
+            <span v-t="'contact'"></span>:
+            <a
+              :href="`mailto:${person.email}`"
+              target="_blank"
+              class="funblue-light-hover"
+              >{{ shortEmail }}</a
+            >
+          </span>
+        </div>
+      </div>
+
       <div v-if="person.social_networks?.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-omrezja" aria-hidden="true"></span>
@@ -107,23 +124,6 @@
             <template v-else>
               <b v-t="'no-social-media'"></b>
             </template>
-          </span>
-        </div>
-      </div>
-
-      <div v-if="person.email" class="row">
-        <div class="parlaicon-container">
-          <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
-        </div>
-        <div class="bordertop0 contact-container">
-          <span class="key">
-            <span v-t="'contact'"></span>:
-            <a
-              :href="`mailto:${person.email}`"
-              target="_blank"
-              class="funblue-light-hover"
-              >{{ shortEmail }}</a
-            >
           </span>
         </div>
       </div>

@@ -7,10 +7,90 @@
       "acronym": "",
       "slug": "6-socialni-demokrati",
       "number_of_members": 1,
-      "social_networks": {},
-      "email": null,
+      "social_networks": [{ "type": "facebook", "url": "http://fb.me/lj" }],
+      "email": "zelo.zelo.dolgi.e_naslov@domena.si",
       "presidents": [],
-      "deputies": []
+      "deputies": [],
+      "members": [
+        {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
+        },
+        {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
+        },
+        {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
+        },
+        {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
+        },
+        {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
+        },
+        {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
+        }
+      ]
     }
   }
 }

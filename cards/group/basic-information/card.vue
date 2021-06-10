@@ -106,7 +106,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div v-if="group.email" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
         </div>
@@ -123,7 +123,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div v-if="group.social_networks?.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-omrezja" aria-hidden="true"></span>
         </div>
@@ -149,6 +149,30 @@
             <template v-else>
               <b v-t="'no-social-media'"></b>
             </template>
+          </span>
+        </div>
+      </div>
+
+      <div v-if="group.members?.length" class="row">
+        <div class="parlaicon-container">
+          <span class="parlaicon parlaicon-clanstva" aria-hidden="true"></span>
+        </div>
+        <div class="bordertop0 contact-container">
+          <span class="key">
+            <span v-t="'members'"></span>:
+            <ul class="person-list">
+              <li class="person">
+                <a
+                  v-for="person in group.members"
+                  :key="person.slug"
+                  :href="getPersonLink(person)"
+                  :title="person.name"
+                  class="portrait column"
+                >
+                  <img :src="getPersonPortrait(person)" />
+                </a>
+              </li>
+            </ul>
           </span>
         </div>
       </div>
@@ -301,6 +325,19 @@ export default {
   .key {
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+
+.person-list .person {
+  flex-wrap: wrap;
+
+  .column.portrait {
+    margin: 0 8px 8px 0;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 </style>
