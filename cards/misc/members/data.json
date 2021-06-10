@@ -443,7 +443,11 @@
           "acronym": "lzj",
           "slug": "12-lista-zorana-jankovica"
         },
-        "image": null
+        "image": null,
+        "working_bodies": [
+          "Delovno telo ena",
+          "Drugo delovno telo"
+        ]
       },
       {
         "slug": "6-marko-koprivc",

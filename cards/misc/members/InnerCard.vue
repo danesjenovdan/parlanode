@@ -82,7 +82,8 @@ export default {
             link: member.partylink ? this.getMemberPartyLink(member) : '',
             text: member.party?.acronym,
           },
-          member.formattedDistrict,
+          // member.formattedDistrict,
+          (member.working_bodies || []).join(', '),
         ]);
       }
       return this.processedMembers.map((member) => [
@@ -116,9 +117,14 @@ export default {
             additionalClass: 'optional',
           },
           { id: 'party', label: this.$t('party'), additionalClass: 'optional' },
+          // {
+          //   id: 'district',
+          //   label: this.$t('district'),
+          //   additionalClass: 'optional',
+          // },
           {
-            id: 'district',
-            label: this.$t('district'),
+            id: 'working_bodies',
+            label: this.$t('working_bodies'),
             additionalClass: 'optional',
           },
         ];
@@ -149,6 +155,7 @@ export default {
       this.$emit('page-change', newPage);
     },
     scrollToTop() {
+      // eslint-disable-next-line no-restricted-properties
       const id = this.$root.$options.contextData.mountId;
       const el = document.getElementById(id);
       // only scroll up if top is not visible

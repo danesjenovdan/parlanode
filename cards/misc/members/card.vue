@@ -57,7 +57,6 @@
 import stableSort from 'stable';
 import { find, uniqBy } from 'lodash-es';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
-import axios from 'axios';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
@@ -350,6 +349,10 @@ export default {
           case 'district':
             a = memberA.formattedDistrict;
             b = memberB.formattedDistrict;
+            return a.localeCompare(b, 'sl');
+          case 'working_bodies':
+            a = (memberA.working_bodies || []).join(', ');
+            b = (memberB.working_bodies || []).join(', ');
             return a.localeCompare(b, 'sl');
           case 'party':
             a = memberA.person.party.acronym;
