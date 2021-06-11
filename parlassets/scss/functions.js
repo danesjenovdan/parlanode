@@ -18,6 +18,13 @@ function encodeSVGforCSS(svgString) {
 }
 
 module.exports = {
+  'get-parlassets-url()': () => {
+    const value = _.get(config, ['urls', 'cdn']);
+    if (typeof value === 'string') {
+      return sass.types.String(value);
+    }
+    return sass.types.String(key.getValue());
+  },
   'getConfig($key)': (key) => {
     const value = _.get(config, key.getValue().split('.'));
     if (typeof value === 'string') {
