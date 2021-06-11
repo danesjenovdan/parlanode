@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="result-container">
       <div class="result">
         <i :class="`parlaicon vote-result--${result}`"></i>
@@ -173,13 +169,7 @@ export default {
     contentExtra() {
       return fixAbstractHtml(this.data.extra_abstract);
     },
-    generatedCardUrl() {
-      return `${this.url}?customUrl=${encodeURIComponent(
-        `${this.slugs.urls.analize}/s/getLegislation/${this.data.epa}`
-      )}&state=${encodeURIComponent(
-        JSON.stringify({ selectedTab: this.startTab })
-      )}`;
-    },
+
     excerptData() {
       return {
         epa: this.data.epa || '',

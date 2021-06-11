@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
     :content-class="{ 'is-loading': loading }"
-    :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
@@ -180,13 +179,6 @@ export default {
         state.showRelative = this.showRelative;
       }
       return state;
-    },
-    generatedCardUrl() {
-      return `${this.url}?${
-        Object.keys(this.urlParameters).length > 0
-          ? `state=${encodeURIComponent(JSON.stringify(this.urlParameters))}`
-          : ''
-      }`;
     },
   },
   created() {

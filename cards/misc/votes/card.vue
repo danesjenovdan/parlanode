@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
     :id="$options.cardData.mountId"
-    :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
@@ -89,32 +88,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      const state = {};
-
-      if (this.filters.text) {
-        state.text = this.filters.text;
-      }
-      if (this.filters.tags.length) {
-        state.tags = this.filters.tags;
-      }
-      if (this.filters.classifications.length) {
-        state.classifications = this.filters.classifications;
-      }
-      if (this.filters.results.length) {
-        state.results = this.filters.results;
-      }
-      if (
-        this.$options.cardData.parlaState &&
-        this.$options.cardData.parlaState.onlyOther
-      ) {
-        state.onlyOther = true;
-      }
-
-      return `${this.url}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
-    },
     votes() {
       let votes = this.data.results.map((v) => v.results);
       if (

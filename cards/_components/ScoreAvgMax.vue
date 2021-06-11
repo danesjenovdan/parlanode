@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    half-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" half-height>
     <div v-if="getMaxValue <= 0">
       <!-- TODO: let empty state take care of this -->
       <div v-t="'no-results'" class="no-results" />
@@ -170,12 +165,7 @@ export default {
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
-    generatedCardUrl() {
-      if (this.type === 'person') {
-        return `${this.url}${this.person.id}?altHeader=true`;
-      }
-      return `${this.url}${this.party.id}?altHeader=true`;
-    },
+
     getScore() {
       return this.results?.score ?? 0;
     },

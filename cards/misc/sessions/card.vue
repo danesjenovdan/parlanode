@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <template #generator>
       <div class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
@@ -193,25 +188,6 @@ export default {
       }
 
       return sortedAndFiltered;
-    },
-    generatedCardUrl() {
-      const params = {
-        filters: this.currentFilter,
-      };
-
-      if (this.currentWorkingBodies.length > 0) {
-        params.workingBodies = this.currentWorkingBodies;
-      }
-
-      if (this.justFive) {
-        params.justFive = true;
-      }
-
-      return `${this.url}${
-        Object.keys(params).length > 0
-          ? `?state=${encodeURIComponent(JSON.stringify(params))}`
-          : ''
-      }`;
     },
   },
   watch: {

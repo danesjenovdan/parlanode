@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <div v-if="count > 0" class="multiple-speeches">
       <pagination
         v-if="count > perPage"
@@ -87,9 +82,6 @@ export default {
   computed: {
     speeches() {
       return this.speechesPerPage[this.page - 1] || [];
-    },
-    generatedCardUrl() {
-      return `${this.url}${this.cardData.id}?altHeader=true`;
     },
   },
   mounted() {

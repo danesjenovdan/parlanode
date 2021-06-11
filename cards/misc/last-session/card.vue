@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <div class="smalldate">{{ data.session.date }}</div>
     <hr />
     <div class="link">
@@ -110,9 +105,6 @@ export default {
             return acc;
           }, []),
       };
-    },
-    generatedCardUrl() {
-      return `${this.url}?altHeader=true`;
     },
   },
   methods: {

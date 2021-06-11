@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="date-and-stuff">
       <a :href="getSessionVotesLink(data.session)" class="funblue-light-hover">
         {{ data.session.name }} </a
@@ -298,11 +294,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.data.id}?state=${encodeURIComponent(
-        JSON.stringify(this.state)
-      )}`;
-    },
     excerptData() {
       return {
         epa: this.data.legislation.epa || '',

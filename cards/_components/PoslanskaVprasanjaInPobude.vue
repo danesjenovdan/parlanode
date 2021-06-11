@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="cardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <!-- TODO: empty state should take care of this -->
     <!-- <data-not-published
       v-if="showEmptyState"
@@ -51,14 +47,12 @@ import { partyOverview } from '@/_mixins/contextUrls.js';
 import { partyTitle } from '@/_mixins/titles.js';
 import { partyHeader, personHeader } from '@/_mixins/altHeaders.js';
 import { partyOgImage, personOgImage } from '@/_mixins/ogImages.js';
-import CardWrapper from '@/_components/Card/Wrapper.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import QuestionList from '@/_components/QuestionList.vue';
 import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
   components: {
-    CardWrapper,
     PSearchDropdown,
     QuestionList,
   },
@@ -173,28 +167,6 @@ export default {
     },
     filteredQuestionDays() {
       return this.getFilteredQuestionDays();
-    },
-    cardUrl() {
-      const state = {};
-
-      if (this.selectedRecipients.length > 0) {
-        state.recipients = this.selectedRecipients;
-      }
-      if (this.selectedMonths.length > 0) {
-        state.months = this.selectedMonths.map((month) => month.id);
-      }
-      if (this.textFilter.length > 0) {
-        state.text = this.textFilter;
-      }
-      if (this.selectedMPs.length > 0) {
-        state.mps = this.selectedMPs;
-      }
-
-      return `${this.url}${
-        this.type === 'person'
-          ? this.contextData.cardData.id
-          : this.contextData.cardData.id
-      }?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     headerConfig() {
       if (this.type === 'person') {

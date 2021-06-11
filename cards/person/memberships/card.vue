@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    half-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" half-height>
     <div class="memberships">
       <p-tabs v-if="tabNames.length > 1">
         <p-tab
@@ -78,9 +73,6 @@ export default {
     },
     tabNames() {
       return Object.keys(this.tabs);
-    },
-    generatedCardUrl() {
-      return `${this.url}${this.cardData.id}?altHeader=true`;
     },
   },
 };

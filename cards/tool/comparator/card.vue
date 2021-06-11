@@ -1,7 +1,6 @@
 <template>
   <card-wrapper
     :content-class="{ 'is-loading': loading }"
-    :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
@@ -297,30 +296,6 @@ export default {
         label: tag || 'Brez MDT', // TODO i18n
         value: this.data.filter((d) => d.results.tags[0] === tag).length,
       }));
-    },
-    generatedCardUrl() {
-      const state = {};
-      if (this.special) {
-        state.special = this.special;
-      }
-      if (this.selectedSamePeople.length > 0) {
-        state.samePeople = this.selectedSamePeople.map((p) => p.id);
-      }
-      if (this.selectedDifferentPeople.length > 0) {
-        state.differentPeople = this.selectedDifferentPeople.map((p) => p.id);
-      }
-      if (this.sameParties.length > 0) {
-        state.sameParties = this.sameParties.map((p) => p.id);
-      }
-      if (this.differentParties.length > 0) {
-        state.differentParties = this.differentParties.map((p) => p.id);
-      }
-      if (this.selectedTab > 0) {
-        state.selectedTab = this.selectedTab;
-      }
-      return `${this.url}${this.parentOrgId || ''}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
     },
   },
   watch: {

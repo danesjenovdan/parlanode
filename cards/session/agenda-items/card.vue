@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <div class="agenda">
       <agenda-item
         v-for="agenda in fixedResults"
@@ -41,9 +36,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.session.id}?altHeader=true`;
-    },
     fixedResults() {
       return this.results.map((a) => ({
         ...a,

@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <template #generator>
       <div class="session-list-generator legislation-list">
         <div v-if="filters.length > 1" class="row">
@@ -56,7 +51,6 @@
       :current-sort="currentSort"
       :current-sort-order="currentSortOrder"
       :select-sort="selectSort"
-      :generated-card-url="generatedCardUrl"
     />
   </card-wrapper>
 </template>
@@ -188,35 +182,7 @@ export default {
         },
       ];
     },
-    generatedCardUrl() {
-      const state = {};
 
-      if (this.currentFilter != null) {
-        state.type = this.currentFilter;
-      }
-
-      if (this.textFilter.length > 0) {
-        state.text = this.textFilter;
-      }
-      // @todo probably needs a good fix
-      if (this.selectedWorkingBodies.length) {
-        state.wb = this.selectedWorkingBodies;
-      }
-
-      if (this.onlyAbstracts) {
-        state.onlyAbstracts = true;
-      }
-
-      if (this.onlyWithVotes) {
-        state.onlyWithVotes = true;
-      }
-
-      return `${this.url}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true&customUrl=${encodeURIComponent(
-        `${'this.slugs.urls.analize'}/s/getAllLegislation/`
-      )}`;
-    },
     processedData() {
       const filterLegislation = (legislation) => {
         const textMatch =

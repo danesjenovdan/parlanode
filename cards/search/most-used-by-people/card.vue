@@ -2,7 +2,6 @@
   <card-wrapper
     :id="$options.cardData.mountId"
     :content-class="['full', { 'is-loading': loading }]"
-    :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
@@ -50,14 +49,7 @@ export default {
       people: [],
     };
   },
-  computed: {
-    generatedCardUrl() {
-      const state = { query: this.keywords };
-      return `${this.url}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
-    },
-  },
+
   mounted() {
     const searchUrl = `${
       this.slugs.urls.isci

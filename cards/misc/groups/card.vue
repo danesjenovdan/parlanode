@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
         <div class="row">
@@ -18,7 +13,6 @@
       :processed-party-data="processedPartyData"
       :header-config="headerConfig"
       :og-config="ogConfig"
-      :generated-card-url="generatedCardUrl"
       :current-analysis-data="currentAnalysisData"
     />
   </card-wrapper>
@@ -152,14 +146,6 @@ export default {
         params.analysis = this.currentAnalysis;
       }
       return params;
-    },
-    generatedCardUrl() {
-      const state = `${
-        Object.keys(this.urlParameters).length > 0
-          ? `&state=${encodeURIComponent(JSON.stringify(this.urlParameters))}`
-          : ''
-      }`;
-      return `${this.url}?altHeader=true${state}`;
     },
   },
   methods: {

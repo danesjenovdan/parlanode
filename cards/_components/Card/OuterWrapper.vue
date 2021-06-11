@@ -43,7 +43,7 @@ export default {
     // // eslint-disable-next-line no-underscore-dangle
     // const showEmptyState =
     //   cardData && cardData.data && cardData.data.__status === 204;
-    console.log(this.$slots.default())
+    console.log(this.$slots.default());
 
     return {
       showErrorState: true,

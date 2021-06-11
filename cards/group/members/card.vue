@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <person-list :people="cardData.data?.results?.members || []" />
   </card-wrapper>
 </template>
@@ -22,10 +18,5 @@ export default {
     PersonList,
   },
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage],
-  computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.cardData.id}?altHeader=true`;
-    },
-  },
 };
 </script>

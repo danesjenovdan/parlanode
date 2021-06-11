@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="poslanec osnovne-informacije-poslanca">
       <div class="row">
         <div class="parlaicon-container">
@@ -157,9 +153,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.person.id}?altHeader=true`;
-    },
     age() {
       return differenceInCalendarYears(
         new Date(),

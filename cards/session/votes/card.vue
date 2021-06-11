@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <seznam-glasovanj
       :data="votes"
       :filters="filters"
@@ -50,32 +46,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      const state = {};
-
-      if (this.filters.text) {
-        state.text = this.filters.text;
-      }
-      if (this.filters.tags.length) {
-        state.tags = this.filters.tags;
-      }
-      if (this.filters.classifications.length) {
-        state.classifications = this.filters.classifications;
-      }
-      if (this.filters.results.length) {
-        state.results = this.filters.results;
-      }
-      if (
-        this.$options.contextData.cardState &&
-        this.$options.contextData.cardState.onlyOther
-      ) {
-        state.onlyOther = true;
-      }
-
-      return `${this.url}${this.data.session.id}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
-    },
     votes() {
       let votes = this.data.results.map((v) => v.results);
       if (

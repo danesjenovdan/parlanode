@@ -2,7 +2,6 @@
   <card-wrapper
     :id="$options.cardData.mountId"
     :content-class="['full', { 'is-loading': fetching }]"
-    :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
@@ -105,12 +104,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      const state = { query: this.keywords };
-      return `${this.url}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
-    },
     speeches() {
       return this.rawSpeeches.map((speech) => {
         if (speech.person.type === 'mp') {

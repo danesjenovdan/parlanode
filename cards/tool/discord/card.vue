@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <template #generator>
       <tools-tabs current-tool="discord" />
     </template>
@@ -262,29 +258,7 @@ export default {
           : this.$t('sort-by--inequality').toLowerCase())
       );
     },
-    generatedCardUrl() {
-      const state = {};
 
-      if (this.selectedTags.length > 0) {
-        state.tags = this.selectedTags;
-      }
-      if (this.selectedClassifications.length > 0) {
-        state.classifications = this.selectedClassifications;
-      }
-      if (this.textFilter.length > 0) {
-        state.text = this.textFilter;
-      }
-      if (this.selectedSort.length > 0) {
-        state.sort = this.selectedSort;
-      }
-      if (this.selectedGroup?.length > 0) {
-        state.selectedGroup = this.selectedGroup;
-      }
-
-      return `${this.url}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
-    },
     voteLinkTarget() {
       if (typeof window !== 'undefined') {
         if (window === window.top) {

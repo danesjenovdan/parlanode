@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <person-list v-if="people.length > 2" :people="people" />
     <!-- TODO: empty state should take care of this -->
     <empty-circle v-else :text="$t('card.empty-state-text')" />
@@ -36,11 +32,6 @@ export default {
       data: this.$options.contextData.cardData,
       people,
     };
-  },
-  computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.data.organization.id}?altHeader=true`;
-    },
   },
 };
 </script>

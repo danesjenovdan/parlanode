@@ -76,7 +76,7 @@ export default {
     margin: 0 8px 0 30px;
     width: 58px;
 
-    $icon-path: "#{get-parlassets-url()}/icons";
+    $icon-path: '#{get-parlassets-url()}/icons';
     &.option-for {
       background-image: url(#{$icon-path}/za_v2.svg);
     }

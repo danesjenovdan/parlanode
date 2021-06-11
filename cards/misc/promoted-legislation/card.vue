@@ -1,11 +1,9 @@
 <template>
   <card-wrapper
     :id="$options.cardData.mountId"
-    :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
     class="card-halfling card-featured-legislation"
-
   >
     <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
@@ -142,17 +140,7 @@ export default {
       ogConfig: defaultOgImage(this),
     };
   },
-  computed: {
-    generatedCardUrl() {
-      const customUrl = encodeURIComponent(
-        `${this.slugs.urls.analize}/s/getExposedLegislation/`
-      );
-      const state = encodeURIComponent(
-        JSON.stringify({ selectedTab: this.selectedTab })
-      );
-      return `${this.url}?customUrl=${customUrl}&state=${state}`;
-    },
-  },
+
   created() {
     if (this.state.selectedTab) {
       this.selectedTab = this.state.selectedTab;

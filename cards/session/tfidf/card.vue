@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <div v-if="chartRows.length" class="columns">
       <bar-chart :data="chartRows1" :already-calculated="true" />
       <bar-chart :data="chartRows2" :already-calculated="true" />
@@ -67,9 +62,6 @@ export default {
     },
     chartRows2() {
       return this.chartRows.slice(5, 10);
-    },
-    generatedCardUrl() {
-      return `${this.url}${this.$options.contextData.cardData.session.id}?altHeader=true`;
     },
   },
   created() {

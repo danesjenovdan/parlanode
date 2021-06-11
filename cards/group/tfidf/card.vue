@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <bar-chart v-if="chartRows.length" :data="chartRows" />
     <!-- TODO: empty state should handle this -->
     <div v-else v-t="'no-speeches'" class="empty-dataset"></div>
@@ -36,9 +32,6 @@ export default {
         value: Math.round(item.scores['tf-idf'] * 5000),
         link: this.getSearchTermLink(item.term, { pgs: [this.data.party.id] }),
       }));
-    },
-    generatedCardUrl() {
-      return `${this.url}${this.data.party.id}?altHeader=true`;
     },
   },
   methods: {

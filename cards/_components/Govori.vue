@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    :card-url="generatedCardUrl"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="filters">
       <div class="filter text-filter">
         <div v-t="'contents-search'" class="filter-label"></div>
@@ -160,34 +156,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      const state = {};
-
-      if (this.type === 'person') {
-        state.people = this.contextData.cardData.person.id;
-      } else if (this.type === 'party') {
-        state.parties = this.contextData.cardData.party.id;
-        state.people = this.selectedPeople.map((p) => p.id);
-      }
-
-      if (this.selectedMonths.length > 0) {
-        state.months = this.selectedMonths.map((m) => m.id);
-      }
-
-      if (this.selectedWorkingBodies.length > 0) {
-        state.wb = this.selectedWorkingBodies.map((org) => org.id);
-      }
-
-      state.textFilter = this.textFilter || '*';
-
-      return `${this.url}${
-        this.type === 'person'
-          ? this.contextData.cardData.person.id
-          : this.contextData.cardData.party.id
-      }?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&customUrl=${encodeURIComponent(this.searchUrl)}`;
-    },
     searchUrl() {
       const state = {};
 

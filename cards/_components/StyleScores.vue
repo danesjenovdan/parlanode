@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    half-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" half-height>
     <div v-cloak class="card-content-front">
       <div class="progress_flex">
         <div class="column-title progress_title">
@@ -131,12 +126,7 @@ export default {
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
-    generatedCardUrl() {
-      if (this.type === 'person') {
-        return `${this.url}${this.person.id}?altHeader=true`;
-      }
-      return `${this.url}${this.party.id}?altHeader=true`;
-    },
+
     maxValue() {
       return Math.max(
         this.results.sophisticated,

@@ -2,7 +2,6 @@
   <card-wrapper
     :id="$options.cardData.mountId"
     :content-class="['full', { 'is-loading': loading }]"
-    :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
   >
@@ -50,12 +49,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      const state = { query: this.keywords };
-      return `${this.url}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
-    },
     pieData() {
       return (this.data && this.data.facet_counts.facet_fields.party_id) || [];
     },

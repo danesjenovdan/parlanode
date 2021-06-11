@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="poslanec osnovne-informacije-poslanca">
       <div
         v-for="(person, index) in group.presidents"
@@ -198,9 +194,6 @@ export default {
     };
   },
   computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.group.id}?altHeader=true`;
-    },
     shortEmail() {
       if (this.group.email?.length) {
         if (this.group.email.length < 26) {

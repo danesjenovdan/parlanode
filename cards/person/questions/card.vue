@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <question-list :question-days="cardData.data?.results" />
   </card-wrapper>
 </template>
@@ -22,10 +18,5 @@ export default {
     QuestionList,
   },
   mixins: [common, personOverview, personTitle, personHeader, personOgImage],
-  computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.cardData.id}?altHeader=true`;
-    },
-  },
 };
 </script>

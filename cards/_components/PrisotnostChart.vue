@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    :card-url="generatedCardUrl"
     :header-config="headerConfig"
     :og-config="ogConfig"
     @back-change="handleBackChange"
@@ -11,7 +10,6 @@
 
 <script>
 import * as d3 from 'd3';
-import CardWrapper from '@/_components/Card/Wrapper.vue';
 import common from '@/_mixins/common.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
@@ -21,9 +19,6 @@ import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
   name: 'PrisotnostChart',
-  components: {
-    CardWrapper,
-  },
   mixins: [common],
   props: {
     type: {
@@ -57,12 +52,7 @@ export default {
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
-    generatedCardUrl() {
-      if (this.type === 'person') {
-        return `${this.url}${this.person.id}?altHeader=true`;
-      }
-      return `${this.url}${this.party.id}?altHeader=true`;
-    },
+
     translationKeys() {
       if (this.type === 'person') {
         const gender = this.person.preferred_pronoun === 'she' ? 'f' : 'm';

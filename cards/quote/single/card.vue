@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <speech :speech="data" show-session />
   </card-wrapper>
 </template>
@@ -31,11 +26,7 @@ export default {
       data: this.$options.contextData.cardData,
     };
   },
-  computed: {
-    generatedCardUrl() {
-      return `${this.url}${this.$options.contextData.cardData.results.quote_id}?altHeader=true`;
-    },
-  },
+
   created() {
     // TODO:
     // this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(

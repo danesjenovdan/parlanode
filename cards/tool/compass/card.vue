@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="generatedCardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <template #generator>
       <tools-tabs current-tool="compass" />
     </template>
@@ -36,15 +32,6 @@ export default {
       headerConfig: defaultHeaderConfig(this, { circleIcon: 'og-kompas' }),
       ogConfig: defaultOgImage(this, { icon: 'og-kompas' }),
     };
-  },
-  computed: {
-    generatedCardUrl() {
-      const state = {};
-      // TODO: state url
-      return `${this.url}?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
-    },
   },
 };
 </script>

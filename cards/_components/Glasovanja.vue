@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :card-url="cardUrl"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div v-show="false" class="card-content__empty">
       <!-- TODO this is hardcoded -->
       <div class="card-content__empty-inner">
@@ -270,30 +266,6 @@ export default {
         (o) => dateFormatter(o.timestamp)
       );
       return votingDays;
-    },
-    cardUrl() {
-      const state = {};
-
-      if (this.selectedTags.length > 0) {
-        state.tags = this.selectedTags;
-      }
-      if (this.selectedClassifications.length > 0) {
-        state.classifications = this.selectedClassifications;
-      }
-      if (this.textFilter.length > 0) {
-        state.text = this.textFilter;
-      }
-      if (this.selectedOptions.length > 0) {
-        state.options = this.selectedOptions;
-      }
-
-      const personOrParty =
-        this.type === 'person'
-          ? this.contextData.cardData.data?.person
-          : this.contextData.cardData.data?.group;
-      return `${this.url}${personOrParty?.id}/?state=${encodeURIComponent(
-        JSON.stringify(state)
-      )}&altHeader=true`;
     },
     headerConfig() {
       if (this.type === 'person') {
