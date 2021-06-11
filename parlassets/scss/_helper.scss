@@ -90,13 +90,13 @@ $cdn_home_icon: get-parlassets-url() + '/icons/';
 
 // GRADIENT
 @mixin gradient($direction: 'vertical', $reverse: false) {
-  $color1: $first;
-  $color2: $second;
-  $color3: $third;
+  $color1: $gradient-first;
+  $color2: $gradient-second;
+  $color3: $gradient-third;
   @if $reverse == true {
-    $color1: $third;
-    $color2: $second;
-    $color3: $first;
+    $color1: $gradient-third;
+    $color2: $gradient-second;
+    $color3: $gradient-first;
   }
   @if $direction == 'vertical' {
     // TOP TO BOTTOM
