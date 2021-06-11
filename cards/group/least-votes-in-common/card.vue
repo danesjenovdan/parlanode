@@ -19,13 +19,15 @@ export default {
   },
   mixins: [common, partyVotes, partyTitle, partyHeader, partyOgImage],
   data() {
-    const people = this.$options.contextData.cardData.results.map((o) => {
+    const results = (this.cardData.data?.results || [])
+      .slice()
+      .sort((a, b) => b.value - a.value);
+    const people = results.map((o) => {
       const { person } = o;
-      person.score = `${(o.ratio || 0).toFixed(2).replace('.', ',')}`;
+      person.score = `${(o.value || 0).toFixed(2).replace('.', ',')}`;
       return person;
     });
     return {
-      data: this.$options.contextData.cardData,
       people,
     };
   },

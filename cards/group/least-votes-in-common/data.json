@@ -1,119 +1,80 @@
 {
-  "organization": {
-    "name": "Slovenska demokratska stranka",
-    "classification": "pg",
-    "acronym": "SDS",
-    "has_voters": false,
-    "is_coalition": true,
-    "id": 2
-  },
-  "created_at": "03.03.2021",
-  "created_for": "03.03.2021",
-  "results": [
-    {
-      "person": {
-        "is_active": true,
-        "district": [41],
-        "name": "Robert Pav\u0161i\u010d",
-        "gov_id": "P325",
-        "gender": "f",
-        "party": {
-          "name": "Lista Marjana \u0160arca",
-          "classification": "pg",
-          "acronym": "LM\u0160",
-          "has_voters": false,
-          "is_coalition": false,
-          "id": 3
+  "id": 12,
+  "data": {
+    "results": [
+      {
+        "person": {
+          "slug": "4-martina-vuk",
+          "name": "Martina Vuk",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
         },
-        "type": "mp",
-        "id": 74,
-        "has_function": false
+        "value": 11.5325625946708
       },
-      "ratio": 65.8236255081942
-    },
-    {
-      "person": {
-        "is_active": true,
-        "district": [1],
-        "name": "Alja\u017e Kova\u010di\u010d",
-        "gov_id": "P333",
-        "gender": "f",
-        "party": {
-          "name": "Lista Marjana \u0160arca",
-          "classification": "pg",
-          "acronym": "LM\u0160",
-          "has_voters": false,
-          "is_coalition": false,
-          "id": 3
+      {
+        "person": {
+          "slug": "5-janez-stariha",
+          "name": "Janez Stariha",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
         },
-        "type": "mp",
-        "id": 57,
-        "has_function": false
+        "value": 11.7046999107196
       },
-      "ratio": 65.640834842745
-    },
-    {
-      "person": {
-        "is_active": true,
-        "district": [44, 45],
-        "name": "Jerca Kor\u010de",
-        "gov_id": "P326",
-        "gender": "f",
-        "party": {
-          "name": "Lista Marjana \u0160arca",
-          "classification": "pg",
-          "acronym": "LM\u0160",
-          "has_voters": false,
-          "is_coalition": false,
-          "id": 3
+      {
+        "person": {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
         },
-        "type": "mp",
-        "id": 55,
-        "has_function": false
+        "value": 0.0
       },
-      "ratio": 65.6158473132272
-    },
-    {
-      "person": {
-        "is_active": true,
-        "district": [50],
-        "name": "Edvard Pauli\u010d",
-        "gov_id": "P323",
-        "gender": "f",
-        "party": {
-          "name": "Lista Marjana \u0160arca",
-          "classification": "pg",
-          "acronym": "LM\u0160",
-          "has_voters": false,
-          "is_coalition": false,
-          "id": 3
+      {
+        "person": {
+          "slug": "7-dr-dragan-matic",
+          "name": "dr. Dragan Matić",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Svetniški klub samostojnih svetnikov ",
+            "acronym": "",
+            "slug": "8-svetniski-klub-samostojnih-svetnikov"
+          },
+          "image": null
         },
-        "type": "mp",
-        "id": 72,
-        "has_function": false
+        "value": 13.1529464379659
       },
-      "ratio": 65.595573012609
-    },
-    {
-      "person": {
-        "is_active": true,
-        "district": [43],
-        "name": "Jo\u017ee Lenart",
-        "gov_id": "P330",
-        "gender": "f",
-        "party": {
-          "name": "Lista Marjana \u0160arca",
-          "classification": "pg",
-          "acronym": "LM\u0160",
-          "has_voters": false,
-          "is_coalition": false,
-          "id": 3
+      {
+        "person": {
+          "slug": "8-jozef-horvat",
+          "name": "Jožef Horvat",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
         },
-        "type": "mp",
-        "id": 61,
-        "has_function": false
-      },
-      "ratio": 65.5896308500284
+        "value": 12.1655250605964
+      }
+    ],
+    "group": {
+      "name": "Svetniški klub samostojnih svetnikov ",
+      "acronym": "",
+      "slug": "8-svetniski-klub-samostojnih-svetnikov"
     }
-  ]
+  }
 }

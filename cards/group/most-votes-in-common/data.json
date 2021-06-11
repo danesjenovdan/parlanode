@@ -1,119 +1,80 @@
 {
-  "organization": {
-    "name": "Slovenska demokratska stranka",
-    "classification": "pg",
-    "acronym": "SDS",
-    "has_voters": false,
-    "is_coalition": true,
-    "id": 2
-  },
-  "created_at": "03.03.2021",
-  "created_for": "03.03.2021",
-  "results": [
-    {
-      "person": {
-        "is_active": true,
-        "district": [56],
-        "name": "Boris Doblekar",
-        "gov_id": "P306",
-        "gender": "f",
-        "party": {
-          "name": "Slovenska demokratska stranka",
-          "classification": "pg",
-          "acronym": "SDS",
-          "has_voters": false,
-          "is_coalition": true,
-          "id": 2
+  "id": 12,
+  "data": {
+    "results": [
+      {
+        "person": {
+          "slug": "4-martina-vuk",
+          "name": "Martina Vuk",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
         },
-        "type": "mp",
-        "id": 31,
-        "has_function": false
+        "value": 11.5325625946708
       },
-      "ratio": 8.03258275187443
-    },
-    {
-      "person": {
-        "is_active": true,
-        "district": [71],
-        "name": "Franc Rosec",
-        "gov_id": "P307",
-        "gender": "f",
-        "party": {
-          "name": "Slovenska demokratska stranka",
-          "classification": "pg",
-          "acronym": "SDS",
-          "has_voters": false,
-          "is_coalition": true,
-          "id": 2
+      {
+        "person": {
+          "slug": "5-janez-stariha",
+          "name": "Janez Stariha",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
         },
-        "type": "mp",
-        "id": 86,
-        "has_function": false
+        "value": 11.7046999107196
       },
-      "ratio": 8.33820838064413
-    },
-    {
-      "person": {
-        "is_active": true,
-        "district": [64],
-        "name": "Danijel Krivec",
-        "gov_id": "P040",
-        "gender": "f",
-        "party": {
-          "name": "Slovenska demokratska stranka",
-          "classification": "pg",
-          "acronym": "SDS",
-          "has_voters": false,
-          "is_coalition": true,
-          "id": 2
+      {
+        "person": {
+          "slug": "6-marko-koprivc",
+          "name": "Marko Koprivc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "6-socialni-demokrati"
+          },
+          "image": null
         },
-        "type": "mp",
-        "id": 60,
-        "has_function": false
+        "value": 0.0
       },
-      "ratio": 8.35857158843806
-    },
-    {
-      "person": {
-        "is_active": true,
-        "district": [8],
-        "name": "Marko Poga\u010dnik",
-        "gov_id": "P196",
-        "gender": "f",
-        "party": {
-          "name": "Slovenska demokratska stranka",
-          "classification": "pg",
-          "acronym": "SDS",
-          "has_voters": false,
-          "is_coalition": true,
-          "id": 2
+      {
+        "person": {
+          "slug": "7-dr-dragan-matic",
+          "name": "dr. Dragan Matić",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Svetniški klub samostojnih svetnikov ",
+            "acronym": "SKSS",
+            "slug": "8-svetniski-klub-samostojnih-svetnikov"
+          },
+          "image": null
         },
-        "type": "mp",
-        "id": 79,
-        "has_function": false
+        "value": 13.1529464379659
       },
-      "ratio": 8.47654840399073
-    },
-    {
-      "person": {
-        "is_active": true,
-        "district": [70],
-        "name": "Franci Kepa",
-        "gov_id": "P308",
-        "gender": "f",
-        "party": {
-          "name": "Slovenska demokratska stranka",
-          "classification": "pg",
-          "acronym": "SDS",
-          "has_voters": false,
-          "is_coalition": true,
-          "id": 2
+      {
+        "person": {
+          "slug": "8-jozef-horvat",
+          "name": "Jožef Horvat",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
         },
-        "type": "mp",
-        "id": 51,
-        "has_function": false
-      },
-      "ratio": 8.63705000286311
+        "value": 12.1655250605964
+      }
+    ],
+    "group": {
+      "name": "Svetniški klub samostojnih svetnikov ",
+      "acronym": "SKSS",
+      "slug": "8-svetniski-klub-samostojnih-svetnikov"
     }
-  ]
+  }
 }
