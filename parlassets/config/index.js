@@ -1,28 +1,19 @@
-const _ = require('lodash');
+const isProd = process.env.NODE_ENV === 'production';
 
-let config;
-const env = process.env.NODE_ENV;
+const PARLASSETS_URL = process.env.VITE_PARLASSETS_URL || 'https://cdn.nov.parlameter.si/v1/parlassets'; // TODO
+const PARLADATA_URL = process.env.VITE_PARLADATA_URL || 'https://parladata.lb.djnd.si/v3'; // TODO
+const PARLACARDS_URL = process.env.VITE_PARLACARDS_URL || 'https://parlacards.lb.djnd.si'; // TODO
+const PARLASITE_URL = process.env.VITE_PARLASITE_URL || 'https://parlasite.lb.djnd.si'; // TODO
 
-const defaultConfig = {
+const config = {
   urls: {
-    cdn: 'https://cdn.parlameter.si/v1/parlassets',
-    analize: 'https://analize.parlameter.si/v1',
-    // data: 'https://data.parlameter.si/v1',
-    // isci: 'https://isci.parlameter.si',
-    // glej: 'https://glej.parlameter.si',
-    // base: 'https://parlameter.si',
+    cdn: isProd ? PARLASSETS_URL : 'http://localhost:8080',
+    analize: PARLADATA_URL,
+    data: PARLADATA_URL,
+    isci: 'https://isci.parlameter.si', // TODO
+    glej: PARLACARDS_URL,
+    base: PARLASITE_URL,
   },
 };
 
-if (env === 'production') {
-  // eslint-disable-next-line global-require, import/no-unresolved
-  config = require('./production');
-} else if (env === 'development') {
-  // eslint-disable-next-line global-require, import/no-unresolved
-  config = require('./development');
-} else {
-  // eslint-disable-next-line global-require
-  config = require('./sample');
-}
-
-module.exports = _.merge({}, defaultConfig, config);
+module.exports = config;
