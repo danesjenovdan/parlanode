@@ -12,6 +12,7 @@ RUN yarn
 
 # copy all files and run build
 COPY . .
+ENV NODE_ENV=production
 RUN yarn sass
 
 # ---
