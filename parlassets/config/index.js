@@ -1,6 +1,6 @@
 const isProd = process.env.NODE_ENV === 'production';
 
-const PARLASSETS_URL = process.env.VITE_PARLASSETS_URL || 'https://cdn.nov.parlameter.si/v1/parlassets'; // TODO
+const PARLASSETS_URL = process.env.VITE_PARLASSETS_URL || 'https://parlassets-ljubljana.lb.djnd.si/'; // TODO
 const PARLADATA_URL = process.env.VITE_PARLADATA_URL || 'https://parladata.lb.djnd.si/v3'; // TODO
 const PARLACARDS_URL = process.env.VITE_PARLACARDS_URL || 'https://parlacards.lb.djnd.si'; // TODO
 const PARLASITE_URL = process.env.VITE_PARLASITE_URL || 'https://parlasite.lb.djnd.si'; // TODO
