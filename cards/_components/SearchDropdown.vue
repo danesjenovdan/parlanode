@@ -162,8 +162,9 @@ export default {
           .filter(
             (item) =>
               item.selected ||
-              item.label.toLowerCase().indexOf(this.localFilter.toLowerCase()) >
-                -1
+              (item.label || '')
+                .toLowerCase()
+                .indexOf(this.localFilter.toLowerCase()) > -1
           )
           .map((item, index) => {
             // eslint-disable-next-line no-param-reassign
@@ -176,7 +177,7 @@ export default {
                 this.alphabetise &&
                 Boolean(a.selected) === Boolean(b.selected)
               ) {
-                return a.label.localeCompare(b.label, 'sl');
+                return (a.label || '').localeCompare(b.label, 'sl');
               }
 
               if (a.selected && !b.selected) {
@@ -256,10 +257,9 @@ export default {
     },
     largeItems() {
       return (
-        this.modelValue &&
-        (this.modelValue[0].image ||
-          this.modelValue[0].color ||
-          this.modelValue[0].colorClass)
+        this.modelValue?.[0]?.image ||
+        this.modelValue?.[0]?.color ||
+        this.modelValue?.[0]?.colorClass
       );
     },
   },

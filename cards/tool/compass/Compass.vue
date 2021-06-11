@@ -34,35 +34,32 @@ export default {
   },
   data() {
     const groupedByParty = Object.values(
-      groupBy(this.compassData, (item) => item.person.party.id)
+      groupBy(this.compassData, (item) => item.person?.group?.slug)
     );
 
-    const parties = groupedByParty
-      .filter((item) => item[0].person.party.classification === 'pg')
-      .map((item) => ({
-        id: item[0].person.party.acronym,
-        label: item[0].person.party.acronym,
-        selected: false,
-        colorClass: `${item[0].person.party.acronym
-          .toLowerCase()
-          .replace(/[ +,]/g, '_')}-background`,
-      }));
+    const parties = groupedByParty.map((item) => ({
+      id: item[0].person?.group?.slug,
+      label: item[0].person?.group?.acronym,
+      selected: false,
+      colorClass: `${(item[0].person?.group?.acronym || '')
+        .toLowerCase()
+        .replace(/[ +,]/g, '_')}-background`,
+    }));
 
     const people = this.compassData.map((item) => ({
-      id: item.person.id,
-      label: item.person.name,
+      id: item.person?.slug,
+      label: item.person?.name,
       selected: false,
       image: this.getPersonPortrait(item.person),
-      acronym: item.person.party.acronym,
     }));
 
     const partiesGroup = {
       label: this.$t('parties'),
-      items: groupedByParty.map((item) => item[0].person.party.acronym),
+      items: groupedByParty.map((item) => item[0].person?.group?.slug),
     };
     const peopleGroups = groupedByParty.map((item) => ({
-      label: item[0].person.party.acronym,
-      items: item.map((p) => p.person.id),
+      label: item[0].person?.group?.acronym,
+      items: item.map((p) => p.person?.slug),
     }));
     const groups = [partiesGroup, ...peopleGroups];
 
@@ -93,32 +90,30 @@ export default {
   },
   methods: {
     onSelect(id) {
-      // it's a person
-      if (parseInt(id, 10)) {
-        const person = this.people.find((p) => p.id === id);
-        if (person) {
-          if (!person.selected) {
-            person.selected = true;
-            this.showPersonPicture(
-              this.compassData.find((p) => p.person.id === id)
-            );
-          } else {
-            person.selected = false;
-            this.hidePersonPicture(
-              this.compassData.find((p) => p.person.id === id)
-            );
-          }
+      const person = this.people.find((p) => p.id === id);
+      if (person) {
+        if (!person.selected) {
+          person.selected = true;
+          this.showPersonPicture(
+            this.compassData.find((p) => p.person.slug === id)
+          );
+        } else {
+          person.selected = false;
+          this.hidePersonPicture(
+            this.compassData.find((p) => p.person.slug === id)
+          );
         }
-      } else {
-        const party = this.parties.find((p) => p.id === id);
-        if (party) {
-          if (!party.selected) {
-            party.selected = true;
-            this.showPartyPictures(party.id);
-          } else {
-            party.selected = false;
-            this.hidePartyPictures(party.id);
-          }
+        return;
+      }
+
+      const party = this.parties.find((p) => p.id === id);
+      if (party) {
+        if (!party.selected) {
+          party.selected = true;
+          this.showPartyPictures(party.id);
+        } else {
+          party.selected = false;
+          this.hidePartyPictures(party.id);
         }
       }
     },
@@ -133,7 +128,7 @@ export default {
         .filter((p) => p.selected)
         .forEach((p) => {
           this.hidePersonPicture(
-            this.compassData.find((pp) => pp.person.id === p.id)
+            this.compassData.find((pp) => pp.person.slug === p.id)
           );
           p.selected = false;
         });
@@ -176,10 +171,10 @@ export default {
         svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
       };
 
-      const xMax = d3.max(this.compassData, (d) => d.score.vT1);
-      const xMin = d3.min(this.compassData, (d) => d.score.vT1);
-      const yMax = d3.max(this.compassData, (d) => d.score.vT2);
-      const yMin = d3.min(this.compassData, (d) => d.score.vT2);
+      const xMax = d3.max(this.compassData, (d) => d.score?.vT1);
+      const xMin = d3.min(this.compassData, (d) => d.score?.vT1);
+      const yMax = d3.max(this.compassData, (d) => d.score?.vT2);
+      const yMin = d3.min(this.compassData, (d) => d.score?.vT2);
 
       const x = d3
         .scaleLinear()
@@ -248,18 +243,18 @@ export default {
         .data(this.compassData)
         .join('circle')
         .attr('class', (d) => {
-          const partyClass = d.person.party.acronym
+          const partyClass = (d.person?.group?.acronym || '')
             .replace(/[ +,]/g, '_')
             .toLowerCase();
           return `dot ${partyClass}-stroke ${partyClass}-fill`;
         })
-        .attr('id', (d) => `person-${d.person.id}`)
+        .attr('id', (d) => `person-${d.person?.slug}`)
         .attr('r', 4)
-        .attr('cx', (d) => x(d.score.vT1))
-        .attr('cy', (d) => y(d.score.vT2))
+        .attr('cx', (d) => x(d.score?.vT1))
+        .attr('cy', (d) => y(d.score?.vT2))
         .style('cursor', 'pointer')
         .on('click', (e, d) => {
-          this.onSelect(d.person.id);
+          this.onSelect(d.person?.slug);
         })
         .call(tooltipHover);
 
@@ -281,7 +276,7 @@ export default {
         .selectAll('pattern')
         .data(this.compassData)
         .join('pattern')
-        .attr('id', (d) => `image-${d.person.id}`)
+        .attr('id', (d) => `image-${d.person?.slug}`)
         .attr('patternUnits', 'objectBoundingBox')
         .attr('width', 1)
         .attr('height', 1)
@@ -324,9 +319,9 @@ export default {
       const currentZoom = d3.zoomTransform(d3.select('.objects').node());
 
       d3.select('.compass-visualisation svg')
-        .select(`#person-${datum.person.id}`)
+        .select(`#person-${datum.person?.slug}`)
         .attr('r', 25 / currentZoom.k)
-        .style('fill', (d) => `url(#image-${d.person.id})`)
+        .style('fill', (d) => `url(#image-${d.person?.slug})`)
         .classed('turnedon', true)
         .raise();
     },
@@ -334,22 +329,22 @@ export default {
       const currentZoom = d3.zoomTransform(d3.select('.objects').node());
 
       d3.select('.compass-visualisation svg')
-        .select(`#person-${datum.person.id}`)
+        .select(`#person-${datum.person?.slug}`)
         .attr('r', 4 / currentZoom.k)
         .style('fill', null)
         .classed('turnedon', false)
         .raise();
     },
-    showPartyPictures(acronym) {
+    showPartyPictures(id) {
       this.compassData.forEach((datum) => {
-        if (datum.person.party.acronym === acronym) {
+        if (datum.person?.group.slug === id) {
           this.showPersonPicture(datum);
         }
       });
     },
-    hidePartyPictures(acronym) {
+    hidePartyPictures(id) {
       this.compassData.forEach((datum) => {
-        if (datum.person.party.acronym === acronym) {
+        if (datum.person?.group.slug === id) {
           this.hidePersonPicture(datum);
         }
       });
