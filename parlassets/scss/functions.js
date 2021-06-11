@@ -24,13 +24,7 @@ module.exports = {
       return sass.types.String(value);
     }
     return sass.types.String(key.getValue());
-  },
-  'getConfig($key)': (key) => {
-    const value = _.get(config, key.getValue().split('.'));
-    if (typeof value === 'string') {
-      return sass.types.String(value);
-    }
-    return sass.types.String(key.getValue());
+    // TODO: return new sass.types.String(process.env.VITE_PARLASSETS_URL ?? '');
   },
   'fs-readFile($filePath)': (filePath) => {
     const resolvedPath = path.resolve(path.join('.', filePath.getValue()));
