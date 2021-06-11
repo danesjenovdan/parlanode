@@ -144,10 +144,10 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const loadFromState = stateLoader(this.$options.contextData.cardState);
+    const loadFromState = stateLoader(this.cardState);
 
     return {
-      data: this.$options.contextData.cardData,
+      data: this.cardData,
       emptyText: this.$t('empty-text'),
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
