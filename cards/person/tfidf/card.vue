@@ -20,17 +20,14 @@ export default {
     BarChart,
   },
   mixins: [common, personSpeeches, personHeader, personOgImage, links],
-  data() {
-    return {
-      data: this.$options.contextData.cardData,
-    };
-  },
   computed: {
     chartRows() {
-      return this.data.results.map((item) => ({
-        label: item.term,
-        value: Math.round(item.scores['tf-idf'] * 5000),
-        link: this.getSearchTermLink(item.term, { mps: [this.data.person.id] }),
+      const results = this.cardData.data?.results || [];
+      const person = this.cardData.data?.person || {};
+      return results.map((item) => ({
+        label: item.token,
+        value: Math.round(item.value * 5000),
+        link: this.getSearchTermLink(item.term, { mps: [person.slug] }),
       }));
     },
   },

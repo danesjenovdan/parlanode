@@ -1,217 +1,99 @@
 {
-  "person": {
-    "is_active": true,
-    "district": [22],
-    "name": "Igor Zor\u010di\u010d",
-    "gov_id": "P294",
-    "gender": "f",
-    "party": {
-      "name": "Stranka modernega centra",
-      "classification": "pg",
-      "acronym": "SMC",
-      "has_voters": false,
-      "is_coalition": true,
-      "id": 5
-    },
-    "type": "mp",
-    "id": 12,
-    "has_function": false
-  },
-  "created_at": "18.12.2020",
-  "created_for": "18.12.2020",
-  "results": [
-    {
-      "term": "navzo\u010d",
-      "scores": { "tf": 622, "df": 942, "tf-idf": 0.6602972399150743 }
-    },
-    {
-      "term": "podprogram",
-      "scores": { "tf": 303, "df": 487, "tf-idf": 0.62217659137577 }
-    },
-    {
-      "term": "pro\u017eiti",
-      "scores": { "tf": 23, "df": 51, "tf-idf": 0.45098039215686275 }
-    },
-    {
-      "term": "glasovati",
-      "scores": { "tf": 1948, "df": 4856, "tf-idf": 0.4011532125205931 }
-    },
-    {
-      "term": "Predali\u010d",
-      "scores": { "tf": 24, "df": 68, "tf-idf": 0.35294117647058826 }
-    },
-    {
-      "term": "Golubovi\u010d",
-      "scores": { "tf": 12, "df": 37, "tf-idf": 0.32432432432432434 }
-    },
-    {
-      "term": "B1",
-      "scores": { "tf": 8, "df": 26, "tf-idf": 0.3076923076923077 }
-    },
-    {
-      "term": "sodni\u0161ki",
-      "scores": { "tf": 87, "df": 296, "tf-idf": 0.2939189189189189 }
-    },
-    {
-      "term": "okrajen",
-      "scores": { "tf": 42, "df": 184, "tf-idf": 0.22826086956521738 }
-    },
-    {
-      "term": "Lipicer",
-      "scores": { "tf": 11, "df": 51, "tf-idf": 0.21568627450980393 }
-    },
-    {
-      "term": "proti",
-      "scores": { "tf": 1335, "df": 6668, "tf-idf": 0.20020995800839833 }
-    },
-    { "term": "najati", "scores": { "tf": 16, "df": 80, "tf-idf": 0.2 } },
-    {
-      "term": "prehajati",
-      "scores": { "tf": 895, "df": 4531, "tf-idf": 0.1975281394835577 }
-    },
-    {
-      "term": "kolegij",
-      "scores": { "tf": 184, "df": 940, "tf-idf": 0.19574468085106383 }
-    },
-    {
-      "term": "nedopustnost",
-      "scores": { "tf": 35, "df": 180, "tf-idf": 0.19444444444444445 }
-    },
-    {
-      "term": "kodeks",
-      "scores": { "tf": 49, "df": 253, "tf-idf": 0.19367588932806323 }
-    },
-    {
-      "term": "kustece",
-      "scores": { "tf": 18, "df": 99, "tf-idf": 0.18181818181818182 }
-    },
-    {
-      "term": "odlo\u010danje",
-      "scores": { "tf": 421, "df": 2499, "tf-idf": 0.16846738695478192 }
-    },
-    {
-      "term": "mandaten",
-      "scores": { "tf": 82, "df": 493, "tf-idf": 0.1663286004056795 }
-    },
-    {
-      "term": "amandmaj",
-      "scores": { "tf": 589, "df": 3552, "tf-idf": 0.16582207207207209 }
-    },
-    {
-      "term": "terminski",
-      "scores": { "tf": 45, "df": 277, "tf-idf": 0.1624548736462094 }
-    },
-    {
-      "term": "amand",
-      "scores": { "tf": 608, "df": 3911, "tf-idf": 0.15545896190232678 }
-    },
-    {
-      "term": "sd",
-      "scores": { "tf": 342, "df": 2230, "tf-idf": 0.15336322869955157 }
-    },
-    {
-      "term": "ugotavljati",
-      "scores": { "tf": 804, "df": 5330, "tf-idf": 0.15084427767354597 }
-    },
-    {
-      "term": "ti\u0161ina",
-      "scores": { "tf": 31, "df": 206, "tf-idf": 0.15048543689320387 }
-    },
-    {
-      "term": "veteran",
-      "scores": { "tf": 30, "df": 204, "tf-idf": 0.14705882352941177 }
-    },
-    {
-      "term": "dneven",
-      "scores": { "tf": 748, "df": 5253, "tf-idf": 0.1423948220064725 }
-    },
-    {
-      "term": "poslanski",
-      "scores": { "tf": 1748, "df": 12364, "tf-idf": 0.14137819475897767 }
-    },
-    {
-      "term": "lilijan",
-      "scores": { "tf": 12, "df": 87, "tf-idf": 0.13793103448275862 }
-    },
-    {
-      "term": "sklep",
-      "scores": { "tf": 768, "df": 5592, "tf-idf": 0.13733905579399142 }
-    },
-    {
-      "term": "brezpredmeten",
-      "scores": { "tf": 74, "df": 539, "tf-idf": 0.137291280148423 }
-    },
-    {
-      "term": "prekinjen",
-      "scores": { "tf": 104, "df": 787, "tf-idf": 0.13214739517153748 }
-    },
-    {
-      "term": "mihael",
-      "scores": { "tf": 9, "df": 69, "tf-idf": 0.13043478260869565 }
-    },
-    {
-      "term": "sodnica",
-      "scores": { "tf": 40, "df": 308, "tf-idf": 0.12987012987012986 }
-    },
-    {
-      "term": "neusklajen",
-      "scores": { "tf": 38, "df": 293, "tf-idf": 0.1296928327645051 }
-    },
-    {
-      "term": "kozlovi\u010d",
-      "scores": { "tf": 14, "df": 108, "tf-idf": 0.12962962962962962 }
-    },
-    {
-      "term": "glasovnica",
-      "scores": { "tf": 11, "df": 87, "tf-idf": 0.12643678160919541 }
-    },
-    {
-      "term": "koritnik",
-      "scores": { "tf": 15, "df": 119, "tf-idf": 0.12605042016806722 }
-    },
-    {
-      "term": "vatovec",
-      "scores": { "tf": 99, "df": 790, "tf-idf": 0.12531645569620253 }
-    },
-    {
-      "term": "daljava",
-      "scores": { "tf": 32, "df": 262, "tf-idf": 0.12213740458015267 }
-    },
-    {
-      "term": "mo\u0161kri\u010d",
-      "scores": { "tf": 10, "df": 82, "tf-idf": 0.12195121951219512 }
-    },
-    {
-      "term": "a1",
-      "scores": { "tf": 22, "df": 182, "tf-idf": 0.12087912087912088 }
-    },
-    {
-      "term": "golubovi\u0107",
-      "scores": { "tf": 34, "df": 283, "tf-idf": 0.12014134275618374 }
-    },
-    {
-      "term": "sab",
-      "scores": { "tf": 255, "df": 2129, "tf-idf": 0.11977454203851573 }
-    },
-    {
-      "term": "nsi",
-      "scores": { "tf": 165, "df": 1379, "tf-idf": 0.11965192168237854 }
-    },
-    {
-      "term": "kolega",
-      "scores": { "tf": 1391, "df": 11719, "tf-idf": 0.11869613448246437 }
-    },
-    {
-      "term": "brane",
-      "scores": { "tf": 20, "df": 169, "tf-idf": 0.11834319526627218 }
-    },
-    {
-      "term": "seja",
-      "scores": { "tf": 1077, "df": 9154, "tf-idf": 0.11765348481538125 }
-    },
-    {
-      "term": "prevca",
-      "scores": { "tf": 9, "df": 77, "tf-idf": 0.11688311688311688 }
+  "data": {
+    "results": [
+      {
+        "token": "spol",
+        "value": 0.246344318403517
+      },
+      {
+        "token": "Ljubljana",
+        "value": 0.204686330185489
+      },
+      {
+        "token": "zanimati",
+        "value": 0.199903427769295
+      },
+      {
+        "token": "turističen",
+        "value": 0.176712614779037
+      },
+      {
+        "token": "stanovanjski",
+        "value": 0.167561675106752
+      },
+      {
+        "token": "turizem",
+        "value": 0.15706138249097
+      },
+      {
+        "token": "taksa",
+        "value": 0.153965199002198
+      },
+      {
+        "token": "transspolen",
+        "value": 0.139727208001054
+      },
+      {
+        "token": "praviti",
+        "value": 0.129364526179302
+      },
+      {
+        "token": "ideologija",
+        "value": 0.12587877984522
+      },
+      {
+        "token": "nočitev",
+        "value": 0.12587877984522
+      },
+      {
+        "token": "pomeniti",
+        "value": 0.125671256330064
+      },
+      {
+        "token": "točka",
+        "value": 0.124745588664621
+      },
+      {
+        "token": "oseba",
+        "value": 0.122109605351352
+      },
+      {
+        "token": "lgbt",
+        "value": 0.116053163701186
+      },
+      {
+        "token": "moški",
+        "value": 0.116053163701186
+      },
+      {
+        "token": "MOL",
+        "value": 0.109713293891235
+      },
+      {
+        "token": "mesten",
+        "value": 0.107602575216692
+      },
+      {
+        "token": "namestitev",
+        "value": 0.102204735545352
+      },
+      {
+        "token": "rad",
+        "value": 0.0990288917582951
+      }
+    ],
+    "person": {
+      "slug": "230-ana-zagozen",
+      "name": "Ana Zagožen",
+      "honorific_prefix": null,
+      "honorific_suffix": null,
+      "preferred_pronoun": null,
+      "group": {
+        "name": "Slovenska demokratska stranka ",
+        "acronym": "",
+        "slug": "21-slovenska-demokratska-stranka"
+      },
+      "image": null
     }
-  ]
+  }
 }
