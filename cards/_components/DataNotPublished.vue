@@ -35,7 +35,7 @@ export default {
   justify-content: center;
 
   .icon-empty-state {
-    background-image: url("#{getConfig('urls.cdn')}/img/icons/icon-empty-state.png");
+    background-image: url('#{get-parlassets-url()}/img/icons/icon-empty-state.png');
     background-repeat: no-repeat;
     width: 68px;
     height: 53px;

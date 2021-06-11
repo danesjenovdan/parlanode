@@ -150,7 +150,7 @@ hr {
   }
 
   .main-law-label {
-    background-image: url("#{get-parlassets-url()}/icons/zakon.svg");
+    background-image: url('#{get-parlassets-url()}/icons/zakon.svg');
     background-size: 20px 19px;
     background-repeat: no-repeat;
     font-family: Roboto, sans-serif;
@@ -274,7 +274,7 @@ hr {
         //   display: inline-block;
         //   width: 10px;
         //   height: 10px;
-        //   background-image: url('#{getConfig('urls.cdn')}/icons/puscica-izvlecki.svg');
+        //   background-image: url('#{get-parlassets-url()}/icons/puscica-izvlecki.svg');
         //   background-size: contain;
         //   margin-right: 5px;
         //   margin-left: -18px;
@@ -308,7 +308,7 @@ hr {
     margin: auto;
     margin-top: 100px;
     display: block;
-    background-image: url("#{get-parlassets-url()}/icons/missing-excerpt.svg");
+    background-image: url('#{get-parlassets-url()}/icons/missing-excerpt.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

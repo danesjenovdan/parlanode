@@ -311,7 +311,7 @@ export default {
     width: 26%; // 100%
 
     .text-filter-input {
-      background-image: url("#{get-parlassets-url()}/icons/search.svg");
+      background-image: url('#{get-parlassets-url()}/icons/search.svg');
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
@@ -387,16 +387,16 @@ export default {
       width: 52px;
 
       &.za {
-        background-image: url("#{getConfig('urls.cdn')}/icons/za.svg");
+        background-image: url('#{get-parlassets-url()}/icons/za.svg');
       }
       &.proti {
-        background-image: url("#{getConfig('urls.cdn')}/icons/proti.svg");
+        background-image: url('#{get-parlassets-url()}/icons/proti.svg');
       }
       &.ni {
-        background-image: url("#{getConfig('urls.cdn')}/icons/ni.svg");
+        background-image: url('#{get-parlassets-url()}/icons/ni.svg');
       }
       &.kvorum {
-        background-image: url("#{getConfig('urls.cdn')}/icons/vzdrzan.svg");
+        background-image: url('#{get-parlassets-url()}/icons/vzdrzan.svg');
       }
     }
 

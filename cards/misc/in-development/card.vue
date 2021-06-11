@@ -3,7 +3,6 @@
     :id="$options.cardData.mountId"
     :header-config="headerConfig"
     :og-config="ogConfig"
-
   >
     <div class="empty">
       <div v-t="'card-in-development'" class="circle"></div>
@@ -49,7 +48,7 @@ export default {
   .circle {
     $size: 220px;
     border-radius: 50%;
-    background-image: url("#{getConfig('urls.cdn')}/icons/in-development.svg");
+    background-image: url('#{get-parlassets-url()}/icons/in-development.svg');
     background-color: $light-background;
     background-size: $size / 2.5;
     background-position: center 40px;

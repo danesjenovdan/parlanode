@@ -415,7 +415,7 @@ export default {
       }
 
       .text-filter-input {
-        background-image: url("#{getConfig('urls.cdn')}/icons/search.svg");
+        background-image: url('#{get-parlassets-url()}/icons/search.svg');
         background-size: 24px 24px;
         background-repeat: no-repeat;
         background-position: right 9px center;

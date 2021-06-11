@@ -151,7 +151,7 @@ export default {
       &.icon-abstract {
         width: 20px !important;
         height: 25px;
-        background: url("#{get-parlassets-url()}/icons/abstract.svg");
+        background: url('#{get-parlassets-url()}/icons/abstract.svg');
         background-size: contain !important;
         background-repeat: no-repeat;
         background-position: center;
@@ -160,7 +160,7 @@ export default {
       &.icon-votes {
         width: 27px !important;
         height: 25px;
-        background: url("#{get-parlassets-url()}/icons/votes.svg");
+        background: url('#{get-parlassets-url()}/icons/votes.svg');
         background-size: contain !important;
         background-repeat: no-repeat;
         background-position: center;
@@ -191,7 +191,7 @@ export default {
       &.v-obravnavi {
         width: 38px !important;
         height: 38px;
-        background: url("#{getConfig('urls.cdn')}/icons/v-obravnavi.svg");
+        background: url('#{get-parlassets-url()}/icons/v-obravnavi.svg');
         background-size: contain !important;
         background-repeat: no-repeat;
       }
