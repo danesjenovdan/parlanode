@@ -28,19 +28,30 @@ import axios from 'axios';
 export default {
   name: 'CardShare',
   props: {
-    url: {
+    cardUrl: {
       type: String,
       default: '',
     },
   },
   data() {
+    let url = this.cardUrl;
+    if (!url) {
+      let parent = this.$parent;
+      while (parent) {
+        if (parent.url) {
+          url = parent.url;
+          break;
+        }
+        parent = parent.$parent;
+      }
+    }
     return {
-      shortenedUrl: `${this.url}&frame=true`,
+      shortenedUrl: `${url}&frame=true`,
       copied: false,
     };
   },
   watch: {
-    url() {
+    cardUrl() {
       this.shortenUrl();
     },
   },

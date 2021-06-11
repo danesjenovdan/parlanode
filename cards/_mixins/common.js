@@ -47,7 +47,7 @@ export default {
   },
   computed: {
     url() {
-      return `${this.urls.cards}/${this.cardName}/`;
+      return `${this.urls.cards}/${this.cardName}/?id=${this.cardData.id}`;
     },
   },
   methods: {

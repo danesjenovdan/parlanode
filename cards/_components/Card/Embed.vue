@@ -47,15 +47,27 @@ import { format } from 'date-fns';
 export default {
   name: 'CardEmbed',
   props: {
-    url: {
+    cardUrl: {
       type: String,
       default: '',
     },
   },
   data() {
+    let url = this.cardUrl;
+    if (!url) {
+      let parent = this.$parent;
+      while (parent) {
+        if (parent.url) {
+          url = parent.url;
+          break;
+        }
+        parent = parent.$parent;
+      }
+    }
     return {
       refresh: true,
       copied: false,
+      url,
     };
   },
   computed: {

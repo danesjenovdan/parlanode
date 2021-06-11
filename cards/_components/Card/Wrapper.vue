@@ -17,9 +17,9 @@
           :info="$te('card.info') ? $t('card.info') : ''"
         />
 
-        <card-embed v-else-if="currentBack === 'embed'" :url="cardUrl" />
+        <card-embed v-else-if="currentBack === 'embed'" :card-url="cardUrl" />
 
-        <card-share v-else-if="currentBack === 'share'" :url="cardUrl" />
+        <card-share v-else-if="currentBack === 'share'" :card-url="cardUrl" />
 
         <card-previous v-else-if="currentBack === 'previous'" />
 
