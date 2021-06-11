@@ -213,17 +213,17 @@ export default {
   },
   data() {
     return {
-      parentOrgId: this.$options.contextData.cardData.parent_org_id,
+      parentOrgId: this.cardData.id,
       loading: true,
       parties: [],
       samePeople: [],
       differentPeople: [],
-      special: !!this.$options.contextData.cardState.special,
+      special: !!this.cardState.special,
       data: [],
       total: 0,
       sameModalVisible: false,
       differentModalVisible: false,
-      selectedTab: this.$options.contextData.cardState.selectedTab || 0,
+      selectedTab: this.cardState.selectedTab || 0,
       headerConfig: defaultDynamicHeaderConfig(this, {
         circleIcon: 'primerjalnik',
       }),
@@ -242,25 +242,26 @@ export default {
         : this.$t('select-mps');
     },
     queryUrl() {
-      const base = `${this.slugs.urls.analize}/s/getComparedVotes/`;
-      const samePeopleIds = this.selectedSamePeople
-        .map((person) => person.id)
-        .toString();
-      const samePartyIds = this.sameParties.map((party) => party.id).toString();
-      const diffPeopleIds = this.selectedDifferentPeople
-        .map((person) => person.id)
-        .toString();
-      const diffPartyIds = this.differentParties
-        .map((party) => party.id)
-        .toString();
-      const url = `${base}?people_same=${samePeopleIds}&parties_same=${samePartyIds}&people_different=${diffPeopleIds}&parties_different=${diffPartyIds}`;
-      if (this.special) {
-        return `${url}&special=true`;
-      }
-      return url;
+      // const base = `${this.slugs.urls.analize}/s/getComparedVotes/`;
+      // const samePeopleIds = this.selectedSamePeople
+      //   .map((person) => person.id)
+      //   .toString();
+      // const samePartyIds = this.sameParties.map((party) => party.id).toString();
+      // const diffPeopleIds = this.selectedDifferentPeople
+      //   .map((person) => person.id)
+      //   .toString();
+      // const diffPartyIds = this.differentParties
+      //   .map((party) => party.id)
+      //   .toString();
+      // const url = `${base}?people_same=${samePeopleIds}&parties_same=${samePartyIds}&people_different=${diffPeopleIds}&parties_different=${diffPartyIds}`;
+      // if (this.special) {
+      //   return `${url}&special=true`;
+      // }
+      // return url;
+      return '';
     },
     votes() {
-      return this.data;
+      return this.data || [];
     },
     voteObject() {
       return {
@@ -343,43 +344,39 @@ export default {
     },
   },
   mounted() {
-    const sameParties = this.$options.contextData.cardState.sameParties || [];
-    const differentParties =
-      this.$options.contextData.cardState.differentParties || [];
-
-    this.parties = this.generateParties(this.$options.contextData.cardData).map(
-      (party) => ({
-        id: party.properId,
-        acronym: party.acronym,
-        isCoalition: party.isCoalition,
-        name: party.name,
-        isSame: sameParties.indexOf(party.properId) > -1,
-        isDifferent: differentParties.indexOf(party.properId) > -1,
-      })
-    );
-
-    const samePeople = this.$options.contextData.cardState.samePeople || [];
-    const differentPeople =
-      this.$options.contextData.cardState.differentPeople || [];
-
-    this.samePeople = this.generatePeople(
-      this.$options.contextData.cardData
-    ).map((person) => ({
-      selected: samePeople.indexOf(person.id) > -1,
-      label: person.label,
-      id: person.id,
-      image: person.image,
-    }));
-    this.differentPeople = this.generatePeople(
-      this.$options.contextData.cardData
-    ).map((person) => ({
-      selected: differentPeople.indexOf(person.id) > -1,
-      label: person.label,
-      id: person.id,
-      image: person.image,
-    }));
-
-    this.loadResults();
+    // const sameParties = this.$options.contextData.cardState.sameParties || [];
+    // const differentParties =
+    //   this.$options.contextData.cardState.differentParties || [];
+    // this.parties = this.generateParties(this.$options.contextData.cardData).map(
+    //   (party) => ({
+    //     id: party.properId,
+    //     acronym: party.acronym,
+    //     isCoalition: party.isCoalition,
+    //     name: party.name,
+    //     isSame: sameParties.indexOf(party.properId) > -1,
+    //     isDifferent: differentParties.indexOf(party.properId) > -1,
+    //   })
+    // );
+    // const samePeople = this.$options.contextData.cardState.samePeople || [];
+    // const differentPeople =
+    //   this.$options.contextData.cardState.differentPeople || [];
+    // this.samePeople = this.generatePeople(
+    //   this.$options.contextData.cardData
+    // ).map((person) => ({
+    //   selected: samePeople.indexOf(person.id) > -1,
+    //   label: person.label,
+    //   id: person.id,
+    //   image: person.image,
+    // }));
+    // this.differentPeople = this.generatePeople(
+    //   this.$options.contextData.cardData
+    // ).map((person) => ({
+    //   selected: differentPeople.indexOf(person.id) > -1,
+    //   label: person.label,
+    //   id: person.id,
+    //   image: person.image,
+    // }));
+    // this.loadResults();
   },
   created() {
     // TODO:

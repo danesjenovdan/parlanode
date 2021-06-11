@@ -6,7 +6,7 @@ export default {
   methods: {
     groupBy(array, f) {
       const groups = {};
-      array.forEach((o) => {
+      (array || []).forEach((o) => {
         const group = JSON.stringify(f(o));
         groups[group] = groups[group] || [];
         groups[group].push(o);
@@ -15,7 +15,7 @@ export default {
     },
 
     generatePeople(LoMT) {
-      return LoMT.data.map((p) => ({
+      return (LoMT?.data || []).map((p) => ({
         id: p.person.id,
         label: p.person.name,
         name: p.person.name,
@@ -26,7 +26,7 @@ export default {
     },
 
     generateGrouped(LoMT) {
-      return this.groupBy(LoMT.data, (item) => [item.person.party.acronym]);
+      return this.groupBy(LoMT?.data, (item) => [item.person.party.acronym]);
     },
 
     generateGroups(LoMT) {
