@@ -20,23 +20,15 @@ export default {
     BarChart,
   },
   mixins: [common, partySpeeches, partyHeader, partyOgImage, links],
-  data() {
-    return {
-      data: this.$options.contextData.cardData,
-    };
-  },
   computed: {
     chartRows() {
-      return this.data.results.map((item) => ({
-        label: this.decodeHTML(item.term),
-        value: Math.round(item.scores['tf-idf'] * 5000),
-        link: this.getSearchTermLink(item.term, { pgs: [this.data.party.id] }),
+      const results = this.cardData.data?.results || [];
+      const group = this.cardData.data?.group || {};
+      return results.map((item) => ({
+        label: item.token,
+        value: Math.round(item.value * 5000),
+        link: this.getSearchTermLink(item.term, { pgs: [group.acronym] }),
       }));
-    },
-  },
-  methods: {
-    decodeHTML(html) {
-      return html.replace('&shy;', '\u00AD');
     },
   },
 };
