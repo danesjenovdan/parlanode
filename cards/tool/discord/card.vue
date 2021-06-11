@@ -158,54 +158,54 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const data = Object.keys(this.$options.contextData.cardData).map((key) => {
-      const obj = this.$options.contextData.cardData[key];
-      return {
-        id: Number(key),
-        ...obj,
-      };
-    });
+    // const data = Object.keys(this.cardData).map((key) => {
+    //   const obj = this.cardData[key];
+    //   return {
+    //     id: Number(key),
+    //     ...obj,
+    //   };
+    // });
 
-    const all = data.find((o) => o.type === 'parliament');
+    // const all = data.find((o) => o.type === 'parliament');
 
-    let groups = [];
-    groups.push({
-      id: all.id,
-      color: 'dz',
-      acronym: this.$t('everybody'),
-      name: this.$t('everybody'),
-    });
+    // let groups = [];
+    // groups.push({
+    //   id: all.id,
+    //   color: 'dz',
+    //   acronym: this.$t('everybody'),
+    //   name: this.$t('everybody'),
+    // });
 
-    let coalitions = data.filter((o) => o.type === 'coalition');
-    coalitions = sortBy(coalitions, ['name']);
+    // let coalitions = data.filter((o) => o.type === 'coalition');
+    // coalitions = sortBy(coalitions, ['name']);
 
-    coalitions.forEach((coalition) => {
-      groups.push({
-        id: coalition.id,
-        color: 'koal',
-        acronym: coalition.name,
-        name: coalition.name,
-      });
-    });
+    // coalitions.forEach((coalition) => {
+    //   groups.push({
+    //     id: coalition.id,
+    //     color: 'koal',
+    //     acronym: coalition.name,
+    //     name: coalition.name,
+    //   });
+    // });
 
-    let namedGroups = [];
-    data.forEach((group) => {
-      if (!group.disbanded && group.type === 'party') {
-        namedGroups.push({
-          id: group.id,
-          acronym: group.acronym,
-          color: group.acronym.toLowerCase().replace(/[ +,]/g, '_'),
-          name: group.acronym,
-        });
-      }
-    });
+    // let namedGroups = [];
+    // data.forEach((group) => {
+    //   if (!group.disbanded && group.type === 'party') {
+    //     namedGroups.push({
+    //       id: group.id,
+    //       acronym: group.acronym,
+    //       color: group.acronym.toLowerCase().replace(/[ +,]/g, '_'),
+    //       name: group.acronym,
+    //     });
+    //   }
+    // });
 
-    namedGroups = sortBy(namedGroups, ['name']);
-    groups = groups.concat(namedGroups);
+    // namedGroups = sortBy(namedGroups, ['name']);
+    // groups = groups.concat(namedGroups);
 
     return {
       voteData: [],
-      loading: true,
+      loading: false, // true,
       selectedSort: 'maximum',
       sortOptions: {
         maximum: this.$t('sort-by--inequality'),
@@ -213,10 +213,9 @@ export default {
       },
       textFilter: '',
       allTags: [],
-      selectedGroup: groups[0].acronym,
-      groups,
+      selectedGroup: null, // groups[0].acronym,
+      groups: [], // groups,
       allClassifications: [],
-      contextData: this.$options.contextData,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
     };
@@ -278,7 +277,7 @@ export default {
       if (this.selectedSort.length > 0) {
         state.sort = this.selectedSort;
       }
-      if (this.selectedGroup.length > 0) {
+      if (this.selectedGroup?.length > 0) {
         state.selectedGroup = this.selectedGroup;
       }
 
@@ -301,12 +300,12 @@ export default {
     },
   },
   beforeMount() {
-    this.fetchVotesForGroup(this.groups[0].acronym);
+    this.fetchVotesForGroup(this.groups?.[0]?.acronym);
   },
   created() {
-    const { template, siteMap: sm } = this.$options.contextData;
-    template.pageTitle = this.dynamicTitle;
-    template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.discord}`;
+    // const { template, siteMap: sm } = this.$options.contextData;
+    // template.pageTitle = this.dynamicTitle;
+    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.discord}`;
   },
   methods: {
     groupBy(array, f) {
@@ -385,68 +384,63 @@ export default {
       );
     },
     selectGroup(acronym) {
-      this.contextData.cardState.selectedGroup = acronym;
+      this.cardState.selectedGroup = acronym;
       this.selectedGroup =
         this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
     fetchVotesForGroup(acronym) {
-      this.loading = true;
-      const groupId = find(this.groups, { acronym }).id;
-      axios
-        .get(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`)
-        .then((response) => {
-          if (this.allTags.length === 0) {
-            this.allTags = response.data.all_tags.map((tag) => ({
-              id: tag,
-              label: tag,
-              selected: false,
-            }));
-          }
-
-          // TODO: this.voteData = response.data.results;
-          this.voteData = response.data.results || response.data[acronym];
-
-          this.allClassifications = [];
-          // eslint-disable-next-line no-restricted-syntax, guard-for-in
-          for (const classificationKey in response.data.classifications) {
-            this.allClassifications.push({
-              id: classificationKey,
-              label: this.$t(
-                `vote_types.${response.data.classifications[classificationKey]}`
-              ),
-              selected: false,
-            });
-          }
-
-          const selectFromState = (items, stateItemIds) =>
-            items.map((item) =>
-              assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
-            );
-
-          if (this.contextData.cardState) {
-            const state = this.contextData.cardState;
-            if (state.text) {
-              this.textFilter = state.text;
-            }
-            if (state.classifications) {
-              this.allClassifications = selectFromState(
-                this.allClassifications,
-                state.classifications
-              );
-            }
-            if (state.sort) {
-              this.selectedSort = state.sort;
-            }
-            if (state.tags) {
-              this.allTags = selectFromState(this.allTags, state.tags);
-            }
-            if (state.selectedGroup) {
-              this.selectedGroup = state.selectedGroup;
-            }
-          }
-
-          this.loading = false;
-        });
+      // this.loading = true;
+      // const groupId = find(this.groups, { acronym })?.id;
+      // axios
+      //   .get(`${this.slugs.urls.analize}/pg/getIntraDisunionOrg/${groupId}`)
+      //   .then((response) => {
+      //     if (this.allTags.length === 0) {
+      //       this.allTags = response.data.all_tags.map((tag) => ({
+      //         id: tag,
+      //         label: tag,
+      //         selected: false,
+      //       }));
+      //     }
+      //     // TODO: this.voteData = response.data.results;
+      //     this.voteData = response.data.results || response.data[acronym];
+      //     this.allClassifications = [];
+      //     // eslint-disable-next-line no-restricted-syntax, guard-for-in
+      //     for (const classificationKey in response.data.classifications) {
+      //       this.allClassifications.push({
+      //         id: classificationKey,
+      //         label: this.$t(
+      //           `vote_types.${response.data.classifications[classificationKey]}`
+      //         ),
+      //         selected: false,
+      //       });
+      //     }
+      //     const selectFromState = (items, stateItemIds) =>
+      //       items.map((item) =>
+      //         assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
+      //       );
+      //     if (this.cardState) {
+      //       const state = this.cardState;
+      //       if (state.text) {
+      //         this.textFilter = state.text;
+      //       }
+      //       if (state.classifications) {
+      //         this.allClassifications = selectFromState(
+      //           this.allClassifications,
+      //           state.classifications
+      //         );
+      //       }
+      //       if (state.sort) {
+      //         this.selectedSort = state.sort;
+      //       }
+      //       if (state.tags) {
+      //         this.allTags = selectFromState(this.allTags, state.tags);
+      //       }
+      //       if (state.selectedGroup) {
+      //         this.selectedGroup = state.selectedGroup;
+      //       }
+      //     }
+      //     this.loading = false;
+      //   });
     },
     setVisibleTooltip(target) {
       const elem = document.querySelector(`[data-target="${target}"]`);
@@ -519,7 +513,7 @@ export default {
     }
 
     .text-filter-input {
-      background-image: url("#{get-parlassets-url()}/icons/search.svg");
+      background-image: url('#{get-parlassets-url()}/icons/search.svg');
       background-size: 24px 24px;
       background-repeat: no-repeat;
       background-position: right 9px center;
@@ -558,8 +552,8 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: $white url("#{get-parlassets-url()}/img/loader.gif")
-        no-repeat center center;
+      background: $white url('#{get-parlassets-url()}/img/loader.gif') no-repeat
+        center center;
       content: '';
       height: 100%;
       position: absolute;
