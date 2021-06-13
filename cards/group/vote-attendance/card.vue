@@ -1,7 +1,7 @@
 <template>
   <score-avg-max
-    :party="$options.contextData.cardData.organization"
-    :results="$options.contextData.cardData.votes"
+    :party="$options.contextData.cardData.data?.group"
+    :results="$options.contextData.cardData.data?.results"
     type="party"
   />
 </template>

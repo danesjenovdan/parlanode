@@ -151,7 +151,9 @@ export default {
   },
   computed: {
     getName() {
-      return this.type === 'person' ? this.person.name : this.party.acronym;
+      return this.type === 'person'
+        ? this.person.name
+        : this.party.acronym || this.party.name || 'N/A';
     },
     headerConfig() {
       if (this.type === 'person') {

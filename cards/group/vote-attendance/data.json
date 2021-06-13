@@ -1,42 +1,48 @@
 {
-  "organization": {
-    "name": "Slovenska demokratska stranka",
-    "classification": "pg",
-    "acronym": "SDS",
-    "has_voters": false,
-    "is_coalition": true,
-    "id": 2
-  },
-  "created_at": "04.03.2021",
-  "created_for": "04.03.2021",
-  "votes": {
-    "maxPG": [
-      {
-        "name": "Demokrati\u010dna stranka upokojencev Slovenije",
-        "classification": "pg",
-        "acronym": "DeSUS",
-        "has_voters": false,
-        "is_coalition": true,
-        "id": 9
+  "data": {
+    "results": {
+      "score": 75.0,
+      "average": 74.3571428571429,
+      "maximum": {
+        "score": 75.0,
+        "groups": [
+          {
+            "name": "Nova Slovenija – Krščanski demokrati ",
+            "acronym": "",
+            "slug": "16-nova-slovenija-krscanski-demokrati"
+          },
+          {
+            "name": "Svetniški klub samostojnih svetnikov ",
+            "acronym": "",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov"
+          },
+          {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "19-socialni-demokrati"
+          },
+          {
+            "name": "Levica ",
+            "acronym": "",
+            "slug": "20-levica"
+          },
+          {
+            "name": "Slovenska demokratska stranka ",
+            "acronym": "",
+            "slug": "21-slovenska-demokratska-stranka"
+          },
+          {
+            "name": "Lista Zorana Jankovića ",
+            "acronym": "",
+            "slug": "22-lista-zorana-jankovica"
+          }
+        ]
       }
-    ],
-    "organization_value": 93.3453111531028,
-    "average": 89.6639247373639,
-    "maximum": 97.2080088987764
-  },
-  "sessions": {
-    "maxPG": [
-      {
-        "name": "Stranka modernega centra",
-        "classification": "pg",
-        "acronym": "SMC",
-        "has_voters": false,
-        "is_coalition": true,
-        "id": 5
-      }
-    ],
-    "organization_value": 93.4506137322593,
-    "average": 90.9101679507048,
-    "maximum": 96.71875
+    },
+    "group": {
+      "name": "Nova Slovenija – Krščanski demokrati ",
+      "acronym": "",
+      "slug": "16-nova-slovenija-krscanski-demokrati"
+    }
   }
 }
