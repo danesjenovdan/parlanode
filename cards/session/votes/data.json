@@ -1,202 +1,175 @@
 {
-  "created_for": "12.02.2021",
-  "classifications": { "1": "agenda", "8": "naming", "14": "other" },
-  "tags": [
-    "Odbor za finance",
-    "Odbor za infrastrukturo, okolje in prostor",
-    "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
-    "Komisija za peticije, \u010dlovekove pravice in enake mo\u017enosti",
-    "Mandatno-volilna komisija",
-    "Kolegij predsednika Dr\u017eavnega zbora",
-    "Komisija za nadzor obve\u0161\u010devalnih in varnostnih slu\u017eb",
-    "Odbor za zadeve Evropske unije",
-    "Odbor za izobra\u017eevanje, znanost, \u0161port in mladino",
-    "Komisija za poslovnik",
-    "Skupni odbor",
-    "Kvorum",
-    "Eviden\u010dni sklep",
-    "Vsi odbori",
-    "Odbor za zunanjo politiko",
-    "Odbor za pravosodje",
-    "Odbor za gospodarstvo",
-    "Komisija za peticije ter za \u010dlovekove pravice in enake mo\u017enosti",
-    "Odbor za finance in monetarno politiko",
-    "Odbor za obrambo",
-    "Odbor za kmetijstvo, gozdarstvo in prehrano",
-    "Odbor za zdravstvo",
-    "imenovanja",
-    "fb",
-    "social",
-    "tw",
-    "Proceduralna glasovanja",
-    "Odbor za delo, dru\u017eino, socialne zadeve in invalide",
-    "Poslanska vpra\u0161anja",
-    "Komisija za nadzor javnih financ",
-    "Interpelacija",
-    "Odbor za kulturo",
-    "Preiskovalna komisija o ugotavljanju odgovornosti nosilcev javnih funkcij",
-    "Preiskovalna komisija o ugovljanju zlorab in negospodarnega ravnanja v DUTB",
-    "Ustavna obto\u017eba"
-  ],
-  "created_at": "16.02.2021",
-  "results": [
-    {
-      "session": {
-        "name": "61. izredna seja",
-        "orgs": [
-          {
-            "name": "Dr\u017eavni zbor",
-            "classification": "dz",
-            "acronym": "DZ",
-            "has_voters": true,
-            "is_coalition": false,
-            "id": 1
-          }
-        ],
-        "date": "12. 2. 2021",
-        "org": {
-          "name": "Dr\u017eavni zbor",
-          "classification": "dz",
-          "acronym": "DZ",
-          "has_voters": true,
-          "is_coalition": false,
-          "id": 1
+    "results": [
+        {
+            "votes_abstain": 2,
+            "votes_absent": 9,
+            "votes_for": 33,
+            "votes_against": 0,
+            "passed": true,
+            "session_id": 1,
+            "id": 1,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 6. seje Mestnega sveta Mestne občine Ljubljana z dne 8. julija 2019."
         },
-        "date_ts": "2021-02-12T01:00:00",
-        "updated_at": "16. 2. 2021",
-        "in_review": false,
-        "id": 1333
-      },
-      "results": {
-        "abstain": 0,
-        "classification": "1",
-        "tags": [],
-        "text": "Dnevni red v celoti",
-        "is_outlier": false,
-        "agenda_items": [],
-        "result": true,
-        "absent": 14,
-        "for": 76,
-        "against": 0,
-        "has_votes": true,
-        "motion_id": 6219,
-        "has_outliers": false,
-        "epa": null
-      }
-    },
-    {
-      "session": {
-        "name": "61. izredna seja",
-        "orgs": [
-          {
-            "name": "Dr\u017eavni zbor",
-            "classification": "dz",
-            "acronym": "DZ",
-            "has_voters": true,
-            "is_coalition": false,
-            "id": 1
-          }
-        ],
-        "date": "12. 2. 2021",
-        "org": {
-          "name": "Dr\u017eavni zbor",
-          "classification": "dz",
-          "acronym": "DZ",
-          "has_voters": true,
-          "is_coalition": false,
-          "id": 1
+        {
+            "votes_abstain": 7,
+            "votes_absent": 7,
+            "votes_for": 30,
+            "votes_against": 0,
+            "passed": false,
+            "session_id": 1,
+            "id": 2,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "I. Mini PIŠLJAR preneha mandat članice Odbora za gospodarske dejavnosti, turizem in kmetijstvo.  II. V Odbor za gospodarske dejavnosti, turizem in kmetijstvo s e i m e n u j e:  Janez STARIHA.  Mandat imenovanega je vezan na mandat Mestnega sveta Mestne občine Ljubljana."
         },
-        "date_ts": "2021-02-12T01:00:00",
-        "updated_at": "16. 2. 2021",
-        "in_review": false,
-        "id": 1333
-      },
-      "results": {
-        "abstain": 2,
-        "classification": "8",
-        "tags": [],
-        "text": "Predlog za izvolitev novega predsednika Vlade Republike Slovenije - Glasovanje o sestavi komisije za tajno glasovanje",
-        "is_outlier": false,
-        "agenda_items": [],
-        "result": true,
-        "absent": 16,
-        "for": 72,
-        "against": 0,
-        "has_votes": true,
-        "motion_id": 6218,
-        "has_outliers": false,
-        "epa": "1658-VIII"
-      }
-    },
-    {
-      "session": {
-        "name": "61. izredna seja",
-        "orgs": [
-          {
-            "name": "Dr\u017eavni zbor",
-            "classification": "dz",
-            "acronym": "DZ",
-            "has_voters": true,
-            "is_coalition": false,
-            "id": 1
-          }
-        ],
-        "date": "12. 2. 2021",
-        "org": {
-          "name": "Dr\u017eavni zbor",
-          "classification": "dz",
-          "acronym": "DZ",
-          "has_voters": true,
-          "is_coalition": false,
-          "id": 1
+        {
+            "votes_abstain": 0,
+            "votes_absent": 6,
+            "votes_for": 37,
+            "votes_against": 1,
+            "passed": null,
+            "session_id": 1,
+            "id": 3,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "I. V Svet Svetovalnega centra za otroke, mladostnike in starše Ljubljana s e i m e n u j e j o :  -     Darja BUČAR -     Darja GOLOB -     Milan JAKOPOVIČ  II. Mandat imenovanih traja štiri leta."
         },
-        "date_ts": "2021-02-12T01:00:00",
-        "updated_at": "16. 2. 2021",
-        "in_review": false,
-        "id": 1333
-      },
-      "results": {
-        "abstain": 2,
-        "classification": "14",
-        "tags": [],
-        "text": "Sklep o razre\u0161itvi podpredsednika in imenovanju podpredsednice delovnega telesa Dr\u017eavnega zbora - Glasovanje o aktu v celoti",
-        "is_outlier": false,
-        "agenda_items": [],
-        "result": true,
-        "absent": 18,
-        "for": 70,
-        "against": 0,
-        "has_votes": true,
-        "motion_id": 6217,
-        "has_outliers": false,
-        "epa": "1657-VIII"
-      }
-    }
-  ],
-  "session": {
-    "name": "61. izredna seja",
-    "orgs": [
-      {
-        "name": "Dr\u017eavni zbor",
-        "classification": "dz",
-        "acronym": "DZ",
-        "has_voters": true,
-        "is_coalition": false,
-        "id": 1
-      }
+        {
+            "votes_abstain": 0,
+            "votes_absent": 6,
+            "votes_for": 38,
+            "votes_against": 0,
+            "passed": null,
+            "session_id": 1,
+            "id": 4,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Suzani ANTIČ se da pozitivno mnenje h kandidaturi za ravnateljico Vrtca Trnovo."
+        },
+        {
+            "votes_abstain": 0,
+            "votes_absent": 6,
+            "votes_for": 38,
+            "votes_against": 0,
+            "passed": null,
+            "session_id": 1,
+            "id": 5,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Bredi BOŽNIK se da pozitivno mnenje h kandidaturi za direktorico javnega zavoda Varstveno delovni center Tončke Hočevar."
+        },
+        {
+            "votes_abstain": 6,
+            "votes_absent": 5,
+            "votes_for": 24,
+            "votes_against": 9,
+            "passed": null,
+            "session_id": 1,
+            "id": 6,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme Poročilo o izvrševanju proračuna Mestne občine Ljubljana za leto 2019 od 1. 1. do 30. 6. 2019."
+        },
+        {
+            "votes_abstain": 9,
+            "votes_absent": 8,
+            "votes_for": 27,
+            "votes_against": 0,
+            "passed": null,
+            "session_id": 1,
+            "id": 7,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o odvzemu statusa grajenega javnega dobra – na nepremičninah ID znak: parcela 1732 200/241, parcela 1722 1707/252, parcela 1721 300/2, parcela 2636 2226/6, parcela 1753 756/2, parcela 2636 598/4, parcela 2636 598/3, parcela 2636 598/7, parcela 2636 2226/5, parcela 1732 200/173, parcela 1732 200/288 in parcela 1732 200/292."
+        },
+        {
+            "votes_abstain": 2,
+            "votes_absent": 3,
+            "votes_for": 39,
+            "votes_against": 0,
+            "passed": null,
+            "session_id": 1,
+            "id": 8,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odredbe o dopolnitvi Odredbe o določitvi javnih parkirnih površin, kjer se plačuje parkirnina."
+        },
+        {
+            "votes_abstain": 5,
+            "votes_absent": 5,
+            "votes_for": 34,
+            "votes_against": 0,
+            "passed": null,
+            "session_id": 1,
+            "id": 9,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku."
+        },
+        {
+            "votes_abstain": 0,
+            "votes_absent": 11,
+            "votes_for": 33,
+            "votes_against": 0,
+            "passed": null,
+            "session_id": 1,
+            "id": 10,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana."
+        },
+        {
+            "votes_abstain": 2,
+            "votes_absent": 4,
+            "votes_for": 38,
+            "votes_against": 0,
+            "passed": null,
+            "session_id": 1,
+            "id": 11,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o zmanjšanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana."
+        },
+        {
+            "votes_abstain": 1,
+            "votes_absent": 4,
+            "votes_for": 35,
+            "votes_against": 4,
+            "passed": null,
+            "session_id": 1,
+            "id": 12,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_votes": true,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne pogodbe za nezazidano stavbno zemljišče parc. št. 3274/8 k. o. 1725 Ajdovščina in parc. št. 2220/5 k. o. 2636 Bežigrad."
+        }
     ],
-    "date": "12. 2. 2021",
-    "org": {
-      "name": "Dr\u017eavni zbor",
-      "classification": "dz",
-      "acronym": "DZ",
-      "has_voters": true,
-      "is_coalition": false,
-      "id": 1
-    },
-    "date_ts": "2021-02-12T01:00:00",
-    "updated_at": "16. 2. 2021",
-    "in_review": false,
-    "id": 1333
-  }
+    "session": {
+        "name": "7. seja Mestnega sveta MOL",
+        "id": 1,
+        "start_time": "2019-09-23T15:30:00",
+        "end_time": null,
+        "organizations": [
+            {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+            }
+        ],
+        "classification": null,
+        "in_review": false
+    }
 }

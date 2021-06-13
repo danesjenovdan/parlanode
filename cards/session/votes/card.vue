@@ -1,6 +1,6 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
-    <seznam-glasovanj
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+    <vote-list
       :data="votes"
       :filters="filters"
       :virtualize-remain="5"
@@ -16,12 +16,12 @@ import links from '@/_mixins/links.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
 import { otherVotingsTitle } from '@/_mixins/titles.js';
-import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
+import VoteList from '@/_components/VoteList.vue';
 
 export default {
   name: 'CardSessionVotes',
   components: {
-    SeznamGlasovanj,
+    VoteList,
   },
   mixins: [common, sessionHeader, sessionOgImage, otherVotingsTitle, links],
   cardInfo: {
@@ -47,7 +47,7 @@ export default {
   },
   computed: {
     votes() {
-      let votes = this.data.results.map((v) => v.results);
+      let votes = this.data.results;
       if (
         this.$options.contextData.cardState &&
         this.$options.contextData.cardState.onlyOther
@@ -57,8 +57,8 @@ export default {
       return {
         votes,
         session: this.data.session,
-        tags: this.data.tags,
-        classifications: this.data.classifications,
+        tags: [], //this.data.tags,
+        classifications: [], //this.data.classifications,
       };
     },
   },
