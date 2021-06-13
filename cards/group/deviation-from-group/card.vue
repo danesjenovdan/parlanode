@@ -1,8 +1,6 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
-    <person-list v-if="people.length > 2" :people="people" />
-    <!-- TODO: empty state should take care of this -->
-    <empty-circle v-else :text="$t('card.empty-state-text')" />
+    <person-list :people="people" />
   </card-wrapper>
 </template>
 
@@ -13,13 +11,11 @@ import { partyTitle } from '@/_mixins/titles.js';
 import { partyHeader } from '@/_mixins/altHeaders.js';
 import { partyOgImage } from '@/_mixins/ogImages.js';
 import PersonList from '@/_components/PersonList.vue';
-import EmptyCircle from '@/_components/EmptyCircle.vue';
 
 export default {
   name: 'CardGroupDeviationFromGroup',
   components: {
     PersonList,
-    EmptyCircle,
   },
   mixins: [common, partyVotes, partyHeader, partyOgImage, partyTitle],
   data() {
@@ -37,9 +33,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-:deep(.circle) {
-  padding-top: 130px !important;
-}
-</style>

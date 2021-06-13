@@ -17,10 +17,10 @@
                 :href="getPartyLink(person.group)"
                 class="funblue-light-hover"
               >
-                {{ person.group?.acronym }}
+                {{ person.group?.acronym || person.group?.name || 'N/A' }}
               </a>
               <span v-else>
-                {{ person.group?.acronym }}
+                {{ person.group?.acronym || person.group?.name || 'N/A' }}
               </span>
             </template>
           </div>
