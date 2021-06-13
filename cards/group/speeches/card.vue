@@ -1,5 +1,5 @@
 <template>
-  <govori :context-data="$options.contextData" type="party" />
+  <govori type="party" />
 </template>
 
 <script>

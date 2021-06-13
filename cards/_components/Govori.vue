@@ -8,16 +8,14 @@
           @update:modelValue="searchSpeakings(true)"
         />
       </div>
-      <!-- ONLY FOR PARTIES, DISPLAY MPs -->
-      <div v-if="type === 'party'" class="filter month-dropdown">
+      <div v-if="type === 'party' && allPeople.length" class="filter">
         <div v-t="'mps'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allPeople"
           @update:modelValue="searchSpeakings"
         />
       </div>
-      <!-- ONLY FOR PARTIES, DISPLAY MPs -->
-      <div class="filter month-dropdown">
+      <!-- <div class="filter">
         <div v-t="'time-period'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allMonths"
@@ -25,8 +23,8 @@
           @update:modelValue="searchSpeakings"
           @clear="searchSpeakings"
         />
-      </div>
-      <div v-if="allWorkingBodies.length" class="filter month-dropdown">
+      </div> -->
+      <div v-if="allWorkingBodies.length" class="filter">
         <div v-t="'session-type'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allWorkingBodies"
@@ -47,11 +45,13 @@
         >
           <div v-for="(speakingDay, key) in groupSpeakingDays" :key="key">
             <div class="date">
-              {{ speakingDay[0].formattedDate }},
-              {{ speakingDay[0].session.name }},
+              {{ formatSpeechDate(speakingDay[0]) }},
+              {{ speakingDay[0].session?.name }},
               {{
                 ' ' +
-                speakingDay[0].session.orgs.map((org) => org.name).join(', ')
+                speakingDay[0].session?.organizations
+                  ?.map((org) => org.name)
+                  .join(', ')
               }}
             </div>
             <ul class="speaks__list">
@@ -64,7 +64,7 @@
             </ul>
           </div>
           <div
-            v-if="speakingDays.length === 0"
+            v-if="!speeches.length"
             v-t="'no-results'"
             class="empty-dataset"
           ></div>
@@ -79,6 +79,7 @@
 
 <script>
 import axios from 'axios';
+import { groupBy } from 'lodash-es';
 import Govor from '@/_components/Govor.vue';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
@@ -105,10 +106,6 @@ export default {
   },
   mixins: [common, generateMonths],
   props: {
-    contextData: {
-      type: Object,
-      required: true,
-    },
     type: {
       type: String,
       required: true,
@@ -116,21 +113,18 @@ export default {
     },
   },
   data() {
-    const state = this.contextData.cardState;
+    const state = this.cardState;
 
     const allPeople = [];
 
     const { months } = getD3Locale(this.$i18n.locale);
-    const start = this.contextData?.cardData?.facet_counts?.facet_ranges
-      ?.start_time?.start;
+    const start = this.cardData.facet_counts?.facet_ranges?.start_time?.start;
     const allMonths = this.generateMonths(months, start);
     allMonths.forEach((month) => {
       month.selected = (state.months || []).indexOf(month.id) !== -1;
     });
 
-    const allWorkingBodies = (
-      this.contextData?.cardData?.organizations || []
-    ).map((org) => ({
+    const allWorkingBodies = (this.cardData.organizations || []).map((org) => ({
       label: org.name,
       id: org.id,
       selected: (state.wb || []).indexOf(org.id) !== -1,
@@ -148,7 +142,7 @@ export default {
         lockLoading: false,
         shouldShadow: false,
       },
-      speakingDays: this.contextData?.cardData?.response?.docs || [],
+      speeches: this.cardData.data?.results || [],
       textFilter,
       allMonths,
       allWorkingBodies,
@@ -160,9 +154,9 @@ export default {
       const state = {};
 
       if (this.type === 'person') {
-        state.people = this.contextData.cardData.person.id;
+        state.people = this.cardData.person.id;
       } else if (this.type === 'party') {
-        state.parties = this.contextData.cardData.party.id;
+        state.parties = this.cardData.party.id;
         state.people = this.selectedPeople.map((p) => p.id).join(',');
       }
 
@@ -203,12 +197,11 @@ export default {
       return this.allPeople.filter((person) => person.selected);
     },
     groupSpeakingDays() {
-      return this.speakingDays.reduce((r, a) => {
-        const key = `${a.start_time}__${a.session_id}`;
-        r[key] = r[key] || [];
-        r[key].push({ ...a, formattedDate: dateFormatter(a.start_time) });
-        return r;
-      }, Object.create(null));
+      return groupBy(this.speeches, (o) => {
+        const dateTime = o.start_time || o.session?.start_time || '';
+        const date = dateTime.split('T')[0];
+        return `${date}__${o.session?.id}`;
+      });
     },
     headerConfig() {
       if (this.type === 'person') {
@@ -229,63 +222,60 @@ export default {
     );
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
 
-    if (this.type === 'party') {
-      axios
-        .get(
-          `${this.slugs.urls.analize}/pg/getMPsOfPG/${this.contextData.cardData.party.id}`
-        )
-        .then((response) => {
-          this.allPeople = response.data.results.map((person) => ({
-            id: person.id,
-            name: person.name,
-            label: person.name,
-            selected:
-              (this.contextData?.cardState?.people || []).indexOf(person.id) !==
-              -1,
-          }));
-        });
-    }
+    // if (this.type === 'party') {
+    //   axios
+    //     .get(
+    //       `${this.slugs.urls.analize}/pg/getMPsOfPG/${this.cardData.party.id}`
+    //     )
+    //     .then((response) => {
+    //       this.allPeople = response.data.results.map((person) => ({
+    //         id: person.id,
+    //         name: person.name,
+    //         label: person.name,
+    //         selected: (this.cardState.people || []).indexOf(person.id) !== -1,
+    //       }));
+    //     });
+    // }
   },
   mounted() {
     // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
   },
   methods: {
+    formatSpeechDate(speech) {
+      return dateFormatter(speech.start_time || speech.session?.start_time);
+    },
     searchSpeakings(delay = false) {
-      const waitTime = delay ? 750 : 0;
-
-      this.card.lockLoading = true;
-      setTimeout(() => {
-        if (!this.card.isLoading) {
-          this.card.currentPage = 0;
-          this.card.isLoading = true;
-          axios.get(this.searchUrl).then((response) => {
-            this.speakingDays = response.data.response.docs;
-            this.card.isLoading = false;
-          });
-        }
-        this.card.lockLoading = false;
-      }, waitTime);
+      // const waitTime = delay ? 750 : 0;
+      // this.card.lockLoading = true;
+      // setTimeout(() => {
+      //   if (!this.card.isLoading) {
+      //     this.card.currentPage = 0;
+      //     this.card.isLoading = true;
+      //     axios.get(this.searchUrl).then((response) => {
+      //       this.speakingDays = response.data.response.docs;
+      //       this.card.isLoading = false;
+      //     });
+      //   }
+      //   this.card.lockLoading = false;
+      // }, waitTime);
     },
     loadMore() {
-      if (this.card.lockLoading || this.card.isLoading) {
-        return;
-      }
-      this.card.isLoading = true;
-      this.card.currentPage += 1;
-
-      axios.get(this.searchUrl).then((response) => {
-        this.speakingDays = this.speakingDays.concat(
-          response.data.response.docs
-        );
-
-        this.card.isLoading = false;
-
-        // end infinite scrolling
-        if (response.data.response.start >= response.data.response.numFound) {
-          // @todo decide what to show when no more data
-          this.card.lockLoading = true;
-        }
-      });
+      // if (this.card.lockLoading || this.card.isLoading) {
+      //   return;
+      // }
+      // this.card.isLoading = true;
+      // this.card.currentPage += 1;
+      // axios.get(this.searchUrl).then((response) => {
+      //   this.speakingDays = this.speakingDays.concat(
+      //     response.data.response.docs
+      //   );
+      //   this.card.isLoading = false;
+      //   // end infinite scrolling
+      //   if (response.data.response.start >= response.data.response.numFound) {
+      //     // @todo decide what to show when no more data
+      //     this.card.lockLoading = true;
+      //   }
+      // });
     },
     checkScrollPosition() {
       if (!this.card.lockLoading) {
@@ -322,6 +312,15 @@ export default {
     .filter-label {
       height: 20px;
       margin-top: 6px;
+    }
+  }
+
+  .text-filter {
+    flex-basis: 100%;
+
+    @include respond-to(desktop) {
+      flex-basis: 50%;
+      flex-grow: 0;
     }
   }
 
