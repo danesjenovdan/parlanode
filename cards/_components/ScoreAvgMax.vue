@@ -32,7 +32,7 @@
               >
                 <span class="sr-only">{{ getScore }}%</span>
                 <div class="progress_number">
-                  {{ getScore.toFixed(precision).replace('.', ',') }}
+                  {{ formatNumberWithPrecision(getScore) }}
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@
               >
                 <span class="sr-only">{{ results.average }}%</span>
                 <div class="progress_number">
-                  {{ results.average.toFixed(precision).replace('.', ',') }}
+                  {{ formatNumberWithPrecision(results.average) }}
                 </div>
               </div>
             </div>
@@ -88,7 +88,7 @@
           </div>
           <div class="other_poslanec">
             <div class="progress_number">
-              {{ getMaxValue.toFixed(precision).replace('.', ',') }}
+              {{ formatNumberWithPrecision(getMaxValue) }}
             </div>
           </div>
         </div>
@@ -167,7 +167,6 @@ export default {
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
-
     getScore() {
       return this.results?.score ?? 0;
     },
@@ -201,6 +200,13 @@ export default {
         return { width: `${(this.getScore / this.getMaxValue) * 100}%` };
       }
       return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
+    },
+    formatNumberWithPrecision(number) {
+      const min = 10 ** -this.precision;
+      if (number > 0 && number < min) {
+        return `< ${min.toFixed(this.precision).replace('.', ',')}`;
+      }
+      return number.toFixed(this.precision).replace('.', ',');
     },
   },
 };
@@ -241,5 +247,7 @@ export default {
   transform: translateX(100%);
   color: $font-default;
   line-height: 30px;
+  min-width: 70px;
+  text-align: left;
 }
 </style>

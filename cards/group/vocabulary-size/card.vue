@@ -3,6 +3,7 @@
     :party="$options.contextData.cardData.data?.group"
     :results="$options.contextData.cardData.data?.results"
     type="party"
+    :precision="2"
     context="speeches"
   />
 </template>
