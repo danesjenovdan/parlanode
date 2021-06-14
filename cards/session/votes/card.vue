@@ -28,7 +28,7 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const state = this.$options.contextData.cardState;
+    const state = this.cardState;
     const text = state && state.text ? state.text : '';
     const tags = state && state.tags ? state.tags : [];
     const classifications =
@@ -36,7 +36,6 @@ export default {
     const results = state && state.results ? state.results : [];
 
     return {
-      data: this.$options.contextData.cardData,
       filters: {
         text,
         tags,
@@ -48,19 +47,16 @@ export default {
   computed: {
     votes() {
       let votes;
-      if (
-        this.$options.contextData.cardState &&
-        this.$options.contextData.cardState.onlyOther
-      ) {
+      if (this.cardState.onlyOther) {
         votes = votes.filter((vote) => !vote.epa);
       } else {
-        votes = this.data.results;
+        votes = this.cardData.data?.results;
       }
       return {
         votes,
-        session: this.data.session,
-        tags: [], //this.data.tags,
-        classifications: [], //this.data.classifications,
+        session: this.cardData.data?.session,
+        tags: [], // this.data.tags,
+        classifications: [], // this.data.classifications,
       };
     },
   },
@@ -79,12 +75,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep #votingCard {
+:deep(#votingCard) {
   height: auto;
   min-height: 500px;
 }
 
-::v-deep .filter.tag-dropdown {
+:deep(.filter.tag-dropdown) {
   display: none;
 }
 </style>

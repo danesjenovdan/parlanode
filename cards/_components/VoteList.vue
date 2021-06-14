@@ -8,7 +8,7 @@
           :color="result.color"
           :selected="selectedResults.indexOf(result.id) > -1"
           :small-text="result.label"
-          @click.native="toggleResult(result.id)"
+          @click="toggleResult(result.id)"
         />
       </div>
       <div class="filter text-filter">
@@ -20,7 +20,7 @@
         <p-search-dropdown v-model="allTags" />
       </div> -->
       <div v-if="false" class="filter tag-dropdown">
-      <!-- <div v-if="allClassifications.length > 1" class="filter tag-dropdown"> -->
+        <!-- <div v-if="allClassifications.length > 1" class="filter tag-dropdown"> -->
         <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown v-model="allClassifications" />
       </div>
@@ -191,8 +191,8 @@ export default {
       default: 10,
     },
   },
+  emits: ['filters-changed'],
   data() {
-    console.log(this.votes);
     const allResults = [
       {
         id: true,
@@ -263,7 +263,7 @@ export default {
         .map((result) => result.id);
     },
     processedVotes() {
-      return this.processVotes(this.votesAndStuff.votes)
+      return this.processVotes(this.votesAndStuff?.votes || []);
     },
   },
   watch: {
@@ -318,7 +318,7 @@ export default {
             e.session_id || (e.session && e.session.id) || this.data.session.id,
           vote_id: e.motion_id,
         });
-        e.passedClass = 'passed '
+        e.passedClass = 'passed ';
         if (e.passed === true) {
           e.passedClass += 'aye';
         } else if (e.passed === false) {

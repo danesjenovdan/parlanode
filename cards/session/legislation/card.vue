@@ -114,7 +114,6 @@ export default {
     const tabs = legislationTabs;
     return {
       tabs,
-      data: this.cardData.results,
       filters: tabs.map((e) => ({ id: e.title, label: e.title })),
       currentFilter: state.type || (state.generator ? tabs[0].title : null),
       currentSort: 'updated',
@@ -233,7 +232,7 @@ export default {
         );
       };
 
-      const sortedAndFilteredLegislation = this.data
+      const sortedAndFilteredLegislation = (this.cardData.data?.results || [])
         .filter(filterLegislation)
         .sort((A, B) => {
           let a;
