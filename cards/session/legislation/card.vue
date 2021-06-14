@@ -59,6 +59,7 @@
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { sessionHeader } from '@/_mixins/altHeaders.js';
 import PSearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';

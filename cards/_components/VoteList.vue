@@ -15,11 +15,12 @@
         <div v-t="'title-search'" class="filter-label"></div>
         <input v-model="textFilter" class="text-filter-input" type="text" />
       </div>
-      <div class="filter tag-dropdown">
+      <!-- <div class="filter tag-dropdown">
         <div v-t="'working-body'" class="filter-label"></div>
         <p-search-dropdown v-model="allTags" />
-      </div>
-      <div v-if="allClassifications.length > 1" class="filter tag-dropdown">
+      </div> -->
+      <div v-if="false" class="filter tag-dropdown">
+      <!-- <div v-if="allClassifications.length > 1" class="filter tag-dropdown"> -->
         <div v-t="'vote-types'" class="filter-label"></div>
         <p-search-dropdown v-model="allClassifications" />
       </div>
@@ -169,7 +170,7 @@ export default {
   },
   mixins: [links],
   props: {
-    data: {
+    votesAndStuff: {
       required: true,
       type: Object,
     },
@@ -191,8 +192,7 @@ export default {
     },
   },
   data() {
-    const votes = this.processVotes();
-
+    console.log(this.votes);
     const allResults = [
       {
         id: true,
@@ -213,17 +213,16 @@ export default {
       });
     }
 
-    const allTags = this.processTags();
-    const allClassifications = this.processClassifications();
+    // const allTags = this.processTags();
+    // const allClassifications = this.processClassifications();
 
     const textFilter =
       this.filters && this.filters.text ? this.filters.text : '';
 
     return {
       textFilter,
-      votes,
-      allTags,
-      allClassifications,
+      // allTags,
+      // allClassifications,
       allResults,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
@@ -248,26 +247,26 @@ export default {
           this.selectedResults.indexOf(vote.passed) > -1;
         return textMatch && tagMatch && classificationMatch && resultMatch;
       };
-      return this.votes.filter(filterVotes);
+      return this.processedVotes.filter(filterVotes);
     },
     selectedTags() {
-      return this.allTags.filter((tag) => tag.selected).map((tag) => tag.id);
+      return [];
+      // return this.allTags.filter((tag) => tag.selected).map((tag) => tag.id);
     },
     selectedClassifications() {
-      return this.allClassifications.filter((c) => c.selected).map((c) => c.id);
+      return [];
+      // return this.allClassifications.filter((c) => c.selected).map((c) => c.id);
     },
     selectedResults() {
       return this.allResults
         .filter((result) => result.selected)
         .map((result) => result.id);
     },
+    processedVotes() {
+      return this.processVotes(this.votesAndStuff.votes)
+    },
   },
   watch: {
-    data() {
-      this.votes = this.processVotes();
-      this.allTags = this.processTags();
-      this.allClassifications = this.processClassifications();
-    },
     textFilter() {
       this.emitFiltersChanged();
     },
@@ -282,8 +281,8 @@ export default {
     },
   },
   methods: {
-    processVotes() {
-      const votes = this.data.votes.map((e) => {
+    processVotes(inputVotes) {
+      const votes = inputVotes.map((e) => {
         if (!e) {
           e = {};
         }

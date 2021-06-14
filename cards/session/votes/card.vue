@@ -1,7 +1,7 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <vote-list
-      :data="votes"
+      :votes-and-stuff="votes"
       :filters="filters"
       :virtualize-remain="5"
       virtualize
@@ -15,7 +15,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
-import { otherVotingsTitle } from '@/_mixins/titles.js';
+// import { otherVotingsTitle } from '@/_mixins/titles.js';
 import VoteList from '@/_components/VoteList.vue';
 
 export default {
@@ -23,7 +23,7 @@ export default {
   components: {
     VoteList,
   },
-  mixins: [common, sessionHeader, sessionOgImage, otherVotingsTitle, links],
+  mixins: [common, sessionHeader, sessionOgImage, links],
   cardInfo: {
     doubleWidth: true,
   },
@@ -47,12 +47,14 @@ export default {
   },
   computed: {
     votes() {
-      let votes = this.data.results;
+      let votes;
       if (
         this.$options.contextData.cardState &&
         this.$options.contextData.cardState.onlyOther
       ) {
         votes = votes.filter((vote) => !vote.epa);
+      } else {
+        votes = this.data.results;
       }
       return {
         votes,
