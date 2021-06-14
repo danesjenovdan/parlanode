@@ -362,7 +362,7 @@ analysis-texts--party:
       sjednici. Zbroj svih prisutnih zastupnica kluba na sjednicama HS-a
       podijeli se brojem svih zastupnica u klubu, a dobiveni rezultat podijeli
       se brojem sjednica i normalizira (min 1 - max 100).
-  presence_votes:
+  vote_attendance:
     label: Prisutnost na glasanjima
     titleSuffix: ' prema rezultatima analize prisutnosti na glasanjima'
     explanation: >-

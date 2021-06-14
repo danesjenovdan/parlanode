@@ -366,7 +366,7 @@ analysis-texts--party:
       obecni. Suma wszystkich uczestników jest podzielona przez liczbę
       przedstawicieli w klubie parlamentarnym, wynik ten jest następnie dzielony
       przez liczbę posiedzeń i normalizowany (min. 1 - maks. 100).
-  presence_votes:
+  vote_attendance:
     label: Obecność na głosowaniach
     titleSuffix: ' zgodnie z wynikami analizy obecności na głosowaniach Sejmu RP'
     explanation: >-

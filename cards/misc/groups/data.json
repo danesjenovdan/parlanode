@@ -4,35 +4,95 @@
   "data": {
     "results": [
       {
-        "name": "Lista Zorana Jankovića ",
+        "name": "Nova Slovenija – Krščanski demokrati ",
         "acronym": "",
-        "slug": "12-lista-zorana-jankovica"
+        "slug": "16-nova-slovenija-krscanski-demokrati",
+        "results": {
+          "seat_count": 2,
+          "intra_disunion": null,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.00253937721290496,
+          "number_of_questions": 16.0,
+          "vote_attendance": 75.0
+        }
       },
       {
-        "name": "",
+        "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
         "acronym": "",
-        "slug": "11-slovenska-demokratska-stranka"
+        "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev",
+        "results": {
+          "seat_count": 1,
+          "intra_disunion": null,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.106492104197598,
+          "number_of_questions": 44.0,
+          "vote_attendance": 70.5
+        }
       },
       {
         "name": "Svetniški klub samostojnih svetnikov ",
-        "acronym": "SKSS",
-        "slug": ""
-      },
-      {
-        "name": "",
         "acronym": "",
-        "slug": ""
-      },
-      {},
-      {
-        "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
-        "acronym": "SSLKP",
-        "slug": "7-samostojni-svetnik-liste-kolesarjev-in-pescev"
+        "slug": "18-svetniski-klub-samostojnih-svetnikov",
+        "results": {
+          "seat_count": 3,
+          "intra_disunion": null,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.00297070768531131,
+          "number_of_questions": 30.0,
+          "vote_attendance": 75.0
+        }
       },
       {
         "name": "Socialni demokrati ",
-        "acronym": "SD",
-        "slug": "6-socialni-demokrati"
+        "acronym": "",
+        "slug": "19-socialni-demokrati",
+        "results": {
+          "seat_count": 2,
+          "intra_disunion": null,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.012877538760433,
+          "number_of_questions": 7.0,
+          "vote_attendance": 75.0
+        }
+      },
+      {
+        "name": "Levica ",
+        "acronym": "",
+        "slug": "20-levica",
+        "results": {
+          "seat_count": 3,
+          "intra_disunion": null,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.00354615605731479,
+          "number_of_questions": 21.0,
+          "vote_attendance": 75.0
+        }
+      },
+      {
+        "name": "Slovenska demokratska stranka ",
+        "acronym": "",
+        "slug": "21-slovenska-demokratska-stranka",
+        "results": {
+          "seat_count": 10,
+          "intra_disunion": null,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.0010677266031577,
+          "number_of_questions": 97.0,
+          "vote_attendance": 75.0
+        }
+      },
+      {
+        "name": "Lista Zorana Jankovića ",
+        "acronym": "",
+        "slug": "22-lista-zorana-jankovica",
+        "results": {
+          "seat_count": 22,
+          "intra_disunion": null,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.00149975660296865,
+          "number_of_questions": 4.0,
+          "vote_attendance": 75.0
+        }
       }
     ]
   }

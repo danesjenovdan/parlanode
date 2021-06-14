@@ -363,7 +363,7 @@ analysis-texts--party:
       divided with the number of representatives in the parliamentary group,
       this result is then divided with the number of sessions and normalised
       (min 1 - max 100).
-  presence_votes:
+  vote_attendance:
     label: Attendance at voting events
     titleSuffix: ' the results of the analysis with the presence at voting events'
     explanation: >-

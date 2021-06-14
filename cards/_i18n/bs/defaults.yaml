@@ -356,7 +356,7 @@ analysis-texts--party:
       sjednici. Zbir svih prisutnih zastupnika kluba na sjednicama Parlamenta
       podijeli se brojem svih zastupnika u klubu, a dobiveni rezultat podijeli
       se brojem sjednica i normalizira (min 1 - max 100).
-  presence_votes:
+  vote_attendance:
     label: Prisutnost na glasanjima
     titleSuffix: ' prema rezultatima analize prisutnosti na glasanjima'
     explanation: >-

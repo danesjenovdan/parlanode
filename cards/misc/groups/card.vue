@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import stableSort from 'stable';
 import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
@@ -35,26 +36,24 @@ const analysesIDs = [
   //   unit: 'percent',
   // },
   {
-    id: 'presence_votes',
+    id: 'vote_attendance',
     unit: 'percent',
   },
   {
     id: 'number_of_questions',
-    round: true,
     roundingPrecision: 0,
   },
   {
     id: 'number_of_amendments',
-    round: true,
     roundingPrecision: 0,
   },
   {
     id: 'intra_disunion',
-    round: true,
     roundingPrecision: 2,
   },
   {
     id: 'vocabulary_size',
+    roundingPrecision: 2,
   },
   // {
   //   id: 'privzdignjeno',
@@ -83,14 +82,14 @@ export default {
   data() {
     const analyses = analysesIDs.map((a) => ({
       ...a,
-      label: this.$te(`analysis-texts.${a.id}.label`)
-        ? this.$t(`analysis-texts.${a.id}.label`)
+      label: this.$te(`analysis-texts--party.${a.id}.label`)
+        ? this.$t(`analysis-texts--party.${a.id}.label`)
         : '',
-      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`)
-        ? this.$t(`analysis-texts.${a.id}.titleSuffix`)
+      titleSuffix: this.$te(`analysis-texts--party.${a.id}.titleSuffix`)
+        ? this.$t(`analysis-texts--party.${a.id}.titleSuffix`)
         : '',
-      explanation: this.$te(`analysis-texts.${a.id}.explanation`)
-        ? this.$t(`analysis-texts.${a.id}.explanation`)
+      explanation: this.$te(`analysis-texts--party.${a.id}.explanation`)
+        ? this.$t(`analysis-texts--party.${a.id}.explanation`)
         : '',
     }));
 
@@ -125,19 +124,35 @@ export default {
         0
       );
 
-      return this.results.map((party) => {
+      function formatNumberWithPrecision(number, precision) {
+        const min = 10 ** -precision;
+        if (number > 0 && number < min) {
+          return `< ${min.toFixed(precision).replace('.', ',')}`;
+        }
+        return number.toFixed(precision).replace('.', ',');
+      }
+
+      const mappedData = this.results.map((party) => {
         const rawValue = party.results?.[this.currentAnalysis];
         const newParty = JSON.parse(JSON.stringify(party));
-        newParty.displayValue = (
-          this.round(
-            rawValue,
-            this.currentAnalysisData.roundingPrecision || 1
-          ) + (this.currentAnalysisData.unit === 'percent' ? '%' : '')
-        ).replace('.', ',');
+
+        newParty.displayValue =
+          formatNumberWithPrecision(
+            rawValue ?? 0,
+            this.currentAnalysisData.roundingPrecision || 0
+          ) + (this.currentAnalysisData.unit === 'percent' ? ' %' : '');
+
         newParty.chartWidth = rawValue
           ? `${(rawValue / maxValue) * 80}%`
           : '1px';
+
         return newParty;
+      });
+
+      return stableSort(mappedData, (memberA, memberB) => {
+        const a = memberA.results?.[this.currentAnalysis] || 0;
+        const b = memberB.results?.[this.currentAnalysis] || 0;
+        return b - a;
       });
     },
     urlParameters() {
@@ -146,12 +161,6 @@ export default {
         params.analysis = this.currentAnalysis;
       }
       return params;
-    },
-  },
-  methods: {
-    round(value, precision) {
-      const multiplier = 10 ** (precision || 0);
-      return Math.round(value * multiplier) / multiplier;
     },
   },
 };
