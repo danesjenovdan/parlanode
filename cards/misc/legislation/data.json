@@ -1,18 +1,20 @@
 {
-  "results": [],
-  "session": {
-    "name": "1. seja Mestnega sveta MOL",
-    "id": 53,
-    "start_time": "2018-12-17T15:30:00",
-    "end_time": null,
-    "organizations": [
+  "data": {
+    "results": [],
+    "session": {
+      "name": "1. seja Mestnega sveta MOL",
+      "id": 53,
+      "start_time": "2018-12-17T15:30:00",
+      "end_time": null,
+      "organizations": [
         {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
+          "name": "Mestni svet MOL",
+          "acronym": null,
+          "slug": "1-mestni-svet-mol"
         }
-    ],
-    "classification": null,
-    "in_review": false
+      ],
+      "classification": null,
+      "in_review": false
+    }
   }
 }
