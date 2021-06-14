@@ -79,11 +79,10 @@ export default {
           member.education,
           member.terms,
           {
-            link: member.partylink ? this.getMemberPartyLink(member) : '',
-            text: member.party?.acronym,
+            link: this.getPartyLink(member?.group),
+            text: member.group?.acronym || member.group?.name || 'N/A',
           },
           // member.formattedDistrict,
-          (member.working_bodies || []).join(', '),
         ]);
       }
       return this.processedMembers.map((member) => [
@@ -97,7 +96,7 @@ export default {
           value: member.analysisValue,
           width: member.analysisPercentage,
         },
-        member.analysisDiff,
+        // member.analysisDiff,
       ]);
     },
     columns() {
@@ -122,11 +121,6 @@ export default {
           //   label: this.$t('district'),
           //   additionalClass: 'optional',
           // },
-          {
-            id: 'working_bodies',
-            label: this.$t('working_bodies'),
-            additionalClass: 'optional',
-          },
         ];
       }
       return [
@@ -137,7 +131,7 @@ export default {
           label: this.$t('analysis'),
           additionalClass: 'wider barchartcontainer',
         },
-        { id: 'change', label: this.$t('change') },
+        // { id: 'change', label: this.$t('change') },
       ];
     },
   },

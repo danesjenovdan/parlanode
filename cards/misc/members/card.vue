@@ -238,16 +238,12 @@ export default {
 
       return parameters;
     },
-
     processedMembers() {
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
         analysisMax = this.members.reduce(
           (biggest, member) =>
-            Math.max(
-              biggest,
-              member.results?.[this.currentAnalysis].score || 0
-            ),
+            Math.max(biggest, member.results?.[this.currentAnalysis] || 0),
           0
         );
       }
@@ -300,20 +296,19 @@ export default {
               .join(', ');
           }
 
-          newMember.partylink = newMember.party?.classification === 'pg';
-          newMember.age = getAge(newMember.date_of_birth) || '';
-          const education = newMember.education_level;
+          newMember.age = getAge(newMember.results?.birth_date) || '';
+          const education = newMember.results?.education;
           newMember.education = String(education || 0);
-          newMember.terms = newMember.number_of_mandates || 1;
+          newMember.terms = newMember.results?.mandates || 1;
           if (this.currentAnalysis !== 'demographics') {
-            const score = newMember.results?.[this.currentAnalysis].score || 0;
+            const score = newMember.results?.[this.currentAnalysis] || 0;
             newMember.analysisValue = Math.round(score * 10) / 10;
             newMember.analysisPercentage =
               analysisMax > 0 ? (score / analysisMax) * 100 : 0;
-            const diff =
-              Math.round(newMember.results?.[this.currentAnalysis].diff * 10) /
-              10;
-            newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
+            // const diff =
+            //   Math.round(newMember.results?.[this.currentAnalysis].diff * 10) /
+            //   10;
+            // newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
           }
           return newMember;
         });
@@ -322,13 +317,13 @@ export default {
         let a;
         let b;
         switch (this.currentSort) {
-          case 'change':
-            a = memberA.results?.[this.currentAnalysis].diff;
-            b = memberB.results?.[this.currentAnalysis].diff;
-            return a - b;
+          // case 'change':
+          //   a = memberA.results?.[this.currentAnalysis].diff;
+          //   b = memberB.results?.[this.currentAnalysis].diff;
+          //   return a - b;
           case 'analysis':
-            a = memberA.results?.[this.currentAnalysis].score || 0;
-            b = memberB.results?.[this.currentAnalysis].score || 0;
+            a = memberA.results?.[this.currentAnalysis] || 0;
+            b = memberB.results?.[this.currentAnalysis] || 0;
             return a - b;
           case 'name':
             a = memberA.name;
@@ -337,10 +332,6 @@ export default {
           case 'district':
             a = memberA.formattedDistrict;
             b = memberB.formattedDistrict;
-            return a.localeCompare(b, 'sl');
-          case 'working_bodies':
-            a = (memberA.working_bodies || []).join(', ');
-            b = (memberB.working_bodies || []).join(', ');
             return a.localeCompare(b, 'sl');
           case 'party':
             a = memberA.person.party.acronym;

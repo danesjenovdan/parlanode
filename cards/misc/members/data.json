@@ -4,463 +4,1078 @@
   "data": {
     "results": [
       {
-        "slug": "4-martina-vuk",
-        "name": "Martina Vuk",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": "she",
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "5-janez-stariha",
-        "name": "Janez Stariha",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": "he",
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "7-dr-dragan-matic",
+        "slug": "220-dr-dragan-matic",
         "name": "dr. Dragan Matić",
         "honorific_prefix": null,
         "honorific_suffix": null,
         "preferred_pronoun": "he",
         "group": {
           "name": "Svetniški klub samostojnih svetnikov ",
-          "acronym": "skss",
-          "slug": "8-svetniski-klub-samostojnih-svetnikov"
-        },
-        "image": null
-      },
-      {
-        "slug": "8-jozef-horvat",
-        "name": "Jožef Horvat",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "9-mojca-sojar",
-        "name": "Mojca Sojar",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": "she",
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "10-masa-kociper",
-        "name": "Maša Kociper",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "11-mag-katja-damij",
-        "name": "mag. Katja Damij",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "12-urska-honzak",
-        "name": "Urška Honzak",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "13-marusa-babnik",
-        "name": "Maruša Babnik",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "14-gregor-slabe",
-        "name": "Gregor Slabe",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "15-ida-medved",
-        "name": "Ida Medved",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "16-uros-minodras",
-        "name": "Uroš Minodraš",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "17-ana-zagozen",
-        "name": "Ana Zagožen",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "18-ksenija-sever",
-        "name": "Ksenija Sever",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "19-dr-zvone-cadez",
-        "name": "dr. Zvone Čadež",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "20-mojca-skrinjar",
-        "name": "Mojca Škrinjar",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "21-matjaz-vede",
-        "name": "Matjaž Vede",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "22-igor-horvat",
-        "name": "Igor Horvat",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "23-asta-vrecko",
-        "name": "Asta Vrečko",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "24-milan-jakopovic",
-        "name": "Milan Jakopovič",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "25-grega-ciglar",
-        "name": "Grega Ciglar",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "26-jozka-hegler",
-        "name": "Jožka Hegler",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "27-anton-kastelic",
-        "name": "Anton Kastelic",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "28-emilija-mitrovic-milos",
-        "name": "Emilija Mitrović Miloš",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "29-bruna-antauer",
-        "name": "Bruna Antauer",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "30-danilo-saric",
-        "name": "Danilo Šarić",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "31-nada-verbic",
-        "name": "Nada Verbič",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "32-iztok-kordis",
-        "name": "Iztok Kordiš",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "33-mag-mojca-lozej",
-        "name": "mag. Mojca Lozej",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "34-tone-podobnik",
-        "name": "Tone Podobnik",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "35-francka-trobec",
-        "name": "Francka Trobec",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "36-stanka-ferencak-marin",
-        "name": "Stanka Ferenčak Marin",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "37-tomaz-kucic",
-        "name": "Tomaž Kučič",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "38-julka-zibert",
-        "name": "Julka Žibert",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "39-marjan-sedmak",
-        "name": "Marjan Sedmak",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "40-dunja-piskur-kosmac",
-        "name": "Dunja Piškur Kosmač",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "41-dejan-crnek",
-        "name": "Dejan Crnek",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "42-dr-marta-bon",
-        "name": "dr. Marta Bon",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "43-jelka-zekar",
-        "name": "Jelka Žekar",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
-      },
-      {
-        "slug": "44-prof-janez-kozelj",
-        "name": "prof. Janez Koželj",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "45-tjasa-ficko",
-        "name": "Tjaša Ficko",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
-        },
-        "image": null
-      },
-      {
-        "slug": "46-ales-cerin",
-        "name": "Aleš Čerin",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "lzj",
-          "slug": "12-lista-zorana-jankovica"
+          "acronym": "",
+          "slug": "18-svetniski-klub-samostojnih-svetnikov"
         },
         "image": null,
-        "working_bodies": [
-          "Delovno telo ena",
-          "Drugo delovno telo"
-        ]
+        "results": {
+          "mandates": 2,
+          "speeches_per_session": 1.95652173913043,
+          "number_of_questions": 23.0,
+          "mismatch_of_pg": 35.5,
+          "presence_votes": 45.0,
+          "birth_date": "1969-12-12T12:00:00",
+          "education": "VII/2",
+          "spoken_words": 12449.0,
+          "vocabulary_size": 0.00132041097493129
+        }
       },
       {
-        "slug": "6-marko-koprivc",
+        "slug": "222-marko-koprivc",
         "name": "Marko Koprivc",
         "honorific_prefix": null,
         "honorific_suffix": null,
         "preferred_pronoun": null,
         "group": {
           "name": "Socialni demokrati ",
-          "acronym": "sd",
-          "slug": "6-socialni-demokrati"
+          "acronym": "",
+          "slug": "19-socialni-demokrati"
         },
-        "image": null
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 0.0,
+          "presence_votes": 0.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "224-mag-katja-damij",
+        "name": "mag. Katja Damij",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": "she",
+        "group": {
+          "name": "Svetniški klub samostojnih svetnikov ",
+          "acronym": "",
+          "slug": "18-svetniski-klub-samostojnih-svetnikov"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 2.0,
+          "mismatch_of_pg": 31.75,
+          "presence_votes": 49.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 7.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "226-marusa-babnik",
+        "name": "Maruša Babnik",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.956521739130435,
+          "number_of_questions": 9.0,
+          "mismatch_of_pg": 15.75,
+          "presence_votes": 83.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 4415.0,
+          "vocabulary_size": 0.00596799198051078
+        }
+      },
+      {
+        "slug": "228-ida-medved",
+        "name": "Ida Medved",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.78260869565217,
+          "number_of_questions": 7.0,
+          "mismatch_of_pg": 8.5,
+          "presence_votes": 88.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 4154.0,
+          "vocabulary_size": 0.00542120677031741
+        }
+      },
+      {
+        "slug": "230-ana-zagozen",
+        "name": "Ana Zagožen",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.391304347826087,
+          "number_of_questions": 10.0,
+          "mismatch_of_pg": 26.0,
+          "presence_votes": 72.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 1554.0,
+          "vocabulary_size": 0.0378975265017668
+        }
+      },
+      {
+        "slug": "232-dr-zvone-cadez",
+        "name": "dr. Zvone Čadež",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 2.21739130434783,
+          "number_of_questions": 8.0,
+          "mismatch_of_pg": 9.5,
+          "presence_votes": 88.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 6888.0,
+          "vocabulary_size": 0.00284074681939171
+        }
+      },
+      {
+        "slug": "234-matjaz-vede",
+        "name": "Matjaž Vede",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.444444444444444,
+          "number_of_questions": 3.0,
+          "mismatch_of_pg": 15.0753768844221,
+          "presence_votes": 82.4120603015075,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 146.0,
+          "vocabulary_size": 0.172413793103448
+        }
+      },
+      {
+        "slug": "236-asta-vrecko",
+        "name": "Asta Vrečko",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Levica ",
+          "acronym": "",
+          "slug": "20-levica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 0.0,
+          "presence_votes": 0.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "238-grega-ciglar",
+        "name": "Grega Ciglar",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.40909090909091,
+          "number_of_questions": 3.0,
+          "mismatch_of_pg": 29.75,
+          "presence_votes": 84.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 5286.0,
+          "vocabulary_size": 0.00459310581286652
+        }
+      },
+      {
+        "slug": "240-anton-kastelic",
+        "name": "Anton Kastelic",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 17.75,
+          "presence_votes": 85.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "242-bruna-antauer",
+        "name": "Bruna Antauer",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 15.25,
+          "presence_votes": 88.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "244-nada-verbic",
+        "name": "Nada Verbič",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.217391304347826,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 15.0,
+          "presence_votes": 89.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 1444.0,
+          "vocabulary_size": 0.030514983199616
+        }
+      },
+      {
+        "slug": "246-mag-mojca-lozej",
+        "name": "mag. Mojca Lozej",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.04545454545455,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 24.75,
+          "presence_votes": 79.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 626.0,
+          "vocabulary_size": 0.0169905879476837
+        }
+      },
+      {
+        "slug": "248-francka-trobec",
+        "name": "Francka Trobec",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 5.5,
+          "presence_votes": 98.75,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 2023.0,
+          "vocabulary_size": 0.0128082386731182
+        }
+      },
+      {
+        "slug": "250-tomaz-kucic",
+        "name": "Tomaž Kučič",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 4.0,
+          "presence_votes": 98.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "252-marjan-sedmak",
+        "name": "Marjan Sedmak",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 8.0,
+          "number_of_questions": 1.0,
+          "mismatch_of_pg": 3.75,
+          "presence_votes": 98.75,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 7678.0,
+          "vocabulary_size": 0.00159541957287697
+        }
+      },
+      {
+        "slug": "254-dejan-crnek",
+        "name": "Dejan Crnek",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0909090909090909,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 12.25,
+          "presence_votes": 90.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 234.0,
+          "vocabulary_size": 0.10333048676345
+        }
+      },
+      {
+        "slug": "256-jelka-zekar",
+        "name": "Jelka Žekar",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.565217391304348,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 23.75,
+          "presence_votes": 79.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 363.0,
+          "vocabulary_size": 0.0693205216197667
+        }
+      },
+      {
+        "slug": "258-tjasa-ficko",
+        "name": "Tjaša Ficko",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-02-01_20-22-32.png",
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 6.0,
+          "presence_votes": 96.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "221-martina-vuk",
+        "name": "Martina Vuk",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Socialni demokrati ",
+          "acronym": "",
+          "slug": "19-socialni-demokrati"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.652173913043478,
+          "number_of_questions": 7.0,
+          "mismatch_of_pg": 100.0,
+          "presence_votes": 71.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 5290.0,
+          "vocabulary_size": 0.00340532563067435
+        }
+      },
+      {
+        "slug": "223-masa-kociper",
+        "name": "Maša Kociper",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Svetniški klub samostojnih svetnikov ",
+          "acronym": "",
+          "slug": "18-svetniski-klub-samostojnih-svetnikov"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.30434782608696,
+          "number_of_questions": 5.0,
+          "mismatch_of_pg": 43.75,
+          "presence_votes": 42.75,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 7616.0,
+          "vocabulary_size": 0.00205546983361278
+        }
+      },
+      {
+        "slug": "225-urska-honzak",
+        "name": "Urška Honzak",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Levica ",
+          "acronym": "",
+          "slug": "20-levica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 2.1304347826087,
+          "number_of_questions": 10.0,
+          "mismatch_of_pg": 14.75,
+          "presence_votes": 85.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 11293.0,
+          "vocabulary_size": 0.00139630077484974
+        }
+      },
+      {
+        "slug": "227-gregor-slabe",
+        "name": "Gregor Slabe",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.0,
+          "number_of_questions": 4.0,
+          "mismatch_of_pg": 29.0,
+          "presence_votes": 68.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 2997.0,
+          "vocabulary_size": 0.0104321140220794
+        }
+      },
+      {
+        "slug": "229-uros-minodras",
+        "name": "Uroš Minodraš",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.521739130434783,
+          "number_of_questions": 2.0,
+          "mismatch_of_pg": 47.5,
+          "presence_votes": 50.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 880.0,
+          "vocabulary_size": 0.0561548223350254
+        }
+      },
+      {
+        "slug": "231-ksenija-sever",
+        "name": "Ksenija Sever",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.60869565217391,
+          "number_of_questions": 8.0,
+          "mismatch_of_pg": 16.75,
+          "presence_votes": 81.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 10283.0,
+          "vocabulary_size": 0.00193343753946197
+        }
+      },
+      {
+        "slug": "233-mojca-skrinjar",
+        "name": "Mojca Škrinjar",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 5.73913043478261,
+          "number_of_questions": 38.0,
+          "mismatch_of_pg": 22.25,
+          "presence_votes": 76.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 16591.0,
+          "vocabulary_size": 0.000809608697510579
+        }
+      },
+      {
+        "slug": "235-igor-horvat",
+        "name": "Igor Horvat",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 2.39130434782609,
+          "number_of_questions": 8.0,
+          "mismatch_of_pg": 15.5,
+          "presence_votes": 83.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 5358.0,
+          "vocabulary_size": 0.00573133892473511
+        }
+      },
+      {
+        "slug": "237-milan-jakopovic",
+        "name": "Milan Jakopovič",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Levica ",
+          "acronym": "",
+          "slug": "20-levica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.66666666666667,
+          "number_of_questions": 11.0,
+          "mismatch_of_pg": 14.75,
+          "presence_votes": 72.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 7254.0,
+          "vocabulary_size": 0.00421754647316925
+        }
+      },
+      {
+        "slug": "217-jozef-horvat",
+        "name": "Jožef Horvat",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Nova Slovenija – Krščanski demokrati ",
+          "acronym": "",
+          "slug": "16-nova-slovenija-krscanski-demokrati"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 4.08695652173913,
+          "number_of_questions": 12.0,
+          "mismatch_of_pg": 36.5,
+          "presence_votes": 78.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 10906.0,
+          "vocabulary_size": 0.00140002536582495
+        }
+      },
+      {
+        "slug": "218-janez-stariha",
+        "name": "Janez Stariha",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+          "acronym": "",
+          "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.318181818181818,
+          "number_of_questions": 44.0,
+          "mismatch_of_pg": 100.0,
+          "presence_votes": 70.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 1357.0,
+          "vocabulary_size": 0.0390608767920216
+        }
+      },
+      {
+        "slug": "219-mojca-sojar",
+        "name": "Mojca Sojar",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Nova Slovenija – Krščanski demokrati ",
+          "acronym": "",
+          "slug": "16-nova-slovenija-krscanski-demokrati"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 4.08695652173913,
+          "number_of_questions": 4.0,
+          "mismatch_of_pg": 36.5,
+          "presence_votes": 52.5,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 13313.0,
+          "vocabulary_size": 0.00101677190924968
+        }
+      },
+      {
+        "slug": "239-jozka-hegler",
+        "name": "Jožka Hegler",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0952380952380952,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 6.15384615384615,
+          "presence_votes": 96.9230769230769,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 104.0,
+          "vocabulary_size": 0.331730769230769
+        }
+      },
+      {
+        "slug": "241-emilija-mitrovic-milos",
+        "name": "Emilija Mitrović Miloš",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.181818181818182,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 19.25,
+          "presence_votes": 84.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 268.0,
+          "vocabulary_size": 0.0725474031327288
+        }
+      },
+      {
+        "slug": "243-danilo-saric",
+        "name": "Danilo Šarić",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0454545454545455,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 5.25,
+          "presence_votes": 98.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 177.0,
+          "vocabulary_size": 0.313915857605178
+        }
+      },
+      {
+        "slug": "245-iztok-kordis",
+        "name": "Iztok Kordiš",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 51.25,
+          "presence_votes": 51.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "247-tone-podobnik",
+        "name": "Tone Podobnik",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0909090909090909,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 9.0,
+          "presence_votes": 94.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 212.0,
+          "vocabulary_size": 0.16125
+        }
+      },
+      {
+        "slug": "249-stanka-ferencak-marin",
+        "name": "Stanka Ferenčak Marin",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 9.5,
+          "presence_votes": 93.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 279.0,
+          "vocabulary_size": 0.0
+        }
+      },
+      {
+        "slug": "251-julka-zibert",
+        "name": "Julka Žibert",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.826086956521739,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 3.75,
+          "presence_votes": 99.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 886.0,
+          "vocabulary_size": 0.0287868403015764
+        }
+      },
+      {
+        "slug": "253-dunja-piskur-kosmac",
+        "name": "Dunja Piškur Kosmač",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.181818181818182,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 5.25,
+          "presence_votes": 97.75,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 587.0,
+          "vocabulary_size": 0.0584894946053379
+        }
+      },
+      {
+        "slug": "255-dr-marta-bon",
+        "name": "dr. Marta Bon",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 0.304347826086957,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 12.25,
+          "presence_votes": 90.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 307.0,
+          "vocabulary_size": 0.121030042918455
+        }
+      },
+      {
+        "slug": "257-prof-janez-kozelj",
+        "name": "prof. Janez Koželj",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": null,
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 1.30434782608696,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 23.0,
+          "presence_votes": 80.25,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 3712.0,
+          "vocabulary_size": 0.0082872418879056
+        }
+      },
+      {
+        "slug": "259-ales-cerin",
+        "name": "Aleš Čerin",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-05-07_12-01-38.png",
+        "results": {
+          "gender": null,
+          "mandates": null,
+          "speeches_per_session": 10.7826086956522,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 18.75,
+          "presence_votes": 83.4051724137931,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 13953.0,
+          "vocabulary_size": 0.00179877774576563
+        }
       }
     ]
   }
