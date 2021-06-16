@@ -82,7 +82,7 @@ export default {
     text-align: left;
 
     h3 {
-      font-weight: 400;
+      font-weight: 300;
     }
 
     h4 {
