@@ -1,93 +1,14 @@
 <template>
-  <transparent-wrapper>
-    <p-search-dropdown
-      :model-value="allItems"
-      :placeholder="$t('search_placeholder')"
-      :single="false"
-      :groups="groups"
-      :filter="filter"
-      @select="selectCallback"
-      @search="searchCallback"
-    />
-  </transparent-wrapper>
+  <global-search />
 </template>
 
 <script>
-import common from '@/_mixins/common.js';
-import TransparentWrapper from '@/_components/TransparentWrapper.vue';
-import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import links from '@/_mixins/links.js';
+import GlobalSearch from '@/_components/GlobalSearch.vue';
 
 export default {
   name: 'CardMiscMenuSearch',
   components: {
-    TransparentWrapper,
-    PSearchDropdown,
-  },
-  mixins: [common, links],
-  data() {
-    // const grouped = this.groupBy(this.$options.cardData.data.data, (item) => [
-    //   item.person.party.acronym,
-    // ]);
-
-    // const groups = [
-    //   {
-    //     label: this.$t('parties'),
-    //     items: grouped
-    //       .filter((group) => group[0].person.party.classification === 'pg')
-    //       .map((group) => group[0].person.party.acronym),
-    //   },
-    // ].concat(
-    //   grouped.map((group) => ({
-    //     label: group[0].person.party.name,
-    //     acronym: group[0].person.party.acronym,
-    //     items: group.map((p) => p.person.id),
-    //     id: group[0].person.party.id,
-    //   }))
-    // );
-
-    // const parties = grouped.map((group) => ({
-    //   id: group[0].person.party.acronym,
-    //   label: group[0].person.party.acronym,
-    //   selected: false,
-    //   colorClass: `${group[0].person.party.acronym
-    //     .toLowerCase()
-    //     .replace(/[ +,]/g, '_')}-background`,
-    // }));
-
-    // const people = this.$options.cardData.data.data.map((p) => ({
-    //   id: p.person.id,
-    //   label: p.person.name,
-    //   selected: false,
-    //   image: this.getPersonPortrait(p.person),
-    //   acronym: p.person.party.acronym,
-    // }));
-
-    // const allItems = people.concat(parties);
-
-    const initialFilter = this.cardState?.query || '';
-
-    return {
-      allItems: [],
-      // groups,
-      filter: initialFilter,
-    };
-  },
-  methods: {
-    selectCallback(id) {
-      // if (parseInt(id, 10)) {
-      //   // it's a person
-      //   document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.member.base}/${this.slugs.person[id].slug}`;
-      // } else {
-      //   // it's a party
-      //   const partyId = this.groups.filter((group) => group.acronym === id)[0]
-      //     .id;
-      //   document.location.href = `${this.slugs.urls.base}/${this.$options.cardData.siteMap.party.base}/${this.slugs.party[partyId].acronym}`;
-      // }
-    },
-    searchCallback(term) {
-      document.location.href = `${this.getSearchTermLink(term)}`;
-    },
+    GlobalSearch,
   },
 };
 </script>
@@ -95,34 +16,21 @@ export default {
 <style lang="scss" scoped>
 @import 'parlassets/scss/colors';
 
-.card-container :deep(.card-content) {
-  min-height: auto;
-}
-
-.search-dropdown :deep(.search-dropdown-input) {
-  background-color: transparent;
-}
-
-.search-dropdown {
+.global-search :deep(.search-dropdown) {
   border: none;
   padding-left: 20px;
+
+  .search-dropdown-input {
+    background-color: transparent;
+  }
+
+  &::after {
+    right: auto;
+    left: 0;
+  }
 }
 
-.search-dropdown :deep(.search-dropdown-options.empty) {
-  border-bottom: none;
-}
-
-.search-dropdown::after {
-  content: '\e003';
-  font-family: 'Glyphicons Halflings';
-  border: none;
-  font-size: 22px;
-  top: 0;
-  left: 0;
-  display: flex;
-  height: 100%;
-  width: 40px;
-  align-items: center;
-  color: $first;
+.global-search :deep(.card-container .card-content) {
+  min-height: auto;
 }
 </style>
