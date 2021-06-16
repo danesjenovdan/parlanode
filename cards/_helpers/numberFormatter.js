@@ -1,14 +1,25 @@
-// TODO: replace all manual formats with this function
 export default (number, precision = 0, percent = false) => {
-  let formatted;
-  const min = 10 ** -precision;
-  if (number > 0 && number < min) {
-    formatted = `< ${min.toFixed(precision).replace('.', ',')}`;
-  } else {
-    formatted = number.toFixed(precision).replace('.', ',');
+  // shows "< 0.01" if number is very small like "0.0001245"
+  let prefix = '';
+  const minValueAboveZero = 10 ** -precision;
+  if (number > 0 && number < minValueAboveZero) {
+    number = minValueAboveZero;
+    prefix = '< ';
   }
+
+  // formatter needs 0-1 for percentages, but we always supply whole number
   if (percent) {
-    formatted += ' %';
+    number /= 100;
   }
-  return formatted;
+
+  const formatter = new Intl.NumberFormat(
+    'sl', // TODO: get current locale
+    {
+      style: percent ? 'percent' : 'decimal',
+      minimumFractionDigits: precision,
+      maximumFractionDigits: precision,
+    }
+  );
+
+  return `${prefix}${formatter.format(number)}`;
 };

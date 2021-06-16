@@ -142,7 +142,7 @@ export default {
     }));
 
     const analyses = analysesIDs.map((a) => ({
-      id: a.id,
+      ...a,
       label: this.$te(`analysis-texts.${a.id}.label`)
         ? this.$t(`analysis-texts.${a.id}.label`)
         : '',
@@ -318,11 +318,10 @@ export default {
           newMember.terms = newMember.results?.mandates || 1;
           if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results?.[this.currentAnalysis] || 0;
-            const analysisDef = find(analysesIDs, { id: this.currentAnalysis });
             const formattedScore = numberFormatter(
               score,
-              analysisDef?.precision || 0,
-              analysisDef?.unit === 'percent'
+              this.currentAnalysisData?.precision || 0,
+              this.currentAnalysisData?.unit === 'percent'
             );
             newMember.analysisValue = formattedScore;
             newMember.analysisPercentage =

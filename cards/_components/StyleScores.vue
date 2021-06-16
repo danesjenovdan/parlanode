@@ -33,11 +33,8 @@
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
-                <span class="sr-only"
-                  >{{ results.sophisticated?.toFixed(2) }}%</span
-                >
                 <div class="progress_number">
-                  {{ results.sophisticated?.toFixed(2).replace('.', ',') }} %
+                  {{ formatNumber(results.sophisticated) }}
                 </div>
               </div>
             </div>
@@ -52,9 +49,8 @@
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
-                <span class="sr-only">{{ results.simple?.toFixed(2) }}%</span>
                 <div class="progress_number">
-                  {{ results.simple?.toFixed(2).replace('.', ',') }} %
+                  {{ formatNumber(results.simple) }}
                 </div>
               </div>
             </div>
@@ -69,11 +65,8 @@
                 aria-valuemin="0"
                 aria-valuemax="100"
               >
-                <span class="sr-only"
-                  >{{ results.problematic?.toFixed(2) }}%</span
-                >
                 <div class="progress_number">
-                  {{ results.problematic?.toFixed(2).replace('.', ',') }} %
+                  {{ formatNumber(results.problematic) }}
                 </div>
               </div>
             </div>
@@ -90,6 +83,7 @@ import { personSpeeches, partySpeeches } from '@/_mixins/contextUrls.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
+import numberFormatter from '@/_helpers/numberFormatter.js';
 
 export default {
   name: 'StyleScores',
@@ -126,7 +120,6 @@ export default {
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
-
     maxValue() {
       return Math.max(
         this.results.sophisticated,
@@ -144,6 +137,9 @@ export default {
   methods: {
     getBarStyle(key) {
       return { width: `${(this.results[key] / this.maxValue) * 70}%` };
+    },
+    formatNumber(number) {
+      return numberFormatter(number, 2, true);
     },
   },
 };

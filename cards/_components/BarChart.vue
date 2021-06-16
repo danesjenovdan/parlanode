@@ -20,17 +20,14 @@
       <div v-for="(row, index) in rows" :key="index" class="column chart">
         <div class="progress hugebar">
           <div
-            :style="{ width: row.widthPercentage + '%' }"
+            :style="{ width: `${row.barWidth}%` }"
             class="progress-bar funblue"
           ></div>
           <div v-if="showNumbers && showPercentage" class="progress_number">
-            {{
-              row.value.toString().replace('.', ',') + ' | ' + row.percentage
-            }}
-            %
+            {{ `${row.formattedValue} | ${row.percentage}` }}
           </div>
           <div v-else-if="showNumbers" class="progress_number">
-            {{ row.value.toString().replace('.', ',') }}
+            {{ row.formattedValue }}
           </div>
         </div>
       </div>
@@ -39,6 +36,8 @@
 </template>
 
 <script>
+import numberFormatter from '@/_helpers/numberFormatter.js';
+
 export default {
   name: 'BarChart',
   props: {
@@ -81,11 +80,10 @@ export default {
           link: row.link,
           name: row.label,
           value: row.value || 0,
+          formattedValue: numberFormatter(row.value || 0),
           portrait: row.portrait,
-          widthPercentage: (row.value / mymax) * (this.showNumbers ? 80 : 100),
-          percentage: ((row.value / mytotal) * 100)
-            .toFixed(2)
-            .replace('.', ','),
+          barWidth: (row.value / mymax) * (this.showNumbers ? 70 : 100),
+          percentage: numberFormatter((row.value / mytotal) * 100, 2, true),
         }))
         .sort((a, b) => b.value - a.value);
     },

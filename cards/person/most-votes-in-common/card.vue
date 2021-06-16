@@ -11,6 +11,7 @@ import { personTitle } from '@/_mixins/titles.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
 import PersonList from '@/_components/PersonList.vue';
+import numberFormatter from '@/_helpers/numberFormatter.js';
 
 export default {
   name: 'CardPersonMostVotesInCommon',
@@ -22,11 +23,10 @@ export default {
     const results = (this.cardData.data?.results || [])
       .slice()
       .sort((a, b) => a.value - b.value);
-    const people = results.map((o) => {
-      const { person } = o;
-      person.score = `${(o.value || 0).toFixed(2).replace('.', ',')}`;
-      return person;
-    });
+    const people = results.map((entry) => ({
+      ...entry.person,
+      score: numberFormatter(entry.value, 2),
+    }));
     return {
       people,
     };

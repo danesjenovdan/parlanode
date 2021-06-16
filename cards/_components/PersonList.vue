@@ -7,21 +7,24 @@
             <img :src="getPersonPortrait(person)" />
           </a>
           <div class="column name">
-            <a :href="getPersonLink(person)" class="funblue-light-hover">
-              {{ person.name }}
-            </a>
-            <template v-if="showPartyLink">
-              <br />
-              <a
-                v-if="getPartyLink(person.group)"
-                :href="getPartyLink(person.group)"
-                class="funblue-light-hover"
-              >
-                {{ person.group?.acronym || person.group?.name || 'N/A' }}
+            <div class="person-name">
+              <a :href="getPersonLink(person)" class="funblue-light-hover">
+                {{ person.name }}
               </a>
-              <span v-else>
-                {{ person.group?.acronym || person.group?.name || 'N/A' }}
-              </span>
+            </div>
+            <template v-if="showPartyLink">
+              <div class="person-party">
+                <a
+                  v-if="getPartyLink(person.group)"
+                  :href="getPartyLink(person.group)"
+                  class="funblue-light-hover"
+                >
+                  {{ person.group?.acronym || person.group?.name || 'N/A' }}
+                </a>
+                <span v-else>
+                  {{ person.group?.acronym || person.group?.name || 'N/A' }}
+                </span>
+              </div>
             </template>
           </div>
           <div v-if="person.score" class="column large-number">
@@ -65,6 +68,20 @@ export default {
   @include respond-to(mobile) {
     height: auto;
     max-height: $full-card-height;
+  }
+
+  .person-name,
+  .person-party {
+    line-height: 1.1;
+  }
+
+  .person-name {
+    font-weight: 400;
+  }
+
+  .person-party {
+    font-size: 14px;
+    margin-top: 5px;
   }
 }
 </style>

@@ -22,6 +22,7 @@
 import stableSort from 'stable';
 import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
+import numberFormatter from '@/_helpers/numberFormatter.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
@@ -41,31 +42,29 @@ const analysesIDs = [
   },
   {
     id: 'number_of_questions',
-    roundingPrecision: 0,
   },
   // {
   //   id: 'number_of_amendments',
-  //   roundingPrecision: 0,
   // },
   // {
   //   id: 'intra_disunion',
-  //   roundingPrecision: 2,
+  //   precision: 2,
   // },
   // {
   //   id: 'vocabulary_size',
-  //   roundingPrecision: 2,
+  //   precision: 2,
   // },
   // {
   //   id: 'privzdignjeno',
-  //   roundingPrecision: 3,
+  //   precision: 3,
   // },
   // {
   //   id: 'preprosto',
-  //   roundingPrecision: 3,
+  //   precision: 3,
   // },
   // {
   //   id: 'problematicno',
-  //   roundingPrecision: 3,
+  //   precision: 3,
   // },
 ];
 
@@ -124,34 +123,26 @@ export default {
         0
       );
 
-      function formatNumberWithPrecision(number, precision) {
-        const min = 10 ** -precision;
-        if (number > 0 && number < min) {
-          return `< ${min.toFixed(precision).replace('.', ',')}`;
-        }
-        return number.toFixed(precision).replace('.', ',');
-      }
-
       const mappedData = this.results.map((party) => {
-        const rawValue = party.results?.[this.currentAnalysis];
+        const rawValue = party.results?.[this.currentAnalysis] || 0;
         const newParty = JSON.parse(JSON.stringify(party));
 
-        newParty.displayValue =
-          formatNumberWithPrecision(
-            rawValue ?? 0,
-            this.currentAnalysisData.roundingPrecision || 0
-          ) + (this.currentAnalysisData.unit === 'percent' ? ' %' : '');
+        newParty.displayValue = numberFormatter(
+          rawValue,
+          this.currentAnalysisData?.precision || 0,
+          this.currentAnalysisData?.unit === 'percent'
+        );
 
-        newParty.chartWidth = rawValue
-          ? `${(rawValue / maxValue) * 85}%`
-          : '1px';
+        newParty.chartWidth = `${(rawValue / maxValue) * 85}%`;
 
         return newParty;
       });
 
       return stableSort(mappedData, (memberA, memberB) => {
-        const a = memberA.results?.[this.currentAnalysis] || 0;
-        const b = memberB.results?.[this.currentAnalysis] || 0;
+        // const a = memberA.results?.[this.currentAnalysis] || 0;
+        // const b = memberB.results?.[this.currentAnalysis] || 0;
+        const a = memberA.results?.seat_count || 0;
+        const b = memberB.results?.seat_count || 0;
         return b - a;
       });
     },
