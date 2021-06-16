@@ -368,7 +368,7 @@ analysis-texts--party:
       sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom
       sej in normaliziramo (min 1 - max 100).
   vote_attendance:
-    label: Prisotnost na glasovanjih sej DZ
+    label: Prisotnost na glasovanjih
     titleSuffix: ' glede na rezultate analize s prisotnostjo na glasovanjih sej DZ'
     explanation: >-
       Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine

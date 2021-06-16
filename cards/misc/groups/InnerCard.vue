@@ -43,9 +43,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.party-list .labeled-chart .column.chart-label {
-  line-height: 1.1;
-  margin-top: -10px;
-  margin-bottom: -10px;
+@import 'parlassets/scss/breakpoints';
+
+.party-list .labeled-chart {
+  // min-height: 46px;
+
+  @include respond-to(mobile) {
+    flex-direction: column;
+  }
+
+  .column.chart-label {
+    line-height: 1.1;
+    // margin-top: -10px;
+    // margin-bottom: -10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 200px;
+
+    @include respond-to(mobile) {
+      width: 100%;
+    }
+  }
+
+  .column.chart {
+    @include respond-to(mobile) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
 }
 </style>

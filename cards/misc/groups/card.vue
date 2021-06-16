@@ -43,18 +43,18 @@ const analysesIDs = [
     id: 'number_of_questions',
     roundingPrecision: 0,
   },
-  {
-    id: 'number_of_amendments',
-    roundingPrecision: 0,
-  },
-  {
-    id: 'intra_disunion',
-    roundingPrecision: 2,
-  },
-  {
-    id: 'vocabulary_size',
-    roundingPrecision: 2,
-  },
+  // {
+  //   id: 'number_of_amendments',
+  //   roundingPrecision: 0,
+  // },
+  // {
+  //   id: 'intra_disunion',
+  //   roundingPrecision: 2,
+  // },
+  // {
+  //   id: 'vocabulary_size',
+  //   roundingPrecision: 2,
+  // },
   // {
   //   id: 'privzdignjeno',
   //   roundingPrecision: 3,
@@ -143,7 +143,7 @@ export default {
           ) + (this.currentAnalysisData.unit === 'percent' ? ' %' : '');
 
         newParty.chartWidth = rawValue
-          ? `${(rawValue / maxValue) * 80}%`
+          ? `${(rawValue / maxValue) * 85}%`
           : '1px';
 
         return newParty;
