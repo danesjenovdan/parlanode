@@ -148,6 +148,10 @@ export default {
       type: Number,
       default: 0,
     },
+    percent: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     getName() {
@@ -202,11 +206,17 @@ export default {
       return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
     },
     formatNumberWithPrecision(number) {
+      let formatted;
       const min = 10 ** -this.precision;
       if (number > 0 && number < min) {
-        return `< ${min.toFixed(this.precision).replace('.', ',')}`;
+        formatted = `< ${min.toFixed(this.precision).replace('.', ',')}`;
+      } else {
+        formatted = number.toFixed(this.precision).replace('.', ',');
       }
-      return number.toFixed(this.precision).replace('.', ',');
+      if (this.percent) {
+        formatted += ' %';
+      }
+      return formatted;
     },
   },
 };

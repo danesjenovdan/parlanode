@@ -1,10 +1,10 @@
 card:
-  title: Prisotnost na glasovanjih sej DZ
+  title: Prisotnost na glasovanjih sej mestnega sveta
   info: >-
-    # Prisotnosti poslanca/-ke na glasovanjih DZ v primerjavi s povprečjem in
-    največjo vrednostjo.
+    # Prisotnosti svetnika/-ce na glasovanjih mestnega sveta v primerjavi s
+    povprečjem in največjo vrednostjo.
 
 
-    Preštejemo vse oddane glasovnice poslanca/-ke in število delimo s številom
-    vseh glasovanj, na katerih bi moral/-a poslanec/-ka glasovati. Rezultat
+    Preštejemo vse oddane glasovnice svetnika/-ce in število delimo s številom
+    vseh glasovanj, na katerih bi moral/-a svetnik/-ca glasovati. Rezultat
     izpišemo skupaj s povprečno in največjo vrednostjo.
