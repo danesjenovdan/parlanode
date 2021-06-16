@@ -2,6 +2,7 @@
   <score-avg-max
     :party="$options.contextData.cardData.data?.group"
     :results="$options.contextData.cardData.data?.results"
+    percent
     type="party"
   />
 </template>
