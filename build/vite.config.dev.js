@@ -18,8 +18,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       yaml({
         transform(data) {
-          processLocaleMarkdown(data);
-          return data;
+          return processLocaleMarkdown(data ?? {});
         },
       }),
       vue(),

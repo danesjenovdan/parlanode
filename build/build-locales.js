@@ -26,7 +26,7 @@ Object.keys(locales).forEach((locale) => {
   const localeData = locales[locale];
 
   Object.keys(localeData).forEach((cardName) => {
-    processLocaleMarkdown(localeData[cardName]);
+    localeData[cardName] = processLocaleMarkdown(localeData[cardName] ?? {});
   });
 
   fs.ensureDirSync(outPath);
