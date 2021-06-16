@@ -112,6 +112,7 @@ import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import PersonPin from '@/_components/PersonPin.vue';
 import PartyPin from '@/_components/PartyPin.vue';
+import numberFormatter from '@/_helpers/numberFormatter.js';
 
 export default {
   name: 'ScoreAvgMax',
@@ -206,17 +207,7 @@ export default {
       return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
     },
     formatNumberWithPrecision(number) {
-      let formatted;
-      const min = 10 ** -this.precision;
-      if (number > 0 && number < min) {
-        formatted = `< ${min.toFixed(this.precision).replace('.', ',')}`;
-      } else {
-        formatted = number.toFixed(this.precision).replace('.', ',');
-      }
-      if (this.percent) {
-        formatted += ' %';
-      }
-      return formatted;
+      return numberFormatter(number, this.precision, this.percent);
     },
   },
 };

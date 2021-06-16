@@ -16,10 +16,15 @@
               class="filter parties"
             />
             <p-search-dropdown
+              v-model="workingBodies"
+              :placeholder="workingBodyPlaceholder"
+              class="filter working-bodies"
+            />
+            <!-- <p-search-dropdown
               v-model="districts"
               :placeholder="districtPlaceholder"
               class="filter district"
-            />
+            /> -->
             <div class="genders filter">
               <striped-icon-button
                 v-for="gender in genders"
@@ -52,6 +57,7 @@
 import stableSort from 'stable';
 import { find, uniqBy } from 'lodash-es';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
+import numberFormatter from '@/_helpers/numberFormatter.js';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
@@ -74,13 +80,10 @@ const analysesIDs = [
   },
   {
     id: 'presence_votes',
-    round: true,
     unit: 'percent',
   },
   {
     id: 'number_of_questions',
-    round: true,
-    roundingPrecision: 0,
   },
   {
     id: 'speeches_per_session',
@@ -161,6 +164,7 @@ export default {
       parties,
       textFilter: this.cardState.textFilter || '',
       districts,
+      workingBodies: [],
       genders,
       selectedGenders: this.cardState.genders || [],
     };
@@ -178,6 +182,13 @@ export default {
       return this.selectedParties.length > 0
         ? this.$t('selected-placeholder', { num: this.selectedParties.length })
         : this.$t('select-parties-placeholder');
+    },
+    workingBodyPlaceholder() {
+      return this.selectedWorkingBodies.length > 0
+        ? this.$t('selected-placeholder', {
+            num: this.selectedWorkingBodies.length,
+          })
+        : this.$t('select-working-body-placeholder');
     },
     districtPlaceholder() {
       return this.selectedDistricts.length > 0
@@ -202,6 +213,11 @@ export default {
     },
     selectedParties() {
       return this.parties.filter((party) => party.selected);
+    },
+    selectedWorkingBodies() {
+      return this.workingBodies
+        .filter((workingBody) => workingBody.selected)
+        .map((workingBody) => workingBody.id);
     },
     selectedDistricts() {
       return this.districts
@@ -302,7 +318,13 @@ export default {
           newMember.terms = newMember.results?.mandates || 1;
           if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results?.[this.currentAnalysis] || 0;
-            newMember.analysisValue = Math.round(score * 10) / 10;
+            const analysisDef = find(analysesIDs, { id: this.currentAnalysis });
+            const formattedScore = numberFormatter(
+              score,
+              analysisDef?.precision || 0,
+              analysisDef?.unit === 'percent'
+            );
+            newMember.analysisValue = formattedScore;
             newMember.analysisPercentage =
               analysisMax > 0 ? (score / analysisMax) * 100 : 0;
             // const diff =
