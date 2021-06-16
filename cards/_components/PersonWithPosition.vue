@@ -1,0 +1,101 @@
+<template>
+  <div class="verticalmember">
+    <div class="row">
+      <a :href="getPersonLink(person)" :title="person.name">
+        <img
+          :src="getPersonPortrait(person)"
+          class="img-circle img-responsive"
+          alt=""
+        />
+      </a>
+      <div class="member_data">
+        <h3>
+          <a :href="getPersonLink(person)" class="funblue-light-hover">{{
+            person.name
+          }}</a>
+        </h3>
+        <h4>{{ positionTranslation }}</h4>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+
+export default {
+  mixins: [common, links],
+  props: {
+    person: {
+      type: Object,
+      required: true,
+    },
+    position: {
+      type: String,
+      required: true,
+      validator: (value) => ['president', 'deputy', 'member'].includes(value),
+    },
+  },
+  computed: {
+    positionTranslation() {
+      const form = this.person.preferred_pronoun === 'she' ? '--f' : '--m';
+      if (this.position === 'president') {
+        return this.$t(`party-leader${form}`);
+      }
+      if (this.position === 'deputy') {
+        return this.$t(`deputy-leader${form}`);
+      }
+      return this.$t('member');
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+
+.row {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  min-height: 0; // firefox flex bug
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .key {
+    color: $font-default;
+  }
+}
+
+.verticalmember {
+  width: 100%;
+
+  .member_data {
+    text-align: left;
+
+    h3 {
+      font-weight: 400;
+    }
+
+    h4 {
+      margin: 5px 0;
+    }
+  }
+
+  .img-responsive {
+    width: 40px;
+    margin: 10px 15px 10px 0;
+    @include respond-to(desktop) {
+      margin-right: 25px;
+    }
+  }
+}
+</style>

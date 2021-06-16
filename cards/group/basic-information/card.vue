@@ -1,100 +1,33 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="poslanec osnovne-informacije-poslanca">
-      <div
-        v-for="(person, index) in group.presidents"
-        :key="person.slug"
-        class="row"
-      >
-        <div class="parlaicon-container parlaicon-containermp">
-          <span
-            :class="['parlaicon', 'parlaicon-vodja']"
-            aria-hidden="true"
-          ></span>
+      <div v-if="group.presidents?.length" class="row">
+        <div class="parlaicon-container">
+          <span class="parlaicon parlaicon-vodja" aria-hidden="true" />
         </div>
         <div class="bordertop">
-          <div class="verticalmember">
-            <div class="row">
-              <a :href="getPersonLink(person)" :title="person.name">
-                <img
-                  :src="getPersonPortrait(person)"
-                  class="img-circle img-responsive"
-                  alt=""
-                />
-              </a>
-              <div class="member_data">
-                <h3>
-                  <a
-                    :href="getPersonLink(person)"
-                    class="funblue-light-hover"
-                    >{{ person.name }}</a
-                  >
-                </h3>
-                <h4
-                  v-if="index === 0 && person.preferred_pronoun === 'she'"
-                  v-t="'party-leader--f'"
-                ></h4>
-                <h4 v-else-if="index === 0" v-t="'party-leader--m'"></h4>
-                <h4
-                  v-else-if="person.preferred_pronoun === 'she'"
-                  v-t="'deputy-leader--f'"
-                ></h4>
-                <h4 v-else v-t="'deputy-leader--m'"></h4>
-              </div>
-            </div>
-          </div>
+          <template v-for="person in group.presidents" :key="person.slug">
+            <person-with-position :person="person" position="president" />
+          </template>
         </div>
       </div>
-      <div
-        v-for="(person, index) in group.deputies"
-        :key="person.slug"
-        class="row"
-      >
-        <div class="parlaicon-container parlaicon-containermp">
-          <span
-            :class="['parlaicon', 'parlaicon-namestnik']"
-            aria-hidden="true"
-          ></span>
+
+      <div v-if="group.deputies?.length" class="row">
+        <div class="parlaicon-container">
+          <span class="parlaicon parlaicon-namestnik" aria-hidden="true" />
         </div>
         <div class="bordertop">
-          <div class="verticalmember">
-            <div class="row">
-              <a :href="getPersonLink(person)" :title="person.name">
-                <img
-                  :src="getPersonPortrait(person)"
-                  class="img-circle img-responsive"
-                  alt=""
-                />
-              </a>
-              <div class="member_data">
-                <h3>
-                  <a
-                    :href="getPersonLink(person)"
-                    class="funblue-light-hover"
-                    >{{ person.name }}</a
-                  >
-                </h3>
-                <h4
-                  v-if="index === 0 && person.preferred_pronoun === 'she'"
-                  v-t="'party-leader--f'"
-                ></h4>
-                <h4 v-else-if="index === 0" v-t="'party-leader--m'"></h4>
-                <h4
-                  v-else-if="person.preferred_pronoun === 'she'"
-                  v-t="'deputy-leader--f'"
-                ></h4>
-                <h4 v-else v-t="'deputy-leader--m'"></h4>
-              </div>
-            </div>
-          </div>
+          <template v-for="person in group.deputies" :key="person.slug">
+            <person-with-position :person="person" position="deputy" />
+          </template>
         </div>
       </div>
 
       <div class="row">
         <div class="parlaicon-container">
-          <span class="parlaicon parlaicon-sedezi" aria-hidden="true"></span>
+          <span class="parlaicon parlaicon-sedezi" aria-hidden="true" />
         </div>
-        <div class="bordertop0">
+        <div class="bordertop">
           <span class="key">
             <span v-t="'number-of-seats'"></span>:
             <strong>{{ group.number_of_members }}</strong>
@@ -104,9 +37,9 @@
 
       <div v-if="group.email" class="row">
         <div class="parlaicon-container">
-          <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
+          <span class="parlaicon parlaicon-kontakt" aria-hidden="true" />
         </div>
-        <div class="bordertop0 contact-container">
+        <div class="bordertop contact-container">
           <span class="key">
             <span v-t="'contact'"></span>:
             <a
@@ -121,9 +54,9 @@
 
       <div v-if="group.social_networks?.length" class="row">
         <div class="parlaicon-container">
-          <span class="parlaicon parlaicon-omrezja" aria-hidden="true"></span>
+          <span class="parlaicon parlaicon-omrezja" aria-hidden="true" />
         </div>
-        <div class="bordertop0">
+        <div class="bordertop">
           <span class="key">
             <span v-t="'social-media'"></span>:
             <template v-if="group.social_networks?.length">
@@ -150,26 +83,13 @@
       </div>
 
       <div v-if="group.members?.length" class="row">
-        <div class="parlaicon-container">
-          <span class="parlaicon parlaicon-clanstva" aria-hidden="true"></span>
+        <div class="parlaicon-container parlaicon-top">
+          <span class="parlaicon parlaicon-clanstva" aria-hidden="true" />
         </div>
-        <div class="bordertop0 contact-container">
-          <span class="key">
-            <span v-t="'members'"></span>:
-            <ul class="person-list">
-              <li class="person">
-                <a
-                  v-for="person in group.members"
-                  :key="person.slug"
-                  :href="getPersonLink(person)"
-                  :title="person.name"
-                  class="portrait column"
-                >
-                  <img :src="getPersonPortrait(person)" />
-                </a>
-              </li>
-            </ul>
-          </span>
+        <div class="bordertop">
+          <template v-for="person in group.members" :key="person.slug">
+            <person-with-position :person="person" position="member" />
+          </template>
         </div>
       </div>
     </div>
@@ -183,10 +103,13 @@ import { partyTitle } from '@/_mixins/titles.js';
 import { partyHeader } from '@/_mixins/altHeaders.js';
 import { partyOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
+import PersonWithPosition from '@/_components/PersonWithPosition.vue';
 
 export default {
   name: 'CardGroupBasicInformation',
-  components: {},
+  components: {
+    PersonWithPosition,
+  },
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
   data() {
     return {
@@ -240,46 +163,21 @@ export default {
   @include respond-to(desktop) {
     min-width: 70px;
   }
+
+  &.parlaicon-top {
+    justify-content: flex-start !important;
+    padding-top: 27px;
+  }
 }
 
 .bordertop {
   border-top: 1px solid $background;
   padding: 10px 0;
-  margin: 5px 0;
-}
-
-.bordertop0 {
-  border-top: 1px solid $background;
-  padding: 0;
-  margin: 0;
-}
-
-.bordertop,
-.bordertop0 {
   flex: 1;
 }
 
-.poslanec h3 {
-  font-weight: 400;
-}
-
-.verticalmember {
-  width: 100%;
-
-  .member_data {
-    text-align: left;
-    h4 {
-      margin: 5px 0;
-    }
-  }
-
-  .img-responsive {
-    width: 40px;
-    margin: 10px 15px 10px 0;
-    @include respond-to(desktop) {
-      margin-right: 25px;
-    }
-  }
+.poslanec {
+  padding: 0;
 }
 
 .socialicon-container {
@@ -291,6 +189,7 @@ export default {
   flex-direction: column;
   height: 100%;
   max-height: $full-card-height;
+  overflow-y: auto;
 
   .row {
     display: flex;
