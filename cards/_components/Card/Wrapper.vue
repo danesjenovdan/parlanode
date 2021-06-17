@@ -1,5 +1,5 @@
 <template>
-  <div :id="mountId">
+  <div>
     <template v-if="hasGenerator && showGenerator">
       <slot name="generator" />
     </template>
@@ -89,12 +89,11 @@ export default {
   emits: ['back-change'],
   data() {
     // eslint-disable-next-line no-restricted-properties
-    const { mountId, cardState } = this.$root.$options.contextData;
+    const { cardState } = this.$root.$options.contextData;
     return {
       currentBack: null,
       transitionClass: null,
       previousHeight: null,
-      mountId,
       hasGenerator: this.$slots.generator?.()?.length,
       showGenerator: cardState?.generator,
     };

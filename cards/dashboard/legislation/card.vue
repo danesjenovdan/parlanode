@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.mountId">
+    <dash-wrapper>
       <div id="dash-legislation-list">
         <div v-if="legislation != null" class="filters">
           <input

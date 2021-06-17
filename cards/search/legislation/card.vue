@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :content-class="{ 'is-loading': loading }"
     :header-config="headerConfig"
     :og-config="ogConfig"

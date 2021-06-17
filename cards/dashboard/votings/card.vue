@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.mountId">
+    <dash-wrapper>
       <div id="dash-votings-list">
         <h4 v-if="session">{{ session.name }}</h4>
         <div v-if="votings != null" class="filters">

@@ -125,11 +125,10 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     mountId
   );
 
+  const outputHtml = `${styles}${preloads}<div id="${mountId}">${cardHtml}</div>${initialState}${scripts}`;
+
   const html = getTemplate(template)
-    .replace(
-      `<!--ssr-outlet-->`,
-      styles + preloads + cardHtml + initialState + scripts
-    )
+    .replace(`<!--ssr-outlet-->`, outputHtml)
     .replace(
       '<!--container-class-->',
       contextData.template.frameContainerClass

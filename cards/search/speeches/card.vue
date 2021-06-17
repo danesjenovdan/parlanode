@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :content-class="['full', { 'is-loading': fetching }]"
     :header-config="headerConfig"
     :og-config="ogConfig"

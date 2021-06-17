@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.mountId">
+    <dash-wrapper>
       <div id="dash-sessions-list">
         <p-search-dropdown
           v-if="orgs"

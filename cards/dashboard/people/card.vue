@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dash-wrapper :id="$options.cardData.mountId">
+    <dash-wrapper>
       <div id="dash-people-list">
         <div v-if="organisations != null && people != null">
           <p-search-dropdown

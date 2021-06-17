@@ -1,5 +1,5 @@
 <template>
-  <div :id="mountId">
+  <div>
     <template v-if="hasGenerator && showGenerator">
       <slot name="generator" />
     </template>
@@ -18,9 +18,8 @@ export default {
   name: 'TransparentCardWrapper',
   data() {
     // eslint-disable-next-line no-restricted-properties
-    const { mountId, cardState } = this.$root.$options.contextData;
+    const { cardState } = this.$root.$options.contextData;
     return {
-      mountId,
       hasGenerator: this.$slots.generator?.()?.length,
       showGenerator: cardState?.generator,
     };

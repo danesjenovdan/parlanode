@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :id="$options.cardData.mountId"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <template #info>
       <p v-t="'info.lead'" class="info-text lead"></p>
       <p v-t="'info.methodology'" class="info-text heading"></p>

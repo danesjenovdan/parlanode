@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :id="$options.cardData.mountId"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="empty">
       <div v-t="'card-in-development'" class="circle"></div>
     </div>

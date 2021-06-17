@@ -1,6 +1,5 @@
 <template>
   <card-wrapper
-    :id="$options.cardData.mountId"
     :header-config="headerConfig"
     :og-config="ogConfig"
     class="card-halfling card-featured-legislation"
