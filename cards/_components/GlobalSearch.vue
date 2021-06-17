@@ -1,5 +1,5 @@
 <template>
-  <transparent-wrapper class="global-search">
+  <transparent-wrapper>
     <p-search-dropdown
       :model-value="allItems"
       :placeholder="$t('search_placeholder')"
@@ -101,7 +101,7 @@ export default {
 <style lang="scss" scoped>
 @import 'parlassets/scss/colors';
 
-.global-search :deep(.search-dropdown) {
+:deep(.search-dropdown) {
   .search-dropdown-input {
     background-color: $white;
   }
