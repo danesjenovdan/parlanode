@@ -40,16 +40,20 @@ body {
   }
 }
 
+.menu-container .open-search,
+.menu-container .close-search,
 .menu-container .menu {
+  padding-bottom: 14px;
   display: flex;
   width: auto;
+  align-items: center;
 }
 
 .menu-container .menu a {
   font-size: 16px;
   color: $font-default;
   font-weight: 500;
-  padding: 20px 30px;
+  padding: 0 30px;
   margin: 0;
 }
 
@@ -66,13 +70,10 @@ body {
 .open-search,
 .close-search {
   font-size: 16px;
-  padding: 20px 0;
-  width: 16px;
-  height: 80px;
 }
 
-.open-search:hover,
-.close-search:hover {
+.open-search span:hover,
+.close-search span:hover {
   color: $tab-active;
   cursor: pointer;
 }
@@ -187,16 +188,17 @@ body {
 }
 
 .menu-search {
-  height: 80px;
-  margin-top: -10px;
+  padding-bottom: 14px;
+  display: flex;
+  align-items: center;
   width: 100%;
   z-index: 1;
   // set bg color to prevent firefox repaint issue on display change
   background-color: $background;
-}
 
-[id^="c_menu-search"] {
-  margin-top: 0;
+  [id^=misc_menu-search] {
+    width: 100%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -213,6 +215,7 @@ body {
   .menu-container.open .menu {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     width: 100%;
   }
 
@@ -225,7 +228,7 @@ body {
   }
 
   .menu-container.open .menu a {
-    padding-left: 0;
+    padding: 20px 30px 20px 0;
   }
 
   .menu-container.open .card-content {
