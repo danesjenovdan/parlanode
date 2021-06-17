@@ -68,7 +68,6 @@ const fetchCardData = async (dataUrl, id, date) => {
     let response;
     try {
       response = await axios.get(expandedUrl);
-      console.log(expandedUrl, response);
     } catch (error) {
       return {
         url: expandedUrl,

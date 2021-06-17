@@ -1,4 +1,6 @@
 {
+  "id": 235,
+  "url": "https://parladata.lb.djnd.si/v3/cards/person/speeches/?id=235",
   "data": {
     "results": [
       {
@@ -762,6 +764,10 @@
         "start_time": "2020-12-14T15:30:00"
       }
     ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    },
     "person": {
       "slug": "235-igor-horvat",
       "name": "Igor Horvat",

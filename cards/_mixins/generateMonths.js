@@ -2,8 +2,8 @@ import { range, flatten } from 'lodash-es';
 
 export default {
   methods: {
-    generateMonths(MONTH_NAMES, start = '2010-01-01T00:00:00Z') {
-      const startDate = new Date(start);
+    generateMonths(MONTH_NAMES, start) {
+      const startDate = new Date(start || '2010-01-01T00:00:00Z');
       const startYear = startDate.getFullYear();
       const startMonth = startDate.getMonth() + 1;
 

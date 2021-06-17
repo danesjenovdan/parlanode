@@ -5,39 +5,39 @@
         <div v-t="'contents-search'" class="filter-label"></div>
         <search-field
           v-model="textFilter"
-          @update:modelValue="searchSpeakings(true)"
+          @update:modelValue="searchSpeeches"
         />
       </div>
       <div v-if="type === 'party' && allPeople.length" class="filter">
         <div v-t="'mps'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allPeople"
-          @update:modelValue="searchSpeakings"
+          @update:modelValue="searchSpeeches"
         />
       </div>
-      <!-- <div class="filter">
+      <div class="filter">
         <div v-t="'time-period'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allMonths"
           :alphabetise="false"
-          @update:modelValue="searchSpeakings"
-          @clear="searchSpeakings"
+          @update:modelValue="searchSpeeches"
+          @clear="searchSpeeches"
         />
-      </div> -->
+      </div>
       <div v-if="allWorkingBodies.length" class="filter">
         <div v-t="'session-type'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allWorkingBodies"
-          @update:modelValue="searchSpeakings"
-          @clear="searchSpeakings"
+          @update:modelValue="searchSpeeches"
+          @clear="searchSpeeches"
         />
       </div>
     </div>
 
-    <div class="speaks">
+    <div class="speeches">
       <scroll-shadow ref="shadow">
         <div
-          id="speaks"
+          id="speeches"
           v-infinite-scroll="loadMore"
           infinite-scroll-disabled="busy"
           infinite-scroll-distance="10"
@@ -54,7 +54,7 @@
                   .join(', ')
               }}
             </div>
-            <ul class="speaks__list">
+            <ul class="speeches__list">
               <govor
                 v-for="speech in speakingDay"
                 :key="speech.speech_id"
@@ -78,8 +78,8 @@
 </template>
 
 <script>
-import axios from 'axios';
-import { groupBy } from 'lodash-es';
+import axios, { CancelToken } from 'axios';
+import { groupBy, debounce } from 'lodash-es';
 import Govor from '@/_components/Govor.vue';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
@@ -109,7 +109,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: (value) => ['person', 'party'].indexOf(value) > -1,
+      validator: (value) => ['person', 'party'].includes(value),
     },
   },
   data() {
@@ -118,10 +118,10 @@ export default {
     const allPeople = [];
 
     const { months } = getD3Locale(this.$i18n.locale);
-    const start = this.cardData.facet_counts?.facet_ranges?.start_time?.start;
+    const start = this.cardData.data?.mandate?.beginning;
     const allMonths = this.generateMonths(months, start);
     allMonths.forEach((month) => {
-      month.selected = (state.months || []).indexOf(month.id) !== -1;
+      month.selected = (state.months || []).includes(month.id);
     });
 
     const allWorkingBodies = (this.cardData.organizations || []).map((org) => ({
@@ -139,53 +139,50 @@ export default {
       card: {
         currentPage: 0,
         isLoading: false,
-        lockLoading: false,
-        shouldShadow: false,
       },
       speeches: this.cardData.data?.results || [],
       textFilter,
       allMonths,
       allWorkingBodies,
       allPeople,
+      cancelRequest: null,
     };
   },
   computed: {
     searchUrl() {
-      const state = {};
+      const url = new URL(this.cardData.url);
 
-      if (this.type === 'person') {
-        state.people = this.cardData.person.id;
-      } else if (this.type === 'party') {
-        state.parties = this.cardData.party.id;
-        state.people = this.selectedPeople.map((p) => p.id).join(',');
-      }
+      const months = this.selectedMonths.map((m) => m.id).join(',');
+      url.searchParams.set('months', months);
 
-      if (this.selectedMonths.length > 0) {
-        state.months = this.selectedMonths.map((m) => m.id).join(',');
-      }
+      const text =
+        this.textFilter.length && this.textFilter !== '*'
+          ? this.textFilter
+          : '';
+      url.searchParams.set('text', text);
 
-      if (this.selectedWorkingBodies.length > 0) {
-        state.wb = this.selectedWorkingBodies.map((s) => s.id);
-      }
+      // const state = {};
 
-      if (this.selectedPeople.length > 0) {
-        state.people = this.selectedPeople.map((person) => person.id);
-      }
+      // if (this.type === 'person') {
+      //   state.people = this.cardData.person.id;
+      // } else if (this.type === 'party') {
+      //   state.parties = this.cardData.party.id;
+      //   state.people = this.selectedPeople.map((p) => p.id).join(',');
+      // }
 
-      if (this.textFilter.length && this.textFilter !== '*') {
-        state.q = this.textFilter;
-      }
+      // if (this.selectedWorkingBodies.length > 0) {
+      //   state.wb = this.selectedWorkingBodies.map((s) => s.id);
+      // }
 
-      if (this.card.currentPage > 0) {
-        state.page = this.card.currentPage;
-      }
+      // if (this.selectedPeople.length > 0) {
+      //   state.people = this.selectedPeople.map((person) => person.id);
+      // }
 
-      let encodedQueryData = '';
-      if (Object.keys(state).length !== 0) {
-        encodedQueryData = this.encodeQueryData(state);
-      }
+      // if (this.card.currentPage > 0) {
+      //   state.page = this.card.currentPage;
+      // }
 
-      return `${this.slugs.urls.isci}/search/speeches${encodedQueryData}`;
+      return url.toString();
     },
     selectedWorkingBodies() {
       return this.allWorkingBodies.filter((session) => session.selected);
@@ -221,46 +218,44 @@ export default {
       this
     );
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
-
-    // if (this.type === 'party') {
-    //   axios
-    //     .get(
-    //       `${this.slugs.urls.analize}/pg/getMPsOfPG/${this.cardData.party.id}`
-    //     )
-    //     .then((response) => {
-    //       this.allPeople = response.data.results.map((person) => ({
-    //         id: person.id,
-    //         name: person.name,
-    //         label: person.name,
-    //         selected: (this.cardState.people || []).indexOf(person.id) !== -1,
-    //       }));
-    //     });
-    // }
-  },
-  mounted() {
-    // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
   },
   methods: {
     formatSpeechDate(speech) {
       return dateFormatter(speech.start_time || speech.session?.start_time);
     },
-    searchSpeakings(delay = false) {
-      // const waitTime = delay ? 750 : 0;
-      // this.card.lockLoading = true;
-      // setTimeout(() => {
-      //   if (!this.card.isLoading) {
-      //     this.card.currentPage = 0;
-      //     this.card.isLoading = true;
-      //     axios.get(this.searchUrl).then((response) => {
-      //       this.speakingDays = response.data.response.docs;
-      //       this.card.isLoading = false;
-      //     });
-      //   }
-      //   this.card.lockLoading = false;
-      // }, waitTime);
+    makeRequest(url) {
+      if (this.cancelRequest) {
+        this.cancelRequest();
+        this.cancelRequest = null;
+      }
+
+      return axios
+        .get(url, {
+          cancelToken: new CancelToken((c) => {
+            this.cancelRequest = c;
+          }),
+        })
+        .then(
+          (response) => {
+            this.cancelRequest = null;
+            return response;
+          },
+          (error) => {
+            this.cancelRequest = null;
+            throw error;
+          }
+        );
     },
+    searchSpeeches: debounce(function searchSpeeches() {
+      this.card.isLoading = true;
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.speeches = response?.data?.results || [];
+        this.card.currentPage = 0;
+        this.card.isLoading = false;
+      });
+    }, 750),
     loadMore() {
-      // if (this.card.lockLoading || this.card.isLoading) {
+      // if (this.card.isLoading) {
       //   return;
       // }
       // this.card.isLoading = true;
@@ -276,18 +271,6 @@ export default {
       //     this.card.lockLoading = true;
       //   }
       // });
-    },
-    checkScrollPosition() {
-      if (!this.card.lockLoading) {
-        this.card.lockLoading = true;
-        setTimeout(() => {
-          if (document) {
-            this.card.shouldShadow =
-              document.getElementById('speaks').scrollTop > 0;
-          }
-          this.card.lockLoading = false;
-        }, 200);
-      }
     },
   },
 };
@@ -352,7 +335,7 @@ export default {
   font-style: normal;
 }
 
-#speaks {
+#speeches {
   height: $full-card-height - 83px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -363,7 +346,7 @@ export default {
   }
 }
 
-.speaks {
+.speeches {
   flex: 1;
   position: relative;
   padding-bottom: 20px;

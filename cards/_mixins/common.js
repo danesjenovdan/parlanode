@@ -50,14 +50,4 @@ export default {
       return `${this.urls.cards}/${this.cardName}/?id=${this.cardData.id}`;
     },
   },
-  methods: {
-    encodeQueryData(data) {
-      return `?${Object.keys(data)
-        .reduce((a, k) => {
-          a.push(`${k}=${encodeURIComponent(data[k])}`);
-          return a;
-        }, [])
-        .join('&')}`;
-    },
-  },
 };
