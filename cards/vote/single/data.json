@@ -1,14 +1,14 @@
 {
   "data": {
     "results": {
-      "all": {
+      "all_votes": {
         "absent": 1.0,
         "abstain": 0.0,
         "for": 42.0,
         "against": 0.0
       },
-      "gov_side": {
-        "coalition": {
+      "government_sides": [
+        {
           "max": {
             "max_option": "for",
             "max_option_percentage": 97.67441860465115
@@ -19,9 +19,14 @@
             "for": 42.0,
             "against": 0.0
           },
-          "outliers": []
+          "outliers": [],
+          "group": {
+            "name": "Coalition",
+            "acronym": null,
+            "slug": null
+          }
         },
-        "opposition": {
+        {
           "max": {
             "max_option": "against",
             "max_option_percentage": 48.93617021276596
@@ -32,9 +37,14 @@
             "for": 2.0,
             "against": 23.0
           },
-          "outliers": []
+          "outliers": [],
+          "group": {
+            "name": "Opposition",
+            "acronym": null,
+            "slug": null
+          }
         }
-      },
+      ],
       "abstract_visible": false,
       "session": {
         "name": "6. seja Mestnega sveta MOL",
@@ -53,9 +63,9 @@
       },
       "result": {
         "is_outlier": false,
-        "accepted": false,
-        "value": 51,
-        "max_opt": "for"
+        "passed": null,
+        "max_option_percentage": 51,
+        "max_option": "for"
       },
       "members": [
         {
@@ -804,7 +814,7 @@
           "option": "absent"
         }
       ],
-      "parties": [
+      "groups": [
         {
           "max": {
             "max_option_percentage": 100.0,
@@ -963,7 +973,7 @@
       "id": 1635,
       "agenda_items": null,
       "documents": null,
-      "name": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 5. seje Mestnega sveta Mestne občine Ljubljana z dne 17. junija 2019.",
+      "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 5. seje Mestnega sveta Mestne občine Ljubljana z dne 17. junija 2019.",
       "legislation": null
     },
     "mandate": {

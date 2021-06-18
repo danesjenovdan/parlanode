@@ -9,15 +9,15 @@
           :color="vote.id"
           :selected="vote.selected"
           :small-text="vote.label"
-          :text="String(vote.value)"
-          :disabled="vote.value === 0"
+          :text="String(allVotes[vote.id])"
+          :disabled="allVotes[vote.id] === 0"
           @click="toggleVote(vote.id)"
         />
       </div>
       <result
         :score="result.value"
-        :option="result.max_opt"
-        :chart-data="mapVotes(voteCounts)"
+        :option="result.max_option"
+        :chart-data="mapVotes(allVotes)"
       />
     </div>
     <scroll-shadow ref="shadow">
@@ -36,24 +36,40 @@
             </a>
           </div>
           <div class="column wider name">
-            <a :href="getPersonLink(member.person)" class="funblue-light-hover">
-              {{ member.person?.name }}
-            </a>
-            <br />
-            <a
-              v-if="getPartyLink(member.person?.group)"
-              :href="getPartyLink(member.person?.group)"
-              class="funblue-light-hover"
-            >
-              {{ member.person?.group?.acronym }}
-            </a>
-            <span v-else>
-              {{ member.person?.group?.acronym }}
-            </span>
+            <div class="person-name">
+              <a
+                :href="getPersonLink(member.person)"
+                class="funblue-light-hover"
+              >
+                {{ member.person?.name }}
+              </a>
+            </div>
+            <div class="person-party">
+              <a
+                v-if="getPartyLink(member.person?.group)"
+                :href="getPartyLink(member.person?.group)"
+                class="funblue-light-hover"
+              >
+                {{
+                  member.person?.group?.acronym ||
+                  member.person?.group?.name ||
+                  'N/A'
+                }}
+              </a>
+              <span v-else>
+                {{
+                  member.person?.group?.acronym ||
+                  member.person?.group?.name ||
+                  'N/A'
+                }}
+              </span>
+            </div>
           </div>
           <div class="column vote">
             <div :class="`option option-${member.option}`">
-              {{ translateOption(member.option, member.person.gender) }}
+              {{
+                translateOption(member.option, member.person?.preferred_pronoun)
+              }}
             </div>
           </div>
         </li>
@@ -67,7 +83,6 @@
 </template>
 
 <script>
-import { find } from 'lodash-es';
 import StripedButton from '@/_components/StripedButton.vue';
 import links from '@/_mixins/links.js';
 import SearchField from '@/_components/SearchField.vue';
@@ -95,6 +110,10 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    allVotes: {
+      type: Object,
+      default: () => ({}),
+    },
     state: {
       type: Object,
       default: () => ({}),
@@ -102,14 +121,7 @@ export default {
   },
   emits: ['namefilter'],
   data() {
-    const options = this.members.map((member) => member.option);
-    const voteCounts = {
-      for: options.filter((option) => option === 'for').length,
-      against: options.filter((option) => option === 'against').length,
-      abstain: options.filter((option) => option === 'abstain').length,
-      absent: options.filter((option) => option === 'absent').length,
-    };
-
+    console.log(this.allVotes)
     return {
       nameFilter: '',
       columns: [
@@ -118,31 +130,26 @@ export default {
         { id: 'party', label: 'PS' },
         { id: 'votes', label: 'Glasovi', additionalClass: 'optional' },
       ],
-      voteCounts,
       votes: [
         {
           id: 'for',
           label: this.$t('vote-for'),
           selected: this.getSelectedOption('for'),
-          value: voteCounts.for,
         },
         {
           id: 'against',
           label: this.$t('vote-against'),
           selected: this.getSelectedOption('against'),
-          value: voteCounts.against,
         },
         {
           id: 'abstain',
           label: this.$t('vote-abstain-plural'),
           selected: this.getSelectedOption('abstain'),
-          value: voteCounts.abstain,
         },
         {
           id: 'absent',
           label: this.$t('vote-absent-plural'),
           selected: this.getSelectedOption('absent'),
-          value: voteCounts.absent,
         },
       ],
     };
@@ -196,28 +203,12 @@ export default {
       return false;
     },
     mapVotes,
-    translateOption(option, gender) {
-      return {
-        for: {
-          m: this.$t('vote-for'),
-          f: this.$t('vote-for'),
-        },
-        against: {
-          m: this.$t('vote-against'),
-          f: this.$t('vote-against'),
-        },
-        absent: {
-          m: this.$t('absent--m'),
-          f: this.$t('absent--f'),
-        },
-        abstain: {
-          m: this.$t('vote-abstain--m'),
-          f: this.$t('vote-abstain--f'),
-        },
-      }[option][gender];
+    translateOption(option, preferredPronoun) {
+      const form = preferredPronoun === 'she' ? '--f' : '--m';
+      return this.$t(`voted-${option}${form}`);
     },
     toggleVote(id) {
-      if (this.voteCounts[id] !== 0) {
+      if (this.allVotes[id] !== 0) {
         this.votes.forEach((vote) => {
           if (vote.id === id) {
             vote.selected = !vote.selected;
@@ -278,8 +269,23 @@ export default {
 .person-list {
   height: 231px;
   overflow: auto;
+
   @include respond-to(desktop) {
     height: 394.5px;
+  }
+
+  .person-name,
+  .person-party {
+    line-height: 1.1;
+  }
+
+  .person-name {
+    font-weight: 300;
+  }
+
+  .person-party {
+    font-size: 14px;
+    margin-top: 5px;
   }
 }
 

@@ -47,7 +47,7 @@ export default {
       let Y = 0; // SVG Y coordinate
       let R = 0; // Rotation
 
-      return this.sectionData.map((item) => {
+      const xx = this.sectionData.map((item) => {
         a = 360 * item.percentage;
         if (a === 360) {
           a = 359.999;
@@ -84,6 +84,8 @@ export default {
           R: oldR,
         };
       });
+      console.log(this.sectionData, xx)
+      return xx
     },
   },
 };

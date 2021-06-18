@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <div class="date-and-stuff">
       <a
         :href="getSessionVotesLink(results.session)"
@@ -11,16 +11,16 @@
 
     <div :class="['summary', { 'fire-badge': results.result?.is_outlier }]">
       <div class="result">
-        <template v-if="results.result?.accepted === true">
+        <template v-if="results.result?.passed === true">
           <i class="accepted glyphicon glyphicon-ok"></i>
           <div v-t="'vote-passed'" class="text"></div>
         </template>
-        <template v-else-if="results.result?.accepted === false">
+        <template v-else-if="results.result?.passed === false">
           <i class="not-accepted glyphicon glyphicon-remove"></i>
           <div v-t="'vote-not-passed'" class="text"></div>
         </template>
         <template v-else>
-          <i class="not-accepted parlaicon-unknown"></i>
+          <i class="glyphicon parlaicon-unknown"></i>
           <div v-t="'vote-unknown'" class="text"></div>
         </template>
       </div>
@@ -81,6 +81,7 @@
           <poslanci
             :members="results.members"
             :result="results.result"
+            :all-votes="allVotes"
             :state="state"
             @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
           />
@@ -89,7 +90,7 @@
           <poslanske-skupine
             ref="parties"
             :members="results.members"
-            :parties="results.parties"
+            :parties="results.groups"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
@@ -101,7 +102,7 @@
           <poslanske-skupine
             ref="sides"
             :members="results.members"
-            :parties="coalitionOpositionParties"
+            :parties="results.government_sides"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
@@ -123,6 +124,7 @@
           <poslanci
             :members="results.members"
             :result="results.result"
+            :all-votes="allVotes"
             :state="state"
             @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
           />
@@ -131,7 +133,7 @@
           <poslanske-skupine
             ref="parties"
             :members="results.members"
-            :parties="results.parties"
+            :parties="results.groups"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
@@ -143,7 +145,7 @@
           <poslanske-skupine
             ref="sides"
             :members="results.members"
-            :parties="coalitionOpositionParties"
+            :parties="results.government_sides"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
@@ -154,27 +156,27 @@
       </p-tabs>
     </template>
     <template v-else>
-      <div v-if="vote" class="session_voting row">
+      <div v-if="allVotes" class="session_voting row">
         <div class="col-md-6 col-md-offset-3">
           <div class="session_votes">
             <div class="row">
               <div class="col-xs-3">
-                {{ vote.for }}
+                {{ allVotes.for }}
                 <div v-t="'vote-for'" class="type"></div>
                 <div class="indicator aye">&nbsp;</div>
               </div>
               <div class="col-xs-3">
-                {{ vote.against }}
+                {{ allVotes.against }}
                 <div v-t="'vote-against'" class="type"></div>
                 <div class="indicator ney">&nbsp;</div>
               </div>
               <div class="col-xs-3">
-                {{ vote.abstain }}
+                {{ allVotes.abstain }}
                 <div v-t="'vote-abstain'" class="type"></div>
                 <div class="indicator abstention">&nbsp;</div>
               </div>
               <div class="col-xs-3">
-                {{ vote.absent }}
+                {{ allVotes.absent }}
                 <div v-t="'vote-absent'" class="type"></div>
                 <div class="indicator not">&nbsp;</div>
               </div>
@@ -221,59 +223,16 @@ export default {
     const results = this.cardData.data?.results || {};
 
     // parse vote title and any associated projects from text
-    const { title, projects } = parseVoteTitle(results.name);
+    const { title, projects } = parseVoteTitle(results.title);
 
-    const coalitionOpositionParties = [];
-    if (results.gov_side) {
-      if (results.gov_side.coalition) {
-        coalitionOpositionParties.push({
-          ...results.gov_side.coalition,
-          group: {
-            name: this.$t('coalition'),
-            slug: 'coalition',
-          },
-        });
-      }
-      if (results.gov_side.opposition) {
-        coalitionOpositionParties.push({
-          ...results.gov_side.opposition,
-          group: {
-            name: this.$t('opposition'),
-            slug: 'opposition',
-          },
-        });
-      }
-    }
-
-    const vote = results.all;
-    if (vote) {
-      const e = vote;
-      if (
-        typeof e.for === 'number' &&
-        typeof e.against === 'number' &&
-        typeof e.abstain === 'number' &&
-        typeof e.absent === 'number'
-      ) {
-        const allInVotes = e.for + e.against + e.abstain + e.absent;
-        e.percent_for = Math.floor((e.for / allInVotes) * 100);
-        e.percent_against = Math.floor((e.against / allInVotes) * 100);
-        e.percent_abstain = Math.floor((e.abstain / allInVotes) * 100);
-        e.percent_absent = Math.floor((e.absent / allInVotes) * 100);
+    const allVotes = {};
+    ['for', 'against', 'abstain', 'absent'].forEach((key) => {
+      if (typeof results.all_votes[key] !== 'number') {
+        allVotes[key] = '?';
       } else {
-        if (typeof e.for !== 'number') {
-          e.for = '?';
-        }
-        if (typeof e.against !== 'number') {
-          e.against = '?';
-        }
-        if (typeof e.abstain !== 'number') {
-          e.abstain = '?';
-        }
-        if (typeof e.absent !== 'number') {
-          e.absent = '?';
-        }
+        allVotes[key] = results.all_votes[key];
       }
-    }
+    });
 
     return {
       results,
@@ -286,8 +245,7 @@ export default {
       showMobileExcerpt: false,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
-      coalitionOpositionParties,
-      vote,
+      allVotes,
     };
   },
   computed: {
@@ -406,12 +364,19 @@ export default {
       width: 24px;
       height: 24px;
       background-repeat: no-repeat;
-      background-position: center;
       background-size: contain;
+      background-position: center;
 
       @include respond-to(desktop) {
         width: 29px;
         height: 29px;
+      }
+
+      &::before {
+        content: '?';
+        font-family: sans-serif;
+        font-size: 1.2em;
+        font-weight: 700;
       }
     }
 
