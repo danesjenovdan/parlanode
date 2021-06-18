@@ -314,9 +314,12 @@ export default {
         }
 
         e.url = this.getSessionVoteLink({
-          session_id:
-            e.session_id || (e.session && e.session.id) || this.data.session.id,
-          vote_id: e.motion_id,
+          session: {
+            id: e.session_id,
+          },
+          motion: {
+            id: e.id,
+          },
         });
         e.passedClass = 'passed ';
         if (e.passed === true) {
@@ -489,6 +492,13 @@ export default {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
+    &::before {
+      content: '?';
+      font-family: sans-serif;
+      font-size: 1.2em;
+      font-weight: 700;
+    }
   }
 }
 
