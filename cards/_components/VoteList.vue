@@ -61,7 +61,7 @@
                   class="lightning-badge"
                   style="position: absolute; left: -37px"
                 ></div>
-                <div v-if="!vote.has_votes" class="hand-badge"></div>
+                <div v-if="!vote.has_named_votes" class="hand-badge"></div>
                 <a :href="vote.url" class="show clearfix">
                   <div class="col-md-1 icon-col">
                     <div :class="vote.passedClass">
@@ -119,22 +119,22 @@
                         </div>
                         <div class="row">
                           <div class="col-xs-3">
-                            {{ vote.votes_for }}
+                            {{ vote.all_votes?.for }}
                             <div v-t="'vote-for'" class="type"></div>
                             <div class="indicator aye">&nbsp;</div>
                           </div>
                           <div class="col-xs-3">
-                            {{ vote.votes_against }}
+                            {{ vote.all_votes?.against }}
                             <div v-t="'vote-against'" class="type"></div>
                             <div class="indicator ney">&nbsp;</div>
                           </div>
                           <div class="col-xs-3">
-                            {{ vote.votes_abstain }}
+                            {{ vote.all_votes?.abstain }}
                             <div v-t="'vote-abstain'" class="type"></div>
                             <div class="indicator abstention">&nbsp;</div>
                           </div>
                           <div class="col-xs-3">
-                            {{ vote.votes_absent }}
+                            {{ vote.all_votes?.absent }}
                             <div v-t="'vote-absent'" class="type"></div>
                             <div class="indicator not">&nbsp;</div>
                           </div>
@@ -153,7 +153,7 @@
 </template>
 
 <script>
-import { map, sortBy } from 'lodash-es';
+import { map, sortBy, sum } from 'lodash-es';
 import VirtualList from '@/_components/vue-virtual-scroll-list/VirtualList.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
@@ -283,65 +283,43 @@ export default {
   methods: {
     processVotes(inputVotes) {
       const votes = inputVotes.map((e) => {
-        if (!e) {
-          e = {};
-        }
+        const vote = {
+          ...e,
+          url: this.getSessionVoteLink({
+            session: this.votesAndStuff.session,
+            motion: { id: e.id },
+          }),
+        };
 
-        if (
-          typeof e.votes_for === 'number' &&
-          typeof e.votes_against === 'number' &&
-          typeof e.votes_abstain === 'number' &&
-          typeof e.votes_absent === 'number'
-        ) {
-          const allInVotes = e.for + e.against + e.abstain + e.absent;
-          e.percent_for = Math.floor((e.votes_for / allInVotes) * 100);
-          e.percent_against = Math.floor((e.votes_against / allInVotes) * 100);
-          e.percent_abstain = Math.floor((e.votes_abstain / allInVotes) * 100);
-          e.percent_absent = Math.floor((e.votes_absent / allInVotes) * 100);
-        } else {
-          if (typeof e.votes_for !== 'number') {
-            e.votes_for = '?';
+        const OPTIONS = ['for', 'against', 'abstain', 'absent'];
+        const voteSum = sum(OPTIONS.map((key) => vote.all_votes?.[key] || 0));
+        OPTIONS.forEach((key) => {
+          const num = vote.all_votes?.[key] || 0;
+          vote[`percent_${key}`] = (num / voteSum) * 100;
+          if (typeof vote.all_votes?.[key] !== 'number') {
+            vote.all_votes = vote.all_votes || {};
+            vote.all_votes[key] = '?';
           }
-          if (typeof e.votes_against !== 'number') {
-            e.votes_against = '?';
-          }
-          if (typeof e.votes_abstain !== 'number') {
-            e.votes_abstain = '?';
-          }
-          if (typeof e.votes_absent !== 'number') {
-            e.votes_absent = '?';
-          }
-        }
-
-        e.url = this.getSessionVoteLink({
-          session: {
-            id: e.session_id,
-          },
-          motion: {
-            id: e.id,
-          },
         });
-        e.passedClass = 'passed ';
-        if (e.passed === true) {
-          e.passedClass += 'aye';
-        } else if (e.passed === false) {
-          e.passedClass += 'nay';
+
+        vote.passedClass = 'passed ';
+        if (vote.passed === true) {
+          vote.passedClass += 'aye';
+        } else if (vote.passed === false) {
+          vote.passedClass += 'nay';
         } else {
-          e.passedClass += 'unknown';
+          vote.passedClass += 'unknown';
         }
-        e.passedGlyph = 'glyphicon ';
-        if (e.passed === true) {
-          e.passedGlyph += 'glyphicon-ok';
-        } else if (e.passed === false) {
-          e.passedGlyph += 'glyphicon-remove';
+        vote.passedGlyph = 'glyphicon ';
+        if (vote.passed === true) {
+          vote.passedGlyph += 'glyphicon-ok';
+        } else if (vote.passed === false) {
+          vote.passedGlyph += 'glyphicon-remove';
         } else {
-          e.passedGlyph += 'parlaicon-unknown';
+          vote.passedGlyph += 'parlaicon-unknown';
         }
 
-        // if has_votes is undefined assume we always have votes
-        e.has_votes = typeof e.has_votes === 'boolean' ? e.has_votes : true;
-
-        return e;
+        return vote;
       });
       return sortBy(votes, 'start_time');
     },

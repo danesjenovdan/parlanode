@@ -121,7 +121,6 @@ export default {
   },
   emits: ['namefilter'],
   data() {
-    console.log(this.allVotes)
     return {
       nameFilter: '',
       columns: [

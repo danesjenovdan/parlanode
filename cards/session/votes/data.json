@@ -2,185 +2,199 @@
   "data": {
     "results": [
       {
-        "votes_abstain": 2,
-        "votes_absent": 8,
-        "votes_for": 35,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1635,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 5. seje Mestnega sveta Mestne občine Ljubljana z dne 17. junija 2019."
       },
       {
-        "votes_abstain": 1,
-        "votes_absent": 7,
-        "votes_for": 37,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1637,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "KADROVSKE ZADEVE 1. PREDLOG SKLEPA O PRENEHANJU MANDATA IN IMENOVANJU NADOMESTNEGA PREDSTAVNIKA MESTNE OBČINE LJUBLJANA V SVET OSNOVNE ŠOLE BIČEVJE PREDLOGU SKLEPA: I. Mojci SOJAR preneha mandat članice Sveta Osnovne šole Bičevje. II. V Svet Osnovne šole Bičevje se za predstavnika Mestne občine Ljubljana imenuje: Matej KEBER. Mandat imenovanega je vezan na mandat sveta šole."
       },
       {
-        "votes_abstain": 0,
-        "votes_absent": 9,
-        "votes_for": 36,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1638,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Aleksandru GUBETU, Tadeju ŠEMETU in Vesni ŽNIDAR KADUNC se da pozitivno mnenje h kandidaturi za ravnatelja oziroma ravnateljico Osnovne šole Miška Kranjca."
       },
       {
-        "votes_abstain": 9,
-        "votes_absent": 6,
-        "votes_for": 30,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1641,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za delovno uspešnost direktorice Javnega zavoda Mladi zmaji za leto 2018 iz naslova prodaje blaga in storitev na trgu."
       },
       {
-        "votes_abstain": 5,
-        "votes_absent": 8,
-        "votes_for": 32,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1651,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Avtentične razlage tretjega odstavka 8. člena Odloka o Občinskem lokacijskem načrtu za del območja urejanja ŠO 1/2 Šiška (osrednji del)."
       },
       {
-        "votes_abstain": 7,
-        "votes_absent": 12,
-        "votes_for": 26,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1655,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o Občinskem lokacijskem načrtu za del območja urejanja ŠO 1/2 Šiška (vzhodni del)."
       },
       {
-        "votes_abstain": 1,
-        "votes_absent": 7,
-        "votes_for": 37,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1666,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del enote urejanja prostora ŠI-390."
       },
       {
-        "votes_abstain": 5,
-        "votes_absent": 4,
-        "votes_for": 36,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1672,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 147 - območje ob vzhodni obvoznici in Litijski cesti skupaj s pripombami."
       },
       {
-        "votes_abstain": 9,
-        "votes_absent": 5,
-        "votes_for": 31,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1675,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembah in dopolnitvah Odloka o ustanovitvi javnega zavoda Zdravstveni dom Ljubljana sprejme po hitrem postopku."
       },
       {
-        "votes_abstain": 0,
-        "votes_absent": 16,
-        "votes_for": 7,
-        "votes_against": 22,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1676,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O USTANOVITVI JAVNEGA ZAVODA ZDRAVSTVENI DOM LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PROCEDURALNI PREDLOG G. MINODRAŠA: Seja se prekine, dokler se ne pridobi na vpogled soglasja, navedena v gradivu."
       },
       {
-        "votes_abstain": 0,
-        "votes_absent": 17,
-        "votes_for": 28,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1677,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o ustanovitvi javnega zavoda Zdravstveni dom Ljubljana."
       },
       {
-        "votes_abstain": 4,
-        "votes_absent": 5,
-        "votes_for": 22,
-        "votes_against": 14,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1683,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi cen programov predšolske vzgoje v javnih vrtcih in dodatnih ugodnosti za starše."
       },
       {
-        "votes_abstain": 4,
-        "votes_absent": 7,
-        "votes_for": 25,
-        "votes_against": 9,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1696,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o manjši notranji igralni površini v javnih vrtcih Mestne občine Ljubljana za šolski leti 2019/2020 in 2020/21."
       },
       {
-        "votes_abstain": 0,
-        "votes_absent": 7,
-        "votes_for": 38,
-        "votes_against": 0,
+        "all_votes": {
+          "absent": 1.0,
+          "abstain": 0.0,
+          "for": 42.0,
+          "against": 0.0
+        },
         "passed": null,
-        "session_id": 72,
         "id": 1700,
         "is_outlier": false,
         "has_outliers": false,
-        "has_votes": true,
+        "has_named_votes": true,
         "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Letnega programa izobraževanja odraslih v Mestni občini Ljubljana za leto 2019."
       }
     ],
