@@ -9,15 +9,15 @@
           :color="vote.id"
           :selected="vote.selected"
           :small-text="vote.label"
-          :text="String(personVotes[vote.id])"
-          :disabled="personVotes[vote.id] === 0"
+          :text="String(vote.value)"
+          :disabled="vote.value === 0"
           @click="toggleVote(vote.id)"
         />
       </div>
       <result
         :score="result.value"
         :option="result.max_opt"
-        :chart-data="mapVotes(personVotes)"
+        :chart-data="mapVotes(voteCounts)"
       />
     </div>
     <scroll-shadow ref="shadow">
@@ -27,28 +27,28 @@
       >
         <li
           v-for="member in filteredMembers"
-          :key="member.person.id"
+          :key="member.person.slug"
           class="item"
         >
           <div class="column portrait">
-            <a :href="getMemberLink(member)">
-              <img :src="getMemberPortrait(member)" />
+            <a :href="getPersonLink(member.person)">
+              <img :src="getPersonPortrait(member.person)" />
             </a>
           </div>
           <div class="column wider name">
-            <a :href="getMemberLink(member)" class="funblue-light-hover">
-              {{ member.person.name }}
+            <a :href="getPersonLink(member.person)" class="funblue-light-hover">
+              {{ member.person?.name }}
             </a>
             <br />
             <a
-              v-if="member.person.party.classification === 'pg'"
-              :href="getMemberPartyLink(member)"
+              v-if="getPartyLink(member.person?.group)"
+              :href="getPartyLink(member.person?.group)"
               class="funblue-light-hover"
             >
-              {{ member.person.party.acronym }}
+              {{ member.person?.group?.acronym }}
             </a>
             <span v-else>
-              {{ member.person.party.acronym }}
+              {{ member.person?.group?.acronym }}
             </span>
           </div>
           <div class="column vote">
@@ -91,10 +91,6 @@ export default {
       type: Array,
       default: () => [],
     },
-    personVotes: {
-      type: Object,
-      default: () => ({}),
-    },
     result: {
       type: Object,
       default: () => ({}),
@@ -106,6 +102,14 @@ export default {
   },
   emits: ['namefilter'],
   data() {
+    const options = this.members.map((member) => member.option);
+    const voteCounts = {
+      for: options.filter((option) => option === 'for').length,
+      against: options.filter((option) => option === 'against').length,
+      abstain: options.filter((option) => option === 'abstain').length,
+      absent: options.filter((option) => option === 'absent').length,
+    };
+
     return {
       nameFilter: '',
       columns: [
@@ -114,26 +118,31 @@ export default {
         { id: 'party', label: 'PS' },
         { id: 'votes', label: 'Glasovi', additionalClass: 'optional' },
       ],
+      voteCounts,
       votes: [
         {
           id: 'for',
           label: this.$t('vote-for'),
           selected: this.getSelectedOption('for'),
+          value: voteCounts.for,
         },
         {
           id: 'against',
           label: this.$t('vote-against'),
           selected: this.getSelectedOption('against'),
+          value: voteCounts.against,
         },
         {
           id: 'abstain',
           label: this.$t('vote-abstain-plural'),
           selected: this.getSelectedOption('abstain'),
+          value: voteCounts.abstain,
         },
         {
           id: 'absent',
           label: this.$t('vote-absent-plural'),
           selected: this.getSelectedOption('absent'),
+          value: voteCounts.absent,
         },
       ],
     };
@@ -208,10 +217,9 @@ export default {
       }[option][gender];
     },
     toggleVote(id) {
-      const clickedVote = find(this.votes, { id });
-      if (this.personVotes[id] !== 0) {
+      if (this.voteCounts[id] !== 0) {
         this.votes.forEach((vote) => {
-          if (vote === clickedVote) {
+          if (vote.id === id) {
             vote.selected = !vote.selected;
           } else {
             vote.selected = false;

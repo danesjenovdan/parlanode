@@ -1,21 +1,25 @@
 <template>
   <scroll-shadow ref="shadow">
     <div class="parties" @scroll="$refs.shadow.check($event.currentTarget)">
-      <div v-for="party in parties" :key="party.party.id" class="party">
+      <div
+        v-for="(party, key) in parties"
+        :key="party.group?.slug || key"
+        class="party"
+      >
         <div class="description">
           <div class="name">
-            <template v-if="party.party.acronym">
-              <a :href="getPartyLink(party.party)" class="funblue-light-hover">
-                {{ party.party.acronym }}
+            <template v-if="party.group?.acronym">
+              <a :href="getPartyLink(party.group)" class="funblue-light-hover">
+                {{ party.group?.acronym }}
               </a>
             </template>
             <template v-else>
-              {{ party.party.name }}
+              {{ party.group?.name }}
             </template>
           </div>
           <result
-            :score="party.max.maxOptPerc"
-            :option="party.max.max_opt"
+            :score="party.max.max_option_percentage"
+            :option="party.max.max_option"
             :chart-data="mapVotes(party.votes)"
           />
           <div class="votes">
@@ -28,16 +32,17 @@
               }"
               :color="vote.id"
               :selected="
-                party.party.id === expandedParty && vote.id === expandedOption
+                party.group?.slug === expandedParty &&
+                vote.id === expandedOption
               "
               :small-text="vote.label"
               :text="String(party.votes[vote.id])"
               :disabled="party.votes[vote.id] === 0"
-              @click="expandVote($event, party.party.id, vote.id)"
+              @click="expandVote($event, party.group?.slug, vote.id)"
             />
           </div>
         </div>
-        <div v-if="party.party.id === expandedParty" class="members">
+        <div v-if="party.group?.slug === expandedParty" class="members">
           <ul class="person-list">
             <li
               v-for="member in expandedMembers"
@@ -45,20 +50,23 @@
               class="item"
             >
               <div class="column portrait">
-                <a :href="getMemberLink(member)"
-                  ><img :src="getMemberPortrait(member)"
+                <a :href="getPersonLink(member.person)"
+                  ><img :src="getPersonPortrait(member.person)"
                 /></a>
               </div>
               <div class="column name">
-                <a :href="getMemberLink(member)" class="funblue-light-hover">
+                <a
+                  :href="getPersonLink(member.person)"
+                  class="funblue-light-hover"
+                >
                   {{ member.person.name }}
                 </a>
                 <br />
                 <a
-                  :href="getMemberPartyLink(member)"
+                  :href="getPartyLink(member.group)"
                   class="funblue-light-hover"
                 >
-                  {{ member.person.party.acronym }}
+                  {{ member.person.group?.acronym }}
                 </a>
               </div>
             </li>
@@ -125,13 +133,13 @@ export default {
       return this.members.filter((member) => {
         if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
           return (
-            member.person.party.is_coalition ===
+            member.person.group?.is_coalition ===
               (this.expandedParty === 'coalition') &&
             member.option === this.expandedOption
           );
         }
         return (
-          member.person.party.id === this.expandedParty &&
+          member.person.group?.slug === this.expandedParty &&
           member.option === this.expandedOption
         );
       });
@@ -144,7 +152,7 @@ export default {
   methods: {
     mapVotes,
     expandVote(event, party, option) {
-      if (find(this.parties, ['party.id', party]).votes[option] === 0) {
+      if (find(this.parties, ['group.slug', party]).votes[option] === 0) {
         return;
       }
 

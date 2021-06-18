@@ -1,23 +1,21 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="date-and-stuff">
-      <a :href="getSessionVotesLink(data.session)" class="funblue-light-hover">
-        {{ data.session.name }} </a
-      ><span class="date">, {{ data.session.date }}</span>
+      <a
+        :href="getSessionVotesLink(results.session)"
+        class="funblue-light-hover"
+      >
+        {{ results.session?.name }} </a
+      ><span class="date">, {{ formatDate(results.session?.start_time) }}</span>
     </div>
 
-    <div
-      :class="[
-        'summary',
-        { 'fire-badge': data.result && data.result.is_outlier },
-      ]"
-    >
+    <div :class="['summary', { 'fire-badge': results.result?.is_outlier }]">
       <div class="result">
-        <template v-if="data.result && data.result.accepted === true">
+        <template v-if="results.result?.accepted === true">
           <i class="accepted glyphicon glyphicon-ok"></i>
           <div v-t="'vote-passed'" class="text"></div>
         </template>
-        <template v-else-if="data.result && data.result.accepted === false">
+        <template v-else-if="results.result?.accepted === false">
           <i class="not-accepted glyphicon glyphicon-remove"></i>
           <div v-t="'vote-not-passed'" class="text"></div>
         </template>
@@ -63,7 +61,7 @@
       </div>
     </div>
 
-    <template v-if="data.members && data.members.length">
+    <template v-if="results.members?.length">
       <div
         v-if="content"
         v-t="'summary'"
@@ -81,9 +79,8 @@
       <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
         <p-tab :label="$t('mps')">
           <poslanci
-            :members="data.members"
-            :member-votes="data.all"
-            :result="data.result"
+            :members="results.members"
+            :result="results.result"
             :state="state"
             @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
           />
@@ -91,8 +88,8 @@
         <p-tab :label="$t('parties')">
           <poslanske-skupine
             ref="parties"
-            :members="data.members"
-            :parties="data.parties"
+            :members="results.members"
+            :parties="results.parties"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
@@ -103,7 +100,7 @@
         <p-tab :label="$t('gov-side')">
           <poslanske-skupine
             ref="sides"
-            :members="data.members"
+            :members="results.members"
             :parties="coalitionOpositionParties"
             :state="state"
             :selected-party="state.selectedParty || null"
@@ -118,15 +115,14 @@
           <excerpt
             :content="content"
             :main-law="excerptData"
-            :documents="data.documents"
+            :documents="results.documents"
             :show-parent="true"
           />
         </p-tab>
         <p-tab :label="$t('mps')">
           <poslanci
-            :members="data.members"
-            :member-votes="data.all"
-            :result="data.result"
+            :members="results.members"
+            :result="results.result"
             :state="state"
             @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
           />
@@ -134,8 +130,8 @@
         <p-tab :label="$t('parties')">
           <poslanske-skupine
             ref="parties"
-            :members="data.members"
-            :parties="data.parties"
+            :members="results.members"
+            :parties="results.parties"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
@@ -146,7 +142,7 @@
         <p-tab :label="$t('gov-side')">
           <poslanske-skupine
             ref="sides"
-            :members="data.members"
+            :members="results.members"
             :parties="coalitionOpositionParties"
             :state="state"
             :selected-party="state.selectedParty || null"
@@ -193,12 +189,12 @@
 </template>
 
 <script>
-import { pick } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import { parseVoteTitle } from '@/_helpers/voteTitle.js';
+import dateFormatter from '@/_helpers/dateFormatter.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 import Excerpt from '@/_components/Excerpt.vue';
@@ -222,33 +218,34 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const data = this.$options.contextData.cardData;
+    const results = this.cardData.data?.results || {};
 
     // parse vote title and any associated projects from text
-    const { title, projects } = parseVoteTitle(data.name);
+    const { title, projects } = parseVoteTitle(results.name);
 
-    let coalitionOpositionParties = null;
-    if (data.gov_side) {
-      coalitionOpositionParties = ['coalition', 'opposition'].map((side) => ({
-        party: {
-          id: side,
-          name: this.$t(side),
-        },
-        votes: pick(data.gov_side[side].votes, [
-          'abstain',
-          'for',
-          'against',
-          'absent',
-        ]),
-        max: {
-          maxOptPerc: data.gov_side[side].max.maxOptPerc,
-          max_opt: data.gov_side[side].max.max_opt,
-        },
-        outliers: data.gov_side[side].outliers,
-      }));
+    const coalitionOpositionParties = [];
+    if (results.gov_side) {
+      if (results.gov_side.coalition) {
+        coalitionOpositionParties.push({
+          ...results.gov_side.coalition,
+          group: {
+            name: this.$t('coalition'),
+            slug: 'coalition',
+          },
+        });
+      }
+      if (results.gov_side.opposition) {
+        coalitionOpositionParties.push({
+          ...results.gov_side.opposition,
+          group: {
+            name: this.$t('opposition'),
+            slug: 'opposition',
+          },
+        });
+      }
     }
 
-    const vote = data.all;
+    const vote = results.all;
     if (vote) {
       const e = vote;
       if (
@@ -279,36 +276,35 @@ export default {
     }
 
     return {
-      showMobileExcerpt: false,
-      data,
+      results,
       title,
-      projects: (data.agenda_items || []).concat(projects),
-      state: this.$options.contextData.cardState,
-      selectedTab: this.$options.contextData.cardState.selectedTab || 0,
+      projects: [...(results.agenda_items || []), ...projects],
+      state: this.cardState,
+      selectedTab: this.cardState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
-      coalitionOpositionParties,
+      showMobileExcerpt: false,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
+      coalitionOpositionParties,
       vote,
     };
   },
   computed: {
     excerptData() {
       return {
-        epa: this.data.legislation.epa || '',
-        name: this.data.legislation.text,
-        link: this.getLegislationLink(this.data.legislation),
+        epa: this.results.legislation?.epa || '',
+        name: this.results.legislation?.text,
+        link: this.getLegislationLink(this.results.legislation),
       };
     },
     content() {
-      return fixAbstractHtml(this.data.abstract);
+      return fixAbstractHtml(this.results.abstract);
     },
     contentExtra() {
-      return fixAbstractHtml(this.data.extra_abstract);
+      return fixAbstractHtml(this.results.extra_abstract);
     },
   },
-  // glasovanje-update je bilo prazno, created() je iz developa
   created() {
     // TODO:
     // this.$options.cardData.template.contextUrl = this.getSessionVoteLink({
@@ -318,22 +314,6 @@ export default {
   },
   methods: {
     focusTab(tabNumber) {
-      if (tabNumber !== 1) {
-        this.$refs.parties.expandedParty = null;
-        this.$refs.parties.expandedOption = null;
-      }
-      if (tabNumber !== 2) {
-        this.$refs.sides.expandedParty = null;
-        this.$refs.sides.expandedOption = null;
-      }
-      if (this.state.selectedTab === 1) {
-        this.$refs.sides.expandedParty = this.state.selectedGroup || null;
-        this.$refs.sides.expandedOption = this.state.selectedOption || null;
-      }
-      if (this.state.selectedTab === 2) {
-        this.$refs.sides.expandedParty = this.state.selectedGroup || null;
-        this.$refs.sides.expandedOption = this.state.selectedOption || null;
-      }
       this.state.selectedTab = tabNumber;
     },
     setVisibleTooltip(target) {
@@ -344,6 +324,9 @@ export default {
         this.visibleTooltip = target;
       }
     },
+    formatDate(date) {
+      return dateFormatter(date);
+    },
   },
 };
 </script>
@@ -352,15 +335,17 @@ export default {
 @import 'parlassets/scss/colors';
 @import 'parlassets/scss/breakpoints';
 
-::v-deep .p-tabs .p-tabs-content,
-::v-deep .p-tabs .p-tabs-content .tab-content {
-  overflow-y: visible;
-  overflow-x: visible;
+.p-tabs :deep(.p-tabs-content) {
+  &,
+  .tab-content {
+    overflow-y: visible;
+    overflow-x: visible;
 
-  .scroll-shadow-top::after {
-    left: -20px;
-    right: -20px;
-    width: auto;
+    .scroll-shadow-top::after {
+      left: -20px;
+      right: -20px;
+      width: auto;
+    }
   }
 }
 

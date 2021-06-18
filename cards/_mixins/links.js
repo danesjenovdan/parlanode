@@ -20,9 +20,6 @@ export default {
       if (!party?.slug) {
         return null;
       }
-      if ('classification' in party && party.classification !== 'pg') {
-        return null;
-      }
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.party.base}/${party.slug}`;
     },
@@ -39,6 +36,9 @@ export default {
       return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.transcript}`;
     },
     getSessionVotesLink(session) {
+      if (!session?.id) {
+        return null;
+      }
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.otherVotings}`;
     },
