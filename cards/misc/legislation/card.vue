@@ -68,13 +68,14 @@ import InnerCard from './InnerCard.vue';
 // TODO: get from config
 const legislationTabs = [
   {
-    title: 'Zakonodaja',
-    // classifications: ['zakon'],
+    title: 'Odloki',
+    classifications: ['decree'],
   },
-  // {
-  //   title: 'Akti',
-  //   card_title: 'Seznam aktov',
-  // },
+  {
+    title: 'Akti',
+    classifications: ['act'],
+    // card_title: 'Seznam aktov',
+  },
 ];
 
 export default {
