@@ -94,7 +94,7 @@ export default {
       return this.speech.quoted_text && !this.hideQuote;
     },
     quotePaddingBefore() {
-      const splitQuote = this.speech.content
+      const splitQuote = (this.speech.content || '')
         .replace(/\n+/g, ' ')
         .trim()
         .split(this.speech.quoted_text);
@@ -102,7 +102,7 @@ export default {
       return paddingBefore ? `...${paddingBefore}` : '';
     },
     quotePaddingAfter() {
-      const splitQuote = this.speech.content
+      const splitQuote = (this.speech.content || '')
         .replace(/\n+/g, ' ')
         .trim()
         .split(this.speech.quoted_text);
@@ -112,7 +112,7 @@ export default {
   },
   methods: {
     getSpeechContent(speech) {
-      return speech.content.replace(/\n+/g, ' ').trim();
+      return (speech.content || '').replace(/\n+/g, ' ').trim();
     },
     showFullSpeech(event) {
       event.preventDefault();
