@@ -100,7 +100,7 @@ export default {
           },
           // { html: dataIconsHtml },
           // { text: legislation.epa },
-          { text: legislation.date },
+          { text: legislation.date || 'N/A' },
           { html: outcomeHtml },
         ];
       });
