@@ -67,9 +67,9 @@
                 <span class="sr-only">{{ getMaxValue }}%</span>
                 <template v-if="type === 'person'">
                   <person-pin
-                    v-for="mp in results.maximum.mps"
-                    :key="mp.slug"
-                    :person="mp"
+                    v-for="member in results.maximum.members"
+                    :key="member.slug"
+                    :person="member"
                   />
                 </template>
                 <template v-else>
