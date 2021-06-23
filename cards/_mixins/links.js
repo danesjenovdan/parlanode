@@ -42,15 +42,15 @@ export default {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.otherVotings}`;
     },
-    getSessionSpeechLink(speech, perPage = SPEECHES_PER_PAGE) {
+    getSessionSpeechLink(speech, session, perPage = SPEECHES_PER_PAGE) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       const pageNum = Math.floor(speech.the_order / perPage) + 1;
       const pageUrlPart = pageNum > 1 ? `/${pageNum}` : '';
-      return `${urls.site}/${sm.session.base}/${speech.session?.id}/${sm.session.transcript}${pageUrlPart}#${speech.speech_id}`;
+      return `${urls.site}/${sm.session.base}/${session?.id}/${sm.session.transcript}${pageUrlPart}#${speech.id}`;
     },
     getSpeechCardLink(speech) {
       const { urls } = this.$root.$options.contextData;
-      return `${urls.cards}/speech/single/${speech.speech_id}?frame=true`;
+      return `${urls.cards}/speech/single/${speech.id}?frame=true`;
     },
     getSessionVoteLink(ballot) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;

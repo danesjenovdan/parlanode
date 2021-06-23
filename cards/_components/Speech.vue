@@ -21,11 +21,11 @@
       </div>
       <div v-if="showSession" class="session">
         <a
-          :href="getSessionTranscriptLink(speech.session)"
+          :href="getSessionTranscriptLink(session)"
           class="funblue-light-hover"
-          >{{ speech.session?.name }}</a
+          >{{ session?.name }}</a
         ><br />
-        <span class="date">{{ speech.session?.date }}</span>
+        <span class="date">{{ session?.date }}</span>
       </div>
     </div>
     <div class="everything">
@@ -51,7 +51,7 @@
       <div class="quote-button">“</div>
     </div>
     <div class="links">
-      <a :href="getSessionSpeechLink(speech)" class="link"></a>
+      <a :href="getSessionSpeechLink(speech, session)" class="link"></a>
       <a
         v-if="!showSession"
         :href="getSpeechCardLink(speech)"
@@ -72,6 +72,10 @@ export default {
   mixins: [links],
   props: {
     speech: {
+      type: Object,
+      required: true,
+    },
+    session: {
       type: Object,
       required: true,
     },

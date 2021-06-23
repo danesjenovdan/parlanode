@@ -14,6 +14,7 @@
         :key="speech.speech_id"
         v-quotable
         :speech="speech"
+        :session="cardData.data?.session"
         :per-page="perPage"
       />
       <pagination
