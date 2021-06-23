@@ -3,32 +3,33 @@
   "error": false,
   "data": {
     "results": {
-      "slug": "6-marko-koprivc",
-      "name": "Marko Koprivc",
+      "education": "EDUTEST",
+      "education_level": 7,
+      "previous_occupation": "TEST",
+      "number_of_mandates": 2,
+      "date_of_birth": "2012-12-12",
+      "date_of_death": null,
+      "number_of_voters": 1234,
+      "districts": [],
+      "social_networks": [],
+      "email": "lalala@test.si"
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    },
+    "person": {
+      "slug": "230-ana-zagozen",
+      "name": "Ana Zagožen",
       "honorific_prefix": null,
       "honorific_suffix": null,
       "preferred_pronoun": null,
       "group": {
-        "name": "Socialni demokrati ",
-        "acronym": "SD",
-        "slug": "6-socialni-demokrati"
+        "name": "Slovenska demokratska stranka ",
+        "acronym": "SDS",
+        "slug": "21-slovenska-demokratska-stranka"
       },
-      "image": null,
-      "education": "Magister ekonomije",
-      "education_level": "VII/2",
-      "previous_occupation": "Pilot",
-      "number_of_mandates": 2,
-      "date_of_birth": "1970-02-05",
-      "date_of_death": null,
-      "number_of_voters": 900,
-      "districts": [
-        {
-          "name": "Center",
-          "classification": "district"
-        }
-      ],
-      "social_networks": [],
-      "email": "en.ful.dolg.email.naslov@gamil.com"
+      "image": null
     }
   }
 }

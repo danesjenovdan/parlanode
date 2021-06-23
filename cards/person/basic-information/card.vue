@@ -22,10 +22,10 @@
         <div class="bordertop0">
           <i18n-t :keypath="electedToDistrictKey" tag="span" class="key">
             <template #numVotes>
-              <b>{{ person.number_of_points || person.number_of_voters }}</b>
+              <b>{{ results.number_of_points || results.number_of_voters }}</b>
             </template>
             <template #district>
-              <b>{{ person?.districts?.map((d) => d.name).join(', ') }}</b>
+              <b>{{ results?.districts?.map((d) => d.name).join(', ') }}</b>
             </template>
           </i18n-t>
         </div>
@@ -38,7 +38,7 @@
         <div class="bordertop0">
           <span class="key">
             <span v-t="'number-of-terms'"></span>:
-            <b>{{ person.number_of_mandates }}</b>
+            <b>{{ results.number_of_mandates }}</b>
           </span>
         </div>
       </div>
@@ -50,7 +50,7 @@
         <div class="bordertop0">
           <span class="key">
             <span v-t="'previous-occupation'"></span>:
-            <b>{{ person.previous_occupation }}</b>
+            <b>{{ results.previous_occupation }}</b>
           </span>
         </div>
       </div>
@@ -61,7 +61,7 @@
         </div>
         <div class="bordertop0">
           <span class="key">
-            <span v-t="'education'"></span>: <b>{{ person.education }}</b>
+            <span v-t="'education'"></span>: <b>{{ results.education }}</b>
           </span>
         </div>
       </div>
@@ -77,7 +77,7 @@
         </div>
       </div>
 
-      <div v-if="person.email" class="row">
+      <div v-if="results.email" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
         </div>
@@ -85,7 +85,7 @@
           <span class="key">
             <span v-t="'contact'"></span>:
             <a
-              :href="`mailto:${person.email}`"
+              :href="`mailto:${results.email}`"
               target="_blank"
               class="funblue-light-hover"
               >{{ shortEmail }}</a
@@ -94,16 +94,16 @@
         </div>
       </div>
 
-      <div v-if="person.social_networks?.length" class="row">
+      <div v-if="results.social_networks?.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-omrezja" aria-hidden="true"></span>
         </div>
         <div class="bordertop0">
           <span class="key">
             <span v-t="'social-media'"></span>:
-            <template v-if="person.social_networks?.length">
+            <template v-if="results.social_networks?.length">
               <template
-                v-for="social_network in person.social_networks"
+                v-for="social_network in results.social_networks"
                 :key="`${social_network?.type}_${social_network?.url}`"
               >
                 <a
@@ -148,15 +148,16 @@ export default {
   ],
   data() {
     return {
-      person: this.cardData.data?.results ?? {},
-      group: this.cardData.data?.results?.group ?? {},
+      results: this.cardData.data?.results ?? {},
+      person: this.cardData.data?.person ?? {},
+      group: this.cardData.data?.person?.group ?? {},
     };
   },
   computed: {
     age() {
       return differenceInCalendarYears(
         new Date(),
-        parseISO(this.person.date_of_birth)
+        parseISO(this.results.date_of_birth)
       );
     },
     electedToDistrictKey() {
@@ -169,13 +170,13 @@ export default {
       return `elected-to-district${suffix}`;
     },
     shortEmail() {
-      if (this.person.email?.length) {
-        if (this.person.email.length < 26) {
-          return this.person.email;
+      if (this.results.email?.length) {
+        if (this.results.email.length < 26) {
+          return this.results.email;
         }
-        const [addr, domain] = this.person.email?.split('@');
+        const [addr, domain] = this.results.email?.split('@');
         if (addr.length < 18) {
-          return this.person.email;
+          return this.results.email;
         }
         return `${addr.slice(0, 17)}…@${domain}`;
       }

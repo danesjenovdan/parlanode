@@ -1,23 +1,23 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="poslanec osnovne-informacije-poslanca">
-      <div v-if="group.presidents?.length" class="row">
+      <div v-if="results.presidents?.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-vodja" aria-hidden="true" />
         </div>
         <div class="bordertop">
-          <template v-for="person in group.presidents" :key="person.slug">
+          <template v-for="person in results.presidents" :key="person.slug">
             <person-with-position :person="person" position="president" />
           </template>
         </div>
       </div>
 
-      <div v-if="group.deputies?.length" class="row">
+      <div v-if="results.deputies?.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-namestnik" aria-hidden="true" />
         </div>
         <div class="bordertop">
-          <template v-for="person in group.deputies" :key="person.slug">
+          <template v-for="person in results.deputies" :key="person.slug">
             <person-with-position :person="person" position="deputy" />
           </template>
         </div>
@@ -30,12 +30,12 @@
         <div class="bordertop">
           <span class="key">
             <span v-t="'number-of-seats'"></span>:
-            <strong>{{ group.number_of_members }}</strong>
+            <strong>{{ results.number_of_members }}</strong>
           </span>
         </div>
       </div>
 
-      <div v-if="group.email" class="row">
+      <div v-if="results.email" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-kontakt" aria-hidden="true" />
         </div>
@@ -43,7 +43,7 @@
           <span class="key">
             <span v-t="'contact'"></span>:
             <a
-              :href="`mailto:${group.email}`"
+              :href="`mailto:${results.email}`"
               target="_blank"
               class="funblue-light-hover"
               >{{ shortEmail }}</a
@@ -52,16 +52,16 @@
         </div>
       </div>
 
-      <div v-if="group.social_networks?.length" class="row">
+      <div v-if="results.social_networks?.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-omrezja" aria-hidden="true" />
         </div>
         <div class="bordertop">
           <span class="key">
             <span v-t="'social-media'"></span>:
-            <template v-if="group.social_networks?.length">
+            <template v-if="results.social_networks?.length">
               <template
-                v-for="social_network in group.social_networks"
+                v-for="social_network in results.social_networks"
                 :key="`${social_network?.type}_${social_network?.url}`"
               >
                 <a
@@ -82,12 +82,12 @@
         </div>
       </div>
 
-      <div v-if="group.members?.length" class="row">
+      <div v-if="results.members?.length" class="row">
         <div class="parlaicon-container parlaicon-top">
           <span class="parlaicon parlaicon-clanstva" aria-hidden="true" />
         </div>
         <div class="bordertop">
-          <template v-for="person in group.members" :key="person.slug">
+          <template v-for="person in results.members" :key="person.slug">
             <person-with-position :person="person" position="member" />
           </template>
         </div>
@@ -113,18 +113,19 @@ export default {
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
   data() {
     return {
-      group: this.cardData.data?.results || {},
+      results: this.cardData.data?.results || {},
+      group: this.cardData.data?.group || {},
     };
   },
   computed: {
     shortEmail() {
-      if (this.group.email?.length) {
-        if (this.group.email.length < 26) {
-          return this.group.email;
+      if (this.results.email?.length) {
+        if (this.results.email.length < 26) {
+          return this.results.email;
         }
-        const [addr, domain] = this.group.email?.split('@');
+        const [addr, domain] = this.results.email?.split('@');
         if (addr.length < 18) {
-          return this.group.email;
+          return this.results.email;
         }
         return `${addr.slice(0, 17)}…@${domain}`;
       }

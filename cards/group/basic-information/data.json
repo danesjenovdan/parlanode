@@ -3,265 +3,48 @@
   "error": false,
   "data": {
     "results": {
-      "name": "Lista Zorana Jankovića ",
-      "acronym": "",
-      "slug": "22-lista-zorana-jankovica",
-      "number_of_members": 22,
-      "social_networks": [{ "type": "facebook", "url": "http://fb.me/lj" }],
-      "email": "zelo.zelo.dolgi.e_naslov@domena.si",
-      "presidents": [
-        {
-          "slug": "238-grega-ciglar",
-          "name": "Grega Ciglar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        }
-      ],
-      "deputies": [
-        {
-          "slug": "242-bruna-antauer",
-          "name": "Bruna Antauer",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        }
-      ],
+      "number_of_members": 2,
+      "social_networks": {},
+      "email": "lalala@test.si",
+      "presidents": [],
+      "deputies": [],
       "members": [
         {
-          "slug": "238-grega-ciglar",
-          "name": "Grega Ciglar",
+          "slug": "217-jozef-horvat",
+          "name": "Jožef Horvat",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": {
-            "name": "Lista Zorana Jankovića ",
+            "name": "Nova Slovenija – Krščanski demokrati ",
             "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "slug": "16-nova-slovenija-krscanski-demokrati"
           },
           "image": null
         },
         {
-          "slug": "240-anton-kastelic",
-          "name": "Anton Kastelic",
+          "slug": "219-mojca-sojar",
+          "name": "Mojca Sojar",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": {
-            "name": "Lista Zorana Jankovića ",
+            "name": "Nova Slovenija – Krščanski demokrati ",
             "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "242-bruna-antauer",
-          "name": "Bruna Antauer",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "244-nada-verbic",
-          "name": "Nada Verbič",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "248-francka-trobec",
-          "name": "Francka Trobec",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "250-tomaz-kucic",
-          "name": "Tomaž Kučič",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "252-marjan-sedmak",
-          "name": "Marjan Sedmak",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "256-jelka-zekar",
-          "name": "Jelka Žekar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "239-jozka-hegler",
-          "name": "Jožka Hegler",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "241-emilija-mitrovic-milos",
-          "name": "Emilija Mitrović Miloš",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "243-danilo-saric",
-          "name": "Danilo Šarić",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "245-iztok-kordis",
-          "name": "Iztok Kordiš",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "247-tone-podobnik",
-          "name": "Tone Podobnik",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "249-stanka-ferencak-marin",
-          "name": "Stanka Ferenčak Marin",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "251-julka-zibert",
-          "name": "Julka Žibert",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "253-dunja-piskur-kosmac",
-          "name": "Dunja Piškur Kosmač",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "255-dr-marta-bon",
-          "name": "dr. Marta Bon",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "slug": "16-nova-slovenija-krscanski-demokrati"
           },
           "image": null
         }
       ]
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    },
+    "group": {
+      "name": "Nova Slovenija – Krščanski demokrati ",
+      "acronym": "",
+      "slug": "16-nova-slovenija-krscanski-demokrati"
     }
   }
 }
