@@ -12,6 +12,7 @@
 <script>
 import SortableTable from '@/_components/SortableTable.vue';
 import links from '@/_mixins/links.js';
+import dateFormatter from '@/_helpers/dateFormatter.js'
 
 export default {
   name: 'SeznamZakonovKartica',
@@ -100,7 +101,7 @@ export default {
           },
           // { html: dataIconsHtml },
           // { text: legislation.epa },
-          { text: legislation.date || 'N/A' },
+          { text: dateFormatter(legislation.timestamp || '') || 'N/A' },
           { html: outcomeHtml },
         ];
       });

@@ -70,9 +70,7 @@ export default {
     },
     getLegislationLink(legislation) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
-      return `${urls.site}/${sm.landing.legislation}/${
-        legislation.epa || legislation.act_id || legislation.id
-      }`;
+      return `${urls.site}/${sm.landing.legislation}/${legislation.uid}`;
     },
     getLegislationListLink() {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
