@@ -4,7 +4,7 @@ const server = require('./server/server');
 
 function init() {
   return Promise.resolve()
-    .then(data.preload)
+    // .then(data.preload)
     .then(server.init)
     .then(() => {
       // eslint-disable-next-line no-console

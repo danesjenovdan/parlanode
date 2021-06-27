@@ -8,8 +8,7 @@ const config = {
     analize: 'https://parladata.lb.djnd.si/v3/cards', // TODO
     data: 'https://parladata.lb.djnd.si/v3', // TODO
     isci: 'https://isci.parlameter.si', // TODO
-    glej: 'https://parlacards.lb.djnd.si', // TODO
-    // base: 'https://parlasite.lb.djnd.si', // TODO
+    glej: 'http://parlanode:7004',
     base: 'http://localhost:3066',
     parladata: 'http://parladata:8000'
   },
