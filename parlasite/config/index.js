@@ -11,6 +11,7 @@ const config = {
     glej: 'https://parlacards.lb.djnd.si', // TODO
     // base: 'https://parlasite.lb.djnd.si', // TODO
     base: 'http://localhost:3066',
+    parladata: 'http://parladata:8000'
   },
   siteLang: 'sl',
   siteMap: {

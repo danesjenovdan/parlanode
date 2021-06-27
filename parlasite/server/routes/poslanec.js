@@ -1,7 +1,7 @@
 const express = require('express');
 const data = require('../data');
 const { asyncRender: ar } = require('../utils');
-const { siteMap: sm } = require('../../config');
+const { siteMap: sm, urls } = require('../../config');
 const { i18n } = require('../server');
 const fetch = require('node-fetch');
 
@@ -19,7 +19,7 @@ function getData(idParam, slugParam) {
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0]);
   // TODO this shouldn't be hard-coded
-  const response = await fetch(`https://parladata.lb.djnd.si/v3/cards/person/basic-information?id=${id}`);
+  const response = await fetch(`${urls.parladata}/v3/cards/person/basic-information?id=${id}`);
   if (response.ok && response.status >= 200 && response.status < 400) {
     let data = await response.json();
     return {

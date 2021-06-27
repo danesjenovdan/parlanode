@@ -2,7 +2,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const data = require('../data');
 const { asyncRender: ar } = require('../utils');
-const { siteMap: sm } = require('../../config');
+const { siteMap: sm, urls } = require('../../config');
 const { i18n } = require('../server');
 
 const router = express.Router();
@@ -25,7 +25,7 @@ function getData(idParam) {
 // TODO the ones for poslanec and
 // poslanska skupina accept a slug
 async function getNewData(id) {
-  const response = await fetch(`https://parladata.lb.djnd.si/v3/cards/session/single/?id=${id}`);
+  const response = await fetch(`${urls.parladata}/v3/cards/session/single/?id=${id}`);
   // const response = await fetch('http://localhost:8000/v3/cards/session/single/?id=2');
   if (response.ok && response.status >= 200 && response.status < 400) {
     let data = await response.json();
