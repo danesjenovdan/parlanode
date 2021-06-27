@@ -76,8 +76,8 @@ export default {
           },
           { link: this.getPersonLink(member), text: member.name },
           member.age,
-          member.education,
-          member.terms,
+          // member.education,
+          // member.terms,
           {
             link: this.getPartyLink(member?.group),
             text: member.group?.acronym || member.group?.name || 'N/A',
@@ -105,16 +105,16 @@ export default {
           { id: 'image', label: '', additionalClass: 'portrait' },
           { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
           { id: 'age', label: this.$t('age') },
-          {
-            id: 'education',
-            label: this.$t('education'),
-            additionalClass: 'optional',
-          },
-          {
-            id: 'terms',
-            label: this.$t('number-of-terms'),
-            additionalClass: 'optional',
-          },
+          // {
+          //   id: 'education',
+          //   label: this.$t('education'),
+          //   additionalClass: 'optional',
+          // },
+          // {
+          //   id: 'terms',
+          //   label: this.$t('number-of-terms'),
+          //   additionalClass: 'optional',
+          // },
           { id: 'party', label: this.$t('party'), additionalClass: 'optional' },
           // {
           //   id: 'district',

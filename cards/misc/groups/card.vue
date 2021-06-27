@@ -36,13 +36,13 @@ const analysesIDs = [
   //   id: 'presence_sessions',
   //   unit: 'percent',
   // },
-  {
-    id: 'vote_attendance',
-    unit: 'percent',
-  },
-  {
-    id: 'number_of_questions',
-  },
+  // {
+  //   id: 'vote_attendance',
+  //   unit: 'percent',
+  // },
+  // {
+  //   id: 'number_of_questions',
+  // },
   // {
   //   id: 'number_of_amendments',
   // },
@@ -50,10 +50,10 @@ const analysesIDs = [
   //   id: 'intra_disunion',
   //   precision: 2,
   // },
-  // {
-  //   id: 'vocabulary_size',
-  //   precision: 2,
-  // },
+  {
+    id: 'vocabulary_size',
+    precision: 2,
+  },
   // {
   //   id: 'privzdignjeno',
   //   precision: 3,
@@ -117,13 +117,14 @@ export default {
       return find(this.analyses, { id: this.currentAnalysis });
     },
     processedPartyData() {
-      const maxValue = this.results.reduce(
+      const nonEmptyParties = this.results.filter(party => party.results?.seat_count > 0);
+      const maxValue = nonEmptyParties.reduce(
         (oldValue, nextParty) =>
           Math.max(oldValue, nextParty.results?.[this.currentAnalysis]),
         0
       );
 
-      const mappedData = this.results.map((party) => {
+      const mappedData = nonEmptyParties.map((party) => {
         const rawValue = party.results?.[this.currentAnalysis] || 0;
         const newParty = JSON.parse(JSON.stringify(party));
 

@@ -15,11 +15,11 @@
               :placeholder="partiesPlaceholder"
               class="filter parties"
             />
-            <p-search-dropdown
+            <!-- <p-search-dropdown
               v-model="workingBodies"
               :placeholder="workingBodyPlaceholder"
               class="filter working-bodies"
-            />
+            /> -->
             <!-- <p-search-dropdown
               v-model="districts"
               :placeholder="districtPlaceholder"
@@ -78,22 +78,22 @@ const analysesIDs = [
   {
     id: 'demographics',
   },
-  {
-    id: 'presence_votes',
-    unit: 'percent',
-  },
-  {
-    id: 'number_of_questions',
-  },
+  // {
+  //   id: 'presence_votes',
+  //   unit: 'percent',
+  // },
+  // {
+  //   id: 'number_of_questions',
+  // },
   {
     id: 'speeches_per_session',
   },
   {
     id: 'spoken_words',
   },
-  {
-    id: 'mismatch_of_pg',
-  },
+  // {
+  //   id: 'mismatch_of_pg',
+  // },
 ];
 
 export default {
@@ -121,8 +121,8 @@ export default {
     });
 
     const genders = [
-      { id: 'he', icon: 'm', label: 'moški', selected: false },
-      { id: 'she', icon: 'f', label: 'ženski', selected: false },
+      { id: 'M', icon: 'm', label: 'moški', selected: false },
+      { id: 'F', icon: 'f', label: 'ženski', selected: false },
     ];
 
     const members = this.cardData.data?.results || [];
