@@ -1,10 +1,10 @@
 {
   "landing": {
     "title": "Parlameter",
-    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v mestnem svetu MOL.",
     "search": {
       "part_one": "Išči",
-      "part_two": "zakone, glasovanja, poslance, poslanske skupine ali njihove govore"
+      "part_two": "odloke in akte, glasovanja, svetnike, svetniške klube ali njihove govore"
     }
   },
   "about": {
@@ -46,10 +46,10 @@
     }
   },
   "menu": {
-    "legislation": "Zakonodaja",
+    "legislation": "Odloki in akti",
     "sessions": "Seje",
-    "mps": "Poslanci",
-    "pgs": "Poslanske skupine",
+    "mps": "Svetniki",
+    "pgs": "Svetniški klubi",
     "tools": "Orodja"
   },
   "footer": {
@@ -161,8 +161,8 @@
     "vote-result--adopted": "Sprejet",
     "vote-result--received": "Prejet",
     "vote-result--in_procedure": "V obravnavi",
-    "legislation": "Zakonodaja",
-    "other_votings": "Druga glasovanja",
+    "legislation": "Odloki in akti",
+    "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkripti",
     "state_one": "Državni zbor RS ne objavlja podatkov o glasovanjih na delovnih telesih. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Povej jim</a>, da morajo to spremeniti.",
@@ -180,8 +180,8 @@
   },
   "titles": {
     "session": "Seja",
-    "legislation": "Zakonodaja",
-    "other-votings": "Druga glasovanja",
+    "legislation": "Odloki in akti",
+    "other-votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",
     "voting": "Glasovanje",

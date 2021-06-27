@@ -19,6 +19,11 @@ function stringifyParams(params) {
   return '';
 }
 
+function slovenianDate(dateString) {
+  const date = new Date(dateString);
+  return `${date.getDay()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
+}
+
 async function fetchCard(cardPath, id, params = {}) {
   // optional second argument
   if (typeof id === 'object') {
@@ -32,7 +37,7 @@ async function fetchCard(cardPath, id, params = {}) {
 
   params.template = 'site';
 
-  params.locale = 'sl';
+  params.locale = 'sl-obcine';
   // TODO forward locale from page
   // if (this.req.query.lang) {
   //   params.lang = this.req.query.lang;
@@ -77,6 +82,7 @@ const asyncRender = fn => (req, res, next) => {
   const render = (view, opts) => {
     const options = {
       ...opts,
+      slovenianDate,
       fetchCard: fetchCard.bind({ req, res }),
       async: true,
     };
@@ -135,6 +141,7 @@ function i18n(lang) {
 }
 
 module.exports = {
+  slovenianDate,
   fetchCard,
   asyncRoute,
   asyncRender,

@@ -24,6 +24,7 @@ async function getNewData(slug) {
     let data = await response.json();
     return {
       mp: {
+        ...data.person,
         ...data.results,
         id, // TODO this might be simpler if parladata would return the ID
       }

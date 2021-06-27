@@ -2,21 +2,10 @@
 
 <%- await include('./_header.ejs') %>
 
-<%# TODO: type is hardcoded %>
-<% if (session.type != 'kolegij') { %>
-  <% if (session.votes) { %>
-    <div class="row">
-      <div class="col-md-12">
-        <%- await fetchCard('/session/votes/', session.id, { state: { onlyOther: true } }) %>
-      </div>
-    </div>
-  <% } else if (session.org.name === 'Državni zbor') { %>
-    <%- await include('../empty-state/state1dz.ejs') %>
-  <% } else { %>
-    <%- await include('../empty-state/state1.ejs') %>
-  <% } %>
-<% } else { %>
-  <%- await include('../empty-state/state2.ejs') %>
-<% } %>
+<div class="row">
+  <div class="col-md-12">
+    <%- await fetchCard('/session/votes/', session.id) %>
+  </div>
+</div>
 
 <%- await include('../_partials/footer.ejs') %>

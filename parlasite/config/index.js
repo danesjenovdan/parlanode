@@ -4,7 +4,7 @@ const config = {
   port: 3066,
   serverTimeout: 120000,
   urls: {
-    cdn: 'https://cdn.parlameter.si/v1/parlassets', // TODO
+    cdn: 'https://parlassets-ljubljana.lb.djnd.si', // TODO
     analize: 'https://parladata.lb.djnd.si/v3/cards', // TODO
     data: 'https://parladata.lb.djnd.si/v3', // TODO
     isci: 'https://isci.parlameter.si', // TODO

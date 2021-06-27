@@ -5,16 +5,16 @@
         <b>S</b>
       </div>
       <h1><%- session.name %></h1>
-      <h2><%- session.organization.name %></h2>
+      <h2><%- session.organizations[0].name %></h2>
       <div class="date">
-        <%- session.date %>
+        <%= slovenianDate(session.start_time) %>
       </div>
       <div class="datepublished">
-        <%- i18n('general.data_published') %>: <%- session.date %> <%= session.in_review ? i18n('general.in_review') : '' %>
+        <%- i18n('general.data_published') %>: <%- slovenianDate(session.start_time) %> <%= session.in_review ? i18n('general.in_review') : '' %>
       </div>
       <div class="group-container-menu">
         <ul class="clearfix">
-          <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.legislation %>" class="<%- activeTab === 'zakonodaja' ? 'active' : '' %> nav-icon nav-icon-legislation"><%- i18n('general.legislation') %></a></li>
+          <!-- <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.legislation %>" class="<%- activeTab === 'zakonodaja' ? 'active' : '' %> nav-icon nav-icon-legislation"><%- i18n('general.legislation') %></a></li> -->
           <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.otherVotings %>" class="<%- activeTab === 'druga-glasovanja' ? 'active' : '' %> nav-icon nav-icon-votings"><%- i18n('general.other_votings') %></a></li>
           <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.transcript %>" class="<%- activeTab === 'transkript' ? 'active' : '' %> nav-icon nav-icon-transcripts"><%- i18n('general.transcripts') %></a></li>
         </ul>

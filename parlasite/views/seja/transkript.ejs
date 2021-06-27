@@ -2,8 +2,6 @@
 
 <%- await include('./_header.ejs') %>
 
-<%# TODO: type is hardcoded %>
-<% if (session.speeches) { %>
 <div class="row">
   <div class="col-md-12">
     <% if (session.type === 'dz') { %>
@@ -13,11 +11,8 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/session/speeches/', session.id, { state: { page: transcriptPage } }) %>
+    <%- await fetchCard('/session/speeches/', session.id) %>
   </div>
 </div>
-<% } else { %>
-  <%- await include('../empty-state/state5.ejs') %>
-<% } %>
 
 <%- await include('../_partials/footer.ejs') %>
