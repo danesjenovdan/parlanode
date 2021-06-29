@@ -1,207 +1,9 @@
 <template>
-  <div class="partychart2"></div>
+  <div ref="chart" class="pie-chart"></div>
 </template>
 
 <script>
-/* global query, customUrl */
-import { isFinite } from 'lodash-es';
-import d3 from 'd3v3';
-
-function chart(rawData, component) {
-  console.log('doing the chart');
-
-  function getQueryParams(str) {
-    return (str || document.location.search)
-      .replace(/(^\?)/, '')
-      .split('&')
-      .map(
-        function m(n) {
-          n = n.split('=');
-          this[n[0]] = n[1];
-          return this;
-        }.bind({})
-      )[0];
-  }
-
-  let pgQuery;
-  if (typeof query !== 'undefined') {
-    pgQuery = query;
-  } else if (typeof customUrl !== 'undefined') {
-    pgQuery = getQueryParams(customUrl.split('?')[1]);
-    pgQuery.q = customUrl.split('/').pop().split('?')[0];
-  } else {
-    pgQuery = {
-      q: document.location.href.split('?q=')[1],
-    };
-  }
-
-  $.getJSON(`${component.$root.slugs.urls.data}/getAllPGsExt/`, (response) => {
-    const parties = response;
-
-    let sum = 0;
-    rawData.forEach((d, i) => {
-      if (i % 2 === 1) {
-        sum += d;
-      }
-    });
-
-    const data = [];
-
-    let firstpiece;
-    let secondpiece;
-    rawData.forEach((d, i) => {
-      if (i % 2 === 0) {
-        firstpiece = d;
-      } else {
-        secondpiece = d;
-        data.push({
-          party: firstpiece,
-          occurences: secondpiece,
-          percentage: !isFinite(secondpiece / sum)
-            ? 0
-            : Math.round((secondpiece / sum) * 100),
-        });
-      }
-    });
-
-    const margin = {
-      top: 60,
-      right: 60,
-      bottom: 60,
-      left: 60,
-    };
-    const width = 400 - margin.left - margin.right;
-    const height = 500 - margin.top - margin.bottom;
-    const radius = Math.min(width, height) / 2;
-
-    const arc = d3.svg
-      .arc()
-      .outerRadius(radius - 30)
-      .innerRadius(0);
-
-    const pie = d3.layout
-      .pie()
-      .sort(null)
-      .value((d) => d.occurences);
-
-    const svg = d3
-      .select('.partychart2')
-      .append('svg')
-      .attr('viewBox', '0 0 400 450')
-      .attr('preserveAspectRatio', 'xMidYMid meet')
-      .append('g')
-      .attr(
-        'transform',
-        `translate(${width / 2 + margin.left},${height / 2 + margin.top})`
-      );
-
-    const piedata = pie(data.filter((d) => parties[d.party]));
-
-    const g = svg
-      .selectAll('.arc')
-      .data(piedata)
-      .enter()
-      .append('g')
-      .attr('class', 'arc');
-
-    g.append('path')
-      .attr('d', arc)
-      .attr(
-        'class',
-        (d) =>
-          `${parties[d.data.party].acronym
-            .replace(/[ +,]/g, '_')
-            .toLowerCase()}-fill`
-      );
-
-    const labels = svg
-      .selectAll('text')
-      .data(piedata)
-      .enter()
-      .append('text')
-      .attr('text-anchor', 'middle')
-      .attr('x', (d) => {
-        const a = d.startAngle + (d.endAngle - d.startAngle) / 2 - Math.PI / 2;
-        d.cx = Math.cos(a) * (radius - 75);
-        d.x = Math.cos(a) * (radius + 20);
-        return d.x;
-      })
-      .attr('y', (d) => {
-        const a = d.startAngle + (d.endAngle - d.startAngle) / 2 - Math.PI / 2;
-        d.cy = Math.sin(a) * (radius - 75);
-        d.y = Math.sin(a) * (radius + 20);
-        return d.y;
-      })
-      .text(
-        (d) =>
-          `${parties[d.data.party].acronym.substring(0, 9)}${
-            parties[d.data.party].acronym.length > 9 ? '...' : ''
-          }`
-      ) // TODO this needs a better fix
-      .style('display', (d) => {
-        if (+d.data.percentage === 0) {
-          return 'none';
-        }
-        return 'block';
-      })
-      .classed('partylabel', true);
-
-    const alpha = 0.5;
-    const spacingY = 20;
-    const spacingX = 20;
-
-    function relax() {
-      let again = false;
-      labels.each(function e() {
-        const a = this;
-        const da = d3.select(a);
-        const y1 = da.attr('y');
-        const x1 = da.attr('x');
-
-        labels.each(function e2() {
-          const b = this;
-          if (a === b) {
-            return;
-          }
-          const db = d3.select(b);
-          const y2 = db.attr('y');
-          const x2 = db.attr('x');
-
-          const deltaY = y1 - y2;
-          const deltaX = x1 - x2;
-
-          // handle Y spacing
-          if (Math.abs(deltaY) > spacingY) {
-            return;
-          }
-          // if we didn't break until now, labels are overlapping
-          again = true;
-          let sign = deltaY > 0 ? 1 : -1;
-          let adjust = sign * alpha;
-          da.attr('y', +y1 + adjust);
-          db.attr('y', +y2 - adjust);
-
-          // handle X spacing
-          if (Math.abs(deltaX) > spacingX) {
-            return;
-          }
-          // if we didn't break until now, labels are overlapping
-          again = true;
-          sign = deltaX > 0 ? 1 : -1;
-          adjust = sign * alpha;
-          da.attr('x', +x1 + adjust);
-          db.attr('x', +x2 - adjust);
-        });
-      });
-
-      if (again) {
-        setTimeout(relax, 20);
-      }
-    }
-
-    relax();
-  });
-}
+import * as d3 from 'd3';
 
 export default {
   name: 'PieChart',
@@ -213,33 +15,219 @@ export default {
   },
   watch: {
     data() {
-      this.renderChart();
+      this.$nextTick(this.renderChart);
     },
+  },
+  mounted() {
+    this.renderChart();
   },
   methods: {
     renderChart() {
-      if (this.$el.querySelector('.partychart2 svg')) {
-        this.$el
-          .querySelector('.partychart2 svg')
-          .parentElement.removeChild(
-            this.$el.querySelector('.partychart2 svg')
-          ); // TODO this is salad
+      // empty the chart container
+      this.$refs.chart.textContent = '';
+
+      const sortedData = this.data
+        .slice()
+        .filter((d) => d.value > 0)
+        .sort((a, b) => b.value - a.value);
+
+      const pie = d3
+        .pie()
+        .sort(null)
+        .value((data) => data.value);
+
+      const pieArcs = pie(sortedData);
+
+      const width = 435;
+      const height = 520;
+
+      const svgGroup = d3
+        .select(this.$refs.chart)
+        .append('svg')
+        .attr('viewBox', [0, 0, width, height])
+        .append('g')
+        .attr('transform', `translate(${width / 2},${height / 2})`);
+
+      const radius = Math.min(width, height) / 2;
+      const radiusScale = 0.7;
+      const outerRadiusScale = 0.9;
+
+      const arc = d3
+        .arc()
+        .innerRadius(0)
+        .outerRadius(radius * radiusScale);
+
+      const edgeArc = d3
+        .arc()
+        .innerRadius(radius * radiusScale + 4)
+        .outerRadius(radius * radiusScale + 4);
+
+      const outerArc = d3
+        .arc()
+        .innerRadius(radius * outerRadiusScale)
+        .outerRadius(radius * outerRadiusScale);
+
+      function midAngle(d) {
+        return d.startAngle + (d.endAngle - d.startAngle) / 2;
       }
-      chart(this.data, this);
+
+      function isBottom(d) {
+        const a = midAngle(d) - Math.PI / 2;
+        return a > 0 && a < Math.PI;
+      }
+
+      const segmentHover = (elem) =>
+        elem
+          .on('mouseover', (e, d) => {
+            svgGroup
+              .selectAll(
+                '.pie-segments path, .pie-lines polyline, .pie-labels text'
+              )
+              .interrupt()
+              .transition()
+              .duration(0)
+              .style('opacity', 0.33);
+            svgGroup
+              .selectAll(`[data-group="${d.data.group.slug}"]`)
+              .interrupt()
+              .transition()
+              .duration(0)
+              .style('opacity', 1);
+          })
+          .on('mouseout', () => {
+            svgGroup
+              .selectAll(
+                '.pie-segments path, .pie-lines polyline, .pie-labels text'
+              )
+              .transition()
+              .delay(250)
+              .duration(0)
+              .style('opacity', 1);
+          });
+
+      svgGroup
+        .append('g')
+        .attr('class', 'pie-segments')
+        .attr('stroke', 'white')
+        .selectAll('path')
+        .data(pieArcs)
+        .join('path')
+        .attr('data-group', (d) => d.data.group.slug)
+        .attr('d', arc)
+        .call(segmentHover);
+
+      svgGroup
+        .append('g')
+        .attr('class', 'pie-labels')
+        .selectAll('text')
+        .data(pieArcs)
+        .join('text')
+        .attr('data-group', (d) => d.data.group.slug)
+        .text((d) => d.data.group.name)
+        .attr('text-anchor', 'middle')
+        .attr('dominant-baseline', (d) => (isBottom(d) ? 'auto' : 'hanging'))
+        .attr('fill', '#000')
+        .attr('x', (d, i, a) => {
+          let x = outerArc.centroid(d)[0];
+          const w = a[i].getComputedTextLength();
+          if (x + w / 2 > width / 2) {
+            x = width / 2 - w / 2;
+          } else if (x - w / 2 < -(width / 2)) {
+            x = -(width / 2) + w / 2;
+          }
+          return x;
+        })
+        .attr('y', (d) => {
+          const dir = isBottom(d) ? 1 : -1;
+          const pos = radius * radiusScale * dir + 2 * dir * 20;
+          return pos;
+        })
+        .style('cursor', 'default')
+        .call(segmentHover);
+
+      function overlap(node1, node2) {
+        if (node1 === node2) {
+          return false;
+        }
+
+        const bbox1 = node1.getBBox();
+        const bbox2 = node2.getBBox();
+
+        const left1 = bbox1.x - 5;
+        const top1 = bbox1.y;
+        const right1 = bbox1.x + bbox1.width + 5;
+        const bottom1 = bbox1.y + bbox1.height;
+
+        const left2 = bbox2.x - 5;
+        const top2 = bbox2.y;
+        const right2 = bbox2.x + bbox2.width + 5;
+        const bottom2 = bbox2.y + bbox2.height;
+
+        if (left1 > right2 || left2 > right1) {
+          return false;
+        }
+
+        if (top1 > bottom2 || top2 > bottom1) {
+          return false;
+        }
+
+        return true;
+      }
+
+      function overlapAny(node, nodes) {
+        return Array.from(nodes).some((n) => overlap(n, node));
+      }
+
+      svgGroup.selectAll('.pie-labels text').each((d, i, nodes) => {
+        const node = nodes[i];
+        while (overlapAny(node, nodes)) {
+          const dir = node.getBBox().y < 0 ? -1 : 1;
+          node.setAttribute('y', +node.getAttribute('y') + dir * 20);
+        }
+      });
+
+      svgGroup
+        .append('g')
+        .attr('class', 'pie-lines')
+        .selectAll('polyline')
+        .data(pieArcs)
+        .join('polyline')
+        .attr('data-group', (d) => d.data.group.slug)
+        .attr('stroke', '#888')
+        .attr('fill', 'none')
+        .attr('points', (d) => {
+          const labelBBox = svgGroup
+            .select(`text[data-group="${d.data.group.slug}"]`)
+            .node()
+            .getBBox();
+
+          const edgePoint = edgeArc.centroid(d);
+          const outerPoint = outerArc.centroid(d);
+
+          const labelPoint = isBottom(d)
+            ? [outerPoint[0], labelBBox.y - 4]
+            : [outerPoint[0], labelBBox.y + 20];
+
+          if (
+            Math.hypot(
+              edgePoint[0] - outerPoint[0],
+              edgePoint[1] - outerPoint[1]
+            ) >
+            Math.hypot(
+              edgePoint[0] - labelPoint[0],
+              edgePoint[1] - labelPoint[1]
+            )
+          ) {
+            return [edgePoint, labelPoint];
+          }
+
+          return [edgePoint, outerPoint, labelPoint];
+        });
+
+      const svgGroupBBox = svgGroup.node().getBBox();
+      const translateY = -svgGroupBBox.y + (height - svgGroupBBox.height) / 2;
+      svgGroup.attr('transform', `translate(${width / 2},${translateY})`);
     },
   },
 };
 </script>
-
-<style lang="scss">
-.partychart2 {
-  height: 100%;
-
-  svg {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: 100%;
-  }
-}
-</style>

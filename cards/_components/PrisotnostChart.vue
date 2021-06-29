@@ -52,7 +52,6 @@ export default {
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
-
     translationKeys() {
       if (this.type === 'person') {
         const gender = this.person.preferred_pronoun === 'she' ? 'f' : 'm';

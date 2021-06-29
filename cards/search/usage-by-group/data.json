@@ -1,1 +1,66 @@
-null
+{
+  "data": {
+    "results": [
+      {
+        "group": {
+          "name": "Nova Slovenija – Krščanski demokrati ",
+          "acronym": "",
+          "slug": "16-nova-slovenija-krscanski-demokrati"
+        },
+        "value": 3
+      },
+      {
+        "group": {
+          "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+          "acronym": "",
+          "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev"
+        },
+        "value": 12
+      },
+      {
+        "group": {
+          "name": "Svetniški klub samostojnih svetnikov ",
+          "acronym": "",
+          "slug": "18-svetniski-klub-samostojnih-svetnikov"
+        },
+        "value": 1
+      },
+      {
+        "group": {
+          "name": "Socialni demokrati ",
+          "acronym": "",
+          "slug": "19-socialni-demokrati"
+        },
+        "value": 6
+      },
+      {
+        "group": {
+          "name": "Levica ",
+          "acronym": "",
+          "slug": "20-levica"
+        },
+        "value": 8
+      },
+      {
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "value": 4
+      },
+      {
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "value": 12
+      }
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    }
+  }
+}
