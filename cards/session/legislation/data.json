@@ -1,10 +1,219 @@
 {
   "data": {
-    "results": [],
+    "results": [
+      {
+        "id": 1,
+        "uid": null,
+        "text": "AMANDMA Svetniškega kluba Levica: V tretjem odstavku 2. člena se beseda »tretji« nadomesti z besedo »četrti«. Četrti odstavek se spremeni tako, da se glasi: »Dosedanji peti odstavek postane četrti odstavek.«",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 2,
+        "uid": null,
+        "text": "AMANDMA Svetniškega kluba Levica: Besedilo 5. člena se nadomesti z novim besedilom, ki se glasi: Tretja alineja veljavnega 11. člena se spremeni tako, da glasi: »- hraniti živali, ki živijo prosto v naravi, razen na za ta namen določenih lokacijah. Prepoved hranjenja tudi ne velja za potrebe izvajanja programov in projektov MOL ter za ptice in veverice v javnih parkih in krajinskih parkih MOL.« V 11. členu se na koncu osme alineje pika nadomesti z vejico in dodajo nove deveta, deseta in enajsta alineja, ki se glasijo: - »poškodovati opremo in naprave na javnih otroških igriščih in na površinah za šport v naravi, - saditi drevesa in grmovnice, - poškodovati javne zelenice.«",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 3,
+        "uid": null,
+        "text": "AMANDMA župana: V 7. členu se tretji odstavek spremeni tako, da se glasi: »Če ni mogoče določiti kršitelja, inšpektor izda odločbo za odpravo nepravilnosti in vzpostavitev v prejšnje stanje izvajalcu rednega vzdrževanja občinskih cest ali izvajalcu po tem odloku. Stroški pa gredo na račun rednega vzdrževanja občinskih cest ali javnih zelenih površin.«.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 4,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o urejanju in čiščenju občinskih cest in javnih zelenih površin skupaj s sprejetima amandmajema.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 7,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 8,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 10,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o spremembah in dopolnitvah Odloka o občinskem prostorskem načrtu Mestne občine Ljubljana – izvedbeni del skupaj s pripombami.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 113,
+        "uid": null,
+        "text": "AMANDMA Svetniškega kluba Levica: V tretjem odstavku 2. člena se beseda »tretji« nadomesti z besedo »četrti«. Četrti odstavek se spremeni tako, da se glasi: »Dosedanji peti odstavek postane četrti odstavek.«",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 115,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 117,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o spremembah in dopolnitvah Odloka o občinskem prostorskem načrtu Mestne občine Ljubljana – izvedbeni del skupaj s pripombami.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 138,
+        "uid": null,
+        "text": "AMANDMA Svetniškega kluba Levica: V tretjem odstavku 2. člena se beseda »tretji« nadomesti z besedo »četrti«. Četrti odstavek se spremeni tako, da se glasi: »Dosedanji peti odstavek postane četrti odstavek.«",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 139,
+        "uid": null,
+        "text": "AMANDMA Svetniškega kluba Levica: Besedilo 5. člena se nadomesti z novim besedilom, ki se glasi: Tretja alineja veljavnega 11. člena se spremeni tako, da glasi: »- hraniti živali, ki živijo prosto v naravi, razen na za ta namen določenih lokacijah. Prepoved hranjenja tudi ne velja za potrebe izvajanja programov in projektov MOL ter za ptice in veverice v javnih parkih in krajinskih parkih MOL.« V 11. členu se na koncu osme alineje pika nadomesti z vejico in dodajo nove deveta, deseta in enajsta alineja, ki se glasijo: - »poškodovati opremo in naprave na javnih otroških igriščih in na površinah za šport v naravi, - saditi drevesa in grmovnice, - poškodovati javne zelenice.«",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 140,
+        "uid": null,
+        "text": "AMANDMA župana: V 7. členu se tretji odstavek spremeni tako, da se glasi: »Če ni mogoče določiti kršitelja, inšpektor izda odločbo za odpravo nepravilnosti in vzpostavitev v prejšnje stanje izvajalcu rednega vzdrževanja občinskih cest ali izvajalcu po tem odloku. Stroški pa gredo na račun rednega vzdrževanja občinskih cest ali javnih zelenih površin.«.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 141,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o urejanju in čiščenju občinskih cest in javnih zelenih površin skupaj s sprejetima amandmajema.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 144,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 145,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      },
+      {
+        "id": 147,
+        "uid": null,
+        "text": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o spremembah in dopolnitvah Odloka o občinskem prostorskem načrtu Mestne občine Ljubljana – izvedbeni del skupaj s pripombami.",
+        "epa": null,
+        "status": null,
+        "passed": false,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-05-31T15:30:00"
+      }
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    },
     "session": {
-      "name": "1. seja Mestnega sveta MOL",
-      "id": 53,
-      "start_time": "2018-12-17T15:30:00",
+      "name": "23. seja Mestnega sveta MOL",
+      "id": 79,
+      "start_time": "2021-05-31T15:30:00",
       "end_time": null,
       "organizations": [
         {

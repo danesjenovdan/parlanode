@@ -243,9 +243,9 @@ export default {
               b = B.text;
               return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
             case 'updated':
-              a = dateParser(A.date).getTime() || Date.now();
-              b = dateParser(B.date).getTime() || Date.now();
-              return a - b;
+              a = A.timestamp;
+              b = B.timestamp;
+              return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
             case 'workingBody':
               a = A.mdt_text;
               b = B.mdt_text;
