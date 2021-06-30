@@ -107,7 +107,6 @@ import axios from 'axios';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
-import stateLoader from '@/_helpers/stateLoader.js';
 import common from '@/_mixins/common.js';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';
@@ -143,14 +142,12 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const loadFromState = stateLoader(this.cardState);
-
     return {
       data: this.cardData,
       emptyText: this.$t('empty-text'),
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
-      showRelative: loadFromState('showRelative') || false,
+      showRelative: this.cardState.showRelative || false,
       modalShown: false,
       modalInputText: '',
       results: {
@@ -161,8 +158,8 @@ export default {
         people: [],
         parties: [],
       },
-      selectedTab: loadFromState('selectedTab') || 0,
-      words: loadFromState('words') || [],
+      selectedTab: this.cardState.selectedTab || 0,
+      words: this.cardState.words || [],
       loading: false,
     };
   },
