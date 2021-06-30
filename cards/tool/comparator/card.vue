@@ -384,6 +384,15 @@ export default {
       axios
         .get(this.queryUrl)
         .then((response) => {
+          // TODO: time-chart needs this:
+          // const dateParser = d3.timeParse('%d.%m.%Y');
+          // const data = Array.from(new Set(this.data.map((d) => d.results.date)))
+          //   .map((date) => ({
+          //     date: dateParser(date),
+          //     value: this.data.filter((d) => d.results.date === date).length,
+          //   }))
+          //   .sort((a, b) => a.date - b.date);
+
           this.data = response.data.results;
           this.total = response.data.total;
           this.loading = false;

@@ -13,10 +13,14 @@ export default {
       type: Array,
       default: () => [],
     },
+    tooltipTimeFormat: {
+      type: String,
+      default: '%x', // %x = locale date format
+    },
   },
   watch: {
     data() {
-      this.renderChart();
+      this.$nextTick(this.renderChart);
     },
   },
   mounted() {
@@ -29,16 +33,8 @@ export default {
 
       d3.timeFormatDefaultLocale(getD3Locale(this.$i18n.locale));
 
-      const dateParser = d3.timeParse('%d.%m.%Y');
       const monthFormat = d3.timeFormat('%b %y');
-      const dateFormat = d3.timeFormat('%x'); // %x = locale date format
-
-      const data = Array.from(new Set(this.data.map((d) => d.results.date)))
-        .map((date) => ({
-          date: dateParser(date),
-          value: this.data.filter((d) => d.results.date === date).length,
-        }))
-        .sort((a, b) => a.date - b.date);
+      const dateFormat = d3.timeFormat(this.tooltipTimeFormat);
 
       const width = 940;
       const height = 420;
@@ -51,12 +47,12 @@ export default {
 
       const x = d3
         .scaleTime()
-        .domain(d3.extent(data.map((d) => d.date)))
+        .domain(d3.extent(this.data.map((d) => d.date)))
         .range([margin.left, width - margin.right]);
 
       const y = d3
         .scaleLinear()
-        .domain([0, d3.max(data, (d) => d.value)])
+        .domain([0, d3.max(this.data, (d) => d.value)])
         .rangeRound([height - margin.bottom, margin.top]);
 
       // bottom axis
@@ -76,7 +72,7 @@ export default {
       svg
         .append('g')
         .append('path')
-        .datum(data)
+        .datum(this.data)
         .attr('fill', 'none')
         .attr('stroke', '#000')
         .attr('stroke-width', 2)
@@ -95,19 +91,19 @@ export default {
           .on('mousemove', (e) => {
             const [pointerX, pointerY] = d3.pointer(e, elem.node());
             const hoveredDate = x.invert(pointerX);
-            const i = bisectDate(data, hoveredDate);
-            if (i >= data.length) {
+            const i = bisectDate(this.data, hoveredDate);
+            if (i >= this.data.length) {
               return;
             }
 
             // work out which date value is closest
             const [index, d, lineX] = (() => {
-              const d1 = data[i];
+              const d1 = this.data[i];
               const lineX1 = x(d1.date);
               if (i === 0) {
                 return [i, d1, lineX1];
               }
-              const d0 = data[i - 1];
+              const d0 = this.data[i - 1];
               const lineX0 = x(d0.date);
               if (Math.abs(pointerX - lineX0) < Math.abs(pointerX - lineX1)) {
                 return [i - 1, d0, lineX0];
@@ -191,7 +187,7 @@ export default {
       dots = svg
         .append('g')
         .selectAll('.dot')
-        .data(data)
+        .data(this.data)
         .join('circle')
         .attr('class', 'dot')
         .attr('r', 2)
