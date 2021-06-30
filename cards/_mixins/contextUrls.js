@@ -67,8 +67,9 @@ export const sessions = {
 export const search = {
   mixins: [links],
   created() {
-    const { template } = this.$root.$options.contextData;
-    template.contextUrl = this.getSearchTermLink(this.keywords);
+    // TODO: context
+    // const { template } = this.$root.$options.contextData;
+    // template.contextUrl = this.getSearchTermLink(this.keywords);
   },
 };
 

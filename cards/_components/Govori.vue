@@ -86,10 +86,22 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import generateMonths from '@/_mixins/generateMonths.js';
 import common from '@/_mixins/common.js';
-import { personTitle, partyTitle } from '@/_mixins/titles.js';
-import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
-import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
-import { personSpeeches, partySpeeches } from '@/_mixins/contextUrls.js';
+import { personTitle, partyTitle, searchTitle } from '@/_mixins/titles.js';
+import {
+  personHeader,
+  partyHeader,
+  searchHeader,
+} from '@/_mixins/altHeaders.js';
+import {
+  personOgImage,
+  partyOgImage,
+  searchOgImage,
+} from '@/_mixins/ogImages.js';
+import {
+  personSpeeches,
+  partySpeeches,
+  search as searchContext,
+} from '@/_mixins/contextUrls.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import getD3Locale from '@/_i18n/d3locales.js';
@@ -109,7 +121,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: (value) => ['person', 'party'].includes(value),
+      validator: (value) => ['person', 'party', 'search'].includes(value),
     },
   },
   data() {
@@ -161,26 +173,7 @@ export default {
           : '';
       url.searchParams.set('text', text);
 
-      // const state = {};
-
-      // if (this.type === 'person') {
-      //   state.people = this.cardData.person.id;
-      // } else if (this.type === 'party') {
-      //   state.parties = this.cardData.party.id;
-      //   state.people = this.selectedPeople.map((p) => p.id).join(',');
-      // }
-
-      // if (this.selectedWorkingBodies.length > 0) {
-      //   state.wb = this.selectedWorkingBodies.map((s) => s.id);
-      // }
-
-      // if (this.selectedPeople.length > 0) {
-      //   state.people = this.selectedPeople.map((person) => person.id);
-      // }
-
-      // if (this.card.currentPage > 0) {
-      //   state.page = this.card.currentPage;
-      // }
+      url.searchParams.set('page', this.card.currentPage);
 
       return url.toString();
     },
@@ -204,20 +197,33 @@ export default {
       if (this.type === 'person') {
         return personHeader.computed.headerConfig.call(this);
       }
-      return partyHeader.computed.headerConfig.call(this);
+      if (this.type === 'party') {
+        return partyHeader.computed.headerConfig.call(this);
+      }
+      return searchHeader.computed.headerConfig.call(this);
     },
     ogConfig() {
       if (this.type === 'person') {
         return personOgImage.computed.ogConfig.call(this);
       }
-      return partyOgImage.computed.ogConfig.call(this);
+      if (this.type === 'party') {
+        return partyOgImage.computed.ogConfig.call(this);
+      }
+      return searchOgImage.computed.ogConfig.call(this);
     },
   },
   created() {
-    (this.type === 'person' ? personSpeeches : partySpeeches).created.call(
-      this
-    );
-    (this.type === 'person' ? personTitle : partyTitle).created.call(this);
+    if (this.type === 'person') {
+      personSpeeches.created.call(this);
+      personTitle.created.call(this);
+    }
+    if (this.type === 'party') {
+      partySpeeches.created.call(this);
+      partyTitle.created.call(this);
+    }
+    // TODO: search
+    searchContext.created.call(this);
+    searchTitle.created.call(this);
   },
   methods: {
     formatSpeechDate(speech) {
@@ -255,22 +261,24 @@ export default {
       });
     }, 750),
     loadMore() {
-      // if (this.card.isLoading) {
-      //   return;
-      // }
-      // this.card.isLoading = true;
-      // this.card.currentPage += 1;
-      // axios.get(this.searchUrl).then((response) => {
-      //   this.speakingDays = this.speakingDays.concat(
-      //     response.data.response.docs
-      //   );
-      //   this.card.isLoading = false;
-      //   // end infinite scrolling
-      //   if (response.data.response.start >= response.data.response.numFound) {
-      //     // @todo decide what to show when no more data
-      //     this.card.lockLoading = true;
-      //   }
-      // });
+      if (this.card.isLoading) {
+        return;
+      }
+      if (this.speeches.length >= this.cardData.data?.count) {
+        return;
+      }
+
+      this.card.isLoading = true;
+      this.card.currentPage += 1;
+
+      const requestedPage = this.card.currentPage;
+      axios.get(this.searchUrl).then((response) => {
+        if (response?.data?.page === requestedPage) {
+          const newSpeeches = response?.data?.results || [];
+          this.speeches.push(...newSpeeches);
+        }
+        this.card.isLoading = false;
+      });
     },
   },
 };
