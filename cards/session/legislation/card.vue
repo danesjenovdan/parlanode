@@ -78,7 +78,7 @@ const legislationTabs = [
 ];
 
 export default {
-  name: 'CardMiscLegislation',
+  name: 'CardSessionLegislation',
   components: {
     PSearchField,
     InnerCard,

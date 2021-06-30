@@ -6,7 +6,7 @@
 import Govori from '@/_components/Govori.vue';
 
 export default {
-  name: 'CardGroupSpeeches',
+  name: 'CardSearchSpeeches',
   components: {
     Govori,
   },
