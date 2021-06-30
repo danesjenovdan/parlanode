@@ -38,16 +38,23 @@ export default {
 
       const width = 940;
       const height = 420;
-      const margin = { top: 35, right: 10, bottom: 25, left: 10 };
+      const margin = { top: 35, right: 20, bottom: 25, left: 20 };
 
       const svg = d3
         .select(this.$refs.chart)
         .append('svg')
         .attr('viewBox', [0, 0, width, height]);
 
+      // pad min and max date by 1 days so it improves the bottom axis labels
+      const extent = d3.extent(this.data.map((d) => d.date));
+      const minDate = new Date(extent[0]);
+      minDate.setDate(minDate.getDate() - 1);
+      const maxDate = new Date(extent[1]);
+      maxDate.setDate(maxDate.getDate() + 1);
+
       const x = d3
         .scaleTime()
-        .domain(d3.extent(this.data.map((d) => d.date)))
+        .domain([minDate, maxDate])
         .range([margin.left, width - margin.right]);
 
       const y = d3

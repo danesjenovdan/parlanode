@@ -1,193 +1,22 @@
 <template>
-  <div class="timebarchart"></div>
+  <div ref="chart" class="time-bar-chart"></div>
 </template>
 
 <script>
-/* global d3 */
-function chart(rawData) {
-  $('.timebarchart svg').remove();
-
-  function getQueryParams(str) {
-    return (str || document.location.search)
-      .replace(/(^\?)/, '')
-      .split('&')
-      .map(
-        function m(n) {
-          n = n.split('=');
-          this[n[0]] = n[1];
-          return this;
-        }.bind({})
-      )[0];
-  }
-
-  let timeQuery;
-  if (typeof query !== 'undefined') {
-    // eslint-disable-next-line no-undef
-    timeQuery = query;
-  } else if (typeof customUrl !== 'undefined') {
-    // eslint-disable-next-line no-undef
-    timeQuery = getQueryParams(customUrl.split('?')[1]);
-    // eslint-disable-next-line no-undef
-    timeQuery.q = customUrl.split('/').pop().split('?')[0];
-  } else {
-    timeQuery = { q: document.location.href.split('?q=')[1] };
-  }
-
-  const smalldata = [];
-  const dateFormatter = d3.time.format('%Y-%m-%dT%H:%M:%SZ');
-
-  // create small data
-  for (let i = 0; i < rawData.counts.length; i += 1) {
-    if (i % 2 === 0 && i > rawData.counts.length - 25) {
-      smalldata.push({
-        date: rawData.counts[i],
-        occurences: rawData.counts[i + 1],
-      });
-    }
-  }
-
-  smalldata.sort(
-    (x, y) => dateFormatter.parse(x.date) - dateFormatter.parse(y.date)
-  );
-
-  // global stuff for the chart
-  const margin = {
-    top: 50,
-    right: 30,
-    bottom: 30,
-    left: 30,
-  };
-  const width = 940 - margin.left - margin.right;
-  const height = 460 - margin.top - margin.bottom;
-
-  const SI = d3.locale({
-    decimal: ',',
-    thousands: ' ',
-    grouping: [3],
-    currency: ['EUR', ''],
-    dateTime: '%d. %m. %Y %H:%M',
-    date: '%d. %m. %Y',
-    time: '%H:%M:%S',
-    periods: ['AM', 'PM'],
-    days: [
-      'nedelja',
-      'ponedeljek',
-      'torek',
-      'sreda',
-      'četrtek',
-      'petek',
-      'sobota',
-    ],
-    shortDays: ['ned', 'pon', 'tor', 'sre', 'čet', 'pet', 'sob'],
-    months: [
-      'januar',
-      'februar',
-      'marec',
-      'april',
-      'maj',
-      'junij',
-      'julij',
-      'avgust',
-      'september',
-      'oktober',
-      'november',
-      'december',
-    ],
-    shortMonths: [
-      'jan',
-      'feb',
-      'mar',
-      'apr',
-      'maj',
-      'jun',
-      'jul',
-      'avg',
-      'sep',
-      'okt',
-      'nov',
-      'dec',
-    ],
-  });
-
-  const parseDate = d3.time.format('%Y-%m-%dT%H:%M:%SZ').parse;
-  smalldata.forEach((d) => {
-    d.date = parseDate(d.date);
-    d.occurences = +d.occurences;
-  });
-
-  const svg = d3
-    .select('.timebarchart')
-    .append('svg')
-    .attr('class', 'smalldata')
-    .attr('viewBox', '0 0 940 460')
-    .attr('preserveAspectRatio', 'xMidYMid meet')
-    .append('g')
-    .attr('transform', `translate(${margin.left},${margin.top})`);
-
-  function createSmallChart(data) {
-    svg.selectAll('.dot').remove();
-    svg.selectAll('.smalldata g path').remove();
-    svg.selectAll('.axis').remove();
-    svg.on('mousemove', null);
-
-    const x = d3.scale.ordinal().rangeRoundBands([0, width], 0.05);
-
-    const y = d3.scale.linear().range([height, 0]);
-
-    x.domain(data.map((d) => d.date));
-    y.domain([0, d3.max(data, (d) => d.occurences)]);
-
-    const xAxis = d3.svg
-      .axis()
-      .scale(x)
-      .orient('bottom')
-      .tickFormat(SI.timeFormat('%b %y'));
-
-    svg
-      .append('g')
-      .attr('class', 'x axis smalldata')
-      .attr('transform', `translate(0,${height})`)
-      .call(xAxis);
-
-    const barcontainers = svg
-      .selectAll('.smallbarcontainer')
-      .data(data)
-      .enter()
-      .append('g')
-      .attr('class', 'smallbarcontainer');
-
-    barcontainers
-      .append('text')
-      .text((d) => d.occurences)
-      .attr('x', (d) => x(d.date))
-      .attr('y', (d) => y(d.occurences))
-      .attr('width', x.rangeBand)
-      .attr('text-anchor', 'middle')
-      .attr('transform', `translate(${x.rangeBand() / 2}, -4)`);
-
-    barcontainers
-      .append('rect')
-      .attr('class', 'bar')
-      .attr('x', (d) => x(d.date))
-      .attr('width', x.rangeBand())
-      .attr('y', (d) => y(d.occurences))
-      .attr('height', (d) => height - y(d.occurences));
-  }
-
-  createSmallChart(smalldata);
-}
+import * as d3 from 'd3';
+import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
   name: 'TimeBarChart',
   props: {
     data: {
-      type: Object,
-      default: () => ({}),
+      type: Array,
+      default: () => [],
     },
   },
   watch: {
     data() {
-      this.renderChart();
+      this.$nextTick(this.renderChart);
     },
   },
   mounted() {
@@ -195,45 +24,77 @@ export default {
   },
   methods: {
     renderChart() {
-      chart(this.data);
+      // empty the chart container
+      this.$refs.chart.textContent = '';
+
+      d3.timeFormatDefaultLocale(getD3Locale(this.$i18n.locale));
+
+      const monthFormat = d3.timeFormat('%b %y');
+
+      const width = 940;
+      const height = 420;
+      const margin = { top: 35, right: 20, bottom: 25, left: 20 };
+
+      const svg = d3
+        .select(this.$refs.chart)
+        .append('svg')
+        .attr('viewBox', [0, 0, width, height]);
+
+      const x = d3
+        .scaleBand()
+        .domain(this.data.map((d) => d.date))
+        .range([margin.left, width - margin.right])
+        .padding(0.1);
+
+      const y = d3
+        .scaleLinear()
+        .domain([0, d3.max(this.data, (d) => d.value)])
+        .rangeRound([height - margin.bottom, margin.top]);
+
+      // bottom axis
+      svg
+        .append('g')
+        .attr('class', 'axis-bottom')
+        .attr('transform', `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x).tickFormat(monthFormat))
+        .call((g) => g.selectAll('.domain').remove());
+
+      // bars
+      svg
+        .append('g')
+        .selectAll('.bar')
+        .data(this.data)
+        .join('rect')
+        .attr('class', 'bar')
+        .attr('x', (d) => x(d.date))
+        .attr('y', (d) => y(d.value))
+        .attr('height', (d) => y(0) - y(d.value))
+        .attr('width', x.bandwidth());
+
+      // values
+      svg
+        .append('g')
+        .selectAll('.value')
+        .data(this.data)
+        .join('text')
+        .attr('class', 'value')
+        .text((d) => d.value)
+        .attr('x', (d) => x(d.date) + x.bandwidth() / 2)
+        .attr('y', (d) => y(d.value) - 5)
+        .attr('text-anchor', 'middle')
+        .attr('fill', '#000')
+        .style('cursor', 'default');
     },
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import 'parlassets/scss/colors';
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: grey;
-  stroke-width: 1;
-  shape-rendering: crispEdges;
-  stroke-dasharray: 1, 3;
-}
-
-.tick line {
-  stroke-width: 0;
-}
-
-.bar {
-  fill: $time-use-bar-passive;
-}
-
-.smallbarcontainer text {
-  fill: $font-default;
-  font-weight: 300;
-  transition: all 0.2s ease-out;
-}
-
-.smallbarcontainer:hover {
+.time-bar-chart :deep(svg) {
   .bar {
-    fill: $time-use-bar-active;
-  }
-
-  text {
-    font-size: 1.2em;
+    fill: $time-chart-passive;
   }
 }
 </style>

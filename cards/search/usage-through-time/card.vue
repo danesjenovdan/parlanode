@@ -5,7 +5,7 @@
         <time-chart :data="timeChartData" tooltip-time-format="%B %y" />
       </p-tab>
       <p-tab :label="$t('last-year')">
-        <time-bar-chart :data="timeChartData" />
+        <time-bar-chart :data="timeChartDataYear" />
       </p-tab>
     </p-tabs>
   </card-wrapper>
@@ -20,7 +20,7 @@ import { searchOgImage } from '@/_mixins/ogImages.js';
 import PTabs from '@/_components/Tabs.vue';
 import PTab from '@/_components/Tab.vue';
 import TimeChart from '@/_components/TimeChart.vue';
-// import TimeBarChart from '@/_components/TimeBarChart.vue';
+import TimeBarChart from '@/_components/TimeBarChart.vue';
 
 export default {
   name: 'CardSearchUsageThroughTime',
@@ -28,7 +28,7 @@ export default {
     PTabs,
     PTab,
     TimeChart,
-    // TimeBarChart,
+    TimeBarChart,
   },
   cardInfo: {
     doubleWidth: true,
@@ -36,12 +36,18 @@ export default {
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
     const data = this.cardData.data?.results || [];
-    const timeChartData = data.map((o) => ({
-      date: new Date(o.timestamp),
-      value: o.value,
-    }));
+    const timeChartData = data.map((o) => {
+      const date = new Date(o.timestamp);
+      date.setDate(1);
+      return {
+        date,
+        value: o.value,
+      };
+    });
+    const timeChartDataYear = timeChartData.slice(-12);
     return {
       timeChartData,
+      timeChartDataYear,
     };
   },
 };
