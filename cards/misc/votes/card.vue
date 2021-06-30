@@ -113,7 +113,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep #votingCard {
+:deep(#votingCard) {
   height: auto;
   min-height: 500px;
 }

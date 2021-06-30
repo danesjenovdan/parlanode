@@ -180,7 +180,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-container,
-::v-deep .card-content {
+:deep(.card-content) {
   overflow: visible;
 }
 

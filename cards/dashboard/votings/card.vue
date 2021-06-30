@@ -349,7 +349,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-container,
-::v-deep .card-content {
+:deep(.card-content) {
   overflow: visible;
 }
 
@@ -364,7 +364,7 @@ export default {
   .filter-sort {
     flex: 1;
 
-    ::v-deep .search-dropdown-input {
+    :deep(.search-dropdown-input) {
       line-height: 22px;
       font-size: 14px;
     }

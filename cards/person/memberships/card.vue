@@ -82,8 +82,8 @@ export default {
 .tab-content {
   overflow-y: hidden;
 }
-.memberships ::v-deep .p-tabs .p-tabs-content,
-.memberships ::v-deep .p-tabs .p-tabs-content .tab-content {
+.memberships :deep(.p-tabs .p-tabs-content),
+.memberships :deep(.p-tabs .p-tabs-content .tab-content){
   overflow-y: visible;
   overflow-x: visible;
 }

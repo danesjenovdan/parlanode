@@ -100,7 +100,7 @@ export default {
       margin-bottom: 0;
       margin-right: 0 !important;
 
-      ::v-deep .column-label {
+      :deep(.column-label) {
         flex: 0 0 33%;
 
         .chart-label {
@@ -108,7 +108,7 @@ export default {
         }
       }
 
-      ::v-deep .column-bar {
+      :deep(.column-bar) {
         flex: 0 0 66%;
       }
     }

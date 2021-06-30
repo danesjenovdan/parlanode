@@ -253,11 +253,11 @@ export default {
     display: flex;
     flex: 0;
 
-    ::v-deep .donut-chart {
+    :deep(.donut-chart) {
       display: none;
     }
 
-    ::v-deep .text-container {
+    :deep(.text-container) {
       display: flex;
       margin-right: 0;
       width: auto;

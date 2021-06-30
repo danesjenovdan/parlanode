@@ -126,7 +126,7 @@ export default {
 .vp-editor {
   background-color: #fff;
 
-  ::v-deep .pell-content {
+  :deep(.pell-content) {
     height: 200px;
   }
 

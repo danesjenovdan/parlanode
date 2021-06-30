@@ -288,7 +288,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-container,
-::v-deep .card-content {
+:deep(.card-content) {
   overflow: visible;
 }
 
@@ -316,7 +316,7 @@ export default {
         padding-bottom: 10px;
         align-items: flex-start;
 
-        ::v-deep .dash-button {
+        :deep(.dash-button) {
           padding: 4px 11px 3px;
         }
       }

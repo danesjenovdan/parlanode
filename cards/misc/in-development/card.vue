@@ -64,7 +64,7 @@ export default {
   }
 }
 
-.card-container ::v-deep .card-footer > *,
+.card-container :deep(.card-footer > *),
 .card-container::before {
   visibility: hidden;
   display: none;
