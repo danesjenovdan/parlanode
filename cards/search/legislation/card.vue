@@ -1,15 +1,5 @@
 <template>
-  <card-wrapper
-    :content-class="{ 'is-loading': loading }"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-  >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text'" class="info-text"></p>
-    </template>
-
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="legislation-list">
       <scroll-shadow ref="shadow">
         <div
@@ -17,7 +7,6 @@
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
           <sortable-table
-            v-if="!loading"
             :columns="columns"
             :items="mappedItems"
             :sort="currentSort"
@@ -31,7 +20,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import SortableTable from '@/_components/SortableTable.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import common from '@/_mixins/common.js';
@@ -39,7 +27,6 @@ import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
-import stateLoader from '@/_helpers/stateLoader.js';
 
 export default {
   name: 'CardSearchLegislation',
@@ -48,16 +35,12 @@ export default {
     ScrollShadow,
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, links],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
-    const loadFromState = stateLoader(this.$options.cardData.parlaState);
     return {
-      data: [],
-      currentSort: '',
-      currentSortOrder: 'DESC',
-      workingBodies: [],
-      keywords: loadFromState('query'),
-      loading: true,
-      error: false,
+      data: this.cardData.data?.results,
     };
   },
   computed: {
@@ -113,7 +96,7 @@ export default {
           {
             html: `<a href="${this.getLegislationLink(
               legislation
-            )}" class="funblue-light-hover">${legislation.title}</a>`,
+            )}" class="funblue-light-hover">${legislation.text}</a>`,
           },
           { text: legislation.act_id != null ? legislation.act_id : '' },
           { html: outcomeHtml },
@@ -156,23 +139,6 @@ export default {
 
       return sortedLegislation;
     },
-  },
-  mounted() {
-    const searchUrl = `${
-      this.slugs.urls.isci
-    }/search/legislation?q=${encodeURIComponent(this.keywords)}`;
-    axios
-      .get(searchUrl)
-      .then((res) => {
-        this.data = (res.data.response && res.data.response.docs) || [];
-        this.loading = false;
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error(error);
-        this.loading = false;
-        this.error = true;
-      });
   },
   methods: {
     selectSort(sortId) {
