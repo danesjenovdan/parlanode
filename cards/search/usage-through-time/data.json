@@ -15,6 +15,10 @@
       { "timestamp": "2021-04-22T00:00:00Z", "value": 4 },
       { "timestamp": "2021-05-22T00:00:00Z", "value": 4 },
       { "timestamp": "2021-06-22T00:00:00Z", "value": 0 }
-    ]
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    }
   }
 }

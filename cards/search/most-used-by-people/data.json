@@ -1,5 +1,4 @@
 {
-  "id": 12,
   "data": {
     "results": [
       {
@@ -12,7 +11,7 @@
           "group": null,
           "image": null
         },
-        "value": 11.5325625946708
+        "value": 11
       },
       {
         "person": {
@@ -24,7 +23,7 @@
           "group": null,
           "image": null
         },
-        "value": 11.7046999107196
+        "value": 11
       },
       {
         "person": {
@@ -40,7 +39,7 @@
           },
           "image": null
         },
-        "value": 0.0
+        "value": 0
       },
       {
         "person": {
@@ -56,7 +55,7 @@
           },
           "image": null
         },
-        "value": 13.1529464379659
+        "value": 13
       },
       {
         "person": {
@@ -68,13 +67,12 @@
           "group": null,
           "image": null
         },
-        "value": 12.1655250605964
+        "value": 12
       }
     ],
-    "group": {
-      "name": "Svetniški klub samostojnih svetnikov ",
-      "acronym": "",
-      "slug": "8-svetniski-klub-samostojnih-svetnikov"
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
     }
   }
 }
