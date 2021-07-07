@@ -39,8 +39,6 @@
         <div
           id="speeches"
           v-infinite-scroll="loadMore"
-          infinite-scroll-disabled="busy"
-          infinite-scroll-distance="10"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
           <div v-for="(speakingDay, key) in groupSpeakingDays" :key="key">
@@ -149,7 +147,7 @@ export default {
 
     return {
       card: {
-        currentPage: 0,
+        currentPage: 1,
         isLoading: false,
       },
       speeches: this.cardData.data?.results || [],
@@ -256,7 +254,7 @@ export default {
       this.card.isLoading = true;
       this.makeRequest(this.searchUrl).then((response) => {
         this.speeches = response?.data?.results || [];
-        this.card.currentPage = 0;
+        this.card.currentPage = 1;
         this.card.isLoading = false;
       });
     }, 750),

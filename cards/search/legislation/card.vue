@@ -3,16 +3,14 @@
     <div class="legislation-list">
       <scroll-shadow ref="shadow">
         <div
-          id="card-search"
+          v-infinite-scroll="loadMore"
+          class="legislation-table-shadow"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <sortable-table
-            :columns="columns"
-            :items="mappedItems"
-            :sort="currentSort"
-            :sort-order="currentSortOrder"
-            :sort-callback="selectSort"
-          />
+          <sortable-table :columns="columns" :items="mappedItems" />
+        </div>
+        <div v-if="card.isLoading" class="nalagalnik__wrapper">
+          <div class="nalagalnik"></div>
         </div>
       </scroll-shadow>
     </div>
@@ -20,6 +18,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SortableTable from '@/_components/SortableTable.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import common from '@/_mixins/common.js';
@@ -27,9 +26,13 @@ import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
+import infiniteScroll from '@/_directives/infiniteScroll.js';
 
 export default {
   name: 'CardSearchLegislation',
+  directives: {
+    infiniteScroll,
+  },
   components: {
     SortableTable,
     ScrollShadow,
@@ -40,14 +43,18 @@ export default {
   },
   data() {
     return {
-      data: this.cardData.data?.results,
+      card: {
+        currentPage: 1,
+        isLoading: false,
+      },
+      legislation: this.cardData.data?.results || [],
     };
   },
   computed: {
     columns() {
       return [
         { id: 'name', label: this.$t('name'), additionalClass: 'small-text' },
-        { id: 'epa', label: this.$t('epa'), additionalClass: 'small-text' },
+        // { id: 'epa', label: this.$t('epa'), additionalClass: 'small-text' },
         {
           id: 'result',
           label: this.$t('status'),
@@ -55,7 +62,6 @@ export default {
         },
       ];
     },
-
     mappedItems() {
       const mapResultIcon = {
         enacted: {
@@ -98,60 +104,40 @@ export default {
               legislation
             )}" class="funblue-light-hover">${legislation.text}</a>`,
           },
-          { text: legislation.act_id != null ? legislation.act_id : '' },
+          // { text: legislation.act_id != null ? legislation.act_id : '' },
           { html: outcomeHtml },
         ];
       });
     },
     processedData() {
-      const dataCopy = this.data.slice();
-      const sortedLegislation = dataCopy.sort((A, B) => {
-        let a;
-        let b;
-
-        switch (this.currentSort) {
-          case 'name':
-            a = A.text_t[0];
-            b = B.text_t[0];
-            return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
-          case 'epa':
-            a = typeof A.id !== 'undefined' ? A.id : '';
-            b = typeof B.id !== 'undefined' ? B.id : '';
-            return parseInt(a, 10) - parseInt(b, 10);
-          case 'result':
-            a = this.$t('vote-under-consideration');
-            b = this.$t('vote-under-consideration');
-            if (typeof A.result !== 'undefined') {
-              a = A.result[0];
-            }
-            if (typeof B.result !== 'undefined') {
-              b = B.result[0];
-            }
-            return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
-          default:
-            return 0;
-        }
-      });
-
-      if (this.currentSortOrder === 'desc') {
-        sortedLegislation.reverse();
-      }
-
-      return sortedLegislation;
+      return this.legislation;
+    },
+    searchUrl() {
+      const url = new URL(this.cardData.url);
+      url.searchParams.set('page', this.card.currentPage);
+      return url.toString();
     },
   },
   methods: {
-    selectSort(sortId) {
-      if (this.currentSort === sortId) {
-        this.currentSortOrder =
-          this.currentSortOrder === 'asc' ? 'desc' : 'asc';
-      } else {
-        this.currentSort = sortId;
-        this.currentSortOrder = 'asc';
+    loadMore() {
+      if (this.card.isLoading) {
+        return;
       }
-    },
-    selectFilter(filter) {
-      this.currentFilter = filter;
+      if (this.legislation.length >= this.cardData.data?.count) {
+        return;
+      }
+
+      this.card.isLoading = true;
+      this.card.currentPage += 1;
+
+      const requestedPage = this.card.currentPage;
+      axios.get(this.searchUrl).then((response) => {
+        if (response?.data?.page === requestedPage) {
+          const newLegislation = response?.data?.results || [];
+          this.legislation.push(...newLegislation);
+        }
+        this.card.isLoading = false;
+      });
     },
   },
 };
@@ -161,99 +147,71 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
-#card-search {
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 420px;
+.legislation-list {
+  .legislation-table-shadow {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: $full-card-height;
+  }
+
+  .nalagalnik__wrapper {
+    background: $white-hover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    .nalagalnik {
+      position: absolute;
+      top: calc(50% - 50px);
+    }
+  }
 }
 
-.card-content {
-  padding: 0;
-}
-
-.legislation-list ::v-deep {
+.legislation-list :deep(.legislation-table-shadow) {
   ul {
     padding: 0;
-  }
 
-  a {
-    color: $second;
-  }
+    // .column:last-child {
+    //   margin-left: 8px;
+    // }
 
-  .headers {
-    padding: 0 20px 10px;
-    margin-left: -20px;
-    margin-right: -20px;
-  }
+    .column {
+      font-size: 16px;
 
-  .item .column {
-    &:first-child {
-      font-family: 'Roboto Slab', sans-serif;
-    }
-  }
-
-  .column {
-    font-size: 16px;
-
-    @include respond-to(desktop) {
-      font-size: 18px;
-    }
-
-    &:nth-child(2) {
-      @include respond-to(mobile) {
-        display: none;
+      a {
+        padding: 0.2em 0;
       }
-    }
 
-    &.small-text {
-      font-size: 14px;
-    }
+      @include respond-to(desktop) {
+        font-size: 18px;
+      }
 
-    &:last-child {
-      .outcome .text {
-        min-width: 92px;
-
+      &:nth-child(2) {
         @include respond-to(mobile) {
-          min-width: 75px;
+          display: none;
         }
       }
-    }
-  }
 
-  .column:last-child {
-    margin-left: 8px;
-  }
-
-  .narrow {
-    flex: 0.5 !important;
-  }
-
-  .outcome {
-    margin-right: 0;
-
-    .text {
-      @include respond-to(mobile) {
-        font-size: 14px !important;
-      }
-    }
-
-    i {
-      &.glyphicon-ok {
-        width: 34px !important;
-        height: 28px;
+      &.small-text {
+        font-size: 14px;
       }
 
-      &.glyphicon-remove {
-        width: 28px;
-        height: 27px;
+      .outcome .text {
+        @include respond-to(mobile) {
+          font-size: 14px !important;
+        }
       }
 
-      &.v-obravnavi {
-        width: 38px !important;
-        height: 38px;
-        background: url('#{get-parlassets-url()}/icons/v-obravnavi.svg');
-        background-size: contain !important;
-        background-repeat: no-repeat;
+      &:last-child {
+        .outcome .text {
+          min-width: 92px;
+
+          @include respond-to(mobile) {
+            min-width: 75px;
+          }
+        }
       }
     }
   }

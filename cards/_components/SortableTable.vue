@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-if="sortCallback !== undefined" class="headers">
+    <li v-if="sortCallback != null" class="headers">
       <template v-for="column in columns">
         <div
           v-if="column.label"
@@ -91,7 +91,7 @@ export default {
     },
     sortCallback: {
       type: Function,
-      default: () => {},
+      default: null,
     },
   },
   methods: {
