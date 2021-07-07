@@ -46,7 +46,7 @@ export const searchHeader = {
       const { cardState } = this.$root.$options.contextData;
       return {
         circleIcon: 'og-search',
-        heading: this.keywords, // TODO: get this from contextData not from card
+        // heading: this.keywords, // TODO: get this from contextData not from card
         subheading: 'iskalni niz', // TODO: translate this
         alternative: cardState.altHeader,
         title: this.$t('card.title'),

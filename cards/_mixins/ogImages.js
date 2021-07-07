@@ -45,7 +45,7 @@ export const searchOgImage = {
       return {
         name: 'circle',
         icon: 'og-search',
-        h1: this.keywords, // TODO: get from contextData not from this
+        // h1: this.keywords, // TODO: get from contextData not from this
         h2: 'iskalni niz', // TODO: translate
         title: this.$t('card.title'),
       };

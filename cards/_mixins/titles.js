@@ -19,9 +19,9 @@ export const partyTitle = {
 
 export const searchTitle = {
   created() {
-    const { template } = this.$root.$options.contextData;
-    const keywords = this.keywords || ''; // TODO: get this from contextData not from card
-    template.pageTitle = `Iskalni niz - ${keywords}`; // TODO: translate
+    // const { template } = this.$root.$options.contextData;
+    // const keywords = this.keywords || ''; // TODO: get this from contextData not from card
+    // template.pageTitle = `Iskalni niz - ${keywords}`; // TODO: translate
   },
 };
 
