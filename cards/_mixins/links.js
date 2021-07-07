@@ -52,7 +52,13 @@ export default {
       const { urls } = this.$root.$options.contextData;
       return `${urls.cards}/speech/single/${speech.id}?frame=true`;
     },
+    getVoteLink(vote, session) {
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      const sessionId = session?.id || vote?.session?.id || vote?.session_id;
+      return `${urls.site}/${sm.session.base}/${sessionId}/${sm.session.vote}/${vote?.id}`;
+    },
     getSessionVoteLink(ballot) {
+      console.error('getSessionVoteLink is DEPRECATED! Use getVoteLink instead!');
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.session.base}/${ballot.session?.id}/${sm.session.vote}/${ballot.motion?.id}`;
     },
