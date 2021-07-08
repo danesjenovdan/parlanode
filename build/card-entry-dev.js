@@ -31,8 +31,6 @@ import cardState from './state.json';
     cards: import.meta.env.VITE_PARLACARDS_URL,
     data: import.meta.env.VITE_PARLADATA_URL,
     cdn: import.meta.env.VITE_PARLASSETS_URL,
-    // notifications_api: 'https://obvestila.nov.parlameter.si',
-    // isci: 'https://isci.nov.parlameter.si',
   };
 
   const cardName = '{cardName}';

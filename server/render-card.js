@@ -96,7 +96,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const defaultMessages = localeData.defaults ?? {};
   const cardMessages = localeData[cardName] ?? {};
 
-  const dataUrl = getCardDataUrl(cardName, id, date);
+  const dataUrl = getCardDataUrl(cardName, id, date, state);
   const cardData = await fetchCardData(dataUrl, id, date);
   const cardState = { ...state };
   const urls = getUrls();

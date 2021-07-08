@@ -43,14 +43,31 @@ const loadLocale = async (locale) => {
   return localeCache[locale];
 };
 
-function getCardDataUrl(cardName, id, date) {
+function getCardDataUrl(cardName, id, date, state) {
   const searchParams = new URLSearchParams();
+
+  // base params
   if (id) {
     searchParams.set('id', id);
   }
   if (date) {
     searchParams.set('date', date);
   }
+
+  // search params
+  if (state?.text) {
+    searchParams.set('text', state?.text);
+  }
+  if (state?.months) {
+    searchParams.set('months', state?.months);
+  }
+  if (state?.people) {
+    searchParams.set('people', state?.people);
+  }
+  if (state?.groups) {
+    searchParams.set('groups', state?.groups);
+  }
+
   const qs = searchParams.toString();
   return `{parladata}/cards/${cardName}/${qs ? `?${qs}` : ''}`;
 }
@@ -118,8 +135,6 @@ const getUrls = () => {
     cards: process.env.VITE_PARLACARDS_URL,
     data: process.env.VITE_PARLADATA_URL,
     cdn: process.env.VITE_PARLASSETS_URL,
-    // notifications_api: 'https://obvestila.nov.parlameter.si',
-    // isci: 'https://isci.nov.parlameter.si',
   };
 };
 
