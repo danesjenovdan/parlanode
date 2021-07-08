@@ -1,6 +1,6 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
-    <div class="filters">
+    <div v-if="type !== 'search'" class="filters">
       <div class="filter text-filter">
         <div v-t="'contents-search'" class="filter-label"></div>
         <search-field
@@ -37,8 +37,11 @@
     <div class="speeches">
       <scroll-shadow ref="shadow">
         <div
-          id="speeches"
           v-infinite-scroll="loadMore"
+          :class="[
+            'speeches-list-shadow',
+            { 'has-filters': type !== 'search' },
+          ]"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
           <div v-for="(speakingDay, key) in groupSpeakingDays" :key="key">
@@ -57,7 +60,6 @@
                 v-for="speech in speakingDay"
                 :key="speech.speech_id"
                 :speech="speech"
-                css-class="person-speech"
               />
             </ul>
           </div>
@@ -140,10 +142,7 @@ export default {
       selected: (state.wb || []).indexOf(org.id) !== -1,
     }));
 
-    const textFilter =
-      state.textFilter && state.textFilter.length && state.textFilter !== '*'
-        ? state.textFilter
-        : '';
+    const textFilter = state.text || '';
 
     return {
       card: {
@@ -165,11 +164,7 @@ export default {
       const months = this.selectedMonths.map((m) => m.id).join(',');
       url.searchParams.set('months', months);
 
-      const text =
-        this.textFilter.length && this.textFilter !== '*'
-          ? this.textFilter
-          : '';
-      url.searchParams.set('text', text);
+      url.searchParams.set('text', this.textFilter);
 
       url.searchParams.set('page', this.card.currentPage);
 
@@ -341,21 +336,16 @@ export default {
   font-style: normal;
 }
 
-#speeches {
-  height: $full-card-height - 83px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  overflow-anchor: none;
-
-  @include respond-to(mobile) {
-    height: 216px;
-  }
-}
-
 .speeches {
-  flex: 1;
-  position: relative;
-  padding-bottom: 20px;
+  .speeches-list-shadow {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: $full-card-height;
+
+    &.has-filters {
+      height: $full-card-height - 89;
+    }
+  }
 
   &__list {
     padding: 0 0 10px;

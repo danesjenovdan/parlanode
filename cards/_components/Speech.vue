@@ -51,7 +51,7 @@
       <div class="quote-button">“</div>
     </div>
     <div class="links">
-      <a :href="getSessionSpeechLink(speech, session)" class="link"></a>
+      <a :href="getSpeechLink(speech, session)" class="link"></a>
       <a
         v-if="!showSession"
         :href="getSpeechCardLink(speech)"

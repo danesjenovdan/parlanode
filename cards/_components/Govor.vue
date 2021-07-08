@@ -1,24 +1,23 @@
 <template>
-  <li :class="cssClass">
+  <li class="person-speech">
     <div class="person-container">
       <a :href="getPersonLink(speech.person)" class="portrait">
         <img :src="getPersonPortrait(speech.person)" />
       </a>
-
       <div class="name">
         <a :href="getPersonLink(speech.person)" class="funblue-light-hover">{{
           speech.person.name
-        }}</a
-        ><br />
+        }}</a>
       </div>
     </div>
-
-    <div class="motion">
+    <div class="speech">
+      <!-- eslint-disable vue/no-v-html -->
       <a
-        :href="getSessionSpeechLink(speech)"
+        :href="getSpeechLink(speech)"
         class="funblue-light-hover"
-        v-html="(speech.content_hl || speech.content).slice(0, 180) + '...'"
+        v-html="speech.content"
       ></a>
+      <!-- eslint-enable vue/no-v-html -->
     </div>
   </li>
 </template>
@@ -33,11 +32,6 @@ export default {
       type: Object,
       required: true,
     },
-    cssClass: {
-      type: String,
-      reqired: false,
-      default: '',
-    },
   },
 };
 </script>
@@ -45,6 +39,7 @@ export default {
 <style lang="scss" scoped>
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
+
 .person-speech {
   border-bottom: 1px solid $background;
   padding: 15px 0;
@@ -77,12 +72,14 @@ export default {
       @include respond-to(mobile) {
         margin-left: 0;
       }
+
       img {
         height: 40px;
         width: 40px;
         border-radius: 50%;
       }
     }
+
     .name {
       text-align: left;
       font-size: 14px;
@@ -96,8 +93,11 @@ export default {
       }
     }
   }
-  .motion {
+
+  .speech {
     flex: 4;
+    margin-right: 20px;
+    padding-right: 5px;
 
     @include respond-to(mobile) {
       padding-top: 10px;
@@ -109,9 +109,15 @@ export default {
       font-size: 14px;
       line-height: 20px;
       font-weight: 300;
-      margin-right: 20px;
-      padding-right: 5px;
       font-family: 'Roboto Slab', serif;
+      padding: 0.15em 0.3em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    :deep(em) {
+      font-style: normal;
+      font-weight: 400;
     }
   }
 }

@@ -365,7 +365,7 @@ export default {
           }
         }
 
-        e.url = this.getSessionVoteLink({
+        e.url = this.getVoteLink({
           session_id:
             e.session_id || (e.session && e.session.id) || this.data.session.id,
           vote_id: e.motion_id,

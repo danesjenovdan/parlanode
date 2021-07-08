@@ -30,7 +30,7 @@
     <template v-else-if="event.type === 'ballot'">
       <i18n-t :keypath="translationKey" tag="div" class="motion">
         <template #title>
-          <a :href="getSessionVoteLink(event)" class="funblue-light-hover">{{
+          <a :href="getVoteLink(event)" class="funblue-light-hover">{{
             event.motion?.text
           }}</a>
         </template>
@@ -39,7 +39,7 @@
     <template v-else-if="event.type === 'speech'">
       <i18n-t :keypath="translationKey" tag="div" class="motion">
         <template #session>
-          <a :href="getSessionSpeechLink(event)" class="funblue-light-hover">{{
+          <a :href="getSpeechLink(event)" class="funblue-light-hover">{{
             event.session?.name
           }}</a>
         </template>

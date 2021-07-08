@@ -16,7 +16,7 @@
         v-for="debate in agenda.debates"
         :key="debate.id"
         :href="
-          getSessionSpeechLink({
+          getSpeechLink({
             session_id: session.id,
             speech_id: debate.start_speech.speech_id,
             the_order: debate.start_speech.the_order,

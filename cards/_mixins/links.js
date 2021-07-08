@@ -42,11 +42,12 @@ export default {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.otherVotings}`;
     },
-    getSessionSpeechLink(speech, session, perPage = SPEECHES_PER_PAGE) {
+    getSpeechLink(speech, session, perPage = SPEECHES_PER_PAGE) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
+      const sessId = session?.id || speech?.session?.id || speech?.session_id;
       const pageNum = Math.floor(speech.the_order / perPage) + 1;
       const pageUrlPart = pageNum > 1 ? `/${pageNum}` : '';
-      return `${urls.site}/${sm.session.base}/${session?.id}/${sm.session.transcript}${pageUrlPart}#${speech.id}`;
+      return `${urls.site}/${sm.session.base}/${sessId}/${sm.session.transcript}${pageUrlPart}#${speech.id}`;
     },
     getSpeechCardLink(speech) {
       const { urls } = this.$root.$options.contextData;
@@ -54,13 +55,8 @@ export default {
     },
     getVoteLink(vote, session) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
-      const sessionId = session?.id || vote?.session?.id || vote?.session_id;
-      return `${urls.site}/${sm.session.base}/${sessionId}/${sm.session.vote}/${vote?.id}`;
-    },
-    getSessionVoteLink(ballot) {
-      console.error('getSessionVoteLink is DEPRECATED! Use getVoteLink instead!');
-      const { urls, siteMap: sm } = this.$root.$options.contextData;
-      return `${urls.site}/${sm.session.base}/${ballot.session?.id}/${sm.session.vote}/${ballot.motion?.id}`;
+      const sessId = session?.id || vote?.session?.id || vote?.session_id;
+      return `${urls.site}/${sm.session.base}/${sessId}/${sm.session.vote}/${vote?.id}`;
     },
     getSearchTermLink(term, { mps = [], pgs = [] } = {}) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;

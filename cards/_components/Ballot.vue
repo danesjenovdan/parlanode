@@ -1,5 +1,5 @@
 <template>
-  <a :href="getSessionVoteLink(ballot)" class="ballot">
+  <a :href="getVoteLink(ballot)" class="ballot">
     <div class="disunion">
       <div :class="['icon', ballot.option]"></div>
       <div class="text">

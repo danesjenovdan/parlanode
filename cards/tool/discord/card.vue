@@ -43,7 +43,7 @@
             v-for="ballot in day.ballots"
             :key="ballot.id_parladata"
             :href="
-              getSessionVoteLink({
+              getVoteLink({
                 session_id: ballot.session_id,
                 vote_id: ballot.id_parladata,
               })

@@ -285,7 +285,7 @@ export default {
       const votes = inputVotes.map((e) => {
         const vote = {
           ...e,
-          url: this.getSessionVoteLink({
+          url: this.getVoteLink({
             session: this.votesAndStuff.session,
             motion: { id: e.id },
           }),
