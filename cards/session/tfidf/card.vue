@@ -1,8 +1,8 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
     <div v-if="chartRows.length" class="columns">
-      <bar-chart :data="chartRows1" :already-calculated="true" />
-      <bar-chart :data="chartRows2" :already-calculated="true" />
+      <bar-chart :data="chartRows1" :max="max" :total="total" />
+      <bar-chart :data="chartRows2" :max="max" :total="total" />
     </div>
     <!-- TODO: this should be empty state -->
     <div v-else v-t="'session-processing'" class="empty-dataset"></div>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { max, sum } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
@@ -27,52 +28,28 @@ export default {
   },
   data() {
     return {
-      data: this.$options.contextData.cardData,
+      results: this.cardData.data?.results || [],
     };
   },
   computed: {
+    max() {
+      return max(this.results.map((item) => item.value || 0)) * 5000;
+    },
+    total() {
+      return sum(this.results.map((item) => item.value || 0)) * 5000;
+    },
     chartRows() {
-      // JSON.parse(JSON.stringify(this.data.results));
-      const rows = this.data.results.map((row) => {
-        row.value = Math.round(row.scores['tf-idf'] * 5000);
-        return row;
-      });
-
-      const mymax = this.data.results.reduce(
-        (acc, row) => Math.max(acc, row.value),
-        0
-      );
-      const mytotal = this.data.results.reduce(
-        (acc, row) => acc + row.value,
-        0
-      );
-
-      return rows
-        .map((row) => ({
-          name: this.decodeHTML(row.term),
-          value: row.value,
-          link: this.getSearchTermLink(row.term),
-          widthPercentage: (row.value / mymax) * 100,
-          percentage: ((row.value / mytotal) * 100).toFixed(2),
-        }))
-        .sort((a, b) => b.value - a.value);
+      return this.results.map((item) => ({
+        label: item.token,
+        value: Math.round(item.value * 5000),
+        link: this.getSearchTermLink(item.term),
+      }));
     },
     chartRows1() {
       return this.chartRows.slice(0, 5);
     },
     chartRows2() {
       return this.chartRows.slice(5, 10);
-    },
-  },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(
-    //   this.data.session
-    // );
-  },
-  methods: {
-    decodeHTML(html) {
-      return html.replace('&shy;', '\u00AD');
     },
   },
 };

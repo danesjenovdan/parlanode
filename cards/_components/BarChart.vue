@@ -53,9 +53,13 @@ export default {
       type: Boolean,
       default: true,
     },
-    alreadyCalculated: {
-      type: Boolean,
-      default: false,
+    max: {
+      type: Number,
+      default: null,
+    },
+    total: {
+      type: Number,
+      default: null,
     },
     flexibleLabels: {
       type: Boolean,
@@ -64,26 +68,25 @@ export default {
   },
   computed: {
     rows() {
-      if (this.alreadyCalculated) {
-        return this.data;
-      }
+      const maxValue =
+        this.max != null
+          ? this.max
+          : this.data.reduce((acc, row) => Math.max(acc, row.value || 0), 0);
 
-      const rows = JSON.parse(JSON.stringify(this.data));
-      const mymax = this.data.reduce(
-        (acc, row) => Math.max(acc, row.value || 0),
-        0
-      );
-      const mytotal = this.data.reduce((acc, row) => acc + row.value, 0);
+      const totalValue =
+        this.total != null
+          ? this.total
+          : this.data.reduce((acc, row) => acc + row.value, 0);
 
-      return rows
+      return this.data
         .map((row) => ({
           link: row.link,
           name: row.label,
           value: row.value || 0,
           formattedValue: numberFormatter(row.value || 0),
           portrait: row.portrait,
-          barWidth: (row.value / mymax) * (this.showNumbers ? 70 : 100),
-          percentage: numberFormatter((row.value / mytotal) * 100, 2, true),
+          barWidth: (row.value / maxValue) * (this.showNumbers ? 70 : 100),
+          percentage: numberFormatter((row.value / totalValue) * 100, 2, true),
         }))
         .sort((a, b) => b.value - a.value);
     },

@@ -1,232 +1,105 @@
 {
-  "created_at": "16.02.2021",
-  "created_for": "16.02.2021",
-  "session": {
-    "name": "61. izredna seja",
-    "orgs": [
+  "data": {
+    "results": [
       {
-        "name": "Dr\u017eavni zbor",
-        "classification": "dz",
-        "acronym": "DZ",
-        "has_voters": true,
-        "is_coalition": false,
-        "id": 1
+        "token": "spol",
+        "value": 0.246344318403517
+      },
+      {
+        "token": "Ljubljana",
+        "value": 0.204686330185489
+      },
+      {
+        "token": "zanimati",
+        "value": 0.199903427769295
+      },
+      {
+        "token": "turističen",
+        "value": 0.176712614779037
+      },
+      {
+        "token": "stanovanjski",
+        "value": 0.167561675106752
+      },
+      {
+        "token": "turizem",
+        "value": 0.15706138249097
+      },
+      {
+        "token": "taksa",
+        "value": 0.153965199002198
+      },
+      {
+        "token": "transspolen",
+        "value": 0.139727208001054
+      },
+      {
+        "token": "praviti",
+        "value": 0.129364526179302
+      },
+      {
+        "token": "ideologija",
+        "value": 0.12587877984522
+      },
+      {
+        "token": "nočitev",
+        "value": 0.12587877984522
+      },
+      {
+        "token": "pomeniti",
+        "value": 0.125671256330064
+      },
+      {
+        "token": "točka",
+        "value": 0.124745588664621
+      },
+      {
+        "token": "oseba",
+        "value": 0.122109605351352
+      },
+      {
+        "token": "lgbt",
+        "value": 0.116053163701186
+      },
+      {
+        "token": "moški",
+        "value": 0.116053163701186
+      },
+      {
+        "token": "MOL",
+        "value": 0.109713293891235
+      },
+      {
+        "token": "mesten",
+        "value": 0.107602575216692
+      },
+      {
+        "token": "namestitev",
+        "value": 0.102204735545352
+      },
+      {
+        "token": "rad",
+        "value": 0.0990288917582951
       }
     ],
-    "date": "12. 2. 2021",
-    "org": {
-      "name": "Dr\u017eavni zbor",
-      "classification": "dz",
-      "acronym": "DZ",
-      "has_voters": true,
-      "is_coalition": false,
-      "id": 1
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
     },
-    "date_ts": "2021-02-12T01:00:00",
-    "updated_at": "16. 2. 2021",
-    "in_review": false,
-    "id": 1333
-  },
-  "results": [
-    {
-      "term": "\u0161korpijon",
-      "scores": { "tf": 9, "df": 8, "tf-idf": 1.125 }
-    },
-    {
-      "term": "nezaupnica",
-      "scores": { "tf": 125, "df": 152, "tf-idf": 0.8223684210526315 }
-    },
-    {
-      "term": "mr\u017enja",
-      "scores": { "tf": 11, "df": 18, "tf-idf": 0.6111111111111112 }
-    },
-    {
-      "term": "KUL",
-      "scores": { "tf": 31, "df": 75, "tf-idf": 0.41333333333333333 }
-    },
-    {
-      "term": "Erjavec",
-      "scores": { "tf": 126, "df": 511, "tf-idf": 0.2465753424657534 }
-    },
-    {
-      "term": "glasovnica",
-      "scores": { "tf": 26, "df": 111, "tf-idf": 0.23423423423423423 }
-    },
-    {
-      "term": "avtoritarnost",
-      "scores": { "tf": 11, "df": 49, "tf-idf": 0.22448979591836735 }
-    },
-    {
-      "term": "avion",
-      "scores": { "tf": 33, "df": 149, "tf-idf": 0.2214765100671141 }
-    },
-    {
-      "term": "mandatar",
-      "scores": { "tf": 46, "df": 221, "tf-idf": 0.2081447963800905 }
-    },
-    {
-      "term": "\u017eaba",
-      "scores": { "tf": 9, "df": 57, "tf-idf": 0.15789473684210525 }
-    },
-    {
-      "term": "kareti",
-      "scores": { "tf": 43, "df": 273, "tf-idf": 0.1575091575091575 }
-    },
-    {
-      "term": "metelkov",
-      "scores": { "tf": 10, "df": 66, "tf-idf": 0.15151515151515152 }
-    },
-    {
-      "term": "viktor",
-      "scores": { "tf": 30, "df": 214, "tf-idf": 0.14018691588785046 }
-    },
-    {
-      "term": "sovra\u0161tvo",
-      "scores": { "tf": 50, "df": 362, "tf-idf": 0.13812154696132597 }
-    },
-    {
-      "term": "poraz",
-      "scores": { "tf": 10, "df": 78, "tf-idf": 0.1282051282051282 }
-    },
-    {
-      "term": "tajen",
-      "scores": { "tf": 55, "df": 506, "tf-idf": 0.10869565217391304 }
-    },
-    {
-      "term": "destruktiven",
-      "scores": { "tf": 8, "df": 74, "tf-idf": 0.10810810810810811 }
-    },
-    {
-      "term": "smrtnost",
-      "scores": { "tf": 10, "df": 98, "tf-idf": 0.10204081632653061 }
-    },
-    {
-      "term": "avtoritaren",
-      "scores": { "tf": 14, "df": 147, "tf-idf": 0.09523809523809523 }
-    },
-    {
-      "term": "karel",
-      "scores": { "tf": 43, "df": 452, "tf-idf": 0.09513274336283185 }
-    },
-    {
-      "term": "daljava",
-      "scores": { "tf": 31, "df": 336, "tf-idf": 0.09226190476190477 }
-    },
-    {
-      "term": "jan\u0161a",
-      "scores": { "tf": 132, "df": 1598, "tf-idf": 0.08260325406758448 }
-    },
-    {
-      "term": "normalnost",
-      "scores": { "tf": 9, "df": 109, "tf-idf": 0.08256880733944955 }
-    },
-    {
-      "term": "umrljivost",
-      "scores": { "tf": 8, "df": 97, "tf-idf": 0.08247422680412371 }
-    },
-    {
-      "term": "konstruktiven",
-      "scores": { "tf": 87, "df": 1144, "tf-idf": 0.07604895104895106 }
-    },
-    {
-      "term": "ru\u0161iti",
-      "scores": { "tf": 35, "df": 479, "tf-idf": 0.07306889352818371 }
-    },
-    {
-      "term": "janez",
-      "scores": { "tf": 127, "df": 1829, "tf-idf": 0.06943685073810825 }
-    },
-    {
-      "term": "cirkus",
-      "scores": { "tf": 8, "df": 116, "tf-idf": 0.06896551724137931 }
-    },
-    {
-      "term": "pandemija",
-      "scores": { "tf": 35, "df": 542, "tf-idf": 0.06457564575645756 }
-    },
-    {
-      "term": "vladanje",
-      "scores": { "tf": 15, "df": 235, "tf-idf": 0.06382978723404255 }
-    },
-    {
-      "term": "govorica",
-      "scores": { "tf": 10, "df": 163, "tf-idf": 0.06134969325153374 }
-    },
-    {
-      "term": "ru\u0161enje",
-      "scores": { "tf": 14, "df": 229, "tf-idf": 0.0611353711790393 }
-    },
-    {
-      "term": "epidemija",
-      "scores": { "tf": 188, "df": 3102, "tf-idf": 0.06060606060606061 }
-    },
-    {
-      "term": "kandidat",
-      "scores": { "tf": 102, "df": 1685, "tf-idf": 0.060534124629080116 }
-    },
-    {
-      "term": "arbitra\u017ea",
-      "scores": { "tf": 9, "df": 158, "tf-idf": 0.056962025316455694 }
-    },
-    {
-      "term": "avtoriteta",
-      "scores": { "tf": 14, "df": 246, "tf-idf": 0.056910569105691054 }
-    },
-    {
-      "term": "sit",
-      "scores": { "tf": 19, "df": 334, "tf-idf": 0.05688622754491018 }
-    },
-    {
-      "term": "vlada",
-      "scores": { "tf": 861, "df": 15251, "tf-idf": 0.056455314405612744 }
-    },
-    {
-      "term": "umrl",
-      "scores": { "tf": 30, "df": 539, "tf-idf": 0.055658627087198514 }
-    },
-    {
-      "term": "zavoziti",
-      "scores": { "tf": 8, "df": 146, "tf-idf": 0.0547945205479452 }
-    },
-    {
-      "term": "tviti",
-      "scores": { "tf": 10, "df": 201, "tf-idf": 0.04975124378109453 }
-    },
-    {
-      "term": "pilot",
-      "scores": { "tf": 8, "df": 161, "tf-idf": 0.049689440993788817 }
-    },
-    {
-      "term": "arbitra\u017een",
-      "scores": { "tf": 10, "df": 204, "tf-idf": 0.049019607843137254 }
-    },
-    {
-      "term": "fakt",
-      "scores": { "tf": 8, "df": 167, "tf-idf": 0.04790419161676647 }
-    },
-    {
-      "term": "misle\u010d",
-      "scores": { "tf": 12, "df": 268, "tf-idf": 0.04477611940298507 }
-    },
-    {
-      "term": "val",
-      "scores": { "tf": 51, "df": 1149, "tf-idf": 0.044386422976501305 }
-    },
-    {
-      "term": "smrt",
-      "scores": { "tf": 28, "df": 638, "tf-idf": 0.0438871473354232 }
-    },
-    {
-      "term": "podrediti",
-      "scores": { "tf": 9, "df": 206, "tf-idf": 0.043689320388349516 }
-    },
-    {
-      "term": "test",
-      "scores": { "tf": 19, "df": 445, "tf-idf": 0.04269662921348315 }
-    },
-    {
-      "term": "volitve",
-      "scores": { "tf": 82, "df": 1940, "tf-idf": 0.042268041237113405 }
+    "session": {
+      "name": "24. seja Mestnega sveta MOL",
+      "id": 80,
+      "start_time": "2021-07-05T15:30:00",
+      "end_time": null,
+      "organizations": [
+        {
+          "name": "Mestni svet MOL",
+          "acronym": null,
+          "slug": "1-mestni-svet-mol"
+        }
+      ],
+      "classification": null,
+      "in_review": false
     }
-  ]
+  }
 }
