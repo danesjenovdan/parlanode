@@ -3,8 +3,6 @@
     <vote-list
       :votes-and-stuff="votes"
       :filters="filters"
-      :virtualize-remain="5"
-      virtualize
       @filters-changed="onFiltersChanged"
     />
   </card-wrapper>

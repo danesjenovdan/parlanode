@@ -92,8 +92,6 @@
             <seznam-glasovanj
               :data="voteObject"
               :show-filters="false"
-              :virtualize-remain="4"
-              virtualize
             />
           </div>
         </p-tab>

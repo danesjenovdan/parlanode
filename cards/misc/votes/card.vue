@@ -44,7 +44,6 @@
     <seznam-glasovanj
       :data="votes"
       :filters="filters"
-      virtualize
       @filters-changed="onFiltersChanged"
     />
   </card-wrapper>

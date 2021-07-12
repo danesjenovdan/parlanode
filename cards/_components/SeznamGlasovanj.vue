@@ -38,11 +38,9 @@
           />
           <div v-else>
             <component
-              :is="virtualize ? 'virtual-list' : 'div'"
+              :is="'div'"
               :size="105"
-              :remain="virtualizeRemain"
               :onscroll="checkScrollShadow"
-              :variable="getVirtualItemHeight"
               class="virtual-list"
             >
               <div
@@ -203,7 +201,6 @@
 
 <script>
 import { map, sortBy } from 'lodash-es';
-import VirtualList from '@/_components/vue-virtual-scroll-list/VirtualList.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
@@ -213,7 +210,6 @@ import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
 export default {
   name: 'SeznamGlasovanj',
   components: {
-    VirtualList,
     StripedButton,
     PSearchDropdown,
     ScrollShadow,
@@ -231,14 +227,6 @@ export default {
     showFilters: {
       type: Boolean,
       default: true,
-    },
-    virtualize: {
-      type: Boolean,
-      default: false,
-    },
-    virtualizeRemain: {
-      type: Number,
-      default: 10,
     },
   },
   data() {
@@ -460,17 +448,6 @@ export default {
         classifications: this.selectedClassifications,
         results: this.selectedResults,
       });
-    },
-    getVirtualItemHeight() {
-      if (typeof window !== 'undefined') {
-        if (window.innerWidth > 991) {
-          return 105 + 15;
-        }
-        if (window.innerWidth > 767) {
-          return 219 + 15;
-        }
-      }
-      return 240 + 15;
     },
     checkScrollShadow(event) {
       this.$refs.shadow.check(event.currentTarget);

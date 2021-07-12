@@ -39,11 +39,9 @@
           />
           <div v-else>
             <component
-              :is="virtualize ? 'virtual-list' : 'div'"
+              :is="'div'"
               :size="105"
-              :remain="virtualizeRemain"
               :onscroll="checkScrollShadow"
-              :variable="getVirtualItemHeight"
               class="virtual-list"
             >
               <div
@@ -154,7 +152,6 @@
 
 <script>
 import { map, sortBy, sum } from 'lodash-es';
-import VirtualList from '@/_components/vue-virtual-scroll-list/VirtualList.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
@@ -163,7 +160,6 @@ import links from '@/_mixins/links.js';
 export default {
   name: 'VoteList',
   components: {
-    VirtualList,
     StripedButton,
     PSearchDropdown,
     ScrollShadow,
@@ -181,14 +177,6 @@ export default {
     showFilters: {
       type: Boolean,
       default: true,
-    },
-    virtualize: {
-      type: Boolean,
-      default: false,
-    },
-    virtualizeRemain: {
-      type: Number,
-      default: 10,
     },
   },
   emits: ['filters-changed'],
