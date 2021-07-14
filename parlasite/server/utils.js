@@ -7,6 +7,7 @@ const data = require('./data');
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
     const query = Object.keys(params)
+      .filter((key) => params[key] != null) // maybe params[key] is undefined
       .map((key) => {
         const val = (typeof params[key] === 'object')
           ? JSON.stringify(params[key])
