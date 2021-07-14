@@ -172,3 +172,8 @@ $binary-vote-colors: (
   'binary-for': $icon-accepted,
   'binary-against': $icon-rejected
 );
+
+$binary-vote-colors-hover: (
+  'binary-for': rgba($icon-accepted, 0.7),
+  'binary-against': rgba($icon-rejected, 0.7),
+);
