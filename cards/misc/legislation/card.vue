@@ -62,7 +62,6 @@ import { defaultOgImage } from '@/_mixins/ogImages.js';
 import PSearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
-import dateParser from '@/_helpers/dateParser.js';
 import InnerCard from './InnerCard.vue';
 
 // TODO: get from config
@@ -244,9 +243,9 @@ export default {
               b = B.text;
               return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
             case 'updated':
-              a = dateParser(A.date || '').getTime() || Date.now();
-              b = dateParser(B.date || '').getTime() || Date.now();
-              return a - b;
+              a = A.timestamp || 'N/A';
+              b = B.timestamp || 'N/A';
+              return a.localeCompare(b, 'en');
             case 'workingBody':
               a = A.mdt_text;
               b = B.mdt_text;

@@ -12,7 +12,7 @@
 <script>
 import SortableTable from '@/_components/SortableTable.vue';
 import links from '@/_mixins/links.js';
-import dateFormatter from '@/_helpers/dateFormatter.js'
+import dateFormatter from '@/_helpers/dateFormatter.js';
 
 export default {
   name: 'SeznamZakonovKartica',
@@ -82,16 +82,16 @@ export default {
         }
 
         const outcomeHtml = `<div class="outcome"><i class="parlaicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
-        const dataIconsHtml = `
-          <div class="data-icons">
-            <i class="parlaicon icon-abstract ${
-              legislation.abstractVisible ? 'icon-show' : 'icon-hide'
-            }"></i>
-            <i class="parlaicon icon-votes ${
-              legislation.hasVotes ? 'icon-show' : 'icon-hide'
-            }"></i>
-          </div>
-        `;
+        // const dataIconsHtml = `
+        //   <div class="data-icons">
+        //     <i class="parlaicon icon-abstract ${
+        //       legislation.abstractVisible ? 'icon-show' : 'icon-hide'
+        //     }"></i>
+        //     <i class="parlaicon icon-votes ${
+        //       legislation.hasVotes ? 'icon-show' : 'icon-hide'
+        //     }"></i>
+        //   </div>
+        // `;
 
         return [
           {

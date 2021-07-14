@@ -149,34 +149,25 @@ export default {
               b = sessionB.name;
               return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
             case 'date':
-              a = sessionA.date_ts;
-              b = sessionB.date_ts;
-              if (a < b) {
-                return -1;
-              }
-              if (a > b) {
-                return 1;
-              }
-              // never return 0, chrome and firefox sort differently and that can break SSR
-              return sessionA.id - sessionB.id;
-            case 'updated':
-              a = sessionA.updated_at_ts;
-              b = sessionB.updated_at_ts;
-              if (a < b) {
-                return -1;
-              }
-              if (a > b) {
-                return 1;
-              }
-              // never return 0, chrome and firefox sort differently and that can break SSR
-              return sessionA.id - sessionB.id;
+              a = sessionA.start_time || 'N/A';
+              b = sessionB.start_time || 'N/A';
+              return a.localeCompare(b, 'en');
+            // case 'updated':
+            //   a = sessionA.updated_at_ts;
+            //   b = sessionB.updated_at_ts;
+            //   if (a < b) {
+            //     return -1;
+            //   }
+            //   if (a > b) {
+            //     return 1;
+            //   }
+            //   return 0;
             case 'workingBody':
               a = sessionA.organizations[0].name;
               b = sessionB.organizations[0].name;
               return a.localeCompare(b, 'sl');
             default:
-              // never return 0, chrome and firefox sort differently and that can break SSR
-              return sessionA.id - sessionB.id;
+              return 0;
           }
         });
 
