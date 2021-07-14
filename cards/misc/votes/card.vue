@@ -1,51 +1,36 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text[0]'" class="info-text"></p>
-      <i18n-t keypath="info.text[1]" tag="p" class="info-text">
-        <a
-          v-t="'info.links[0].text'"
-          :href="$t('info.links[0].link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-      <i18n-t keypath="info.text[2]" tag="p" class="info-text">
-        <a
-          v-t="'info.links[1].text'"
-          :href="$t('info.links[1].link')"
-          place="link1"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-        <a
-          v-t="'info.links[2].text'"
-          :href="$t('info.links[2].link')"
-          place="link2"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-      <i18n-t keypath="info.text[3]" tag="p" class="info-text">
-        <a
-          v-t="'info.links[3].text'"
-          :href="$t('info.links[3].link')"
-          place="link"
-          class="funblue-light-hover"
-          target="_blank"
-        />
-      </i18n-t>
-      <p v-t="'info.text[4]'" class="info-text"></p>
-    </template>
-
-    <seznam-glasovanj
-      :data="votes"
-      :filters="filters"
-      @filters-changed="onFiltersChanged"
-    />
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+    <div class="votes-list">
+      <div class="filters">
+        <div class="filter text-filter">
+          <div v-t="'title-search'" class="filter-label"></div>
+          <input v-model="textFilter" class="text-filter-input" type="text" />
+        </div>
+        <div class="filter" style="flex: 1"></div>
+        <div class="filter buttons-filter">
+          <striped-button
+            v-for="passedOption in passedOptions"
+            :key="passedOption.id"
+            :color="passedOption.color"
+            :selected="selectedPassedOption === passedOption"
+            :small-text="passedOption.label"
+            @click="selectPassedOption(passedOption)"
+          />
+        </div>
+      </div>
+      <scroll-shadow ref="shadow">
+        <div
+          class="votes-list-shadow has-filters"
+          @scroll="$refs.shadow.check($event.currentTarget)"
+        >
+          <vote-list-item
+            v-for="vote in filteredVotes"
+            :key="vote.id"
+            :vote="vote"
+          />
+        </div>
+      </scroll-shadow>
+    </div>
   </card-wrapper>
 </template>
 
@@ -54,66 +39,150 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
-import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
+import StripedButton from '@/_components/StripedButton.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import VoteListItem from '@/_components/VoteListItem.vue';
 
 export default {
   name: 'CardMiscVotes',
   components: {
-    SeznamGlasovanj,
+    StripedButton,
+    ScrollShadow,
+    VoteListItem,
   },
   mixins: [common, links],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
-    const state = this.$options.cardData.parlaState;
-    const text = state && state.text ? state.text : '';
-    const tags = state && state.tags ? state.tags : [];
-    const classifications =
-      state && state.classifications ? state.classifications : [];
-    const results = state && state.results ? state.results : [];
+    const textFilter = this.cardState.text || '';
+
+    const passedOptions = [
+      {
+        id: 'true',
+        color: 'binary-for',
+        label: this.$t('vote-passed'),
+        selected: this.cardState.passed === 'true',
+      },
+      {
+        id: 'false',
+        color: 'binary-against',
+        label: this.$t('vote-not-passed'),
+        selected: this.cardState.passed === 'false',
+      },
+    ];
 
     return {
-      data: this.$options.cardData.data,
-      filters: {
-        text,
-        tags,
-        classifications,
-        results,
-      },
+      votes: this.cardData.data?.results || [],
+      passedOptions,
+      textFilter,
       headerConfig: defaultHeaderConfig(this, {}),
       ogConfig: defaultOgImage(this, {}),
     };
   },
   computed: {
-    votes() {
-      let votes = this.data.results.map((v) => v.results);
-      if (
-        this.$options.cardData.parlaState &&
-        this.$options.cardData.parlaState.onlyOther
-      ) {
-        votes = votes.filter((vote) => !vote.epa);
-      }
-      return {
-        votes,
-        session: this.data.session,
-        tags: this.data.tags,
-        classifications: this.data.classifications,
-      };
+    filteredVotes() {
+      const lowerTextFilter = String(this.textFilter || '').toLowerCase();
+
+      return this.votes.filter((vote) => {
+        let textMatch = true;
+        let passedOptionMatch = true;
+
+        if (lowerTextFilter) {
+          textMatch = vote.title.toLowerCase().includes(lowerTextFilter);
+        }
+
+        if (this.selectedPassedOption) {
+          passedOptionMatch =
+            this.selectedPassedOption.id === String(vote.passed);
+        }
+
+        return textMatch && passedOptionMatch;
+      });
+    },
+    selectedPassedOption() {
+      return this.passedOptions.find((po) => po.selected);
     },
   },
   created() {
-    const { template, siteMap: sm } = this.$options.cardData;
-    template.contextUrl = `${this.slugs.urls.base}/${sm.landing.legislation}`;
+    // TODO:
+    // const { template, siteMap: sm } = this.$options.cardData;
+    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.legislation}`;
   },
   methods: {
-    onFiltersChanged(newFilters) {
-      this.filters = newFilters;
+    selectPassedOption(passedOption) {
+      if (passedOption.selected) {
+        passedOption.selected = false;
+      } else {
+        this.passedOptions.forEach((po) => {
+          po.selected = passedOption === po;
+        });
+      }
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-:deep(#votingCard) {
-  height: auto;
-  min-height: 500px;
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+
+.votes-list {
+  .filters {
+    display: flex;
+    padding-bottom: 12px;
+
+    .filter {
+      @include respond-to(desktop) {
+        margin-right: 10px;
+      }
+
+      @include respond-to(mobile) {
+        width: 100%;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .filter-label {
+      overflow: hidden;
+      height: 20px;
+      margin-top: 6px;
+    }
+
+    .text-filter {
+      @include respond-to(desktop) {
+        width: 50%;
+      }
+
+      width: 100%;
+
+      .text-filter-input {
+        background-image: url('#{get-parlassets-url()}/icons/search.svg');
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: right 9px center;
+        border: 1px solid $font-placeholder;
+        font-size: 16px;
+        height: 51px;
+        line-height: 27px;
+        outline: none;
+        padding: 12px 42px 12px 14px;
+        width: 100%;
+      }
+    }
+
+    .buttons-filter {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+
+      .striped-button {
+        width: 120px;
+      }
+    }
+  }
 }
 </style>
