@@ -24,10 +24,6 @@
   </div>
 </div>
 
-<%- await fetchCard('/session/law/', { customUrl: `{analize}/s/getLegislation/${lawData.epa}`}) %>
-
-<% if  (lawData.has_discussion) { %>
-  <%- await fetchCard('/c/commentality/', { state: { EPA: lawData.epa } }) %>
-<% } %>
+<%- await fetchCard('/legislation/single/', lawData.results.id) %>
 
 <%- await include('../_partials/footer.ejs') %>
