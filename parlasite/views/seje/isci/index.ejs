@@ -45,22 +45,22 @@
 <div id="session-search-results">
   <div class="row">
     <div class="col-md-12">
-      <%- await fetchCard('/search/speeches/', { state: { text: query, people: mps, groups: pgs } }) %>
+      <%- await fetchCard('/search/speeches/', 1, { state: { text: query, people: mps, groups: pgs } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/legislation/', { state: { text: query } }) %>
+      <%- await fetchCard('/search/legislation/', 1, { state: { text: query } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/usage-through-time/', { state: { text: query, people: mps, groups: pgs } }) %>
+      <%- await fetchCard('/search/usage-through-time/', 1, { state: { text: query, people: mps, groups: pgs } }) %>
     </div>
     <div class="col-md-6">
-      <%- await fetchCard('/search/most-used-by-people/', { state: { text: query, people: mps, groups: pgs } }) %>
+      <%- await fetchCard('/search/most-used-by-people/', 1, { state: { text: query, people: mps, groups: pgs } }) %>
     </div>
     <div class="col-md-6">
-      <%- await fetchCard('/search/usage-by-group/', { state: { text: query, people: mps, groups: pgs } }) %>
+      <%- await fetchCard('/search/usage-by-group/', 1, { state: { text: query, people: mps, groups: pgs } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/votes/', { state: { text: query } }) %>
+      <%- await fetchCard('/search/votes/', 1, { state: { text: query } }) %>
     </div>
   </div>
 </div>
