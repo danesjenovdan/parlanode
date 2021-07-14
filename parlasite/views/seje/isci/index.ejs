@@ -45,22 +45,22 @@
 <div id="session-search-results">
   <div class="row">
     <div class="col-md-12">
-      <%- await fetchCard('/search/speeches/', { state: { query, mps, pgs } }) %>
+      <%- await fetchCard('/search/speeches/', { state: { text: query, people: mps, groups: pgs } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/legislation/', { state: { query } }) %>
+      <%- await fetchCard('/search/legislation/', { state: { text: query } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/usage-through-time/', { state: { query, mps, pgs } }) %>
+      <%- await fetchCard('/search/usage-through-time/', { state: { text: query, people: mps, groups: pgs } }) %>
     </div>
     <div class="col-md-6">
-      <%- await fetchCard('/search/most-used-by-people/', { state: { query, mps, pgs } }) %>
+      <%- await fetchCard('/search/most-used-by-people/', { state: { text: query, people: mps, groups: pgs } }) %>
     </div>
     <div class="col-md-6">
-      <%- await fetchCard('/search/usage-by-group/', { state: { query, mps, pgs } }) %>
+      <%- await fetchCard('/search/usage-by-group/', { state: { text: query, people: mps, groups: pgs } }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/votes/', { state: { query } }) %>
+      <%- await fetchCard('/search/votes/', { state: { text: query } }) %>
     </div>
   </div>
 </div>
