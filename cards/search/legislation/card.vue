@@ -27,6 +27,7 @@ import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
+import legislationStatus from '@/_helpers/legislationStatus.js';
 
 export default {
   name: 'CardSearchLegislation',
@@ -63,40 +64,12 @@ export default {
       ];
     },
     mappedItems() {
-      const mapResultIcon = {
-        enacted: {
-          icon: 'vote-result--enacted',
-          name: this.$t('vote-result--enacted'),
-        },
-        adopted: {
-          icon: 'vote-result--adopted',
-          name: this.$t('vote-result--adopted'),
-        },
-        rejected: {
-          icon: 'vote-result--rejected',
-          name: this.$t('vote-result--rejected'),
-        },
-        retracted: {
-          icon: 'vote-result--retracted',
-          name: this.$t('vote-result--retracted'),
-        },
-        submitted: {
-          icon: 'vote-result--submitted',
-          name: this.$t('vote-result--submitted'),
-        },
-        received: {
-          icon: 'vote-result--received',
-          name: this.$t('vote-result--received'),
-        },
-        in_procedure: {
-          icon: 'vote-result--in_procedure',
-          name: this.$t('vote-result--in_procedure'),
-        },
-      };
-
       return this.processedData.map((legislation) => {
-        const mapKey = legislation.status || 'in_procedure';
-        const outcomeHtml = `<div class="outcome"><i class="parlaicon ${mapResultIcon[mapKey].icon}"></i><div class="text">${mapResultIcon[mapKey].name}</div></div>`;
+        const status = legislationStatus(legislation.status);
+
+        const outcomeHtml = `<div class="outcome"><i class="parlaicon ${
+          status.iconClass
+        }"></i><div class="text">${this.$t(status.translationKey)}</div></div>`;
 
         return [
           {
