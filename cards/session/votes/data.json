@@ -22,7 +22,7 @@
           "for": 42.0,
           "against": 0.0
         },
-        "passed": null,
+        "passed": true,
         "id": 1637,
         "is_outlier": false,
         "has_outliers": false,
@@ -36,7 +36,7 @@
           "for": 42.0,
           "against": 0.0
         },
-        "passed": null,
+        "passed": false,
         "id": 1638,
         "is_outlier": false,
         "has_outliers": false,

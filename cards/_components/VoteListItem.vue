@@ -154,7 +154,7 @@ export default {
 @import 'parlassets/scss/colors';
 
 .session_voting {
-  padding: 0 0 0 12px;
+  padding: 0;
   margin: 12px 0;
 }
 

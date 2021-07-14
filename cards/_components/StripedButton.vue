@@ -159,18 +159,16 @@ export default {
     }
   }
 
-  $special-groups: (
-    dz: $third,
-    koal: $link,
-    opoz: $font-placeholder,
-  );
-
-  $allmaps: map-merge(
+  $all-colors: map-merge(
     $proper-vote-colors,
-    map-merge($party-colors, map-merge($special-groups, $binary-vote-colors))
+    map-merge($party-colors, $binary-vote-colors)
+  );
+  $all-colors-hover: map-merge(
+    $proper-vote-colors-hover,
+    map-merge($party-colors-hover, $binary-vote-colors-hover)
   );
 
-  @each $name, $color in $allmaps {
+  @each $name, $color in $all-colors {
     &.#{$name} {
       &.has-stripe-on-top::after,
       &.has-stripe-on-bottom::after {
@@ -183,7 +181,7 @@ export default {
       }
 
       &.is-hovered:not(.is-disabled) {
-        background-color: $color;
+        background-color: map-get($all-colors-hover, $name);
         color: choose-contrast-color($color, $white, $font-default);
 
         &::after {

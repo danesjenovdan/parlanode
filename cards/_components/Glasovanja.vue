@@ -308,7 +308,7 @@ export default {
 }
 
 #card-votes {
-  height: $full-card-height - 89px;
+  height: $full-card-height - 89;
   overflow-y: auto;
 
   @include respond-to(mobile) {
