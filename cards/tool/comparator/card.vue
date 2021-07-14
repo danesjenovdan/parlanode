@@ -184,7 +184,6 @@ import PTabs from '@/_components/Tabs.vue';
 import Tag from '@/_components/Tag.vue';
 import TextFrame from '@/_components/TextFrame.vue';
 import TimeChart from '@/_components/TimeChart.vue';
-import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 import generators from '@/_mixins/generatePeopleAndParties.js';
 
 export default {
@@ -202,7 +201,7 @@ export default {
     Tag,
     TextFrame,
     TimeChart,
-    SeznamGlasovanj,
+    // SeznamGlasovanj,
   },
   mixins: [common, links, generators],
   cardInfo: {

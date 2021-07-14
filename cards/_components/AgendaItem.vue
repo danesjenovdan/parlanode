@@ -42,13 +42,12 @@
 
 <script>
 import links from '@/_mixins/links.js';
-import SeznamGlasovanj from '@/_components/SeznamGlasovanj.vue';
 import { format } from 'date-fns';
 
 export default {
   name: 'AgendaItem',
   components: {
-    SeznamGlasovanj,
+    // SeznamGlasovanj,
   },
   mixins: [links],
   props: {
