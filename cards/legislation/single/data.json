@@ -1,0 +1,37 @@
+{
+  "data": {
+    "results": {
+      "id": 249,
+      "uid": null,
+      "text": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica skupaj s pripombami.",
+      "epa": null,
+      "status": null,
+      "passed": false,
+      "classification": "decree",
+      "has_votes": true,
+      "has_abstract": false,
+      "timestamp": "2020-11-16T15:30:00",
+      "votes": [
+        {
+          "all_votes": {
+            "absent": 10,
+            "abstain": 0,
+            "for": 35,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2390,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica skupaj s pripombami."
+        }
+      ],
+      "abstract": null
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    }
+  }
+}

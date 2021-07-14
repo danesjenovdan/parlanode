@@ -1,6 +1,6 @@
 <template>
   <div class="p-tabs">
-    <ul class="p-tabs-headers">
+    <ul v-if="headers.length > 1" class="p-tabs-headers">
       <li
         v-for="(header, index) in headers"
         :key="index"
@@ -64,7 +64,7 @@ export default {
     display: flex;
     flex-shrink: 0;
     list-style: none;
-    margin: 0;
+    margin: 0 0 4px 0;
     padding: 0;
     .p-tabs-header {
       align-items: center;
@@ -118,12 +118,12 @@ export default {
 
   .p-tabs-content {
     flex: 1 1 auto;
-    overflow-y: auto;
+    // overflow-y: auto;
     position: relative;
 
-    .tab-content {
-      overflow-x: hidden;
-    }
+    // .tab-content {
+    //   overflow-x: hidden;
+    // }
   }
 }
 
