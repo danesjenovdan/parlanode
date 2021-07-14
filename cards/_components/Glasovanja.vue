@@ -1,7 +1,7 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div v-show="false" class="card-content__empty">
-      <!-- TODO this is hardcoded -->
+      <!-- TODO this empty state is hardcoded -->
       <div class="card-content__empty-inner">
         <img :src="`${urls.cdn}/img/icons/no-data.svg`" />
         <p v-t="'data-currently-unavailable'"></p>
@@ -12,14 +12,6 @@
         <div v-t="'title-search'" class="filter-label"></div>
         <p-search-field v-model="textFilter" />
       </div>
-      <!-- <div class="filter type-dropdown">
-        <div v-t="'vote-types'" class="filter-label"></div>
-        <p-search-dropdown v-model="allClassifications" :alphabetise="false" />
-      </div> -->
-      <!-- <div class="filter tag-dropdown">
-        <div v-t="'working-body'" class="filter-label"></div>
-        <p-search-dropdown v-model="dropdownTags" />
-      </div> -->
       <div class="filter" style="flex: 1"></div>
       <div v-if="type === 'person'" class="filter option-party-buttons">
         <div

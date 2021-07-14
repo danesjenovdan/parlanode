@@ -1,17 +1,17 @@
 <template>
   <div class="presence-list">
-    <div v-for="obj in data" :key="obj.org.id" class="presence-item">
+    <div v-for="entry in data" :key="entry.group?.slug" class="presence-item">
       <div class="presence">
-        <div class="percent">{{ obj.percent }}%</div>
-        <div class="party">{{ obj.org.acronym }}</div>
+        <div class="percent">{{ formatNumber(entry.value) }}</div>
+        <div class="party">
+          {{ entry.group?.acronym || entry.group?.name || 'N/A' }}
+        </div>
         <div
           :class="[
             'line',
-            `${obj.org.acronym
-              .replace(/[ +,]/g, '_')
-              .toLowerCase()}-background`,
+            '${obj.org.acronym.replace(/[ +,]/g, \'_\').toLowerCase()}-background',
           ]"
-          :style="`width: ${obj.percent}%;`"
+          :style="`width: ${entry.value}%;`"
         ></div>
       </div>
     </div>
@@ -19,12 +19,19 @@
 </template>
 
 <script>
+import numberFormatter from '@/_helpers/numberFormatter.js';
+
 export default {
   name: 'PrisotnostPoPoslanskihSkupinah',
   props: {
     data: {
       type: Array,
       required: true,
+    },
+  },
+  methods: {
+    formatNumber(number) {
+      return numberFormatter(number, 0, true);
     },
   },
 };
@@ -35,29 +42,23 @@ export default {
 @import 'parlassets/scss/colors';
 
 .presence-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 15px 0 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin: 10px 0 15px;
 
   .presence-item {
-    flex: 0 0 25%;
     display: flex;
 
-    @include respond-to(limbo) {
-      flex-basis: 50%;
-    }
-
-    @include respond-to(mobile) {
-      flex-basis: 100%;
-    }
-
     .presence {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px 12px 17px 12px;
       text-align: center;
       background: $background;
-      padding: 12px;
-      margin: 0 5px 10px 5px;
       position: relative;
-      width: 100%;
 
       .percent,
       .party {
@@ -75,9 +76,9 @@ export default {
       }
 
       .party {
+        flex: 1;
         font-size: 20px;
         line-height: 24px;
-        min-height: 48px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -85,22 +86,15 @@ export default {
         @include respond-to(mobile) {
           font-size: 18px;
           line-height: 22px;
-          min-height: 44px;
         }
       }
 
       .line {
         height: 5px;
-        font-size: 5px;
-        line-height: 5px;
-        // margin-top: 10px;
         position: absolute;
         bottom: 0;
         left: 0;
-
-        @include respond-to(mobile) {
-          margin-top: 0;
-        }
+        background-color: $font-default;
       }
     }
   }

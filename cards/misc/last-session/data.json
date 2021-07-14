@@ -5,213 +5,59 @@
       "votes": [
         {
           "all_votes": {
-            "absent": 3,
-            "abstain": 1,
-            "for": 41,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2395,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 23. seje Mestnega sveta Mestne občine Ljubljana z dne 31. maja 2021."
-        },
-        {
-          "all_votes": {
-            "absent": 2,
-            "abstain": 9,
-            "for": 34,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2396,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "I. Janeza STARIHO se razreši z mesta predsednika Sveta za preventivo in vzgojo v cestnem prometu. II. V Svet za preventivo in vzgojo v cestnem prometu se kot predstavnika Mestnega sveta Mestne občine Ljubljana i m e n u j e t a : -   Emilija MITROVIĆ MILOŠ – predsednica -   Jožef HORVAT– član. III. Mandat imenovanih je vezan na mandat sveta."
-        },
-        {
-          "all_votes": {
-            "absent": 5,
-            "abstain": 0,
-            "for": 40,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2397,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "I. Tomažu KLEMENCU preneha mandat člana Sveta Osnovne šole Vodmat. II. V Svet Osnovne šole Vodmat se za predstavnico Mestne občine Ljubljana i m e n u j e : Nina REMS. Mandat imenovane je vezan na mandat sveta šole."
-        },
-        {
-          "all_votes": {
-            "absent": 5,
-            "abstain": 0,
-            "for": 40,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2398,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "I. V Svet Osnovne šole Danile Kumar s e i m e n u j e j o : -   Amir CRNOJEVIĆ -   Urška HONZAK -   dr. Bojan ROTAR II. Mandat imenovanih traja štiri leta."
-        },
-        {
-          "all_votes": {
-            "absent": 5,
-            "abstain": 0,
-            "for": 40,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2399,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "I. V Svet javnega zavoda Mednarodni grafični likovni center s e imenujejo: -  dr. Jan BABNIK -  Anton KASTELIC -  Mojca ŠKRINJAR II. Mandat imenovanih traja štiri leta."
-        },
-        {
-          "all_votes": {
             "absent": 13,
+            "abstain": 2,
+            "for": 30,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1916,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 22. seje Mestnega sveta Mestne občine Ljubljana z dne 19. aprila 2021."
+        },
+        {
+          "all_votes": {
+            "absent": 14,
+            "abstain": 2,
+            "for": 29,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1917,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "I. V Svet javnega zavoda Slovensko mladinsko gledališče se imenujejo: - dr. Zvone ČADEŽ - Semira OSMANAGIĆ - dr. Asta VREČKO - Martina VUK II. Mandat imenovanih traja štiri leta."
+        },
+        {
+          "all_votes": {
+            "absent": 15,
             "abstain": 0,
             "for": 30,
-            "against": 2
-          },
-          "passed": true,
-          "id": 2400,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Maji RAKUN BEBER se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Bežigrad."
-        },
-        {
-          "all_votes": {
-            "absent": 7,
-            "abstain": 0,
-            "for": 38,
             "against": 0
           },
           "passed": true,
-          "id": 2401,
+          "id": 1918,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Nevenki LAMUT se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Vižmarje Brod."
+          "title": "Barbari NOVINEC se da pozitivno mnenje h kandidaturi za ravnateljico Vrtca Galjevica."
         },
         {
           "all_votes": {
-            "absent": 3,
+            "absent": 15,
             "abstain": 0,
-            "for": 42,
+            "for": 30,
             "against": 0
           },
           "passed": true,
-          "id": 2402,
+          "id": 1919,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Dušanu VODEBU se da pozitivno mnenje h kandidaturi za ravnatelja Srednje upravno administrativne šole Ljubljana."
-        },
-        {
-          "all_votes": {
-            "absent": 6,
-            "abstain": 0,
-            "for": 39,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2403,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Francetu ROGLJU in Miši STRŽINAR se da pozitivno mnenje h kandidaturi za ravnatelja oziroma ravnateljico Mladinskega doma Malči Beličeve."
-        },
-        {
-          "all_votes": {
-            "absent": 5,
-            "abstain": 0,
-            "for": 39,
-            "against": 1
-          },
-          "passed": true,
-          "id": 2404,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mag. Simonu Strgarju se da pozitivno mnenje h kandidaturi za direktorja Doma starejših občanov Ljubljana - Šiška."
-        },
-        {
-          "all_votes": {
-            "absent": 3,
-            "abstain": 0,
-            "for": 42,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2405,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana p o t r j u j e skupno listo kandidatov za člane Razvojnega sveta Ljubljanske urbane regije za mandatno obdobje 2021-2027."
-        },
-        {
-          "all_votes": {
-            "absent": 1,
-            "abstain": 0,
-            "for": 32,
-            "against": 12
-          },
-          "passed": true,
-          "id": 2406,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mateju KRIŽANIČU se da negativno mnenje h kandidaturi za direktorja Doma starejših občanov Fužine."
-        },
-        {
-          "all_votes": {
-            "absent": 4,
-            "abstain": 3,
-            "for": 38,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2407,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi plačil za člane Nadzornega sveta Veterinarske postaje Ljubljana d.o.o."
-        },
-        {
-          "all_votes": {
-            "absent": 6,
-            "abstain": 14,
-            "for": 25,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2408,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "A) PREDLOG SKLEPA O DOPOLNITVAH SKLEPA O NAČRTU RAVNANJA Z NEPREMIČNIM PREMOŽENJEM MESTNE OBČINE LJUBLJANA V VREDNOSTI NAD 200.000 EUROV ZA LETO 2021 PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o dopolnitvah Sklepa o Načrtu ravnanja z nepremičnim premoženjem Mestne občine Ljubljana v vrednosti nad 200.000 eurov za leto 2021."
-        },
-        {
-          "all_votes": {
-            "absent": 18,
-            "abstain": 0,
-            "for": 27,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2409,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "B) PREDLOG SKLEPA O SPREMEMBI SKLEPA O DOLOČITVI SKUPNE VREDNOSTI PRAVNIH POSLOV NEPREMIČNEGA PREMOŽENJA, KI JIH LAHKO SKLEPA MESTNA OBČINA LJUBLJANA V LETU 2021 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o spremembi Sklepa o določitvi skupne vrednosti pravnih poslov nepremičnega premoženja, ki jih lahko sklepa Mestna občina Ljubljana v letu 2021."
+          "title": "Petru JERINI se da pozitivno mnenje h kandidaturi za ravnatelja Osnovne šole Dragomelj."
         },
         {
           "all_votes": {
@@ -221,249 +67,67 @@
             "against": 0
           },
           "passed": true,
-          "id": 2410,
+          "id": 1920,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "C) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA - PRODAJNE POGODBE ZA SOLASTNIŠKI DELEŽ 5051/20000 NEPREMIČNIN NA NASLOVU ČOPOVA ULICA 7, 9, 9A IN 9B V LJUBLJANI PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla - prodajne pogodbe za solastniški delež 5051/20000 nepremičnin na naslovu Čopova ulica 7, 9, 9a in 9b v Ljubljani."
+          "title": "Barbari KAMPJUT se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Franceta Bevka."
         },
         {
           "all_votes": {
-            "absent": 18,
+            "absent": 15,
             "abstain": 0,
-            "for": 24,
-            "against": 3
+            "for": 30,
+            "against": 0
           },
           "passed": true,
-          "id": 2411,
+          "id": 1921,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "D) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – KUPOPRODAJNE POGODBE ZA STAVBNO ZEMLJIŠČE, PARC. ŠT. 433/5, K. O. 1738 DRAVLJE PREDLOG SKLEPA k točki D: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne pogodbe za stavbno zemljišče, parc. št. 433/5, k. o. 1738 Dravlje."
+          "title": "Lorieti PEČOLER se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Koseze."
         },
         {
           "all_votes": {
-            "absent": 18,
+            "absent": 15,
             "abstain": 0,
-            "for": 27,
+            "for": 30,
             "against": 0
           },
           "passed": true,
-          "id": 2412,
+          "id": 1922,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "E) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – POGODBE NAMESTO RAZLASTITVE ZA NEPREMIČNINE S PARC. ŠT. 607, PARC. ŠT. 609/1, PARC. ŠT. 609/3, PARC. ŠT. 610/1, PARC. ŠT. 610/2, PARC. ŠT.611/1 IN PARC. ŠT.611/3, VSE K. O. 1736 BRINJE I PREDLOG SKLEPA k točki E: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – pogodbe namesto razlastitve za nepremičnine s parc. št. 607, parc. št. 609/1, parc. št. 609/3, parc. št. 610/1, parc. št. 610/2, parc. št.611/1 in parc. št.611/3, vse k. o. 1736 Brinje I."
+          "title": "Barbari ŽITNIK TERNOVEC se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Martina Krpana."
         },
         {
           "all_votes": {
-            "absent": 4,
-            "abstain": 7,
-            "for": 34,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2413,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "A) PREDLOG SKLEPA O SOGLASJU K DODELITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI REGIONALNE RAZVOJNE AGENCIJE LJUBLJANSKE URBANE REGIJE ZA OBDOBJE JANUAR 2020 – DECEMBER 2020 IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA pod točko A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k dodelitvi dela plače za delovno uspešnost direktorici Regionalne razvojne agencije Ljubljanske urbane regije za obdobje januar 2020 – december 2020 iz naslova povečanega obsega dela."
-        },
-        {
-          "all_votes": {
-            "absent": 11,
+            "absent": 15,
             "abstain": 0,
-            "for": 34,
+            "for": 30,
             "against": 0
           },
           "passed": true,
-          "id": 2414,
+          "id": 1923,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "B) PREDLOG SKLEPA O DOLOČITVI OBSEGA IN IZPLAČILA REDNE DELOVNE USPEŠNOSTI DIREKTORICE REGIONALNE RAZVOJNE AGENCIJE LJUBLJANSKE URBANE REGIJE IN NJENIH NAMESTNIKOV PREDLOG SKLEPA pod točko B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi obsega in izplačila redne delovne uspešnosti direktorice Regionalne razvojne agencije Ljubljanske urbane regije in njenih namestnikov."
+          "title": "Mag. Verici ŠENICA PAVLETIČ se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Savsko naselje."
         },
         {
           "all_votes": {
-            "absent": 4,
-            "abstain": 6,
-            "for": 24,
-            "against": 11
-          },
-          "passed": true,
-          "id": 2415,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o manjši notranji igralni površini v javnih vrtcih Mestne občine Ljubljana za šolski leti 2021/2022 in 2022/2023."
-        },
-        {
-          "all_votes": {
-            "absent": 4,
-            "abstain": 4,
-            "for": 37,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2416,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predloge sklepov o soglasju k določitvi dela plače za delovno uspešnost ravnateljicam in ravnateljem ter direktorju vzgojno-izobraževalnih zavodov: Vrtec Ciciban, Osnovna šola Božidarja Jakca, Osnovna šola Danile Kumar, Osnovna šola dr. Vita Kraigherja, Osnovna šola Dravlje, Osnovna šola Hinka Smrekarja, Osnovna šola Jožeta Moškriča, Osnovna šola Karla Destovnika Kajuha, Osnovna šola Ketteja in Murna, Osnovna šola Martina Krpana, Osnovna šola Nove Jarše, Osnovna šola Poljane, Osnovna šola Spodnja Šiška, Osnovna šola Šmartno pod Šmarno goro, Osnovna šola Trnovo, Osnovna šola Vič, Osnovna šola Zadobrova, Center za usposabljanje, vzgojo in izobraževanje Janeza Levca Ljubljana, Javni zavod Cene Štupar – Center za izobraževanje Ljubljana iz naslova povečanega obsega dela."
-        },
-        {
-          "all_votes": {
-            "absent": 9,
-            "abstain": 2,
-            "for": 34,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2417,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku."
-        },
-        {
-          "all_votes": {
-            "absent": 13,
+            "absent": 15,
             "abstain": 0,
-            "for": 32,
+            "for": 30,
             "against": 0
           },
           "passed": true,
-          "id": 2418,
+          "id": 1924,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana."
-        },
-        {
-          "all_votes": {
-            "absent": 9,
-            "abstain": 10,
-            "for": 26,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2419,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana se seznani s Poročilom o izvajanju Strategije razvoja socialnega varstva v Mestni občini Ljubljana od 2013 do 2020."
-        },
-        {
-          "all_votes": {
-            "absent": 24,
-            "abstain": 0,
-            "for": 21,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2420,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Strategije razvoja socialnega varstva v Mestni občini Ljubljana za obdobje od 2021 do 2027."
-        },
-        {
-          "all_votes": {
-            "absent": 10,
-            "abstain": 10,
-            "for": 23,
-            "against": 2
-          },
-          "passed": true,
-          "id": 2421,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorju, namestnici direktorja za razvoj zdravstvene dejavnosti in strokovni direktorici Zdravstvenega doma Ljubljana za obdobje 1. 7. 2020 do 31. 12. 2020."
-        },
-        {
-          "all_votes": {
-            "absent": 8,
-            "abstain": 1,
-            "for": 36,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2422,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembah in dopolnitvah Odloka o organizaciji in načinu izvajanja mestnih linijskih prevozov potnikov sprejme po hitrem postopku."
-        },
-        {
-          "all_votes": {
-            "absent": 9,
-            "abstain": 0,
-            "for": 4,
-            "against": 32
-          },
-          "passed": false,
-          "id": 2423,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "AMANDMA Svetniškega kluba Levica: V 1. členu se drugi in tretji odstavek spremenita tako, da se glasita: »Obratovalni čas linij od ponedeljka do sobote je od 5.10 do 23.00 ure in od 6.10 do 23.00 ure ob nedeljah ter praznikih, ki so dela prosti dnevi.« Obratovalni čas nočnih linij, ki povezujejo center mesta z območji: - Bežigrad – Črnuče, - Moste – Fužine – Zalog, - Šiška – Vižmarje – Brod, - Štepanjsko naselje, - Rudnik, - Vič in - Podutik, poteka od ponedeljka do sobote od 24.00 do 5. ure, ob nedeljah in praznikih, ki so dela prosti dnevi, od 24.00 do 6.00 ure ter 1. januarja od 00 do 24.00 ure.«"
-        },
-        {
-          "all_votes": {
-            "absent": 22,
-            "abstain": 0,
-            "for": 23,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2424,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o organizaciji in načinu izvajanja mestnih linijskih prevozov potnikov."
-        },
-        {
-          "all_votes": {
-            "absent": 8,
-            "abstain": 0,
-            "for": 37,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2425,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembi in dopolnitvi Odloka o določitvi plovbnega režima sprejme po hitrem postopku."
-        },
-        {
-          "all_votes": {
-            "absent": 21,
-            "abstain": 0,
-            "for": 24,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2427,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembi in dopolnitvi Odloka o oglaševanju sprejme po hitrem postopku."
-        },
-        {
-          "all_votes": {
-            "absent": 11,
-            "abstain": 0,
-            "for": 34,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2429,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana sprejme po hitrem postopku."
+          "title": "Dr. Mirku MRČELI se da pozitivno mnenje h kandidaturi za ravnatelja Organizacijske enote Mednarodna šola Gimnazije Bežigrad."
         },
         {
           "all_votes": {
@@ -473,25 +137,291 @@
             "against": 0
           },
           "passed": true,
-          "id": 2426,
+          "id": 1925,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o določitvi plovbnega režima."
+          "title": "Mag. Tatjani ŠČEK PREBIL se da pozitivno mnenje h kandidaturi za ravnateljico Živilske šole Biotehniškega izobraževalnega centra."
         },
         {
           "all_votes": {
-            "absent": 17,
+            "absent": 15,
             "abstain": 0,
+            "for": 27,
+            "against": 3
+          },
+          "passed": true,
+          "id": 1927,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "AMANDMA Svetniškega kluba Levica: V tretjem odstavku 2. člena se beseda »tretji« nadomesti z besedo »četrti«. Četrti odstavek se spremeni tako, da se glasi: »Dosedanji peti odstavek postane četrti odstavek.«"
+        },
+        {
+          "all_votes": {
+            "absent": 15,
+            "abstain": 0,
+            "for": 7,
+            "against": 23
+          },
+          "passed": true,
+          "id": 1928,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "AMANDMA Svetniškega kluba Levica: Besedilo 5. člena se nadomesti z novim besedilom, ki se glasi: Tretja alineja veljavnega 11. člena se spremeni tako, da glasi: »- hraniti živali, ki živijo prosto v naravi, razen na za ta namen določenih lokacijah. Prepoved hranjenja tudi ne velja za potrebe izvajanja programov in projektov MOL ter za ptice in veverice v javnih parkih in krajinskih parkih MOL.« V 11. členu se na koncu osme alineje pika nadomesti z vejico in dodajo nove deveta, deseta in enajsta alineja, ki se glasijo: - »poškodovati opremo in naprave na javnih otroških igriščih in na površinah za šport v naravi, - saditi drevesa in grmovnice, - poškodovati javne zelenice.«"
+        },
+        {
+          "all_votes": {
+            "absent": 13,
+            "abstain": 0,
+            "for": 32,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1929,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "AMANDMA župana: V 7. členu se tretji odstavek spremeni tako, da se glasi: »Če ni mogoče določiti kršitelja, inšpektor izda odločbo za odpravo nepravilnosti in vzpostavitev v prejšnje stanje izvajalcu rednega vzdrževanja občinskih cest ali izvajalcu po tem odloku. Stroški pa gredo na račun rednega vzdrževanja občinskih cest ali javnih zelenih površin.«."
+        },
+        {
+          "all_votes": {
+            "absent": 12,
+            "abstain": 0,
+            "for": 33,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1930,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o urejanju in čiščenju občinskih cest in javnih zelenih površin skupaj s sprejetima amandmajema."
+        },
+        {
+          "all_votes": {
+            "absent": 11,
+            "abstain": 0,
+            "for": 34,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1946,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k Spremembam in dopolnitvam Statuta javnega zavoda Turizem Ljubljana."
+        },
+        {
+          "all_votes": {
+            "absent": 11,
+            "abstain": 0,
+            "for": 34,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1948,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "A) PREDLOG SKLEPA O POVEČANJU VREDNOSTI NAMENSKEGA PREMOŽENJA IN KAPITALA JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA B) PREDLOG SKLEPA O ZMANJŠANJU VREDNOSTI NAMENSKEGA PREMOŽENJA IN KAPITALA JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana."
+        },
+        {
+          "all_votes": {
+            "absent": 13,
+            "abstain": 0,
+            "for": 32,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1953,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "A) PREDLOG SKLEPA O POVEČANJU VREDNOSTI NAMENSKEGA PREMOŽENJA IN KAPITALA JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA B) PREDLOG SKLEPA O ZMANJŠANJU VREDNOSTI NAMENSKEGA PREMOŽENJA IN KAPITALA JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme Predlog Sklepa o zmanjšanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana."
+        },
+        {
+          "all_votes": {
+            "absent": 11,
+            "abstain": 3,
+            "for": 31,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1958,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme Poročilo o izvajanju Strategije razvoja kulture v Mestni občini Ljubljana 2020-2023, z usmeritvami do leta 2027, za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 14,
+            "abstain": 1,
+            "for": 30,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1962,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku."
+        },
+        {
+          "all_votes": {
+            "absent": 16,
+            "abstain": 0,
+            "for": 28,
+            "against": 1
+          },
+          "passed": true,
+          "id": 1963,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana."
+        },
+        {
+          "all_votes": {
+            "absent": 11,
+            "abstain": 7,
+            "for": 26,
+            "against": 1
+          },
+          "passed": true,
+          "id": 1977,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o spremembah in dopolnitvah Odloka o občinskem prostorskem načrtu Mestne občine Ljubljana – izvedbeni del skupaj s pripombami."
+        },
+        {
+          "all_votes": {
+            "absent": 10,
+            "abstain": 4,
+            "for": 31,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1988,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k dodelitvi dela plače za delovno uspešnost poveljniku Gasilske brigade Ljubljana."
+        },
+        {
+          "all_votes": {
+            "absent": 13,
+            "abstain": 1,
+            "for": 31,
+            "against": 0
+          },
+          "passed": true,
+          "id": 1997,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o oceni redne delovne uspešnosti direktorja Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 11,
+            "abstain": 6,
             "for": 28,
             "against": 0
           },
           "passed": true,
-          "id": 2428,
+          "id": 2008,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o oglaševanju."
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlogi sklepov o določitvi dela plače za delovno uspešnost direktorjev in direktoric javnih zavodov s področja kulture: Center urbane kulture Kino Šiška, Festival Ljubljana, Javni zavod Kinodvor, Javni zavod Ljubljanski grad, Mestno gledališče ljubljansko, Muzej in galerije mesta Ljubljane, Pionirski dom – Center za kulturo mladih, Slovensko mladinsko gledališče Ljubljana in Živalski vrt Ljubljana za leto 2020 iz naslova prodaje blaga in storitev na trgu."
+        },
+        {
+          "all_votes": {
+            "absent": 11,
+            "abstain": 6,
+            "for": 28,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2013,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "A) PREDLOG SKLEPA O DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORJEV IN POMOČNIKOV DIREKTORJEV JAVNIH ZAVODOV S PODROČJA KULTURE ZA LETO 2020 B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORICE IN POMOČNIKA DIREKTORICE JAVNEGA ZAVODA MLADI ZMAJI – CENTRA ZA KAKOVOSTNO PREŽIVLJANJE PROSTEGA ČASA MLADIH ZA LETO 2020 PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi dela plače za redno delovno uspešnost direktorjev in pomočnikov direktorjev javnih zavodov s področja kulture za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 23,
+            "abstain": 0,
+            "for": 22,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2021,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "A) PREDLOG SKLEPA O DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORJEV IN POMOČNIKOV DIREKTORJEV JAVNIH ZAVODOV S PODROČJA KULTURE ZA LETO 2020 B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORICE IN POMOČNIKA DIREKTORICE JAVNEGA ZAVODA MLADI ZMAJI – CENTRA ZA KAKOVOSTNO PREŽIVLJANJE PROSTEGA ČASA MLADIH ZA LETO 2020 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorice in pomočnika direktorice Javnega zavoda Mladi zmaji – Centra za kakovostno preživljanje prostega časa mladih za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 13,
+            "abstain": 10,
+            "for": 22,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2027,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "A) PREDLOG SKLEPA O DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORJA JAVNEGA ZAVODA FESTIVAL LJUBLJANA ZA LETO 2021 IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi dela plače za delovno uspešnost direktorja javnega zavoda Festival Ljubljana za leto 2021 iz naslova povečanega obsega dela."
+        },
+        {
+          "all_votes": {
+            "absent": 24,
+            "abstain": 0,
+            "for": 21,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2033,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "B) PREDLOG SKLEPA O DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORJA JAVNEGA ZAVODA LUTKOVNO GLEDALIŠČE LJUBLJANA ZA LETO 2021 IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi dela plače za delovno uspešnost direktorja javnega zavoda Lutkovno gledališče Ljubljana za leto 2021 iz naslova povečanega obsega dela."
+        },
+        {
+          "all_votes": {
+            "absent": 24,
+            "abstain": 0,
+            "for": 21,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2039,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "C) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI JAVNEGA ZAVODA MLADI ZMAJI ZA OBDOBJE OD 1. 1. 2021 DO 31. 12. 2021 IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za delovno uspešnost direktorici Javnega zavoda Mladi zmaji za obdobje od 1. 1. 2021 do 31. 12. 2021 iz naslova povečanega obsega dela."
+        },
+        {
+          "all_votes": {
+            "absent": 13,
+            "abstain": 9,
+            "for": 23,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2044,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "A) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI ZAVODA ZA OSKRBO NA DOMU ZA OBDOBJE OD 1. 11. 2020 - 31. 12. 2021 IZ NASLOVA POVEČANEGA OBSEGA DELA B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORICI ZAVODA ZA OSKRBO NA DOMU ZA OBDOBJE OD 1. 7. 2020 - 31. 12. 2020 PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za delovno uspešnost direktorici Zavoda za oskrbo na domu za obdobje od 1. 11. 2020 - 31. 12. 2021 iz naslova povečanega obsega dela."
         },
         {
           "all_votes": {
@@ -501,194 +431,184 @@
             "against": 0
           },
           "passed": true,
-          "id": 2430,
+          "id": 2047,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana."
+          "title": "A) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI ZAVODA ZA OSKRBO NA DOMU ZA OBDOBJE OD 1. 11. 2020 - 31. 12. 2021 IZ NASLOVA POVEČANEGA OBSEGA DELA B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORICI ZAVODA ZA OSKRBO NA DOMU ZA OBDOBJE OD 1. 7. 2020 - 31. 12. 2020 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorici Zavoda za oskrbo na domu za obdobje od 1. 7. 2020 - 31. 12. 2020."
         },
         {
           "all_votes": {
-            "absent": 8,
-            "abstain": 0,
-            "for": 37,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2431,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 311 Zalog (za prostorsko enoto PE1)."
-        },
-        {
-          "all_votes": {
-            "absent": 9,
-            "abstain": 2,
-            "for": 34,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2432,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za enoto urejanja prostora GO-225."
-        },
-        {
-          "all_votes": {
-            "absent": 7,
-            "abstain": 4,
-            "for": 34,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2433,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o zazidalnem načrtu za območji urejanja MS 1/2-1 in MR 1/1 ZELENA JAMA."
-        },
-        {
-          "all_votes": {
-            "absent": 9,
+            "absent": 10,
             "abstain": 3,
-            "for": 33,
+            "for": 32,
             "against": 0
           },
           "passed": true,
-          "id": 2434,
+          "id": 2050,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 121 Poslovna cona Vižmarje."
+          "title": "A) PREDLOGI SKLEPOV O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST         RAVNATELJICAM             IN     RAVNATELJEM        JAVNIH         VZGOJNO- IZOBRAŽEVALNIH ZAVODOV: OSNOVNA ŠOLA FRANCETA BEVKA, OSNOVNA ŠOLA KAŠELJ, OSNOVNA ŠOLA KOLEZIJA, OSNOVNA ŠOLA LIVADA, OSNOVNA ŠOLA MAJDE VRHOVNIK, OSNOVNA ŠOLA MILANA ŠUŠTARŠIČA, OSNOVNA ŠOLA MIRANA JARCA, OSNOVNA ŠOLA MIŠKA KRANJCA, OSNOVNA ŠOLA NARODNEGA HEROJA MAKSA PEČARJA, OSNOVNA ŠOLA NOVE FUŽINE, OSNOVNA ŠOLA PREŽIHOVEGA VORANCA, OSNOVNA ŠOLA RIHARDA JAKOPIČA, OSNOVNA ŠOLA SAVSKO NASELJE, OSNOVNA ŠOLA SOSTRO, OSNOVNA ŠOLA VRHOVCI IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predloge sklepov o soglasju k določitvi dela plače za delovno uspešnost ravnateljicam in ravnateljem javnih vzgojno-izobraževalnih zavodov: Osnovna šola Franceta Bevka, Osnovna šola Kašelj, Osnovna šola Kolezija, Osnovna šola Livada, Osnovna šol"
         },
         {
           "all_votes": {
-            "absent": 8,
-            "abstain": 1,
-            "for": 36,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2435,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica."
-        },
-        {
-          "all_votes": {
-            "absent": 7,
-            "abstain": 5,
-            "for": 33,
-            "against": 0
-          },
-          "passed": true,
-          "id": 2436,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 266 Tacen –zahod – severni del skupaj s pripombami."
-        },
-        {
-          "all_votes": {
-            "absent": 7,
-            "abstain": 8,
+            "absent": 16,
+            "abstain": 0,
             "for": 29,
-            "against": 1
+            "against": 0
           },
           "passed": true,
-          "id": 2437,
+          "id": 2053,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 182 Pod hribom – del skupaj s pripombami."
+          "title": "B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI JAVNEGA ZAVODA MALA ULICA – CENTRA ZA OTROKE IN DRUŽINE V LJUBLJANI IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za delovno uspešnost direktorici Javnega zavoda Mala ulica – Centra za otroke in družine v Ljubljani iz naslova povečanega obsega dela."
+        },
+        {
+          "all_votes": {
+            "absent": 11,
+            "abstain": 1,
+            "for": 33,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2056,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "A) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST RAVNATELJIC IN RAVNATELJEV VRTCEV MESTNE OBČINA LJUBLJANA ZA LETO 2020 SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost ravnateljic in ravnateljev vrtcev Mestne občina Ljubljana za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 14,
+            "abstain": 0,
+            "for": 31,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2059,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST RAVNATELJIC IN RAVNATELJEV OSNOVNIH ŠOL MESTNE OBČINA LJUBLJANA ZA LETO 2020 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost ravnateljic in ravnateljev osnovnih šol Mestne občina Ljubljana za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 15,
+            "abstain": 0,
+            "for": 30,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2063,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "C) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST RAVNATELJIC IN RAVNATELJEV GLASBENIH ŠOL MESTNE OBČINA LJUBLJANA ZA LETO 2020 PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost ravnateljic in ravnateljev glasbenih šol Mestne občina Ljubljana za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 15,
+            "abstain": 0,
+            "for": 30,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2068,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Č) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORJA JAVNEGA ZAVODA CENE ŠTUPAR – CENTER ZA IZOBRAŽEVANJE LJUBLJANA ZA LETO 2020 PREDLOG SKLEPA k točki Č: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorja Javnega zavoda Cene Štupar – Center za izobraževanje Ljubljana za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 19,
+            "abstain": 0,
+            "for": 26,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2070,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "D) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORICE JAVNEGA ZAVODA MALA ULICA – CENTER ZA OTROKE IN DRUŽINE V LJUBLJANI ZA LETO 2020 PREDLOG SKLEPA k točki D: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorice Javnega zavoda Mala ulica – Center za otroke in družine v Ljubljani za leto 2020."
+        },
+        {
+          "all_votes": {
+            "absent": 15,
+            "abstain": 0,
+            "for": 30,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2071,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "E) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORICE SVETOVALNEGA CENTRA ZA OTROKE, MLADOSTNIKE IN STARŠE LJUBLJANA ZA LETO 2020 PREDLOG SKLEPA k točki E: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorice Svetovalnega centra za otroke, mladostnike in starše Ljubljana za leto 2020."
         }
       ],
-      "tfidf": [
+      "tfidf": [],
+      "attendance": [
         {
-          "token": "spol",
-          "value": 0.246344318403517
+          "value": 75.0,
+          "group": {
+            "name": "Lista Zorana Jankovića ",
+            "acronym": "",
+            "slug": "22-lista-zorana-jankovica"
+          }
         },
         {
-          "token": "Ljubljana",
-          "value": 0.204686330185489
+          "value": 66.6666666666667,
+          "group": {
+            "name": "Slovenska demokratska stranka ",
+            "acronym": "",
+            "slug": "21-slovenska-demokratska-stranka"
+          }
         },
         {
-          "token": "zanimati",
-          "value": 0.199903427769295
+          "value": 66.6666666666667,
+          "group": {
+            "name": "Levica ",
+            "acronym": "",
+            "slug": "20-levica"
+          }
         },
         {
-          "token": "turističen",
-          "value": 0.176712614779037
+          "value": 50.0,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "19-socialni-demokrati"
+          }
         },
         {
-          "token": "stanovanjski",
-          "value": 0.167561675106752
+          "value": 75.0,
+          "group": {
+            "name": "Svetniški klub samostojnih svetnikov ",
+            "acronym": "",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov"
+          }
         },
         {
-          "token": "turizem",
-          "value": 0.15706138249097
+          "value": 0.0,
+          "group": {
+            "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+            "acronym": "",
+            "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev"
+          }
         },
         {
-          "token": "taksa",
-          "value": 0.153965199002198
-        },
-        {
-          "token": "transspolen",
-          "value": 0.139727208001054
-        },
-        {
-          "token": "praviti",
-          "value": 0.129364526179302
-        },
-        {
-          "token": "ideologija",
-          "value": 0.12587877984522
-        },
-        {
-          "token": "nočitev",
-          "value": 0.12587877984522
-        },
-        {
-          "token": "pomeniti",
-          "value": 0.125671256330064
-        },
-        {
-          "token": "točka",
-          "value": 0.124745588664621
-        },
-        {
-          "token": "oseba",
-          "value": 0.122109605351352
-        },
-        {
-          "token": "lgbt",
-          "value": 0.116053163701186
-        },
-        {
-          "token": "moški",
-          "value": 0.116053163701186
-        },
-        {
-          "token": "MOL",
-          "value": 0.109713293891235
-        },
-        {
-          "token": "mesten",
-          "value": 0.107602575216692
-        },
-        {
-          "token": "namestitev",
-          "value": 0.102204735545352
-        },
-        {
-          "token": "rad",
-          "value": 0.0990288917582951
+          "value": 75.0,
+          "group": {
+            "name": "Nova Slovenija – Krščanski demokrati ",
+            "acronym": "",
+            "slug": "16-nova-slovenija-krscanski-demokrati"
+          }
         }
-      ],
-      "attendance": []
+      ]
     },
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",

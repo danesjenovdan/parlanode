@@ -20,7 +20,7 @@
         <span v-t="'card.attendance-title'"></span>
       </span>
     </div>
-    <!-- <prisotnost-po-poslanskih-skupinah :data="attendance" /> -->
+    <attendance-by-groups :data="attendance" />
     <hr />
     <div class="link">
       <a :href="getSessionVotesLink(session)" class="funblue-light-hover">
@@ -47,7 +47,7 @@ import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
 import BarChart from '@/_components/BarChart.vue';
-// import PrisotnostPoPoslanskihSkupinah from '@/_components/PrisotnostPoPoslanskihSkupinah.vue';
+import AttendanceByGroups from '@/_components/AttendanceByGroups.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
 import links from '@/_mixins/links.js';
@@ -57,7 +57,7 @@ export default {
   name: 'CardMiscLastSession',
   components: {
     BarChart,
-    // PrisotnostPoPoslanskihSkupinah,
+    AttendanceByGroups,
     VoteListItem,
     ScrollShadow,
   },
