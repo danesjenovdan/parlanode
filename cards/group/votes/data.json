@@ -3,264 +3,334 @@
   "data": {
     "results": [
       {
-        "motion": {
-          "id": "2437",
-          "tags": [],
-          "text": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 182 Pod hribom – del skupaj s pripombami.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 7,
+            "abstain": 8,
+            "for": 29,
+            "against": 1
+          },
+          "passed": true,
+          "id": 2437,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 182 Pod hribom – del skupaj s pripombami.",
+          "timestamp": "2021-07-05T18:33:05",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "against",
-        "timestamp": "2021-07-05T18:33:05",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "against"
       },
       {
-        "motion": {
-          "id": "2436",
-          "tags": [],
-          "text": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 266 Tacen –zahod – severni del skupaj s pripombami.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 7,
+            "abstain": 5,
+            "for": 33,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2436,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 266 Tacen –zahod – severni del skupaj s pripombami.",
+          "timestamp": "2021-07-05T18:21:15",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T18:21:15",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       },
       {
-        "motion": {
-          "id": "2435",
-          "tags": [],
-          "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 8,
+            "abstain": 1,
+            "for": 36,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2435,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica.",
+          "timestamp": "2021-07-05T18:12:38",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T18:12:38",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       },
       {
-        "motion": {
-          "id": "2434",
-          "tags": [],
-          "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 121 Poslovna cona Vižmarje.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 9,
+            "abstain": 3,
+            "for": 33,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2434,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 121 Poslovna cona Vižmarje.",
+          "timestamp": "2021-07-05T18:07:42",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T18:07:42",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       },
       {
-        "motion": {
-          "id": "2433",
-          "tags": [],
-          "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o zazidalnem načrtu za območji urejanja MS 1/2-1 in MR 1/1 ZELENA JAMA.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 7,
+            "abstain": 4,
+            "for": 34,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2433,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o zazidalnem načrtu za območji urejanja MS 1/2-1 in MR 1/1 ZELENA JAMA.",
+          "timestamp": "2021-07-05T18:03:12",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T18:03:12",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       },
       {
-        "motion": {
-          "id": "2432",
-          "tags": [],
-          "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za enoto urejanja prostora GO-225.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 9,
+            "abstain": 2,
+            "for": 34,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2432,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za enoto urejanja prostora GO-225.",
+          "timestamp": "2021-07-05T17:58:06",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T17:58:06",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       },
       {
-        "motion": {
-          "id": "2431",
-          "tags": [],
-          "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 311 Zalog (za prostorsko enoto PE1).",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 8,
+            "abstain": 0,
+            "for": 37,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2431,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 311 Zalog (za prostorsko enoto PE1).",
+          "timestamp": "2021-07-05T17:54:06",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T17:54:06",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       },
       {
-        "motion": {
-          "id": "2430",
-          "tags": [],
-          "text": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 14,
+            "abstain": 0,
+            "for": 31,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2430,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana.",
+          "timestamp": "2021-07-05T17:45:10",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T17:45:10",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       },
       {
-        "motion": {
-          "id": "2428",
-          "tags": [],
-          "text": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o oglaševanju.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 17,
+            "abstain": 0,
+            "for": 28,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2428,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o oglaševanju.",
+          "timestamp": "2021-07-05T17:44:59",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T17:44:59",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       },
       {
-        "motion": {
-          "id": "2426",
-          "tags": [],
-          "text": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o določitvi plovbnega režima.",
-          "result": "True",
-          "classification": null
+        "vote": {
+          "all_votes": {
+            "absent": 16,
+            "abstain": 0,
+            "for": 29,
+            "against": 0
+          },
+          "passed": true,
+          "id": 2426,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o določitvi plovbnega režima.",
+          "timestamp": "2021-07-05T17:44:45",
+          "session": {
+            "name": "24. seja Mestnega sveta MOL",
+            "id": 80,
+            "start_time": "2021-07-05T15:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Mestni svet MOL",
+                "acronym": null,
+                "slug": "1-mestni-svet-mol"
+              }
+            ],
+            "classification": null,
+            "in_review": false
+          }
         },
-        "option": "for",
-        "timestamp": "2021-07-05T17:44:45",
-        "session": {
-          "name": "24. seja Mestnega sveta MOL",
-          "id": 80,
-          "start_time": "2021-07-05T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        }
+        "option": "for"
       }
     ],
     "mandate": {

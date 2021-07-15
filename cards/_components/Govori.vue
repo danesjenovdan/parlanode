@@ -135,6 +135,7 @@ export default {
 
     return {
       card: {
+        objectCount: this.cardData.data?.count,
         currentPage: 1,
         isLoading: false,
       },
@@ -233,8 +234,11 @@ export default {
     },
     searchSpeeches: debounce(function searchSpeeches() {
       this.card.isLoading = true;
+      this.speeches = [];
+      this.card.objectCount = 0;
       this.makeRequest(this.searchUrl).then((response) => {
         this.speeches = response?.data?.results || [];
+        this.card.objectCount = response?.data?.count;
         this.card.currentPage = 1;
         this.card.isLoading = false;
       });
@@ -243,7 +247,7 @@ export default {
       if (this.card.isLoading) {
         return;
       }
-      if (this.speeches.length >= this.cardData.data?.count) {
+      if (this.speeches.length >= this.card.objectCount) {
         return;
       }
 

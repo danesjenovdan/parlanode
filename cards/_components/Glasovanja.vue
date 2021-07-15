@@ -34,12 +34,12 @@
               v-if="type === 'person' || selectedSort === 'date'"
               class="date"
             >
-              {{ formatDate(dayBallots[0].timestamp) }},
-              {{ formatSessionInfo(dayBallots[0].session) }}
+              {{ formatDate(dayBallots[0].vote?.timestamp) }},
+              {{ formatSessionInfo(dayBallots[0].vote?.session) }}
             </div>
             <ballot
               v-for="ballot in dayBallots"
-              :key="`${ballot.timestamp}_${ballot.motion.id}`"
+              :key="ballot.vote.id"
               :ballot="ballot"
               type="person"
             />
@@ -129,10 +129,11 @@ export default {
 
     return {
       card: {
+        objectCount: this.cardData.data?.count,
         currentPage: 1,
         isLoading: false,
       },
-      results: this.cardData.data?.results ?? [],
+      ballots: this.cardData.data?.results ?? [],
       textFilter,
       voteOptions,
       cancelRequest: null,
@@ -158,26 +159,26 @@ export default {
 
       const selectedVoteOptionIds = this.selectedVoteOptions.map((vo) => vo.id);
 
-      const filteredResults = this.results
-        .filter((r) => {
+      const filteredBallots = this.ballots
+        .filter((ballot) => {
           let voteOptionMatch = true;
 
           if (selectedVoteOptionIds.length) {
-            voteOptionMatch = selectedVoteOptionIds.includes(r.option);
+            voteOptionMatch = selectedVoteOptionIds.includes(ballot.option);
           }
 
           return voteOptionMatch;
         })
-        .filter((r) => r.option != null) // api returns null if nobody from this group voted
-        .map((r) => ({
-          ...r,
-          label: this.$t(`voted-${r.option}--${form}`),
+        .filter((ballot) => ballot.option != null) // api returns null if nobody from this group voted
+        .map((ballot) => ({
+          ...ballot,
+          label: this.$t(`voted-${ballot.option}--${form}`),
         }));
 
-      return groupBy(filteredResults, (o) => {
-        const dateTime = o.timestamp || o.session?.start_time || '';
+      return groupBy(filteredBallots, (ballot) => {
+        const dateTime = ballot.vote?.timestamp || '';
         const date = dateTime.split('T')[0];
-        return `${date}__${o.session?.id}`;
+        return `${date}__${ballot.vote?.session?.id}`;
       });
     },
     headerConfig() {
@@ -232,8 +233,11 @@ export default {
     },
     searchVotes: debounce(function searchVotes() {
       this.card.isLoading = true;
+      this.ballots = [];
+      this.card.objectCount = 0;
       this.makeRequest(this.searchUrl).then((response) => {
-        this.results = response?.data?.results || [];
+        this.ballots = response?.data?.results || [];
+        this.card.objectCount = response?.data?.count;
         this.card.currentPage = 1;
         this.card.isLoading = false;
       });
@@ -242,7 +246,7 @@ export default {
       if (this.card.isLoading) {
         return;
       }
-      if (this.results.length >= this.cardData.data?.count) {
+      if (this.ballots.length >= this.card.objectCount) {
         return;
       }
 
@@ -252,8 +256,8 @@ export default {
       const requestedPage = this.card.currentPage;
       axios.get(this.searchUrl).then((response) => {
         if (response?.data?.page === requestedPage) {
-          const newResults = response?.data?.results || [];
-          this.results.push(...newResults);
+          const newBallots = response?.data?.results || [];
+          this.ballots.push(...newBallots);
         }
         this.card.isLoading = false;
       });

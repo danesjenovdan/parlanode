@@ -1,23 +1,17 @@
 <template>
-  <a :href="getVoteLink(ballot.motion, ballot.session)" class="ballot">
+  <a :href="getVoteLink(ballot.vote)" class="ballot">
     <div class="disunion">
       <div :class="['icon', ballot.option]"></div>
       <div class="text">
-        <span v-if="type === 'party'">{{ 'ballot.disunion | toPercent' }}</span>
         {{ ballot.label }}
       </div>
     </div>
     <div class="name">
-      <p>{{ ballot.motion?.text }}</p>
+      <p>{{ ballot.vote?.title }}</p>
     </div>
     <div class="outcome">
-      <i
-        :class="[
-          'glyphicon',
-          `glyphicon-${ballot.motion?.result === true ? 'ok' : 'remove'}`,
-        ]"
-      ></i>
-      <div class="text">{{ ballot.motion?.outcome || 'Ni podatkov' }}</div>
+      <i :class="passedGlyphClass"></i>
+      <div class="text">{{ $t(passedTranslationKey) }}</div>
     </div>
   </a>
 </template>
@@ -36,6 +30,28 @@ export default {
     type: {
       type: String,
       default: 'person',
+    },
+  },
+  computed: {
+    passedTranslationKey() {
+      if (this.ballot.vote.passed === true) {
+        return 'vote-passed';
+      }
+      if (this.ballot.vote.passed === false) {
+        return 'vote-not-passed';
+      }
+      return 'vote-unknown';
+    },
+    passedGlyphClass() {
+      let glyphClass = 'glyphicon ';
+      if (this.ballot.vote.passed === true) {
+        glyphClass += 'glyphicon-ok';
+      } else if (this.ballot.vote.passed === false) {
+        glyphClass += 'glyphicon-remove';
+      } else {
+        glyphClass += 'parlaicon-unknown';
+      }
+      return glyphClass;
     },
   },
 };
@@ -151,6 +167,7 @@ export default {
 
       &.glyphicon {
         font-size: 29px;
+        text-align: center;
 
         &.glyphicon-ok {
           color: $icon-accepted;
@@ -158,6 +175,16 @@ export default {
 
         &.glyphicon-remove {
           color: $icon-rejected;
+        }
+
+        &.parlaicon-unknown {
+          &::before {
+            content: '?';
+            font-family: sans-serif;
+            font-size: 1.2em;
+            font-weight: 900;
+            color: #333;
+          }
         }
       }
     }
