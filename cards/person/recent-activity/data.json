@@ -1,989 +1,1543 @@
 {
-  "id": 259,
+  "id": 230,
   "data": {
     "results": [
       {
-        "date": "2021-04-19T00:00:00",
+        "date": "2021-05-31T00:00:00",
         "events": [
           {
-            "motion": {
-              "id": "1030",
-              "tags": [],
-              "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah potekov ulic in o poimenovanju ulic, parkov in trga na območju Mestne občine Ljubljana.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 7,
+                "abstain": 8,
+                "for": 29,
+                "against": 1
+              },
+              "passed": true,
+              "id": 2437,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 182 Pod hribom – del skupaj s pripombami.",
+              "timestamp": "2021-07-05T18:33:05",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T18:55:06",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "abstain",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "1023",
-              "tags": [],
-              "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o zazidalnem načrtu za območje urejanja VI 3/3 Biotehniška fakulteta (za funkcionalno enoto F11) – NIB.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 7,
+                "abstain": 5,
+                "for": 33,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2436,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 266 Tacen –zahod – severni del skupaj s pripombami.",
+              "timestamp": "2021-07-05T18:21:15",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T18:51:35",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "1006",
-              "tags": [],
-              "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Strategije razvoja mestnih gozdov Ljubljane 2020-2045.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 8,
+                "abstain": 1,
+                "for": 36,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2435,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica.",
+              "timestamp": "2021-07-05T18:12:38",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T18:46:06",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "998",
-              "tags": [],
-              "text": "C) PREDLOG SKLEPA O SOGLASJU K SPLOŠNIM POGOJEM POSLOVANJA JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k Splošnim pogojem poslovanja Javnega stanovanjskega sklada Mestne občine Ljubljana.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 9,
+                "abstain": 3,
+                "for": 33,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2434,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 121 Poslovna cona Vižmarje.",
+              "timestamp": "2021-07-05T18:07:42",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T18:32:29",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "984",
-              "tags": [],
-              "text": "B) POROČILO O URESNIČEVANJU STANOVANJSKEGA PROGRAMA MESTNE OBČINE LJUBLJANA 2019–2022 ZA LETO 2020 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme Poročilo o uresničevanju Stanovanjskega programa Mestne občine Ljubljana 2019 – 2022 za leto 2020.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 7,
+                "abstain": 4,
+                "for": 34,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2433,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o zazidalnem načrtu za območji urejanja MS 1/2-1 in MR 1/1 ZELENA JAMA.",
+              "timestamp": "2021-07-05T18:03:12",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T18:32:03",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "979",
-              "tags": [],
-              "text": "A) LETNO POROČILO JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA ZA LETO 2020 4. PREDLOG SKLEPA: Zmanjšanje sredstev na računih iz namenskega premoženja v letu 2020 v višini 19.125 evrov se krije iz presežka prejemkov nad izdatki iz preteklih let, tako da je na dan 31. decembra 2020 izkazan presežek prihodkov nad odhodki v višini 23.253 evrov.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 9,
+                "abstain": 2,
+                "for": 34,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2432,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za enoto urejanja prostora GO-225.",
+              "timestamp": "2021-07-05T17:58:06",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T18:31:36",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "978",
-              "tags": [],
-              "text": "A) LETNO POROČILO JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA ZA LETO 2020 3. PREDLOG SKLEPA: Presežek odhodkov nad prihodki iz upravljanja sredstev Mestne občine Ljubljana v letu 2020 v višini 2.845 evrov se krije iz presežka prihodkov nad odhodki iz preteklih let, tako da 31. decembra 2020 znaša presežek prihodkov nad odhodki 550.300 evrov.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 8,
+                "abstain": 0,
+                "for": 37,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2431,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 311 Zalog (za prostorsko enoto PE1).",
+              "timestamp": "2021-07-05T17:54:06",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T18:31:03",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "977",
-              "tags": [],
-              "text": "A) LETNO POROČILO JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA ZA LETO 2020 2. PREDLOG SKLEPA: Mestni svet Mestne občine Ljubljana sprejme Poročilo Nadzornega sveta Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2020.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 14,
+                "abstain": 0,
+                "for": 31,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2430,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana.",
+              "timestamp": "2021-07-05T17:45:10",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T18:30:31",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "976",
-              "tags": [],
-              "text": "A) LETNO POROČILO JAVNEGA STANOVANJSKEGA SKLADA MESTNE OBČINE LJUBLJANA ZA LETO 2020 1. PREDLOG SKLEPA: Mestni svet Mestne občine Ljubljana sprejme Letno poročilo Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2020.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 17,
+                "abstain": 0,
+                "for": 28,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2428,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o oglaševanju.",
+              "timestamp": "2021-07-05T17:44:59",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T18:30:04",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "969",
-              "tags": [],
-              "text": "PREDLOG SKLEPA O USTANOVITVI JAVNEGA ZAVODA CENTER ROG Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o ustanovitvi javnega zavoda Center Rog skupaj s sprejetim amandmajem.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 16,
+                "abstain": 0,
+                "for": 29,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2426,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o določitvi plovbnega režima.",
+              "timestamp": "2021-07-05T17:44:45",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T18:01:24",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "968",
-              "tags": [],
-              "text": "AMANDMA župana: Četrta alineja prvega odstavka 11. člena, peta alineja prvega odstavka 15. člena in peta alineja prvega odstavka 16. člena se spremenijo tako, da se glasijo: »– aktivno obvlada slovenski jezik,«. Peta alineja prvega odstavka 11. člena, šesta alineja prvega odstavka 15. člena in šesta alineja prvega odstavka 16. člena se spremenijo tako, da se glasijo: »– aktivno obvlada najmanj en svetovni jezik.«.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 11,
+                "abstain": 0,
+                "for": 34,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2429,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana sprejme po hitrem postopku.",
+              "timestamp": "2021-07-05T17:44:24",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T18:01:00",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "961",
-              "tags": [],
-              "text": "Mestni svet Mestne občine Ljubljana sprejme Letno poročilo javnega zavoda Turizem Ljubljana za poslovno leto 2020.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 21,
+                "abstain": 0,
+                "for": 24,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2427,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembi in dopolnitvi Odloka o oglaševanju sprejme po hitrem postopku.",
+              "timestamp": "2021-07-05T17:44:07",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T17:12:55",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "951",
-              "tags": [],
-              "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Akta o javno-zasebnem partnerstvu za projekt »Teniški center Tomačevo«.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 8,
+                "abstain": 0,
+                "for": 37,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2425,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembi in dopolnitvi Odloka o določitvi plovbnega režima sprejme po hitrem postopku.",
+              "timestamp": "2021-07-05T17:43:56",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T16:55:17",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "938",
-              "tags": [],
-              "text": "Mestni svet Mestne občine Ljubljana sprejme Zaključni račun proračuna Mestne občine Ljubljana za leto 2020.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 22,
+                "abstain": 0,
+                "for": 23,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2424,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o organizaciji in načinu izvajanja mestnih linijskih prevozov potnikov.",
+              "timestamp": "2021-07-05T17:39:23",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T16:48:02",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "935",
-              "tags": [],
-              "text": "Plaketo glavnega mesta Ljubljana za leto 2021 prejmejo: - dr. Viktor Pust - Igralski kolektiv Šentjakobskega gledališča Ljubljana - Društvo prostovoljcev Vincencijeve zveze dobrote - Bojanka Genorio - Tomaž Domicelj - Kulturno društvo Ženski pevski zbor Svoboda - Janez Winkler",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 9,
+                "abstain": 0,
+                "for": 4,
+                "against": 32
+              },
+              "passed": false,
+              "id": 2423,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "AMANDMA Svetniškega kluba Levica: V 1. členu se drugi in tretji odstavek spremenita tako, da se glasita: »Obratovalni čas linij od ponedeljka do sobote je od 5.10 do 23.00 ure in od 6.10 do 23.00 ure ob nedeljah ter praznikih, ki so dela prosti dnevi.« Obratovalni čas nočnih linij, ki povezujejo center mesta z območji: - Bežigrad – Črnuče, - Moste – Fužine – Zalog, - Šiška – Vižmarje – Brod, - Štepanjsko naselje, - Rudnik, - Vič in - Podutik, poteka od ponedeljka do sobote od 24.00 do 5. ure, ob nedeljah in praznikih, ki so dela prosti dnevi, od 24.00 do 6.00 ure ter 1. januarja od 00 do 24.00 ure.«",
+              "timestamp": "2021-07-05T17:39:10",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T16:26:33",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "931",
-              "tags": [],
-              "text": "Nagrado glavnega mesta Ljubljana za leto 2021 prejmejo: - Gojko Zalokar - Suzana Antič - Drago Banović - Marjan Gorup - Združenje slovenskih katoliških skavtinj in skavtov",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 8,
+                "abstain": 1,
+                "for": 36,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2422,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembah in dopolnitvah Odloka o organizaciji in načinu izvajanja mestnih linijskih prevozov potnikov sprejme po hitrem postopku.",
+              "timestamp": "2021-07-05T17:33:40",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T16:24:17",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "926",
-              "tags": [],
-              "text": "I. Za vršilko dolžnosti direktorja javnega zavoda Pionirski dom – Center za kulturo mladih se imenuje: Viktorija POTOČNIK. II. Mandat imenovane začne teči po izteku dosedanjega mandata in traja do imenovanja direktorja, vendar največ za eno leto.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 10,
+                "abstain": 10,
+                "for": 23,
+                "against": 2
+              },
+              "passed": true,
+              "id": 2421,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorju, namestnici direktorja za razvoj zdravstvene dejavnosti in strokovni direktorici Zdravstvenega doma Ljubljana za obdobje 1. 7. 2020 do 31. 12. 2020.",
+              "timestamp": "2021-07-05T17:28:42",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T16:06:55",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "925",
-              "tags": [],
-              "text": "I. Za odgovornega urednika javnega glasila Ljubljana se imenuje: mag. Nenad SENIĆ. II. Mandat odgovornega urednika traja štiri leta.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 24,
+                "abstain": 0,
+                "for": 21,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2420,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Strategije razvoja socialnega varstva v Mestni občini Ljubljana za obdobje od 2021 do 2027.",
+              "timestamp": "2021-07-05T17:22:30",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T16:06:11",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "924",
-              "tags": [],
-              "text": "I. Dr. Uroša GRILCA se razreši z mesta odgovornega urednika javnega glasila Ljubljana. II. Imenovanega se razreši z dnem sprejema sklepa.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 9,
+                "abstain": 10,
+                "for": 26,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2419,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana se seznani s Poročilom o izvajanju Strategije razvoja socialnega varstva v Mestni občini Ljubljana od 2013 do 2020.",
+              "timestamp": "2021-07-05T17:22:16",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T15:55:07",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "923",
-              "tags": [],
-              "text": "Elizabeti HERNAUS BERLEC se da pozitivno mnenje h kandidaturi za ravnateljico Srednje trgovske šole Ljubljana.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 13,
+                "abstain": 0,
+                "for": 32,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2418,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana.",
+              "timestamp": "2021-07-05T16:59:55",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T15:54:33",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "922",
-              "tags": [],
-              "text": "Mag. Janji JAKONČIČ, Srečku ZGAGI in Natali ŽLAJPAH se da pozitivno mnenje h kandidaturi za ravnateljico oziroma ravnatelja Gimnazije Poljane.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 9,
+                "abstain": 2,
+                "for": 34,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2417,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku.",
+              "timestamp": "2021-07-05T16:59:38",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T15:54:04",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "921",
-              "tags": [],
-              "text": "Mateji PETRIČ se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Vodmat.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 4,
+                "abstain": 4,
+                "for": 37,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2416,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predloge sklepov o soglasju k določitvi dela plače za delovno uspešnost ravnateljicam in ravnateljem ter direktorju vzgojno-izobraževalnih zavodov: Vrtec Ciciban, Osnovna šola Božidarja Jakca, Osnovna šola Danile Kumar, Osnovna šola dr. Vita Kraigherja, Osnovna šola Dravlje, Osnovna šola Hinka Smrekarja, Osnovna šola Jožeta Moškriča, Osnovna šola Karla Destovnika Kajuha, Osnovna šola Ketteja in Murna, Osnovna šola Martina Krpana, Osnovna šola Nove Jarše, Osnovna šola Poljane, Osnovna šola Spodnja Šiška, Osnovna šola Šmartno pod Šmarno goro, Osnovna šola Trnovo, Osnovna šola Vič, Osnovna šola Zadobrova, Center za usposabljanje, vzgojo in izobraževanje Janeza Levca Ljubljana, Javni zavod Cene Štupar – Center za izobraževanje Ljubljana iz naslova povečanega obsega dela.",
+              "timestamp": "2021-07-05T16:57:18",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T15:53:35",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "920",
-              "tags": [],
-              "text": "Vesni ŽAGAR GABROVŠEK se da pozitivno mnenje h kandidaturi za ravnateljico OŠ Valentina Vodnika.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 4,
+                "abstain": 6,
+                "for": 24,
+                "against": 11
+              },
+              "passed": true,
+              "id": 2415,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o manjši notranji igralni površini v javnih vrtcih Mestne občine Ljubljana za šolski leti 2021/2022 in 2022/2023.",
+              "timestamp": "2021-07-05T16:55:07",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T15:53:08",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "against",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "919",
-              "tags": [],
-              "text": "Mateji ŠTIH se da pozitivno mnenje h kandidaturi za ravnateljico Vrtca Šentvid.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 11,
+                "abstain": 0,
+                "for": 34,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2414,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "B) PREDLOG SKLEPA O DOLOČITVI OBSEGA IN IZPLAČILA REDNE DELOVNE USPEŠNOSTI DIREKTORICE REGIONALNE RAZVOJNE AGENCIJE LJUBLJANSKE URBANE REGIJE IN NJENIH NAMESTNIKOV PREDLOG SKLEPA pod točko B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi obsega in izplačila redne delovne uspešnosti direktorice Regionalne razvojne agencije Ljubljanske urbane regije in njenih namestnikov.",
+              "timestamp": "2021-07-05T16:32:30",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T15:52:39",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "918",
-              "tags": [],
-              "text": "I. V Svet javnega vzgojno-izobraževalnega zavoda Center IRIS se imenuje: Mina PIŠLJAR. II. Mandat imenovane traja štiri leta.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 4,
+                "abstain": 7,
+                "for": 34,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2413,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "A) PREDLOG SKLEPA O SOGLASJU K DODELITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI REGIONALNE RAZVOJNE AGENCIJE LJUBLJANSKE URBANE REGIJE ZA OBDOBJE JANUAR 2020 – DECEMBER 2020 IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA pod točko A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k dodelitvi dela plače za delovno uspešnost direktorici Regionalne razvojne agencije Ljubljanske urbane regije za obdobje januar 2020 – december 2020 iz naslova povečanega obsega dela.",
+              "timestamp": "2021-07-05T16:32:15",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T15:52:14",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "917",
-              "tags": [],
-              "text": "I. V Svet Srednje vzgojiteljske šole in gimnazije Ljubljana se imenuje: dr. Mojca ŠEBART KOVAČ. II. Mandat imenovane traja štiri leta.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 18,
+                "abstain": 0,
+                "for": 27,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2412,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "E) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – POGODBE NAMESTO RAZLASTITVE ZA NEPREMIČNINE S PARC. ŠT. 607, PARC. ŠT. 609/1, PARC. ŠT. 609/3, PARC. ŠT. 610/1, PARC. ŠT. 610/2, PARC. ŠT.611/1 IN PARC. ŠT.611/3, VSE K. O. 1736 BRINJE I PREDLOG SKLEPA k točki E: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – pogodbe namesto razlastitve za nepremičnine s parc. št. 607, parc. št. 609/1, parc. št. 609/3, parc. št. 610/1, parc. št. 610/2, parc. št.611/1 in parc. št.611/3, vse k. o. 1736 Brinje I.",
+              "timestamp": "2021-07-05T16:27:42",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T15:51:37",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "916",
-              "tags": [],
-              "text": "I. V Svet Gimnazije Vič se imenuje: dr. Bojan ROTAR. II. Mandat imenovanega traja štiri leta.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 18,
+                "abstain": 0,
+                "for": 24,
+                "against": 3
+              },
+              "passed": true,
+              "id": 2411,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "D) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – KUPOPRODAJNE POGODBE ZA STAVBNO ZEMLJIŠČE, PARC. ŠT. 433/5, K. O. 1738 DRAVLJE PREDLOG SKLEPA k točki D: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne pogodbe za stavbno zemljišče, parc. št. 433/5, k. o. 1738 Dravlje.",
+              "timestamp": "2021-07-05T16:27:24",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T15:51:06",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "915",
-              "tags": [],
-              "text": "I. V Svet Gimnazije Ledina se imenuje: Katja ŽLAJPAH. II. Mandat imenovane traja štiri leta.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 17,
+                "abstain": 0,
+                "for": 28,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2410,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "C) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA - PRODAJNE POGODBE ZA SOLASTNIŠKI DELEŽ 5051/20000 NEPREMIČNIN NA NASLOVU ČOPOVA ULICA 7, 9, 9A IN 9B V LJUBLJANI PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla - prodajne pogodbe za solastniški delež 5051/20000 nepremičnin na naslovu Čopova ulica 7, 9, 9a in 9b v Ljubljani.",
+              "timestamp": "2021-07-05T16:27:06",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T15:50:38",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "914",
-              "tags": [],
-              "text": "I. V Svet Elektrotehniško-računalniško strokovne šole in gimnazije Ljubljana se imenuje : Mina PIŠLJAR. II. Mandat imenovane traja štiri leta.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 18,
+                "abstain": 0,
+                "for": 27,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2409,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "B) PREDLOG SKLEPA O SPREMEMBI SKLEPA O DOLOČITVI SKUPNE VREDNOSTI PRAVNIH POSLOV NEPREMIČNEGA PREMOŽENJA, KI JIH LAHKO SKLEPA MESTNA OBČINA LJUBLJANA V LETU 2021 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o spremembi Sklepa o določitvi skupne vrednosti pravnih poslov nepremičnega premoženja, ki jih lahko sklepa Mestna občina Ljubljana v letu 2021.",
+              "timestamp": "2021-07-05T16:26:47",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T15:50:05",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "absent",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "913",
-              "tags": [],
-              "text": "I. V Svet Glasbene šole Ljubljana Vič - Rudnik se imenujejo: -    Lan JENULL -    Josipina Pika TRPIN -    Marjana ZUPANČIČ II. Mandat imenovanih traja štiri leta.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 6,
+                "abstain": 14,
+                "for": 25,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2408,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "A) PREDLOG SKLEPA O DOPOLNITVAH SKLEPA O NAČRTU RAVNANJA Z NEPREMIČNIM PREMOŽENJEM MESTNE OBČINE LJUBLJANA V VREDNOSTI NAD 200.000 EUROV ZA LETO 2021 PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o dopolnitvah Sklepa o Načrtu ravnanja z nepremičnim premoženjem Mestne občine Ljubljana v vrednosti nad 200.000 eurov za leto 2021.",
+              "timestamp": "2021-07-05T16:26:33",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T15:49:31",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "abstain",
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "912",
-              "tags": [],
-              "text": "I. V Svet Gasilske brigade Ljubljana se kot predstavniki Mestne občine Ljubljana imenujejo: -    Nataša BOMBAČ -    Amir CRNOJEVIĆ -    dr. Zvone ČADEŽ II. V Svet Gasilske brigade Ljubljana se kot predstavnik uporabnikov oziroma zainteresirane javnosti imenuje: -    Gregor RIGLER III. Mandat imenovanih traja štiri leta.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 4,
+                "abstain": 3,
+                "for": 38,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2407,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi plačil za člane Nadzornega sveta Veterinarske postaje Ljubljana d.o.o.",
+              "timestamp": "2021-07-05T16:18:05",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
             "option": "for",
-            "timestamp": "2021-04-19T15:48:55",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
             "type": "ballot"
           },
           {
-            "motion": {
-              "id": "911",
-              "tags": [],
-              "text": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 21. seje Mestnega sveta Mestne občine Ljubljana z dne 29. marca 2021.",
-              "result": null,
-              "classification": null
+            "vote": {
+              "all_votes": {
+                "absent": 1,
+                "abstain": 0,
+                "for": 32,
+                "against": 12
+              },
+              "passed": true,
+              "id": 2406,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mateju KRIŽANIČU se da negativno mnenje h kandidaturi za direktorja Doma starejših občanov Fužine.",
+              "timestamp": "2021-07-05T16:14:51",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "option": "for",
-            "timestamp": "2021-04-19T15:36:55",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
-            },
+            "option": "against",
             "type": "ballot"
           },
           {
-            "speech_id": 7585,
-            "start_time": "2021-04-19T15:30:00",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
+            "vote": {
+              "all_votes": {
+                "absent": 3,
+                "abstain": 0,
+                "for": 42,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2405,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana p o t r j u j e skupno listo kandidatov za člane Razvojnega sveta Ljubljanske urbane regije za mandatno obdobje 2021-2027.",
+              "timestamp": "2021-07-05T15:57:28",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "type": "speech"
+            "option": "for",
+            "type": "ballot"
           },
           {
-            "speech_id": 7734,
-            "start_time": "2021-04-19T15:30:00",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
+            "vote": {
+              "all_votes": {
+                "absent": 5,
+                "abstain": 0,
+                "for": 39,
+                "against": 1
+              },
+              "passed": true,
+              "id": 2404,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mag. Simonu Strgarju se da pozitivno mnenje h kandidaturi za direktorja Doma starejših občanov Ljubljana - Šiška.",
+              "timestamp": "2021-07-05T15:57:01",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "type": "speech"
+            "option": "absent",
+            "type": "ballot"
           },
           {
-            "speech_id": 7736,
-            "start_time": "2021-04-19T15:30:00",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
+            "vote": {
+              "all_votes": {
+                "absent": 6,
+                "abstain": 0,
+                "for": 39,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2403,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Francetu ROGLJU in Miši STRŽINAR se da pozitivno mnenje h kandidaturi za ravnatelja oziroma ravnateljico Mladinskega doma Malči Beličeve.",
+              "timestamp": "2021-07-05T15:56:38",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "type": "speech"
+            "option": "absent",
+            "type": "ballot"
           },
           {
-            "speech_id": 7738,
-            "start_time": "2021-04-19T15:30:00",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
+            "vote": {
+              "all_votes": {
+                "absent": 3,
+                "abstain": 0,
+                "for": 42,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2402,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Dušanu VODEBU se da pozitivno mnenje h kandidaturi za ravnatelja Srednje upravno administrativne šole Ljubljana.",
+              "timestamp": "2021-07-05T15:56:16",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "type": "speech"
+            "option": "for",
+            "type": "ballot"
           },
           {
-            "speech_id": 7740,
-            "start_time": "2021-04-19T15:30:00",
-            "session": {
-              "name": "22. seja Mestnega sveta MOL",
-              "id": 54,
-              "start_time": "2021-04-19T15:30:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Mestni svet MOL",
-                  "acronym": null,
-                  "slug": "1-mestni-svet-mol"
-                }
-              ],
-              "classification": null,
-              "in_review": false
+            "vote": {
+              "all_votes": {
+                "absent": 7,
+                "abstain": 0,
+                "for": 38,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2401,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Nevenki LAMUT se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Vižmarje Brod.",
+              "timestamp": "2021-07-05T15:55:56",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
             },
-            "type": "speech"
+            "option": "absent",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "absent": 13,
+                "abstain": 0,
+                "for": 30,
+                "against": 2
+              },
+              "passed": true,
+              "id": 2400,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Maji RAKUN BEBER se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Bežigrad.",
+              "timestamp": "2021-07-05T15:55:38",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
+            },
+            "option": "absent",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "absent": 5,
+                "abstain": 0,
+                "for": 40,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2399,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "I. V Svet javnega zavoda Mednarodni grafični likovni center s e imenujejo: -  dr. Jan BABNIK -  Anton KASTELIC -  Mojca ŠKRINJAR II. Mandat imenovanih traja štiri leta.",
+              "timestamp": "2021-07-05T15:52:52",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "absent": 5,
+                "abstain": 0,
+                "for": 40,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2398,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "I. V Svet Osnovne šole Danile Kumar s e i m e n u j e j o : -   Amir CRNOJEVIĆ -   Urška HONZAK -   dr. Bojan ROTAR II. Mandat imenovanih traja štiri leta.",
+              "timestamp": "2021-07-05T15:52:26",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "absent": 5,
+                "abstain": 0,
+                "for": 40,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2397,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "I. Tomažu KLEMENCU preneha mandat člana Sveta Osnovne šole Vodmat. II. V Svet Osnovne šole Vodmat se za predstavnico Mestne občine Ljubljana i m e n u j e : Nina REMS. Mandat imenovane je vezan na mandat sveta šole.",
+              "timestamp": "2021-07-05T15:52:03",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "absent": 2,
+                "abstain": 9,
+                "for": 34,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2396,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "I. Janeza STARIHO se razreši z mesta predsednika Sveta za preventivo in vzgojo v cestnem prometu. II. V Svet za preventivo in vzgojo v cestnem prometu se kot predstavnika Mestnega sveta Mestne občine Ljubljana i m e n u j e t a : -   Emilija MITROVIĆ MILOŠ – predsednica -   Jožef HORVAT– član. III. Mandat imenovanih je vezan na mandat sveta.",
+              "timestamp": "2021-07-05T15:51:37",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "absent": 3,
+                "abstain": 1,
+                "for": 41,
+                "against": 0
+              },
+              "passed": true,
+              "id": 2395,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 23. seje Mestnega sveta Mestne občine Ljubljana z dne 31. maja 2021.",
+              "timestamp": "2021-07-05T15:35:11",
+              "session": {
+                "name": "24. seja Mestnega sveta MOL",
+                "id": 80,
+                "start_time": "2021-07-05T15:30:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Mestni svet MOL",
+                    "acronym": null,
+                    "slug": "1-mestni-svet-mol"
+                  }
+                ],
+                "classification": null,
+                "in_review": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "timestamp": "2021-07-05T15:30:00",
+            "answer_timestamp": null,
+            "title": "polnjenje vozila na ulične svetilke",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-polnjenje-vozila-na-ulicne-svetilke.pdf",
+            "type": "question"
+          },
+          {
+            "timestamp": "2021-07-05T15:30:00",
+            "answer_timestamp": null,
+            "title": "turistična taksa",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-turisticna-taksa.pdf",
+            "type": "question"
           }
         ]
+      },
+      {
+        "date": "2021-07-05T00:00:00",
+        "events": []
       }
     ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    },
     "person": {
-      "slug": "259-ales-cerin",
-      "name": "Aleš Čerin",
+      "slug": "230-ana-zagozen",
+      "name": "Ana Zagožen",
       "honorific_prefix": null,
       "honorific_suffix": null,
       "preferred_pronoun": null,
       "group": {
-        "name": "Lista Zorana Jankovića ",
+        "name": "Slovenska demokratska stranka ",
         "acronym": "",
-        "slug": "22-lista-zorana-jankovica"
+        "slug": "21-slovenska-demokratska-stranka"
       },
-      "image": "/Screenshot_from_2020-11-03_17-38-05.png"
+      "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
     }
   }
 }

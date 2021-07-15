@@ -31,7 +31,7 @@
       <i18n-t :keypath="translationKey" tag="div" class="motion">
         <template #title>
           <a :href="getVoteLink(event)" class="funblue-light-hover">{{
-            event.motion?.text
+            event.vote?.title
           }}</a>
         </template>
       </i18n-t>
