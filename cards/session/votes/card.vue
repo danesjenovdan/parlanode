@@ -27,6 +27,7 @@
             v-for="vote in filteredVotes"
             :key="vote.id"
             :vote="vote"
+            :session="session"
           />
         </div>
       </scroll-shadow>
@@ -75,6 +76,7 @@ export default {
 
     return {
       votes: this.cardData.data?.results || [],
+      session: this.cardData.data?.session || {},
       passedOptions,
       textFilter,
     };

@@ -6,7 +6,7 @@
         <div v-if="vote.has_outliers" class="lightning-badge"></div>
         <div v-if="!vote.has_named_votes" class="hand-badge"></div>
       </div>
-      <a :href="getVoteLink(vote)" class="show clearfix">
+      <a :href="getVoteLink(vote, session)" class="show clearfix">
         <div class="col-md-1 icon-col">
           <div :class="passedClass">
             <p>
@@ -100,8 +100,12 @@ export default {
   mixins: [links],
   props: {
     vote: {
-      required: true,
       type: Object,
+      required: true,
+    },
+    session: {
+      type: Object,
+      default: null,
     },
   },
   data() {

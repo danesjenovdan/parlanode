@@ -34,7 +34,12 @@
           class="votes-list-shadow"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <vote-list-item v-for="vote in votes" :key="vote.id" :vote="vote" />
+          <vote-list-item
+            v-for="vote in votes"
+            :key="vote.id"
+            :vote="vote"
+            :session="session"
+          />
         </div>
       </scroll-shadow>
     </div>
