@@ -14,7 +14,22 @@
         "is_outlier": true,
         "has_outliers": true,
         "has_named_votes": true,
-        "title": "fire lighting"
+        "title": "fire lighting",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
@@ -28,7 +43,22 @@
         "is_outlier": false,
         "has_outliers": true,
         "has_named_votes": true,
-        "title": "lightning"
+        "title": "lightning",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
@@ -42,7 +72,22 @@
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": false,
-        "title": "hand"
+        "title": "hand",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
@@ -56,7 +101,22 @@
         "is_outlier": true,
         "has_outliers": true,
         "has_named_votes": false,
-        "title": "fire hand lightning"
+        "title": "fire hand lightning",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
@@ -70,49 +130,232 @@
         "is_outlier": false,
         "has_outliers": true,
         "has_named_votes": false,
-        "title": "hand lightning"
+        "title": "hand lightning",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
-          "absent": 11,
-          "abstain": 1,
+          "absent": 7,
+          "abstain": 8,
+          "for": 29,
+          "against": 1
+        },
+        "passed": true,
+        "id": 2437,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 182 Pod hribom – del skupaj s pripombami.",
+        "timestamp": "2021-07-05T18:33:05",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
+      },
+      {
+        "all_votes": {
+          "absent": 7,
+          "abstain": 5,
           "for": 33,
           "against": 0
         },
         "passed": true,
-        "id": 2056,
+        "id": 2436,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "A) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST RAVNATELJIC IN RAVNATELJEV VRTCEV MESTNE OBČINA LJUBLJANA ZA LETO 2020 SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost ravnateljic in ravnateljev vrtcev Mestne občina Ljubljana za leto 2020."
+        "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 266 Tacen –zahod – severni del skupaj s pripombami.",
+        "timestamp": "2021-07-05T18:21:15",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
-          "absent": 16,
-          "abstain": 0,
-          "for": 29,
+          "absent": 8,
+          "abstain": 1,
+          "for": 36,
           "against": 0
         },
         "passed": true,
-        "id": 2053,
+        "id": 2435,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI JAVNEGA ZAVODA MALA ULICA – CENTRA ZA OTROKE IN DRUŽINE V LJUBLJANI IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za delovno uspešnost direktorici Javnega zavoda Mala ulica – Centra za otroke in družine v Ljubljani iz naslova povečanega obsega dela."
+        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica.",
+        "timestamp": "2021-07-05T18:12:38",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
-          "absent": 10,
+          "absent": 9,
           "abstain": 3,
-          "for": 32,
+          "for": 33,
           "against": 0
         },
         "passed": true,
-        "id": 2050,
+        "id": 2434,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "A) PREDLOGI SKLEPOV O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST         RAVNATELJICAM             IN     RAVNATELJEM        JAVNIH         VZGOJNO- IZOBRAŽEVALNIH ZAVODOV: OSNOVNA ŠOLA FRANCETA BEVKA, OSNOVNA ŠOLA KAŠELJ, OSNOVNA ŠOLA KOLEZIJA, OSNOVNA ŠOLA LIVADA, OSNOVNA ŠOLA MAJDE VRHOVNIK, OSNOVNA ŠOLA MILANA ŠUŠTARŠIČA, OSNOVNA ŠOLA MIRANA JARCA, OSNOVNA ŠOLA MIŠKA KRANJCA, OSNOVNA ŠOLA NARODNEGA HEROJA MAKSA PEČARJA, OSNOVNA ŠOLA NOVE FUŽINE, OSNOVNA ŠOLA PREŽIHOVEGA VORANCA, OSNOVNA ŠOLA RIHARDA JAKOPIČA, OSNOVNA ŠOLA SAVSKO NASELJE, OSNOVNA ŠOLA SOSTRO, OSNOVNA ŠOLA VRHOVCI IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predloge sklepov o soglasju k določitvi dela plače za delovno uspešnost ravnateljicam in ravnateljem javnih vzgojno-izobraževalnih zavodov: Osnovna šola Franceta Bevka, Osnovna šola Kašelj, Osnovna šola Kolezija, Osnovna šola Livada, Osnovna šol"
+        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 121 Poslovna cona Vižmarje.",
+        "timestamp": "2021-07-05T18:07:42",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
+      },
+      {
+        "all_votes": {
+          "absent": 7,
+          "abstain": 4,
+          "for": 34,
+          "against": 0
+        },
+        "passed": true,
+        "id": 2433,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o zazidalnem načrtu za območji urejanja MS 1/2-1 in MR 1/1 ZELENA JAMA.",
+        "timestamp": "2021-07-05T18:03:12",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
+      },
+      {
+        "all_votes": {
+          "absent": 9,
+          "abstain": 2,
+          "for": 34,
+          "against": 0
+        },
+        "passed": true,
+        "id": 2432,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za enoto urejanja prostora GO-225.",
+        "timestamp": "2021-07-05T17:58:06",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
+      },
+      {
+        "all_votes": {
+          "absent": 8,
+          "abstain": 0,
+          "for": 37,
+          "against": 0
+        },
+        "passed": true,
+        "id": 2431,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 311 Zalog (za prostorsko enoto PE1).",
+        "timestamp": "2021-07-05T17:54:06",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
@@ -122,33 +365,95 @@
           "against": 0
         },
         "passed": true,
-        "id": 2047,
+        "id": 2430,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "A) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI ZAVODA ZA OSKRBO NA DOMU ZA OBDOBJE OD 1. 11. 2020 - 31. 12. 2021 IZ NASLOVA POVEČANEGA OBSEGA DELA B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORICI ZAVODA ZA OSKRBO NA DOMU ZA OBDOBJE OD 1. 7. 2020 - 31. 12. 2020 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorici Zavoda za oskrbo na domu za obdobje od 1. 7. 2020 - 31. 12. 2020."
+        "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana.",
+        "timestamp": "2021-07-05T17:45:10",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       },
       {
         "all_votes": {
-          "absent": 13,
-          "abstain": 9,
-          "for": 23,
+          "absent": 17,
+          "abstain": 0,
+          "for": 28,
           "against": 0
         },
         "passed": true,
-        "id": 2044,
+        "id": 2428,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "A) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI ZAVODA ZA OSKRBO NA DOMU ZA OBDOBJE OD 1. 11. 2020 - 31. 12. 2021 IZ NASLOVA POVEČANEGA OBSEGA DELA B) PREDLOG SKLEPA O SOGLASJU K DOLOČITVI DELA PLAČE ZA REDNO DELOVNO USPEŠNOST DIREKTORICI ZAVODA ZA OSKRBO NA DOMU ZA OBDOBJE OD 1. 7. 2020 - 31. 12. 2020 PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za delovno uspešnost direktorici Zavoda za oskrbo na domu za obdobje od 1. 11. 2020 - 31. 12. 2021 iz naslova povečanega obsega dela."
+        "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o oglaševanju.",
+        "timestamp": "2021-07-05T17:44:59",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
+      },
+      {
+        "all_votes": {
+          "absent": 16,
+          "abstain": 0,
+          "for": 29,
+          "against": 0
+        },
+        "passed": true,
+        "id": 2426,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o določitvi plovbnega režima.",
+        "timestamp": "2021-07-05T17:44:45",
+        "session": {
+          "name": "24. seja Mestnega sveta MOL",
+          "id": 80,
+          "start_time": "2021-07-05T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol"
+            }
+          ],
+          "classification": null,
+          "in_review": false
+        }
       }
     ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
       "beginning": null
     },
-    "count": 351,
-    "pages": 36,
+    "count": 383,
+    "pages": 39,
     "page": 1,
     "per_page": 10
   }

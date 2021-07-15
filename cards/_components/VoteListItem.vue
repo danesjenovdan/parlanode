@@ -168,8 +168,8 @@ export default {
 
   .vote-badges {
     position: absolute;
-    top: -7px;
-    left: -7px;
+    top: -8px;
+    left: 2px;
     z-index: 2;
 
     .fire-badge,
@@ -179,7 +179,7 @@ export default {
       display: inline-block;
       height: 31px;
       width: 31px;
-      margin-right: 4px;
+      margin-right: 2px;
 
       &::before {
         position: absolute;
