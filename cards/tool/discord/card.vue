@@ -125,9 +125,8 @@
 
 <script>
 import { parseISO, format } from 'date-fns';
-import { groupBy, sortBy, zipObject, find, assign } from 'lodash-es';
+import { groupBy, sortBy, zipObject } from 'lodash-es';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
-import DateRow from '@/_components/DateRow.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import Toggle from '@/_components/Toggle.vue';
@@ -137,13 +136,12 @@ import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   name: 'CardToolDiscord',
   components: {
     ToolsTabs,
-    DateRow,
     PSearchDropdown,
     StripedButton,
     Toggle,
