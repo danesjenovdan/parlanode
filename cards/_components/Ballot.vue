@@ -1,9 +1,9 @@
 <template>
-  <a :href="getVoteLink(ballot)" class="ballot">
+  <a :href="getVoteLink(ballot.motion, ballot.session)" class="ballot">
     <div class="disunion">
       <div :class="['icon', ballot.option]"></div>
       <div class="text">
-        <span v-if="type === 'party'">{{ ballot.disunion | toPercent }}</span>
+        <span v-if="type === 'party'">{{ 'ballot.disunion | toPercent' }}</span>
         {{ ballot.label }}
       </div>
     </div>
@@ -27,11 +27,6 @@ import links from '@/_mixins/links.js';
 
 export default {
   name: 'Ballot',
-  filters: {
-    toPercent(val) {
-      return `${parseInt(val, 10)} %`;
-    },
-  },
   mixins: [links],
   props: {
     ballot: {
