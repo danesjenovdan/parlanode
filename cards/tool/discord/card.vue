@@ -468,17 +468,6 @@ export default {
     line-height: $label-height;
   }
 
-  .option-party-buttons {
-    @include show-for(desktop, flex);
-
-    width: 27.5%;
-    padding-top: $label-height;
-
-    .party-button:not(:last-child) {
-      margin-right: 3px;
-    }
-  }
-
   .text-filter {
     width: 100%;
 

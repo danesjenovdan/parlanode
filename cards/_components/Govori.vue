@@ -63,11 +63,6 @@
               />
             </ul>
           </div>
-          <div
-            v-if="!speeches.length"
-            v-t="'no-results'"
-            class="empty-dataset"
-          ></div>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -282,17 +277,28 @@ export default {
 @import 'parlassets/scss/colors';
 
 .filters {
+  display: flex;
+  padding-bottom: 12px;
+
+  @include respond-to(mobile) {
+    flex-wrap: wrap;
+    min-height: 154px;
+  }
+
   .filter {
     @include respond-to(desktop) {
       margin-right: 10px;
       flex: 1;
     }
+
     @include respond-to(mobile) {
       width: 100%;
     }
+
     &:last-child {
       margin-right: 0;
     }
+
     .filter-label {
       height: 20px;
       margin-top: 6px;
@@ -307,33 +313,6 @@ export default {
       flex-grow: 0;
     }
   }
-
-  padding-bottom: 12px;
-  @include respond-to(mobile) {
-    flex-wrap: wrap;
-    min-height: 154px;
-  }
-
-  display: flex;
-
-  .option-party-buttons {
-    @include show-for(desktop, flex);
-    width: 27.5%;
-    padding-top: 26px;
-    .party-button:not(:last-child) {
-      margin-right: 3px;
-    }
-  }
-}
-
-.empty-dataset {
-  font-size: 16px;
-  font-style: italic;
-  line-height: 20px;
-  margin: 70px 0;
-  text-align: center;
-  color: $font-placeholder;
-  font-style: normal;
 }
 
 .speeches {
