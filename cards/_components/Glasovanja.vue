@@ -1,93 +1,80 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
-    <div v-show="false" class="card-content__empty">
-      <!-- TODO this empty state is hardcoded -->
-      <div class="card-content__empty-inner">
-        <img :src="`${urls.cdn}/img/icons/no-data.svg`" />
-        <p v-t="'data-currently-unavailable'"></p>
-      </div>
-    </div>
-    <div class="filters">
-      <div class="filter text-filter">
-        <div v-t="'title-search'" class="filter-label"></div>
-        <p-search-field v-model="textFilter" />
-      </div>
-      <div class="filter" style="flex: 1"></div>
-      <div v-if="type === 'person'" class="filter option-party-buttons">
-        <div
-          v-for="opt in allOptions"
-          :key="opt.id"
-          :class="[
-            'party-button',
-            opt.class,
-            { selected: selectedOptions.indexOf(opt.id) > -1 },
-          ]"
-          @click="toggleOption(opt.id)"
-        >
-          {{ opt.label }}
+    <div class="votes-list">
+      <div class="filters">
+        <div class="filter text-filter">
+          <div v-t="'title-search'" class="filter-label"></div>
+          <input v-model="textFilter" class="text-filter-input" type="text" />
         </div>
+        <div class="filter" style="flex: 1"></div>
+        <div v-if="type === 'person'" class="filter buttons-filter">
+          <striped-button
+            v-for="voteOption in voteOptions"
+            :key="voteOption.id"
+            :color="voteOption.color"
+            :selected="selectedVoteOptions.includes(voteOption)"
+            :small-text="voteOption.label"
+            @click="toggleVoteOption(voteOption)"
+          />
+        </div>
+        <!-- <div v-if="type === 'party'" class="filter text-filter">
+          <div v-t="'sort-by'" class="filter-label"></div>
+          <toggle v-model="selectedSort" :options="sortOptions" />
+        </div> -->
       </div>
-      <div v-if="type === 'party'" class="filter text-filter">
-        <div v-t="'sort-by'" class="filter-label"></div>
-        <toggle v-model="selectedSort" :options="sortOptions" />
-      </div>
-    </div>
 
-    <scroll-shadow ref="shadow">
-      <div
-        id="card-votes"
-        class="votes stickinme date-list"
-        @scroll="$refs.shadow.check($event.currentTarget)"
-      >
+      <scroll-shadow ref="shadow">
         <div
-          v-if="filteredVotingDays.length === 0"
-          v-t="'no-results'"
-          class="no-results"
-        />
-        <div v-else>
-          <template v-for="(ballots, date) in filteredVotingDays" :key="date">
+          v-infinite-scroll="loadMore"
+          class="votes-list-shadow has-filters date-list"
+          @scroll="$refs.shadow.check($event.currentTarget)"
+        >
+          <template v-for="(dayBallots, key) in filteredVotingDays" :key="key">
             <div
               v-if="type === 'person' || selectedSort === 'date'"
               class="date"
             >
-              {{ date }}
+              {{ formatDate(dayBallots[0].timestamp) }},
+              {{ formatSessionInfo(dayBallots[0].session) }}
             </div>
-            <div>
-              <div
-                v-for="ballot in ballots"
-                :key="`${ballot.timestamp}_${ballot.motion.id}`"
-              >
-                <ballot :ballot="ballot" type="person" />
-              </div>
-            </div>
+            <ballot
+              v-for="ballot in dayBallots"
+              :key="`${ballot.timestamp}_${ballot.motion.id}`"
+              :ballot="ballot"
+              type="person"
+            />
           </template>
         </div>
-      </div>
-    </scroll-shadow>
+        <div v-if="card.isLoading" class="nalagalnik__wrapper">
+          <div class="nalagalnik"></div>
+        </div>
+      </scroll-shadow>
+    </div>
   </card-wrapper>
 </template>
 
 <script>
-import { find, filter, assign, groupBy, orderBy } from 'lodash-es';
-import PSearchField from '@/_components/SearchField.vue';
-// import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import Toggle from '@/_components/Toggle.vue';
-import Ballot from '@/_components/Ballot.vue';
-import ScrollShadow from '@/_components/ScrollShadow.vue';
+import { groupBy } from 'lodash-es';
+import axios from 'axios';
 import common from '@/_mixins/common.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import { personVotes, partyVotes } from '@/_mixins/contextUrls.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
+import StripedButton from '@/_components/StripedButton.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import Ballot from '@/_components/Ballot.vue';
+import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 
 export default {
+  directives: {
+    infiniteScroll,
+  },
   components: {
-    // PSearchDropdown,
-    PSearchField,
-    Toggle,
-    Ballot,
+    StripedButton,
     ScrollShadow,
+    Ballot,
   },
   mixins: [common],
   props: {
@@ -102,162 +89,98 @@ export default {
     },
   },
   data() {
-    const selectFromState = (items, stateItemIds) =>
-      items.map((item) =>
-        assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
-      );
+    const textFilter = this.cardState.text || '';
 
-    let allOptions = [
+    const voteFilters = (this.cardState.voteFilter || '').split(',');
+    const voteOptions = [
       {
         id: 'for',
-        class: 'for',
+        color: 'for',
         label: this.$t('vote-for'),
-        selected: false,
+        selected: voteFilters.includes('for'),
       },
       {
         id: 'against',
-        class: 'against',
+        color: 'against',
         label: this.$t('vote-against'),
-        selected: false,
+        selected: voteFilters.includes('against'),
       },
       {
         id: 'abstain',
-        class: 'abstain',
+        color: 'abstain',
         label:
           this.type === 'person'
             ? this.$t('vote-abstain')
             : this.$t('vote-abstain-plural'),
-        selected: false,
+        selected: voteFilters.includes('abstain'),
       },
       {
         id: 'absent',
-        class: 'absent',
+        color: 'absent',
         label:
           this.type === 'person'
             ? this.$t('vote-absent')
             : this.$t('vote-absent-plural'),
-        selected: false,
+        selected: voteFilters.includes('absent'),
       },
     ];
 
-    let allTags = (this.contextData.cardData.data?.all_tags || []).map(
-      (tag) => ({
-        id: tag,
-        label: tag,
-        selected: false,
-      })
-    );
-
-    let allClassifications = [];
-    Object.keys(this.contextData.cardData.data?.classifications || {}).forEach(
-      (classificationKey) => {
-        allClassifications.push({
-          id: classificationKey,
-          label: this.$t(
-            `vote_types.${this.contextData.cardData.classifications[classificationKey]}`
-          ),
-          selected: false,
-        });
-      }
-    );
-
-    let textFilter = '';
-
-    if (this.contextData.cardState) {
-      const state = this.contextData.cardState;
-      if (state.text) {
-        textFilter = state.text;
-      }
-
-      if (state.classifications) {
-        allClassifications = selectFromState(
-          allClassifications,
-          state.classifications
-        );
-      }
-      if (state.options) {
-        allOptions = selectFromState(allOptions, state.options);
-      }
-      if (state.tags) {
-        allTags = selectFromState(allTags, state.tags);
-      }
-    }
-
     return {
-      results: this.contextData.cardData.data?.results ?? [],
-      selectedSort: 'date',
-      sortOptions: {
-        maximum: this.$t('sort-by--inequality'),
-        date: this.$t('sort-by--date'),
+      card: {
+        currentPage: 1,
+        isLoading: false,
       },
-      allClassifications,
-      allOptions,
-      allTags,
+      results: this.cardData.data?.results ?? [],
       textFilter,
+      voteOptions,
+      selectedSort: 'date',
+      // sortOptions: {
+      //   maximum: this.$t('sort-by--inequality'),
+      //   date: this.$t('sort-by--date'),
+      // },
+      // TODO: neenakost filter pri grupah
     };
   },
   computed: {
-    dropdownTags: {
-      get() {
-        const validTags = [];
-        return filter(this.allTags, (tag) => validTags.indexOf(tag.id) > -1);
-      },
-      set(newTags) {
-        this.allTags = this.allTags.map(
-          (tag) => find(newTags, { id: tag.id }) || tag
-        );
-      },
-    },
-    selectedTags() {
-      return filter(this.allTags, (tag) => tag.selected).map((tag) => tag.id);
-    },
-    selectedClassifications() {
-      return filter(
-        this.allClassifications,
-        (classification) => classification.selected
-      ).map((classification) => classification.id);
-    },
-    selectedOptions() {
-      return filter(this.allOptions, (option) => option.selected).map(
-        (option) => option.id
-      );
+    selectedVoteOptions() {
+      return this.voteOptions.filter((vo) => vo.selected);
     },
     filteredVotingDays() {
       let form = 'plural';
       if (this.type === 'person') {
         form =
-          this.contextData.cardData?.data?.person?.preferred_pronoun === 'she'
-            ? 'f'
-            : 'm';
+          this.cardData.data?.person?.preferred_pronoun === 'she' ? 'f' : 'm';
       }
 
       const lowerTextFilter = String(this.textFilter || '').toLowerCase();
+      const selectedVoteOptionIds = this.selectedVoteOptions.map((vo) => vo.id);
 
       const filteredResults = this.results
         .filter((r) => {
           let textMatch = true;
-          let optionMatch = true;
+          let voteOptionMatch = true;
 
           if (lowerTextFilter) {
             textMatch = r.motion.text.toLowerCase().includes(lowerTextFilter);
           }
 
-          if (this.selectedOptions.length) {
-            optionMatch = this.selectedOptions.includes(r.option);
+          if (selectedVoteOptionIds.length) {
+            voteOptionMatch = selectedVoteOptionIds.includes(r.option);
           }
 
-          return textMatch && optionMatch;
+          return textMatch && voteOptionMatch;
         })
+        .filter((r) => r.option != null) // api returns null if nobody from this group voted
         .map((r) => ({
           ...r,
           label: this.$t(`voted-${r.option}--${form}`),
         }));
 
-      const votingDays = groupBy(
-        orderBy(filteredResults, ['timestamp'], ['asc']),
-        (o) => dateFormatter(o.timestamp)
-      );
-      return votingDays;
+      return groupBy(filteredResults, (o) => {
+        const dateTime = o.timestamp || o.session?.start_time || '';
+        const date = dateTime.split('T')[0];
+        return `${date}__${o.session?.id}`;
+      });
     },
     headerConfig() {
       if (this.type === 'person') {
@@ -271,18 +194,47 @@ export default {
       }
       return partyOgImage.computed.ogConfig.call(this);
     },
+    searchUrl() {
+      const url = new URL(this.cardData.url);
+      url.searchParams.set('page', this.card.currentPage);
+      return url.toString();
+    },
   },
   created() {
     (this.type === 'person' ? personVotes : partyVotes).created.call(this);
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
   },
   methods: {
-    toggleOption(optionId) {
-      const clickedOption = filter(
-        this.allOptions,
-        (option) => option.id === optionId
-      )[0];
-      clickedOption.selected = !clickedOption.selected;
+    toggleVoteOption(voteOption) {
+      voteOption.selected = !voteOption.selected;
+    },
+    loadMore() {
+      if (this.card.isLoading) {
+        return;
+      }
+      if (this.results.length >= this.cardData.data?.count) {
+        return;
+      }
+
+      this.card.isLoading = true;
+      this.card.currentPage += 1;
+
+      const requestedPage = this.card.currentPage;
+      axios.get(this.searchUrl).then((response) => {
+        if (response?.data?.page === requestedPage) {
+          const newResults = response?.data?.results || [];
+          this.results.push(...newResults);
+        }
+        this.card.isLoading = false;
+      });
+    },
+    formatDate(date) {
+      return dateFormatter(date);
+    },
+    formatSessionInfo(session) {
+      const orgNames = session?.organizations?.map((org) => org.name);
+      const orgList = orgNames?.length ? ` (${orgNames.join(', ')})` : '';
+      return `${session?.name || ''}${orgList}`;
     },
   },
 };
@@ -292,126 +244,83 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
-:deep(.card-content),
-:deep(.card-content-front) {
-  @include respond-to(mobile) {
-    max-height: none;
-  }
-}
-
-#card-votes {
-  height: $full-card-height - 89;
-  overflow-y: auto;
-
-  @include respond-to(mobile) {
-    height: 352px;
-  }
-}
-
-.filters {
-  padding-bottom: 12px;
-  @include respond-to(mobile) {
-    flex-wrap: wrap;
-    min-height: 154px;
-  }
-  $label-height: 26px;
-
-  display: flex;
-
-  .option-party-buttons {
-    @include show-for(desktop, flex);
-
-    width: 27.5%;
-    padding-top: $label-height;
-
-    .party-button:not(:last-child) {
-      margin-right: 3px;
-    }
-  }
-
-  .text-filter {
-    @include respond-to(desktop) {
-      width: 50%;
-    }
-
-    width: 100%;
-
-    .text-filter-input {
-      background-image: url('#{get-parlassets-url()}/icons/search.svg');
-      background-size: 24px 24px;
-      background-repeat: no-repeat;
-      background-position: right 9px center;
-      border: 1px solid $font-placeholder;
-      font-size: 16px;
-      height: 51px;
-      line-height: 27px;
-      outline: none;
-      padding: 12px 42px 12px 14px;
-      width: 100%;
-    }
-  }
-
-  .tag-dropdown {
-    @include respond-to(desktop) {
-      width: 26%;
-    }
-
-    width: 100%;
-  }
-
-  .month-dropdown {
-    @include show-for(desktop);
-
-    width: 17.5%;
-  }
-}
-
-.votes {
-  flex: 1;
-  // list-style: none;
-  overflow-y: auto;
-  position: relative;
-
-  ul {
-    list-style: none;
-    margin: 0 0 7px;
-    padding: 0;
-  }
-
-  li {
+.votes-list {
+  .filters {
     display: flex;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 18px;
+    padding-bottom: 12px;
 
-    .date {
-      height: auto;
-      margin: 0 0 -18px 16px;
-      padding: 16px 0;
-      width: 54px;
-    }
-  }
-}
+    .filter {
+      @include respond-to(desktop) {
+        margin-right: 10px;
+      }
 
-.filters {
-  .filter {
-    @include respond-to(desktop) {
-      margin-right: 10px;
+      @include respond-to(mobile) {
+        width: 100%;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
-    @include respond-to(mobile) {
+    .filter-label {
+      overflow: hidden;
+      height: 20px;
+      margin-top: 6px;
+    }
+
+    .text-filter {
+      @include respond-to(desktop) {
+        width: 50%;
+      }
+
       width: 100%;
+
+      .text-filter-input {
+        background-image: url('#{get-parlassets-url()}/icons/search.svg');
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: right 9px center;
+        border: 1px solid $font-placeholder;
+        font-size: 16px;
+        height: 51px;
+        line-height: 27px;
+        outline: none;
+        padding: 12px 42px 12px 14px;
+        width: 100%;
+      }
     }
 
-    &:last-child {
-      margin-right: 0;
+    .buttons-filter {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+
+      .striped-button {
+        width: 80px;
+      }
     }
   }
 
-  .filter-label {
-    overflow: hidden;
-    height: 20px;
-    margin-top: 6px;
+  .votes-list-shadow {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: $full-card-height - 89;
+  }
+
+  .nalagalnik__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white-hover;
+    z-index: 4;
+
+    .nalagalnik {
+      position: absolute;
+      top: calc(50% - 50px);
+    }
   }
 }
 </style>
