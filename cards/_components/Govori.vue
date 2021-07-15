@@ -353,12 +353,13 @@ export default {
   }
 
   .nalagalnik__wrapper {
-    background: $white-hover;
-    height: 100%;
-    left: 0;
     position: absolute;
     top: 0;
-    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white-hover;
+    z-index: 4;
 
     .nalagalnik {
       position: absolute;

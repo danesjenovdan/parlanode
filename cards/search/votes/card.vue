@@ -4,10 +4,20 @@
       <scroll-shadow ref="shadow">
         <div
           v-infinite-scroll="loadMore"
-          class="votes-list-shadow"
+          class="votes-list-shadow date-list"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <vote-list-item v-for="vote in votes" :key="vote.id" :vote="vote" />
+          <template v-for="(dayVotes, key) in votingDays" :key="key">
+            <div class="date">
+              {{ formatDate(dayVotes[0].timestamp) }},
+              {{ formatSessionInfo(dayVotes[0].session) }}
+            </div>
+            <vote-list-item
+              v-for="vote in dayVotes"
+              :key="vote.id"
+              :vote="vote"
+            />
+          </template>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -18,6 +28,7 @@
 </template>
 
 <script>
+import { groupBy } from 'lodash';
 import axios from 'axios';
 import common from '@/_mixins/common.js';
 import { search as searchContext } from '@/_mixins/contextUrls.js';
@@ -27,6 +38,7 @@ import { searchTitle } from '@/_mixins/titles.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
+import dateFormatter from '@/_helpers/dateFormatter.js';
 
 export default {
   name: 'CardSearchVotes',
@@ -51,6 +63,13 @@ export default {
     };
   },
   computed: {
+    votingDays() {
+      return groupBy(this.votes, (o) => {
+        const dateTime = o.timestamp || o.session?.start_time || '';
+        const date = dateTime.split('T')[0];
+        return `${date}__${o.session?.id}`;
+      });
+    },
     searchUrl() {
       const url = new URL(this.cardData.url);
       url.searchParams.set('page', this.card.currentPage);
@@ -78,6 +97,14 @@ export default {
         this.card.isLoading = false;
       });
     },
+    formatDate(date) {
+      return dateFormatter(date);
+    },
+    formatSessionInfo(session) {
+      const orgNames = session?.organizations?.map((org) => org.name);
+      const orgList = orgNames?.length ? ` (${orgNames.join(', ')})` : '';
+      return `${session?.name || ''}${orgList}`;
+    },
   },
 };
 </script>
@@ -94,12 +121,13 @@ export default {
   }
 
   .nalagalnik__wrapper {
-    background: $white-hover;
-    height: 100%;
-    left: 0;
     position: absolute;
     top: 0;
-    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white-hover;
+    z-index: 4;
 
     .nalagalnik {
       position: absolute;
