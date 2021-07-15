@@ -235,6 +235,7 @@ export default {
       this.card.isLoading = true;
       this.ballots = [];
       this.card.objectCount = 0;
+      this.card.currentPage = 1;
       this.makeRequest(this.searchUrl).then((response) => {
         this.ballots = response?.data?.results || [];
         this.card.objectCount = response?.data?.count;
