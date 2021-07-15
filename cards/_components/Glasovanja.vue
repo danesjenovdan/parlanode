@@ -4,7 +4,7 @@
       <div class="filters">
         <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
-          <input v-model="textFilter" class="text-filter-input" type="text" />
+          <search-field v-model="textFilter" @update:modelValue="searchVotes" />
         </div>
         <div class="filter" style="flex: 1"></div>
         <div v-if="type === 'person'" class="filter buttons-filter">
@@ -54,13 +54,14 @@
 </template>
 
 <script>
-import { groupBy } from 'lodash-es';
-import axios from 'axios';
+import { debounce, groupBy } from 'lodash-es';
+import axios, { CancelToken } from 'axios';
 import common from '@/_mixins/common.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import { personVotes, partyVotes } from '@/_mixins/contextUrls.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
+import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Ballot from '@/_components/Ballot.vue';
@@ -72,6 +73,7 @@ export default {
     infiniteScroll,
   },
   components: {
+    SearchField,
     StripedButton,
     ScrollShadow,
     Ballot,
@@ -133,6 +135,7 @@ export default {
       results: this.cardData.data?.results ?? [],
       textFilter,
       voteOptions,
+      cancelRequest: null,
       selectedSort: 'date',
       // sortOptions: {
       //   maximum: this.$t('sort-by--inequality'),
@@ -146,29 +149,24 @@ export default {
       return this.voteOptions.filter((vo) => vo.selected);
     },
     filteredVotingDays() {
+      // TODO: remove this and use api calls to filter
       let form = 'plural';
       if (this.type === 'person') {
         form =
           this.cardData.data?.person?.preferred_pronoun === 'she' ? 'f' : 'm';
       }
 
-      const lowerTextFilter = String(this.textFilter || '').toLowerCase();
       const selectedVoteOptionIds = this.selectedVoteOptions.map((vo) => vo.id);
 
       const filteredResults = this.results
         .filter((r) => {
-          let textMatch = true;
           let voteOptionMatch = true;
-
-          if (lowerTextFilter) {
-            textMatch = r.motion.text.toLowerCase().includes(lowerTextFilter);
-          }
 
           if (selectedVoteOptionIds.length) {
             voteOptionMatch = selectedVoteOptionIds.includes(r.option);
           }
 
-          return textMatch && voteOptionMatch;
+          return voteOptionMatch;
         })
         .filter((r) => r.option != null) // api returns null if nobody from this group voted
         .map((r) => ({
@@ -197,6 +195,7 @@ export default {
     searchUrl() {
       const url = new URL(this.cardData.url);
       url.searchParams.set('page', this.card.currentPage);
+      url.searchParams.set('text', this.textFilter);
       return url.toString();
     },
   },
@@ -208,6 +207,37 @@ export default {
     toggleVoteOption(voteOption) {
       voteOption.selected = !voteOption.selected;
     },
+    makeRequest(url) {
+      if (this.cancelRequest) {
+        this.cancelRequest();
+        this.cancelRequest = null;
+      }
+
+      return axios
+        .get(url, {
+          cancelToken: new CancelToken((c) => {
+            this.cancelRequest = c;
+          }),
+        })
+        .then(
+          (response) => {
+            this.cancelRequest = null;
+            return response;
+          },
+          (error) => {
+            this.cancelRequest = null;
+            throw error;
+          }
+        );
+    },
+    searchVotes: debounce(function searchVotes() {
+      this.card.isLoading = true;
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.results = response?.data?.results || [];
+        this.card.currentPage = 1;
+        this.card.isLoading = false;
+      });
+    }, 750),
     loadMore() {
       if (this.card.isLoading) {
         return;
@@ -270,24 +300,11 @@ export default {
     }
 
     .text-filter {
+      flex-basis: 100%;
+
       @include respond-to(desktop) {
-        width: 50%;
-      }
-
-      width: 100%;
-
-      .text-filter-input {
-        background-image: url('#{get-parlassets-url()}/icons/search.svg');
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        background-position: right 9px center;
-        border: 1px solid $font-placeholder;
-        font-size: 16px;
-        height: 51px;
-        line-height: 27px;
-        outline: none;
-        padding: 12px 42px 12px 14px;
-        width: 100%;
+        flex-basis: 50%;
+        flex-grow: 0;
       }
     }
 
