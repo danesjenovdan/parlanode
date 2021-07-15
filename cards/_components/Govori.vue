@@ -44,20 +44,14 @@
           ]"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <div v-for="(speakingDay, key) in groupSpeakingDays" :key="key">
+          <div v-for="(daySpeeches, key) in groupSpeakingDays" :key="key">
             <div class="date">
-              {{ formatSpeechDate(speakingDay[0]) }},
-              {{ speakingDay[0].session?.name }},
-              {{
-                ' ' +
-                speakingDay[0].session?.organizations
-                  ?.map((org) => org.name)
-                  .join(', ')
-              }}
+              {{ formatDate(daySpeeches[0].start_time) }},
+              {{ formatSessionInfo(daySpeeches[0].session) }}
             </div>
             <ul class="speeches__list">
               <govor
-                v-for="speech in speakingDay"
+                v-for="speech in daySpeeches"
                 :key="speech.speech_id"
                 :speech="speech"
               />
@@ -214,9 +208,6 @@ export default {
     searchTitle.created.call(this);
   },
   methods: {
-    formatSpeechDate(speech) {
-      return dateFormatter(speech.start_time || speech.session?.start_time);
-    },
     makeRequest(url) {
       if (this.cancelRequest) {
         this.cancelRequest();
@@ -267,6 +258,14 @@ export default {
         }
         this.card.isLoading = false;
       });
+    },
+    formatDate(date) {
+      return dateFormatter(date);
+    },
+    formatSessionInfo(session) {
+      const orgNames = session?.organizations?.map((org) => org.name);
+      const orgList = orgNames?.length ? ` (${orgNames.join(', ')})` : '';
+      return `${session?.name || ''}${orgList}`;
     },
   },
 };
