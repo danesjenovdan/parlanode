@@ -4,13 +4,9 @@ const config = {
   port: 3066,
   serverTimeout: 120000,
   urls: {
-    cdn: 'https://parlassets-ljubljana.lb.djnd.si', // TODO
-    analize: 'https://parladata.lb.djnd.si/v3/cards', // TODO
-    data: 'https://parladata.lb.djnd.si/v3', // TODO
-    isci: 'https://isci.parlameter.si', // TODO
-    glej: 'http://parlanode:7004',
-    base: 'http://localhost:3066',
-    parladata: 'http://parladata:8000'
+    cdn: 'https://parlassets-ljubljana.lb.djnd.si',
+    cards: 'https://parlacards.lb.djnd.si/v3',
+    parladata: 'https://parladata.lb.djnd.si/v3'
   },
   siteLang: 'sl',
   siteMap: {

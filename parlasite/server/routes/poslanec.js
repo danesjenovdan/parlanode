@@ -1,5 +1,4 @@
 const express = require('express');
-const data = require('../data');
 const { asyncRender: ar } = require('../utils');
 const { siteMap: sm, urls } = require('../../config');
 const { i18n } = require('../server');
@@ -7,19 +6,10 @@ const fetch = require('node-fetch');
 
 const router = express.Router();
 
-function getData(idParam, slugParam) {
-  const people = data.urls.person;
-  const id = Number(idParam || Object.keys(people).find(k => people[k].slug === slugParam));
-  const mp = id && data.mps.find(m => m.id === id);
-  const party = mp && data.pgs.find(p => p.id === mp.party_id);
-  const slug = mp && (slugParam || people[id].slug);
-  return (id && mp && slug) ? { mp, party, slug } : null;
-}
-
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0]);
   // TODO this shouldn't be hard-coded
-  const response = await fetch(`${urls.parladata}/v3/cards/person/basic-information?id=${id}`);
+  const response = await fetch(`${urls.parladata}/cards/person/basic-information?id=${id}`);
   if (response.ok && response.status >= 200 && response.status < 400) {
     let data = await response.json();
     return {

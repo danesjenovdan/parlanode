@@ -1,5 +1,4 @@
 const express = require('express');
-const data = require('../data');
 const { asyncRender: ar } = require('../utils');
 const { i18n } = require('../server');
 const fetch = require('node-fetch');

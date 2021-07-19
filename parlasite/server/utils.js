@@ -48,7 +48,7 @@ async function fetchCard(cardPath, id, params = {}) {
   //   params.forceRender = true;
   // }
 
-  const cardUrl = `${urls.glej}${cardPath}${stringifyParams(params)}`;
+  const cardUrl = `${urls.cards}${cardPath}${stringifyParams(params)}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);

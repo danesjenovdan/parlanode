@@ -1,10 +1,8 @@
 const chalk = require('chalk');
-const data = require('./server/data');
 const server = require('./server/server');
 
 function init() {
   return Promise.resolve()
-    // .then(data.preload)
     .then(server.init)
     .then(() => {
       // eslint-disable-next-line no-console

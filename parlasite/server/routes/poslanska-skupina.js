@@ -1,5 +1,4 @@
 const express = require('express');
-const data = require('../data');
 const { asyncRender: ar } = require('../utils');
 const { siteMap: sm, urls } = require('../../config');
 const { i18n } = require('../server');
@@ -7,43 +6,10 @@ const fetch = require('node-fetch');
 
 const router = express.Router();
 
-function getID(slugParam) {
-  const slugs = data.urls.party;
-  const parties = data.pgs;
-  // get all ids as numbers
-  let ids = Object.keys(slugs).map(Number);
-  // only ids that have the correct slug
-  const acronyms = ids.filter(id => slugs[id].acronym === slugParam);
-  if (acronyms.length) {
-    ids = acronyms;
-  } else {
-    ids = ids.filter(id => slugs[id].slug === slugParam);
-  }
-  // only ids that have a party object
-  ids = ids.filter(id => parties.find(p => p.id === id));
-  // if there are more than one at this point prefer ones that are not disbanded
-  if (ids.length > 1) {
-    const active = ids.filter(() => parties.find(p => !p.disbanded));
-    if (active.length) {
-      ids = active;
-    }
-  }
-  // return the largest id since that is probably the latest
-  return ids.length ? Math.max(...ids) : null;
-}
-
-function getData(idParam, slugParam) {
-  const parties = data.urls.party;
-  const id = Number(idParam) || getID(slugParam);
-  const party = id && data.pgs.find(p => p.id === id);
-  const slug = party && (parties[id].acronym || slugParam);
-  return (id && party) ? { party, slug } : null;
-}
-
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0]);
   // TODO this shouldn't be hard-coded
-  const response = await fetch(`${urls.parladata}/v3/cards/group/basic-information?id=${id}`);
+  const response = await fetch(`${urls.parladata}/cards/group/basic-information?id=${id}`);
   if (response.ok && response.status >= 200 && response.status < 400) {
     let data = await response.json();
     return {
