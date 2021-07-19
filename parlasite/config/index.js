@@ -5,7 +5,7 @@ const config = {
   serverTimeout: 120000,
   urls: {
     cdn: 'https://parlassets-ljubljana.lb.djnd.si',
-    cards: 'https://parlacards.lb.djnd.si/v3',
+    cards: 'https://parlacards.lb.djnd.si',
     parladata: 'https://parladata.lb.djnd.si/v3'
   },
   siteLang: 'sl',
