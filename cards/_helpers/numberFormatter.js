@@ -18,6 +18,7 @@ export default (number, precision = 0, percent = false) => {
       style: percent ? 'percent' : 'decimal',
       minimumFractionDigits: precision,
       maximumFractionDigits: precision,
+      useGrouping: false, // don't use thounsands separator
     }
   );
 
