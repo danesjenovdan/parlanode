@@ -37,9 +37,10 @@ export default {
       return this.getPartyLink(this.party);
     },
     partyCssClass() {
-      return `${this.party.acronym
-        .toLowerCase()
-        .replace(/[ +,]/g, '_')}-background`;
+      return '';
+      // return `${this.party.acronym
+      //   .toLowerCase()
+      //   .replace(/[ +,]/g, '_')}-background`;
     },
   },
 };
@@ -51,7 +52,6 @@ export default {
 .partypin-container {
   float: right;
   position: relative;
-
   width: 30px;
   height: 30px;
 
@@ -60,12 +60,7 @@ export default {
     cursor: pointer;
     font-size: 11px;
     color: $white;
-  }
-
-  &[data-name="PS Levica"],
-  .levica-background, // TODO fix levica
-  .desus-background {
-    font-size: 8px;
+    background-color: $font-default;
   }
 
   .partypin-tooltip {

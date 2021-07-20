@@ -1,12 +1,27 @@
 {
   "data": {
     "results": {
-      "error": "No score matches your criteria."
+      "score": 22.0,
+      "average": 37.5714285714286,
+      "maximum": {
+        "score": 108.0,
+        "groups": [
+          {
+            "name": "Slovenska demokratska stranka ",
+            "acronym": "",
+            "slug": "21-slovenska-demokratska-stranka"
+          }
+        ]
+      }
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
     },
     "group": {
-      "name": "Slovenska demokratska stranka ",
+      "name": "Levica ",
       "acronym": "",
-      "slug": "21-slovenska-demokratska-stranka"
+      "slug": "20-levica"
     }
   }
 }
