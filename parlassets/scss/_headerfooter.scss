@@ -29,14 +29,15 @@ body {
 }
 
 .menu-container .logo {
-  width: 110px;
+  // width: 110px;
   height: 80px !important;
   overflow: hidden;
   display: block;
   flex-shrink: 0;
 
-  img {
-    // height: 80px;
+  .logo-image-height {
+    height: 100%;
+    width: auto;
   }
 }
 
