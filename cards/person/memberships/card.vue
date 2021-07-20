@@ -1,24 +1,18 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig" half-height>
-    <div class="memberships">
-      <p-tabs v-if="tabNames.length > 1">
-        <p-tab
-          v-for="(tabContents, tabName) in tabs"
-          :key="tabName"
-          :label="tabName"
-          variant="dark"
-        >
-          <membership-list :name="tabName" :contents="tabContents" />
-        </p-tab>
-      </p-tabs>
-      <membership-list
-        v-else-if="tabNames.length === 1"
-        :name="tabNames[0]"
-        :contents="tabs[tabNames[0]]"
-      />
-      <!-- TODO: let empty state handle this -->
-      <membership-list v-else :name="''" :contents="[]" />
-    </div>
+    <p-tabs>
+      <p-tab
+        v-for="(tabContents, tabName) in tabs"
+        :key="tabName"
+        :label="tabName"
+      >
+        <membership-list
+          :name="tabName"
+          :contents="tabContents"
+          :no-tabs="tabNames.length < 2"
+        />
+      </p-tab>
+    </p-tabs>
   </card-wrapper>
 </template>
 
@@ -47,7 +41,9 @@ export default {
   },
   computed: {
     tabs() {
-      return { all: this.results.map((r) => r?.organization) };
+      return {
+        all: this.results.map((r) => r?.organization),
+      };
 
       // // TODO: i18n, this is so specific for slo parliament check later
       // const membershipTabMap = {
@@ -77,14 +73,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.tab-content {
-  overflow-y: hidden;
-}
-.memberships :deep(.p-tabs .p-tabs-content),
-.memberships :deep(.p-tabs .p-tabs-content .tab-content){
-  overflow-y: visible;
-  overflow-x: visible;
-}
-</style>

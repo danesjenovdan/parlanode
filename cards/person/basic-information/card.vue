@@ -15,7 +15,10 @@
         </div>
       </div>
 
-      <div class="row">
+      <div
+        v-if="results.number_of_points || results.number_of_voters"
+        class="row"
+      >
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-delaza" aria-hidden="true"></span>
         </div>

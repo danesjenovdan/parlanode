@@ -2,6 +2,7 @@
   <scroll-shadow ref="shadow">
     <div
       id="membership-list"
+      :class="{ 'no-tabs': noTabs }"
       @scroll="$refs.shadow.check($event.currentTarget)"
     >
       <ul class="membership-list">
@@ -49,6 +50,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    noTabs: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {};
@@ -58,19 +63,22 @@ export default {
 
 <style lang="scss" scoped>
 #membership-list {
-  padding: 6px 0;
-  height: 123px;
+  height: 125px;
   overflow-y: auto;
-  margin-top: 6px;
+
+  &.no-tabs {
+    height: 180px;
+  }
 }
 
 .membership-list {
+  margin: 0;
   padding: 0;
   list-style: none;
 
   .key {
     line-height: 1.3em;
-    padding: 4px 0 4px 4px;
+    margin: 4px 0;
     text-align: left;
     width: 100%;
   }
