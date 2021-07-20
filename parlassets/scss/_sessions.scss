@@ -280,6 +280,7 @@
     margin-bottom: 20px;
     display: inline-block;
     padding: $padding;
+    background-color: $font-default;
 
     &.backgroundred {
         background-color: $icon-session;
