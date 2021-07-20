@@ -429,7 +429,7 @@ input.form-control, textarea.form-control {
         transform: scale(1);
     }
     50% {
-        transform: scale(100);
+        transform: scale(500);
     }
     100% {
         transform: scale(1);
@@ -534,11 +534,11 @@ input.form-control, textarea.form-control {
     bottom: 18px;
 }
 .card-container.covered::before {
-    animation: ripple 0.6s forwards;
+    animation: ripple 1s forwards;
 }
 .card-container.revealed::before {
     background-color: $card-footer-button-hover-background;
-    animation: ripple 0.6s forwards;
+    animation: ripple 1s forwards;
 }
 
 .card-footer .card-logo {
