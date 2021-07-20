@@ -1,6 +1,6 @@
 <%
-  var classPrefix = group.acronym.toLowerCase().replace(/[ +,]/g, '_');
-  var classes = ['background', 'fill', 'border'].map(c => `${classPrefix}-${c}`).join(' ');
+  var classPrefix = group && group.acronym ? group.acronym.toLowerCase().replace(/[ +,]/g, '_') : '';
+  var classes = classPrefix && ['background', 'fill', 'border'].map(c => `${classPrefix}-${c}`).join(' ');
 %>
 
 <div class="group-container">

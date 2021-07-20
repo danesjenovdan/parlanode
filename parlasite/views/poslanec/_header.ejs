@@ -9,14 +9,14 @@ body > .container {
 <% } %>
 
 <%
-  var classPrefix = mp.group.acronym.toLowerCase().replace(/[ +,]/g, '_');
+  var classPrefix = mp.group && mp.group.acronym ? mp.group.acronym.toLowerCase().replace(/[ +,]/g, '_') : '';
   var classes = classPrefix && ['background', 'fill', 'border'].map(c => `${classPrefix}-${c}`).join(' ');
 %>
 
 <div class="member-container">
   <div class="row header text-center">
     <div class="col-lg-12">
-      <img src="<%- mp.image || config.urls.cdn + '/img/people/square/null.png' %>" class="media-object img-circle session-logo person-logo <%- classes %>">
+      <img src="<%- mp.image || (config.urls.cdn + '/img/people/square/null.png') %>" class="media-object img-circle session-logo person-logo <%- classes %>">
       <h1><%- mp.name %></h1>
       <h2><%= mp.group ? mp.group.acronym ? mp.group.acronym : mp.group.name ? mp.group.name : '' : '' %></h2>
       <h3><!-- <%- mp.group && mp.group.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %> --></h3>
