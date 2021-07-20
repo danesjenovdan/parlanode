@@ -33,6 +33,27 @@
         {{ getSpeechContent(speech) }}
         <div class="quote-button">“</div>
       </div>
+      <div v-if="speech.votes?.length" class="votes">
+        <div v-for="vote in speech.votes" :key="vote.id" class="vote">
+          <div class="title-col">
+            <div class="vote-title">
+              {{ vote.title }}
+            </div>
+            <div class="vote-link">
+              <a href="#" class="funblue-light-hover">
+                {{ $t('vote-roll-results') }} >>>
+              </a>
+            </div>
+          </div>
+          <div class="result-col">
+            <result
+              :score="vote.result?.max_option_percentage"
+              :option="vote.result?.max_option"
+              :chart-data="mapVotes(vote.votes)"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <div v-if="speech.quoted_text" class="quote">
       <div class="speech-text">
@@ -69,11 +90,16 @@
 <script>
 import links from '@/_mixins/links.js';
 import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
+import mapVotes from '@/_helpers/mapVotes.js';
+import Result from '@/_components/Result.vue';
 
 const PADDING_LENGTH = 30;
 
 export default {
   name: 'Speech',
+  components: {
+    Result,
+  },
   mixins: [links],
   props: {
     speech: {
@@ -127,6 +153,7 @@ export default {
       event.preventDefault();
       this.hideQuote = true;
     },
+    mapVotes,
   },
 };
 </script>
@@ -294,17 +321,76 @@ export default {
   .quote {
     flex: 1;
 
-    ::selection {
-      background: $link-hover-background-hover;
-    }
-
     @include respond-to(desktop) {
       padding: 2px 8px 0 8px;
+    }
+
+    .speech-text {
+      ::selection {
+        background: $link-hover-background-hover;
+      }
     }
   }
 
   .everything {
     display: block;
+
+    .votes {
+      margin-top: 20px;
+
+      .vote {
+        display: flex;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        background-color: $link-hover-background;
+
+        .title-col {
+          flex: 1;
+          padding-right: 14px;
+          border-right: 1px solid $font-placeholder;
+          margin-right: 14px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .vote-title {
+            font-weight: 300;
+          }
+
+          .vote-link {
+            font-size: 12px;
+            margin-top: 7px;
+          }
+        }
+
+        .result-col {
+          display: flex;
+
+          :deep(.donut-chart) {
+            margin: 0;
+            width: 42px;
+            height: 42px;
+            background-size: 30px 30px;
+          }
+
+          :deep(.text-container) {
+            margin: 0 0 0 14px;
+            width: 66px;
+
+            .percentage {
+              font-size: 24px;
+              line-height: 1.1;
+            }
+
+            .text {
+              font-size: 14px;
+              line-height: 1.1;
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .quote {

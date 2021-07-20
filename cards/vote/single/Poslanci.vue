@@ -15,7 +15,7 @@
         />
       </div>
       <result
-        :score="result.value"
+        :score="result.max_option_percentage"
         :option="result.max_option"
         :chart-data="mapVotes(allVotes)"
       />

@@ -6,7 +6,7 @@
     />
     <div class="text-container">
       <div v-if="option !== 'cant_compute'" class="percentage">
-        {{ Math.round(score) }} %
+        {{ formatNumber(score) }}
       </div>
       <div class="text">{{ translatedOption }}</div>
     </div>
@@ -15,6 +15,7 @@
 
 <script>
 import DonutChart from '@/_components/DonutChart.vue';
+import numberFormatter from '@/_helpers/numberFormatter.js';
 
 export default {
   name: 'GlasovanjeSejeResult',
@@ -49,6 +50,11 @@ export default {
         default:
           return '';
       }
+    },
+  },
+  methods: {
+    formatNumber(number) {
+      return numberFormatter(number, 0, true);
     },
   },
 };
