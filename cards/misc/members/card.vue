@@ -88,12 +88,12 @@ const analysesIDs = [
   {
     id: 'speeches_per_session',
   },
-  {
-    id: 'spoken_words',
-  },
-  {
-    id: 'mismatch_of_pg',
-  },
+  // {
+  //   id: 'spoken_words',
+  // },
+  // {
+  //   id: 'mismatch_of_pg',
+  // },
 ];
 
 export default {
