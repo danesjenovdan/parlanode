@@ -270,7 +270,7 @@ export default {
   overflow: auto;
 
   @include respond-to(desktop) {
-    height: 394.5px;
+    height: 453px - 65;
   }
 
   .person-name,
