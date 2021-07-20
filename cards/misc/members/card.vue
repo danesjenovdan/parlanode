@@ -11,7 +11,7 @@
           <div class="col-md-12 filters">
             <search-field v-model="textFilter" class="filter text-filter" />
             <p-search-dropdown
-              v-model="parties"
+              v-model="groups"
               :placeholder="partiesPlaceholder"
               class="filter parties"
             />
@@ -26,14 +26,12 @@
               class="filter district"
             /> -->
             <div class="genders filter">
-              <striped-icon-button
+              <striped-button
                 v-for="gender in genders"
                 :key="gender.id"
-                :color="'funblue'"
                 :selected="selectedGenders.indexOf(gender.id) > -1"
-                :icon="gender.icon"
-                :stripe-position="'top'"
-                class="gender"
+                :class="['gender', gender.icon]"
+                color="for"
                 @click="selectGender(gender.id)"
               />
             </div>
@@ -64,7 +62,7 @@ import { defaultOgImage } from '@/_mixins/ogImages.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import SearchField from '@/_components/SearchField.vue';
-import StripedIconButton from '@/_components/StripedIconButton.vue';
+import StripedButton from '@/_components/StripedButton.vue';
 import InnerCard from './InnerCard.vue';
 
 function getAge(date) {
@@ -103,7 +101,7 @@ export default {
     InnerCard,
     PSearchDropdown,
     SearchField,
-    StripedIconButton,
+    StripedButton,
   },
   mixins: [common],
   cardInfo: {
@@ -121,24 +119,24 @@ export default {
     });
 
     const genders = [
-      { id: 'he', icon: 'm', label: 'moški', selected: false },
-      { id: 'she', icon: 'f', label: 'ženski', selected: false },
+      { id: 'he', icon: 'gender-m', label: 'moški', selected: false },
+      { id: 'she', icon: 'gender-f', label: 'ženski', selected: false },
     ];
 
     const members = this.cardData.data?.results || [];
 
-    const selectedParties = this.cardState.parties || [];
-    const parties = uniqBy(
+    const selectedGroups = this.cardState.groups || [];
+    const groups = uniqBy(
       members.map((m) => m.group).filter(Boolean),
       'slug'
     ).map((g) => ({
       id: g.slug,
+      slug: g.slug,
       label: g.name,
-      acronym: g.acronym,
-      selected: selectedParties.includes(g.acronym),
-      colorClass: `${g.acronym
-        .toLowerCase()
-        .replace(/[ +,]/g, '_')}-background`,
+      selected: selectedGroups.includes(g.slug),
+      // colorClass: `${g.acronym
+      //   .toLowerCase()
+      //   .replace(/[ +,]/g, '_')}-background`,
     }));
 
     const analyses = analysesIDs.map((a) => ({
@@ -161,7 +159,7 @@ export default {
       currentSortOrder: this.cardState.sortOrder || 'asc',
       currentPage: this.cardState.page || 1,
       analyses,
-      parties,
+      groups,
       textFilter: this.cardState.textFilter || '',
       districts,
       workingBodies: [],
@@ -179,8 +177,8 @@ export default {
       return find(this.analyses, { id: this.currentAnalysis });
     },
     partiesPlaceholder() {
-      return this.selectedParties.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedParties.length })
+      return this.selectedGroups.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedGroups.length })
         : this.$t('select-parties-placeholder');
     },
     workingBodyPlaceholder() {
@@ -211,8 +209,8 @@ export default {
         }`,
       });
     },
-    selectedParties() {
-      return this.parties.filter((party) => party.selected);
+    selectedGroups() {
+      return this.groups.filter((party) => party.selected);
     },
     selectedWorkingBodies() {
       return this.workingBodies
@@ -239,8 +237,8 @@ export default {
       if (this.currentSortOrder !== 'asc') {
         parameters.sortOrder = this.currentSortOrder;
       }
-      if (this.selectedParties.length > 0) {
-        parameters.parties = this.selectedParties.map((party) => party.acronym);
+      if (this.selectedGroups.length > 0) {
+        parameters.groups = this.selectedGroups.map((party) => party.slug);
       }
       if (this.selectedGenders.length > 0) {
         parameters.genders = this.selectedGenders;
@@ -276,12 +274,12 @@ export default {
           if (lowerTextFilter) {
             textMatch = member.name.toLowerCase().includes(lowerTextFilter);
           }
-          if (this.selectedParties.length > 0) {
+          if (this.selectedGroups.length > 0) {
+            console.log(member.group?.slug, this.selectedGroups);
             partyMatch =
-              member.group?.acronym &&
-              this.selectedParties.find(
-                (p) => p.acronym === member.group?.acronym
-              ) != null;
+              member.group?.slug &&
+              this.selectedGroups.find((p) => p.slug === member.group?.slug) !=
+                null;
           }
           if (this.selectedDistricts.length > 0) {
             districtMatch = member.person.district.reduce(
@@ -355,8 +353,8 @@ export default {
             b = memberB.formattedDistrict;
             return a.localeCompare(b, 'sl');
           case 'party':
-            a = memberA.person.party.acronym;
-            b = memberB.person.party.acronym;
+            a = (memberA.group?.name || '').toLowerCase();
+            b = (memberB.group?.name || '').toLowerCase();
             return a.localeCompare(b, 'sl');
           case 'education':
             a = parseFloat(
@@ -463,9 +461,20 @@ export default {
 
     .gender {
       width: 40px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50%;
 
       &:not(:last-child) {
         margin-right: 3px;
+      }
+
+      &.gender-m {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M63.472,6.5v10l12.957,0L63.584,29.345c-6.145-4.641-13.592-7.157-21.429-7.157c-9.524,0-18.479,3.709-25.214,10.444  C3.042,46.534,3.042,69.154,16.942,83.057C23.678,89.791,32.632,93.5,42.155,93.5c9.524,0,18.479-3.709,25.214-10.444  c12.7-12.702,13.789-32.677,3.281-46.636L83.5,23.571l-0.001,12.956h10L93.5,6.5L63.472,6.5z M60.298,75.985  C55.451,80.831,49.009,83.5,42.155,83.5c-6.853,0-13.296-2.669-18.142-7.514c-10.002-10.003-10.002-26.28-0.001-36.283  c4.847-4.846,11.289-7.515,18.143-7.515s13.296,2.668,18.142,7.515C70.3,49.706,70.3,65.982,60.298,75.985z"/></svg>');
+      }
+
+      &.gender-f {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M82.301,35.467C82.3,17.656,67.81,3.166,50.001,3.166c-17.812,0-32.302,14.49-32.302,32.301  c0,16.11,11.856,29.502,27.301,31.912v8.171h-9.189v10H45v8.284h10V85.55h9.189v-10H55v-8.171  C70.444,64.969,82.301,51.577,82.301,35.467z M27.699,35.467c0-12.297,10.005-22.301,22.302-22.301  c12.295,0,22.299,10.004,22.3,22.301c0,12.297-10.004,22.301-22.301,22.301S27.699,47.764,27.699,35.467z"/></svg>');
       }
     }
   }
