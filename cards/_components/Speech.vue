@@ -51,11 +51,16 @@
       <div class="quote-button">“</div>
     </div>
     <div class="links">
-      <a :href="getSpeechLink(speech, session)" class="link"></a>
+      <a
+        :href="getSpeechLink(speech, session)"
+        class="link"
+        :title="$t('speech-link')"
+      ></a>
       <a
         v-if="!showSession"
         :href="getSpeechCardLink(speech)"
         class="share"
+        :title="$t('speech-card-link')"
       ></a>
     </div>
   </div>
