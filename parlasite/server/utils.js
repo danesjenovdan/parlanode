@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const _ = require('lodash');
 const fetch = require('node-fetch');
-const { urls } = require('../config');
+const { urls, locale } = require('../config');
 
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
@@ -38,7 +38,7 @@ async function fetchCard(cardPath, id, params = {}) {
 
   params.template = 'site';
 
-  params.locale = 'sl-obcine';
+  params.locale = locale;
   // TODO forward locale from page
   // if (this.req.query.lang) {
   //   params.lang = this.req.query.lang;

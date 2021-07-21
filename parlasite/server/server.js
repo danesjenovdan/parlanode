@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const config = require('../config');
 const { i18n: _i18n, asyncRender: ar } = require('./utils');
 
-const i18n = _i18n(config.siteLang);
+const i18n = _i18n(config.locale);
 
 const app = express();
 
@@ -22,7 +22,7 @@ function setupExpress() {
     app.set('view options', {
       async: true,
     });
-    app.locals.lang = config.siteLang;
+    app.locals.lang = config.locale;
     app.locals.i18n = i18n;
     app.locals.config = config;
     app.locals.sm = config.siteMap;
