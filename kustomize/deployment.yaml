@@ -14,8 +14,6 @@ spec:
       labels:
         app: parlacards
     spec:
-      securityContext:
-        fsGroup: 1000
       containers:
         - name: parlacards
           image: parlacards
