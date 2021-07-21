@@ -21,3 +21,10 @@ spec:
           image: parlasite-ua
           ports:
             - containerPort: 3066
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 200m
+            limits:
+              memory: 100Mi
+              cpu: 200m
