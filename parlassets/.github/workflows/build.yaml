@@ -2,7 +2,7 @@ name: Publish Docker image
 on:
   push:
     branches:
-      - 'ljubljana'
+      - 'ua'
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -27,7 +27,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: rg.fr-par.scw.cloud/djnd/parlassets-ljubljana:${{ github.sha }}
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parlassets-ua:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlassets-ua:latest
       -
         name: Update image versions in kustomize/kustomization.yaml
         run: |
