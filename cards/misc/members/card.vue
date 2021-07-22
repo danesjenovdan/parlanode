@@ -9,7 +9,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 filters">
-            <search-field v-model="textFilter" class="filter text-filter" />
+            <search-field v-model="textFilter" />
             <p-search-dropdown
               v-model="groups"
               :placeholder="partiesPlaceholder"
@@ -451,7 +451,7 @@ export default {
     flex: 1;
   }
 
-  .filter.search-field {
+  .search-field {
     flex: 1.2;
   }
 
@@ -482,7 +482,7 @@ export default {
   @include respond-to(mobile) {
     flex-wrap: wrap;
 
-    .filter.search-field {
+    .search-field {
       flex-basis: auto;
       order: 1;
       margin-top: 5px;

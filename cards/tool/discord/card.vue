@@ -7,7 +7,7 @@
     <div class="filters">
       <div class="filter text-filter">
         <div v-t="'title-search'" class="filter-label"></div>
-        <input v-model="textFilter" class="text-filter-input" type="text" />
+        <search-field v-model="textFilter" />
       </div>
       <div class="filter type-dropdown">
         <div v-t="'parties'" class="filter-label"></div>
@@ -135,6 +135,7 @@ import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
+import SearchField from '@/_components/SearchField.vue';
 import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
 // import axios from 'axios';
 
@@ -146,6 +147,7 @@ export default {
     StripedButton,
     Toggle,
     ScrollShadow,
+    SearchField,
   },
   mixins: [common, links],
   cardInfo: {
@@ -471,20 +473,6 @@ export default {
 
     @include respond-to(desktop) {
       width: 26%;
-    }
-
-    .text-filter-input {
-      background-image: url('#{get-parlassets-url()}/icons/search.svg');
-      background-size: 24px 24px;
-      background-repeat: no-repeat;
-      background-position: right 9px center;
-      border: 1px solid $font-placeholder;
-      font-size: 16px;
-      height: 51px;
-      line-height: 25px;
-      outline: none;
-      padding: 12px 42px 12px 14px;
-      width: 100%;
     }
   }
 
