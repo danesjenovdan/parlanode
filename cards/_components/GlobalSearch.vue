@@ -95,6 +95,10 @@ export default {
 <style lang="scss" scoped>
 @import 'parlassets/scss/colors';
 
+:deep(.card-container.transparent) {
+  z-index: 1;
+}
+
 :deep(.search-dropdown) {
   .search-dropdown-input {
     background-color: $white;
