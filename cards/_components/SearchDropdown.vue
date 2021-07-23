@@ -1,10 +1,6 @@
 <template>
   <div
-    v-click-outside="
-      function () {
-        toggleDropdown(false);
-      }
-    "
+    v-click-outside="() => toggleDropdown(false)"
     :class="['search-dropdown', { small: small }]"
   >
     <div
@@ -80,19 +76,28 @@ export default {
   directives: {
     clickOutside: {
       beforeMount(el, binding) {
-        const handler = (e) => {
-          if (!el.contains(e.target) && el !== e.target) {
+        let mouseDownWasOutside = false;
+        const isOutside = (targetElement) => {
+          return !el.contains(targetElement) && el !== targetElement;
+        };
+        const onMouseDown = (e) => {
+          mouseDownWasOutside = isOutside(e.target);
+        };
+        const onClick = (e) => {
+          if (mouseDownWasOutside && isOutside(e.target)) {
             binding.value(e);
           }
         };
-        // eslint-disable-next-line no-param-reassign
-        el.vueClickOutside = handler;
-        document.addEventListener('click', handler);
+        el.vco_onMouseDown = onMouseDown;
+        el.vco_onClick = onClick;
+        document.addEventListener('mousedown', onMouseDown);
+        document.addEventListener('click', onClick);
       },
       unmounted(el) {
-        document.removeEventListener('click', el.vueClickOutside);
-        // eslint-disable-next-line no-param-reassign
-        el.vueClickOutside = null;
+        document.removeEventListener('mousedown', el.vco_onMouseDown);
+        document.removeEventListener('click', el.vco_onClick);
+        el.vco_onMouseDown = undefined;
+        el.vco_onClick = undefined;
       },
     },
   },
@@ -317,9 +322,6 @@ export default {
       this.$emit('update:modelValue', newItems);
     },
     toggleDropdown(state) {
-      // if (state === false) {
-      //   this.localFilter = '';
-      // }
       this.active = state;
     },
     clearSelection() {

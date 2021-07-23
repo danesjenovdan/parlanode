@@ -1,6 +1,6 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
-    <person-list :people="cardData.data?.results?.members || []" />
+    <person-list :people="people" />
   </card-wrapper>
 </template>
 
@@ -18,5 +18,15 @@ export default {
     PersonList,
   },
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage],
+  data() {
+    const people = (this.cardData.data?.results || []).slice().sort((a, b) => {
+      const aName = a.name || '';
+      const bName = b.name || '';
+      return aName.localeCompare(bName, 'sl');
+    });
+    return {
+      people,
+    };
+  },
 };
 </script>

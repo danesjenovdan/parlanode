@@ -3,7 +3,6 @@
     <p-search-dropdown
       :model-value="allItems"
       :placeholder="$t('search_placeholder')"
-      :single="false"
       :groups="dropdownGroups"
       :filter="filter"
       @select="selectCallback"
@@ -13,7 +12,6 @@
 </template>
 
 <script>
-import { uniqBy } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
@@ -26,12 +24,8 @@ export default {
   },
   mixins: [common, links],
   data() {
-    const people = this.cardData.data?.results || [];
-
-    const parties = uniqBy(
-      people.map((person) => person?.group).filter((party) => party?.slug),
-      (party) => party.slug
-    );
+    const people = this.cardData.data?.results?.people || [];
+    const groups = this.cardData.data?.results?.groups || [];
 
     const peopleItems = people.map((person) => ({
       id: person.slug,
@@ -40,29 +34,29 @@ export default {
       selected: false,
     }));
 
-    const partyItems = parties.map((party) => ({
-      id: party.slug,
-      label: party.name,
+    const groupItems = groups.map((group) => ({
+      id: group.slug,
+      label: group.name,
       colorClass: 'xxx',
-      //   colorClass: `${group[0].person.party.acronym
+      //   colorClass: `${group[0].person.group.acronym
       //     .toLowerCase()
       //     .replace(/[ +,]/g, '_')}-background`,
       selected: false,
     }));
 
-    const allItems = [...partyItems, ...peopleItems];
+    const allItems = [...groupItems, ...peopleItems];
 
     const dropdownGroups = [
       {
-        id: 'parties',
+        id: 'groups',
         label: this.$t('parties'),
-        items: parties.map((party) => party.slug),
+        items: groups.map((group) => group.slug),
       },
-      ...parties.map((party) => ({
-        id: party.slug,
-        label: party.name,
+      ...groups.map((group) => ({
+        id: group.slug,
+        label: group.name,
         items: people
-          .filter((person) => person?.group?.slug === party.slug)
+          .filter((person) => person?.group?.slug === group.slug)
           .map((person) => person.slug),
       })),
     ];
@@ -71,7 +65,7 @@ export default {
 
     return {
       people,
-      parties,
+      groups,
       allItems,
       dropdownGroups,
       filter: initialFilter,
@@ -86,9 +80,9 @@ export default {
         window.location.href = `${urls.site}/${sm.member.base}/${person.slug}`;
         return;
       }
-      const party = this.parties.find((p) => p.slug === itemId);
-      if (party) {
-        window.location.href = `${urls.site}/${sm.party.base}/${party.slug}`;
+      const group = this.groups.find((g) => g.slug === itemId);
+      if (group) {
+        window.location.href = `${urls.site}/${sm.party.base}/${group.slug}`;
       }
     },
     searchCallback(term) {
