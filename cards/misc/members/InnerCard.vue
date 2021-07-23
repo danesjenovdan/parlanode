@@ -31,9 +31,9 @@ export default {
   },
   mixins: [common, links, memberList],
   props: {
-    demographics: {
-      type: Boolean,
-      default: false,
+    currentAnalysis: {
+      type: String,
+      default: 'demographics',
     },
     currentSort: {
       type: String,
@@ -68,7 +68,7 @@ export default {
       return this.mappedMembers.slice(start, end);
     },
     mappedMembers() {
-      if (this.demographics) {
+      if (this.currentAnalysis === 'demographics') {
         return this.processedMembers.map((member) => [
           {
             link: this.getPersonLink(member),
@@ -83,6 +83,18 @@ export default {
             text: member.group?.acronym || member.group?.name || 'N/A',
           },
           // member.formattedDistrict,
+        ]);
+      }
+      if (this.currentAnalysis === 'working_bodies') {
+        return this.processedMembers.map((member) => [
+          {
+            link: this.getPersonLink(member),
+            image: this.getPersonPortrait(member),
+          },
+          { link: this.getPersonLink(member), text: member.name },
+          {
+            text: member.workingBodies.map((wb) => wb.name).join(', '),
+          },
         ]);
       }
       return this.processedMembers.map((member) => [
@@ -100,9 +112,9 @@ export default {
       ]);
     },
     columns() {
-      if (this.demographics) {
+      if (this.currentAnalysis === 'demographics') {
         return [
-          { id: 'image', label: '', additionalClass: 'portrait' },
+          { id: 'image', label: 'image', additionalClass: 'portrait' },
           { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
           { id: 'age', label: this.$t('age') },
           {
@@ -115,7 +127,11 @@ export default {
             label: this.$t('number-of-terms'),
             additionalClass: 'optional',
           },
-          { id: 'party', label: this.$t('party'), additionalClass: 'optional' },
+          {
+            id: 'party',
+            label: this.$t('party'),
+            additionalClass: 'optional',
+          },
           // {
           //   id: 'district',
           //   label: this.$t('district'),
@@ -123,8 +139,19 @@ export default {
           // },
         ];
       }
+      if (this.currentAnalysis === 'working_bodies') {
+        return [
+          { id: 'image', label: 'image', additionalClass: 'portrait' },
+          { id: 'name', label: this.$t('name'), additionalClass: 'name' },
+          {
+            id: 'working-bodies',
+            label: this.$t('working-bodies'),
+            additionalClass: 'wider working-bodies-col',
+          },
+        ];
+      }
       return [
-        { id: 'image', label: '', additionalClass: 'portrait' },
+        { id: 'image', label: 'image', additionalClass: 'portrait' },
         { id: 'name', label: this.$t('name'), additionalClass: 'name' },
         {
           id: 'analysis',
@@ -161,19 +188,39 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
-.person-list .headers .column {
-  white-space: normal;
-  color: $font-default;
+.person-list :deep(.column) {
+  &.name,
+  &.working-bodies-col,
+  &.barchartcontainer {
+    text-align: left;
+  }
+
+  &.barchartcontainer {
+    @include respond-to(mobile) {
+      display: none;
+    }
+  }
 }
 
-.person-list .headers .barchartcontainer,
-.person-list .item .barchartcontainer {
-  @include respond-to(mobile) {
-    display: none;
+.person-list :deep(.headers) {
+  margin-left: 0;
+
+  .column.portrait {
+    flex: none;
+    width: 80px + 18px - 16px;
+    visibility: hidden;
+  }
+}
+
+.person-list :deep(.headers) {
+  height: 40px;
+
+  .column {
+    white-space: normal;
   }
 }
 </style>

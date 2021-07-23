@@ -44,7 +44,7 @@
       :current-sort="currentSort"
       :current-sort-order="currentSortOrder"
       :current-page="currentPage"
-      :demographics="currentAnalysis === 'demographics'"
+      :current-analysis="currentAnalysis"
       @sort="sortBy"
       @page-change="onPageChange"
     />
@@ -92,6 +92,9 @@ const analysesIDs = [
   // {
   //   id: 'mismatch_of_pg',
   // },
+  {
+    id: 'working_bodies',
+  },
 ];
 
 export default {
@@ -266,6 +269,9 @@ export default {
       if (this.selectedDistricts.length > 0) {
         parameters.districts = this.selectedDistricts;
       }
+      if (this.selectedWorkingBodies.length > 0) {
+        parameters.workingBodies = this.selectedWorkingBodies;
+      }
       if (this.currentPage > 1) {
         parameters.page = this.currentPage;
       }
@@ -346,7 +352,10 @@ export default {
           const education = newMember.results?.education;
           newMember.education = String(education || 0);
           newMember.terms = newMember.results?.mandates || 1;
-          if (this.currentAnalysis !== 'demographics') {
+          if (this.currentAnalysis === 'working_bodies') {
+            const wbs = newMember.results?.working_bodies || [];
+            newMember.workingBodies = wbs.filter(Boolean);
+          } else if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results?.[this.currentAnalysis] || 0;
             const formattedScore = numberFormatter(
               score,
@@ -430,7 +439,7 @@ export default {
   },
   watch: {
     currentAnalysis(newValue) {
-      if (newValue === 'demographics') {
+      if (newValue === 'demographics' || newValue === 'working_bodies') {
         this.currentSort = 'name';
         this.currentSortOrder = 'asc';
       } else {
