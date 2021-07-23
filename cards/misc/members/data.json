@@ -1,6 +1,4 @@
 {
-  "url": "data.json",
-  "error": false,
   "data": {
     "results": [
       {
@@ -8,7 +6,7 @@
         "name": "dr. Dragan Matić",
         "honorific_prefix": null,
         "honorific_suffix": null,
-        "preferred_pronoun": "he",
+        "preferred_pronoun": null,
         "group": {
           "name": "Svetniški klub samostojnih svetnikov ",
           "acronym": "",
@@ -16,15 +14,23 @@
         },
         "image": null,
         "results": {
-          "mandates": 2,
-          "speeches_per_session": 1.95652173913043,
-          "number_of_questions": 23.0,
-          "mismatch_of_pg": 35.5,
-          "presence_votes": 45.0,
-          "birth_date": "1969-12-12T12:00:00",
-          "education": "VII/2",
-          "spoken_words": 12449.0,
-          "vocabulary_size": 0.00132041097493129
+          "mandates": null,
+          "speeches_per_session": 2.04,
+          "number_of_questions": 30.0,
+          "mismatch_of_pg": 35.4260089686099,
+          "presence_votes": 43.4977578475336,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 14838.0,
+          "vocabulary_size": 0.0011820920687833,
+          "working_bodies": [
+            {
+              "name": "Odbor za kulturo in raziskovalno dejavnost",
+              "acronym": "",
+              "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost"
+            },
+            null
+          ]
         }
       },
       {
@@ -40,16 +46,16 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
           "speeches_per_session": 0.0,
-          "number_of_questions": 0.0,
+          "number_of_questions": 2.0,
           "mismatch_of_pg": 0.0,
           "presence_votes": 0.0,
           "birth_date": null,
           "education": null,
           "spoken_words": 0.0,
-          "vocabulary_size": 0.0
+          "vocabulary_size": 0.0,
+          "working_bodies": []
         }
       },
       {
@@ -57,7 +63,7 @@
         "name": "mag. Katja Damij",
         "honorific_prefix": null,
         "honorific_suffix": null,
-        "preferred_pronoun": "she",
+        "preferred_pronoun": null,
         "group": {
           "name": "Svetniški klub samostojnih svetnikov ",
           "acronym": "",
@@ -65,16 +71,16 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.0,
-          "number_of_questions": 2.0,
-          "mismatch_of_pg": 31.75,
-          "presence_votes": 49.25,
+          "speeches_per_session": 0.0416666666666667,
+          "number_of_questions": 3.0,
+          "mismatch_of_pg": 32.0627802690583,
+          "presence_votes": 46.8609865470852,
           "birth_date": null,
           "education": null,
           "spoken_words": 7.0,
-          "vocabulary_size": 0.0
+          "vocabulary_size": 0.545454545454545,
+          "working_bodies": []
         }
       },
       {
@@ -90,16 +96,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.956521739130435,
+          "speeches_per_session": 1.32,
           "number_of_questions": 9.0,
-          "mismatch_of_pg": 15.75,
-          "presence_votes": 83.5,
+          "mismatch_of_pg": 16.8161434977578,
+          "presence_votes": 82.7354260089686,
           "birth_date": null,
           "education": null,
-          "spoken_words": 4415.0,
-          "vocabulary_size": 0.00596799198051078
+          "spoken_words": 4822.0,
+          "vocabulary_size": 0.00504021682112257,
+          "working_bodies": [
+            {
+              "name": "Komisija za poimenovanje naselij in ulic",
+              "acronym": "",
+              "slug": "28-komisija-za-poimenovanje-naselij-in-ulic"
+            },
+            {
+              "name": "Odbor za predšolsko vzgojo in izobraževanje",
+              "acronym": "",
+              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje"
+            },
+            {
+              "name": "Odbor za lokalno samoupravo",
+              "acronym": "",
+              "slug": "40-odbor-za-lokalno-samoupravo"
+            }
+          ]
         }
       },
       {
@@ -115,41 +137,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 1.78260869565217,
+          "speeches_per_session": 1.88,
           "number_of_questions": 7.0,
-          "mismatch_of_pg": 8.5,
-          "presence_votes": 88.25,
+          "mismatch_of_pg": 8.74439461883408,
+          "presence_votes": 88.3408071748879,
           "birth_date": null,
           "education": null,
-          "spoken_words": 4154.0,
-          "vocabulary_size": 0.00542120677031741
-        }
-      },
-      {
-        "slug": "230-ana-zagozen",
-        "name": "Ana Zagožen",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Slovenska demokratska stranka ",
-          "acronym": "",
-          "slug": "21-slovenska-demokratska-stranka"
-        },
-        "image": null,
-        "results": {
-          "gender": null,
-          "mandates": null,
-          "speeches_per_session": 0.391304347826087,
-          "number_of_questions": 10.0,
-          "mismatch_of_pg": 26.0,
-          "presence_votes": 72.5,
-          "birth_date": null,
-          "education": null,
-          "spoken_words": 1554.0,
-          "vocabulary_size": 0.0378975265017668
+          "spoken_words": 4273.0,
+          "vocabulary_size": 0.00479217686643234,
+          "working_bodies": [
+            {
+              "name": "Uredniški odbor glasila Ljubljana",
+              "acronym": "",
+              "slug": "25-uredniski-odbor-glasila-ljubljana"
+            },
+            {
+              "name": "Odbor za ravnanje z nepremičninami",
+              "acronym": "",
+              "slug": "38-odbor-za-ravnanje-z-nepremicninami"
+            }
+          ]
         }
       },
       {
@@ -165,16 +173,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 2.21739130434783,
-          "number_of_questions": 8.0,
-          "mismatch_of_pg": 9.5,
-          "presence_votes": 88.0,
+          "speeches_per_session": 2.44,
+          "number_of_questions": 10.0,
+          "mismatch_of_pg": 10.762331838565,
+          "presence_votes": 87.4439461883408,
           "birth_date": null,
           "education": null,
-          "spoken_words": 6888.0,
-          "vocabulary_size": 0.00284074681939171
+          "spoken_words": 7305.0,
+          "vocabulary_size": 0.00289389767968725,
+          "working_bodies": [
+            {
+              "name": "Komisija za priznanja",
+              "acronym": "",
+              "slug": "27-komisija-za-priznanja"
+            },
+            {
+              "name": "Odbor za zaščito, reševanje in civilno obrambo",
+              "acronym": "",
+              "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo"
+            }
+          ]
         }
       },
       {
@@ -190,41 +209,22 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.444444444444444,
+          "speeches_per_session": 0.5,
           "number_of_questions": 3.0,
-          "mismatch_of_pg": 15.0753768844221,
-          "presence_votes": 82.4120603015075,
+          "mismatch_of_pg": 14.7465437788018,
+          "presence_votes": 83.4101382488479,
           "birth_date": null,
           "education": null,
           "spoken_words": 146.0,
-          "vocabulary_size": 0.172413793103448
-        }
-      },
-      {
-        "slug": "236-asta-vrecko",
-        "name": "Asta Vrečko",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Levica ",
-          "acronym": "",
-          "slug": "20-levica"
-        },
-        "image": null,
-        "results": {
-          "gender": null,
-          "mandates": null,
-          "speeches_per_session": 0.0,
-          "number_of_questions": 0.0,
-          "mismatch_of_pg": 0.0,
-          "presence_votes": 0.0,
-          "birth_date": null,
-          "education": null,
-          "spoken_words": 0.0,
-          "vocabulary_size": 0.0
+          "vocabulary_size": 0.21259842519685,
+          "working_bodies": [
+            {
+              "name": "Odbor za varstvo okolja",
+              "acronym": "",
+              "slug": "34-odbor-za-varstvo-okolja"
+            }
+          ]
         }
       },
       {
@@ -240,16 +240,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 1.40909090909091,
+          "speeches_per_session": 1.34782608695652,
           "number_of_questions": 3.0,
-          "mismatch_of_pg": 29.75,
-          "presence_votes": 84.5,
+          "mismatch_of_pg": 35.6502242152466,
+          "presence_votes": 80.7174887892377,
           "birth_date": null,
           "education": null,
           "spoken_words": 5286.0,
-          "vocabulary_size": 0.00459310581286652
+          "vocabulary_size": 0.00459310581286652,
+          "working_bodies": [
+            {
+              "name": "Komisija za poimenovanje naselij in ulic",
+              "acronym": "",
+              "slug": "28-komisija-za-poimenovanje-naselij-in-ulic"
+            },
+            {
+              "name": "Odbor za varstvo okolja",
+              "acronym": "",
+              "slug": "34-odbor-za-varstvo-okolja"
+            },
+            {
+              "name": "Odbor za gospodarske javne službe in promet",
+              "acronym": "",
+              "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet"
+            }
+          ]
         }
       },
       {
@@ -265,41 +281,16 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
           "speeches_per_session": 0.0,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 17.75,
-          "presence_votes": 85.5,
+          "mismatch_of_pg": 17.9372197309417,
+          "presence_votes": 86.7713004484305,
           "birth_date": null,
           "education": null,
           "spoken_words": 0.0,
-          "vocabulary_size": 0.0
-        }
-      },
-      {
-        "slug": "242-bruna-antauer",
-        "name": "Bruna Antauer",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
-        },
-        "image": null,
-        "results": {
-          "gender": null,
-          "mandates": null,
-          "speeches_per_session": 0.0,
-          "number_of_questions": 0.0,
-          "mismatch_of_pg": 15.25,
-          "presence_votes": 88.25,
-          "birth_date": null,
-          "education": null,
-          "spoken_words": 0.0,
-          "vocabulary_size": 0.0
+          "vocabulary_size": 0.0,
+          "working_bodies": []
         }
       },
       {
@@ -315,16 +306,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.217391304347826,
+          "speeches_per_session": 0.24,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 15.0,
-          "presence_votes": 89.0,
+          "mismatch_of_pg": 15.695067264574,
+          "presence_votes": 89.6860986547085,
           "birth_date": null,
           "education": null,
           "spoken_words": 1444.0,
-          "vocabulary_size": 0.030514983199616
+          "vocabulary_size": 0.024896265560166,
+          "working_bodies": [
+            {
+              "name": "Komisija za priznanja",
+              "acronym": "",
+              "slug": "27-komisija-za-priznanja"
+            },
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            },
+            {
+              "name": "Odbor za predšolsko vzgojo in izobraževanje",
+              "acronym": "",
+              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje"
+            }
+          ]
         }
       },
       {
@@ -340,16 +347,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 1.04545454545455,
+          "speeches_per_session": 1.0,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 24.75,
-          "presence_votes": 79.0,
+          "mismatch_of_pg": 24.2152466367713,
+          "presence_votes": 80.9417040358744,
           "birth_date": null,
           "education": null,
-          "spoken_words": 626.0,
-          "vocabulary_size": 0.0169905879476837
+          "spoken_words": 674.0,
+          "vocabulary_size": 0.0159111721611722,
+          "working_bodies": [
+            {
+              "name": "Odbor za finance",
+              "acronym": "",
+              "slug": "23-odbor-za-finance"
+            },
+            {
+              "name": "Komisija za priznanja",
+              "acronym": "",
+              "slug": "27-komisija-za-priznanja"
+            },
+            {
+              "name": "Odbor za ravnanje z nepremičninami",
+              "acronym": "",
+              "slug": "38-odbor-za-ravnanje-z-nepremicninami"
+            }
+          ]
         }
       },
       {
@@ -365,16 +388,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
           "speeches_per_session": 1.0,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 5.5,
-          "presence_votes": 98.75,
+          "mismatch_of_pg": 6.72645739910314,
+          "presence_votes": 98.8789237668161,
           "birth_date": null,
           "education": null,
-          "spoken_words": 2023.0,
-          "vocabulary_size": 0.0128082386731182
+          "spoken_words": 2230.0,
+          "vocabulary_size": 0.0124604331005376,
+          "working_bodies": [
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            },
+            {
+              "name": "Odbor za ravnanje z nepremičninami",
+              "acronym": "",
+              "slug": "38-odbor-za-ravnanje-z-nepremicninami"
+            },
+            {
+              "name": "Odbor za predšolsko vzgojo in izobraževanje",
+              "acronym": "",
+              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje"
+            }
+          ]
         }
       },
       {
@@ -390,16 +429,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
           "speeches_per_session": 0.0,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 4.0,
-          "presence_votes": 98.5,
+          "mismatch_of_pg": 5.38116591928251,
+          "presence_votes": 98.6547085201794,
           "birth_date": null,
           "education": null,
           "spoken_words": 0.0,
-          "vocabulary_size": 0.0
+          "vocabulary_size": 0.0,
+          "working_bodies": [
+            {
+              "name": "Odbor za finance",
+              "acronym": "",
+              "slug": "23-odbor-za-finance"
+            },
+            {
+              "name": "Odbor za zaščito, reševanje in civilno obrambo",
+              "acronym": "",
+              "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo"
+            }
+          ]
         }
       },
       {
@@ -415,16 +465,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 8.0,
+          "speeches_per_session": 8.28,
           "number_of_questions": 1.0,
-          "mismatch_of_pg": 3.75,
-          "presence_votes": 98.75,
+          "mismatch_of_pg": 5.38116591928251,
+          "presence_votes": 98.6547085201794,
           "birth_date": null,
           "education": null,
-          "spoken_words": 7678.0,
-          "vocabulary_size": 0.00159541957287697
+          "spoken_words": 8022.0,
+          "vocabulary_size": 0.00138797920461756,
+          "working_bodies": [
+            {
+              "name": "Uredniški odbor glasila Ljubljana",
+              "acronym": "",
+              "slug": "25-uredniski-odbor-glasila-ljubljana"
+            },
+            {
+              "name": "Statutarno pravna komisija",
+              "acronym": "",
+              "slug": "26-statutarno-pravna-komisija"
+            }
+          ]
         }
       },
       {
@@ -440,16 +501,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.0909090909090909,
+          "speeches_per_session": 0.0869565217391304,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 12.25,
-          "presence_votes": 90.5,
+          "mismatch_of_pg": 13.0044843049327,
+          "presence_votes": 91.2556053811659,
           "birth_date": null,
           "education": null,
           "spoken_words": 234.0,
-          "vocabulary_size": 0.10333048676345
+          "vocabulary_size": 0.10333048676345,
+          "working_bodies": [
+            {
+              "name": "Komisija za priznanja",
+              "acronym": "",
+              "slug": "27-komisija-za-priznanja"
+            },
+            {
+              "name": "Odbor za šport",
+              "acronym": "",
+              "slug": "36-odbor-za-sport"
+            }
+          ]
         }
       },
       {
@@ -465,16 +537,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.565217391304348,
+          "speeches_per_session": 0.583333333333333,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 23.75,
-          "presence_votes": 79.0,
+          "mismatch_of_pg": 23.0941704035874,
+          "presence_votes": 81.1659192825112,
           "birth_date": null,
           "education": null,
-          "spoken_words": 363.0,
-          "vocabulary_size": 0.0693205216197667
+          "spoken_words": 408.0,
+          "vocabulary_size": 0.0520059435364042,
+          "working_bodies": [
+            {
+              "name": "Odbor za urejanje prostora",
+              "acronym": "",
+              "slug": "35-odbor-za-urejanje-prostora"
+            },
+            {
+              "name": "Odbor za ravnanje z nepremičninami",
+              "acronym": "",
+              "slug": "38-odbor-za-ravnanje-z-nepremicninami"
+            },
+            {
+              "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+              "acronym": "",
+              "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo"
+            }
+          ]
         }
       },
       {
@@ -488,18 +576,131 @@
           "acronym": "",
           "slug": "22-lista-zorana-jankovica"
         },
-        "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-02-01_20-22-32.png",
+        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-02-01_20-22-32.png",
         "results": {
-          "gender": null,
           "mandates": null,
           "speeches_per_session": 0.0,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 6.0,
-          "presence_votes": 96.5,
+          "mismatch_of_pg": 8.74439461883408,
+          "presence_votes": 95.2914798206278,
           "birth_date": null,
           "education": null,
           "spoken_words": 0.0,
-          "vocabulary_size": 0.0
+          "vocabulary_size": 0.0,
+          "working_bodies": [
+            {
+              "name": "Komisija za mednarodne odnose",
+              "acronym": "",
+              "slug": "30-komisija-za-mednarodne-odnose"
+            },
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "236-asta-vrecko",
+        "name": "Asta Vrečko",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Levica ",
+          "acronym": "",
+          "slug": "20-levica"
+        },
+        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/grafit.jpeg",
+        "results": {
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 0.0,
+          "presence_votes": 0.0,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0,
+          "working_bodies": []
+        }
+      },
+      {
+        "slug": "242-bruna-antauer",
+        "name": "Bruna Antauer",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/bruna-antauer.png",
+        "results": {
+          "mandates": null,
+          "speeches_per_session": 0.0,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 15.4708520179372,
+          "presence_votes": 89.4618834080717,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 0.0,
+          "vocabulary_size": 0.0,
+          "working_bodies": [
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            },
+            {
+              "name": "Odbor za stanovanjsko politiko",
+              "acronym": "",
+              "slug": "37-odbor-za-stanovanjsko-politiko"
+            },
+            {
+              "name": "Odbor za predšolsko vzgojo in izobraževanje",
+              "acronym": "",
+              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "230-ana-zagozen",
+        "name": "Ana Zagožen",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png",
+        "results": {
+          "mandates": null,
+          "speeches_per_session": 0.52,
+          "number_of_questions": 13.0,
+          "mismatch_of_pg": 25.7847533632287,
+          "presence_votes": 73.3183856502242,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 1577.0,
+          "vocabulary_size": 0.0231490882508224,
+          "working_bodies": [
+            {
+              "name": "Komisija za mednarodne odnose",
+              "acronym": "",
+              "slug": "30-komisija-za-mednarodne-odnose"
+            },
+            {
+              "name": "Odbor za stanovanjsko politiko",
+              "acronym": "",
+              "slug": "37-odbor-za-stanovanjsko-politiko"
+            }
+          ]
         }
       },
       {
@@ -515,41 +716,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.652173913043478,
-          "number_of_questions": 7.0,
+          "speeches_per_session": 0.666666666666667,
+          "number_of_questions": 8.0,
           "mismatch_of_pg": 100.0,
-          "presence_votes": 71.5,
+          "presence_votes": 69.2825112107623,
           "birth_date": null,
           "education": null,
           "spoken_words": 5290.0,
-          "vocabulary_size": 0.00340532563067435
-        }
-      },
-      {
-        "slug": "223-masa-kociper",
-        "name": "Maša Kociper",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Svetniški klub samostojnih svetnikov ",
-          "acronym": "",
-          "slug": "18-svetniski-klub-samostojnih-svetnikov"
-        },
-        "image": null,
-        "results": {
-          "gender": null,
-          "mandates": null,
-          "speeches_per_session": 1.30434782608696,
-          "number_of_questions": 5.0,
-          "mismatch_of_pg": 43.75,
-          "presence_votes": 42.75,
-          "birth_date": null,
-          "education": null,
-          "spoken_words": 7616.0,
-          "vocabulary_size": 0.00205546983361278
+          "vocabulary_size": 0.00332677258516677,
+          "working_bodies": [
+            {
+              "name": "Komisija za mednarodne odnose",
+              "acronym": "",
+              "slug": "30-komisija-za-mednarodne-odnose"
+            },
+            {
+              "name": "Odbor za predšolsko vzgojo in izobraževanje",
+              "acronym": "",
+              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje"
+            }
+          ]
         }
       },
       {
@@ -565,16 +752,42 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 2.1304347826087,
-          "number_of_questions": 10.0,
-          "mismatch_of_pg": 14.75,
-          "presence_votes": 85.0,
+          "speeches_per_session": 2.12,
+          "number_of_questions": 11.0,
+          "mismatch_of_pg": 13.9013452914798,
+          "presence_votes": 85.8744394618834,
           "birth_date": null,
           "education": null,
-          "spoken_words": 11293.0,
-          "vocabulary_size": 0.00139630077484974
+          "spoken_words": 11764.0,
+          "vocabulary_size": 0.00125316073861577,
+          "working_bodies": [
+            {
+              "name": "Odbor za finance",
+              "acronym": "",
+              "slug": "23-odbor-za-finance"
+            },
+            {
+              "name": "Uredniški odbor glasila Ljubljana",
+              "acronym": "",
+              "slug": "25-uredniski-odbor-glasila-ljubljana"
+            },
+            {
+              "name": "Statutarno pravna komisija",
+              "acronym": "",
+              "slug": "26-statutarno-pravna-komisija"
+            },
+            {
+              "name": "Komisija za mednarodne odnose",
+              "acronym": "",
+              "slug": "30-komisija-za-mednarodne-odnose"
+            },
+            {
+              "name": "Odbor za predšolsko vzgojo in izobraževanje",
+              "acronym": "",
+              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje"
+            }
+          ]
         }
       },
       {
@@ -590,16 +803,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 1.0,
+          "speeches_per_session": 0.96,
           "number_of_questions": 4.0,
-          "mismatch_of_pg": 29.0,
-          "presence_votes": 68.0,
+          "mismatch_of_pg": 30.9417040358744,
+          "presence_votes": 65.9192825112108,
           "birth_date": null,
           "education": null,
           "spoken_words": 2997.0,
-          "vocabulary_size": 0.0104321140220794
+          "vocabulary_size": 0.0104321140220794,
+          "working_bodies": [
+            {
+              "name": "Komisija za priznanja",
+              "acronym": "",
+              "slug": "27-komisija-za-priznanja"
+            },
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            },
+            {
+              "name": "Odbor za šport",
+              "acronym": "",
+              "slug": "36-odbor-za-sport"
+            }
+          ]
         }
       },
       {
@@ -615,16 +844,22 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.521739130434783,
+          "speeches_per_session": 0.5,
           "number_of_questions": 2.0,
-          "mismatch_of_pg": 47.5,
-          "presence_votes": 50.25,
+          "mismatch_of_pg": 48.2062780269058,
+          "presence_votes": 49.5515695067265,
           "birth_date": null,
           "education": null,
           "spoken_words": 880.0,
-          "vocabulary_size": 0.0561548223350254
+          "vocabulary_size": 0.0561548223350254,
+          "working_bodies": [
+            {
+              "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+              "acronym": "",
+              "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo"
+            }
+          ]
         }
       },
       {
@@ -640,16 +875,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 1.60869565217391,
-          "number_of_questions": 8.0,
-          "mismatch_of_pg": 16.75,
-          "presence_votes": 81.0,
+          "speeches_per_session": 1.64,
+          "number_of_questions": 9.0,
+          "mismatch_of_pg": 16.8161434977578,
+          "presence_votes": 81.1659192825112,
           "birth_date": null,
           "education": null,
-          "spoken_words": 10283.0,
-          "vocabulary_size": 0.00193343753946197
+          "spoken_words": 11183.0,
+          "vocabulary_size": 0.00171067143853963,
+          "working_bodies": [
+            {
+              "name": "Odbor za finance",
+              "acronym": "",
+              "slug": "23-odbor-za-finance"
+            },
+            {
+              "name": "Komisija za pobude občanov",
+              "acronym": "",
+              "slug": "29-komisija-za-pobude-obcanov"
+            }
+          ]
         }
       },
       {
@@ -665,41 +911,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 5.73913043478261,
-          "number_of_questions": 38.0,
-          "mismatch_of_pg": 22.25,
-          "presence_votes": 76.0,
+          "speeches_per_session": 5.8,
+          "number_of_questions": 43.0,
+          "mismatch_of_pg": 22.1973094170404,
+          "presence_votes": 76.6816143497758,
           "birth_date": null,
           "education": null,
-          "spoken_words": 16591.0,
-          "vocabulary_size": 0.000809608697510579
-        }
-      },
-      {
-        "slug": "235-igor-horvat",
-        "name": "Igor Horvat",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Slovenska demokratska stranka ",
-          "acronym": "",
-          "slug": "21-slovenska-demokratska-stranka"
-        },
-        "image": null,
-        "results": {
-          "gender": null,
-          "mandates": null,
-          "speeches_per_session": 2.39130434782609,
-          "number_of_questions": 8.0,
-          "mismatch_of_pg": 15.5,
-          "presence_votes": 83.25,
-          "birth_date": null,
-          "education": null,
-          "spoken_words": 5358.0,
-          "vocabulary_size": 0.00573133892473511
+          "spoken_words": 17633.0,
+          "vocabulary_size": 0.000722355510328384,
+          "working_bodies": [
+            {
+              "name": "Komisija za poimenovanje naselij in ulic",
+              "acronym": "",
+              "slug": "28-komisija-za-poimenovanje-naselij-in-ulic"
+            },
+            {
+              "name": "Odbor za zdravje in socialno varstvo",
+              "acronym": "",
+              "slug": "32-odbor-za-zdravje-in-socialno-varstvo"
+            }
+          ]
         }
       },
       {
@@ -715,16 +947,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 1.66666666666667,
+          "speeches_per_session": 1.61538461538462,
           "number_of_questions": 11.0,
-          "mismatch_of_pg": 14.75,
-          "presence_votes": 72.0,
+          "mismatch_of_pg": 13.9013452914798,
+          "presence_votes": 73.542600896861,
           "birth_date": null,
           "education": null,
           "spoken_words": 7254.0,
-          "vocabulary_size": 0.00421754647316925
+          "vocabulary_size": 0.00399672503118212,
+          "working_bodies": [
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            },
+            {
+              "name": "Odbor za zdravje in socialno varstvo",
+              "acronym": "",
+              "slug": "32-odbor-za-zdravje-in-socialno-varstvo"
+            }
+          ]
         }
       },
       {
@@ -740,16 +983,22 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 4.08695652173913,
-          "number_of_questions": 12.0,
-          "mismatch_of_pg": 36.5,
-          "presence_votes": 78.0,
+          "speeches_per_session": 4.52,
+          "number_of_questions": 13.0,
+          "mismatch_of_pg": 37.6681614349776,
+          "presence_votes": 76.457399103139,
           "birth_date": null,
           "education": null,
-          "spoken_words": 10906.0,
-          "vocabulary_size": 0.00140002536582495
+          "spoken_words": 11222.0,
+          "vocabulary_size": 0.00124304119934361,
+          "working_bodies": [
+            {
+              "name": "Odbor za varstvo okolja",
+              "acronym": "",
+              "slug": "34-odbor-za-varstvo-okolja"
+            }
+          ]
         }
       },
       {
@@ -765,16 +1014,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.318181818181818,
-          "number_of_questions": 44.0,
+          "speeches_per_session": 0.304347826086957,
+          "number_of_questions": 57.0,
           "mismatch_of_pg": 100.0,
-          "presence_votes": 70.5,
+          "presence_votes": 68.8340807174888,
           "birth_date": null,
           "education": null,
           "spoken_words": 1357.0,
-          "vocabulary_size": 0.0390608767920216
+          "vocabulary_size": 0.0390608767920216,
+          "working_bodies": [
+            {
+              "name": "Komisija za pobude občanov",
+              "acronym": "",
+              "slug": "29-komisija-za-pobude-obcanov"
+            },
+            {
+              "name": "Odbor za urejanje prostora",
+              "acronym": "",
+              "slug": "35-odbor-za-urejanje-prostora"
+            },
+            {
+              "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+              "acronym": "",
+              "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo"
+            }
+          ]
         }
       },
       {
@@ -790,16 +1055,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 4.08695652173913,
-          "number_of_questions": 4.0,
-          "mismatch_of_pg": 36.5,
-          "presence_votes": 52.5,
+          "speeches_per_session": 4.12,
+          "number_of_questions": 5.0,
+          "mismatch_of_pg": 37.6681614349776,
+          "presence_votes": 49.5515695067265,
           "birth_date": null,
           "education": null,
-          "spoken_words": 13313.0,
-          "vocabulary_size": 0.00101677190924968
+          "spoken_words": 14591.0,
+          "vocabulary_size": 0.000833255625224464,
+          "working_bodies": [
+            {
+              "name": "Komisija za priznanja",
+              "acronym": "",
+              "slug": "27-komisija-za-priznanja"
+            },
+            {
+              "name": "Komisija za mednarodne odnose",
+              "acronym": "",
+              "slug": "30-komisija-za-mednarodne-odnose"
+            },
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            }
+          ]
         }
       },
       {
@@ -815,16 +1096,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.0952380952380952,
+          "speeches_per_session": 0.0909090909090909,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 6.15384615384615,
-          "presence_votes": 96.9230769230769,
+          "mismatch_of_pg": 7.3394495412844,
+          "presence_votes": 97.2477064220184,
           "birth_date": null,
           "education": null,
           "spoken_words": 104.0,
-          "vocabulary_size": 0.331730769230769
+          "vocabulary_size": 0.331730769230769,
+          "working_bodies": [
+            {
+              "name": "Odbor za finance",
+              "acronym": "",
+              "slug": "23-odbor-za-finance"
+            },
+            {
+              "name": "Komisija za pobude občanov",
+              "acronym": "",
+              "slug": "29-komisija-za-pobude-obcanov"
+            },
+            {
+              "name": "Odbor za urejanje prostora",
+              "acronym": "",
+              "slug": "35-odbor-za-urejanje-prostora"
+            }
+          ]
         }
       },
       {
@@ -840,16 +1137,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.181818181818182,
+          "speeches_per_session": 0.173913043478261,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 19.25,
-          "presence_votes": 84.0,
+          "mismatch_of_pg": 23.3183856502242,
+          "presence_votes": 81.6143497757848,
           "birth_date": null,
           "education": null,
           "spoken_words": 268.0,
-          "vocabulary_size": 0.0725474031327288
+          "vocabulary_size": 0.0725474031327288,
+          "working_bodies": [
+            {
+              "name": "Odbor za stanovanjsko politiko",
+              "acronym": "",
+              "slug": "37-odbor-za-stanovanjsko-politiko"
+            },
+            {
+              "name": "Odbor za kulturo in raziskovalno dejavnost",
+              "acronym": "",
+              "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost"
+            },
+            {
+              "name": "Odbor za gospodarske javne službe in promet",
+              "acronym": "",
+              "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet"
+            }
+          ]
         }
       },
       {
@@ -865,16 +1178,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.0454545454545455,
+          "speeches_per_session": 0.0434782608695652,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 5.25,
-          "presence_votes": 98.25,
+          "mismatch_of_pg": 6.72645739910314,
+          "presence_votes": 98.4304932735426,
           "birth_date": null,
           "education": null,
           "spoken_words": 177.0,
-          "vocabulary_size": 0.313915857605178
+          "vocabulary_size": 0.313915857605178,
+          "working_bodies": [
+            {
+              "name": "Komisija za priznanja",
+              "acronym": "",
+              "slug": "27-komisija-za-priznanja"
+            },
+            {
+              "name": "Komisija za pobude občanov",
+              "acronym": "",
+              "slug": "29-komisija-za-pobude-obcanov"
+            },
+            {
+              "name": "Odbor za varstvo okolja",
+              "acronym": "",
+              "slug": "34-odbor-za-varstvo-okolja"
+            }
+          ]
         }
       },
       {
@@ -890,16 +1219,27 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
           "speeches_per_session": 0.0,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 51.25,
-          "presence_votes": 51.25,
+          "mismatch_of_pg": 52.0179372197309,
+          "presence_votes": 52.0179372197309,
           "birth_date": null,
           "education": null,
           "spoken_words": 0.0,
-          "vocabulary_size": 0.0
+          "vocabulary_size": 0.0,
+          "working_bodies": [
+            {
+              "name": "Odbor za stanovanjsko politiko",
+              "acronym": "",
+              "slug": "37-odbor-za-stanovanjsko-politiko"
+            },
+            {
+              "name": "Odbor za predšolsko vzgojo in izobraževanje",
+              "acronym": "",
+              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje"
+            }
+          ]
         }
       },
       {
@@ -915,16 +1255,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.0909090909090909,
+          "speeches_per_session": 0.0869565217391304,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 9.0,
-          "presence_votes": 94.0,
+          "mismatch_of_pg": 10.5381165919283,
+          "presence_votes": 93.9461883408072,
           "birth_date": null,
           "education": null,
-          "spoken_words": 212.0,
-          "vocabulary_size": 0.16125
+          "spoken_words": 254.0,
+          "vocabulary_size": 0.16125,
+          "working_bodies": [
+            {
+              "name": "Odbor za zaščito, reševanje in civilno obrambo",
+              "acronym": "",
+              "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo"
+            },
+            {
+              "name": "Odbor za lokalno samoupravo",
+              "acronym": "",
+              "slug": "40-odbor-za-lokalno-samoupravo"
+            },
+            {
+              "name": "Odbor za gospodarske javne službe in promet",
+              "acronym": "",
+              "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet"
+            }
+          ]
         }
       },
       {
@@ -940,16 +1296,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.0,
+          "speeches_per_session": 0.0416666666666667,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 9.5,
-          "presence_votes": 93.0,
+          "mismatch_of_pg": 10.3139013452915,
+          "presence_votes": 93.7219730941704,
           "birth_date": null,
           "education": null,
           "spoken_words": 279.0,
-          "vocabulary_size": 0.0
+          "vocabulary_size": 0.110501567398119,
+          "working_bodies": [
+            {
+              "name": "Komisija za poimenovanje naselij in ulic",
+              "acronym": "",
+              "slug": "28-komisija-za-poimenovanje-naselij-in-ulic"
+            },
+            {
+              "name": "Odbor za zdravje in socialno varstvo",
+              "acronym": "",
+              "slug": "32-odbor-za-zdravje-in-socialno-varstvo"
+            },
+            {
+              "name": "Odbor za lokalno samoupravo",
+              "acronym": "",
+              "slug": "40-odbor-za-lokalno-samoupravo"
+            }
+          ]
         }
       },
       {
@@ -965,41 +1337,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.826086956521739,
+          "speeches_per_session": 0.833333333333333,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 3.75,
-          "presence_votes": 99.25,
+          "mismatch_of_pg": 5.15695067264574,
+          "presence_votes": 99.3273542600897,
           "birth_date": null,
           "education": null,
-          "spoken_words": 886.0,
-          "vocabulary_size": 0.0287868403015764
-        }
-      },
-      {
-        "slug": "253-dunja-piskur-kosmac",
-        "name": "Dunja Piškur Kosmač",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
-        },
-        "image": null,
-        "results": {
-          "gender": null,
-          "mandates": null,
-          "speeches_per_session": 0.181818181818182,
-          "number_of_questions": 0.0,
-          "mismatch_of_pg": 5.25,
-          "presence_votes": 97.75,
-          "birth_date": null,
-          "education": null,
-          "spoken_words": 587.0,
-          "vocabulary_size": 0.0584894946053379
+          "spoken_words": 1034.0,
+          "vocabulary_size": 0.0248381173286943,
+          "working_bodies": [
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            },
+            {
+              "name": "Odbor za zdravje in socialno varstvo",
+              "acronym": "",
+              "slug": "32-odbor-za-zdravje-in-socialno-varstvo"
+            },
+            {
+              "name": "Odbor za gospodarske javne službe in promet",
+              "acronym": "",
+              "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet"
+            }
+          ]
         }
       },
       {
@@ -1015,16 +1378,32 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 0.304347826086957,
+          "speeches_per_session": 0.32,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 12.25,
-          "presence_votes": 90.25,
+          "mismatch_of_pg": 16.8161434977578,
+          "presence_votes": 86.9955156950673,
           "birth_date": null,
           "education": null,
           "spoken_words": 307.0,
-          "vocabulary_size": 0.121030042918455
+          "vocabulary_size": 0.122664500406174,
+          "working_bodies": [
+            {
+              "name": "Statutarno pravna komisija",
+              "acronym": "",
+              "slug": "26-statutarno-pravna-komisija"
+            },
+            {
+              "name": "Odbor za šport",
+              "acronym": "",
+              "slug": "36-odbor-za-sport"
+            },
+            {
+              "name": "Odbor za kulturo in raziskovalno dejavnost",
+              "acronym": "",
+              "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost"
+            }
+          ]
         }
       },
       {
@@ -1040,16 +1419,88 @@
         },
         "image": null,
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 1.30434782608696,
+          "speeches_per_session": 1.44,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 23.0,
-          "presence_votes": 80.25,
+          "mismatch_of_pg": 22.8699551569507,
+          "presence_votes": 82.0627802690583,
           "birth_date": null,
           "education": null,
-          "spoken_words": 3712.0,
-          "vocabulary_size": 0.0082872418879056
+          "spoken_words": 4335.0,
+          "vocabulary_size": 0.0069184970806966,
+          "working_bodies": [
+            {
+              "name": "Odbor za urejanje prostora",
+              "acronym": "",
+              "slug": "35-odbor-za-urejanje-prostora"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "223-masa-kociper",
+        "name": "Maša Kociper",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Svetniški klub samostojnih svetnikov ",
+          "acronym": "",
+          "slug": "18-svetniski-klub-samostojnih-svetnikov"
+        },
+        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/masa-kociper.png",
+        "results": {
+          "mandates": null,
+          "speeches_per_session": 1.28,
+          "number_of_questions": 11.0,
+          "mismatch_of_pg": 45.067264573991,
+          "presence_votes": 41.0313901345291,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 7801.0,
+          "vocabulary_size": 0.00222525643819613,
+          "working_bodies": []
+        }
+      },
+      {
+        "slug": "235-igor-horvat",
+        "name": "Igor Horvat",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": {
+          "name": "Slovenska demokratska stranka ",
+          "acronym": "",
+          "slug": "21-slovenska-demokratska-stranka"
+        },
+        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png",
+        "results": {
+          "mandates": null,
+          "speeches_per_session": 2.4,
+          "number_of_questions": 8.0,
+          "mismatch_of_pg": 15.695067264574,
+          "presence_votes": 83.6322869955157,
+          "birth_date": null,
+          "education": null,
+          "spoken_words": 5358.0,
+          "vocabulary_size": 0.0045762760955547,
+          "working_bodies": [
+            {
+              "name": "Statutarno pravna komisija",
+              "acronym": "",
+              "slug": "26-statutarno-pravna-komisija"
+            },
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            },
+            {
+              "name": "Odbor za urejanje prostora",
+              "acronym": "",
+              "slug": "35-odbor-za-urejanje-prostora"
+            }
+          ]
         }
       },
       {
@@ -1063,20 +1514,76 @@
           "acronym": "",
           "slug": "22-lista-zorana-jankovica"
         },
-        "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-05-07_12-01-38.png",
+        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png",
         "results": {
-          "gender": null,
           "mandates": null,
-          "speeches_per_session": 10.7826086956522,
+          "speeches_per_session": 10.2,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 18.75,
-          "presence_votes": 83.4051724137931,
+          "mismatch_of_pg": 22.1973094170404,
+          "presence_votes": 81.8385650224215,
           "birth_date": null,
           "education": null,
-          "spoken_words": 13953.0,
-          "vocabulary_size": 0.00179877774576563
+          "spoken_words": 14023.0,
+          "vocabulary_size": 0.00169043254362519,
+          "working_bodies": [
+            {
+              "name": "Statutarno pravna komisija",
+              "acronym": "",
+              "slug": "26-statutarno-pravna-komisija"
+            },
+            {
+              "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
+              "acronym": "",
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "253-dunja-piskur-kosmac",
+        "name": "Dunja Piškur Kosmač",
+        "honorific_prefix": null,
+        "honorific_suffix": "dr. med",
+        "preferred_pronoun": "she",
+        "group": {
+          "name": "Lista Zorana Jankovića ",
+          "acronym": "",
+          "slug": "22-lista-zorana-jankovica"
+        },
+        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/dunja-piskur-kosmac.png",
+        "results": {
+          "mandates": 5,
+          "speeches_per_session": 0.173913043478261,
+          "number_of_questions": 0.0,
+          "mismatch_of_pg": 6.50224215246637,
+          "presence_votes": 97.9820627802691,
+          "birth_date": "1941-07-05",
+          "education": 8,
+          "spoken_words": 587.0,
+          "vocabulary_size": 0.0584894946053379,
+          "working_bodies": [
+            {
+              "name": "Odbor za zdravje in socialno varstvo",
+              "acronym": "",
+              "slug": "32-odbor-za-zdravje-in-socialno-varstvo"
+            },
+            {
+              "name": "Odbor za varstvo okolja",
+              "acronym": "",
+              "slug": "34-odbor-za-varstvo-okolja"
+            },
+            {
+              "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+              "acronym": "",
+              "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo"
+            }
+          ]
         }
       }
-    ]
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    }
   }
 }

@@ -108,15 +108,15 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const selectedDistrictIds = this.cardState.districts || [];
-    const districts = (this.cardData.districts || []).map((district) => {
-      const id = Object.keys(district)[0];
-      return {
-        id,
-        label: district[id],
-        selected: selectedDistrictIds.indexOf(id) !== -1,
-      };
-    });
+    // const selectedDistrictIds = this.cardState.districts || [];
+    // const districts = (this.cardData.districts || []).map((district) => {
+    //   const id = Object.keys(district)[0];
+    //   return {
+    //     id,
+    //     label: district[id],
+    //     selected: selectedDistrictIds.indexOf(id) !== -1,
+    //   };
+    // });
 
     const genders = [
       { id: 'he', icon: 'gender-m', label: 'moški', selected: false },
@@ -126,18 +126,38 @@ export default {
     const members = this.cardData.data?.results || [];
 
     const selectedGroups = this.cardState.groups || [];
-    const groups = uniqBy(
-      members.map((m) => m.group).filter(Boolean),
+    const groups = uniqBy(members.map((m) => m.group).filter(Boolean), 'slug')
+      .sort((a, b) => {
+        const aName = (a.name || '').toLowerCase();
+        const bName = (b.name || '').toLowerCase();
+        return aName.localeCompare(bName, 'sl');
+      })
+      .map((g) => ({
+        id: g.slug,
+        slug: g.slug,
+        label: g.name,
+        selected: selectedGroups.includes(g.slug),
+        // colorClass: `${g.acronym
+        //   .toLowerCase()
+        //   .replace(/[ +,]/g, '_')}-background`,
+      }));
+
+    const selectedWorkingBodies = this.cardState.workingBodies || [];
+    const workingBodies = uniqBy(
+      members.flatMap((m) => m.results?.working_bodies || []).filter(Boolean),
       'slug'
-    ).map((g) => ({
-      id: g.slug,
-      slug: g.slug,
-      label: g.name,
-      selected: selectedGroups.includes(g.slug),
-      // colorClass: `${g.acronym
-      //   .toLowerCase()
-      //   .replace(/[ +,]/g, '_')}-background`,
-    }));
+    )
+      .sort((a, b) => {
+        const aName = (a.name || '').toLowerCase();
+        const bName = (b.name || '').toLowerCase();
+        return aName.localeCompare(bName, 'sl');
+      })
+      .map((wb) => ({
+        id: wb.slug,
+        slug: wb.slug,
+        label: wb.name,
+        selected: selectedWorkingBodies.includes(wb.slug),
+      }));
 
     const analyses = analysesIDs.map((a) => ({
       ...a,
@@ -161,8 +181,8 @@ export default {
       analyses,
       groups,
       textFilter: this.cardState.textFilter || '',
-      districts,
-      workingBodies: [],
+      districts: [],
+      workingBodies,
       genders,
       selectedGenders: this.cardState.genders || [],
     };
@@ -267,7 +287,8 @@ export default {
       const filtered = this.members
         .filter((member) => {
           let partyMatch = true;
-          let districtMatch = true;
+          // let districtMatch = true;
+          let workingBodyMatch = true;
           let genderMatch = true;
           let textMatch = true;
 
@@ -275,18 +296,23 @@ export default {
             textMatch = member.name.toLowerCase().includes(lowerTextFilter);
           }
           if (this.selectedGroups.length > 0) {
-            console.log(member.group?.slug, this.selectedGroups);
             partyMatch =
               member.group?.slug &&
               this.selectedGroups.find((p) => p.slug === member.group?.slug) !=
                 null;
           }
-          if (this.selectedDistricts.length > 0) {
-            districtMatch = member.person.district.reduce(
-              (prevMatch, memberDistrict) =>
-                prevMatch ||
-                this.selectedDistricts.indexOf(String(memberDistrict)) > -1,
-              false
+          // if (this.selectedDistricts.length > 0) {
+          //   districtMatch = member.person.district.reduce(
+          //     (prevMatch, memberDistrict) =>
+          //       prevMatch ||
+          //       this.selectedDistricts.indexOf(String(memberDistrict)) > -1,
+          //     false
+          //   );
+          // }
+          if (this.selectedWorkingBodies.length > 0) {
+            const wbs = member.results?.working_bodies || [];
+            workingBodyMatch = wbs.some((wb) =>
+              this.selectedWorkingBodies.includes(wb?.slug)
             );
           }
           if (this.selectedGenders.length > 0) {
@@ -295,7 +321,13 @@ export default {
             );
           }
 
-          return textMatch && partyMatch && districtMatch && genderMatch;
+          return (
+            textMatch &&
+            partyMatch &&
+            // districtMatch &&
+            workingBodyMatch &&
+            genderMatch
+          );
         })
         .map((member) => {
           const newMember = JSON.parse(JSON.stringify(member));
