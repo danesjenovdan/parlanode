@@ -1,16 +1,17 @@
 const express = require('express');
+const fetch = require('node-fetch');
 const { asyncRender: ar } = require('../utils');
 const { i18n } = require('../server');
-const fetch = require('node-fetch');
 
 const router = express.Router();
 
 async function getNewData(slug) {
-  const id = parseInt(slug.split('-')[0]);
+  const id = parseInt(slug.split('-')[0], 10);
   // TODO this shouldn't be hard-coded
   const response = await fetch(`https://parladata.lb.djnd.si/v3/cards/legislation/single?id=${id}`);
-  if (response.ok && response.status >= 200 && response.status < 400) {
-    let data = await response.json();
+  // response.ok means status is 2xx
+  if (response.ok) {
+    const data = await response.json();
     return {
       ...data,
     };
