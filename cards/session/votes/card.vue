@@ -4,7 +4,7 @@
       <div class="filters">
         <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
-          <search-field v-model="textFilter" />
+          <search-field v-model="textFilter" @update:modelValue="searchVotes" />
         </div>
         <div class="filter" style="flex: 1"></div>
         <div class="filter buttons-filter">
@@ -20,6 +20,7 @@
       </div>
       <scroll-shadow ref="shadow">
         <div
+          v-infinite-scroll="loadMore"
           class="votes-list-shadow has-filters"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
@@ -30,12 +31,16 @@
             :session="session"
           />
         </div>
+        <div v-if="card.isLoading" class="nalagalnik__wrapper">
+          <div class="nalagalnik"></div>
+        </div>
       </scroll-shadow>
     </div>
   </card-wrapper>
 </template>
 
 <script>
+import axios, { CancelToken } from 'axios';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
@@ -45,9 +50,14 @@ import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
+import infiniteScroll from '@/_directives/infiniteScroll.js';
+import { debounce } from 'lodash';
 
 export default {
   name: 'CardSessionVotes',
+  directives: {
+    infiniteScroll,
+  },
   components: {
     SearchField,
     StripedButton,
@@ -77,34 +87,39 @@ export default {
     ];
 
     return {
+      card: {
+        objectCount: this.cardData.data?.count,
+        currentPage: 1,
+        isLoading: false,
+      },
       votes: this.cardData.data?.results || [],
       session: this.cardData.data?.session || {},
       passedOptions,
       textFilter,
+      cancelRequest: null,
     };
   },
   computed: {
     filteredVotes() {
-      const lowerTextFilter = String(this.textFilter || '').toLowerCase();
-
       return this.votes.filter((vote) => {
-        let textMatch = true;
         let passedOptionMatch = true;
-
-        if (lowerTextFilter) {
-          textMatch = vote.title.toLowerCase().includes(lowerTextFilter);
-        }
 
         if (this.selectedPassedOption) {
           passedOptionMatch =
             this.selectedPassedOption.id === String(vote.passed);
         }
 
-        return textMatch && passedOptionMatch;
+        return passedOptionMatch;
       });
     },
     selectedPassedOption() {
       return this.passedOptions.find((po) => po.selected);
+    },
+    searchUrl() {
+      const url = new URL(this.cardData.url);
+      url.searchParams.set('page', this.card.currentPage);
+      url.searchParams.set('text', this.textFilter);
+      return url.toString();
     },
   },
   created() {
@@ -122,6 +137,61 @@ export default {
           po.selected = passedOption === po;
         });
       }
+    },
+    makeRequest(url) {
+      if (this.cancelRequest) {
+        this.cancelRequest();
+        this.cancelRequest = null;
+      }
+
+      return axios
+        .get(url, {
+          cancelToken: new CancelToken((c) => {
+            this.cancelRequest = c;
+          }),
+        })
+        .then(
+          (response) => {
+            this.cancelRequest = null;
+            return response;
+          },
+          (error) => {
+            this.cancelRequest = null;
+            throw error;
+          }
+        );
+    },
+    searchVotes: debounce(function searchVotes() {
+      this.card.isLoading = true;
+      this.votes = [];
+      this.card.objectCount = 0;
+      this.card.currentPage = 1;
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.votes = response?.data?.results || [];
+        this.card.objectCount = response?.data?.count;
+        this.card.currentPage = 1;
+        this.card.isLoading = false;
+      });
+    }, 750),
+    loadMore() {
+      if (this.card.isLoading) {
+        return;
+      }
+      if (this.votes.length >= this.card.objectCount) {
+        return;
+      }
+
+      this.card.isLoading = true;
+      this.card.currentPage += 1;
+
+      const requestedPage = this.card.currentPage;
+      axios.get(this.searchUrl).then((response) => {
+        if (response?.data?.page === requestedPage) {
+          const newVotes = response?.data?.results || [];
+          this.votes.push(...newVotes);
+        }
+        this.card.isLoading = false;
+      });
     },
   },
 };
@@ -182,6 +252,21 @@ export default {
 
     &.has-filters {
       height: $full-card-height - 89;
+    }
+  }
+
+  .nalagalnik__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white-hover;
+    z-index: 4;
+
+    .nalagalnik {
+      position: absolute;
+      top: calc(50% - 50px);
     }
   }
 }
