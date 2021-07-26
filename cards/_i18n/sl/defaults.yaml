@@ -99,8 +99,8 @@ data-not-published:
 search: Išči
 title-search: Išči po naslovu
 contents-search: Išči po vsebini govorov
-working-body: Matično delovno telo
-working_bodies: Delovna telesa
+working-body: Delovno telo
+working-bodies: Delovna telesa
 vote-types: Tipi glasovanja
 select-placeholder: Izberi
 selected-placeholder: 'Izbranih: {num}'
@@ -338,8 +338,12 @@ analysis-texts:
     label: Neujemanje s poslansko skupino
     titleSuffix: ' po neujemanju s poslansko skupino'
     explanation: Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
 all-votes: vsa glasovanja
-all-working-bodies: vsa matična delovna telesa
+all-working-bodies: vsa delovna telesa
 everyone: Vsi
 parliament: sabor
 analysis-not-available: Ta analiza ni na voljo.

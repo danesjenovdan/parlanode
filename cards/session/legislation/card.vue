@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-md-12 filters">
             <div class="filter text-filter">
-              <p-search-field v-model="textFilter" />
+              <search-field v-model="textFilter" />
             </div>
             <div v-if="allWorkingBodies.length" class="filter month-dropdown">
               <p-search-dropdown
@@ -59,7 +59,7 @@
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
-import PSearchField from '@/_components/SearchField.vue';
+import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import dateParser from '@/_helpers/dateParser.js';
@@ -80,7 +80,7 @@ const legislationTabs = [
 export default {
   name: 'CardSessionLegislation',
   components: {
-    PSearchField,
+    SearchField,
     InnerCard,
     PSearchDropdown,
     BlueButtonList,
@@ -377,20 +377,6 @@ export default {
       @include respond-to(desktop) {
         flex-basis: 50%;
         flex-grow: 0;
-      }
-
-      .text-filter-input {
-        background-image: url('#{get-parlassets-url()}/icons/search.svg');
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        background-position: right 9px center;
-        border: 1px solid $font-placeholder;
-        font-size: 16px;
-        height: 51px;
-        line-height: 27px;
-        outline: none;
-        padding: 12px 42px 12px 14px;
-        width: 100%;
       }
     }
 

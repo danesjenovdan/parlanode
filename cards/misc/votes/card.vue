@@ -4,7 +4,7 @@
       <div class="filters">
         <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
-          <input v-model="textFilter" class="text-filter-input" type="text" />
+          <search-field v-model="textFilter" />
         </div>
         <div class="filter" style="flex: 1"></div>
         <div class="filter buttons-filter">
@@ -39,6 +39,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
@@ -46,6 +47,7 @@ import VoteListItem from '@/_components/VoteListItem.vue';
 export default {
   name: 'CardMiscVotes',
   components: {
+    SearchField,
     StripedButton,
     ScrollShadow,
     VoteListItem,
@@ -153,24 +155,10 @@ export default {
     }
 
     .text-filter {
-      @include respond-to(desktop) {
-        width: 50%;
-      }
-
       width: 100%;
 
-      .text-filter-input {
-        background-image: url('#{get-parlassets-url()}/icons/search.svg');
-        background-size: 24px 24px;
-        background-repeat: no-repeat;
-        background-position: right 9px center;
-        border: 1px solid $font-placeholder;
-        font-size: 16px;
-        height: 51px;
-        line-height: 27px;
-        outline: none;
-        padding: 12px 42px 12px 14px;
-        width: 100%;
+      @include respond-to(desktop) {
+        width: 50%;
       }
     }
 

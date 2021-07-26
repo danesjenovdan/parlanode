@@ -82,12 +82,12 @@
         </div>
       </div>
 
-      <div v-if="results.members?.length" class="row">
+      <div v-if="members?.length" class="row">
         <div class="parlaicon-container parlaicon-top">
           <span class="parlaicon parlaicon-clanstva" aria-hidden="true" />
         </div>
         <div class="bordertop">
-          <template v-for="person in results.members" :key="person.slug">
+          <template v-for="person in members" :key="person.slug">
             <person-with-position :person="person" position="member" />
           </template>
         </div>
@@ -130,6 +130,13 @@ export default {
         return `${addr.slice(0, 17)}…@${domain}`;
       }
       return '';
+    },
+    members() {
+      return (this.results.members || []).slice().sort((a, b) => {
+        const aName = a.name || '';
+        const bName = b.name || '';
+        return aName.localeCompare(bName, 'sl');
+      });
     },
   },
 };
