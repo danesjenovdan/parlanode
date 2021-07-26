@@ -8,7 +8,7 @@ const config = {
     cards: 'https://parlacards.lb.djnd.si',
     parladata: 'https://parladata.lb.djnd.si/v3'
   },
-  siteLang: 'sl',
+  locale: 'sl-obcine',
   siteMap: {
     landing: {
       legislation: 'zakonodaja',
