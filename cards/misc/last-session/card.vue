@@ -113,7 +113,7 @@ export default {
     },
     searchUrl() {
       const url = new URL(this.cardData.url);
-      url.searchParams.set('page', this.card.currentPage);
+      url.searchParams.set('votes:page', this.card.currentPage);
       return url.toString();
     },
   },
@@ -125,7 +125,7 @@ export default {
       if (this.card.isLoading) {
         return;
       }
-      if (this.votes.length >= this.cardData.data?.count) {
+      if (this.votes.length >= this.cardData.data?.['votes:count']) {
         return;
       }
 
@@ -134,7 +134,7 @@ export default {
 
       const requestedPage = this.card.currentPage;
       axios.get(this.searchUrl).then((response) => {
-        if (response?.data?.page === requestedPage) {
+        if (response?.data?.['votes:page'] === requestedPage) {
           const newVotes = response?.data?.results?.votes || [];
           this.votes.push(...newVotes);
         }
