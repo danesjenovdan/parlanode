@@ -25,7 +25,7 @@
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
           <vote-list-item
-            v-for="vote in filteredVotes"
+            v-for="vote in votes"
             :key="vote.id"
             :vote="vote"
             :session="session"
@@ -100,18 +100,6 @@ export default {
     };
   },
   computed: {
-    filteredVotes() {
-      return this.votes.filter((vote) => {
-        let passedOptionMatch = true;
-
-        if (this.selectedPassedOption) {
-          passedOptionMatch =
-            this.selectedPassedOption.id === String(vote.passed);
-        }
-
-        return passedOptionMatch;
-      });
-    },
     selectedPassedOption() {
       return this.passedOptions.find((po) => po.selected);
     },
@@ -119,6 +107,11 @@ export default {
       const url = new URL(this.cardData.url);
       url.searchParams.set('page', this.card.currentPage);
       url.searchParams.set('text', this.textFilter);
+      if (this.selectedPassedOption) {
+        url.searchParams.set('passed', this.selectedPassedOption?.id);
+      } else {
+        url.searchParams.delete('passed');
+      }
       return url.toString();
     },
   },
@@ -137,6 +130,7 @@ export default {
           po.selected = passedOption === po;
         });
       }
+      this.searchVotesImmediate();
     },
     makeRequest(url) {
       if (this.cancelRequest) {
@@ -161,7 +155,7 @@ export default {
           }
         );
     },
-    searchVotes: debounce(function searchVotes() {
+    searchVotesImmediate() {
       this.card.isLoading = true;
       this.votes = [];
       this.card.objectCount = 0;
@@ -172,6 +166,9 @@ export default {
         this.card.currentPage = 1;
         this.card.isLoading = false;
       });
+    },
+    searchVotes: debounce(function searchVotes() {
+      this.searchVotesImmediate();
     }, 750),
     loadMore() {
       if (this.card.isLoading) {

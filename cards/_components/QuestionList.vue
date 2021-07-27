@@ -1,6 +1,7 @@
 <template>
   <scroll-shadow ref="shadow">
     <div
+      v-infinite-scroll="() => $emit('load-more')"
       class="questions date-list"
       @scroll="$refs.shadow.check($event.currentTarget)"
     >
@@ -17,6 +18,9 @@
         </div>
       </div>
     </div>
+    <div v-if="isLoading" class="nalagalnik__wrapper">
+      <div class="nalagalnik"></div>
+    </div>
   </scroll-shadow>
 </template>
 
@@ -24,9 +28,13 @@
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Event from '@/_components/Event.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import infiniteScroll from '@/_directives/infiniteScroll.js';
 
 export default {
   name: 'QuestionList',
+  directives: {
+    infiniteScroll,
+  },
   components: {
     ScrollShadow,
     Event,
@@ -40,7 +48,12 @@ export default {
       type: Boolean,
       default: false,
     },
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
   },
+  emits: ['load-more'],
   methods: {
     dateFormatter,
   },
@@ -61,6 +74,21 @@ export default {
 
   .date {
     font-weight: 500;
+  }
+}
+
+.nalagalnik__wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $white-hover;
+  z-index: 4;
+
+  .nalagalnik {
+    position: absolute;
+    top: calc(50% - 50px);
   }
 }
 </style>

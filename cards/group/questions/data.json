@@ -1,38 +1,250 @@
 {
+  "url": "https://parladata.lb.djnd.si/v3/cards/group/questions/?id=21",
   "data": {
     "results": [
       {
-        "date": "2020-12-14T00:00:00",
-        "events": [
+        "timestamp": "2021-07-05T15:30:00",
+        "answer_timestamp": null,
+        "title": "turistična taksa",
+        "authors": [
           {
-            "timestamp": "2020-12-14T15:30:00",
-            "title": "Advent v Ljubljani",
-            "url": null,
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "she",
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka"
-                },
-                "image": null
-              }
-            ],
-            "recipient_text": "Župan",
-            "type": "question"
+            "slug": "230-ana-zagozen",
+            "name": "Ana Zagožen",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-turisticna-taksa.pdf"
+      },
+      {
+        "timestamp": "2021-07-05T15:30:00",
+        "answer_timestamp": null,
+        "title": "polnjenje vozila na ulične svetilke",
+        "authors": [
+          {
+            "slug": "230-ana-zagozen",
+            "name": "Ana Zagožen",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-polnjenje-vozila-na-ulicne-svetilke.pdf"
+      },
+      {
+        "timestamp": "2021-05-31T15:30:00",
+        "answer_timestamp": null,
+        "title": "bazen Ilirija",
+        "authors": [
+          {
+            "slug": "233-mojca-skrinjar",
+            "name": "Mojca Škrinjar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": null
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Mojce-Skrinjar-bazen-Ilirija.pdf"
+      },
+      {
+        "timestamp": "2021-05-31T15:30:00",
+        "answer_timestamp": null,
+        "title": "obletnica samostojne Slovenije",
+        "authors": [
+          {
+            "slug": "226-marusa-babnik",
+            "name": "Maruša Babnik",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": null
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Maruse-Babnik-obletnica-samostojne-Slovenije.pdf"
+      },
+      {
+        "timestamp": "2021-05-31T15:30:00",
+        "answer_timestamp": null,
+        "title": "zamenjava zemljišča",
+        "authors": [
+          {
+            "slug": "232-dr-zvone-cadez",
+            "name": "dr. Zvone Čadež",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": null
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnika-dr.-Zvoneta-Cadeza-zamenjava-zemljisca.pdf"
+      },
+      {
+        "timestamp": "2021-05-31T15:30:00",
+        "answer_timestamp": null,
+        "title": "organiziranost redarske službe",
+        "authors": [
+          {
+            "slug": "235-igor-horvat",
+            "name": "Igor Horvat",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnika-Igorja-Horvata-organiziranost-redarske-sluzbe.pdf"
+      },
+      {
+        "timestamp": "2021-05-31T15:30:00",
+        "answer_timestamp": null,
+        "title": "obnova OŠ in Gimnazije Šentvid",
+        "authors": [
+          {
+            "slug": "233-mojca-skrinjar",
+            "name": "Mojca Škrinjar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": null
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Mojce-Skrinjar-obnova-OS-in-Gimnazije-Sentvid.pdf"
+      },
+      {
+        "timestamp": "2021-05-31T15:30:00",
+        "answer_timestamp": null,
+        "title": "parcele ob Savi",
+        "authors": [
+          {
+            "slug": "233-mojca-skrinjar",
+            "name": "Mojca Škrinjar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": null
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Mojce-Skrinjar-parcele-ob-Savi.pdf"
+      },
+      {
+        "timestamp": "2021-05-31T15:30:00",
+        "answer_timestamp": null,
+        "title": "cepljenje v Ljubljani",
+        "authors": [
+          {
+            "slug": "233-mojca-skrinjar",
+            "name": "Mojca Škrinjar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": null
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Mojce-Skrinjar-cepljenje-v-Ljubljani.pdf"
+      },
+      {
+        "timestamp": "2021-04-19T15:30:00",
+        "answer_timestamp": null,
+        "title": "maske protesti",
+        "authors": [
+          {
+            "slug": "233-mojca-skrinjar",
+            "name": "Mojca Škrinjar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": null
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": null,
+        "url": "https://www.ljubljana.si/assets/Uploads/2.-tocko-Vprasanje-svetnice-Mojce-Skrinjar-maske-protesti.pdf"
       }
     ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    },
     "group": {
-      "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+      "name": "Slovenska demokratska stranka ",
       "acronym": "",
-      "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev"
-    }
+      "slug": "21-slovenska-demokratska-stranka"
+    },
+    "count": 117,
+    "pages": 12,
+    "page": 1,
+    "per_page": 10
   }
 }
