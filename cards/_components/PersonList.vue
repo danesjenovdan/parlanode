@@ -1,6 +1,10 @@
 <template>
   <scroll-shadow ref="shadow">
-    <div id="person-list" @scroll="$refs.shadow.check($event.currentTarget)">
+    <div
+      id="person-list"
+      v-infinite-scroll="() => $emit('load-more')"
+      @scroll="$refs.shadow.check($event.currentTarget)"
+    >
       <ul class="person-list">
         <li v-for="person in people" :key="person.gov_id" class="person">
           <a :href="getPersonLink(person)" class="portrait column">
@@ -33,14 +37,21 @@
         </li>
       </ul>
     </div>
+    <div v-if="isLoading" class="nalagalnik__wrapper">
+      <div class="nalagalnik"></div>
+    </div>
   </scroll-shadow>
 </template>
 
 <script>
 import links from '@/_mixins/links.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
+import infiniteScroll from '@/_directives/infiniteScroll.js';
 
 export default {
+  directives: {
+    infiniteScroll,
+  },
   components: {
     ScrollShadow,
   },
@@ -54,12 +65,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
   },
+  emits: ['load-more'],
 };
 </script>
 
 <style lang="scss" scoped>
 @import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 #person-list {
   overflow-y: auto;
@@ -82,6 +99,21 @@ export default {
   .person-party {
     font-size: 14px;
     margin-top: 5px;
+  }
+}
+
+.nalagalnik__wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $white-hover;
+  z-index: 4;
+
+  .nalagalnik {
+    position: absolute;
+    top: calc(50% - 50px);
   }
 }
 </style>
