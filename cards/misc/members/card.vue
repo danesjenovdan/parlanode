@@ -20,11 +20,6 @@
               :placeholder="workingBodyPlaceholder"
               class="filter working-bodies"
             />
-            <!-- <p-search-dropdown
-              v-model="districts"
-              :placeholder="districtPlaceholder"
-              class="filter district"
-            /> -->
             <div class="genders filter">
               <striped-button
                 v-for="gender in genders"
@@ -39,31 +34,45 @@
         </div>
       </div>
     </template>
-    <inner-card
-      :processed-members="processedMembers"
-      :current-sort="currentSort"
-      :current-sort-order="currentSortOrder"
-      :current-page="currentPage"
-      :current-analysis="currentAnalysis"
-      @sort="sortBy"
-      @page-change="onPageChange"
-    />
+    <div v-if="fetching" class="nalagalnik"></div>
+    <template v-else>
+      <sortable-table
+        :columns="columns"
+        :items="currentPageProcessedMembers"
+        :sort="currentSort"
+        :sort-order="currentSortOrder"
+        :sort-callback="sortBy"
+        class="person-list"
+      />
+      <pagination
+        v-if="count > perPage"
+        :page="page"
+        :count="count"
+        :per-page="perPage"
+        @change="onPageChange"
+      />
+    </template>
   </card-wrapper>
 </template>
 
 <script>
+import axios from 'axios';
 import stableSort from 'stable';
-import { find, uniqBy } from 'lodash-es';
+import { find, clamp, uniqBy } from 'lodash-es';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
+import { MEMBERS_PER_PAGE } from '@/_helpers/constants.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
+import { memberList } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
-import InnerCard from './InnerCard.vue';
+import SortableTable from '@/_components/SortableTable.vue';
+import Pagination from '@/_components/Pagination.vue';
 
 function getAge(date) {
   if (!date) {
@@ -101,35 +110,38 @@ export default {
   name: 'CardMiscMembers',
   components: {
     BlueButtonList,
-    InnerCard,
     PSearchDropdown,
     SearchField,
     StripedButton,
+    SortableTable,
+    Pagination,
   },
-  mixins: [common],
+  mixins: [common, links, memberList],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
-    // const selectedDistrictIds = this.cardState.districts || [];
-    // const districts = (this.cardData.districts || []).map((district) => {
-    //   const id = Object.keys(district)[0];
-    //   return {
-    //     id,
-    //     label: district[id],
-    //     selected: selectedDistrictIds.indexOf(id) !== -1,
-    //   };
-    // });
+    const {
+      results = [],
+      pages = 1,
+      page: initialPage = 1,
+      count = results?.length ?? 0,
+      per_page = MEMBERS_PER_PAGE,
+    } = this.cardData.data || {};
+
+    const membersPerPage = Array(pages);
+    membersPerPage[initialPage - 1] = results;
+
+    const page = clamp(Number(this.cardState?.page || initialPage));
 
     const genders = [
       { id: 'he', icon: 'gender-m', label: 'moški', selected: false },
       { id: 'she', icon: 'gender-f', label: 'ženski', selected: false },
     ];
 
-    const members = this.cardData.data?.results || [];
-
+    // TODO: get list of groups and all working bodies from api (because pagination)
     const selectedGroups = this.cardState.groups || [];
-    const groups = uniqBy(members.map((m) => m.group).filter(Boolean), 'slug')
+    const groups = uniqBy(results.map((m) => m.group).filter(Boolean), 'slug')
       .sort((a, b) => {
         const aName = (a.name || '').toLowerCase();
         const bName = (b.name || '').toLowerCase();
@@ -147,7 +159,7 @@ export default {
 
     const selectedWorkingBodies = this.cardState.workingBodies || [];
     const workingBodies = uniqBy(
-      members.flatMap((m) => m.results?.working_bodies || []).filter(Boolean),
+      results.flatMap((m) => m.results?.working_bodies || []).filter(Boolean),
       'slug'
     )
       .sort((a, b) => {
@@ -161,6 +173,7 @@ export default {
         label: wb.name,
         selected: selectedWorkingBodies.includes(wb.slug),
       }));
+    // END TODO
 
     const analyses = analysesIDs.map((a) => ({
       ...a,
@@ -176,29 +189,24 @@ export default {
     }));
 
     return {
-      members,
+      membersPerPage,
+      count,
+      perPage: per_page,
+      page,
+      initialPage,
+      fetching: false,
       currentAnalysis: this.cardState.analysis || 'demographics',
-      currentSort: this.cardState.sort || 'name',
-      currentSortOrder: this.cardState.sortOrder || 'asc',
-      currentPage: this.cardState.page || 1,
       analyses,
-      groups,
       textFilter: this.cardState.textFilter || '',
-      districts: [],
+      groups,
       workingBodies,
       genders,
       selectedGenders: this.cardState.genders || [],
+      currentSort: this.cardState.sort || 'name',
+      currentSortOrder: this.cardState.sortOrder || 'asc',
     };
   },
   computed: {
-    selectedDistrictNames() {
-      return this.districts
-        .filter((district) => district.selected)
-        .map((district) => district.label);
-    },
-    currentAnalysisData() {
-      return find(this.analyses, { id: this.currentAnalysis });
-    },
     partiesPlaceholder() {
       return this.selectedGroups.length > 0
         ? this.$t('selected-placeholder', { num: this.selectedGroups.length })
@@ -211,74 +219,56 @@ export default {
           })
         : this.$t('select-working-body-placeholder');
     },
-    districtPlaceholder() {
-      return this.selectedDistricts.length > 0
-        ? this.$t('selected-placeholder', {
-            num: this.selectedDistricts.length,
-          })
-        : this.$t('select-district-placeholder');
+    columns() {
+      if (this.currentAnalysis === 'demographics') {
+        return [
+          { id: 'image', label: 'image', additionalClass: 'portrait' },
+          { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
+          { id: 'age', label: this.$t('age') },
+          {
+            id: 'education',
+            label: this.$t('education'),
+            additionalClass: 'optional',
+          },
+          {
+            id: 'terms',
+            label: this.$t('number-of-terms'),
+            additionalClass: 'optional',
+          },
+          {
+            id: 'party',
+            label: this.$t('party'),
+            additionalClass: 'optional',
+          },
+        ];
+      }
+      if (this.currentAnalysis === 'working_bodies') {
+        return [
+          { id: 'image', label: 'image', additionalClass: 'portrait' },
+          { id: 'name', label: this.$t('name'), additionalClass: 'name' },
+          {
+            id: 'working-bodies',
+            label: this.$t('working-bodies'),
+            additionalClass: 'wider working-bodies-col',
+          },
+        ];
+      }
+      return [
+        { id: 'image', label: 'image', additionalClass: 'portrait' },
+        { id: 'name', label: this.$t('name'), additionalClass: 'name' },
+        {
+          id: 'analysis',
+          label: this.$t('analysis'),
+          additionalClass: 'wider barchartcontainer',
+        },
+        // { id: 'change', label: this.$t('change') },
+      ];
     },
-    headerConfig() {
-      return defaultHeaderConfig(this, {
-        title: `${this.$t('card.title')} ${
-          this.currentAnalysisData.titleSuffix
-        }`,
-      });
+    currentPageMembers() {
+      return this.membersPerPage[this.page - 1] || [];
     },
-    ogConfig() {
-      return defaultOgImage(this, {
-        title: `${this.$t('card.title')} ${
-          this.currentAnalysisData.titleSuffix
-        }`,
-      });
-    },
-    selectedGroups() {
-      return this.groups.filter((party) => party.selected);
-    },
-    selectedWorkingBodies() {
-      return this.workingBodies
-        .filter((workingBody) => workingBody.selected)
-        .map((workingBody) => workingBody.id);
-    },
-    selectedDistricts() {
-      return this.districts
-        .filter((district) => district.selected)
-        .map((district) => district.id);
-    },
-    urlParameters() {
-      const parameters = {};
-
-      if (this.textFilter) {
-        parameters.textFilter = this.textFilter;
-      }
-      if (this.currentAnalysis !== 'demographics') {
-        parameters.analysis = this.currentAnalysis;
-      }
-      if (this.currentSort !== 'name') {
-        parameters.sort = this.currentSort;
-      }
-      if (this.currentSortOrder !== 'asc') {
-        parameters.sortOrder = this.currentSortOrder;
-      }
-      if (this.selectedGroups.length > 0) {
-        parameters.groups = this.selectedGroups.map((party) => party.slug);
-      }
-      if (this.selectedGenders.length > 0) {
-        parameters.genders = this.selectedGenders;
-      }
-      if (this.selectedDistricts.length > 0) {
-        parameters.districts = this.selectedDistricts;
-      }
-      if (this.selectedWorkingBodies.length > 0) {
-        parameters.workingBodies = this.selectedWorkingBodies;
-      }
-      if (this.currentPage > 1) {
-        parameters.page = this.currentPage;
-      }
-
-      return parameters;
-    },
-    processedMembers() {
+    currentPageProcessedMembers() {
+      // TODO: get this from api (because pagination)
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
         analysisMax = this.members.reduce(
@@ -287,13 +277,14 @@ export default {
           0
         );
       }
+      // END TODO analysisMax
 
+      // TODO: filter and sort from api (because pagination)
       const lowerTextFilter = String(this.textFilter || '').toLowerCase();
 
-      const filtered = this.members
+      const filtered = this.currentPageMembers
         .filter((member) => {
           let partyMatch = true;
-          // let districtMatch = true;
           let workingBodyMatch = true;
           let genderMatch = true;
           let textMatch = true;
@@ -307,14 +298,6 @@ export default {
               this.selectedGroups.find((p) => p.slug === member.group?.slug) !=
                 null;
           }
-          // if (this.selectedDistricts.length > 0) {
-          //   districtMatch = member.person.district.reduce(
-          //     (prevMatch, memberDistrict) =>
-          //       prevMatch ||
-          //       this.selectedDistricts.indexOf(String(memberDistrict)) > -1,
-          //     false
-          //   );
-          // }
           if (this.selectedWorkingBodies.length > 0) {
             const wbs = member.results?.working_bodies || [];
             workingBodyMatch = wbs.some((wb) =>
@@ -327,26 +310,10 @@ export default {
             );
           }
 
-          return (
-            textMatch &&
-            partyMatch &&
-            // districtMatch &&
-            workingBodyMatch &&
-            genderMatch
-          );
+          return textMatch && partyMatch && workingBodyMatch && genderMatch;
         })
         .map((member) => {
           const newMember = JSON.parse(JSON.stringify(member));
-          if (!newMember.district?.length) {
-            newMember.formattedDistrict = this.$t('missing-district');
-          } else {
-            newMember.formattedDistrict = newMember.person.district
-              .map(
-                (memberDistrict) =>
-                  find(this.districts, { id: String(memberDistrict) }).label
-              )
-              .join(', ');
-          }
 
           newMember.age = getAge(newMember.results?.birth_date) || '';
           const education = newMember.results?.education;
@@ -389,10 +356,6 @@ export default {
             a = memberA.name;
             b = memberB.name;
             return a.localeCompare(b, 'sl');
-          case 'district':
-            a = memberA.formattedDistrict;
-            b = memberB.formattedDistrict;
-            return a.localeCompare(b, 'sl');
           case 'party':
             a = (memberA.group?.name || '').toLowerCase();
             b = (memberB.group?.name || '').toLowerCase();
@@ -417,24 +380,80 @@ export default {
       if (this.currentSortOrder === 'desc') {
         sortedAndFiltered.reverse();
       }
+      // END TODO filter and sort
 
-      return sortedAndFiltered;
+      if (this.currentAnalysis === 'demographics') {
+        return sortedAndFiltered.map((member) => [
+          {
+            link: this.getPersonLink(member),
+            image: this.getPersonPortrait(member),
+          },
+          { link: this.getPersonLink(member), text: member.name },
+          member.age,
+          member.education,
+          member.terms,
+          {
+            link: this.getPartyLink(member?.group),
+            text: member.group?.acronym || member.group?.name || 'N/A',
+          },
+        ]);
+      }
+      if (this.currentAnalysis === 'working_bodies') {
+        return sortedAndFiltered.map((member) => [
+          {
+            link: this.getPersonLink(member),
+            image: this.getPersonPortrait(member),
+          },
+          { link: this.getPersonLink(member), text: member.name },
+          {
+            text: member.workingBodies.map((wb) => wb.name).join(', '),
+          },
+        ]);
+      }
+      return sortedAndFiltered.map((member) => [
+        {
+          link: this.getPersonLink(member),
+          image: this.getPersonPortrait(member),
+        },
+        { link: this.getPersonLink(member), text: member.name },
+        {
+          barchart: true,
+          value: member.analysisValue,
+          width: member.analysisPercentage,
+        },
+        // member.analysisDiff,
+      ]);
     },
-    sortMap() {
-      return {
-        name: this.$t('sort-by--name'),
-        district: this.$t('sort-by--district'),
-        party: this.$t('sort-by--party'),
-        analysis: this.$t('sort-by--analysis', {
-          analysis: this.currentAnalysisData.label,
-        }),
-        change: this.$t('sort-by--change', {
-          analysis: this.currentAnalysisData.label,
-        }),
-        age: this.$t('sort-by--age'),
-        education: this.$t('sort-by--education'),
-        terms: this.$t('sort-by--terms'),
-      };
+    currentAnalysisData() {
+      return find(this.analyses, { id: this.currentAnalysis });
+    },
+    headerConfig() {
+      return defaultHeaderConfig(this, {
+        title: `${this.$t('card.title')} ${
+          this.currentAnalysisData.titleSuffix
+        }`,
+      });
+    },
+    ogConfig() {
+      return defaultOgImage(this, {
+        title: `${this.$t('card.title')} ${
+          this.currentAnalysisData.titleSuffix
+        }`,
+      });
+    },
+    selectedGroups() {
+      return this.groups.filter((party) => party.selected);
+    },
+    selectedWorkingBodies() {
+      return this.workingBodies
+        .filter((workingBody) => workingBody.selected)
+        .map((workingBody) => workingBody.id);
+    },
+    searchUrl() {
+      const url = new URL(this.cardData.url);
+      url.searchParams.set('page', this.page);
+      url.searchParams.set('text', this.textFilter);
+      return url.toString();
     },
   },
   watch: {
@@ -467,7 +486,27 @@ export default {
       }
     },
     onPageChange(newPage) {
-      this.currentPage = newPage;
+      if (this.fetching) {
+        return;
+      }
+      this.page = newPage;
+      this.scrollToTop();
+      if (!this.membersPerPage[newPage - 1]) {
+        this.fetching = true;
+        axios.get(this.searchUrl).then((response) => {
+          this.membersPerPage[newPage - 1] = response.data.results;
+          this.fetching = false;
+        });
+      }
+    },
+    scrollToTop() {
+      // eslint-disable-next-line no-restricted-properties
+      const id = this.$root.$options.contextData.mountId;
+      const el = document.getElementById(id);
+      // only scroll up if top is not visible
+      if (el && el.getBoundingClientRect().top < 0) {
+        el.scrollIntoView();
+      }
     },
   },
 };
@@ -475,6 +514,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
 
 .blue-button-list-item {
   font-size: 12px;
@@ -533,15 +573,43 @@ export default {
       margin: 0;
     }
 
-    .filter.district {
-      display: none;
-    }
-
     .genders {
       .gender {
         height: 100%;
       }
     }
+  }
+}
+
+.person-list :deep(.column) {
+  &.name,
+  &.working-bodies-col,
+  &.barchartcontainer {
+    text-align: left;
+  }
+
+  &.barchartcontainer {
+    @include respond-to(mobile) {
+      display: none;
+    }
+  }
+}
+
+.person-list :deep(.headers) {
+  margin-left: 0;
+
+  .column.portrait {
+    flex: none;
+    width: 80px + 18px - 16px;
+    visibility: hidden;
+  }
+}
+
+.person-list :deep(.headers) {
+  height: 40px;
+
+  .column {
+    white-space: normal;
   }
 }
 </style>
