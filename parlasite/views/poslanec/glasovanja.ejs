@@ -6,12 +6,12 @@
   <div class="col-md-12">
     <%- await fetchCard('/person/votes/', mp.id) %>
   </div>
-  <!-- <div class="col-md-6">
-    <%# await fetchCard('/person/most-votes-in-common/', mp.id) %>
+  <div class="col-md-6">
+    <%- await fetchCard('/person/most-votes-in-common/', mp.id) %>
   </div>
   <div class="col-md-6">
-    <%# await fetchCard('/person/least-votes-in-common/', mp.id) %>
-  </div> -->
+    <%- await fetchCard('/person/least-votes-in-common/', mp.id) %>
+  </div>
   <div class="col-md-6">
     <%- await fetchCard('/person/deviation-from-group/', mp.id) %>
   </div>

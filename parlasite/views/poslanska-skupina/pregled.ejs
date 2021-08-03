@@ -6,18 +6,18 @@
   <div class="col-md-6">
     <%- await fetchCard('/group/basic-information/', group.id) %>
   </div>
-  <!-- <div class="col-md-6">
-    <%# await fetchCard('/group/members/', group.id) %>
-  </div> -->
-  <!-- <div class="col-md-12">
-    <%# await fetchCard('/group/questions/', group.id) %>
-  </div> -->
-  <!-- <div class="col-md-12">
-    <%# await fetchCard('/group/monthly-vote-attendance/', group.id) %>
-  </div> -->
-  <!-- <div class="col-md-6">
-    <%# await fetchCard('/group/number-of-introduced-amendments/', group.id) %>
-  </div> -->
+  <div class="col-md-6">
+    <%- await fetchCard('/group/members/', group.id) %>
+  </div>
+  <div class="col-md-12">
+    <%- await fetchCard('/group/questions/', group.id) %>
+  </div>
+  <div class="col-md-12">
+    <%- await fetchCard('/group/monthly-vote-attendance/', group.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/group/number-of-introduced-amendments/', group.id) %>
+  </div>
   <div class="col-md-6">
     <%- await fetchCard('/group/number-of-questions/', group.id) %>
   </div>
