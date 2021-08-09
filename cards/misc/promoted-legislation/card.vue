@@ -1,21 +1,11 @@
 <template>
-  <card-wrapper
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    class="card-halfling card-featured-legislation"
-  >
-    <template #info>
-      <p v-t="'info.lead'" class="info-text lead"></p>
-      <p v-t="'info.methodology'" class="info-text heading"></p>
-      <p v-t="'info.text'" class="info-text"></p>
-    </template>
-
+  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <div class="legislation">
       <p-tabs :start-tab="selectedTab">
         <p-tab :label="$t('under-consideration')">
           <div class="row">
             <div
-              v-for="legislation in data.under_consideration"
+              v-for="legislation in inProcedure"
               :key="legislation.epa"
               class="col-xs-12 col-sm-6 legislation__wrapper"
             >
@@ -41,7 +31,7 @@
         <p-tab :label="$t('recently-passed')">
           <div class="legislation row">
             <div
-              v-for="legislation in data.accepted"
+              v-for="legislation in accepted"
               :key="legislation.epa"
               class="col-sm-6 legislation__wrapper"
             >
@@ -64,43 +54,6 @@
             </div>
           </div>
         </p-tab>
-        <p-tab v-if="false" :label="$t('most-discussed')">
-          <div class="legislation row">
-            <template v-if="mostDiscussedLoading">
-              <div class="nalagalnik" />
-            </template>
-            <template v-else-if="mostDiscussed === false">
-              <center>ERROR!</center>
-            </template>
-            <template v-else-if="mostDiscussed && mostDiscussed.length < 1">
-              <center>EMPTY!</center>
-            </template>
-            <template v-else>
-              <div
-                v-for="legislation in mostDiscussed"
-                :key="legislation.epa"
-                class="col-sm-6 legislation__wrapper"
-              >
-                <a
-                  :href="getLegislationLink(legislation)"
-                  class="legislation__single"
-                >
-                  <div class="icon">
-                    <div class="img-circle circle">
-                      <img
-                        v-if="legislation.icon"
-                        :src="`${slugs.urls.cdn}/icons/legislation/${legislation.icon}`"
-                      />
-                    </div>
-                  </div>
-                  <div class="text">
-                    {{ legislation.text }}
-                  </div>
-                </a>
-              </div>
-            </template>
-          </div>
-        </p-tab>
       </p-tabs>
       <div class="legislation__all">
         <a
@@ -114,11 +67,8 @@
 </template>
 
 <script>
-import axios from 'axios';
-import { sortBy } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
-import commentapi from '@/_mixins/commentapi.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import PTab from '@/_components/Tab.vue';
@@ -126,47 +76,22 @@ import PTabs from '@/_components/Tabs.vue';
 
 export default {
   name: 'CardMiscPromotedLegislation',
-  components: { PTab, PTabs },
-  mixins: [common, links, commentapi],
+  components: {
+    PTab,
+    PTabs,
+  },
+  mixins: [common, links],
+  cardInfo: {
+    doubleWidth: true,
+  },
   data() {
     return {
-      data: this.$options.cardData.data,
-      mostDiscussedLoading: true,
-      mostDiscussed: [],
-      state: this.$options.cardData.parlaState || {},
-      selectedTab: this.$options.cardData.parlaState.selectedTab || 0,
+      inProcedure: this.cardData.data?.in_procedure || [],
+      accepted: this.cardData.data?.accepted || [],
+      selectedTab: this.cardState.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
-  },
-
-  created() {
-    if (this.state.selectedTab) {
-      this.selectedTab = this.state.selectedTab;
-    }
-  },
-  mounted() {
-    Promise.all([
-      axios.get(`${this.slugs.urls.analize}/s/getAllLegislation/`),
-      this.$commentapi.getMostDiscussed(),
-    ])
-      .then(([resAll, resMost]) => {
-        const sortedArticles = sortBy(resMost.data.articles || [], [
-          'voter_count',
-        ]).reverse();
-        const epas = sortedArticles.map((a) => a.title);
-        this.mostDiscussed = epas
-          .map((epa) => resAll.data.results.find((e) => e.epa === epa))
-          .filter(Boolean)
-          .slice(0, 6);
-        this.mostDiscussedLoading = false;
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error);
-        this.mostDiscussed = false;
-        this.mostDiscussedLoading = false;
-      });
   },
 };
 </script>
