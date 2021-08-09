@@ -2,7 +2,7 @@
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
     <person-list
       :people="people"
-      :is-loading="card.isLoading"
+      :pagination-state="card"
       @load-more="loadMore"
     />
   </card-wrapper>

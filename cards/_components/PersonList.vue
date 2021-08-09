@@ -37,7 +37,7 @@
         </li>
       </ul>
     </div>
-    <div v-if="isLoading" class="nalagalnik__wrapper">
+    <div v-if="paginationState.isLoading" class="nalagalnik__wrapper">
       <div class="nalagalnik"></div>
     </div>
   </scroll-shadow>
@@ -65,9 +65,9 @@ export default {
       type: Boolean,
       default: false,
     },
-    isLoading: {
-      type: Boolean,
-      default: false,
+    paginationState: {
+      type: Object,
+      default: () => ({}),
     },
   },
   emits: ['load-more'],
