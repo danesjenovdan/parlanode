@@ -193,6 +193,7 @@ export default {
       count,
       perPage: per_page,
       page,
+      pages,
       initialPage,
       fetching: false,
       currentAnalysis: this.cardState.analysis || 'demographics',
@@ -268,16 +269,11 @@ export default {
       return this.membersPerPage[this.page - 1] || [];
     },
     currentPageProcessedMembers() {
-      // TODO: get this from api (because pagination)
       let analysisMax = 0;
       if (this.currentAnalysis !== 'demographics') {
-        analysisMax = this.members.reduce(
-          (biggest, member) =>
-            Math.max(biggest, member.results?.[this.currentAnalysis] || 0),
-          0
-        );
+        analysisMax =
+          this.membersPerPage?.[0]?.[0]?.results?.[this.currentAnalysis] || 0;
       }
-      // END TODO analysisMax
 
       // TODO: filter and sort from api (because pagination)
       const lowerTextFilter = String(this.textFilter || '').toLowerCase();
@@ -453,11 +449,13 @@ export default {
       const url = new URL(this.cardData.url);
       url.searchParams.set('page', this.page);
       url.searchParams.set('text', this.textFilter);
+      url.searchParams.set('order_by', this.currentAnalysis);
       return url.toString();
     },
   },
   watch: {
     currentAnalysis(newValue) {
+      this.onAnalysisChange();
       if (newValue === 'demographics' || newValue === 'working_bodies') {
         this.currentSort = 'name';
         this.currentSortOrder = 'asc';
@@ -498,6 +496,19 @@ export default {
           this.fetching = false;
         });
       }
+    },
+    onAnalysisChange() {
+      if (this.fetching) {
+        return;
+      }
+      this.page = 1;
+      this.membersPerPage = Array(this.pages);
+      this.scrollToTop();
+      this.fetching = true;
+      axios.get(this.searchUrl).then((response) => {
+        this.membersPerPage[0] = response.data.results;
+        this.fetching = false;
+      });
     },
     scrollToTop() {
       // eslint-disable-next-line no-restricted-properties
