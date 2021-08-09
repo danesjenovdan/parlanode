@@ -1,12 +1,12 @@
 <template>
   <scroll-shadow ref="shadow">
     <div
-      id="person-list"
       v-infinite-scroll="() => $emit('load-more')"
+      class="person-list-shadow"
       @scroll="$refs.shadow.check($event.currentTarget)"
     >
       <ul class="person-list">
-        <li v-for="person in people" :key="person.gov_id" class="person">
+        <li v-for="person in people" :key="person.slug" class="person">
           <a :href="getPersonLink(person)" class="portrait column">
             <img :src="getPersonPortrait(person)" />
           </a>
@@ -78,7 +78,7 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
-#person-list {
+.person-list-shadow {
   overflow-y: auto;
   height: $full-card-height;
 
