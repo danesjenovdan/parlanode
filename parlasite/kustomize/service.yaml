@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: parlasite
+  name: parlasite-ajdovscina
 spec:
   selector:
-    app: parlasite
+    app: parlasite-ajdovscina
   ports:
     - protocol: TCP
       port: 3066
