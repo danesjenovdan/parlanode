@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlassets-ljubljana-deployment
+  name: parlassets-ajdovscina-deployment
   labels:
-    app: parlassets-ljubljana
+    app: parlassets-ajdovscina
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlassets-ljubljana
+      app: parlassets-ajdovscina
   template:
     metadata:
       labels:
-        app: parlassets-ljubljana
+        app: parlassets-ajdovscina
     spec:
       containers:
-        - name: parlassets-ljubljana-nginx
-          image: parlassets-ljubljana
+        - name: parlassets-ajdovscina-nginx
+          image: parlassets-ajdovscina
           ports:
             - name: http
               containerPort: 80
