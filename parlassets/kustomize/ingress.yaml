@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: parlassets-ajdovscina-nginx
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   tls:
     - hosts:
