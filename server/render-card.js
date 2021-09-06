@@ -6,26 +6,32 @@ import {
   getCardDataUrl,
   fetchCardData,
   getUrls,
+  fetchSiteMap,
 } from './utils.js';
 
 const templates = {
   dev: fs.readFileSync('./build/card-template-dev.html', 'utf-8'),
-  // frame: fs.readFileSync('./build/card-template-frame.html', 'utf-8'),
+  share: fs.readFileSync('./build/card-template-share.html', 'utf-8'),
   // embed: fs.readFileSync('./build/card-template-embed.html', 'utf-8'),
   site: fs.readFileSync('./build/card-template-site.html', 'utf-8'),
 };
 
-const getTemplate = (template) => {
-  if (Object.prototype.hasOwnProperty.call(templates, template)) {
-    return templates[template];
+const getTemplate = (name, replacements = {}) => {
+  if (!Object.prototype.hasOwnProperty.call(templates, name)) {
+    throw new Error(`Template ${name} not found`);
   }
-  return templates.dev;
+
+  let template = templates[name];
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [key, value] of Object.entries(replacements)) {
+    template = template.replaceAll(`<!--${key}-->`, value);
+  }
+
+  return template;
 };
 
 const manifest = fs.readJSONSync('./dist/client/manifest.json');
 const ssrManifest = fs.readJSONSync('./dist/client/ssr-manifest.json');
-
-const siteMap = fs.readJSONSync('./data/siteMap.default.json'); // TODO: get from parlasite
 
 const getClientAssets = (cardName) => {
   const assets = new Set();
@@ -100,6 +106,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const cardData = await fetchCardData(dataUrl, id, date);
   const cardState = { ...state };
   const urls = getUrls();
+  const siteMap = await fetchSiteMap();
 
   const uid = Math.random().toString(36).slice(2);
   const mountId = `${cardName.replace(/\//g, '_')}__${uid}`;
@@ -127,16 +134,15 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
 
   const outputHtml = `${styles}${preloads}<div id="${mountId}">${cardHtml}</div>${initialState}${scripts}`;
 
-  const html = getTemplate(template)
-    .replace(`<!--ssr-outlet-->`, outputHtml)
-    .replace(
-      '<!--container-class-->',
-      contextData.template.frameContainerClass
-    );
+  const html = getTemplate(template, {
+    'page-title': contextData.template.pageTitle,
+    'parlassets-url': urls.cdn,
+    'container-class': contextData.template.frameContainerClass,
+    'ssr-outlet': outputHtml,
+    'debug-data-url': cardData.url,
+  });
 
-  const dataUrlLink = `<a href="${cardData.url}">${cardData.url}</a>`;
-
-  return dataUrlLink + html;
+  return html;
 };
 
 // eslint-disable-next-line import/prefer-default-export
