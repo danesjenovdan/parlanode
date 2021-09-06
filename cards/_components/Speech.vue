@@ -40,7 +40,7 @@
               {{ vote.title }}
             </div>
             <div class="vote-link">
-              <a href="#" class="funblue-light-hover">
+              <a :href="getVoteLink(vote, session)" class="funblue-light-hover">
                 {{ $t('vote-roll-results') }} >>>
               </a>
             </div>
