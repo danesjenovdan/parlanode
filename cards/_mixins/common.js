@@ -27,7 +27,7 @@ export default {
         frameContainerClass: rootOptions.cardInfo?.doubleWidth
           ? 'col-md-12'
           : 'col-md-6 col-md-offset-3',
-        // embedContainerClass:
+        embedContainerClass: '',
         //   (rootOptions.cardInfo?.doubleWidth ? ' big-card' : '') +
         //   (rootOptions.cardInfo?.fullHeight ? ' high-card' : ''),
         contextUrl: this.urls.site,

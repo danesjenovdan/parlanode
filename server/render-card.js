@@ -12,7 +12,7 @@ import {
 const templates = {
   dev: fs.readFileSync('./build/card-template-dev.html', 'utf-8'),
   share: fs.readFileSync('./build/card-template-share.html', 'utf-8'),
-  // embed: fs.readFileSync('./build/card-template-embed.html', 'utf-8'),
+  embed: fs.readFileSync('./build/card-template-embed.html', 'utf-8'),
   site: fs.readFileSync('./build/card-template-site.html', 'utf-8'),
 };
 
@@ -138,6 +138,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     'page-title': contextData.template.pageTitle,
     'parlassets-url': urls.cdn,
     'container-class': contextData.template.frameContainerClass,
+    'embed-class': contextData.template.embedContainerClass,
     'ssr-outlet': outputHtml,
     'debug-data-url': cardData.url,
   });

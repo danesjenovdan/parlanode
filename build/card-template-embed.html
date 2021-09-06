@@ -13,14 +13,23 @@
       rel="stylesheet"
       href="<!--parlassets-url-->/scss/style.css"
     />
+    <style>
+      html,
+      body {
+        margin-right: 0 !important;
+      }
+      body {
+        background: transparent !important;
+        padding: 6px !important;
+      }
+      .card-container {
+        margin-top: 0 !important;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="<!--container-class-->">
-          <!--ssr-outlet-->
-        </div>
-      </div>
+    <div class="<!--embed-class-->">
+      <!--ssr-outlet-->
     </div>
   </body>
 </html>
