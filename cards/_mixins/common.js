@@ -15,22 +15,26 @@ export default {
     };
   },
   created() {
+    // eslint-disable-next-line no-restricted-properties
+    const rootOptions = this.$root.$options;
+
     // only create template object if it does not already exist to prevent
     // nested components overwriting custom data
-    if (this.$root.$options.contextData.template == null) {
-      this.$root.$options.contextData.template = {
+    if (rootOptions.contextData.template == null) {
+      // eslint-disable-next-line no-restricted-properties
+      rootOptions.contextData.template = {
         pageTitle: this.$te('card.title') ? this.$t('card.title') : '',
-        frameContainerClass: this.$root.$options.cardInfo?.doubleWidth
+        frameContainerClass: rootOptions.cardInfo?.doubleWidth
           ? 'col-md-12'
           : 'col-md-6 col-md-offset-3',
-        embedContainerClass:
-          (this.$root.$options.cardInfo?.doubleWidth ? ' big-card' : '') +
-          (this.$root.$options.cardInfo?.fullHeight ? ' high-card' : ''),
+        embedContainerClass: '',
+        //   (rootOptions.cardInfo?.doubleWidth ? ' big-card' : '') +
+        //   (rootOptions.cardInfo?.fullHeight ? ' high-card' : ''),
         contextUrl: this.urls.site,
-        ogText: this.$t('ogText'),
       };
 
       // TODO: og config data
+      // ogText: this.$t('ogText'),
       // const { ogConfig } = this;
       // if (ogConfig) {
       //   const { name, ...params } = ogConfig;
@@ -38,7 +42,7 @@ export default {
       //   const ogImageParams = `?${Object.keys(params)
       //     .map((k) => `${k}=${encodeURIComponent(params[k])}`)
       //     .join('&')}`;
-      //   this.$root.$options.contextData.template.ogImageUrl = `${ogImagePath}${ogImageParams}`;
+      //   rootOptions.contextData.template.ogImageUrl = `${ogImagePath}${ogImageParams}`;
       // } else {
       //   // eslint-disable-next-line no-console
       //   console.warn('Missing ogConfig!');

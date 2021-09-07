@@ -52,7 +52,7 @@
             <ul class="speeches__list">
               <govor
                 v-for="speech in daySpeeches"
-                :key="speech.speech_id"
+                :key="speech.id"
                 :speech="speech"
               />
             </ul>
