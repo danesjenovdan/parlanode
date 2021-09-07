@@ -15,7 +15,6 @@
         v-quotable
         :speech="speech"
         :session="session"
-        :per-page="perPage"
       />
       <pagination
         v-if="!fetching && count > perPage"
