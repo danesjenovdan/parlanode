@@ -11,10 +11,10 @@
       <div v-if="fetching" class="nalagalnik"></div>
       <speech
         v-for="speech in speeches"
-        :key="speech.speech_id"
+        :key="speech.id"
         v-quotable
         :speech="speech"
-        :session="cardData.data?.session"
+        :session="session"
         :per-page="perPage"
       />
       <pagination
@@ -78,6 +78,7 @@ export default {
       page,
       initialPage,
       fetching: false,
+      session: this.cardData.data?.session,
     };
   },
   computed: {

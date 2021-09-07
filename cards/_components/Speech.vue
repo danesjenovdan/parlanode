@@ -1,8 +1,5 @@
 <template>
-  <div
-    :id="speech.speech_id"
-    :class="['speech-holder', { 'just-quote': showQuote }]"
-  >
+  <div :id="speech.id" :class="['speech-holder', { 'just-quote': showQuote }]">
     <input :value="getSpeechContent(speech)" type="hidden" class="mywords" />
     <div class="person-session">
       <div class="person">
