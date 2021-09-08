@@ -113,50 +113,56 @@ export default {
 
 .agenda-links {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin: 16px 0;
 
-  a {
+  .link {
     display: block;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 30px;
-    padding: 10px 30px;
-    color: $white;
-    border: none;
-    background-color: $tab-passive;
 
-    &:hover {
+    a {
+      display: block;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 30px;
+      padding: 10px 30px;
       color: $white;
-      background-color: $tab-hover;
-      text-decoration: none;
+      border: none;
+      background-color: $tab-passive;
+
+      &:hover {
+        color: $white;
+        background-color: $tab-hover;
+        text-decoration: none;
+      }
+
+      @include respond-to(mobile) {
+        font-size: 14px;
+        padding: 6px 16px;
+      }
     }
 
-    @include respond-to(mobile) {
-      font-size: 14px;
-      padding: 6px 16px;
+    .nav-icon {
+      background-size: 24px 100%;
+      background-repeat: no-repeat;
+      background-position: 24px center;
+      padding-left: 60px;
+
+      @include respond-to(mobile) {
+        padding-left: 40px;
+        background-size: 18px 100%;
+        background-position: 14px center !important;
+      }
     }
-  }
 
-  .nav-icon {
-    background-size: 24px 100%;
-    background-repeat: no-repeat;
-    background-position: 24px center;
-    padding-left: 60px;
+    .nav-icon-transcripts {
+      background-image: url('#{get-parlassets-url()}/icons/navigation/transcripts.svg');
+      background-size: 29px 100%;
+      background-position: 21px center;
 
-    @include respond-to(mobile) {
-      padding-left: 40px;
-      background-size: 18px 100%;
-      background-position: 14px center !important;
-    }
-  }
-
-  .nav-icon-transcripts {
-    background-image: url('#{get-parlassets-url()}/icons/navigation/transcripts.svg');
-    background-size: 29px 100%;
-    background-position: 21px center;
-
-    @include respond-to(mobile) {
-      background-size: 22px 100%;
+      @include respond-to(mobile) {
+        background-size: 22px 100%;
+      }
     }
   }
 }

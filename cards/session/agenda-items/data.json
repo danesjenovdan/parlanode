@@ -3,187 +3,771 @@
     "results": {
       "agenda_items": [
         {
-          "id": "1181",
+          "id": 2998,
           "tags": [],
-          "name": "Potrditev zapisnika 18. seje Mestnega sveta Mestne občine Ljubljana",
-          "order": "1",
+          "name": "Potrditev zapisnika 17. seje Mestnega sveta Mestne občine Ljubljana",
+          "order": 1,
           "text": null,
           "links": [
             {
-              "id": 5806,
-              "url": "https://www.ljubljana.si/assets/Uploads/8.-tocka-Porocilo-LOMI-17-18.pdf",
-              "name": "Zapisnik",
+              "id": 9287,
+              "url": "https://www.ljubljana.si/assets/Uploads/1.-tocka-zapisnik-17.-seje-predlog.pdf",
+              "name": "Potrditev zapisnika 17. seje Mestnega sveta Mestne občine Ljubljana",
               "tags": [
                 {
-                  "id": 12,
-                  "name": "zapisnik",
-                  "slug": "zapisnik"
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 3024,
+          "tags": [],
+          "name": "Poročilo župana",
+          "order": 2,
+          "text": null,
+          "links": [
+            {
+              "id": 9549,
+              "url": "https://www.ljubljana.si/assets/Uploads/4.-tocka-Postopkovni-predlog-sklepa.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 3029,
+          "tags": [],
+          "name": "Kadrovske zadeve",
+          "order": 3,
+          "text": null,
+          "links": [
+            {
+              "id": 9587,
+              "url": "https://www.ljubljana.si/assets/Uploads/14.-tocka-Sprejeti-sklepi-in-mnenja.pdf",
+              "name": "Sprejeti sklepi in mnenja",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
               ]
             },
             {
-              "id": 5806,
-              "url": "https://www.ljubljana.si/assets/Uploads/8.-tocka-Porocilo-LOMI-17-18.pdf",
-              "name": "Zapisnik",
+              "id": 9586,
+              "url": "https://www.ljubljana.si/assets/Uploads/29.-tocka-Kadrovske-zadeve.pdf",
+              "name": "Kadrovske zadeve",
               "tags": [
                 {
-                  "id": 12,
-                  "name": "zapisnik",
-                  "slug": "zapisnik"
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
                 }
               ]
             }
           ]
         },
         {
-          "id": "1186",
+          "id": 3034,
           "tags": [],
-          "name": "Kadrovske zadeve",
-          "order": "2",
+          "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana",
+          "order": 4,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 9624,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-tocka-Sprejeti-sklep.pdf",
+              "name": "a) Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            },
+            {
+              "id": 9623,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije19.pdf",
+              "name": "a) in b) Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9622,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.a-tocka-Porocilo-Statutarno-pravne-komisije.pdf",
+              "name": "a) Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9621,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-in-b-tocka-Porocilo-OF.pdf",
+              "name": "a) in b) Poročilo Odbora za finance",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9620,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-in-b-tocka-povec.-in-zmanjs.-nam.-prem.-JSS-MOL.pdf",
+              "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana \r\n b) Predlog Sklepa o zmanjšanju vrednosti namenskega premoženja in kapitala Javnega \r\nstanovanjskega sklada Mestne občine Ljubljana",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1192",
+          "id": 3040,
           "tags": [],
-          "name": "Poročilo o opravljenem nadzoru razpolaganja s premoženjem MOL, namenskosti in smotrnosti porabe proračunskih sredstev in finančnega poslovanja uporabnikov proračunskih sredstev v letu 2019 in projektov v izvajanju",
-          "order": "3",
+          "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana",
+          "order": 5,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 9686,
+              "url": "https://www.ljubljana.si/assets/Uploads/7.-b-tocka-Sprejeti-sklep.pdf",
+              "name": "b) Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            },
+            {
+              "id": 9685,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije19.pdf",
+              "name": "a) in b) Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9684,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-in-b-tocka-Porocilo-OF.pdf",
+              "name": "a) in b) Poročilo Odbora za finance",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9683,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-in-b-tocka-povec.-in-zmanjs.-nam.-prem.-JSS-MOL.pdf",
+              "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana \r\n b) Predlog Sklepa o zmanjšanju vrednosti namenskega premoženja in kapitala Javnega \r\nstanovanjskega sklada Mestne občine Ljubljana",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1198",
+          "id": 3046,
           "tags": [],
-          "name": "a) Predlog Odloka o rebalansu proračuna Mestne občine Ljubljana za leto 2021",
-          "order": "4",
+          "name": "Predlog Sklepa o določitvi dela plače za delovno uspešnost direktorja Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2021 iz naslova povečanega obsega dela",
+          "order": 6,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 9747,
+              "url": "https://www.ljubljana.si/assets/Uploads/20.-tocka-Sprejeti-sklep.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            },
+            {
+              "id": 9746,
+              "url": "https://www.ljubljana.si/assets/Uploads/18.-tocka-Porocilo-OSP.pdf",
+              "name": "Poročilo Odbora za stanovanjsko politiko",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9745,
+              "url": "https://www.ljubljana.si/assets/Uploads/6.-tocka-sklep-NS-JSS-MOL.pdf",
+              "name": "Sklep Nadzornega sveta JSS MOL",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9744,
+              "url": "https://www.ljubljana.si/assets/Uploads/6.-tocka-Amandmaja-zupana.pdf",
+              "name": "Amandmaja župana",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9743,
+              "url": "https://www.ljubljana.si/assets/Uploads/6.-tocka-povecan-obseg-2021-za-dir.-JSS-MOL.pdf",
+              "name": "Predlog Sklepa o določitvi dela plače za delovno uspešnost direktorja Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2021 iz naslova povečanega obsega dela",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1204",
+          "id": 3054,
           "tags": [],
-          "name": "a) Predlog Odloka o rebalansu proračuna Mestne občine Ljubljana za leto 2021",
-          "order": "5",
+          "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020",
+          "order": 7,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 9906,
+              "url": "https://www.ljubljana.si/assets/Uploads/7.-a-tocka-Sprejeti-sklep.pdf",
+              "name": "a) Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            },
+            {
+              "id": 9905,
+              "url": "https://www.ljubljana.si/assets/Uploads/9.-a-in-b-tocka-Porocilo-OUP.pdf",
+              "name": "a) in b) Poročilo Odbora za urejanje prostora",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9904,
+              "url": "https://www.ljubljana.si/assets/Uploads/7.-a-in-b-tocka-sprememba-TUS-StrMOL-in-IN-TUS-MOL.pdf",
+              "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020 \r\nb) Predlog Spremembe Izvedbenega načrta Trajnostne urbane strategije Mestne občine Ljubljana (IN TUS MOL 2014-2020)",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1210",
+          "id": 3062,
           "tags": [],
-          "name": "a) Predlog Odloka o rebalansu proračuna Mestne občine Ljubljana za leto 2021",
-          "order": "6",
+          "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020",
+          "order": 8,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 9970,
+              "url": "https://www.ljubljana.si/assets/Uploads/8.-b-tocka-Sprejeti-sklep.pdf",
+              "name": "b) Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            },
+            {
+              "id": 9969,
+              "url": "https://www.ljubljana.si/assets/Uploads/9.-a-in-b-tocka-Porocilo-OUP.pdf",
+              "name": "a) in b) Poročilo Odbora za urejanje prostora",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9968,
+              "url": "https://www.ljubljana.si/assets/Uploads/7.-a-in-b-tocka-sprememba-TUS-StrMOL-in-IN-TUS-MOL.pdf",
+              "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020 \r\nb) Predlog Spremembe Izvedbenega načrta Trajnostne urbane strategije Mestne občine Ljubljana (IN TUS MOL 2014-2020)",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1216",
+          "id": 3070,
           "tags": [],
-          "name": "a) Osnutek Odloka o proračunu Mestne občine Ljubljana za leto 2022",
-          "order": "7",
+          "name": "Predlog Strategije razvoja turistične destinacije Ljubljana in ljubljanska regija 2021-2027",
+          "order": 9,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 10021,
+              "url": "https://www.ljubljana.si/assets/Uploads/18.-tocka-Sprejeti-sklep.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            },
+            {
+              "id": 10020,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije21.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10019,
+              "url": "https://www.ljubljana.si/assets/Uploads/10.-tocka-Porocilo-OGDTK.pdf",
+              "name": "Poročilo Odbora za gospodarske dejavnosti, turizem in kmetijstvo",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10018,
+              "url": "https://www.ljubljana.si/assets/Uploads/9.-tocka-strategija-razvoja-turizma-2021-2026.pdf",
+              "name": "Predlog Strategije razvoja turistične destinacije Ljubljana in ljubljanska regija 2021-2027",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1222",
+          "id": 3078,
           "tags": [],
-          "name": "a) Osnutek Odloka o proračunu Mestne občine Ljubljana za leto 2022",
-          "order": "8",
+          "name": "Predlog Sklepa o spremembah in dopolnitvah Sklepa o ustanovitvi javnega zavoda Turizem Ljubljana",
+          "order": 10,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 10085,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije22.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10084,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Porocilo-OGDTK.pdf",
+              "name": "Poročilo Odbora za gospodarske dejavnosti, turizem in kmetijstvo",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10083,
+              "url": "https://www.ljubljana.si/assets/Uploads/9.-tocka-Sklep-o-spremembi-Sklepa-ustanovitvi-JZ-TL.pdf",
+              "name": "Predlog Sklepa o spremembah in dopolnitvah Sklepa o ustanovitvi javnega zavoda Turizem Ljubljana",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1228",
+          "id": 3085,
           "tags": [],
-          "name": "Predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne pogodbe za nezazidana stavbna zemljišča s parc. št. 127/175, parc. št. 127/174 in parc. št. 127/63, vsa k. o. 1730 Moste",
-          "order": "9",
+          "name": "Predlog Sklepa o pozitivnem predhodnem mnenju k Strategiji Lutkovnega gledališča Ljubljana za obdobje 2021-2025",
+          "order": 11,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 10148,
+              "url": "https://www.ljubljana.si/assets/Uploads/19.-tocka-Sprejeti-sklep.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            },
+            {
+              "id": 10147,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije23.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10146,
+              "url": "https://www.ljubljana.si/assets/Uploads/35.-tocka-Porocilo-OKRD.pdf",
+              "name": "Poročilo Odbora za kulturo in raziskovalno dejavnost",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10145,
+              "url": "https://www.ljubljana.si/assets/Uploads/10.-tocka-Sklep-sveta-LGL.pdf",
+              "name": "Dodatno gradivo",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            },
+            {
+              "id": 10144,
+              "url": "https://www.ljubljana.si/assets/Uploads/10.-tocka-Predlog-Sklepa-o-pozitivnem-predhodnem-mnenju-k-Strategiji-LGL.pdf",
+              "name": "Predlog Sklepa o pozitivnem predhodnem mnenju k Strategiji Lutkovnega gledališča Ljubljana za obdobje 2021-2025",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1234",
+          "id": 3092,
           "tags": [],
-          "name": "Predlog finančnega načrta Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2021",
-          "order": "10",
+          "name": "Predlog Sklepa o ugotovitvi javne koristi – Pot ob Savi",
+          "order": 12,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 10194,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Predlog-Svetniskega-kluba-NSi-za-umik-tocke.pdf",
+              "name": "Predlog Svetniškega kluba NSi za umik točke",
+              "tags": [
+                {
+                  "id": 16,
+                  "name": "Umik točke iz dnevnega reda",
+                  "slug": "umik-tocke-iz-dnevnega-reda"
+                }
+              ]
+            },
+            {
+              "id": 10193,
+              "url": "https://www.ljubljana.si/assets/Uploads/12.-tocka-Predlog-Svetniskega-kluba-SDS-za-umik-tocke.pdf",
+              "name": "Predlog Svetniškega kluba SDS za umik točke",
+              "tags": [
+                {
+                  "id": 16,
+                  "name": "Umik točke iz dnevnega reda",
+                  "slug": "umik-tocke-iz-dnevnega-reda"
+                }
+              ]
+            },
+            {
+              "id": 10192,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Odgovori-na-pripombe-Svetniskega-kluba-Levica.pdf",
+              "name": "Odgovori na pripombe Svetniškega kluba Levica",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10191,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije24.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10190,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Porocilo-Odbora-za-sport.pdf",
+              "name": "Poročilo Odbora za šport",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10189,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Pripombe-Svetniskega-kluba-Levica.pdf",
+              "name": "Pripombe Svetniškega kluba Levica",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10188,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-javna-korist-Pot-ob-Savi.pdf",
+              "name": "Predlog Sklepa o ugotovitvi javne koristi – Pot ob Savi",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1239",
+          "id": 3099,
           "tags": [],
-          "name": "Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana",
-          "order": "11",
+          "name": "Predlog Sklepa o seznanitvi in soglasju k predlogu Odloka o spremembah Odloka o načrtu za kakovost zraka na območju Mestne občine Ljubljana",
+          "order": 13,
           "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 10240,
+              "url": "https://www.ljubljana.si/assets/Uploads/21.-tocka-Sprejeti-sklep.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
+                {
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
+                }
+              ]
+            },
+            {
+              "id": 10239,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije25.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10238,
+              "url": "https://www.ljubljana.si/assets/Uploads/27.-tocka-Porocilo-OVO.pdf",
+              "name": "Poročilo Odbora za varstvo okolja",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10237,
+              "url": "https://www.ljubljana.si/assets/Uploads/13.-tocka-seznanitev-in-soglasje-o-kakovosti-zraka.pdf",
+              "name": "Predlog Sklepa o seznanitvi in soglasju k predlogu Odloka o spremembah Odloka o načrtu za kakovost zraka na območju Mestne občine Ljubljana",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1242",
+          "id": 3105,
           "tags": [],
-          "name": "Predlog Sklepa o pozitivnem predhodnem mnenju k strategiji Slovenskega mladinskega gledališča Ljubljana za obdobje 2021-2025",
-          "order": "12",
-          "text": "",
-          "links": []
+          "name": "Predlog Pravilnika o spremembah Pravilnika o ukrepih za razvoj podeželja v Mestni občini Ljubljana za programsko obdobje 2015–2020",
+          "order": 14,
+          "text": null,
+          "links": [
+            {
+              "id": 10280,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije26.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10279,
+              "url": "https://www.ljubljana.si/assets/Uploads/13.-tocka-Porocilo-OGDTK.pdf",
+              "name": "Poročilo Odbora za gospodarske dejavnosti, turizem in kmetijstvo",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10278,
+              "url": "https://www.ljubljana.si/assets/Uploads/13.-tocka-razvoj-podezelja.pdf",
+              "name": "Predlog Pravilnika o spremembah Pravilnika o ukrepih za razvoj podeželja v Mestni občini Ljubljana za programsko obdobje 2015–2020",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "id": "1245",
+          "id": 3110,
           "tags": [],
-          "name": "Predlog Poslovnega načrta družbe ŽALE Javno podjetje, d.o.o. za leto 2021",
-          "order": "13",
+          "name": "Predlog Odloka o spremembah in dopolnitvah Odloka o priznanjih Mestne občine Ljubljana s predlogom za hitri postopek",
+          "order": 15,
           "text": null,
-          "links": []
-        },
-        {
-          "id": "1248",
-          "tags": [],
-          "name": "Predlog Poslovnega načrta družbe Javno podjetje Ljubljanska parkirišča in tržnice, d. o. o., za leto 2021",
-          "order": "14",
-          "text": null,
-          "links": []
-        },
-        {
-          "id": "1251",
-          "tags": [],
-          "name": "Predlog soglasja za zadolžitev družbe Javno podjetje Ljubljanska parkirišča in tržnice, d. o. o.",
-          "order": "15",
-          "text": null,
-          "links": []
-        },
-        {
-          "id": "1254",
-          "tags": [],
-          "name": "Predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana s predlogom za hitri postopek",
-          "order": "16",
-          "text": null,
-          "links": []
-        },
-        {
-          "id": "1257",
-          "tags": [],
-          "name": "Predlog Odloka o spremembah in dopolnitvah Odloka o urejanju prometa v Mestni občini Ljubljana s predlogom za hitri postopek",
-          "order": "17",
-          "text": null,
-          "links": []
-        },
-        {
-          "id": "1259",
-          "tags": [],
-          "name": "Osnutek Odloka o spremembah potekov ulic in o poimenovanju ulic, parkov in trga na območju Mestne občine Ljubljana",
-          "order": "18",
-          "text": null,
-          "links": []
+          "links": [
+            {
+              "id": 10311,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije27.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10310,
+              "url": "https://www.ljubljana.si/assets/Uploads/14.-tocka-spremembe-odloka-o-priznanjih.pdf",
+              "name": "Predlog Odloka o spremembah in dopolnitvah Odloka o priznanjih Mestne občine Ljubljana s predlogom za hitri postopek",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         }
       ],
       "links": [
         {
-          "id": 5806,
-          "url": "https://www.ljubljana.si/assets/Uploads/8.-tocka-Porocilo-LOMI-17-18.pdf",
-          "name": "Zapisnik",
-          "tags": [
-            {
-              "id": 12,
-              "name": "zapisnik",
-              "slug": "zapisnik"
-            }
-          ]
+          "id": 9273,
+          "url": "https://www.ljubljana.si/assets/Uploads/zapisnik-18.-seje-MS-MOL.pdf",
+          "name": "Zapisnik 18. seje Mestnega sveta MOL",
+          "tags": []
         }
       ]
     },
@@ -192,9 +776,9 @@
       "beginning": null
     },
     "session": {
-      "name": "19. seja Mestnega sveta MOL",
-      "id": 57,
-      "start_time": "2021-01-18T15:30:00",
+      "name": "18. seja Mestnega sveta MOL",
+      "id": 423,
+      "start_time": "2020-12-14T15:30:00",
       "end_time": null,
       "organizations": [
         {
