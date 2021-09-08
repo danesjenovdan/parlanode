@@ -1,4 +1,5 @@
-export default (number, precision = 0, percent = false) => {
+// TODO: locale
+export default (number, { precision = 0, percent = false } = {}) => {
   // shows "< 0.01" if number is very small like "0.0001245"
   let prefix = '';
   const minValueAboveZero = 10 ** -precision;
@@ -13,7 +14,7 @@ export default (number, precision = 0, percent = false) => {
   }
 
   const formatter = new Intl.NumberFormat(
-    'sl', // TODO: get current locale
+    'sl', // TODO: locale
     {
       style: percent ? 'percent' : 'decimal',
       minimumFractionDigits: precision,

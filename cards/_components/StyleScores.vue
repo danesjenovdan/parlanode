@@ -139,7 +139,7 @@ export default {
       return { width: `${(this.results[key] / this.maxValue) * 70}%` };
     },
     formatNumber(number) {
-      return numberFormatter(number, 2, true);
+      return numberFormatter(number, { precision: 2, percent: true });
     },
   },
 };

@@ -86,7 +86,10 @@ export default {
           formattedValue: numberFormatter(row.value || 0),
           portrait: row.portrait,
           barWidth: (row.value / maxValue) * (this.showNumbers ? 70 : 100),
-          percentage: numberFormatter((row.value / totalValue) * 100, 2, true),
+          percentage: numberFormatter((row.value / totalValue) * 100, {
+            precision: 2,
+            percent: true,
+          }),
         }))
         .sort((a, b) => b.value - a.value);
     },

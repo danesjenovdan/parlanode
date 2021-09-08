@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     formatNumber(number) {
-      return numberFormatter(number, 0, true);
+      return numberFormatter(number, { percent: true });
     },
   },
 };
