@@ -97,6 +97,7 @@ export default {
       if (this.fetching) {
         return;
       }
+      this.page = newPage;
       this.scrollToTop();
       if (!this.speechesPerPage[newPage - 1]) {
         this.fetching = true;
