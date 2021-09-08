@@ -57,7 +57,7 @@ export default {
       }
       parent = parent.$parent;
     }
-    url = `${url}&locale=sl-obcine&template=embed`; // TODO: correct locale
+    url = `${url}&locale=${this.$i18n.locale}&template=embed`;
     return {
       url,
       copied: false,
