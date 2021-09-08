@@ -8,7 +8,7 @@
           "name": "Potrditev zapisnika 17. seje Mestnega sveta Mestne občine Ljubljana",
           "order": 1,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 9287,
               "url": "https://www.ljubljana.si/assets/Uploads/1.-tocka-zapisnik-17.-seje-predlog.pdf",
@@ -29,7 +29,7 @@
           "name": "Poročilo župana",
           "order": 2,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 9549,
               "url": "https://www.ljubljana.si/assets/Uploads/4.-tocka-Postopkovni-predlog-sklepa.pdf",
@@ -50,7 +50,7 @@
           "name": "Kadrovske zadeve",
           "order": 3,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 9587,
               "url": "https://www.ljubljana.si/assets/Uploads/14.-tocka-Sprejeti-sklepi-in-mnenja.pdf",
@@ -83,7 +83,7 @@
           "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana",
           "order": 4,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 9624,
               "url": "https://www.ljubljana.si/assets/Uploads/5.-a-tocka-Sprejeti-sklep.pdf",
@@ -152,7 +152,7 @@
           "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana",
           "order": 5,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 9686,
               "url": "https://www.ljubljana.si/assets/Uploads/7.-b-tocka-Sprejeti-sklep.pdf",
@@ -209,7 +209,7 @@
           "name": "Predlog Sklepa o določitvi dela plače za delovno uspešnost direktorja Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2021 iz naslova povečanega obsega dela",
           "order": 6,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 9747,
               "url": "https://www.ljubljana.si/assets/Uploads/20.-tocka-Sprejeti-sklep.pdf",
@@ -278,7 +278,7 @@
           "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020",
           "order": 7,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 9906,
               "url": "https://www.ljubljana.si/assets/Uploads/7.-a-tocka-Sprejeti-sklep.pdf",
@@ -323,7 +323,7 @@
           "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020",
           "order": 8,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 9970,
               "url": "https://www.ljubljana.si/assets/Uploads/8.-b-tocka-Sprejeti-sklep.pdf",
@@ -368,7 +368,7 @@
           "name": "Predlog Strategije razvoja turistične destinacije Ljubljana in ljubljanska regija 2021-2027",
           "order": 9,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 10021,
               "url": "https://www.ljubljana.si/assets/Uploads/18.-tocka-Sprejeti-sklep.pdf",
@@ -425,7 +425,7 @@
           "name": "Predlog Sklepa o spremembah in dopolnitvah Sklepa o ustanovitvi javnega zavoda Turizem Ljubljana",
           "order": 10,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 10085,
               "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije22.pdf",
@@ -470,7 +470,7 @@
           "name": "Predlog Sklepa o pozitivnem predhodnem mnenju k Strategiji Lutkovnega gledališča Ljubljana za obdobje 2021-2025",
           "order": 11,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 10148,
               "url": "https://www.ljubljana.si/assets/Uploads/19.-tocka-Sprejeti-sklep.pdf",
@@ -539,7 +539,7 @@
           "name": "Predlog Sklepa o ugotovitvi javne koristi – Pot ob Savi",
           "order": 12,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 10194,
               "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Predlog-Svetniskega-kluba-NSi-za-umik-tocke.pdf",
@@ -632,7 +632,7 @@
           "name": "Predlog Sklepa o seznanitvi in soglasju k predlogu Odloka o spremembah Odloka o načrtu za kakovost zraka na območju Mestne občine Ljubljana",
           "order": 13,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 10240,
               "url": "https://www.ljubljana.si/assets/Uploads/21.-tocka-Sprejeti-sklep.pdf",
@@ -689,7 +689,7 @@
           "name": "Predlog Pravilnika o spremembah Pravilnika o ukrepih za razvoj podeželja v Mestni občini Ljubljana za programsko obdobje 2015–2020",
           "order": 14,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 10280,
               "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije26.pdf",
@@ -734,7 +734,7 @@
           "name": "Predlog Odloka o spremembah in dopolnitvah Odloka o priznanjih Mestne občine Ljubljana s predlogom za hitri postopek",
           "order": 15,
           "text": null,
-          "links": [
+          "documents": [
             {
               "id": 10311,
               "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije27.pdf",
@@ -762,7 +762,7 @@
           ]
         }
       ],
-      "links": [
+      "documents": [
         {
           "id": 9273,
           "url": "https://www.ljubljana.si/assets/Uploads/zapisnik-18.-seje-MS-MOL.pdf",

@@ -12,7 +12,7 @@
       >
         <div class="name">{{ agendaItem.name }}</div>
         <div class="material">
-          <div v-for="link in agendaItem.links" :key="link.id" class="link">
+          <div v-for="link in agendaItem.documents" :key="link.id" class="link">
             <a :href="link.url" class="funblue-light-hover" target="_blank">
               {{ link.name }}
             </a>
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="agenda-links">
-      <div v-for="link in links" :key="link.id" class="link">
+      <div v-for="link in documents" :key="link.id" class="link">
         <a
           :href="link.url"
           class="nav-icon nav-icon-transcripts"
@@ -49,7 +49,7 @@ export default {
     return {
       session: this.cardData.data?.session || {},
       agendaItems: this.cardData.data?.results?.agenda_items || [],
-      links: this.cardData.data?.results?.links || [],
+      documents: this.cardData.data?.results?.documents || [],
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
