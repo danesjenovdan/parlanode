@@ -14,7 +14,7 @@ export default function devServeCards() {
       server.middlewares.use((req, res, next) => {
         const url = new URL(req.url, `http://${req.headers.host}/`);
         const pathname = url.pathname.replace(/\/$/, '');
-        if (pathname === '/') {
+        if (pathname === '') {
           const cards = glob
             .sync(join(cardsPath, '**/card.vue'))
             .map((file) => file.split('/').slice(-3, -1));
