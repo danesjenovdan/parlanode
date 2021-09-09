@@ -24,8 +24,6 @@
         @change="onPageChange"
       />
     </div>
-    <!-- TODO: this should be empty state -->
-    <div v-else v-t="'session-processing'" class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -65,10 +63,7 @@ export default {
     const speechesPerPage = Array(pages);
     speechesPerPage[initialPage - 1] = results;
 
-    // const state = this.$options.contextData.cardState;
-    // let page = (state && state.page) || Number(data.page);
-    // page = Math.min(Math.max(page, 0), data.pages);
-    const page = initialPage;
+    const page = Number(this.cardState.page) || initialPage;
 
     return {
       speechesPerPage,
@@ -111,7 +106,9 @@ export default {
             `${this.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
           )
           .then((response) => {
-            this.speechesPerPage[newPage - 1] = response.data.results;
+            const responsePage = response?.data?.page || 1;
+            this.page = responsePage;
+            this.speechesPerPage[responsePage - 1] = response?.data?.results;
             this.fetching = false;
 
             // needed if dynamically loaded to reset the css :target and scroll to selected element
@@ -144,14 +141,6 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 @import 'parlassets/scss/color_classes';
-
-.empty-dataset {
-  font-size: 16px;
-  line-height: 20px;
-  margin: 70px 0;
-  text-align: center;
-  color: $font-placeholder;
-}
 
 .multiple-speeches :deep(.speech-holder) {
   border-top: 1px solid $background;

@@ -207,7 +207,10 @@ export default {
       return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
     },
     formatNumberWithPrecision(number) {
-      return numberFormatter(number, this.precision, this.percent);
+      return numberFormatter(number, {
+        precision: this.precision,
+        percent: this.percent,
+      });
     },
   },
 };

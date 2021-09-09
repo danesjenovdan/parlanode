@@ -25,7 +25,7 @@ export default {
       .sort((a, b) => b.value - a.value);
     const people = results.map((entry) => ({
       ...entry.person,
-      score: numberFormatter(entry.value, 2),
+      score: numberFormatter(entry.value, { precision: 2 }),
     }));
     return {
       people,

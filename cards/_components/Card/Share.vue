@@ -39,7 +39,7 @@ export default {
       }
       parent = parent.$parent;
     }
-    url = `${url}&locale=sl-obcine&template=share`; // TODO: correct locale
+    url = `${url}&locale=${this.$i18n.locale}&template=share`;
     return {
       url,
       copied: false,

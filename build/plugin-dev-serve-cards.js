@@ -13,7 +13,8 @@ export default function devServeCards() {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const url = new URL(req.url, `http://${req.headers.host}/`);
-        if (url.pathname === '/') {
+        const pathname = url.pathname.replace(/\/$/, '');
+        if (pathname === '') {
           const cards = glob
             .sync(join(cardsPath, '**/card.vue'))
             .map((file) => file.split('/').slice(-3, -1));
@@ -38,8 +39,8 @@ export default function devServeCards() {
             )
             .join('\n');
           res.end(cardRows);
-        } else if (url.pathname.slice(1).split('/').length === 2) {
-          const [group, method] = url.pathname.slice(1).split('/');
+        } else if (pathname.slice(1).split('/').length === 2) {
+          const [group, method] = pathname.slice(1).split('/');
           const cardName = `${group}/${method}`;
           if (existsSync(join(cardsPath, cardName, 'card.vue'))) {
             const html = readFileSync(
