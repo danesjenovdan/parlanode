@@ -3,45 +3,398 @@
   "data": {
     "results": [
       {
-        "date": "2020-12-14T00:00:00",
+        "date": "2019-07-08T00:00:00",
         "events": [
           {
-            "timestamp": "2020-12-14T15:30:00",
-            "title": "Advent v Ljubljani",
-            "url": null,
+            "timestamp": "2019-07-08T15:30:00",
+            "answer_timestamp": null,
+            "title": "rdeča zvezda",
             "authors": [
               {
                 "slug": "230-ana-zagozen",
                 "name": "Ana Zagožen",
                 "honorific_prefix": null,
                 "honorific_suffix": null,
-                "preferred_pronoun": "she",
+                "preferred_pronoun": null,
                 "group": {
                   "name": "Slovenska demokratska stranka ",
                   "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka"
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
                 },
-                "image": null
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
               }
             ],
-            "recipient_text": "Župan",
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-rdeca-zvezda.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2019-12-16T00:00:00",
+        "events": [
+          {
+            "timestamp": "2019-12-16T15:30:00",
+            "answer_timestamp": null,
+            "title": "ADVENT",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-ADVENT.pdf",
+            "type": "question"
+          },
+          {
+            "timestamp": "2019-12-16T15:30:00",
+            "answer_timestamp": null,
+            "title": "koši za pasje iztrebke",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-kosi-za-pasje-iztrebke.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2019-05-20T00:00:00",
+        "events": [
+          {
+            "timestamp": "2019-05-20T15:30:00",
+            "answer_timestamp": null,
+            "title": "tekoče stopnice",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/3.-tocka-Pobuda-svetnice-Ane-Zagozen-tekoce-stopnice.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2019-04-15T00:00:00",
+        "events": [
+          {
+            "timestamp": "2019-04-15T15:30:00",
+            "answer_timestamp": null,
+            "title": "stanovanja",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-stanovanja.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2020-02-03T00:00:00",
+        "events": [
+          {
+            "timestamp": "2020-02-03T15:30:00",
+            "answer_timestamp": null,
+            "title": "posip na pločnikih",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-posip-na-plocnikih.pdf",
+            "type": "question"
+          },
+          {
+            "timestamp": "2020-02-03T15:30:00",
+            "answer_timestamp": null,
+            "title": "Štepanjsko naselje",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-Stepanjsko-naselje.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2021-07-05T00:00:00",
+        "events": [
+          {
+            "timestamp": "2021-07-05T15:30:00",
+            "answer_timestamp": null,
+            "title": "polnjenje vozila na ulične svetilke",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-polnjenje-vozila-na-ulicne-svetilke.pdf",
+            "type": "question"
+          },
+          {
+            "timestamp": "2021-07-05T15:30:00",
+            "answer_timestamp": null,
+            "title": "turistična taksa",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-turisticna-taksa.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2020-12-14T00:00:00",
+        "events": [
+          {
+            "timestamp": "2020-12-14T15:30:00",
+            "answer_timestamp": null,
+            "title": "Advent v Ljubljani",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-Advent-v-Ljubljani.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2021-03-29T00:00:00",
+        "events": [
+          {
+            "timestamp": "2021-03-29T15:30:00",
+            "answer_timestamp": null,
+            "title": "table",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-table.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2020-05-04T00:00:00",
+        "events": [
+          {
+            "timestamp": "2020-05-04T15:30:00",
+            "answer_timestamp": null,
+            "title": "vodostaj",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-vodostaj.pdf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2019-09-23T00:00:00",
+        "events": [
+          {
+            "timestamp": "2019-09-23T15:30:00",
+            "answer_timestamp": null,
+            "title": "ločevanje odpadkov",
+            "authors": [
+              {
+                "slug": "230-ana-zagozen",
+                "name": "Ana Zagožen",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": null,
+                "group": {
+                  "name": "Slovenska demokratska stranka ",
+                  "acronym": "",
+                  "slug": "21-slovenska-demokratska-stranka",
+                  "color": "#09a2cc"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": null,
+            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-locevanje-odpadkov.pdf",
             "type": "question"
           }
         ]
       }
     ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    },
     "person": {
       "slug": "230-ana-zagozen",
       "name": "Ana Zagožen",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": "she",
+      "preferred_pronoun": null,
       "group": {
         "name": "Slovenska demokratska stranka ",
         "acronym": "",
-        "slug": "21-slovenska-demokratska-stranka"
+        "slug": "21-slovenska-demokratska-stranka",
+        "color": "#09a2cc"
       },
-      "image": null
+      "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
     }
   }
 }
