@@ -1,72 +1,95 @@
 import axios from 'axios';
 
-function getSelected() {
-  if (window.getSelection) {
-    return window.getSelection();
+const getSelectionRange = (containerElement) => {
+  const selection = window.getSelection();
+  if (selection && !selection.isCollapsed) {
+    if (
+      selection.anchorNode === selection.focusNode &&
+      containerElement.contains(selection.anchorNode)
+    ) {
+      return selection.getRangeAt(0);
+    }
   }
-  if (document.getSelection) {
-    return document.getSelection();
-  }
-  const selection = document.selection && document.selection.createRange();
-  if (selection.text) {
-    return selection;
-  }
-  return false;
-}
-
-let selectElement;
+  return null;
+};
 
 export default {
   beforeMount(el, binding) {
-    const cardElement = el;
-    const speechTextElement = cardElement.querySelector('.speech-text');
-    const quoteElement = cardElement.querySelector('.everything .quote-button');
-    const speechId = cardElement.getAttribute('id');
+    const speechTextElement = el.querySelector('.speech-text');
+    const quoteButton = el.querySelector('.everything .quote-button');
+    const speechId = Number(el.getAttribute('id'));
 
-    speechTextElement.addEventListener('mousedown', (event) => {
-      selectElement = event.currentTarget;
-    });
-    speechTextElement.addEventListener('mouseup', (event) => {
-      event.preventDefault();
-      const quoteButton = document.querySelector('.everything .quote-button');
-      quoteButton.style.display = 'none';
-      if (selectElement !== event.currentTarget) {
-        return;
+    // Click outside hides quote button
+    let mouseDownWasOutside = false;
+    const isOutside = (targetElement) => {
+      return !el.contains(targetElement) && el !== targetElement;
+    };
+    const onMouseDown = (e) => {
+      mouseDownWasOutside = isOutside(e.target);
+    };
+    const onClick = (e) => {
+      if (mouseDownWasOutside && isOutside(e.target)) {
+        quoteButton.style.display = 'none';
       }
+    };
+    el.vcoq_onMouseDown = onMouseDown;
+    el.vcoq_onClick = onClick;
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('click', onClick);
+    // End click outside
 
-      const selection = getSelected();
+    el.addEventListener('mouseup', (event) => {
+      // Prevent deselection when clicking on selected text
+      event.preventDefault();
 
-      if (selection && selection.toString().length > 0) {
-        const parentOffsetTop = speechTextElement.getBoundingClientRect().top;
-        const rectangle = selection.getRangeAt(0).getBoundingClientRect();
-        const quoteIconOffset =
-          rectangle.top - parentOffsetTop + rectangle.height / 2;
-
-        quoteElement.dataset.text = selection.toString();
-        quoteElement.style.top = `${quoteIconOffset}px`;
-        quoteElement.style.display = 'block';
+      const selectionRange = getSelectionRange(speechTextElement);
+      if (selectionRange) {
+        const textRect = speechTextElement.getBoundingClientRect();
+        const selectionRect = selectionRange.getBoundingClientRect();
+        const selectionOffset = selectionRect.top - textRect.top;
+        const quoteIconOffset = selectionOffset + selectionRect.height / 2;
+        quoteButton.style.top = `${quoteIconOffset}px`;
+        quoteButton.style.display = 'block';
       } else {
-        quoteElement.style.display = 'none';
+        quoteButton.style.display = 'none';
       }
     });
 
-    // This prevents deselection of text when clicking on quote icon
-    quoteElement.addEventListener('mousedown', (event) => {
+    quoteButton.addEventListener('mousedown', (event) => {
+      // Prevent deselection when clicking on quote button
       event.preventDefault();
     });
-    quoteElement.addEventListener('click', () => {
-      const selectedText = quoteElement.dataset.text.trim();
-      const allText = cardElement.querySelector('.mywords').value;
-      const startIndex = allText.indexOf(selectedText);
-      const endIndex = startIndex + selectedText.length;
-      const { slugs } = binding.instance.$root;
-      const url = `${slugs.urls.analize}/s/setQuote/${speechId}/${startIndex}/${endIndex}`;
 
-      axios.get(url).then((response) => {
-        window.open(
-          `${slugs.urls.glej}/s/citat/${response.data.id}?frame=true`
+    quoteButton.addEventListener('click', () => {
+      const selectionRange = getSelectionRange(speechTextElement);
+      if (selectionRange) {
+        const allText = el.querySelector('.mywords').value;
+        const selectedText = allText.slice(
+          selectionRange.startOffset,
+          selectionRange.endOffset
         );
-      });
+        const { urls } = binding.instance.$root;
+        const { locale } = binding.instance.$i18n;
+        const url = `${urls.data}/cards/speech/quote/`;
+        axios
+          .post(url, {
+            speech: speechId,
+            start_index: selectionRange.startOffset,
+            end_index: selectionRange.endOffset,
+            quote_content: selectedText,
+          })
+          .then((response) => {
+            window.open(
+              `${urls.cards}/speech/quote/?id=${response.data.id}&locale=${locale}&template=share`
+            );
+          });
+      }
     });
+  },
+  unmounted(el) {
+    document.removeEventListener('mousedown', el.vcoq_onMouseDown);
+    document.removeEventListener('click', el.vcoq_onClick);
+    el.vcoq_onMouseDown = undefined;
+    el.vcoq_onClick = undefined;
   },
 };

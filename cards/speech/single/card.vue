@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-      speech: this.cardData.data.results,
+      speech: this.cardData.data?.results || {},
     };
   },
   created() {
