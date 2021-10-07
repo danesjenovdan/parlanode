@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>
-    <div v-if="speech.quote_id" class="quote">
+    <div v-if="showQuote" class="quote">
       <div class="speech-text">
         {{ quoteParts.pre
         }}<span class="quote-text">{{ quoteParts.quote }}</span
@@ -97,6 +97,10 @@ export default {
   },
   mixins: [links],
   props: {
+    quote: {
+      type: Object,
+      default: null,
+    },
     speech: {
       type: Object,
       required: true,
@@ -117,33 +121,28 @@ export default {
   },
   computed: {
     showQuote() {
-      return this.speech.quote_content && !this.hideQuote;
+      return this.quote?.quote_content && !this.hideQuote;
     },
     quoteParts() {
-      const text = this.speech?.quote_content || '';
+      const text = this.getSpeechContent(this.speech);
+      const quote = this.quote?.quote_content || '';
 
-      const quote = text.slice(
-        this.speech.quote_range[0],
-        this.speech.quote_range[1]
-      );
-
-      let pre = text.slice(0, this.speech.quote_range[0]);
+      let pre = text.slice(0, this.quote.start_index);
       if (pre.length > QUOTE_PADDING_LENGTH) {
         pre = `... ${pre.slice(-QUOTE_PADDING_LENGTH)}`;
       }
 
-      let post = text.slice(this.speech.quote_range[1]);
+      let post = text.slice(this.quote.end_index);
       if (post.length > QUOTE_PADDING_LENGTH) {
         post = `${post.slice(0, QUOTE_PADDING_LENGTH)} ...`;
       }
 
-      // QUOTE_PADDING_LENGTH;
       return { pre, quote, post };
     },
   },
   methods: {
     getSpeechContent(speech) {
-      return (speech.content || '').replace(/\n+/g, ' ').trim();
+      return speech.content || '';
     },
     showFullSpeech(event) {
       event.preventDefault();
@@ -320,12 +319,6 @@ export default {
 
   .everything {
     display: block;
-
-    .speech-text {
-      &::selection {
-        background: $link-hover-background-hover;
-      }
-    }
 
     .votes {
       margin-top: 20px;

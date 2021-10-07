@@ -4,7 +4,7 @@ import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 export default {
   methods: {
     getPersonLink(person) {
-      if (!person.slug) {
+      if (!person?.slug) {
         return null;
       }
       const { urls, siteMap: sm } = this.$root.$options.contextData;

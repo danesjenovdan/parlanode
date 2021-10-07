@@ -1,6 +1,11 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
-    <speech :speech="speech" :session="speech?.session" show-session />
+    <speech
+      :quote="quote"
+      :speech="quote?.speech"
+      :session="quote?.session"
+      show-session
+    />
   </card-wrapper>
 </template>
 
@@ -23,7 +28,7 @@ export default {
   },
   data() {
     return {
-      speech: this.cardData.data.results,
+      quote: this.cardData.data?.results || {},
     };
   },
   created() {

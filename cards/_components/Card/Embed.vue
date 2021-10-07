@@ -66,16 +66,25 @@ export default {
   },
   computed: {
     embedCode() {
-      return `TODO: embed code for: ${this.url}`;
+      // eslint-disable-next-line no-restricted-properties
+      const { mountId } = this.$root.$options.contextData;
+
+      // TODO: refresh
       // let newUrl = this.url;
       // if (!this.refresh) {
       //   newUrl = `${this.url.split('?')[0]}${format(new Date(), 'd.M.y')}?${
       //     this.url.split('?')[1]
       //   }`;
       // }
-      // // eslint-disable-next-line no-restricted-properties
-      // const { urls } = this.$root.$options.contextData;
-      // return `&#x3C;script&#x3E;(function(d,script){script=d.createElement(&#x27;script&#x27;);script.type=&#x27;text/javascript&#x27;;script.async=true;script.onload=function(){iFrameResize({log:true,checkOrigin:false})};script.src=&#x27;${urls.cdn}/js/iframeResizer.min.js&#x27;;d.getElementsByTagName(&#x27;head&#x27;)[0].appendChild(script);}(document));&#x3C;/script&#x3E;&#x3C;iframe frameborder=&#x22;0&#x22; width=&#x22;100%&#x22; src=&#x22;${newUrl}&#x26;embed=true&#x22;&#x3E;&#x3C;/iframe&#x3E;`;
+
+      let htmlCode = '';
+      htmlCode += `<iframe id="${mountId}" frameborder="0" width="100%" style="max-width:100%;" src="${this.url}"></iframe>`;
+      htmlCode +=
+        '<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></' + // break up script end tag to fix parsing
+        `script><script>iFrameResize({checkOrigin:false},'#${mountId}');</` + // break up script end tag to fix parsing
+        'script>';
+
+      return htmlCode;
     },
   },
   methods: {
