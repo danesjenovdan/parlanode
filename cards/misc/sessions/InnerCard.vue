@@ -13,6 +13,7 @@
 import SortableTable from '@/_components/SortableTable.vue';
 import links from '@/_mixins/links.js';
 import formatDate from '@/_helpers/dateFormatter.js';
+import sessionClassification from '@/_helpers/sessionClassification.js';
 
 export default {
   name: 'SeznamSejKartica',
@@ -44,21 +45,12 @@ export default {
   },
   computed: {
     mappedSessions() {
-      const SESSION_IMAGES = {
-        unknown: `${this.$root.urls.cdn}/icons/seja-redna.svg`, // TODO: icon
-        regular: `${this.$root.urls.cdn}/icons/seja-redna.svg`,
-        irregular: `${this.$root.urls.cdn}/icons/seja-izredna.svg`,
-        correspondent: `${this.$root.urls.cdn}/icons/seja-redna.svg`, // TODO: icon
-      };
-      const getSessionImage = (classification) => {
-        const key = classification || 'unknown';
-        return SESSION_IMAGES[key] || SESSION_IMAGES.unknown;
-      };
-
       return this.processedSessions.map((session) => [
         {
           link: this.getSessionLink(session),
-          image: getSessionImage(session.classification),
+          image: `${this.$root.urls.cdn}/icons/${
+            sessionClassification(session.classification).icon
+          }.svg`,
         },
         { link: this.getSessionLink(session), text: session.name },
         session.start_time ? formatDate(session.start_time) : '',
