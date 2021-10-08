@@ -14,7 +14,7 @@
             "color": "#09a2cc"
           }
         ],
-        "classification": "regular",
+        "classification": "irregular",
         "in_review": false
       },
       {
@@ -30,7 +30,7 @@
             "color": "#09a2cc"
           }
         ],
-        "classification": "regular",
+        "classification": "unknown",
         "in_review": false
       },
       {

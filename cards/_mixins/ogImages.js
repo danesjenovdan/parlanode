@@ -1,4 +1,5 @@
 import { assign } from 'lodash-es';
+import sessionClassification from '@/_helpers/sessionClassification.js';
 
 export const personOgImage = {
   computed: {
@@ -59,18 +60,11 @@ export const sessionOgImage = {
     ogConfig() {
       const session = this.cardData.data?.results?.session;
       const sessionName = session?.name || '';
-
-      // TODO: this needs to be generic and not sl
-      let imageName = 'seja-redna';
-      if (sessionName.indexOf('izredna') !== -1) {
-        imageName = 'seja-izredna';
-      } else if (sessionName.indexOf('nujna') !== -1) {
-        imageName = 'seja-nujna';
-      }
+      const iconName = sessionClassification(session?.classification).icon;
 
       return {
         name: 'circle',
-        icon: imageName,
+        icon: iconName,
         h1: sessionName,
         h2: session?.date,
         title: this.$t('card.title'),
