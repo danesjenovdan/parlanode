@@ -1,1 +1,23 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 436.22 236.24"><title>seja_redna3</title><circle cx="135.58" cy="110.6" r="21.61" transform="translate(-72.97 -1.16) rotate(-18)"/><circle cx="204.31" cy="126.07" r="21.61" transform="translate(-24.16 232.96) rotate(-72)"/><circle cx="109.71" cy="108.81" r="21.61"/><circle cx="67.05" cy="242.56" r="21.61" transform="translate(-117.11 -15.88) rotate(-18)"/><circle cx="31.61" cy="141.06" r="21.61"/><circle cx="236.48" cy="70.08" r="21.61" transform="translate(-41.46 103.92) rotate(-36)"/><circle cx="263.48" cy="112.5" r="21.61" transform="translate(-61.24 127.89) rotate(-36)"/><circle cx="124.96" cy="207.56" r="21.61" transform="translate(-156.49 213.8) rotate(-72)"/><circle cx="112.65" cy="262.69" r="21.59" transform="translate(-121.37 -0.56) rotate(-18.07)"/><circle cx="180.03" cy="82.24" r="21.61" transform="translate(-59.39 73.06) rotate(-36)"/><circle cx="54.88" cy="98.35" r="21.61"/><circle cx="391.51" cy="110.59" r="21.61" transform="translate(119.92 400.29) rotate(-72)"/><circle cx="322.78" cy="126.08" r="21.61" transform="translate(-68.6 57.45) rotate(-18)"/><circle cx="326.52" cy="108.81" r="21.61"/><circle cx="460.04" cy="242.56" r="21.61" transform="translate(41.75 556.66) rotate(-72)"/><circle cx="404.62" cy="141.06" r="21.61"/><circle cx="290.62" cy="70.09" r="21.61" transform="translate(17.66 215.54) rotate(-54)"/><circle cx="402.13" cy="207.56" r="21.61" transform="translate(-89.89 85.96) rotate(-18)"/><circle cx="414.59" cy="263.09" r="21.61" transform="translate(-9.18 527.62) rotate(-72)"/><circle cx="347.07" cy="82.24" r="21.61" transform="matrix(0.59, -0.81, 0.81, 0.59, 31.1, 266.22)"/><circle cx="381.35" cy="98.35" r="21.61"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 436.22 236.24">
+  <circle cx="135.58" cy="110.6" r="21.61" transform="rotate(-18 -40.15 229.78)"/>
+  <circle cx="204.31" cy="126.07" r="21.61" transform="rotate(-72 148.24 133.1)"/>
+  <circle cx="109.71" cy="108.81" r="21.61"/>
+  <circle cx="67.05" cy="242.56" r="21.61" transform="rotate(-18 -108.69 361.76)"/>
+  <circle cx="31.61" cy="141.06" r="21.61"/>
+  <circle cx="236.48" cy="70.08" r="21.61" transform="rotate(-36 139.19 115.76)"/>
+  <circle cx="263.48" cy="112.5" r="21.61" transform="rotate(-36 166.18 158.18)"/>
+  <circle cx="124.96" cy="207.56" r="21.61" transform="rotate(-72 68.89 214.6)"/>
+  <circle cx="112.65" cy="262.69" r="21.59" transform="rotate(-18.07 -62.45 381.36)"/>
+  <circle cx="180.03" cy="82.24" r="21.61" transform="rotate(-36 82.73 127.92)"/>
+  <circle cx="54.88" cy="98.35" r="21.61"/>
+  <circle cx="391.51" cy="110.59" r="21.61" transform="rotate(-72 335.44 117.62)"/>
+  <circle cx="322.78" cy="126.08" r="21.61" transform="rotate(-18 147.06 245.29)"/>
+  <circle cx="326.52" cy="108.81" r="21.61"/>
+  <circle cx="460.04" cy="242.56" r="21.61" transform="rotate(-72 403.96 249.6)"/>
+  <circle cx="404.62" cy="141.06" r="21.61"/>
+  <circle cx="290.62" cy="70.09" r="21.61" transform="rotate(-54 220.34 90.44)"/>
+  <circle cx="402.13" cy="207.56" r="21.61" transform="rotate(-18 226.42 326.75)"/>
+  <circle cx="414.59" cy="263.09" r="21.61" transform="rotate(-72 358.51 270.13)"/>
+  <circle cx="347.07" cy="82.24" r="21.61" transform="rotate(-53.8 277.1 101.87)"/>
+  <circle cx="381.35" cy="98.35" r="21.61"/>
+</svg>
