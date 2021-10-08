@@ -31,53 +31,56 @@ const getTemplate = (name, replacements = {}) => {
 };
 
 const manifest = fs.readJSONSync('./dist/client/manifest.json');
-const ssrManifest = fs.readJSONSync('./dist/client/ssr-manifest.json');
 
-const getClientAssets = (cardName) => {
+const getChunkAssets = (chunkName, seenChunks = new Set()) => {
+  let entry = null;
   const assets = new Set();
-  const chunk = manifest[`\u0000virtual:${cardName}`];
-  assets.add(`${process.env.VITE_PARLACARDS_URL}/assets/${chunk.file}`);
-  if (Array.isArray(chunk.css)) {
-    assets.add(
-      ...chunk.css.map(
-        (css) => `${process.env.VITE_PARLACARDS_URL}/assets/${css}`
-      )
-    );
+
+  if (!seenChunks.has(chunkName)) {
+    seenChunks.add(chunkName);
+
+    const chunk = manifest[chunkName];
+    if (chunk) {
+      entry = `${process.env.VITE_PARLACARDS_URL}/assets/${chunk.file}`;
+      assets.add(entry);
+      if (Array.isArray(chunk.css)) {
+        chunk.css.forEach((css) => {
+          assets.add(`${process.env.VITE_PARLACARDS_URL}/assets/${css}`);
+        });
+      }
+      if (Array.isArray(chunk.imports)) {
+        chunk.imports.forEach((importChunkName) => {
+          const importAssets = getChunkAssets(importChunkName, seenChunks)[1];
+          importAssets.forEach((importAsset) => {
+            assets.add(importAsset);
+          });
+        });
+      }
+    }
   }
-  return assets;
+
+  return [entry, assets];
 };
 
-const getRelatedAssets = (modules) => {
-  const assets = new Set();
-  modules.forEach((module) => {
-    const files = ssrManifest[module];
-    if (files) {
-      files.forEach((file) => {
-        assets.add(`${process.env.VITE_PARLACARDS_URL}/assets${file}`);
-      });
-    }
-  });
-  return assets;
+const getClientAssets = (cardName) => {
+  return getChunkAssets(`\u0000virtual:${cardName}`);
 };
 
 const renderAssets = (cardName, modules, mountId) => {
-  const preloads = '';
+  let preloads = '';
   let styles = '';
   let scripts = '';
-  getClientAssets(cardName).forEach((asset) => {
+
+  const [entry, assets] = getClientAssets(cardName);
+  scripts += `<script type="module" src="${entry}?mountId=${mountId}"></script>`;
+  assets.forEach((asset) => {
     if (asset.endsWith('.css')) {
       styles += `<link rel="stylesheet" href="${asset}">`;
     } else if (asset.endsWith('.js')) {
-      scripts += `<script type="module" src="${asset}?mountId=${mountId}"></script>`;
+      preloads += `<link rel="modulepreload" href="${asset}">`;
     }
   });
-  getRelatedAssets(modules).forEach((asset) => {
-    if (asset.endsWith('.css')) {
-      styles += `<link rel="stylesheet" href="${asset}">`;
-    } /* else if (asset.endsWith('.js')) {
-      preloads += `<link rel="modulepreload" href="${asset}?mid=${mountId}">`;
-    } */
-  });
+
   return { preloads, styles, scripts };
 };
 
