@@ -29,7 +29,7 @@
           class="votes-list-shadow has-filters date-list"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <template v-for="(dayBallots, key) in filteredVotingDays" :key="key">
+          <template v-for="(dayBallots, key) in votingDays" :key="key">
             <div
               v-if="type === 'person' || selectedSort === 'date'"
               class="date"
@@ -149,33 +149,21 @@ export default {
     selectedVoteOptions() {
       return this.voteOptions.filter((vo) => vo.selected);
     },
-    filteredVotingDays() {
-      // TODO: remove this and use api calls to filter
+    votingDays() {
       let form = 'plural';
       if (this.type === 'person') {
-        form =
-          this.cardData.data?.person?.preferred_pronoun === 'she' ? 'f' : 'm';
+        const person = this.cardData.data?.person;
+        form = person?.preferred_pronoun === 'she' ? 'f' : 'm';
       }
 
-      const selectedVoteOptionIds = this.selectedVoteOptions.map((vo) => vo.id);
-
-      const filteredBallots = this.ballots
-        .filter((ballot) => {
-          let voteOptionMatch = true;
-
-          if (selectedVoteOptionIds.length) {
-            voteOptionMatch = selectedVoteOptionIds.includes(ballot.option);
-          }
-
-          return voteOptionMatch;
-        })
+      const ballots = this.ballots
         .filter((ballot) => ballot.option != null) // api returns null if nobody from this group voted
         .map((ballot) => ({
           ...ballot,
           label: this.$t(`voted-${ballot.option}--${form}`),
         }));
 
-      return groupBy(filteredBallots, (ballot) => {
+      return groupBy(ballots, (ballot) => {
         const dateTime = ballot.vote?.timestamp || '';
         const date = dateTime.split('T')[0];
         return `${date}__${ballot.vote?.session?.id}`;
@@ -197,6 +185,14 @@ export default {
       const url = new URL(this.cardData.url);
       url.searchParams.set('page', this.card.currentPage);
       url.searchParams.set('text', this.textFilter);
+      if (this.selectedVoteOptions.length) {
+        const voteOptions = this.selectedVoteOptions
+          .map((vo) => vo.id)
+          .join(',');
+        url.searchParams.set('options', voteOptions);
+      } else {
+        url.searchParams.delete('options');
+      }
       return url.toString();
     },
   },
@@ -207,6 +203,7 @@ export default {
   methods: {
     toggleVoteOption(voteOption) {
       voteOption.selected = !voteOption.selected;
+      this.searchVotesImmediate();
     },
     makeRequest(url) {
       if (this.cancelRequest) {
@@ -231,7 +228,7 @@ export default {
           }
         );
     },
-    searchVotes: debounce(function searchVotes() {
+    searchVotesImmediate() {
       this.card.isLoading = true;
       this.ballots = [];
       this.card.objectCount = 0;
@@ -242,6 +239,9 @@ export default {
         this.card.currentPage = 1;
         this.card.isLoading = false;
       });
+    },
+    searchVotes: debounce(function searchVotes() {
+      this.searchVotesImmediate();
     }, 750),
     loadMore() {
       if (this.card.isLoading) {
