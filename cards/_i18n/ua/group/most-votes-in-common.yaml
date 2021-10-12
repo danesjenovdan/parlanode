@@ -1,0 +1,25 @@
+card:
+  title: Most likely to vote the same
+  info: >-
+    # List of 5 MPs that most often vote the same as the "vote of the
+    parliamentary group". MPs are ranked in an ascending order. The lower the
+    value, the bigger the commonalities between the two MPs.
+
+
+    We calculate the Euclidean distance between the results of a parliamentary
+    group's voting and everyone else's voting (votes are converted to numerical
+    values between -1 and 1).
+
+
+    When we calculate the "distance" between all the MPs we rank them based on
+    result and show the top 5.
+
+
+    The numerical values of votes
+
+
+    * -1: against
+
+    * 0: abstained or absent
+
+    * 1: for

@@ -1,0 +1,10 @@
+card:
+  title: Latest activity
+  info: >-
+    # Links to all the MP's votes and speeches in the last ten days of the MP's
+    latest activity.
+
+
+    The data is collected from the web page of the National Assembly. The card
+    contains links to all the MP's votes and speeches in the last ten days of
+    the MP's latest activity.

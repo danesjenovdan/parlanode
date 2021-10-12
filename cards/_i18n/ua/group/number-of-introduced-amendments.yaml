@@ -1,0 +1,11 @@
+card:
+  title: The number of amendments introduced
+  info: >-
+    # The number of amendments the parliamentary group introduced, compared to
+    maximum and average value of amendments per parliamentary groups.
+
+
+    We identify the number of parliamentary groups' MPs by counting all of their
+    currently active members. The information regarding that is retrieved from
+    the web page [National Assembly of the Republic of
+    Slovenia](http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine).

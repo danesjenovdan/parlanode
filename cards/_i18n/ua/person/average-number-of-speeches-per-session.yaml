@@ -1,0 +1,14 @@
+card:
+  title: Avg. number of speeches per session
+  info: >-
+    # The average number of speeches by the MP compared to the average and
+    maximum values.
+
+
+    We count the MP's speeches found in transcripts retrieved from the web site
+    [National Assembly of the Republic of
+    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje)
+    and divide it by the number of sessions the MP attended. We divide the
+    number of all speeches first by the number of all the MPs and then by the
+    number of all sessions (where speeches were made). We compare the individual
+    result with the average and maximum values.
