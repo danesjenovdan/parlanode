@@ -320,11 +320,10 @@ export default {
             newMember.workingBodies = wbs.filter(Boolean);
           } else if (this.currentAnalysis !== 'demographics') {
             const score = newMember.results?.[this.currentAnalysis] || 0;
-            const formattedScore = numberFormatter(
-              score,
-              this.currentAnalysisData?.precision || 0,
-              this.currentAnalysisData?.unit === 'percent'
-            );
+            const formattedScore = numberFormatter(score, {
+              precision: this.currentAnalysisData?.precision || 0,
+              percent: this.currentAnalysisData?.unit === 'percent',
+            });
             newMember.analysisValue = formattedScore;
             newMember.analysisPercentage =
               analysisMax > 0 ? (score / analysisMax) * 100 : 0;

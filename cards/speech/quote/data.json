@@ -1,0 +1,50 @@
+{
+  "data": {
+    "results": {
+      "session": {
+        "name": "24. seja Mestnega sveta MOL",
+        "id": 1083,
+        "start_time": "2021-07-05T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      "speech": {
+        "id": 31755,
+        "content": "Hvala za besedo gospod župan, cenjene kolegice in kolegi. Komisija vam v presojo in v sprejem predlaga 5 sklep in 6 mnenj. Vse sklepe in mnenja, razen zadnjega, ki se nanaša na DSO Fužine, je komisija sprejela soglasno, z aklamacijo. Hvala lepa.",
+        "the_order": 5,
+        "person": {
+          "slug": "259-ales-cerin",
+          "name": "Aleš Čerin",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#09a2cc"
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png"
+        },
+        "start_time": "2021-07-05T15:30:00",
+        "votes": []
+      },
+      "quote_content": "predlaga 5 sklep in 6 mnenj",
+      "start_index": 94,
+      "end_index": 121
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    }
+  }
+}

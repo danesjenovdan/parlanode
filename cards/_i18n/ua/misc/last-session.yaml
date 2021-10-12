@@ -1,0 +1,28 @@
+card:
+  title: Latest session
+  info: >-
+    # An overview of analysis of the latest session available at [National
+    Assembly of the Republic of
+    Slovenia](http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+
+
+    # Words that marked the session
+
+
+    We perform the analysis according to the
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) statistic. The corpus are all
+    speeches while the document are all speeches at this particular session.
+
+
+    # Attendance at voting events by parliamentary group
+
+
+    Parliamentary groups are sorted based on the percentage of votes their
+    members attended.
+
+
+    # Voting events
+
+
+    For all voting events at a session we count individual votes (FOR, AGAINST,
+    ABSTAIN) and the number of MPs who did not vote, and display the results.

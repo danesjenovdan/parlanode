@@ -192,18 +192,13 @@ export default {
 @import 'parlassets/scss/helper';
 @import 'parlassets/scss/icons';
 
-.parlaicon-vodja {
-  background-image: url('#{get-parlassets-url()}/icons/vodja.svg');
-}
 .parlaicon-namestnik {
   background-image: url('#{get-parlassets-url()}/icons/namestnik.svg');
 }
 .parlaicon-sedezi {
   background-image: url('#{get-parlassets-url()}/icons/sedezi.svg');
 }
-.parlaicon-kontakt {
-  background-image: url('#{get-parlassets-url()}/icons/kontakt.svg');
-}
+
 .parlaicon-omrezja {
   width: 30px;
   height: 30px;

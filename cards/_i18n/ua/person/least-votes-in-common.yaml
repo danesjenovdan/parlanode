@@ -1,0 +1,26 @@
+card:
+  title: Least often vote the same
+  info: >-
+    # List of 5 MPs who most often vote differently than the selected MP. MPs
+    are ranked in a descending order. The higher the value, the lower the
+    commonalities between the two MPs.
+
+
+    We calculate [Euclidean
+    distance](https://en.wikipedia.org/wiki/Euclidean_distance) between the
+    results of the MP's voting and everyone else's voting (values of votes are
+    converted to numerical values between -1 and 1).
+
+
+    When we calculate the "distance" between all the MPs we rank them according
+    to their result and show the last (i.e. furthest removed) five.
+
+
+    The numerical values of votes
+
+
+    * -1: against
+
+    * 0: abstained or absent
+
+    * 1: for

@@ -1,6 +1,11 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
-    <speech v-quotable :speech="data" show-session />
+    <speech
+      v-quotable
+      :speech="speech"
+      :session="speech?.session"
+      show-session
+    />
   </card-wrapper>
 </template>
 
@@ -27,10 +32,9 @@ export default {
   },
   data() {
     return {
-      data: this.$options.contextData.cardData,
+      speech: this.cardData.data?.results || {},
     };
   },
-
   created() {
     // TODO:
     // this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(

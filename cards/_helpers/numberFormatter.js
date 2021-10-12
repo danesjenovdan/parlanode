@@ -1,4 +1,7 @@
-export default (number, precision = 0, percent = false) => {
+export default (
+  number,
+  { precision = 0, percent = false, locale = 'sl' } = {}
+) => {
   // shows "< 0.01" if number is very small like "0.0001245"
   let prefix = '';
   const minValueAboveZero = 10 ** -precision;
@@ -12,15 +15,13 @@ export default (number, precision = 0, percent = false) => {
     number /= 100;
   }
 
-  const formatter = new Intl.NumberFormat(
-    'sl', // TODO: get current locale
-    {
-      style: percent ? 'percent' : 'decimal',
-      minimumFractionDigits: precision,
-      maximumFractionDigits: precision,
-      useGrouping: false, // don't use thounsands separator
-    }
-  );
+  const lang = (locale || '').split('-')[0];
+  const formatter = new Intl.NumberFormat(lang, {
+    style: percent ? 'percent' : 'decimal',
+    minimumFractionDigits: precision,
+    maximumFractionDigits: precision,
+    useGrouping: false, // don't use thounsands separator
+  });
 
   return `${prefix}${formatter.format(number)}`;
 };

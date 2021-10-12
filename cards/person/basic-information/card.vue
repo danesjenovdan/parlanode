@@ -201,10 +201,6 @@ export default {
   line-height: normal;
 }
 
-.parlaicon-kontakt {
-  background-image: url('#{get-parlassets-url()}/icons/kontakt.svg');
-}
-
 .parlaicon-container {
   padding: 10px 16px;
   @include respond-to(desktop) {

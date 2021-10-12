@@ -88,7 +88,6 @@
         </p-tab>
         <p-tab :label="$t('parties')">
           <poslanske-skupine
-            ref="parties"
             :members="results.members"
             :parties="results.groups"
             :state="state"
@@ -98,9 +97,9 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
-        <p-tab :label="$t('gov-side')">
+        <!-- TODO: use api to show/hide gov-side tab -->
+        <p-tab v-if="false" :label="$t('gov-side')">
           <poslanske-skupine
-            ref="sides"
             :members="results.members"
             :parties="results.government_sides"
             :state="state"
@@ -131,7 +130,6 @@
         </p-tab>
         <p-tab :label="$t('parties')">
           <poslanske-skupine
-            ref="parties"
             :members="results.members"
             :parties="results.groups"
             :state="state"
@@ -141,9 +139,9 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
-        <p-tab :label="$t('gov-side')">
+        <!-- TODO: use api to show/hide gov-side tab -->
+        <p-tab v-if="false" :label="$t('gov-side')">
           <poslanske-skupine
-            ref="sides"
             :members="results.members"
             :parties="results.government_sides"
             :state="state"
@@ -152,6 +150,9 @@
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
+        </p-tab>
+        <p-tab :label="$t('documents')">
+          <documents :documents="results.documents" />
         </p-tab>
       </p-tabs>
     </template>
@@ -201,6 +202,7 @@ import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 import Excerpt from '@/_components/Excerpt.vue';
 import DataNotPublished from '@/_components/DataNotPublished.vue';
+import Documents from '@/_components/Documents.vue';
 import fixAbstractHtml from '@/_helpers/fixAbstractHtml.js';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
@@ -214,6 +216,7 @@ export default {
     PTabs,
     Excerpt,
     DataNotPublished,
+    Documents,
   },
   mixins: [common, links],
   cardInfo: {
@@ -258,9 +261,6 @@ export default {
     },
     content() {
       return fixAbstractHtml(this.results.abstract);
-    },
-    contentExtra() {
-      return fixAbstractHtml(this.results.extra_abstract);
     },
   },
   created() {

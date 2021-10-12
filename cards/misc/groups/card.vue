@@ -127,11 +127,10 @@ export default {
         const rawValue = party.results?.[this.currentAnalysis] || 0;
         const newParty = JSON.parse(JSON.stringify(party));
 
-        newParty.displayValue = numberFormatter(
-          rawValue,
-          this.currentAnalysisData?.precision || 0,
-          this.currentAnalysisData?.unit === 'percent'
-        );
+        newParty.displayValue = numberFormatter(rawValue, {
+          precision: this.currentAnalysisData?.precision || 0,
+          percent: this.currentAnalysisData?.unit === 'percent',
+        });
 
         newParty.chartWidth = `${(rawValue / maxValue) * 85}%`;
 

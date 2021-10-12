@@ -2,10 +2,10 @@
   "data": {
     "results": {
       "all_votes": {
-        "absent": 1.0,
-        "abstain": 0.0,
-        "for": 42.0,
-        "against": 0.0
+        "absent": 2,
+        "abstain": 9,
+        "for": 34,
+        "against": 0
       },
       "government_sides": [
         {
@@ -47,9 +47,9 @@
       ],
       "abstract_visible": false,
       "session": {
-        "name": "6. seja Mestnega sveta MOL",
-        "id": 72,
-        "start_time": "2019-07-08T15:30:00",
+        "name": "24. seja Mestnega sveta MOL",
+        "id": 417,
+        "start_time": "2021-07-05T15:30:00",
         "end_time": null,
         "organizations": [
           {
@@ -58,16 +58,32 @@
             "slug": "1-mestni-svet-mol"
           }
         ],
-        "classification": null,
+        "classification": "regular",
         "in_review": false
       },
       "result": {
         "is_outlier": false,
-        "passed": null,
+        "passed": true,
         "max_option_percentage": 51,
         "max_option": "for"
       },
       "members": [
+        {
+          "person": {
+            "slug": "240-anton-kastelic",
+            "name": "Anton Kastelic",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          "option": "for"
+        },
         {
           "person": {
             "slug": "241-emilija-mitrovic-milos",
@@ -76,14 +92,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
@@ -93,30 +108,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "243-danilo-saric",
-            "name": "Danilo Šarić",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
-            },
-            "image": null
-          },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -133,24 +130,22 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
-            "slug": "239-jozka-hegler",
-            "name": "Jožka Hegler",
+            "slug": "243-danilo-saric",
+            "name": "Danilo Šarić",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -167,20 +162,22 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
-            "slug": "266-daniel-avdagic",
-            "name": "Daniel Avdagić",
+            "slug": "239-jozka-hegler",
+            "name": "Jožka Hegler",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
-            "group": null,
+            "group": {
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica"
+            },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -195,10 +192,21 @@
               "acronym": "",
               "slug": "18-svetniski-klub-samostojnih-svetnikov"
             },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/masa-kociper.png"
+          },
+          "option": "absent"
+        },
+        {
+          "person": {
+            "slug": "266-daniel-avdagic",
+            "name": "Daniel Avdagić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": null,
             "image": null
           },
-          "outlier": false,
-          "option": "abstain"
+          "option": "for"
         },
         {
           "person": {
@@ -208,14 +216,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
@@ -225,13 +232,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/bruna-antauer.png"
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -242,30 +248,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "250-tomaz-kucic",
-            "name": "Tomaž Kučič",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
-            },
-            "image": null
-          },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -282,24 +270,22 @@
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
           "person": {
-            "slug": "253-dunja-piskur-kosmac",
-            "name": "Dunja Piškur Kosmač",
+            "slug": "250-tomaz-kucic",
+            "name": "Tomaž Kučič",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -316,25 +302,23 @@
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
           "person": {
-            "slug": "249-stanka-ferencak-marin",
-            "name": "Stanka Ferenčak Marin",
+            "slug": "253-dunja-piskur-kosmac",
+            "name": "Dunja Piškur Kosmač",
             "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
+            "honorific_suffix": "dr. med",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/dunja-piskur-kosmac.png"
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
@@ -348,26 +332,24 @@
               "acronym": "",
               "slug": "21-slovenska-demokratska-stranka"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
           },
-          "outlier": false,
           "option": "for"
         },
         {
           "person": {
-            "slug": "247-tone-podobnik",
-            "name": "Tone Podobnik",
+            "slug": "249-stanka-ferencak-marin",
+            "name": "Stanka Ferenčak Marin",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -384,24 +366,22 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "abstain"
+          "option": "for"
         },
         {
           "person": {
-            "slug": "248-francka-trobec",
-            "name": "Francka Trobec",
+            "slug": "247-tone-podobnik",
+            "name": "Tone Podobnik",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -418,20 +398,22 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
-            "slug": "265-anze-miklavec",
-            "name": "Anže Miklavec",
+            "slug": "248-francka-trobec",
+            "name": "Francka Trobec",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
-            "group": null,
+            "group": {
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica"
+            },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -448,7 +430,34 @@
             },
             "image": null
           },
-          "outlier": false,
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "265-anze-miklavec",
+            "name": "Anže Miklavec",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": null,
+            "image": null
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "234-matjaz-vede",
+            "name": "Matjaž Vede",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka"
+            },
+            "image": null
+          },
           "option": "for"
         },
         {
@@ -459,13 +468,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -482,7 +490,6 @@
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -493,43 +500,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "264-dr-anze-logar",
-            "name": "Dr. Anže Logar",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": null,
-            "image": null
-          },
-          "outlier": false,
-          "option": "absent"
-        },
-        {
-          "person": {
-            "slug": "254-dejan-crnek",
-            "name": "Dejan Crnek",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
-            },
-            "image": null
-          },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -546,24 +522,22 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
-            "slug": "256-jelka-zekar",
-            "name": "Jelka Žekar",
+            "slug": "254-dejan-crnek",
+            "name": "Dejan Crnek",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -578,10 +552,25 @@
               "acronym": "",
               "slug": "21-slovenska-demokratska-stranka"
             },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "256-jelka-zekar",
+            "name": "Jelka Žekar",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica"
+            },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
@@ -591,13 +580,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -608,13 +596,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
-            "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-05-07_12-01-38.png"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png"
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -625,30 +612,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
-            "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-02-01_20-22-32.png"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-02-01_20-22-32.png"
           },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "257-prof-janez-kozelj",
-            "name": "prof. Janez Koželj",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
-            },
-            "image": null
-          },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -661,8 +630,23 @@
             "group": null,
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
+        },
+        {
+          "person": {
+            "slug": "257-prof-janez-kozelj",
+            "name": "prof. Janez Koželj",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica"
+            },
+            "image": null
+          },
+          "option": "abstain"
         },
         {
           "person": {
@@ -678,8 +662,7 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -695,8 +678,7 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "absent"
         },
         {
           "person": {
@@ -712,7 +694,6 @@
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -729,8 +710,7 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -746,25 +726,7 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "238-grega-ciglar",
-            "name": "Grega Ciglar",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
-            },
-            "image": null
-          },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -780,24 +742,22 @@
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
-            "slug": "240-anton-kastelic",
-            "name": "Anton Kastelic",
+            "slug": "238-grega-ciglar",
+            "name": "Grega Ciglar",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
               "slug": "22-lista-zorana-jankovica"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -810,23 +770,36 @@
             "group": null,
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "abstain"
         }
       ],
       "groups": [
         {
           "max": {
-            "max_option_percentage": 100.0,
-            "max_option": "for"
+            "max_option_percentage": 50.0,
+            "max_option": "abstain"
           },
           "votes": {
             "absent": 0,
-            "abstain": 0,
-            "for": 2,
+            "abstain": 1,
+            "for": 1,
             "against": 0
           },
-          "outliers": [],
+          "outliers": [
+            {
+              "slug": "219-mojca-sojar",
+              "name": "Mojca Sojar",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": null,
+              "group": {
+                "name": "Nova Slovenija – Krščanski demokrati ",
+                "acronym": "",
+                "slug": "16-nova-slovenija-krscanski-demokrati"
+              },
+              "image": null
+            }
+          ],
           "group": {
             "name": "Nova Slovenija – Krščanski demokrati ",
             "acronym": "",
@@ -836,12 +809,12 @@
         {
           "max": {
             "max_option_percentage": 100.0,
-            "max_option": "for"
+            "max_option": "absent"
           },
           "votes": {
-            "absent": 0,
+            "absent": 1,
             "abstain": 0,
-            "for": 1,
+            "for": 0,
             "against": 0
           },
           "outliers": [],
@@ -854,29 +827,15 @@
         {
           "max": {
             "max_option_percentage": 66.66666666666667,
-            "max_option": "for"
+            "max_option": "abstain"
           },
           "votes": {
-            "absent": 0,
-            "abstain": 1,
-            "for": 2,
+            "absent": 1,
+            "abstain": 2,
+            "for": 0,
             "against": 0
           },
-          "outliers": [
-            {
-              "slug": "223-masa-kociper",
-              "name": "Maša Kociper",
-              "honorific_prefix": null,
-              "honorific_suffix": null,
-              "preferred_pronoun": null,
-              "group": {
-                "name": "Svetniški klub samostojnih svetnikov ",
-                "acronym": "",
-                "slug": "18-svetniski-klub-samostojnih-svetnikov"
-              },
-              "image": null
-            }
-          ],
+          "outliers": [],
           "group": {
             "name": "Svetniški klub samostojnih svetnikov ",
             "acronym": "",
@@ -886,12 +845,12 @@
         {
           "max": {
             "max_option_percentage": 100.0,
-            "max_option": "for"
+            "max_option": "abstain"
           },
           "votes": {
             "absent": 0,
-            "abstain": 0,
-            "for": 1,
+            "abstain": 1,
+            "for": 0,
             "against": 0
           },
           "outliers": [],
@@ -904,12 +863,12 @@
         {
           "max": {
             "max_option_percentage": 100.0,
-            "max_option": "for"
+            "max_option": "abstain"
           },
           "votes": {
             "absent": 0,
-            "abstain": 0,
-            "for": 2,
+            "abstain": 2,
+            "for": 0,
             "against": 0
           },
           "outliers": [],
@@ -921,30 +880,16 @@
         },
         {
           "max": {
-            "max_option_percentage": 55.55555555555556,
+            "max_option_percentage": 100.0,
             "max_option": "for"
           },
           "votes": {
-            "absent": 3,
-            "abstain": 1,
-            "for": 5,
+            "absent": 0,
+            "abstain": 0,
+            "for": 10,
             "against": 0
           },
-          "outliers": [
-            {
-              "slug": "231-ksenija-sever",
-              "name": "Ksenija Sever",
-              "honorific_prefix": null,
-              "honorific_suffix": null,
-              "preferred_pronoun": null,
-              "group": {
-                "name": "Slovenska demokratska stranka ",
-                "acronym": "",
-                "slug": "21-slovenska-demokratska-stranka"
-              },
-              "image": null
-            }
-          ],
+          "outliers": [],
           "group": {
             "name": "Slovenska demokratska stranka ",
             "acronym": "",
@@ -953,27 +898,66 @@
         },
         {
           "max": {
-            "max_option_percentage": 86.36363636363636,
+            "max_option_percentage": 95.45454545454545,
             "max_option": "for"
           },
           "votes": {
-            "absent": 3,
-            "abstain": 0,
-            "for": 19,
+            "absent": 0,
+            "abstain": 1,
+            "for": 21,
             "against": 0
           },
-          "outliers": [],
+          "outliers": [
+            {
+              "slug": "257-prof-janez-kozelj",
+              "name": "prof. Janez Koželj",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": null,
+              "group": {
+                "name": "Lista Zorana Jankovića",
+                "acronym": "LZJ",
+                "slug": "22-lista-zorana-jankovica"
+              },
+              "image": null
+            }
+          ],
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
             "slug": "22-lista-zorana-jankovica"
           }
         }
       ],
-      "id": 1635,
+      "id": 3045,
       "agenda_items": null,
-      "documents": null,
-      "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 5. seje Mestnega sveta Mestne občine Ljubljana z dne 17. junija 2019.",
+      "documents": [
+        {
+          "id": 9202,
+          "url": "https://www.ljubljana.si/assets/Uploads/16.-tocka-Sprejeti-sklepi-in-mnenja.pdf",
+          "name": "Sprejeti sklepi in mnenja",
+          "tags": [
+            {
+              "id": 14,
+              "name": "Sprejeti sklepi",
+              "slug": "sprejeti-sklepi"
+            }
+          ]
+        },
+        {
+          "id": 9201,
+          "url": "https://www.ljubljana.si/assets/Uploads/36.-tocka-Kadrovske-zadeve.pdf",
+          "name": "Kadrovske zadeve",
+          "tags": [
+            {
+              "id": 13,
+              "name": "Gradivo",
+              "slug": "gradivo"
+            }
+          ]
+        }
+      ],
+      "title": "I. Janeza STARIHO se razreši z mesta predsednika Sveta za preventivo in vzgojo v cestnem prometu. II. V Svet za preventivo in vzgojo v cestnem prometu se kot predstavnika Mestnega sveta Mestne občine Ljubljana i m e n u j e t a : -   Emilija MITROVIĆ MILOŠ – predsednica -   Jožef HORVAT– član. III. Mandat imenovanih je vezan na mandat sveta.",
       "legislation": null
     },
     "mandate": {

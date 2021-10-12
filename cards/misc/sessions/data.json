@@ -2,395 +2,5609 @@
   "data": {
     "results": [
       {
-        "name": "15. seja Mestnega sveta MOL",
-        "id": 15,
-        "start_time": "2020-09-21T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "1. izredna seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-01-21T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "2. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-02-18T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "3. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-04-15T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "4. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-05-20T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "5. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-06-17T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "6. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-07-08T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "7. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-09-23T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "2. izredna seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-09-23T18:00:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "8. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-10-21T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "3. izredna seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-10-21T17:40:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "9. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-11-18T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "10. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-12-16T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "4. izredna seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2019-12-16T19:00:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "11. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-02-03T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "12. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-05-04T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "13. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-06-15T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "14. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-07-06T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "16. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-10-19T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "17. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-11-16T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "18. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2020-12-14T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "19. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2021-01-18T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "20. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2021-02-15T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "21. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2021-03-29T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
-        "name": "22. seja Mestnega sveta MOL",
-        "gov_id": null,
-        "start_time": "2021-04-19T15:30:00",
-        "end_time": null,
-        "organizations": [
-          {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol"
-          }
-        ],
-        "classification": null,
-        "in_review": false
-      },
-      {
         "name": "1. seja Mestnega sveta MOL",
-        "gov_id": null,
+        "id": 1082,
         "start_time": "2018-12-17T15:30:00",
         "end_time": null,
         "organizations": [
           {
             "name": "Mestni svet MOL",
             "acronym": null,
-            "slug": "1-mestni-svet-mol"
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
           }
         ],
-        "classification": null,
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "24. seja Mestnega sveta MOL",
+        "id": 1083,
+        "start_time": "2021-07-05T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "unknown",
+        "in_review": false
+      },
+      {
+        "name": "22. seja Mestnega sveta MOL",
+        "id": 1085,
+        "start_time": "2021-04-19T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "21. seja Mestnega sveta MOL",
+        "id": 1086,
+        "start_time": "2021-03-29T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "20. seja Mestnega sveta MOL",
+        "id": 1087,
+        "start_time": "2021-02-15T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "19. seja Mestnega sveta MOL",
+        "id": 1088,
+        "start_time": "2021-01-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "18. seja Mestnega sveta MOL",
+        "id": 1089,
+        "start_time": "2020-12-14T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "17. seja Mestnega sveta MOL",
+        "id": 1090,
+        "start_time": "2020-11-16T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Mestnega sveta MOL",
+        "id": 1091,
+        "start_time": "2020-10-19T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Mestnega sveta MOL",
+        "id": 1092,
+        "start_time": "2020-09-21T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Mestnega sveta MOL",
+        "id": 1093,
+        "start_time": "2020-07-06T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Mestnega sveta MOL",
+        "id": 1094,
+        "start_time": "2020-06-15T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Mestnega sveta MOL",
+        "id": 1095,
+        "start_time": "2020-05-04T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Mestnega sveta MOL",
+        "id": 1096,
+        "start_time": "2019-11-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. izredna seja Mestnega sveta MOL",
+        "id": 1097,
+        "start_time": "2019-10-21T17:40:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Mestnega sveta MOL",
+        "id": 1098,
+        "start_time": "2019-10-21T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. izredna seja Mestnega sveta MOL",
+        "id": 1099,
+        "start_time": "2019-09-23T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Mestnega sveta MOL",
+        "id": 1100,
+        "start_time": "2019-09-23T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Mestnega sveta MOL",
+        "id": 1101,
+        "start_time": "2019-07-08T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Mestnega sveta MOL",
+        "id": 1102,
+        "start_time": "2019-06-17T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Mestnega sveta MOL",
+        "id": 1103,
+        "start_time": "2019-05-20T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Mestnega sveta MOL",
+        "id": 1104,
+        "start_time": "2019-04-15T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Mestnega sveta MOL",
+        "id": 1105,
+        "start_time": "2019-02-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. izredna seja Mestnega sveta MOL",
+        "id": 1106,
+        "start_time": "2019-01-21T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Mestnega sveta MOL",
+        "id": 1107,
+        "start_time": "2019-12-16T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. izredna seja Mestnega sveta MOL",
+        "id": 1108,
+        "start_time": "2019-12-16T19:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Mestnega sveta MOL",
+        "id": 1109,
+        "start_time": "2020-02-03T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "17. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1111,
+        "start_time": "2021-06-23T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1112,
+        "start_time": "2021-05-05T16:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1113,
+        "start_time": "2021-03-24T16:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1114,
+        "start_time": "2020-10-13T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1115,
+        "start_time": "2020-09-09T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1116,
+        "start_time": "2020-07-07T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1117,
+        "start_time": "2020-06-10T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1118,
+        "start_time": "2020-03-11T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1119,
+        "start_time": "2020-02-19T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1120,
+        "start_time": "2020-01-15T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1121,
+        "start_time": "2019-12-17T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1122,
+        "start_time": "2019-11-25T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1123,
+        "start_time": "2019-11-06T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1124,
+        "start_time": "2019-10-02T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1125,
+        "start_time": "2019-09-04T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1126,
+        "start_time": "2019-07-09T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1127,
+        "start_time": "2019-06-04T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Komisije za pobude občanov MS MOL",
+        "id": 1128,
+        "start_time": "2021-04-21T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Komisije za pobude občanov MS MOL",
+        "id": 1129,
+        "start_time": "2021-01-28T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Komisije za pobude občanov MS MOL",
+        "id": 1130,
+        "start_time": "2020-09-03T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Komisije za pobude občanov MS MOL",
+        "id": 1131,
+        "start_time": "2020-06-17T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Komisije za pobude občanov MS MOL",
+        "id": 1132,
+        "start_time": "2019-12-11T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Komisije za pobude občanov MS MOL",
+        "id": 1133,
+        "start_time": "2019-09-18T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Komisije za pobude občanov MS MOL",
+        "id": 1134,
+        "start_time": "2019-05-29T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Komisije za pobude občanov MS MOL",
+        "id": 1135,
+        "start_time": "2019-02-20T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1136,
+        "start_time": "2021-06-23T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "23. seja Statutarno pravne komisije MS MOL",
+        "id": 1137,
+        "start_time": "2021-07-01T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "22. seja Statutarno pravne komisije MS MOL",
+        "id": 1138,
+        "start_time": "2021-05-27T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "21. seja Statutarno pravne komisije MS MOL",
+        "id": 1139,
+        "start_time": "2021-04-15T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "20 seja Statutarno pravne komisije MS MOL",
+        "id": 1140,
+        "start_time": "2021-03-25T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "19. seja Statutarno pravne komisije MS MOL",
+        "id": 1141,
+        "start_time": "2021-02-11T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "17. seja Statutarno pravne komisije MS MOL",
+        "id": 1143,
+        "start_time": "2020-12-10T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Statutarno pravne komisije MS MOL",
+        "id": 1145,
+        "start_time": "2020-10-15T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Statutarno pravne komisije MS MOL",
+        "id": 1146,
+        "start_time": "2020-09-17T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Statutarno pravne komisije MS MOL",
+        "id": 1147,
+        "start_time": "2020-07-02T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Statutarno pravne komisije MS MOL",
+        "id": 1148,
+        "start_time": "2020-06-11T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Statutarno pravne komisije MS MOL",
+        "id": 1150,
+        "start_time": "2020-01-30T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Statutarno pravne komisije MS MOL",
+        "id": 1151,
+        "start_time": "2019-12-12T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Statutarno pravne komisije MS MOL",
+        "id": 1152,
+        "start_time": "2019-11-14T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. izredna seja Statutarno pravne komisije MS MOL",
+        "id": 1153,
+        "start_time": "2019-10-21T14:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Statutarno pravne komisije MS MOL",
+        "id": 1154,
+        "start_time": "2019-10-17T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Statutarno pravne komisije MS MOL",
+        "id": 1155,
+        "start_time": "2019-09-19T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Statutarno pravne komisije MS MOL",
+        "id": 1156,
+        "start_time": "2019-07-04T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Statutarno pravne komisije MS MOL",
+        "id": 1157,
+        "start_time": "2019-06-13T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Statutarno pravne komisije MS MOL",
+        "id": 1158,
+        "start_time": "2019-05-16T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Statutarno pravne komisije MS MOL",
+        "id": 1159,
+        "start_time": "2019-04-11T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Statutarno pravne komisije MS MOL",
+        "id": 1160,
+        "start_time": "2019-02-14T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1161,
+        "start_time": "2021-05-27T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1162,
+        "start_time": "2021-04-15T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1163,
+        "start_time": "2021-03-25T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1164,
+        "start_time": "2021-02-17T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1165,
+        "start_time": "2020-10-22T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1166,
+        "start_time": "2020-09-17T13:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1167,
+        "start_time": "2020-06-11T14:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 8. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1168,
+        "start_time": "2020-03-19T14:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1169,
+        "start_time": "2020-01-30T14:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1170,
+        "start_time": "2019-11-14T14:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1171,
+        "start_time": "2019-10-17T14:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1172,
+        "start_time": "2019-09-19T14:39:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1173,
+        "start_time": "2019-05-16T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Uredniškega odbora javnega glasila Ljubljana",
+        "id": 1174,
+        "start_time": "2019-03-19T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Uredniški odbor glasila Ljubljana",
+            "acronym": "",
+            "slug": "25-uredniski-odbor-glasila-ljubljana",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Komisije za priznanja MS MOL",
+        "id": 1175,
+        "start_time": "2021-04-02T13:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1176,
+        "start_time": "2021-03-17T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1177,
+        "start_time": "2020-11-26T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1179,
+        "start_time": "2020-09-16T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1180,
+        "start_time": "2020-07-01T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1181,
+        "start_time": "2020-02-12T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja komisije za poimenovanje ulic in naselij MS MOL",
+        "id": 1182,
+        "start_time": "2020-01-08T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1183,
+        "start_time": "2019-11-20T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1184,
+        "start_time": "2019-11-04T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1185,
+        "start_time": "2019-11-04T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1186,
+        "start_time": "2019-06-03T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1187,
+        "start_time": "2019-04-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Komisije za poimenovanje naselij in ulic MS MOL",
+        "id": 1188,
+        "start_time": "2019-03-27T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Komisije za priznanja MS MOL",
+        "id": 1189,
+        "start_time": "2020-12-17T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Komisije za priznanja MS MOL",
+        "id": 1190,
+        "start_time": "2020-11-12T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Komisije za priznanja MS MOL",
+        "id": 1191,
+        "start_time": "2020-04-24T12:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Komisije za priznanja MS MOL",
+        "id": 1192,
+        "start_time": "2020-03-10T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Komisije za priznanja MS MOL",
+        "id": 1193,
+        "start_time": "2020-02-13T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Komisije za priznanja MS MOL",
+        "id": 1194,
+        "start_time": "2020-02-04T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Komisije za priznanja MS MOL",
+        "id": 1195,
+        "start_time": "2019-11-20T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Komisije za priznanja MS MOL",
+        "id": 1196,
+        "start_time": "2019-04-01T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Komisije za priznanja MS MOL",
+        "id": 1197,
+        "start_time": "2019-03-12T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Komisije za priznanja MS MOL",
+        "id": 1198,
+        "start_time": "2019-01-28T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za priznanja",
+            "acronym": "",
+            "slug": "27-komisija-za-priznanja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Komisije za mednarodne odnose MS MOL",
+        "id": 1199,
+        "start_time": "2021-07-06T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za mednarodne odnose",
+            "acronym": "",
+            "slug": "30-komisija-za-mednarodne-odnose",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Komisije za mednarodne odnose MS MOL",
+        "id": 1200,
+        "start_time": "2020-06-23T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za mednarodne odnose",
+            "acronym": "",
+            "slug": "30-komisija-za-mednarodne-odnose",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1201,
+        "start_time": "2021-06-23T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1202,
+        "start_time": "2021-05-17T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. izredna seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1203,
+        "start_time": "2021-04-15T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "1. korespondenčna seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1205,
+        "start_time": "2020-11-02T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1206,
+        "start_time": "2020-09-07T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1207,
+        "start_time": "2020-06-02T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1208,
+        "start_time": "2020-04-24T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 11. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1209,
+        "start_time": "2020-03-16T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. izredna seja Odbora za zdravje in socialno varstvo",
+        "id": 1210,
+        "start_time": "2020-03-02T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1211,
+        "start_time": "2020-01-27T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1212,
+        "start_time": "2019-12-02T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1213,
+        "start_time": "2019-11-04T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1214,
+        "start_time": "2019-10-07T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1215,
+        "start_time": "2019-09-09T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1216,
+        "start_time": "2019-07-01T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1217,
+        "start_time": "2019-06-10T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1218,
+        "start_time": "2019-05-13T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1219,
+        "start_time": "2019-04-01T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1220,
+        "start_time": "2019-02-11T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Komisije za mednarodne odnose MS MOL",
+        "id": 1221,
+        "start_time": "2019-03-25T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za mednarodne odnose",
+            "acronym": "",
+            "slug": "30-komisija-za-mednarodne-odnose",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1222,
+        "start_time": "2021-05-25T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "20. seja Odbora za varstvo okolja MS MOL",
+        "id": 1223,
+        "start_time": "2021-06-09T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "19. seja Odbora za varstvo okolja MS MOL",
+        "id": 1224,
+        "start_time": "2021-05-17T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "18. seja Odbora za varstvo okolja MS MOL",
+        "id": 1225,
+        "start_time": "2021-04-13T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "17. seja Odbora za varstvo okolja MS MOL",
+        "id": 1226,
+        "start_time": "2021-01-04T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Odbora za varstvo okolja MS MOL",
+        "id": 1227,
+        "start_time": "2020-12-07T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Odbora za varstvo okolja MS MOL",
+        "id": 1228,
+        "start_time": "2020-10-12T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Odbora za varstvo okolja MS MOL",
+        "id": 1229,
+        "start_time": "2020-09-09T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za varstvo okolja MS MOL",
+        "id": 1230,
+        "start_time": "2020-06-17T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za varstvo okolja MS MOL",
+        "id": 1231,
+        "start_time": "2020-06-02T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za varstvo okolja MS MOL",
+        "id": 1232,
+        "start_time": "2020-02-12T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za varstvo okolja MS MOL",
+        "id": 1233,
+        "start_time": "2019-12-02T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za varstvo okolja MS MOL",
+        "id": 1234,
+        "start_time": "2019-11-26T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za varstvo okolja MS MOL",
+        "id": 1235,
+        "start_time": "2019-10-09T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za varstvo okolja MS MOL",
+        "id": 1237,
+        "start_time": "2019-06-19T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za varstvo okolja MS MOL",
+        "id": 1238,
+        "start_time": "2019-05-29T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za varstvo okolja MS MOL",
+        "id": 1239,
+        "start_time": "2019-04-03T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za varstvo okolja MS MOL",
+        "id": 1240,
+        "start_time": "2019-03-14T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za varstvo okolja MS MOL",
+        "id": 1241,
+        "start_time": "2019-02-05T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1242,
+        "start_time": "2021-04-13T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1243,
+        "start_time": "2021-01-05T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1244,
+        "start_time": "2020-10-12T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1245,
+        "start_time": "2020-09-07T13:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1246,
+        "start_time": "2020-06-01T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1247,
+        "start_time": "2019-12-02T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1248,
+        "start_time": "2019-10-09T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1249,
+        "start_time": "2019-09-11T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1250,
+        "start_time": "2019-04-02T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1251,
+        "start_time": "2019-02-04T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Odbora za urejanje prostora MS MOL",
+        "id": 1252,
+        "start_time": "2021-07-05T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za šport MS MOL",
+        "id": 1253,
+        "start_time": "2021-04-12T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za šport MS MOL",
+        "id": 1254,
+        "start_time": "2021-01-04T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC 7. seja Odbora za šport MS MOL",
+        "id": 1255,
+        "start_time": "2020-12-07T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. korespondenčna seja Odbora za šport MS MOL",
+        "id": 1256,
+        "start_time": "2020-12-07T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za šport MS MOL",
+        "id": 1257,
+        "start_time": "2020-06-01T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za šport MS MOL",
+        "id": 1258,
+        "start_time": "2020-06-01T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. korespondenčna seja Odbora za šport MS MOL",
+        "id": 1259,
+        "start_time": "2020-04-23T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 5. seja Odbora za šport MS MOL",
+        "id": 1260,
+        "start_time": "2020-03-18T11:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za šport MS MOL",
+        "id": 1261,
+        "start_time": "2019-11-11T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za šport MS MOL",
+        "id": 1262,
+        "start_time": "2019-10-16T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Odbora za urejanje prostora MS MOL",
+        "id": 1264,
+        "start_time": "2021-06-21T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Odbora za urejanje prostora MS MOL",
+        "id": 1265,
+        "start_time": "2021-05-24T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. korespondenčna seja Odbora za urejanje prostora MS MOL",
+        "id": 1266,
+        "start_time": "2021-04-07T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za urejanje prostora MS MOL",
+        "id": 1267,
+        "start_time": "2021-03-22T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za urejanje prostora MS MOL",
+        "id": 1268,
+        "start_time": "2021-02-09T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za urejanje prostora MS MOL",
+        "id": 1270,
+        "start_time": "2020-11-09T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za urejanje prostora MS MOL",
+        "id": 1271,
+        "start_time": "2020-10-12T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za urejanje prostora MS MOL",
+        "id": 1272,
+        "start_time": "2020-09-14T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za urejanje prostora MS MOL",
+        "id": 1273,
+        "start_time": "2020-06-29T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za urejanje prostora MS MOL",
+        "id": 1274,
+        "start_time": "2020-06-08T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. korespondenčna seja Odbora za urejanje prostora MS MOL",
+        "id": 1275,
+        "start_time": "2020-04-24T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 4. korespondenčna seja Odbora za urejanje prostora MS MOL",
+        "id": 1276,
+        "start_time": "2020-03-13T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za urejanje prostora MS MOL",
+        "id": 1277,
+        "start_time": "2020-01-27T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. korespondenčna seja Odbora za urejanje prostora MS MOL",
+        "id": 1278,
+        "start_time": "2019-12-09T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za urejanje prostora MS MOL",
+        "id": 1279,
+        "start_time": "2019-11-11T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. korespondenčna seja Odbora za urejanje prostora MS MOL",
+        "id": 1280,
+        "start_time": "2019-10-15T12:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za urejanje prostora MS MOL",
+        "id": 1281,
+        "start_time": "2019-07-01T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za urejanje prostora MS MOL",
+        "id": 1282,
+        "start_time": "2019-05-13T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za urejanje prostora MS MOL",
+        "id": 1283,
+        "start_time": "2019-04-08T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za urejanje prostora MS MOL",
+        "id": 1284,
+        "start_time": "2019-02-11T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1285,
+        "start_time": "2021-05-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1286,
+        "start_time": "2021-05-25T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. korespondenčna seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1287,
+        "start_time": "2021-03-22T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "3. korespondenčna seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1288,
+        "start_time": "2021-01-04T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "2. korespondenčna seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1289,
+        "start_time": "2020-11-04T12:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "Sklic 10. preložene seje Odbora za ravnanje z nepremičninami",
+        "id": 1290,
+        "start_time": "2020-09-14T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1291,
+        "start_time": "2020-09-07T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1292,
+        "start_time": "2020-06-02T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. korespondenčna seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1293,
+        "start_time": "2020-04-23T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 9. seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1294,
+        "start_time": "2020-03-17T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1295,
+        "start_time": "2019-12-03T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1296,
+        "start_time": "2019-11-12T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. izredna seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1297,
+        "start_time": "2019-10-21T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1298,
+        "start_time": "2019-10-08T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1299,
+        "start_time": "2019-09-10T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1300,
+        "start_time": "2019-07-03T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1301,
+        "start_time": "2019-05-13T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1302,
+        "start_time": "2019-04-01T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbor za ravnanje z nepremičninami MS MOL",
+        "id": 1303,
+        "start_time": "2019-02-12T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1304,
+        "start_time": "2021-04-13T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1305,
+        "start_time": "2021-03-16T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1306,
+        "start_time": "2021-01-06T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1307,
+        "start_time": "2020-12-08T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC 10. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1308,
+        "start_time": "2020-11-03T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1310,
+        "start_time": "2020-06-23T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1311,
+        "start_time": "2020-06-09T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1312,
+        "start_time": "2019-12-09T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1313,
+        "start_time": "2019-11-12T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1314,
+        "start_time": "2019-10-09T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1315,
+        "start_time": "2019-09-11T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1316,
+        "start_time": "2019-05-07T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1317,
+        "start_time": "2019-04-03T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1318,
+        "start_time": "2019-02-12T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 7. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1319,
+        "start_time": "2020-03-17T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1320,
+        "start_time": "2021-06-30T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1321,
+        "start_time": "2021-05-18T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1322,
+        "start_time": "2021-01-05T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1323,
+        "start_time": "2020-09-09T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1324,
+        "start_time": "2020-07-01T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1326,
+        "start_time": "2019-12-04T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1327,
+        "start_time": "2019-10-09T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1328,
+        "start_time": "2019-09-11T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1329,
+        "start_time": "2019-05-14T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1330,
+        "start_time": "2019-04-02T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1331,
+        "start_time": "2019-02-27T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. terenska seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1332,
+        "start_time": "2021-06-28T13:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1333,
+        "start_time": "2021-05-18T14:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1334,
+        "start_time": "2021-04-13T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. korespondenčna seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1335,
+        "start_time": "2021-03-18T10:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "2. korespondenčna seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1336,
+        "start_time": "2021-02-02T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1337,
+        "start_time": "2021-01-06T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. korespondenčna seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1338,
+        "start_time": "2020-11-05T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1339,
+        "start_time": "2020-10-13T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1340,
+        "start_time": "2020-09-08T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1341,
+        "start_time": "2020-07-01T14:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1342,
+        "start_time": "2020-06-02T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1343,
+        "start_time": "2019-12-03T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1344,
+        "start_time": "2019-10-09T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1345,
+        "start_time": "2019-09-17T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1346,
+        "start_time": "2019-07-02T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1347,
+        "start_time": "2019-06-11T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1348,
+        "start_time": "2019-04-09T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1349,
+        "start_time": "2021-05-19T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "15. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1350,
+        "start_time": "2021-06-29T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1351,
+        "start_time": "2021-05-25T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1352,
+        "start_time": "2021-04-13T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1353,
+        "start_time": "2021-03-23T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1355,
+        "start_time": "2020-11-11T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1356,
+        "start_time": "2020-09-09T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1357,
+        "start_time": "2020-06-01T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1358,
+        "start_time": "2020-04-28T10:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1359,
+        "start_time": "2020-01-29T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1360,
+        "start_time": "2019-12-02T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1361,
+        "start_time": "2019-10-07T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1362,
+        "start_time": "2019-09-09T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1363,
+        "start_time": "2019-04-02T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1364,
+        "start_time": "2019-02-11T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. korespondenčna seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1365,
+        "start_time": "2021-04-06T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1366,
+        "start_time": "2021-03-23T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC: 11. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1367,
+        "start_time": "2021-03-15T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. korespondenčna seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1368,
+        "start_time": "2021-02-05T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "4. korespondenčna seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1369,
+        "start_time": "2020-12-31T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "3. korespondenčna seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1370,
+        "start_time": "2020-12-02T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "2. korespondenčna seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1371,
+        "start_time": "2020-11-03T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1372,
+        "start_time": "2020-10-14T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1373,
+        "start_time": "2020-09-15T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1374,
+        "start_time": "2020-06-02T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 7. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1376,
+        "start_time": "2020-03-16T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1377,
+        "start_time": "2020-01-28T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1378,
+        "start_time": "2019-12-03T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1379,
+        "start_time": "2019-10-09T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1380,
+        "start_time": "2019-05-14T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1381,
+        "start_time": "2019-04-02T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1382,
+        "start_time": "2019-02-06T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za finance MS MOL",
+        "id": 1384,
+        "start_time": "2021-05-26T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za finance MS MOL",
+        "id": 1385,
+        "start_time": "2021-04-14T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. korespondenčna seja Odbora za finance MS MOL",
+        "id": 1386,
+        "start_time": "2021-02-03T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "3. korespondenčna seja Odbora za finance MS MOL",
+        "id": 1387,
+        "start_time": "2021-01-07T12:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "2. korespondenčna seja Odbora za finance MS MOL",
+        "id": 1388,
+        "start_time": "2020-12-04T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "1. korespondenčna seja Odbora za finance MS MOL",
+        "id": 1389,
+        "start_time": "2020-11-05T19:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za finance MS MOL",
+        "id": 1390,
+        "start_time": "2020-09-16T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za finance MS MOL",
+        "id": 1391,
+        "start_time": "2020-07-01T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za finance MS MOL",
+        "id": 1392,
+        "start_time": "2020-06-10T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "8. seja Odbora za finance MS MOL",
+        "id": 1393,
+        "start_time": "2020-04-29T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za finance MS MOL",
+        "id": 1394,
+        "start_time": "2020-01-29T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za finance MS MOL",
+        "id": 1395,
+        "start_time": "2019-12-10T12:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. seja Odbora za finance MS MOL",
+        "id": 1396,
+        "start_time": "2019-10-16T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. izredna  seja Odbora za finance MS MOL",
+        "id": 1397,
+        "start_time": "2019-09-20T12:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "irregular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za finance MS MOL",
+        "id": 1398,
+        "start_time": "2019-09-18T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za finance MS MOL",
+        "id": 1399,
+        "start_time": "2019-05-15T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za finance MS MOL",
+        "id": 1400,
+        "start_time": "2019-04-10T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za finance MS MOL",
+        "id": 1401,
+        "start_time": "2019-02-13T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1402,
+        "start_time": "2021-05-24T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1403,
+        "start_time": "2021-04-12T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. korespondenčna seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1404,
+        "start_time": "2020-12-30T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 8. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1405,
+        "start_time": "2020-12-02T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. korespondenčna seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1406,
+        "start_time": "2020-12-02T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1407,
+        "start_time": "2020-09-08T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1408,
+        "start_time": "2020-06-03T17:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. korespondenčna seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1409,
+        "start_time": "2020-04-23T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "PREKLIC - 5. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1410,
+        "start_time": "2020-03-17T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1411,
+        "start_time": "2019-12-04T17:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "3. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1412,
+        "start_time": "2019-09-09T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "2. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1413,
+        "start_time": "2019-04-10T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1414,
+        "start_time": "2019-03-12T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "17. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1415,
+        "start_time": "2021-09-13T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za zaščito, reševanje in civilno zaščito MS MOL",
+        "id": 1416,
+        "start_time": "2021-09-14T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zaščito, reševanje in civilno obrambo",
+            "acronym": "",
+            "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1417,
+        "start_time": "2021-09-14T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1418,
+        "start_time": "2021-09-15T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1419,
+        "start_time": "2021-09-14T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "21. seja Odbora za varstvo okolja MS MOL",
+        "id": 1420,
+        "start_time": "2021-09-16T16:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Odbora za finance MS MOL",
+        "id": 1421,
+        "start_time": "2021-09-22T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za finance",
+            "acronym": "",
+            "slug": "23-odbor-za-finance",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "18. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 1422,
+        "start_time": "2021-09-22T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Svet za varstvo pravic najemnikov stanovanj",
+            "acronym": "",
+            "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "17. seja Odbora za urejanje prostora MS MOL",
+        "id": 1423,
+        "start_time": "2021-09-20T18:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "24. seja Statutarno pravne komisije MS MOL",
+        "id": 1425,
+        "start_time": "2021-09-23T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "10. seja Komisije za pobude občanov MS MOL",
+        "id": 1426,
+        "start_time": "2021-09-23T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "13. seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1427,
+        "start_time": "2021-09-20T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "12. seja Odbora za ravnanje z nepremičninami MS MOL",
+        "id": 1428,
+        "start_time": "2021-06-28T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za ravnanje z nepremičninami",
+            "acronym": "",
+            "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "25. seja Mestnega sveta MOL",
+        "id": 1429,
+        "start_time": "2021-09-27T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1430,
+        "start_time": "2021-10-04T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "23. seja Mestnega sveta MOL",
+        "id": 1084,
+        "start_time": "2021-05-31T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "9. seja Komisije za pobude občanov MS MOL",
+        "id": 1110,
+        "start_time": "2021-06-17T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za pobude občanov",
+            "acronym": "",
+            "slug": "29-komisija-za-pobude-obcanov",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "18. seja Statutarno pravne komisije MS MOL",
+        "id": 1142,
+        "start_time": "2021-01-14T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Statutarno pravne komisije MS MOL",
+        "id": 1144,
+        "start_time": "2020-11-12T14:45:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Statutarno pravne komisije MS MOL",
+        "id": 1149,
+        "start_time": "2020-04-30T15:15:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Statutarno pravna komisija",
+            "acronym": "",
+            "slug": "26-statutarno-pravna-komisija",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "Skupna seja predstavnikov svetov ČS in Komisije za poimenovanje naselij in ulic",
+        "id": 1178,
+        "start_time": "2020-10-14T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Komisija za poimenovanje naselij in ulic",
+            "acronym": "",
+            "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "14. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 1204,
+        "start_time": "2021-01-04T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za zdravje in socialno varstvo",
+            "acronym": "",
+            "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "6. seja Odbora za varstvo okolja MS MOL",
+        "id": 1236,
+        "start_time": "2019-09-10T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za varstvo okolja",
+            "acronym": "",
+            "slug": "34-odbor-za-varstvo-okolja",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. seja Odbora za šport MS MOL",
+        "id": 1263,
+        "start_time": "2019-02-13T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za šport",
+            "acronym": "",
+            "slug": "36-odbor-za-sport",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "5. korespondenčna seja Odbora za urejanje prostora MS MOL",
+        "id": 1269,
+        "start_time": "2020-12-02T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za urejanje prostora",
+            "acronym": "",
+            "slug": "35-odbor-za-urejanje-prostora",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "1. korespondenčna seja Odbora za stanovanjsko politiko MS MOL",
+        "id": 1309,
+        "start_time": "2020-11-02T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za stanovanjsko politiko",
+            "acronym": "",
+            "slug": "37-odbor-za-stanovanjsko-politiko",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "7. seja Odbora za lokalno samoupravo MS MOL",
+        "id": 1325,
+        "start_time": "2020-06-03T17:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za lokalno samoupravo",
+            "acronym": "",
+            "slug": "40-odbor-za-lokalno-samoupravo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za gospodarske javne službe in promet MS MOL",
+        "id": 1354,
+        "start_time": "2021-01-05T16:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske javne službe in promet",
+            "acronym": "",
+            "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "1. korespondenčna seja Odbora za kulturo in raziskovalno dejavnost MS MOL",
+        "id": 1375,
+        "start_time": "2020-04-23T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za kulturo in raziskovalno dejavnost",
+            "acronym": "",
+            "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
+        "in_review": false
+      },
+      {
+        "name": "11. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1383,
+        "start_time": "2021-06-30T15:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "16. seja Odbora za predšolsko vzgojo in izobraževanje MS MOL",
+        "id": 1424,
+        "start_time": "2021-09-21T14:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za predšolsko vzgojo in izobraževanje",
+            "acronym": "",
+            "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      {
+        "name": "4. korespondenčna seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 1434,
+        "start_time": "2021-06-23T00:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+            "acronym": "",
+            "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "correspondent",
         "in_review": false
       }
-    ]
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    }
   }
 }

@@ -1,8 +1,5 @@
 <template>
-  <div
-    :id="speech.speech_id"
-    :class="['speech-holder', { 'just-quote': showQuote }]"
-  >
+  <div :id="speech.id" :class="['speech-holder', { 'just-quote': showQuote }]">
     <input :value="getSpeechContent(speech)" type="hidden" class="mywords" />
     <div class="person-session">
       <div class="person">
@@ -40,7 +37,7 @@
               {{ vote.title }}
             </div>
             <div class="vote-link">
-              <a href="#" class="funblue-light-hover">
+              <a :href="getVoteLink(vote, session)" class="funblue-light-hover">
                 {{ $t('vote-roll-results') }} >>>
               </a>
             </div>
@@ -55,11 +52,11 @@
         </div>
       </div>
     </div>
-    <div v-if="speech.quoted_text" class="quote">
+    <div v-if="showQuote" class="quote">
       <div class="speech-text">
-        {{ quotePaddingBefore }}
-        <span class="quote-text">{{ speech.quoted_text }}</span>
-        {{ quotePaddingAfter }}
+        {{ quoteParts.pre
+        }}<span class="quote-text">{{ quoteParts.quote }}</span
+        >{{ quoteParts.post }}
       </div>
       <div class="full-text-link">
         <a
@@ -89,11 +86,9 @@
 
 <script>
 import links from '@/_mixins/links.js';
-import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
+import { QUOTE_PADDING_LENGTH } from '@/_helpers/constants.js';
 import mapVotes from '@/_helpers/mapVotes.js';
 import Result from '@/_components/Result.vue';
-
-const PADDING_LENGTH = 30;
 
 export default {
   name: 'Speech',
@@ -102,6 +97,10 @@ export default {
   },
   mixins: [links],
   props: {
+    quote: {
+      type: Object,
+      default: null,
+    },
     speech: {
       type: Object,
       required: true,
@@ -114,10 +113,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    perPage: {
-      type: Number,
-      default: SPEECHES_PER_PAGE,
-    },
   },
   data() {
     return {
@@ -126,28 +121,28 @@ export default {
   },
   computed: {
     showQuote() {
-      return this.speech.quoted_text && !this.hideQuote;
+      return this.quote?.quote_content && !this.hideQuote;
     },
-    quotePaddingBefore() {
-      const splitQuote = (this.speech.content || '')
-        .replace(/\n+/g, ' ')
-        .trim()
-        .split(this.speech.quoted_text);
-      const paddingBefore = splitQuote[0].slice(-PADDING_LENGTH);
-      return paddingBefore ? `...${paddingBefore}` : '';
-    },
-    quotePaddingAfter() {
-      const splitQuote = (this.speech.content || '')
-        .replace(/\n+/g, ' ')
-        .trim()
-        .split(this.speech.quoted_text);
-      const paddingAfter = splitQuote[1].slice(0, PADDING_LENGTH);
-      return paddingAfter ? `${paddingAfter}...` : '';
+    quoteParts() {
+      const text = this.getSpeechContent(this.speech);
+      const quote = this.quote?.quote_content || '';
+
+      let pre = text.slice(0, this.quote.start_index);
+      if (pre.length > QUOTE_PADDING_LENGTH) {
+        pre = `... ${pre.slice(-QUOTE_PADDING_LENGTH)}`;
+      }
+
+      let post = text.slice(this.quote.end_index);
+      if (post.length > QUOTE_PADDING_LENGTH) {
+        post = `${post.slice(0, QUOTE_PADDING_LENGTH)} ...`;
+      }
+
+      return { pre, quote, post };
     },
   },
   methods: {
     getSpeechContent(speech) {
-      return (speech.content || '').replace(/\n+/g, ' ').trim();
+      return speech.content || '';
     },
     showFullSpeech(event) {
       event.preventDefault();
@@ -168,17 +163,6 @@ export default {
 
 @function icon-share($color) {
   @return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.17 43.78"><path fill="none" stroke="%23#{str_slice("#{$color}", 2)}" stroke-width="3" d="M1 1h55.17v41.78H1zm0 31.89h55.17M7.33 7.94zm0 6zm0 6zm0 6z"/><circle fill="%23#{str_slice("#{$color}", 2)}" cx="51.08" cy="38.02" r="1.74"/><circle fill="%23#{str_slice("#{$color}", 2)}" cx="46.08" cy="38.02" r="1.74"/><circle fill="%23#{str_slice("#{$color}", 2)}" cx="41.08" cy="38.02" r="1.74"/></svg>';
-}
-
-%text-styling {
-  font-family: Roboto Slab;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 28px;
-
-  @include respond-to(desktop) {
-    font-size: 16px;
-  }
 }
 
 .person-session {
@@ -235,10 +219,17 @@ export default {
 }
 
 .speech-text {
-  @extend %text-styling;
   margin: 0;
   padding: 0;
   position: relative;
+  font-family: Roboto Slab;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 28px;
+
+  @include respond-to(desktop) {
+    font-size: 16px;
+  }
 }
 
 .quote-button {
@@ -323,12 +314,6 @@ export default {
 
     @include respond-to(desktop) {
       padding: 2px 8px 0 8px;
-    }
-
-    .speech-text {
-      ::selection {
-        background: $link-hover-background-hover;
-      }
     }
   }
 
