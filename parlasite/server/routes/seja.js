@@ -90,6 +90,7 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.transcript}`], ar((render, re
         pageTitle: `${i18n('titles.session')} - ${i18n('titles.transcript')}`,
         activeTab: 'transkript',
         ...sesData,
+        page: req.query.page || 1,
       });
     } else {
       next();
