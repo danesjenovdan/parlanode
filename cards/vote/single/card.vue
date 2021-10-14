@@ -72,7 +72,6 @@
         v-if="showMobileExcerpt && content"
         :content="content"
         :main-law="excerptData"
-        :documents="data.documents"
         :show-parent="true"
         class="visible-xs"
       />
@@ -97,8 +96,7 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
-        <!-- TODO: use api to show/hide gov-side tab -->
-        <p-tab v-if="false" :label="$t('gov-side')">
+        <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
           <poslanske-skupine
             :members="results.members"
             :parties="results.government_sides"
@@ -109,13 +107,15 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
+        <p-tab v-if="results.documents?.length" :label="$t('documents')">
+          <documents :documents="results.documents" />
+        </p-tab>
       </p-tabs>
       <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
         <p-tab v-if="content" :label="$t('summary')">
           <excerpt
             :content="content"
             :main-law="excerptData"
-            :documents="results.documents"
             :show-parent="true"
           />
         </p-tab>
@@ -139,8 +139,7 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
-        <!-- TODO: use api to show/hide gov-side tab -->
-        <p-tab v-if="false" :label="$t('gov-side')">
+        <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
           <poslanske-skupine
             :members="results.members"
             :parties="results.government_sides"
@@ -151,7 +150,7 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
-        <p-tab :label="$t('documents')">
+        <p-tab v-if="results.documents?.length" :label="$t('documents')">
           <documents :documents="results.documents" />
         </p-tab>
       </p-tabs>
@@ -441,41 +440,6 @@ export default {
             }
           }
         }
-      }
-    }
-  }
-
-  .documents {
-    border-top: $section-border;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 6px 0 0 0;
-
-    @include respond-to(desktop) {
-      border-left: $section-border;
-      border-top: none;
-      flex: 2;
-      margin: 0 0 0 12px;
-      min-width: 204px;
-      padding-left: 16px;
-    }
-
-    .dropdown-label {
-      @include show-for(desktop);
-
-      font-family: Roboto Slab, Times New Roman, serif;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 21px;
-      margin-bottom: 5px;
-    }
-
-    .p- {
-      margin: 10px -2px 3px -2px;
-
-      @include respond-to(desktop) {
-        margin: 0;
       }
     }
   }
