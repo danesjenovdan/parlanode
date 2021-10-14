@@ -32,7 +32,7 @@ export default {
     const people = this.cardData.data?.results?.people || [];
     const groups = this.cardData.data?.results?.groups || [];
 
-    const initialTextFilter = this.cardState.query || '';
+    const initialTextFilter = this.cardState.text || '';
 
     return {
       people,
