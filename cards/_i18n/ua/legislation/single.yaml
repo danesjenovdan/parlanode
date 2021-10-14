@@ -1,0 +1,10 @@
+card:
+  title: Law
+  info: >-
+    # Abstract of the law or act and all votes related to it.
+
+
+    We download the voting events, with a corresponding identifying number, from
+    [www.dz-rs.si](http://www.dz-rs.si). Votes concerning the same identifying
+    number are combined together and associated with the corresponding law or
+    act. The card also contains the abstract of the law which we prepare.

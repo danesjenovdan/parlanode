@@ -1,0 +1,14 @@
+card:
+  title: Words that marked the session
+  info: >-
+    # A list of 10 words and phrases which were used more often during this
+    session than during any other sessions.
+
+
+    We use the following statistics
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) to conduct the
+    analysis.
+
+
+    The corpus refers to all speeches while the document refers to all speeches
+    at this particular session.

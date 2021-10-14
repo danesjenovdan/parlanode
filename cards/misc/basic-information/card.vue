@@ -8,8 +8,11 @@
         <div class="bordertop0">
           <span class="key">
             {{ $t('mayor') }}:
-            <a :href="getPersonLink(results.mayor)" class="funblue-light-hover">
-              {{ results.mayor?.name }}
+            <a
+              :href="getPersonLink(results.leader)"
+              class="funblue-light-hover"
+            >
+              {{ results.leader?.name }}
             </a>
           </span>
         </div>

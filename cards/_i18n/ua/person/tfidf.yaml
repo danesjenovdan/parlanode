@@ -1,0 +1,13 @@
+card:
+  title: Characterised by the following words
+  info: >-
+    # A list of 10 words and phrases that the MP uses more often than other MPs
+    in the National Assembly.
+
+
+    We use the following statistics
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) to conduct the analysis.
+
+
+    The corpus refers to all speeches while the document refers to all speeches
+    by the MP.

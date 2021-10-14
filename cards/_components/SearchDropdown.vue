@@ -30,6 +30,7 @@
       @keydown.down.prevent="focus(focused + 1, true)"
     />
     <ul
+      ref="dropdown"
       :class="[
         'search-dropdown-options',
         { visible: active, up: up, empty: empty },
@@ -37,6 +38,9 @@
       :style="{ 'margin-top': upMargin }"
       @mouseleave="focus(-1)"
     >
+      <div v-if="isLoading" class="nalagalnik__wrapper">
+        <div class="nalagalnik"></div>
+      </div>
       <template v-for="(item, index) in filteredItems" :key="`${item.id}`">
         <li v-if="item.groupLabel" class="search-dropdown-group-label">
           {{ item.groupLabel }}
@@ -58,7 +62,7 @@
               :class="['color', item.colorClass]"
             />
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <span v-html="highlightLabel(item.label)" />
+            <span v-html="item.highlightLabel" />
           </div>
           <div v-if="item.count">{{ item.count }}</div>
         </li>
@@ -146,8 +150,16 @@ export default {
       type: String,
       default: null,
     },
+    dontFilterLocally: {
+      type: Boolean,
+      default: false,
+    },
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
   },
-  emits: ['update:modelValue', 'search', 'select', 'clear'],
+  emits: ['update:modelValue', 'update:filter', 'search', 'select', 'clear'],
   data() {
     return {
       active: false,
@@ -159,21 +171,24 @@ export default {
   },
   computed: {
     empty() {
-      return this.filteredItems.length === 0;
+      return this.filteredItems.length === 0 && !this.isLoading;
     },
     filteredItems() {
-      const filterAndSort = (items) =>
-        items
-          .filter(
-            (item) =>
-              item.selected ||
-              (item.label || '')
-                .toLowerCase()
-                .indexOf(this.localFilter.toLowerCase()) > -1
-          )
+      const filterAndSort = (items) => {
+        const itemsFiltered = this.dontFilterLocally
+          ? items
+          : items.filter(
+              (item) =>
+                item.selected ||
+                (item.label || '')
+                  .toLowerCase()
+                  .indexOf(this.localFilter.toLowerCase()) > -1
+            );
+
+        return itemsFiltered
           .map((item, index) => {
-            // eslint-disable-next-line no-param-reassign
             item.sortIndex = index;
+            item.highlightLabel = this.highlightLabel(item.label);
             return item;
           })
           .sort((a, b) => {
@@ -201,12 +216,8 @@ export default {
             }
 
             return 0;
-          })
-          .map((item) => {
-            // eslint-disable-next-line no-param-reassign
-            delete item.sortIndex;
-            return item;
           });
+      };
 
       if (this.groups) {
         return this.groups
@@ -270,13 +281,15 @@ export default {
     filter() {
       this.focus(this.focused);
     },
+    localFilter() {
+      this.$emit('update:filter', this.localFilter);
+      this.$refs.dropdown.scrollTop = 0;
+    },
     active() {
       this.$nextTick(() => {
         if (this.up) {
           this.upMargin = `-${
-            this.$el
-              .querySelector('.search-dropdown-options')
-              .getBoundingClientRect().height + 39
+            this.$refs.dropdown.getBoundingClientRect().height + 39
           }px`;
         }
       });
@@ -345,7 +358,7 @@ export default {
         .slice(0, this.focused + 1)
         .map((item) => (item.groupLabel ? 1 : 0))
         .reduce((a, b) => a + b, 0);
-      const optionListEl = this.$el.lastChild;
+      const optionListEl = this.$refs.dropdown;
       const focusedPosition =
         (this.focused * multiplier + additionalOffset) * ITEM_HEIGHT;
 
@@ -432,6 +445,13 @@ export default {
       &::after {
         content: none;
       }
+    }
+  }
+
+  .nalagalnik__wrapper {
+    .nalagalnik {
+      height: 30px;
+      background-size: 19px;
     }
   }
 }
