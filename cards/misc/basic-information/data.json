@@ -1,27 +1,19 @@
 {
   "data": {
     "results": {
-      "name": "Mestna občina Ljubljana",
-      "mayor": {
-        "slug": "259-ales-cerin",
+      "name": "Občina Ljubljana",
+      "email": "glavna.pisarna@ljubljana.si",
+      "leader": {
+        "slug": "261-zoran-jankovic",
         "name": "Zoran Janković",
         "honorific_prefix": null,
         "honorific_suffix": null,
         "preferred_pronoun": null,
-        "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
-        },
-        "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png"
+        "group": null,
+        "image": null
       },
-      "email": "testemail@example.com",
-      "website": "http://www.example.com",
-      "budget": "http://www.example.com/budget"
-    },
-    "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "website": "https://www.ljubljana.si/sl/mestna-obcina/zupan/",
+      "budget": "https://www.ljubljana.si/sl/mestna-obcina/proracun-mestne-obcine-ljubljana/"
     }
   }
 }
