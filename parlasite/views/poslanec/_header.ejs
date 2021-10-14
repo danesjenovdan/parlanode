@@ -18,7 +18,7 @@ body > .container {
     <div class="col-lg-12">
       <img src="<%- mp.image || (config.urls.cdn + '/img/people/square/null.png') %>" class="media-object img-circle session-logo person-logo <%- classes %>">
       <h1><%- mp.name %></h1>
-      <h2><%= mp.group ? mp.group.acronym ? mp.group.acronym : mp.group.name ? mp.group.name : '' : '' %></h2>
+      <h2><%= mp.group ? mp.group.name ? mp.group.name : mp.group.acronym ? mp.group.acronym : '' : '' %></h2>
       <h3><!-- <%- mp.group && mp.group.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %> --></h3>
       <% if (mp.end_time) { %>
       <h3><%- i18n('general.inactive') %></h3>
