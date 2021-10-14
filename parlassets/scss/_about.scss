@@ -12,7 +12,7 @@
     color: $white;
     font-style: italic;
     font-size: 24px;
-    text-align: center;
+    // text-align: center;
     margin-top: 45px;
     margin-bottom: 45px;
     @include respond-to(mobile) {
@@ -52,6 +52,16 @@
     color: $white;
     font-variant: small-caps;
     font-weight: 700;
+}
+
+#about .text-container {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    @include respond-to(mobile) {
+        font-size: 16px;
+    }
 }
 
 #about .video-container {
