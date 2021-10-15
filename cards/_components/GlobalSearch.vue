@@ -61,22 +61,22 @@ export default {
       return [...groupItems, ...peopleItems];
     },
     dropdownGroups() {
-      const allGroups = uniqBy(
-        this.people.filter((p) => p.group).map((p) => p.group),
-        (g) => g.slug
+      const personGroups = uniqBy(
+        this.people.map((person) => person?.group),
+        (g) => g?.slug
       );
       return [
         {
           id: 'groups',
           label: this.$t('parties'),
-          items: this.groups.map((group) => group.slug),
+          items: this.groups.map((group) => group?.slug),
         },
-        ...allGroups.map((group) => ({
-          id: group.slug,
-          label: group.name,
+        ...personGroups.map((group) => ({
+          id: group?.slug || 'null',
+          label: group?.name || ' ',
           items: this.people
-            .filter((person) => person?.group?.slug === group.slug)
-            .map((person) => person.slug),
+            .filter((person) => person?.group?.slug === group?.slug)
+            .map((person) => person?.slug),
         })),
       ];
     },
