@@ -7,33 +7,36 @@
         "name": "Aleš Čerin",
         "honorific_prefix": null,
         "honorific_suffix": null,
-        "preferred_pronoun": "he",
+        "preferred_pronoun": null,
         "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
+          "name": "Lista Zorana Jankovića",
+          "acronym": "LZJ",
+          "slug": "22-lista-zorana-jankovica",
+          "color": "#09a2cc"
         },
         "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png",
         "results": {
           "mandates": null,
-          "speeches_per_session": 10.2,
+          "speeches_per_session": 9.51851851851852,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 22.1973094170404,
-          "presence_votes": 81.8385650224215,
+          "mismatch_of_pg": 16.4233576642336,
+          "presence_votes": 85.4014598540146,
           "birth_date": null,
           "education": null,
-          "spoken_words": 14023.0,
-          "vocabulary_size": 0.00169043254362519,
+          "spoken_words": 14065.0,
+          "vocabulary_size": 0.00165701387073238,
           "working_bodies": [
             {
               "name": "Statutarno pravna komisija",
               "acronym": "",
-              "slug": "26-statutarno-pravna-komisija"
+              "slug": "26-statutarno-pravna-komisija",
+              "color": "#09a2cc"
             },
             {
               "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
               "acronym": "",
-              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja",
+              "color": "#09a2cc"
             }
           ]
         }
@@ -43,33 +46,36 @@
         "name": "Ana Zagožen",
         "honorific_prefix": null,
         "honorific_suffix": null,
-        "preferred_pronoun": "she",
+        "preferred_pronoun": null,
         "group": {
           "name": "Slovenska demokratska stranka ",
           "acronym": "",
-          "slug": "21-slovenska-demokratska-stranka"
+          "slug": "21-slovenska-demokratska-stranka",
+          "color": "#09a2cc"
         },
         "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png",
         "results": {
           "mandates": null,
-          "speeches_per_session": 0.52,
+          "speeches_per_session": 0.555555555555556,
           "number_of_questions": 13.0,
-          "mismatch_of_pg": 25.7847533632287,
-          "presence_votes": 73.3183856502242,
+          "mismatch_of_pg": 26.6423357664234,
+          "presence_votes": 72.0802919708029,
           "birth_date": null,
           "education": null,
-          "spoken_words": 1577.0,
-          "vocabulary_size": 0.0231490882508224,
+          "spoken_words": 1721.0,
+          "vocabulary_size": 0.0191050620519784,
           "working_bodies": [
             {
               "name": "Komisija za mednarodne odnose",
               "acronym": "",
-              "slug": "30-komisija-za-mednarodne-odnose"
+              "slug": "30-komisija-za-mednarodne-odnose",
+              "color": "#09a2cc"
             },
             {
               "name": "Odbor za stanovanjsko politiko",
               "acronym": "",
-              "slug": "37-odbor-za-stanovanjsko-politiko"
+              "slug": "37-odbor-za-stanovanjsko-politiko",
+              "color": "#09a2cc"
             }
           ]
         }
@@ -81,17 +87,18 @@
         "honorific_suffix": null,
         "preferred_pronoun": null,
         "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
+          "name": "Lista Zorana Jankovića",
+          "acronym": "LZJ",
+          "slug": "22-lista-zorana-jankovica",
+          "color": "#09a2cc"
         },
         "image": null,
         "results": {
           "mandates": null,
           "speeches_per_session": 0.0,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 17.9372197309417,
-          "presence_votes": 86.7713004484305,
+          "mismatch_of_pg": 14.4160583941606,
+          "presence_votes": 87.956204379562,
           "birth_date": null,
           "education": null,
           "spoken_words": 0.0,
@@ -108,7 +115,8 @@
         "group": {
           "name": "Levica ",
           "acronym": "",
-          "slug": "20-levica"
+          "slug": "20-levica",
+          "color": "#09a2cc"
         },
         "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/grafit.jpeg",
         "results": {
@@ -131,17 +139,18 @@
         "honorific_suffix": null,
         "preferred_pronoun": null,
         "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
+          "name": "Lista Zorana Jankovića",
+          "acronym": "LZJ",
+          "slug": "22-lista-zorana-jankovica",
+          "color": "#09a2cc"
         },
         "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/bruna-antauer.png",
         "results": {
           "mandates": null,
           "speeches_per_session": 0.0,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 15.4708520179372,
-          "presence_votes": 89.4618834080717,
+          "mismatch_of_pg": 8.75912408759124,
+          "presence_votes": 94.5255474452555,
           "birth_date": null,
           "education": null,
           "spoken_words": 0.0,
@@ -150,17 +159,20 @@
             {
               "name": "Komisija za mandatna vprašanja, volitve in imenovanja",
               "acronym": "",
-              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja"
+              "slug": "31-komisija-za-mandatna-vprasanja-volitve-in-imenovanja",
+              "color": "#09a2cc"
             },
             {
               "name": "Odbor za stanovanjsko politiko",
               "acronym": "",
-              "slug": "37-odbor-za-stanovanjsko-politiko"
+              "slug": "37-odbor-za-stanovanjsko-politiko",
+              "color": "#09a2cc"
             },
             {
               "name": "Odbor za predšolsko vzgojo in izobraževanje",
               "acronym": "",
-              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje"
+              "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+              "color": "#09a2cc"
             }
           ]
         }
@@ -172,17 +184,18 @@
         "honorific_suffix": null,
         "preferred_pronoun": null,
         "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
+          "name": "Lista Zorana Jankovića",
+          "acronym": "LZJ",
+          "slug": "22-lista-zorana-jankovica",
+          "color": "#09a2cc"
         },
         "image": null,
         "results": {
           "mandates": null,
-          "speeches_per_session": 0.0434782608695652,
+          "speeches_per_session": 0.0384615384615385,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 6.72645739910314,
-          "presence_votes": 98.4304932735426,
+          "mismatch_of_pg": 5.65693430656934,
+          "presence_votes": 96.8978102189781,
           "birth_date": null,
           "education": null,
           "spoken_words": 177.0,
@@ -191,17 +204,20 @@
             {
               "name": "Komisija za priznanja",
               "acronym": "",
-              "slug": "27-komisija-za-priznanja"
+              "slug": "27-komisija-za-priznanja",
+              "color": "#09a2cc"
             },
             {
               "name": "Komisija za pobude občanov",
               "acronym": "",
-              "slug": "29-komisija-za-pobude-obcanov"
+              "slug": "29-komisija-za-pobude-obcanov",
+              "color": "#09a2cc"
             },
             {
               "name": "Odbor za varstvo okolja",
               "acronym": "",
-              "slug": "34-odbor-za-varstvo-okolja"
+              "slug": "34-odbor-za-varstvo-okolja",
+              "color": "#09a2cc"
             }
           ]
         }
@@ -213,17 +229,18 @@
         "honorific_suffix": null,
         "preferred_pronoun": null,
         "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
+          "name": "Lista Zorana Jankovića",
+          "acronym": "LZJ",
+          "slug": "22-lista-zorana-jankovica",
+          "color": "#09a2cc"
         },
         "image": null,
         "results": {
           "mandates": null,
-          "speeches_per_session": 0.0869565217391304,
+          "speeches_per_session": 0.0769230769230769,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 13.0044843049327,
-          "presence_votes": 91.2556053811659,
+          "mismatch_of_pg": 13.5036496350365,
+          "presence_votes": 88.5036496350365,
           "birth_date": null,
           "education": null,
           "spoken_words": 234.0,
@@ -232,12 +249,14 @@
             {
               "name": "Komisija za priznanja",
               "acronym": "",
-              "slug": "27-komisija-za-priznanja"
+              "slug": "27-komisija-za-priznanja",
+              "color": "#09a2cc"
             },
             {
               "name": "Odbor za šport",
               "acronym": "",
-              "slug": "36-odbor-za-sport"
+              "slug": "36-odbor-za-sport",
+              "color": "#09a2cc"
             }
           ]
         }
@@ -251,24 +270,26 @@
         "group": {
           "name": "Svetniški klub samostojnih svetnikov ",
           "acronym": "",
-          "slug": "18-svetniski-klub-samostojnih-svetnikov"
+          "slug": "18-svetniski-klub-samostojnih-svetnikov",
+          "color": "#09a2cc"
         },
         "image": null,
         "results": {
           "mandates": null,
-          "speeches_per_session": 2.04,
+          "speeches_per_session": 2.11111111111111,
           "number_of_questions": 30.0,
-          "mismatch_of_pg": 35.4260089686099,
-          "presence_votes": 43.4977578475336,
+          "mismatch_of_pg": 43.4306569343066,
+          "presence_votes": 50.5474452554745,
           "birth_date": null,
           "education": null,
           "spoken_words": 14838.0,
-          "vocabulary_size": 0.0011820920687833,
+          "vocabulary_size": 0.000967043054631107,
           "working_bodies": [
             {
               "name": "Odbor za kulturo in raziskovalno dejavnost",
               "acronym": "",
-              "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost"
+              "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+              "color": "#09a2cc"
             }
           ]
         }
@@ -280,17 +301,18 @@
         "honorific_suffix": null,
         "preferred_pronoun": null,
         "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
+          "name": "Lista Zorana Jankovića",
+          "acronym": "LZJ",
+          "slug": "22-lista-zorana-jankovica",
+          "color": "#09a2cc"
         },
         "image": null,
         "results": {
           "mandates": null,
-          "speeches_per_session": 0.32,
+          "speeches_per_session": 0.296296296296296,
           "number_of_questions": 0.0,
-          "mismatch_of_pg": 16.8161434977578,
-          "presence_votes": 86.9955156950673,
+          "mismatch_of_pg": 8.57664233576642,
+          "presence_votes": 93.7956204379562,
           "birth_date": null,
           "education": null,
           "spoken_words": 307.0,
@@ -299,17 +321,20 @@
             {
               "name": "Statutarno pravna komisija",
               "acronym": "",
-              "slug": "26-statutarno-pravna-komisija"
+              "slug": "26-statutarno-pravna-komisija",
+              "color": "#09a2cc"
             },
             {
               "name": "Odbor za šport",
               "acronym": "",
-              "slug": "36-odbor-za-sport"
+              "slug": "36-odbor-za-sport",
+              "color": "#09a2cc"
             },
             {
               "name": "Odbor za kulturo in raziskovalno dejavnost",
               "acronym": "",
-              "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost"
+              "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+              "color": "#09a2cc"
             }
           ]
         }
@@ -323,29 +348,32 @@
         "group": {
           "name": "Slovenska demokratska stranka ",
           "acronym": "",
-          "slug": "21-slovenska-demokratska-stranka"
+          "slug": "21-slovenska-demokratska-stranka",
+          "color": "#09a2cc"
         },
         "image": null,
         "results": {
           "mandates": null,
-          "speeches_per_session": 2.44,
-          "number_of_questions": 10.0,
-          "mismatch_of_pg": 10.762331838565,
-          "presence_votes": 87.4439461883408,
+          "speeches_per_session": 2.66666666666667,
+          "number_of_questions": 11.0,
+          "mismatch_of_pg": 15.1459854014599,
+          "presence_votes": 83.5766423357664,
           "birth_date": null,
           "education": null,
-          "spoken_words": 7305.0,
-          "vocabulary_size": 0.00289389767968725,
+          "spoken_words": 8121.0,
+          "vocabulary_size": 0.00211344020848373,
           "working_bodies": [
             {
               "name": "Komisija za priznanja",
               "acronym": "",
-              "slug": "27-komisija-za-priznanja"
+              "slug": "27-komisija-za-priznanja",
+              "color": "#09a2cc"
             },
             {
               "name": "Odbor za zaščito, reševanje in civilno obrambo",
               "acronym": "",
-              "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo"
+              "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+              "color": "#09a2cc"
             }
           ]
         }
@@ -353,7 +381,7 @@
     ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     },
     "count": 43,
     "pages": 5,
