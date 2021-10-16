@@ -80,15 +80,17 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      session: this.cardData.data?.session || {},
-      tfidf: this.cardData.data?.results?.tfidf || [],
-      attendance: this.cardData.data?.results?.attendance || [],
-      votes: this.cardData.data?.results?.votes || [],
+      session: cardData?.data?.session || {},
+      tfidf: cardData?.data?.results?.tfidf || [],
+      attendance: cardData?.data?.results?.attendance || [],
+      votes: cardData?.data?.results?.votes || [],
     };
   },
   computed: {

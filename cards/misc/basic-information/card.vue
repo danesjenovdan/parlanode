@@ -85,10 +85,12 @@ export default {
   name: 'CardPersonBasicInformation',
   mixins: [common, links],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      results: this.cardData.data?.results ?? {},
+      results: cardData?.data?.results ?? {},
       headerConfig: defaultHeaderConfig(this, {
-        title: this.cardData.data?.results?.name,
+        title: cardData?.data?.results?.name,
       }),
     };
   },

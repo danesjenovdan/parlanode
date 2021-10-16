@@ -115,32 +115,32 @@ export default {
     },
   },
   data() {
-    const state = this.cardState;
+    const { cardState, cardData } = this.$root.$options.contextData;
 
     const allPeople = [];
 
     const { months } = getD3Locale(this.$i18n.locale);
-    const start = this.cardData.data?.mandate?.beginning;
+    const start = cardData?.data?.mandate?.beginning;
     const allMonths = generateMonths(months, start);
     allMonths.forEach((month) => {
-      month.selected = (state.months || []).includes(month.id);
+      month.selected = (cardState?.months || []).includes(month.id);
     });
 
-    const allWorkingBodies = (this.cardData.organizations || []).map((org) => ({
+    const allWorkingBodies = (cardData?.organizations || []).map((org) => ({
       label: org.name,
       id: org.id,
-      selected: (state.wb || []).indexOf(org.id) !== -1,
+      selected: (cardState?.wb || []).indexOf(org.id) !== -1,
     }));
 
-    const textFilter = state.text || '';
+    const textFilter = cardState?.text || '';
 
     return {
       card: {
-        objectCount: this.cardData.data?.count,
+        objectCount: cardData?.data?.count,
         currentPage: 1,
         isLoading: false,
       },
-      speeches: this.cardData.data?.results || [],
+      speeches: cardData?.data?.results || [],
       textFilter,
       allMonths,
       allWorkingBodies,

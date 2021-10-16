@@ -92,9 +92,11 @@ export default {
     },
   },
   data() {
-    const textFilter = this.cardState.text || '';
+    const { cardState, cardData } = this.$root.$options.contextData;
 
-    const voteFilters = (this.cardState.voteFilter || '').split(',');
+    const textFilter = cardState?.text || '';
+
+    const voteFilters = (cardState?.voteFilter || '').split(',');
     const voteOptions = [
       {
         id: 'for',
@@ -130,11 +132,11 @@ export default {
 
     return {
       card: {
-        objectCount: this.cardData.data?.count,
+        objectCount: cardData?.data?.count,
         currentPage: 1,
         isLoading: false,
       },
-      ballots: this.cardData.data?.results ?? [],
+      ballots: cardData?.data?.results ?? [],
       textFilter,
       voteOptions,
       selectedSort: 'date',

@@ -27,8 +27,10 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      results: this.cardData.data?.results || [],
+      results: cardData?.data?.results || [],
     };
   },
   computed: {

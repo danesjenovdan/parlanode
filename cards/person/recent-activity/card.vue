@@ -1,6 +1,8 @@
 <template>
   <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
-    <question-list :question-days="cardData.data?.results" />
+    <question-list
+      :question-days="$options.contextData.cardData?.data?.results"
+    />
   </card-wrapper>
 </template>
 

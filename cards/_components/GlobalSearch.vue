@@ -29,10 +29,12 @@ export default {
   },
   mixins: [common, links, cancelableRequest],
   data() {
-    const people = this.cardData.data?.results?.people || [];
-    const groups = this.cardData.data?.results?.groups || [];
+    const { cardState, cardData } = this.$root.$options.contextData;
 
-    const initialTextFilter = this.cardState.text || '';
+    const people = cardData?.data?.results?.people || [];
+    const groups = cardData?.data?.results?.groups || [];
+
+    const initialTextFilter = cardState?.text || '';
 
     return {
       people,
@@ -98,7 +100,6 @@ export default {
       this.search();
     },
     selectCallback(itemId) {
-      // eslint-disable-next-line no-restricted-properties
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       const person = this.people.find((p) => p.slug === itemId);
       if (person) {

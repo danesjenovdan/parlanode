@@ -57,25 +57,27 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const textFilter = this.cardState.text || '';
+    const { cardState, cardData } = this.$root.$options.contextData;
+
+    const textFilter = cardState?.text || '';
 
     const passedOptions = [
       {
         id: 'true',
         color: 'binary-for',
         label: this.$t('vote-passed'),
-        selected: this.cardState.passed === 'true',
+        selected: cardState?.passed === 'true',
       },
       {
         id: 'false',
         color: 'binary-against',
         label: this.$t('vote-not-passed'),
-        selected: this.cardState.passed === 'false',
+        selected: cardState?.passed === 'false',
       },
     ];
 
     return {
-      votes: this.cardData.data?.results || [],
+      votes: cardData?.data?.results || [],
       passedOptions,
       textFilter,
       headerConfig: defaultHeaderConfig(this, {}),

@@ -208,18 +208,20 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     return {
-      parentOrgId: this.cardData.id,
+      parentOrgId: cardData?.id,
       loading: true,
       parties: [],
       samePeople: [],
       differentPeople: [],
-      special: !!this.cardState.special,
+      special: !!cardState?.special,
       data: [],
       total: 0,
       sameModalVisible: false,
       differentModalVisible: false,
-      selectedTab: this.cardState.selectedTab || 0,
+      selectedTab: cardState?.selectedTab || 0,
       headerConfig: defaultDynamicHeaderConfig(this, {
         circleIcon: 'primerjalnik',
       }),
@@ -316,9 +318,9 @@ export default {
     },
   },
   mounted() {
-    // const sameParties = this.$options.contextData.cardState.sameParties || [];
+    // const sameParties = this.$options.contextData.cardState?.sameParties || [];
     // const differentParties =
-    //   this.$options.contextData.cardState.differentParties || [];
+    //   this.$options.contextData.cardState?.differentParties || [];
     // this.parties = this.generateParties(this.$options.contextData.cardData).map(
     //   (party) => ({
     //     id: party.properId,
@@ -329,9 +331,9 @@ export default {
     //     isDifferent: differentParties.indexOf(party.properId) > -1,
     //   })
     // );
-    // const samePeople = this.$options.contextData.cardState.samePeople || [];
+    // const samePeople = this.$options.contextData.cardState?.samePeople || [];
     // const differentPeople =
-    //   this.$options.contextData.cardState.differentPeople || [];
+    //   this.$options.contextData.cardState?.differentPeople || [];
     // this.samePeople = this.generatePeople(
     //   this.$options.contextData.cardData
     // ).map((person) => ({

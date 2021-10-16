@@ -19,7 +19,9 @@ export default {
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
-    const pieData = this.cardData.data?.results || [];
+    const { cardData } = this.$root.$options.contextData;
+
+    const pieData = cardData?.data?.results || [];
     return {
       pieData,
     };

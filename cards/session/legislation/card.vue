@@ -90,8 +90,10 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     // get all working bodies from result data
-    let allWorkingBodies = (this.cardData.data?.wbs || [])
+    let allWorkingBodies = (cardData?.data?.wbs || [])
       .map((x) => x.mdt)
       .filter((x) => x.id > 0);
     // prepare for dropdown ui component
@@ -108,20 +110,19 @@ export default {
       .reverse()
       .map(JSON.parse);
 
-    const state = this.cardState || {};
-
     const tabs = legislationTabs;
     return {
       tabs,
       filters: tabs.map((e) => ({ id: e.title, label: e.title })),
-      currentFilter: state.type || (state.generator ? tabs[0].title : null),
+      currentFilter:
+        cardState?.type || (cardState?.generator ? tabs[0].title : null),
       currentSort: 'updated',
       currentSortOrder: 'desc',
-      textFilter: state.text || '',
+      textFilter: cardState?.text || '',
       workingBodies: [],
       allWorkingBodies,
-      onlyAbstracts: !!state.onlyAbstracts,
-      onlyWithVotes: !!state.onlyWithVotes,
+      onlyAbstracts: !!cardState?.onlyAbstracts,
+      onlyWithVotes: !!cardState?.onlyWithVotes,
     };
   },
   computed: {

@@ -128,18 +128,20 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const {
       results = [],
       pages = 1,
       page: initialPage = 1,
       count = results?.length ?? 0,
       per_page = MEMBERS_PER_PAGE,
-    } = this.cardData.data || {};
+    } = cardData?.data || {};
 
     const membersPerPage = Array(pages);
     membersPerPage[initialPage - 1] = results;
 
-    const page = Number(this.cardState.page) || initialPage;
+    const page = Number(cardState?.page) || initialPage;
 
     const genders = [
       { id: 'he', icon: 'gender-m', selected: false },
@@ -147,7 +149,7 @@ export default {
     ];
 
     // TODO: get list of groups and all working bodies from api (because pagination)
-    // const selectedGroups = this.cardState.groups || [];
+    // const selectedGroups = cardState?.groups || [];
     // const groups = uniqBy(results.map((m) => m.group).filter(Boolean), 'slug')
     //   .sort((a, b) => {
     //     const aName = (a.name || '').toLowerCase();
@@ -164,7 +166,7 @@ export default {
     //     //   .replace(/[ +,]/g, '_')}-background`,
     //   }));
 
-    // const selectedWorkingBodyIds = this.cardState.workingBodies || [];
+    // const selectedWorkingBodyIds = cardState?.workingBodies || [];
     // const workingBodies = uniqBy(
     //   results.flatMap((m) => m.results?.working_bodies || []).filter(Boolean),
     //   'slug'
@@ -197,7 +199,7 @@ export default {
         : '',
     }));
 
-    const initialTextFilter = this.cardState.text || '';
+    const initialTextFilter = cardState?.text || '';
 
     return {
       membersPerPage,
@@ -207,15 +209,15 @@ export default {
       pages,
       initialPage,
       isLoading: false,
-      currentAnalysis: this.cardState.analysis || 'demographics',
+      currentAnalysis: cardState?.analysis || 'demographics',
       analyses,
       textFilter: initialTextFilter,
       groups,
       workingBodies,
       genders,
-      selectedGenders: this.cardState.genders || [],
-      currentSort: this.cardState.sort || 'name',
-      currentSortOrder: this.cardState.sortOrder || 'asc',
+      selectedGenders: cardState?.genders || [],
+      currentSort: cardState?.sort || 'name',
+      currentSortOrder: cardState?.sortOrder || 'asc',
     };
   },
   computed: {

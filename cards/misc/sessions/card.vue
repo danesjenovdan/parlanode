@@ -61,16 +61,18 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const tabs = sessionListTabs;
     return {
       tabs,
-      sessions: this.cardData.data?.results,
+      sessions: cardData?.data?.results,
       workingBodies: [],
       filters: tabs.map((e) => ({ label: e.title, id: e.title })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: get(this.cardState, 'filters') || tabs[0].title,
-      justFive: get(this.cardState, 'justFive') || false,
+      currentFilter: cardState?.filters || tabs[0].title,
+      justFive: cardState?.justFive || false,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };

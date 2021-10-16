@@ -55,12 +55,14 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      votes: this.cardData.data?.results,
+      votes: cardData?.data?.results,
     };
   },
   computed: {

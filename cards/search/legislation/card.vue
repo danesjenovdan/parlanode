@@ -43,12 +43,14 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      legislation: this.cardData.data?.results || [],
+      legislation: cardData?.data?.results || [],
     };
   },
   computed: {

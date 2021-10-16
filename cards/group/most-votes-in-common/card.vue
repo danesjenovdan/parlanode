@@ -20,7 +20,9 @@ export default {
   },
   mixins: [common, partyVotes, partyTitle, partyHeader, partyOgImage],
   data() {
-    const results = (this.cardData.data?.results || [])
+    const { cardData } = this.$root.$options.contextData;
+
+    const results = (cardData?.data?.results || [])
       .slice()
       .sort((a, b) => a.value - b.value);
     const people = results.map((entry) => ({

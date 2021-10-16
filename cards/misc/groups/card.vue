@@ -78,6 +78,8 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const analyses = analysesIDs.map((a) => ({
       ...a,
       label: this.$te(`analysis-texts--party.${a.id}.label`)
@@ -92,8 +94,8 @@ export default {
     }));
 
     return {
-      results: this.cardData.data?.results || [],
-      currentAnalysis: this.cardState.analysis || 'seat_count',
+      results: cardData?.data?.results || [],
+      currentAnalysis: cardState?.analysis || 'seat_count',
       analyses,
     };
   },

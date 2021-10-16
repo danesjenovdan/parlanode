@@ -31,8 +31,10 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      speech: this.cardData.data?.results || {},
+      speech: cardData?.data?.results || {},
     };
   },
   created() {

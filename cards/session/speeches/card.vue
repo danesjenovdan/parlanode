@@ -52,18 +52,20 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const {
       results = [],
       pages = 1,
       page: initialPage = 1,
       count = results?.length ?? 0,
       per_page = SPEECHES_PER_PAGE,
-    } = this.cardData.data || {};
+    } = cardData?.data || {};
 
     const speechesPerPage = Array(pages);
     speechesPerPage[initialPage - 1] = results;
 
-    const page = Number(this.cardState.page) || initialPage;
+    const page = Number(cardState?.page) || initialPage;
 
     return {
       speechesPerPage,
@@ -72,7 +74,7 @@ export default {
       page,
       initialPage,
       fetching: false,
-      session: this.cardData.data?.session,
+      session: cardData?.data?.session,
     };
   },
   computed: {
@@ -103,7 +105,7 @@ export default {
         this.fetching = true;
         axios
           .get(
-            `${this.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
+            `${this.$root.$options.contextData.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
           )
           .then((response) => {
             const responsePage = response?.data?.page || 1;
@@ -126,7 +128,6 @@ export default {
       }
     },
     scrollToTop() {
-      // eslint-disable-next-line no-restricted-properties
       const id = this.$root.$options.contextData.mountId;
       const el = document.getElementById(id);
       if (el) {

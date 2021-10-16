@@ -27,7 +27,6 @@ export default {
   },
   computed: {
     buttons() {
-      // eslint-disable-next-line no-restricted-properties
       const { cardData } = this.$root.$options.contextData;
       const previous = cardData?.data?.previous_versions;
       if (previous && previous.length) {

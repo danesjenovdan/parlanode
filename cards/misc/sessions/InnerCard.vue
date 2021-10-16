@@ -48,7 +48,7 @@ export default {
       return this.processedSessions.map((session) => [
         {
           link: this.getSessionLink(session),
-          image: `${this.$root.urls.cdn}/icons/${
+          image: `${this.$root.$options.contextData.urls.cdn}/icons/${
             sessionClassification(session.classification).icon
           }.svg`,
         },

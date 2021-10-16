@@ -222,7 +222,9 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const results = this.cardData.data?.results || {};
+    const { cardState, cardData } = this.$root.$options.contextData;
+
+    const results = cardData?.data?.results || {};
 
     // parse vote title and any associated projects from text
     const { title, projects } = parseVoteTitle(results.title);
@@ -240,8 +242,8 @@ export default {
       results,
       title,
       projects: [...(results.agenda_items || []), ...projects],
-      state: this.cardState,
-      selectedTab: this.cardState.selectedTab || 0,
+      state: cardState || {},
+      selectedTab: cardState?.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
       showMobileExcerpt: false,

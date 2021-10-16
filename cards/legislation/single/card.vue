@@ -67,9 +67,11 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      legislation: this.cardData.data?.results || {},
-      votes: this.cardData.data?.results?.votes || [],
+      legislation: cardData?.data?.results || {},
+      votes: cardData?.data?.results?.votes || [],
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };

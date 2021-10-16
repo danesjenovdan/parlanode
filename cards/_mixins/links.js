@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-properties */
 import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 
 export default {
