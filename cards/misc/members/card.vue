@@ -64,12 +64,12 @@
 </template>
 
 <script>
-import axios, { CancelToken } from 'axios';
 import { debounce, find } from 'lodash-es';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
 import { MEMBERS_PER_PAGE } from '@/_helpers/constants.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
 import { memberList } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
@@ -123,7 +123,7 @@ export default {
     SortableTable,
     Pagination,
   },
-  mixins: [common, links, memberList],
+  mixins: [common, links, memberList, cancelableRequest],
   cardInfo: {
     doubleWidth: true,
   },
@@ -216,7 +216,6 @@ export default {
       selectedGenders: this.cardState.genders || [],
       currentSort: this.cardState.sort || 'name',
       currentSortOrder: this.cardState.sortOrder || 'asc',
-      cancelRequest: null,
     };
   },
   computed: {
@@ -470,29 +469,6 @@ export default {
           this.isLoading = false;
         });
       }
-    },
-    makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
-      }
-
-      return axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          }
-        );
     },
     searchPeopleImmediate(keepPage = false) {
       this.isLoading = true;

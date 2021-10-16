@@ -67,7 +67,6 @@
 </template>
 
 <script>
-import axios, { CancelToken } from 'axios';
 import { groupBy, debounce } from 'lodash-es';
 import Govor from '@/_components/Govor.vue';
 import SearchField from '@/_components/SearchField.vue';
@@ -75,6 +74,7 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import generateMonths from '@/_mixins/generateMonths.js';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import { personTitle, partyTitle, searchTitle } from '@/_mixins/titles.js';
 import {
   personHeader,
@@ -105,7 +105,7 @@ export default {
     Govor,
     ScrollShadow,
   },
-  mixins: [common, generateMonths],
+  mixins: [common, generateMonths, cancelableRequest],
   props: {
     type: {
       type: String,
@@ -144,7 +144,6 @@ export default {
       allMonths,
       allWorkingBodies,
       allPeople,
-      cancelRequest: null,
     };
   },
   computed: {
@@ -204,34 +203,10 @@ export default {
       partySpeeches.created.call(this);
       partyTitle.created.call(this);
     }
-    // TODO: search
     searchContext.created.call(this);
     searchTitle.created.call(this);
   },
   methods: {
-    makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
-      }
-
-      return axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          }
-        );
-    },
     searchSpeeches: debounce(function searchSpeeches() {
       this.card.isLoading = true;
       this.speeches = [];
@@ -256,7 +231,7 @@ export default {
       this.card.currentPage += 1;
 
       const requestedPage = this.card.currentPage;
-      axios.get(this.searchUrl).then((response) => {
+      this.makeRequest(this.searchUrl).then((response) => {
         if (response?.data?.page === requestedPage) {
           const newSpeeches = response?.data?.results || [];
           this.speeches.push(...newSpeeches);

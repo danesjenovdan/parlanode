@@ -16,8 +16,8 @@
 
 <script>
 import { debounce, uniqBy } from 'lodash-es';
-import axios, { CancelToken } from 'axios';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import links from '@/_mixins/links.js';
@@ -27,7 +27,7 @@ export default {
     TransparentWrapper,
     PSearchDropdown,
   },
-  mixins: [common, links],
+  mixins: [common, links, cancelableRequest],
   data() {
     const people = this.cardData.data?.results?.people || [];
     const groups = this.cardData.data?.results?.groups || [];
@@ -39,7 +39,6 @@ export default {
       groups,
       textFilter: initialTextFilter,
       isLoading: false,
-      cancelRequest: null,
     };
   },
   computed: {
@@ -50,14 +49,12 @@ export default {
         image: this.getPersonPortrait(person),
         selected: false,
       }));
-
       const groupItems = this.groups.map((group) => ({
         id: group.slug,
         label: group.name,
         color: group.color,
         selected: false,
       }));
-
       return [...groupItems, ...peopleItems];
     },
     dropdownGroups() {
@@ -87,33 +84,8 @@ export default {
     },
   },
   methods: {
-    makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
-      }
-
-      return axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          }
-        );
-    },
     search: debounce(function searchVotes() {
       this.isLoading = true;
-      // this.people = [];
-      // this.groups = [];
       this.makeRequest(this.searchUrl).then((response) => {
         this.people = response?.data?.results?.people || [];
         this.groups = response?.data?.results?.groups || [];
@@ -123,8 +95,6 @@ export default {
     onFilterChanged(newFilter) {
       this.textFilter = newFilter;
       this.isLoading = true;
-      // this.people = [];
-      // this.groups = [];
       this.search();
     },
     selectCallback(itemId) {
