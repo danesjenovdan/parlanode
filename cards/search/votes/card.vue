@@ -39,6 +39,7 @@ import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 
 export default {
   name: 'CardSearchVotes',
@@ -97,14 +98,8 @@ export default {
         this.card.isLoading = false;
       });
     },
-    formatDate(date) {
-      return dateFormatter(date);
-    },
-    formatSessionInfo(session) {
-      const orgNames = session?.organizations?.map((org) => org.name);
-      const orgList = orgNames?.length ? ` (${orgNames.join(', ')})` : '';
-      return `${session?.name || ''}${orgList}`;
-    },
+    formatDate: dateFormatter,
+    formatSessionInfo: sessionInfoFormatter,
   },
 };
 </script>

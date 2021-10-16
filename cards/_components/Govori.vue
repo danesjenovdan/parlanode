@@ -93,6 +93,7 @@ import {
 } from '@/_mixins/contextUrls.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
@@ -242,14 +243,8 @@ export default {
         this.card.isLoading = false;
       });
     },
-    formatDate(date) {
-      return dateFormatter(date);
-    },
-    formatSessionInfo(session) {
-      const orgNames = session?.organizations?.map((org) => org.name);
-      const orgList = orgNames?.length ? ` (${orgNames.join(', ')})` : '';
-      return `${session?.name || ''}${orgList}`;
-    },
+    formatDate: dateFormatter,
+    formatSessionInfo: sessionInfoFormatter,
   },
 };
 </script>

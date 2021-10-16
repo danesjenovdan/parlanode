@@ -118,9 +118,7 @@ export default {
     },
   },
   methods: {
-    formatDate(date) {
-      return dateFormatter(date);
-    },
+    formatDate: dateFormatter,
     loadMore() {
       if (this.card.isLoading) {
         return;

@@ -12,7 +12,7 @@
 <script>
 import SortableTable from '@/_components/SortableTable.vue';
 import links from '@/_mixins/links.js';
-import formatDate from '@/_helpers/dateFormatter.js';
+import dateFormatter from '@/_helpers/dateFormatter.js';
 import sessionClassification from '@/_helpers/sessionClassification.js';
 
 export default {
@@ -53,7 +53,7 @@ export default {
           }.svg`,
         },
         { link: this.getSessionLink(session), text: session.name },
-        session.start_time ? formatDate(session.start_time) : '',
+        session.start_time ? dateFormatter(session.start_time) : '',
         // session.end_time ? formatDate(session.end_time) : '',
         // {
         //   contents: session.organizations.map((org) => ({

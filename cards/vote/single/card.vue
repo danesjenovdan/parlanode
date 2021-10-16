@@ -281,9 +281,7 @@ export default {
         this.visibleTooltip = target;
       }
     },
-    formatDate(date) {
-      return dateFormatter(date);
-    },
+    formatDate: dateFormatter,
   },
 };
 </script>
