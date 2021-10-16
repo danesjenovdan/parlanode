@@ -12,7 +12,7 @@
         <div v-t="'mps'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allPeople"
-          @update:modelValue="searchSpeeches"
+          @update:modelValue="searchSpeechesImmediate"
         />
       </div>
       <div class="filter">
@@ -20,16 +20,16 @@
         <p-search-dropdown
           v-model="allMonths"
           :alphabetise="false"
-          @update:modelValue="searchSpeeches"
-          @clear="searchSpeeches"
+          @update:modelValue="searchSpeechesImmediate"
+          @clear="searchSpeechesImmediate"
         />
       </div>
       <div v-if="allWorkingBodies.length" class="filter">
         <div v-t="'session-type'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allWorkingBodies"
-          @update:modelValue="searchSpeeches"
-          @clear="searchSpeeches"
+          @update:modelValue="searchSpeechesImmediate"
+          @clear="searchSpeechesImmediate"
         />
       </div>
     </div>
@@ -72,7 +72,7 @@ import Govor from '@/_components/Govor.vue';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import generateMonths from '@/_mixins/generateMonths.js';
+import generateMonths from '@/_helpers/generateMonths.js';
 import common from '@/_mixins/common.js';
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import { personTitle, partyTitle, searchTitle } from '@/_mixins/titles.js';
@@ -105,7 +105,7 @@ export default {
     Govor,
     ScrollShadow,
   },
-  mixins: [common, generateMonths, cancelableRequest],
+  mixins: [common, cancelableRequest],
   props: {
     type: {
       type: String,
@@ -120,7 +120,7 @@ export default {
 
     const { months } = getD3Locale(this.$i18n.locale);
     const start = this.cardData.data?.mandate?.beginning;
-    const allMonths = this.generateMonths(months, start);
+    const allMonths = generateMonths(months, start);
     allMonths.forEach((month) => {
       month.selected = (state.months || []).includes(month.id);
     });
@@ -207,7 +207,7 @@ export default {
     searchTitle.created.call(this);
   },
   methods: {
-    searchSpeeches: debounce(function searchSpeeches() {
+    searchSpeechesImmediate() {
       this.card.isLoading = true;
       this.speeches = [];
       this.card.objectCount = 0;
@@ -218,6 +218,9 @@ export default {
         this.card.currentPage = 1;
         this.card.isLoading = false;
       });
+    },
+    searchSpeeches: debounce(function searchSpeeches() {
+      this.searchSpeechesImmediate();
     }, 750),
     loadMore() {
       if (this.card.isLoading) {
