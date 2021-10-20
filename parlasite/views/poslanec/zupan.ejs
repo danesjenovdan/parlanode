@@ -1,0 +1,27 @@
+<%- await include('../_partials/header.ejs') %>
+
+<%- await include('./_header.ejs') %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%- await fetchCard('/person/basic-information/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/person/recent-activity/', mp.id) %>
+  </div>
+  <div class="col-md-12">
+    <!-- TODO -->
+    <%- await fetchCard('/person/speeches/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/person/tfidf/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/person/number-of-spoken-words/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/person/average-number-of-speeches-per-session/', mp.id) %>
+  </div>
+</div>
+
+<%- await include('../_partials/footer.ejs') %>
