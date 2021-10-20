@@ -2,6 +2,10 @@ import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 
 export default {
   methods: {
+    getLeaderLink() {
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.member.leaderBase}`;
+    },
     getPersonLink(person) {
       if (!person?.slug) {
         return null;
