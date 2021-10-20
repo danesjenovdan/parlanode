@@ -23,6 +23,7 @@ body > .container {
       <% if (mp.end_time) { %>
       <h3><%- i18n('general.inactive') %></h3>
       <% } %>
+      <% if (typeof activeTab !== 'undefined') { %>
       <div class="group-container-menu">
         <ul class="clearfix">
           <li><a href="/<%- sm.member.base %>/<%- mp.slug %>/<%- sm.member.overview %>" class="<%- activeTab === 'pregled' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.overview') %></a></li>
@@ -30,6 +31,7 @@ body > .container {
           <li><a href="/<%- sm.member.base %>/<%- mp.slug %>/<%- sm.member.speeches %>" class="<%- activeTab === 'govori' ? 'active' : '' %> nav-icon nav-icon-speeches"><%- i18n('general.speeches') %></a></li>
         </ul>
       </div>
+      <% } %>
     </div>
   </div>
 </div>

@@ -6,9 +6,10 @@ const config = {
   urls: {
     cdn: 'https://parlassets-ljubljana.lb.djnd.si',
     cards: 'https://parlacards.lb.djnd.si',
-    parladata: 'https://parladata.lb.djnd.si/v3'
+    parladata: 'https://parladata.lb.djnd.si/v3',
   },
   locale: 'sl-obcine',
+  leaderId: '261',
   siteMap: {
     landing: {
       legislation: 'zakonodaja',
@@ -36,6 +37,7 @@ const config = {
       wordGroups: 'skupine-besed',
     },
     member: {
+      leaderBase: 'zupan',
       base: 'p',
       overview: 'pregled',
       votings: 'glasovanja',
