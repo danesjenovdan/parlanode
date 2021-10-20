@@ -1,9 +1,4 @@
 const { resolve } = require('path');
-const {
-  rules: bpRules,
-} = require('eslint-config-airbnb-base/rules/best-practices.js');
-
-const noRestrictedProperties = bpRules['no-restricted-properties'].slice(1);
 
 module.exports = {
   root: true,
@@ -26,15 +21,6 @@ module.exports = {
       },
     ],
     'no-underscore-dangle': ['error', { allow: ['__INITIAL_STATE__'] }],
-    'no-restricted-properties': [
-      'error',
-      ...noRestrictedProperties,
-      {
-        property: '$options',
-        message:
-          'Use this.cardData and this.cardState (defined in common mixin)',
-      },
-    ],
     'no-param-reassign': ['off'], // TODO: fix and reenable
     'vue/no-mutating-props': ['off'], // TODO: fix and reenable
   },

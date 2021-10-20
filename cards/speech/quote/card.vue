@@ -27,8 +27,10 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      quote: this.cardData.data?.results || {},
+      quote: cardData?.data?.results || {},
     };
   },
   created() {

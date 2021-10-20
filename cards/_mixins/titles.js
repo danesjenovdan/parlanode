@@ -8,7 +8,7 @@ export const personTitle = {
 export const partyTitle = {
   created() {
     const { template, cardData } = this.$root.$options.contextData;
-    const coalitionText = cardData.is_coalition
+    const coalitionText = cardData?.is_coalition
       ? this.$t('coalition')
       : this.$t('opposition');
     template.pageTitle = `${this.$t('card.title')} - ${
@@ -28,6 +28,6 @@ export const searchTitle = {
 export const otherVotingsTitle = {
   created() {
     const { template, cardData } = this.$root.$options.contextData;
-    template.pageTitle = `Druga glasovanja - ${cardData.session.name}`; // TODO: translate
+    template.pageTitle = `Druga glasovanja - ${cardData?.session?.name}`; // TODO: translate
   },
 };

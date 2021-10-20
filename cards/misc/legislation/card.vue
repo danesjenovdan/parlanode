@@ -87,26 +87,28 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     // TODO: get from api
-    // const filters = this.cardData.data?.config?.filters || [];
+    // const filters = cardData?.data?.config?.filters || [];
     const filters = config?.filters || [];
     const filterOptions = filters.map((filter) => ({
       ...filter,
       id: filter.label,
       color: 'for',
       label: filter.label,
-      selected: this.cardState?.filter === filter.label,
+      selected: cardState?.filter === filter.label,
     }));
 
     return {
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
-      legislation: this.cardData.data?.results || [],
+      legislation: cardData?.data?.results || [],
       filterOptions,
-      currentFilter: this.cardState?.filter,
+      currentFilter: cardState?.filter,
       currentSort: 'date',
       currentSortOrder: 'desc',
-      textFilter: this.cardState?.text || '',
+      textFilter: cardState?.text || '',
       // onlyAbstracts: !!state.onlyAbstracts,
       // onlyWithVotes: !!state.onlyWithVotes,
     };

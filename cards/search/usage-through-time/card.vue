@@ -35,7 +35,9 @@ export default {
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
   data() {
-    const data = this.cardData.data?.results || [];
+    const { cardData } = this.$root.$options.contextData;
+
+    const data = cardData?.data?.results || [];
     const timeChartData = data.map((o) => {
       const date = new Date(o.timestamp);
       date.setDate(1);

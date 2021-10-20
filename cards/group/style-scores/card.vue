@@ -1,7 +1,7 @@
 <template>
   <style-scores
-    :party="$options.contextData.cardData.data?.party"
-    :results="$options.contextData.cardData.data?.results || {}"
+    :party="$options.contextData.cardData?.data?.party"
+    :results="$options.contextData.cardData?.data?.results || {}"
     type="party"
   />
 </template>

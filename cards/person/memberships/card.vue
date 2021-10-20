@@ -35,8 +35,10 @@ export default {
   },
   mixins: [common, personHeader, personOgImage, personOverview, personTitle],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      results: this.cardData.data?.results ?? [],
+      results: cardData?.data?.results ?? [],
     };
   },
   computed: {

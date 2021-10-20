@@ -131,14 +131,16 @@ export default {
   },
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      results: this.cardData.data?.results || {},
-      group: this.cardData.data?.group || {},
-      members: this.cardData.data?.results?.members || [],
+      results: cardData?.data?.results || {},
+      group: cardData?.data?.group || {},
+      members: cardData?.data?.results?.members || [],
     };
   },
   computed: {

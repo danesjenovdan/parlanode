@@ -46,10 +46,12 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      session: this.cardData.data?.session || {},
-      agendaItems: this.cardData.data?.results?.agenda_items || [],
-      documents: this.cardData.data?.results?.documents || [],
+      session: cardData?.data?.session || {},
+      agendaItems: cardData?.data?.results?.agenda_items || [],
+      documents: cardData?.data?.results?.documents || [],
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };

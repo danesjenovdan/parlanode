@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import axios, { CancelToken } from 'axios';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
@@ -64,39 +64,40 @@ export default {
     ScrollShadow,
     VoteListItem,
   },
-  mixins: [common, sessionHeader, sessionOgImage, links],
+  mixins: [common, sessionHeader, sessionOgImage, links, cancelableRequest],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
-    const textFilter = this.cardState.text || '';
+    const { cardState, cardData } = this.$root.$options.contextData;
+
+    const textFilter = cardState?.text || '';
 
     const passedOptions = [
       {
         id: 'true',
         color: 'binary-for',
         label: this.$t('vote-passed'),
-        selected: this.cardState.passed === 'true',
+        selected: cardState?.passed === 'true',
       },
       {
         id: 'false',
         color: 'binary-against',
         label: this.$t('vote-not-passed'),
-        selected: this.cardState.passed === 'false',
+        selected: cardState?.passed === 'false',
       },
     ];
 
     return {
       card: {
-        objectCount: this.cardData.data?.count,
+        objectCount: cardData?.data?.count,
         currentPage: 1,
         isLoading: false,
       },
-      votes: this.cardData.data?.results || [],
-      session: this.cardData.data?.session || {},
+      votes: cardData?.data?.results || [],
+      session: cardData?.data?.session || {},
       passedOptions,
       textFilter,
-      cancelRequest: null,
     };
   },
   computed: {
@@ -132,29 +133,6 @@ export default {
       }
       this.searchVotesImmediate();
     },
-    makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
-      }
-
-      return axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          }
-        );
-    },
     searchVotesImmediate() {
       this.card.isLoading = true;
       this.votes = [];
@@ -182,7 +160,7 @@ export default {
       this.card.currentPage += 1;
 
       const requestedPage = this.card.currentPage;
-      axios.get(this.searchUrl).then((response) => {
+      this.makeRequest(this.searchUrl).then((response) => {
         if (response?.data?.page === requestedPage) {
           const newVotes = response?.data?.results || [];
           this.votes.push(...newVotes);

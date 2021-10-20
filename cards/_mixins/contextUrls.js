@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-properties */
 import links from '@/_mixins/links.js';
 
 export const partyOverview = {

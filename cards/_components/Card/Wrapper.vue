@@ -84,8 +84,8 @@ export default {
   },
   emits: ['back-change'],
   data() {
-    // eslint-disable-next-line no-restricted-properties
     const { cardState } = this.$root.$options.contextData;
+
     return {
       currentBack: null,
       transitionClass: null,

@@ -8,10 +8,7 @@
         <div class="bordertop0">
           <span class="key">
             {{ $t('mayor') }}:
-            <a
-              :href="getPersonLink(results.leader)"
-              class="funblue-light-hover"
-            >
+            <a :href="getLeaderLink()" class="funblue-light-hover">
               {{ results.leader?.name }}
             </a>
           </span>
@@ -85,10 +82,12 @@ export default {
   name: 'CardPersonBasicInformation',
   mixins: [common, links],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      results: this.cardData.data?.results ?? {},
+      results: cardData?.data?.results ?? {},
       headerConfig: defaultHeaderConfig(this, {
-        title: this.cardData.data?.results?.name,
+        title: cardData?.data?.results?.name,
       }),
     };
   },

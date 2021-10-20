@@ -475,13 +475,15 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState } = this.$root.$options.contextData;
+
     return {
       currentStep: 1,
       keyword: '',
       matchType: 'siroko',
       frequency: 'event',
       email: '',
-      state: this.$options.contextData.cardState,
+      state: cardState || {},
       keywords: [],
       updatedId: '',
       errored: false,

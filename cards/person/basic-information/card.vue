@@ -150,10 +150,12 @@ export default {
     links,
   ],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      results: this.cardData.data?.results ?? {},
-      person: this.cardData.data?.person ?? {},
-      group: this.cardData.data?.person?.group ?? {},
+      results: cardData?.data?.results ?? {},
+      person: cardData?.data?.person ?? {},
+      group: cardData?.data?.person?.group ?? {},
     };
   },
   computed: {

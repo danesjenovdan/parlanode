@@ -1,7 +1,7 @@
 <template>
   <prisotnost-chart
-    :party="$options.contextData.cardData.data?.group"
-    :results="$options.contextData.cardData.data?.results || []"
+    :party="$options.contextData.cardData?.data?.group"
+    :results="$options.contextData.cardData?.data?.results || []"
     type="party"
   />
 </template>

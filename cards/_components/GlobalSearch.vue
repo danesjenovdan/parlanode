@@ -16,8 +16,8 @@
 
 <script>
 import { debounce, uniqBy } from 'lodash-es';
-import axios, { CancelToken } from 'axios';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import links from '@/_mixins/links.js';
@@ -27,19 +27,20 @@ export default {
     TransparentWrapper,
     PSearchDropdown,
   },
-  mixins: [common, links],
+  mixins: [common, links, cancelableRequest],
   data() {
-    const people = this.cardData.data?.results?.people || [];
-    const groups = this.cardData.data?.results?.groups || [];
+    const { cardState, cardData } = this.$root.$options.contextData;
 
-    const initialTextFilter = this.cardState.text || '';
+    const people = cardData?.data?.results?.people || [];
+    const groups = cardData?.data?.results?.groups || [];
+
+    const initialTextFilter = cardState?.text || '';
 
     return {
       people,
       groups,
       textFilter: initialTextFilter,
       isLoading: false,
-      cancelRequest: null,
     };
   },
   computed: {
@@ -50,33 +51,31 @@ export default {
         image: this.getPersonPortrait(person),
         selected: false,
       }));
-
       const groupItems = this.groups.map((group) => ({
         id: group.slug,
         label: group.name,
         color: group.color,
         selected: false,
       }));
-
       return [...groupItems, ...peopleItems];
     },
     dropdownGroups() {
-      const allGroups = uniqBy(
-        this.people.filter((p) => p.group).map((p) => p.group),
-        (g) => g.slug
+      const personGroups = uniqBy(
+        this.people.map((person) => person?.group),
+        (g) => g?.slug
       );
       return [
         {
           id: 'groups',
           label: this.$t('parties'),
-          items: this.groups.map((group) => group.slug),
+          items: this.groups.map((group) => group?.slug),
         },
-        ...allGroups.map((group) => ({
-          id: group.slug,
-          label: group.name,
+        ...personGroups.map((group) => ({
+          id: group?.slug || 'null',
+          label: group?.name || ' ',
           items: this.people
-            .filter((person) => person?.group?.slug === group.slug)
-            .map((person) => person.slug),
+            .filter((person) => person?.group?.slug === group?.slug)
+            .map((person) => person?.slug),
         })),
       ];
     },
@@ -87,33 +86,8 @@ export default {
     },
   },
   methods: {
-    makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
-      }
-
-      return axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          }
-        );
-    },
     search: debounce(function searchVotes() {
       this.isLoading = true;
-      // this.people = [];
-      // this.groups = [];
       this.makeRequest(this.searchUrl).then((response) => {
         this.people = response?.data?.results?.people || [];
         this.groups = response?.data?.results?.groups || [];
@@ -123,12 +97,9 @@ export default {
     onFilterChanged(newFilter) {
       this.textFilter = newFilter;
       this.isLoading = true;
-      // this.people = [];
-      // this.groups = [];
       this.search();
     },
     selectCallback(itemId) {
-      // eslint-disable-next-line no-restricted-properties
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       const person = this.people.find((p) => p.slug === itemId);
       if (person) {

@@ -12,7 +12,7 @@
         <div v-t="'mps'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allPeople"
-          @update:modelValue="searchSpeeches"
+          @update:modelValue="searchSpeechesImmediate"
         />
       </div>
       <div class="filter">
@@ -20,16 +20,16 @@
         <p-search-dropdown
           v-model="allMonths"
           :alphabetise="false"
-          @update:modelValue="searchSpeeches"
-          @clear="searchSpeeches"
+          @update:modelValue="searchSpeechesImmediate"
+          @clear="searchSpeechesImmediate"
         />
       </div>
       <div v-if="allWorkingBodies.length" class="filter">
         <div v-t="'session-type'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allWorkingBodies"
-          @update:modelValue="searchSpeeches"
-          @clear="searchSpeeches"
+          @update:modelValue="searchSpeechesImmediate"
+          @clear="searchSpeechesImmediate"
         />
       </div>
     </div>
@@ -67,14 +67,14 @@
 </template>
 
 <script>
-import axios, { CancelToken } from 'axios';
 import { groupBy, debounce } from 'lodash-es';
 import Govor from '@/_components/Govor.vue';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import generateMonths from '@/_mixins/generateMonths.js';
+import generateMonths from '@/_helpers/generateMonths.js';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import { personTitle, partyTitle, searchTitle } from '@/_mixins/titles.js';
 import {
   personHeader,
@@ -93,6 +93,7 @@ import {
 } from '@/_mixins/contextUrls.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
@@ -105,7 +106,7 @@ export default {
     Govor,
     ScrollShadow,
   },
-  mixins: [common, generateMonths],
+  mixins: [common, cancelableRequest],
   props: {
     type: {
       type: String,
@@ -114,37 +115,36 @@ export default {
     },
   },
   data() {
-    const state = this.cardState;
+    const { cardState, cardData } = this.$root.$options.contextData;
 
     const allPeople = [];
 
     const { months } = getD3Locale(this.$i18n.locale);
-    const start = this.cardData.data?.mandate?.beginning;
-    const allMonths = this.generateMonths(months, start);
+    const start = cardData?.data?.mandate?.beginning;
+    const allMonths = generateMonths(months, start);
     allMonths.forEach((month) => {
-      month.selected = (state.months || []).includes(month.id);
+      month.selected = (cardState?.months || []).includes(month.id);
     });
 
-    const allWorkingBodies = (this.cardData.organizations || []).map((org) => ({
+    const allWorkingBodies = (cardData?.organizations || []).map((org) => ({
       label: org.name,
       id: org.id,
-      selected: (state.wb || []).indexOf(org.id) !== -1,
+      selected: (cardState?.wb || []).indexOf(org.id) !== -1,
     }));
 
-    const textFilter = state.text || '';
+    const textFilter = cardState?.text || '';
 
     return {
       card: {
-        objectCount: this.cardData.data?.count,
+        objectCount: cardData?.data?.count,
         currentPage: 1,
         isLoading: false,
       },
-      speeches: this.cardData.data?.results || [],
+      speeches: cardData?.data?.results || [],
       textFilter,
       allMonths,
       allWorkingBodies,
       allPeople,
-      cancelRequest: null,
     };
   },
   computed: {
@@ -204,35 +204,11 @@ export default {
       partySpeeches.created.call(this);
       partyTitle.created.call(this);
     }
-    // TODO: search
     searchContext.created.call(this);
     searchTitle.created.call(this);
   },
   methods: {
-    makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
-      }
-
-      return axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          }
-        );
-    },
-    searchSpeeches: debounce(function searchSpeeches() {
+    searchSpeechesImmediate() {
       this.card.isLoading = true;
       this.speeches = [];
       this.card.objectCount = 0;
@@ -243,6 +219,9 @@ export default {
         this.card.currentPage = 1;
         this.card.isLoading = false;
       });
+    },
+    searchSpeeches: debounce(function searchSpeeches() {
+      this.searchSpeechesImmediate();
     }, 750),
     loadMore() {
       if (this.card.isLoading) {
@@ -256,7 +235,7 @@ export default {
       this.card.currentPage += 1;
 
       const requestedPage = this.card.currentPage;
-      axios.get(this.searchUrl).then((response) => {
+      this.makeRequest(this.searchUrl).then((response) => {
         if (response?.data?.page === requestedPage) {
           const newSpeeches = response?.data?.results || [];
           this.speeches.push(...newSpeeches);
@@ -264,14 +243,8 @@ export default {
         this.card.isLoading = false;
       });
     },
-    formatDate(date) {
-      return dateFormatter(date);
-    },
-    formatSessionInfo(session) {
-      const orgNames = session?.organizations?.map((org) => org.name);
-      const orgList = orgNames?.length ? ` (${orgNames.join(', ')})` : '';
-      return `${session?.name || ''}${orgList}`;
-    },
+    formatDate: dateFormatter,
+    formatSessionInfo: sessionInfoFormatter,
   },
 };
 </script>

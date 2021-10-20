@@ -1,5 +1,10 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper
+    ref="card"
+    :header-config="headerConfig"
+    :og-config="ogConfig"
+    max-height
+  >
     <template #generator>
       <div class="party-list-generator">
         <div class="row">
@@ -9,7 +14,10 @@
         </div>
         <div class="row">
           <div class="col-md-12 filters">
-            <search-field v-model="textFilter" />
+            <search-field
+              v-model="textFilter"
+              @update:modelValue="searchPeople"
+            />
             <p-search-dropdown
               v-model="groups"
               :placeholder="partiesPlaceholder"
@@ -34,7 +42,7 @@
         </div>
       </div>
     </template>
-    <div v-if="fetching" class="nalagalnik"></div>
+    <div v-if="isLoading" class="nalagalnik"></div>
     <template v-else>
       <sortable-table
         :columns="columns"
@@ -56,13 +64,12 @@
 </template>
 
 <script>
-import axios from 'axios';
-import stableSort from 'stable';
-import { find, clamp, uniqBy } from 'lodash-es';
+import { debounce, find } from 'lodash-es';
 import { parseISO, differenceInCalendarYears } from 'date-fns';
 import { MEMBERS_PER_PAGE } from '@/_helpers/constants.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
 import { memberList } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
@@ -116,63 +123,67 @@ export default {
     SortableTable,
     Pagination,
   },
-  mixins: [common, links, memberList],
+  mixins: [common, links, memberList, cancelableRequest],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const {
       results = [],
       pages = 1,
       page: initialPage = 1,
       count = results?.length ?? 0,
       per_page = MEMBERS_PER_PAGE,
-    } = this.cardData.data || {};
+    } = cardData?.data || {};
 
     const membersPerPage = Array(pages);
     membersPerPage[initialPage - 1] = results;
 
-    const page = clamp(Number(this.cardState?.page || initialPage));
+    const page = Number(cardState?.page) || initialPage;
 
     const genders = [
-      { id: 'he', icon: 'gender-m', label: 'moški', selected: false },
-      { id: 'she', icon: 'gender-f', label: 'ženski', selected: false },
+      { id: 'he', icon: 'gender-m', selected: false },
+      { id: 'she', icon: 'gender-f', selected: false },
     ];
 
     // TODO: get list of groups and all working bodies from api (because pagination)
-    const selectedGroups = this.cardState.groups || [];
-    const groups = uniqBy(results.map((m) => m.group).filter(Boolean), 'slug')
-      .sort((a, b) => {
-        const aName = (a.name || '').toLowerCase();
-        const bName = (b.name || '').toLowerCase();
-        return aName.localeCompare(bName, 'sl');
-      })
-      .map((g) => ({
-        id: g.slug,
-        slug: g.slug,
-        label: g.name,
-        selected: selectedGroups.includes(g.slug),
-        // colorClass: `${g.acronym
-        //   .toLowerCase()
-        //   .replace(/[ +,]/g, '_')}-background`,
-      }));
+    // const selectedGroups = cardState?.groups || [];
+    // const groups = uniqBy(results.map((m) => m.group).filter(Boolean), 'slug')
+    //   .sort((a, b) => {
+    //     const aName = (a.name || '').toLowerCase();
+    //     const bName = (b.name || '').toLowerCase();
+    //     return aName.localeCompare(bName, 'sl');
+    //   })
+    //   .map((g) => ({
+    //     id: g.slug,
+    //     slug: g.slug,
+    //     label: g.name,
+    //     selected: selectedGroups.includes(g.slug),
+    //     // colorClass: `${g.acronym
+    //     //   .toLowerCase()
+    //     //   .replace(/[ +,]/g, '_')}-background`,
+    //   }));
 
-    const selectedWorkingBodies = this.cardState.workingBodies || [];
-    const workingBodies = uniqBy(
-      results.flatMap((m) => m.results?.working_bodies || []).filter(Boolean),
-      'slug'
-    )
-      .sort((a, b) => {
-        const aName = (a.name || '').toLowerCase();
-        const bName = (b.name || '').toLowerCase();
-        return aName.localeCompare(bName, 'sl');
-      })
-      .map((wb) => ({
-        id: wb.slug,
-        slug: wb.slug,
-        label: wb.name,
-        selected: selectedWorkingBodies.includes(wb.slug),
-      }));
+    // const selectedWorkingBodyIds = cardState?.workingBodies || [];
+    // const workingBodies = uniqBy(
+    //   results.flatMap((m) => m.results?.working_bodies || []).filter(Boolean),
+    //   'slug'
+    // )
+    //   .sort((a, b) => {
+    //     const aName = (a.name || '').toLowerCase();
+    //     const bName = (b.name || '').toLowerCase();
+    //     return aName.localeCompare(bName, 'sl');
+    //   })
+    //   .map((wb) => ({
+    //     id: wb.slug,
+    //     slug: wb.slug,
+    //     label: wb.name,
+    //     selected: selectedWorkingBodyIds.includes(wb.slug),
+    //   }));
+    const groups = [];
+    const workingBodies = [];
     // END TODO
 
     const analyses = analysesIDs.map((a) => ({
@@ -188,6 +199,8 @@ export default {
         : '',
     }));
 
+    const initialTextFilter = cardState?.text || '';
+
     return {
       membersPerPage,
       count,
@@ -195,16 +208,16 @@ export default {
       page,
       pages,
       initialPage,
-      fetching: false,
-      currentAnalysis: this.cardState.analysis || 'demographics',
+      isLoading: false,
+      currentAnalysis: cardState?.analysis || 'demographics',
       analyses,
-      textFilter: this.cardState.textFilter || '',
+      textFilter: initialTextFilter,
       groups,
       workingBodies,
       genders,
-      selectedGenders: this.cardState.genders || [],
-      currentSort: this.cardState.sort || 'name',
-      currentSortOrder: this.cardState.sortOrder || 'asc',
+      selectedGenders: cardState?.genders || [],
+      currentSort: cardState?.sort || 'name',
+      currentSortOrder: cardState?.sortOrder || 'asc',
     };
   },
   computed: {
@@ -214,9 +227,9 @@ export default {
         : this.$t('select-parties-placeholder');
     },
     workingBodyPlaceholder() {
-      return this.selectedWorkingBodies.length > 0
+      return this.selectedWorkingBodyIds.length > 0
         ? this.$t('selected-placeholder', {
-            num: this.selectedWorkingBodies.length,
+            num: this.selectedWorkingBodyIds.length,
           })
         : this.$t('select-working-body-placeholder');
     },
@@ -269,35 +282,31 @@ export default {
       return this.membersPerPage[this.page - 1] || [];
     },
     currentPageProcessedMembers() {
-      let analysisMax = 0;
-      if (this.currentAnalysis !== 'demographics') {
-        analysisMax =
-          this.membersPerPage?.[0]?.[0]?.results?.[this.currentAnalysis] || 0;
-      }
+      // TODO: get max analysis value from api
+      const analysisMax = 0;
+      // if (this.currentAnalysis !== 'demographics') {
+      //   analysisMax =
+      //     this.membersPerPage?.[0]?.[0]?.results?.[this.currentAnalysis] || 0;
+      // }
+      // END TODO
 
       // TODO: filter and sort from api (because pagination)
-      const lowerTextFilter = String(this.textFilter || '').toLowerCase();
-
       const filtered = this.currentPageMembers
         .filter((member) => {
           let partyMatch = true;
           let workingBodyMatch = true;
           let genderMatch = true;
-          let textMatch = true;
 
-          if (lowerTextFilter) {
-            textMatch = member.name.toLowerCase().includes(lowerTextFilter);
-          }
           if (this.selectedGroups.length > 0) {
             partyMatch =
               member.group?.slug &&
               this.selectedGroups.find((p) => p.slug === member.group?.slug) !=
                 null;
           }
-          if (this.selectedWorkingBodies.length > 0) {
+          if (this.selectedWorkingBodyIds.length > 0) {
             const wbs = member.results?.working_bodies || [];
             workingBodyMatch = wbs.some((wb) =>
-              this.selectedWorkingBodies.includes(wb?.slug)
+              this.selectedWorkingBodyIds.includes(wb?.slug)
             );
           }
           if (this.selectedGenders.length > 0) {
@@ -306,7 +315,7 @@ export default {
             );
           }
 
-          return textMatch && partyMatch && workingBodyMatch && genderMatch;
+          return partyMatch && workingBodyMatch && genderMatch;
         })
         .map((member) => {
           const newMember = JSON.parse(JSON.stringify(member));
@@ -334,51 +343,10 @@ export default {
           }
           return newMember;
         });
-
-      const sortedAndFiltered = stableSort(filtered, (memberA, memberB) => {
-        let a;
-        let b;
-        switch (this.currentSort) {
-          // case 'change':
-          //   a = memberA.results?.[this.currentAnalysis].diff;
-          //   b = memberB.results?.[this.currentAnalysis].diff;
-          //   return a - b;
-          case 'analysis':
-            a = memberA.results?.[this.currentAnalysis] || 0;
-            b = memberB.results?.[this.currentAnalysis] || 0;
-            return a - b;
-          case 'name':
-            a = memberA.name;
-            b = memberB.name;
-            return a.localeCompare(b, 'sl');
-          case 'party':
-            a = (memberA.group?.name || '').toLowerCase();
-            b = (memberB.group?.name || '').toLowerCase();
-            return a.localeCompare(b, 'sl');
-          case 'education':
-            a = parseFloat(
-              String(memberA.results.education.score).replace('/', '.'),
-              10
-            );
-            b = parseFloat(
-              String(memberB.results.education.score).replace('/', '.'),
-              10
-            );
-            return a - b;
-          default:
-            a = memberA[this.currentSort];
-            b = memberB[this.currentSort];
-            return a - b;
-        }
-      });
-
-      if (this.currentSortOrder === 'desc') {
-        sortedAndFiltered.reverse();
-      }
       // END TODO filter and sort
 
       if (this.currentAnalysis === 'demographics') {
-        return sortedAndFiltered.map((member) => [
+        return filtered.map((member) => [
           {
             link: this.getPersonLink(member),
             image: this.getPersonPortrait(member),
@@ -394,7 +362,7 @@ export default {
         ]);
       }
       if (this.currentAnalysis === 'working_bodies') {
-        return sortedAndFiltered.map((member) => [
+        return filtered.map((member) => [
           {
             link: this.getPersonLink(member),
             image: this.getPersonPortrait(member),
@@ -405,7 +373,7 @@ export default {
           },
         ]);
       }
-      return sortedAndFiltered.map((member) => [
+      return filtered.map((member) => [
         {
           link: this.getPersonLink(member),
           image: this.getPersonPortrait(member),
@@ -437,9 +405,9 @@ export default {
       });
     },
     selectedGroups() {
-      return this.groups.filter((party) => party.selected);
+      return this.groups.filter((group) => group.selected);
     },
-    selectedWorkingBodies() {
+    selectedWorkingBodyIds() {
       return this.workingBodies
         .filter((workingBody) => workingBody.selected)
         .map((workingBody) => workingBody.id);
@@ -448,13 +416,17 @@ export default {
       const url = new URL(this.cardData.url);
       url.searchParams.set('page', this.page);
       url.searchParams.set('text', this.textFilter);
-      url.searchParams.set('order_by', this.currentAnalysis);
+      const sortPrefix = this.currentSortOrder === 'desc' ? '-' : '';
+      const sort =
+        this.currentSort === 'analysis'
+          ? this.currentAnalysis
+          : this.currentSort;
+      url.searchParams.set('order_by', `${sortPrefix}${sort}`);
       return url.toString();
     },
   },
   watch: {
     currentAnalysis(newValue) {
-      this.onAnalysisChange();
       if (newValue === 'demographics' || newValue === 'working_bodies') {
         this.currentSort = 'name';
         this.currentSortOrder = 'asc';
@@ -462,13 +434,20 @@ export default {
         this.currentSort = 'analysis';
         this.currentSortOrder = 'desc';
       }
+      this.searchPeopleImmediate();
+    },
+    currentSort() {
+      this.searchPeopleImmediate(true);
+    },
+    currentSortOrder() {
+      this.searchPeopleImmediate(true);
     },
   },
   methods: {
     selectGender(id) {
       const position = this.selectedGenders.indexOf(id);
       if (position > -1) {
-        this.selectedGenders.splice(position, 1);
+        this.selectedGenders = [];
       } else {
         this.selectedGenders = [id];
       }
@@ -483,40 +462,36 @@ export default {
       }
     },
     onPageChange(newPage) {
-      if (this.fetching) {
-        return;
-      }
       this.page = newPage;
       this.scrollToTop();
       if (!this.membersPerPage[newPage - 1]) {
-        this.fetching = true;
-        axios.get(this.searchUrl).then((response) => {
-          this.membersPerPage[newPage - 1] = response.data.results;
-          this.fetching = false;
+        this.isLoading = true;
+        this.makeRequest(this.searchUrl).then((response) => {
+          this.membersPerPage[newPage - 1] = response?.data?.results || [];
+          this.isLoading = false;
         });
       }
     },
-    onAnalysisChange() {
-      if (this.fetching) {
-        return;
-      }
-      this.page = 1;
+    searchPeopleImmediate(keepPage = false) {
+      this.isLoading = true;
       this.membersPerPage = Array(this.pages);
-      this.scrollToTop();
-      this.fetching = true;
-      axios.get(this.searchUrl).then((response) => {
-        this.membersPerPage[0] = response.data.results;
-        this.fetching = false;
+      this.count = 0;
+      if (!keepPage) {
+        this.page = 1;
+      }
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.membersPerPage[0] = response?.data?.results || [];
+        this.count = response?.data?.count;
+        this.page = response?.data?.page;
+        this.isLoading = false;
       });
     },
+    searchPeople: debounce(function searchPeople() {
+      this.searchPeopleImmediate();
+    }, 750),
     scrollToTop() {
-      // eslint-disable-next-line no-restricted-properties
-      const id = this.$root.$options.contextData.mountId;
-      const el = document.getElementById(id);
-      // only scroll up if top is not visible
-      if (el && el.getBoundingClientRect().top < 0) {
-        el.scrollIntoView();
-      }
+      const el = this.$refs.card?.$el || this.$refs.card;
+      el.scrollIntoView();
     },
   },
 };

@@ -53,7 +53,6 @@ export default {
     },
   },
   data() {
-    // eslint-disable-next-line no-restricted-properties
     const { urls } = this.$root.$options.contextData;
     return {
       urls,

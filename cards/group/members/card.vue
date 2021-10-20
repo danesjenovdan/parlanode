@@ -24,12 +24,14 @@ export default {
   },
   mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      people: this.cardData.data?.results || [],
+      people: cardData?.data?.results || [],
     };
   },
   computed: {

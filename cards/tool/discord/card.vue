@@ -154,8 +154,9 @@ export default {
     doubleWidth: true,
   },
   data() {
-    // const data = Object.keys(this.cardData).map((key) => {
-    //   const obj = this.cardData[key];
+    // const { cardData } = this.$root.$options.contextData;
+    // const data = Object.keys(cardData).map((key) => {
+    //   const obj = cardData[key];
     //   return {
     //     id: Number(key),
     //     ...obj,
@@ -358,7 +359,6 @@ export default {
       );
     },
     selectGroup(acronym) {
-      this.cardState.selectedGroup = acronym;
       this.selectedGroup =
         this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
@@ -392,8 +392,8 @@ export default {
       //       items.map((item) =>
       //         assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
       //       );
-      //     if (this.cardState) {
-      //       const state = this.cardState;
+      //     if (cardState) {
+      //       const state = cardState;
       //       if (state.text) {
       //         this.textFilter = state.text;
       //       }

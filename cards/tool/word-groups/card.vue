@@ -142,12 +142,14 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     return {
-      data: this.cardData,
+      data: cardData || {},
       emptyText: this.$t('empty-text'),
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
-      showRelative: this.cardState.showRelative || false,
+      showRelative: cardState?.showRelative || false,
       modalShown: false,
       modalInputText: '',
       results: {
@@ -158,8 +160,8 @@ export default {
         people: [],
         parties: [],
       },
-      selectedTab: this.cardState.selectedTab || 0,
-      words: this.cardState.words || [],
+      selectedTab: cardState?.selectedTab || 0,
+      words: cardState?.words || [],
       loading: false,
     };
   },
