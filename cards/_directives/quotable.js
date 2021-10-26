@@ -68,7 +68,7 @@ export default {
           selectionRange.startOffset,
           selectionRange.endOffset
         );
-        const { urls } = binding.instance.$root;
+        const { urls } = binding.instance.$root.$options.contextData;
         const { locale } = binding.instance.$i18n;
         const url = `${urls.data}/cards/speech/quote/`;
         axios

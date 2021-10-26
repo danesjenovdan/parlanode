@@ -1,6 +1,6 @@
 <template>
   <div :id="speech.id" :class="['speech-holder', { 'just-quote': showQuote }]">
-    <input :value="getSpeechContent(speech)" type="hidden" class="mywords" />
+    <input :value="speechContent" type="hidden" class="mywords" />
     <div class="person-session">
       <div class="person">
         <template v-if="getPersonLink(speech.person)">
@@ -27,7 +27,7 @@
     </div>
     <div class="everything">
       <div class="speech-text">
-        {{ getSpeechContent(speech) }}
+        {{ speechContent }}
         <div class="quote-button">“</div>
       </div>
       <div v-if="speech.votes?.length" class="votes">
@@ -124,7 +124,7 @@ export default {
       return this.quote?.quote_content && !this.hideQuote;
     },
     quoteParts() {
-      const text = this.getSpeechContent(this.speech);
+      const text = this.speechContent;
       const quote = this.quote?.quote_content || '';
 
       let pre = text.slice(0, this.quote.start_index);
@@ -139,11 +139,11 @@ export default {
 
       return { pre, quote, post };
     },
+    speechContent() {
+      return this.speech?.content || '';
+    },
   },
   methods: {
-    getSpeechContent(speech) {
-      return speech.content || '';
-    },
     showFullSpeech(event) {
       event.preventDefault();
       this.hideQuote = true;
@@ -226,6 +226,7 @@ export default {
   font-size: 14px;
   font-weight: 300;
   line-height: 28px;
+  white-space: pre-line;
 
   @include respond-to(desktop) {
     font-size: 16px;
