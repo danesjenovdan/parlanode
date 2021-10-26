@@ -7,7 +7,7 @@ const { urls, locale } = require('../config');
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
     const query = Object.keys(params)
-      .filter((key) => params[key] != null) // maybe params[key] is undefined
+      .filter(key => params[key] != null) // maybe params[key] is undefined
       .map((key) => {
         const val = (typeof params[key] === 'object')
           ? JSON.stringify(params[key])
@@ -20,9 +20,15 @@ function stringifyParams(params) {
   return '';
 }
 
-function slovenianDate(dateString) {
-  const date = new Date(dateString);
-  return `${date.getDay()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
+function slovenianDate(isoDate) {
+  if (!isoDate) {
+    return 'Invalid Date';
+  }
+  const date = new Date(isoDate);
+  if (Number.isNaN(date.getTime())) {
+    return 'Invalid Date';
+  }
+  return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
 }
 
 async function fetchCard(cardPath, id, params = {}) {
