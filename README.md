@@ -8,6 +8,17 @@ Embedable cards for Parlameter.
 
 # Card development
 
+### Download project
+
+Clone the git repository and run:
+
+```sh
+git config submodule.parlassets.branch ljubljana
+```
+```sh
+git submodule update --init --recursive --remote
+```
+
 ### Install dependencies
 
 ```sh
