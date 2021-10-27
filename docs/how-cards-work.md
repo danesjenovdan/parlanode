@@ -1,0 +1,74 @@
+# How cards work
+
+## File structure
+
+### Naming
+
+Each card has a `group` and a `method` (sometimes just called `name`), which when combined create a `cardName`.
+
+For example:
+- group: `person`
+- method `basic-information`
+- cardName: `person/basic-information`
+
+### Location
+
+For the build system to find a card you need to create a `card.vue` in the appropriate directory.
+
+All the cards are stored in the [cards](../cards) folder, and subfolders based ond the `cardName`.
+
+For example:
+- [person/basic-information/card.vue](../cards/person/basic-information/card.vue)
+
+### Required files
+
+When creating a new card there are some required files:
+
+- `card.vue` - The main entry point for the card when it gets built.
+- `data.json` - API data used when developing the card.
+- `state.json` - State used when developing the card.
+
+Not strictly required while developing but could error when built:
+- `_i18n/<lang>/<cardName>.yaml` - The locale file for the card. (You can use `yarn lint:locales` to check if any locale files are missing)
+
+## Data
+
+### Context data
+
+Cards get external data when they are rendered. This is passed in as `contextData` and is available in the root card component as `this.$options.contextData`
+
+It includes things like:
+
+- `cardData` - API data from `parladata` for this particular id,
+- `cardState` - Saved state from the card (like current tab or filter, usually used when embedding).
+- `urls` - URLs to other parts of parlameter (like assets, site, data, ...)
+- ...
+
+### Format of `cardData`
+
+```json
+{
+  "url": "<the actual url from when the data was fetched>",
+  "id": "<id specified in the card>",
+  // data fetched from the url
+  "data": {
+    "results": { ... }
+  },
+  // if there was any error fetching data, otherwise false
+  "error": { message, error, statusCode, code } || false
+};
+```
+
+### Common mixin
+
+The top-most card component needs to import the [`common`](../cards/_mixins/common.js) mixin. This sets up some data required for the template render and imports the `card-wrapper` you need as the main card component, that creates the main card frame.
+
+### `cardInfo` property
+
+The root component can have a `cardInfo` property that is used to tell information to the templating engine later.
+
+```js
+cardInfo: {
+  doubleWidth: true,
+},
+```

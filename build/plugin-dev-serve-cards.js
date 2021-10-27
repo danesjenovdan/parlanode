@@ -7,7 +7,7 @@ import { groupBy, mapValues } from 'lodash-es';
 const dir = dirname(fileURLToPath(import.meta.url));
 const cardsPath = resolve(dir, '..', 'cards');
 
-export default function devServeCards() {
+export default function devServeCards(env) {
   return {
     name: 'dev-serve-cards',
     configureServer(server) {
@@ -47,6 +47,7 @@ export default function devServeCards() {
               resolve(dir, 'card-entry-dev.html'),
               'utf-8'
             )
+              .replace(/{assetsUrl}/g, env.VITE_PARLASSETS_URL)
               .replace(/{cardName}/g, cardName)
               .replace(
                 /{cardEntry}/g,
