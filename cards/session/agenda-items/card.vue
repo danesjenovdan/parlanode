@@ -106,7 +106,7 @@ export default {
         display: block;
 
         &:not(:last-child) {
-          margin-bottom: 6px;
+          margin-bottom: 14px;
         }
       }
     }
