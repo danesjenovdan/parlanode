@@ -24,6 +24,7 @@
               class="filter parties"
             />
             <p-search-dropdown
+              v-if="showWorkingBodies"
               v-model="workingBodies"
               :placeholder="workingBodyPlaceholder"
               class="filter working-bodies"
@@ -149,6 +150,7 @@ export default {
     ];
 
     // TODO: get list of groups and all working bodies from api (because pagination)
+    // TODO: and update the readme.md
     // const selectedGroups = cardState?.groups || [];
     // const groups = uniqBy(results.map((m) => m.group).filter(Boolean), 'slug')
     //   .sort((a, b) => {
@@ -213,6 +215,7 @@ export default {
       analyses,
       textFilter: initialTextFilter,
       groups,
+      showWorkingBodies: cardState?.showWorkingBodies || false,
       workingBodies,
       genders,
       selectedGenders: cardState?.genders || [],
