@@ -72,3 +72,15 @@ cardInfo: {
   doubleWidth: true,
 },
 ```
+
+## Query params
+
+### `id`
+...
+
+### `locale`
+...
+
+### `template`
+* `share` - when the card is rendered standalone
+* `embed` - when the card is embedded in a different site
