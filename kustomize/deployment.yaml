@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlacards-deployment
+  name: parlacards-hrastnik-deployment
   labels:
-    app: parlacards
+    app: parlacards-hrastnik
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlacards
+      app: parlacards-hrastnik
   template:
     metadata:
       labels:
-        app: parlacards
+        app: parlacards-hrastnik
     spec:
       containers:
-        - name: parlacards
-          image: parlacards
+        - name: parlacards-hrastnik
+          image: parlacards-hrastnik
           ports:
             - containerPort: 3000
           env:
@@ -24,7 +24,7 @@ spec:
               value: https://cdn.nov.parlameter.si/v1/parlassets
             - name: VITE_PARLADATA_URL
               value: https://parladata.lb.djnd.si/v3
-            - name: VITE_PARLACARDS_URL
-              value: https://parlacards.lb.djnd.si
+            - name: VITE_parlacards-hrastnik_URL
+              value: https://parlacards-hrastnik.lb.djnd.si
             - name: VITE_PARLASITE_URL
               value: https://parlasite.lb.djnd.si

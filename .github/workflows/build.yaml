@@ -25,12 +25,14 @@ jobs:
           username: nologin
           password: ${{ secrets.SCW_SECRET_TOKEN }}
       -
-        name: Build and push parlacards
+        name: Build and push PARLACARDS HRASTNIK
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: rg.fr-par.scw.cloud/djnd/parlacards:${{ github.sha }}
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parlacards:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlacards:latest
       -
         name: Update image versions in kustomize/kustomization.yaml
         run: |

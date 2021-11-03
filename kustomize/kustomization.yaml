@@ -6,6 +6,6 @@ resources:
   - service.yaml
   - ingress.yaml
 images:
-  - name: parlacards
-    newName: rg.fr-par.scw.cloud/djnd/parlacards
-    newTag: '36aad803960be30231a2f1e648dd2a17606a19b8'
+  - name: parlacards-hrastnik
+    newName: rg.fr-par.scw.cloud/djnd/parlacards-hrastnik
+    newTag: 'latest'
