@@ -31,8 +31,8 @@ jobs:
           context: .
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlacards:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlacards:latest
+            rg.fr-par.scw.cloud/djnd/parlacards-hrastnik:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlacards-hrastnik:latest
       -
         name: Update image versions in kustomize/kustomization.yaml
         run: |
