@@ -44,6 +44,7 @@ export default function devServeCards(env) {
           const cardName = `${group}/${method}`;
           if (existsSync(join(cardsPath, cardName, 'card.vue'))) {
             const html = readFileSync(
+              // TODO: uredi, da lahko developas razlicne template (embed/share/site)
               resolve(dir, 'card-entry-dev.html'),
               'utf-8'
             )
