@@ -6,6 +6,6 @@ resources:
   - service.yaml
   - ingress.yaml
 images:
-  - name: parlassets-ljubljana
-    newName: rg.fr-par.scw.cloud/djnd/parlassets-ljubljana
-    newTag: 'ba4f185c8a2127fb16eda548cc6d77b50159c0aa'
+  - name: parlassets-hrastnik
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-hrastnik
+    newTag: 'latest'
