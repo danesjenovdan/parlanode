@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: parlasite-hrastnik
+  name: parlasite-lendava
 spec:
   selector:
-    app: parlasite-hrastnik
+    app: parlasite-lendava
   ports:
     - protocol: TCP
       port: 3066
