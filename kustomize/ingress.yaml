@@ -1,22 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parlacards-hrastnik
+  name: parlacards-lendava
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   tls:
     - hosts:
-        - parlacards-hrastnik.lb.djnd.si
-      secretName: parlacards-hrastnik-tls
+        - parlacards-lendava.lb.djnd.si
+      secretName: parlacards-lendava-tls
   rules:
-    - host: parlacards-hrastnik.lb.djnd.si
+    - host: parlacards-lendava.lb.djnd.si
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: parlacards-hrastnik
+                name: parlacards-lendava
                 port:
                   number: 3000
