@@ -30,6 +30,11 @@
             :vote="vote"
             :session="session"
           />
+          <div
+            v-if="votes.length === 0"
+            v-t="'no-results'"
+            class="empty-dataset"
+          ></div>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -227,6 +232,14 @@ export default {
 
     &.has-filters {
       height: $full-card-height - 89;
+    }
+
+    .empty-dataset {
+      font-size: 16px;
+      font-style: italic;
+      line-height: 20px;
+      margin: 70px 0;
+      text-align: center;
     }
   }
 
