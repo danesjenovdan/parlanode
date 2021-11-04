@@ -2,7 +2,7 @@ name: Publish Docker image
 on:
   push:
     branches:
-      - 'hrastnik'
+      - 'lendava'
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -22,14 +22,14 @@ jobs:
           username: nologin
           password: ${{ secrets.SCW_SECRET_TOKEN }}
       -
-        name: Build and push PARLASSETS HRASTNIK
+        name: Build and push PARLASSETS LENDAVA
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlassets-hrastnik:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlassets-hrastnik:latest
+            rg.fr-par.scw.cloud/djnd/parlassets-lendava:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlassets-lendava:latest
       -
         name: Update image versions in kustomize/kustomization.yaml
         run: |

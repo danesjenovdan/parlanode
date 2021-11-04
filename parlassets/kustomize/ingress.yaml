@@ -1,22 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parlassets-hrastnik-nginx
+  name: parlassets-lendava-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   tls:
     - hosts:
-        - parlassets-hrastnik.lb.djnd.si
-      secretName: parlassets-hrastnik-nginx-tls
+        - parlassets-lendava.lb.djnd.si
+      secretName: parlassets-lendava-nginx-tls
   rules:
-    - host: parlassets-hrastnik.lb.djnd.si
+    - host: parlassets-lendava.lb.djnd.si
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: parlassets-hrastnik-nginx
+                name: parlassets-lendava-nginx
                 port:
                   number: 80

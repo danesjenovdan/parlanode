@@ -1,11 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter-hrastnik
+namespace: parlameter-lendava
 resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
 images:
-  - name: parlassets-hrastnik
-    newName: rg.fr-par.scw.cloud/djnd/parlassets-hrastnik
+  - name: parlassets-lendava
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-lendava
     newTag: '2fbbb58e1402a8d11c56532c21380c8e2e26c990'
