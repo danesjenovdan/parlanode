@@ -26,10 +26,8 @@ export default {
   name: 'CardFooter',
   emits: ['toggle-back'],
   data() {
-    // check url parameters to decide whether to include logo in the footer
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const template = urlParams.get('template');
+    // check template parameter to decide whether to include logo in the footer
+    const template = this.$root.$options.contextData.templateName;
     const showFooterLogo = template
       ? template === 'embed' || template === 'share'
       : false;
