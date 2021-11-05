@@ -18,7 +18,7 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { personOverview } from '@/_mixins/contextUrls.js';
+import { personOverviewContextUrl } from '@/_mixins/contextUrls.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
 import { personTitle } from '@/_mixins/titles.js';
@@ -33,7 +33,13 @@ export default {
     PTabs,
     MembershipList,
   },
-  mixins: [common, personHeader, personOgImage, personOverview, personTitle],
+  mixins: [
+    common,
+    personHeader,
+    personOgImage,
+    personOverviewContextUrl,
+    personTitle,
+  ],
   data() {
     const { cardData } = this.$root.$options.contextData;
 

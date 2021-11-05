@@ -55,6 +55,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { legislationListContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import SortableTable from '@/_components/SortableTable.vue';
@@ -82,7 +83,7 @@ export default {
     StripedButton,
     SortableTable,
   },
-  mixins: [common, links],
+  mixins: [common, legislationListContextUrl, links],
   cardInfo: {
     doubleWidth: true,
   },
@@ -159,9 +160,10 @@ export default {
             const classification =
               l.classification == null ? 'null' : l.classification;
 
-            filterOptionMatch = this.selectedFilterOption.classifications.includes(
-              classification
-            );
+            filterOptionMatch =
+              this.selectedFilterOption.classifications.includes(
+                classification
+              );
           }
         }
 

@@ -195,6 +195,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { voteSessionVotesContextUrl } from '@/_mixins/contextUrls.js';
 import { parseVoteTitle } from '@/_helpers/voteTitle.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import PTab from '@/_components/Tab.vue';
@@ -217,7 +218,7 @@ export default {
     DataNotPublished,
     Documents,
   },
-  mixins: [common, links],
+  mixins: [common, links, voteSessionVotesContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
@@ -263,13 +264,6 @@ export default {
     content() {
       return fixAbstractHtml(this.results.abstract);
     },
-  },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionVoteLink({
-    //   session_id: this.data.session.id,
-    //   vote_id: this.data.id,
-    // });
   },
   methods: {
     focusTab(tabNumber) {

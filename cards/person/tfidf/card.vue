@@ -11,7 +11,7 @@ import links from '@/_mixins/links.js';
 import common from '@/_mixins/common.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
-import { personSpeeches } from '@/_mixins/contextUrls.js';
+import { personSpeechesContextUrl } from '@/_mixins/contextUrls.js';
 import BarChart from '@/_components/BarChart.vue';
 
 export default {
@@ -19,7 +19,13 @@ export default {
   components: {
     BarChart,
   },
-  mixins: [common, personSpeeches, personHeader, personOgImage, links],
+  mixins: [
+    common,
+    personSpeechesContextUrl,
+    personHeader,
+    personOgImage,
+    links,
+  ],
   computed: {
     chartRows() {
       const results = this.cardData.data?.results || [];

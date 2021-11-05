@@ -79,7 +79,10 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { personSpeeches, partySpeeches } from '@/_mixins/contextUrls.js';
+import {
+  personSpeechesContextUrl,
+  partySpeechesContextUrl,
+} from '@/_mixins/contextUrls.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
@@ -130,9 +133,10 @@ export default {
   },
   created() {
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
-    (this.type === 'person' ? personSpeeches : partySpeeches).created.call(
-      this
-    );
+    (this.type === 'person'
+      ? personSpeechesContextUrl
+      : partySpeechesContextUrl
+    ).created.call(this);
   },
   methods: {
     getBarStyle(key) {

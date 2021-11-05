@@ -23,6 +23,7 @@ import common from '@/_mixins/common.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { partyListContextUrl } from '@/_mixins/contextUrls.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';
 
@@ -72,7 +73,7 @@ export default {
     BlueButtonList,
     InnerCard,
   },
-  mixins: [common],
+  mixins: [common, partyListContextUrl],
   cardInfo: {
     doubleWidth: true,
   },

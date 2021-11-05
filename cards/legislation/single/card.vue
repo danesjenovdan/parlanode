@@ -81,12 +81,6 @@ export default {
       return legislationStatus(this.legislation.status);
     },
   },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getLegislationLink(
-    //   this.data
-    // );
-  },
 };
 </script>
 

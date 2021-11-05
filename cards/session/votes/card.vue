@@ -50,7 +50,7 @@ import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
-// import { otherVotingsTitle } from '@/_mixins/titles.js';
+import { sessionVotesContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
@@ -69,7 +69,14 @@ export default {
     ScrollShadow,
     VoteListItem,
   },
-  mixins: [common, sessionHeader, sessionOgImage, links, cancelableRequest],
+  mixins: [
+    common,
+    sessionVotesContextUrl,
+    sessionHeader,
+    sessionOgImage,
+    links,
+    cancelableRequest,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
@@ -120,12 +127,6 @@ export default {
       }
       return url.toString();
     },
-  },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionVotesLink(
-    //   this.data.session
-    // );
   },
   methods: {
     selectPassedOption(passedOption) {

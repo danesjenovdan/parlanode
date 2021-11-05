@@ -45,7 +45,6 @@
     </template>
     <inner-card
       :header-config="headerConfig"
-
       :columns="columns"
       :items="processedData"
       :current-sort="currentSort"
@@ -59,10 +58,10 @@
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { sessionLegislationContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
-import dateParser from '@/_helpers/dateParser.js';
 import InnerCard from './InnerCard.vue';
 
 // TODO: get from config
@@ -85,7 +84,7 @@ export default {
     PSearchDropdown,
     BlueButtonList,
   },
-  mixins: [common],
+  mixins: [common, sessionLegislationContextUrl],
   cardInfo: {
     doubleWidth: true,
   },

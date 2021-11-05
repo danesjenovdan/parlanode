@@ -6,7 +6,7 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { personVotes } from '@/_mixins/contextUrls.js';
+import { personVotesContextUrl } from '@/_mixins/contextUrls.js';
 import { personTitle } from '@/_mixins/titles.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
@@ -18,7 +18,13 @@ export default {
   components: {
     PersonList,
   },
-  mixins: [common, personVotes, personHeader, personOgImage, personTitle],
+  mixins: [
+    common,
+    personVotesContextUrl,
+    personHeader,
+    personOgImage,
+    personTitle,
+  ],
   data() {
     const { cardData } = this.$root.$options.contextData;
 

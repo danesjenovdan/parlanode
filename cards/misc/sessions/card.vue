@@ -36,7 +36,7 @@
 <script>
 import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
-import { sessions as sessionsContextUrl } from '@/_mixins/contextUrls.js';
+import { sessionListContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
@@ -56,7 +56,7 @@ export default {
     PSearchDropdown,
     BlueButtonList,
   },
-  mixins: [common, sessionsContextUrl],
+  mixins: [common, sessionListContextUrl],
   cardInfo: {
     doubleWidth: true,
   },

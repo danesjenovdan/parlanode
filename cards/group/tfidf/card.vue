@@ -9,7 +9,7 @@
 <script>
 import links from '@/_mixins/links.js';
 import common from '@/_mixins/common.js';
-import { partySpeeches } from '@/_mixins/contextUrls.js';
+import { partySpeechesContextUrl } from '@/_mixins/contextUrls.js';
 import { partyHeader } from '@/_mixins/altHeaders.js';
 import { partyOgImage } from '@/_mixins/ogImages.js';
 import BarChart from '@/_components/BarChart.vue';
@@ -19,7 +19,7 @@ export default {
   components: {
     BarChart,
   },
-  mixins: [common, partySpeeches, partyHeader, partyOgImage, links],
+  mixins: [common, partySpeechesContextUrl, partyHeader, partyOgImage, links],
   computed: {
     chartRows() {
       const results = this.cardData.data?.results || [];

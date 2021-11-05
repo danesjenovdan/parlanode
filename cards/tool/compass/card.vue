@@ -11,7 +11,6 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { compass } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
@@ -23,7 +22,7 @@ export default {
     ToolsTabs,
     Compass,
   },
-  mixins: [common, compass],
+  mixins: [common],
   cardInfo: {
     doubleWidth: true,
   },

@@ -67,7 +67,7 @@ import numberFormatter from '@/_helpers/numberFormatter.js';
 import common from '@/_mixins/common.js';
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
-import { memberList } from '@/_mixins/contextUrls.js';
+import { memberListContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
@@ -119,7 +119,7 @@ export default {
     SortableTable,
     Pagination,
   },
-  mixins: [common, links, memberList, cancelableRequest],
+  mixins: [common, links, memberListContextUrl, cancelableRequest],
   cardInfo: {
     doubleWidth: true,
   },

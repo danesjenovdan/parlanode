@@ -87,9 +87,9 @@ import {
   searchOgImage,
 } from '@/_mixins/ogImages.js';
 import {
-  personSpeeches,
-  partySpeeches,
-  search as searchContext,
+  personSpeechesContextUrl,
+  partySpeechesContextUrl,
+  searchContextUrl,
 } from '@/_mixins/contextUrls.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
@@ -197,14 +197,14 @@ export default {
   },
   created() {
     if (this.type === 'person') {
-      personSpeeches.created.call(this);
+      personSpeechesContextUrl.created.call(this);
       personTitle.created.call(this);
     }
     if (this.type === 'party') {
-      partySpeeches.created.call(this);
+      partySpeechesContextUrl.created.call(this);
       partyTitle.created.call(this);
     }
-    searchContext.created.call(this);
+    searchContextUrl.created.call(this);
     searchTitle.created.call(this);
   },
   methods: {

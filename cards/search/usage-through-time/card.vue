@@ -13,7 +13,7 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { search as searchContext } from '@/_mixins/contextUrls.js';
+import { searchContextUrl } from '@/_mixins/contextUrls.js';
 import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
@@ -33,7 +33,7 @@ export default {
   cardInfo: {
     doubleWidth: true,
   },
-  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
+  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContextUrl],
   data() {
     const { cardData } = this.$root.$options.contextData;
 

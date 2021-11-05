@@ -38,10 +38,11 @@
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { sessionAgendaContextUrl } from '@/_mixins/contextUrls.js';
 
 export default {
   name: 'CardSessionAgendaItems',
-  mixins: [common],
+  mixins: [common, sessionAgendaContextUrl],
   cardInfo: {
     doubleWidth: true,
   },

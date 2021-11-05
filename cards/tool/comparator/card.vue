@@ -348,11 +348,6 @@ export default {
     // }));
     // this.loadResults();
   },
-  created() {
-    // TODO:
-    // const { template, siteMap: sm } = this.$options.cardData;
-    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.voteComparator}`;
-  },
   methods: {
     toggleSpecial() {
       this.special = !this.special;

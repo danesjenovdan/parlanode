@@ -14,6 +14,7 @@ import { max, sum } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
+import { sessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
 import BarChart from '@/_components/BarChart.vue';
 import links from '@/_mixins/links.js';
 
@@ -22,7 +23,13 @@ export default {
   components: {
     BarChart,
   },
-  mixins: [common, sessionHeader, sessionOgImage, links],
+  mixins: [
+    common,
+    sessionTranscriptContextUrl,
+    sessionHeader,
+    sessionOgImage,
+    links,
+  ],
   cardInfo: {
     doubleWidth: true,
   },

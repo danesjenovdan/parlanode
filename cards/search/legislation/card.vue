@@ -25,6 +25,7 @@ import common from '@/_mixins/common.js';
 import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
+import { searchContextUrl } from '@/_mixins/contextUrls.js';
 import links from '@/_mixins/links.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import legislationStatus from '@/_helpers/legislationStatus.js';
@@ -38,7 +39,14 @@ export default {
     SortableTable,
     ScrollShadow,
   },
-  mixins: [common, searchTitle, searchHeader, searchOgImage, links],
+  mixins: [
+    common,
+    searchContextUrl,
+    searchTitle,
+    searchHeader,
+    searchOgImage,
+    links,
+  ],
   cardInfo: {
     doubleWidth: true,
   },

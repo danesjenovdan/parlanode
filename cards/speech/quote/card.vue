@@ -15,6 +15,7 @@ import common from '@/_mixins/common.js';
 import { personTitle } from '@/_mixins/titles.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
+import { speechSessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
 import Speech from '@/_components/Speech.vue';
 
 export default {
@@ -22,7 +23,14 @@ export default {
   components: {
     Speech,
   },
-  mixins: [common, personTitle, sessionHeader, sessionOgImage, links],
+  mixins: [
+    common,
+    speechSessionTranscriptContextUrl,
+    personTitle,
+    sessionHeader,
+    sessionOgImage,
+    links,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
@@ -32,12 +40,6 @@ export default {
     return {
       quote: cardData?.data?.results || {},
     };
-  },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(
-    //   this.data.results
-    // );
   },
 };
 </script>
