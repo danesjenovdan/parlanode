@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
         <div class="row">
@@ -12,7 +12,6 @@
     <inner-card
       :processed-party-data="processedPartyData"
       :header-config="headerConfig"
-      :og-config="ogConfig"
       :current-analysis-data="currentAnalysisData"
     />
   </card-wrapper>
@@ -24,6 +23,7 @@ import common from '@/_mixins/common.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { partyListContextUrl } from '@/_mixins/contextUrls.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';
 
@@ -73,7 +73,7 @@ export default {
     BlueButtonList,
     InnerCard,
   },
-  mixins: [common],
+  mixins: [common, partyListContextUrl],
   cardInfo: {
     doubleWidth: true,
   },

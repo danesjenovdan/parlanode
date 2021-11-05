@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div v-if="count > 0" class="multiple-speeches">
       <pagination
         v-if="count > perPage"
@@ -33,6 +33,7 @@ import links from '@/_mixins/links.js';
 import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
+import { sessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
 import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 import Speech from '@/_components/Speech.vue';
 import Pagination from '@/_components/Pagination.vue';
@@ -47,7 +48,13 @@ export default {
   directives: {
     quotable,
   },
-  mixins: [links, common, sessionHeader, sessionOgImage],
+  mixins: [
+    common,
+    links,
+    sessionTranscriptContextUrl,
+    sessionHeader,
+    sessionOgImage,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
@@ -87,12 +94,6 @@ export default {
     if (this.page !== this.initialPage) {
       this.onPageChange(this.page);
     }
-  },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(
-    //   this.data.session
-    // );
   },
   methods: {
     onPageChange(newPage) {

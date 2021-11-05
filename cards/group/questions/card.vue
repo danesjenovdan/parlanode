@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <question-list
       :question-days="questionDays"
       show-author
@@ -13,7 +13,7 @@
 import axios from 'axios';
 import { groupBy } from 'lodash-es';
 import common from '@/_mixins/common.js';
-import { partyOverview } from '@/_mixins/contextUrls.js';
+import { partyOverviewContextUrl } from '@/_mixins/contextUrls.js';
 import { partyTitle } from '@/_mixins/titles.js';
 import { partyHeader } from '@/_mixins/altHeaders.js';
 import { partyOgImage } from '@/_mixins/ogImages.js';
@@ -27,7 +27,13 @@ export default {
   cardInfo: {
     doubleWidth: true,
   },
-  mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage],
+  mixins: [
+    common,
+    partyOverviewContextUrl,
+    partyTitle,
+    partyHeader,
+    partyOgImage,
+  ],
   data() {
     const { cardData } = this.$root.$options.contextData;
 

@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="session-name">{{ session.name }}</div>
     <div class="session-date">{{ formatDate(session.start_time) }}</div>
     <hr />

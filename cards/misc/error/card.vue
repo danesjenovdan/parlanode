@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="errored">
       <div class="icon"></div>
       <div v-t="'card-errored'" class="content"></div>

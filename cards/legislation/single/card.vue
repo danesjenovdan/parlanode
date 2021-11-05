@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="legislation-status-container">
       <div class="legislation-status">
         <i :class="['parlaicon', legislationStatus.iconClass]"></i>
@@ -54,7 +54,7 @@ import VoteListItem from '@/_components/VoteListItem.vue';
 import Documents from '@/_components/Documents.vue';
 
 export default {
-  name: 'CardSessionLaw',
+  name: 'CardLegislationSingle',
   components: {
     PTab,
     PTabs,
@@ -80,12 +80,6 @@ export default {
     legislationStatus() {
       return legislationStatus(this.legislation.status);
     },
-  },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getLegislationLink(
-    //   this.data
-    // );
   },
 };
 </script>

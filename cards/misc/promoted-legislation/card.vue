@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="legislation">
       <p-tabs :start-tab="selectedTab">
         <p-tab :label="$t('under-consideration')">

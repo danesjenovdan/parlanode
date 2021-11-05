@@ -19,14 +19,25 @@ export default {
     if (rootOptions.contextData.template == null) {
       rootOptions.contextData.template = {
         pageTitle: this.$te('card.title') ? this.$t('card.title') : '',
+
         frameContainerClass: rootOptions.cardInfo?.doubleWidth
           ? 'col-md-12'
           : 'col-md-6 col-md-offset-3',
+
         embedContainerClass: '',
         //   (rootOptions.cardInfo?.doubleWidth ? ' big-card' : '') +
         //   (rootOptions.cardInfo?.fullHeight ? ' high-card' : ''),
+
+        // This is the default value. If you want to override, add a mixin from
+        // contextUrls.js in the specific card.
         contextUrl: rootOptions.contextData.urls.site,
       };
+    } else {
+      // eslint-disable-next-line no-console
+      console.error(
+        'Common mixin included more than once!',
+        'Make sure only the top level component includes it!'
+      );
     }
   },
   computed: {

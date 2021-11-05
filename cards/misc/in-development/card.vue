@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="empty">
       <div v-t="'card-in-development'" class="circle"></div>
     </div>

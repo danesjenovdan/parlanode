@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="votes-list">
       <div class="filters">
         <div class="filter text-filter">
@@ -59,7 +59,10 @@ import common from '@/_mixins/common.js';
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
-import { personVotes, partyVotes } from '@/_mixins/contextUrls.js';
+import {
+  personVotesContextUrl,
+  partyVotesContextUrl,
+} from '@/_mixins/contextUrls.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
@@ -199,7 +202,10 @@ export default {
     },
   },
   created() {
-    (this.type === 'person' ? personVotes : partyVotes).created.call(this);
+    (this.type === 'person'
+      ? personVotesContextUrl
+      : partyVotesContextUrl
+    ).created.call(this);
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
   },
   methods: {
