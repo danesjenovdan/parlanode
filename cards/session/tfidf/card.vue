@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div v-if="chartRows.length" class="columns">
       <bar-chart :data="chartRows1" :max="max" :total="total" />
       <bar-chart :data="chartRows2" :max="max" :total="total" />

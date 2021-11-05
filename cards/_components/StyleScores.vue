@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" half-height>
+  <card-wrapper :header-config="headerConfig" half-height>
     <div v-cloak class="card-content-front">
       <div class="progress_flex">
         <div class="column-title progress_title">

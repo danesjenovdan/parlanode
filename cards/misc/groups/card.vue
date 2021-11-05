@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
         <div class="row">
@@ -12,7 +12,6 @@
     <inner-card
       :processed-party-data="processedPartyData"
       :header-config="headerConfig"
-      :og-config="ogConfig"
       :current-analysis-data="currentAnalysisData"
     />
   </card-wrapper>

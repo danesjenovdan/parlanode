@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    @back-change="handleBackChange"
-  >
+  <card-wrapper :header-config="headerConfig" @back-change="handleBackChange">
     <div ref="chart" class="prisotnost-chart"></div>
   </card-wrapper>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" half-height>
+  <card-wrapper :header-config="headerConfig" half-height>
     <p-tabs>
       <p-tab
         v-for="(tabContents, tabName) in tabs"

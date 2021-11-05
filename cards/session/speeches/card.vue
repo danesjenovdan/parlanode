@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div v-if="count > 0" class="multiple-speeches">
       <pagination
         v-if="count > perPage"

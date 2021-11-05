@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <bar-chart v-if="chartRows.length" :data="chartRows" />
     <!-- TODO: empty state should handle this -->
     <div v-else v-t="'no-speeches'" class="empty-dataset"></div>

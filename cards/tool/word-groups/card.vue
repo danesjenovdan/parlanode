@@ -2,7 +2,6 @@
   <card-wrapper
     :content-class="{ 'is-loading': loading }"
     :header-config="headerConfig"
-    :og-config="ogConfig"
   >
     <template #generator>
       <tools-tabs current-tool="wordGroups" />

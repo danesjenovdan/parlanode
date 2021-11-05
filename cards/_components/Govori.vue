@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div v-if="type !== 'search'" class="filters">
       <div class="filter text-filter">
         <div v-t="'contents-search'" class="filter-label"></div>

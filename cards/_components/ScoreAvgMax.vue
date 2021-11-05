@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" half-height>
+  <card-wrapper :header-config="headerConfig" half-height>
     <div v-if="getMaxValue <= 0">
       <!-- TODO: let empty state take care of this -->
       <div v-t="'no-results'" class="no-results" />

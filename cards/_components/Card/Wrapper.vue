@@ -65,10 +65,6 @@ export default {
       type: Object,
       required: true,
     },
-    ogConfig: {
-      type: Object,
-      required: true,
-    },
     info: {
       type: String,
       default: '',

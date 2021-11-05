@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="poslanec osnovne-informacije-poslanca">
       <div class="row">
         <div class="parlaicon-container">

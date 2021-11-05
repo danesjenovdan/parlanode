@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <scroll-shadow ref="shadow">
       <div
         v-infinite-scroll="loadMore"

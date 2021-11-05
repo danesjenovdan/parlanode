@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <template #generator>
       <div class="session-list-generator legislation-list">
         <div v-if="filters.length > 1" class="row">
@@ -45,7 +45,7 @@
     </template>
     <inner-card
       :header-config="headerConfig"
-      :og-config="ogConfig"
+
       :columns="columns"
       :items="processedData"
       :current-sort="currentSort"

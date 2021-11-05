@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <p-tabs>
       <p-tab :label="$t('whole-term')">
         <time-chart :data="timeChartData" tooltip-time-format="%B %y" />

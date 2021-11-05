@@ -1,10 +1,5 @@
 <template>
-  <card-wrapper
-    ref="card"
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    max-height
-  >
+  <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
         <div class="row">
