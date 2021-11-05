@@ -120,6 +120,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     cardState,
     urls,
     siteMap,
+    templateName: template,
   };
   const i18nData = {
     locale,

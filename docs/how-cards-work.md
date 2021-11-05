@@ -44,6 +44,12 @@ It includes things like:
 - `urls` - URLs to other parts of parlameter (like assets, site, data, ...)
 - ...
 
+### ! Be careful !
+
+Some data that cards use is also given in the query parameters (for example id, locale, template). It is tempting to get this data using `window.location.search` - but preferably avoid using it, expect for when you are **absolutely sure** the `window` object will only be called on client side - otherwise all cards will crash!
+
+If you need these parameters it's better to add them to the `contextData` object that is constructed in server/render-card.js.
+
 ### Format of `cardData`
 
 ```json
