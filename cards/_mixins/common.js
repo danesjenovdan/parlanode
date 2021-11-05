@@ -27,6 +27,12 @@ export default {
         //   (rootOptions.cardInfo?.fullHeight ? ' high-card' : ''),
         contextUrl: rootOptions.contextData.urls.site,
       };
+    } else {
+      // eslint-disable-next-line no-console
+      console.error(
+        'Common mixin included more than once!',
+        'Make sure only the top level component includes it!'
+      );
     }
   },
   computed: {
