@@ -106,8 +106,8 @@ export default {
     },
     translationKey() {
       let gender = 'plural';
-      if (this.event.authors.length === 1) {
-        gender = this.event.authors[0].preferred_pronoun === 'she' ? 'f' : 'm';
+      if (this.authors.length === 1) {
+        gender = this.authors[0].preferred_pronoun === 'she' ? 'f' : 'm';
       }
       if (this.event.type === 'question') {
         return `question.asked${
