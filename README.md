@@ -27,10 +27,16 @@ yarn
 
 ### Run dev server
 
-This will run on `http://localhost:3000/` by default.
+To develop cards run this command. It will run the card dev server on `http://localhost:3000/` by default.
 
 ```sh
 yarn dev
+```
+
+To develop the server that serves the server-side rendered cards run this command. It will run the server on `http://localhost:7004/` by default. Note that you need to have built the cards with `yarn build` at least once before.
+
+```sh
+yarn start:watch
 ```
 
 ### See also:
