@@ -23,12 +23,7 @@
 
         <card-previous v-else-if="currentBack === 'previous'" />
 
-        <div
-          v-else
-          v-cloak
-          :class="contentFrontClass"
-          class="card-content-front"
-        >
+        <div v-else v-cloak class="card-content-front">
           <slot />
         </div>
       </div>
@@ -57,17 +52,9 @@ export default {
     CardFooter,
   },
   props: {
-    contentFrontClass: {
-      type: [String, Object, Array],
-      default: '',
-    },
     headerConfig: {
       type: Object,
       required: true,
-    },
-    info: {
-      type: String,
-      default: '',
     },
     halfHeight: {
       type: Boolean,
