@@ -105,13 +105,14 @@ export default {
       return this.event.authors || [];
     },
     translationKey() {
-      const gender =
-        this.$root.cardData.data?.person?.preferred_pronoun === 'she'
-          ? 'f'
-          : 'm';
+      let gender = 'plural';
+      if (this.event.authors.length === 1) {
+        gender = this.event.authors[0].preferred_pronoun === 'she' ? 'f' : 'm';
+      }
       if (this.event.type === 'question') {
-        const form = this.authors.length > 1 ? 'plural' : gender;
-        return `question.asked${this.showAuthor ? '--with-name' : ''}--${form}`;
+        return `question.asked${
+          this.showAuthor ? '--with-name' : ''
+        }--${gender}`;
       }
       if (this.event.type === 'ballot') {
         return `event.ballot--${this.event.option}--${gender}`;
