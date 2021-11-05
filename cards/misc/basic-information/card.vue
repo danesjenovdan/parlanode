@@ -79,7 +79,7 @@ import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'CardPersonBasicInformation',
+  name: 'CardMiscBasicInformation',
   mixins: [common, links],
   data() {
     const { cardData } = this.$root.$options.contextData;

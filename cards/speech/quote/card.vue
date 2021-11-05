@@ -19,7 +19,7 @@ import { speechSessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
 import Speech from '@/_components/Speech.vue';
 
 export default {
-  name: 'CardQuoteSingle',
+  name: 'CardSpeechQuote',
   components: {
     Speech,
   },

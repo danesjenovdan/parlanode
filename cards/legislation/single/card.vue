@@ -54,7 +54,7 @@ import VoteListItem from '@/_components/VoteListItem.vue';
 import Documents from '@/_components/Documents.vue';
 
 export default {
-  name: 'CardSessionLaw',
+  name: 'CardLegislationSingle',
   components: {
     PTab,
     PTabs,
