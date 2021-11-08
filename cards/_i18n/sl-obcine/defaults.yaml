@@ -143,8 +143,8 @@ vote-abstain: Vzdržan
 vote-abstain--m: Vzdržan
 vote-abstain--f: Vzdržana
 vote-abstain-plural: Vzdržani
-vote-absent: Ni
-vote-absent-plural: Niso
+vote-absent: Odsoten
+vote-absent-plural: Odsotni
 vote-no-majority: Ni večinskega glasu
 voted-for--f: ZA
 voted-for--m: ZA
