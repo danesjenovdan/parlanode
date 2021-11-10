@@ -24,49 +24,46 @@ async function getNewData(slug) {
   return false;
 }
 
-router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.party.overview}`], ar((render, req, res, next) => {
-  getNewData(req.params.slug).then((pgData) => {
-    if (pgData) {
-      render('poslanska-skupina/pregled', {
-        activeMenu: 'pg',
-        pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
-        activeTab: 'pregled',
-        ...pgData,
-      });
-    } else {
-      next();
-    }
-  });
+router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.party.overview}`], ar(async (render, req, res, next) => {
+  const pgData = await getNewData(req.params.slug);
+  if (pgData) {
+    render('poslanska-skupina/pregled', {
+      activeMenu: 'pg',
+      pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
+      activeTab: 'pregled',
+      ...pgData,
+    });
+  } else {
+    next();
+  }
 }));
 
-router.get([`/:slug([a-z0-9-]+)/${sm.party.votings}`], ar((render, req, res, next) => {
-  getNewData(req.params.slug).then((pgData) => {
-    if (pgData) {
-      render('poslanska-skupina/glasovanja', {
-        activeMenu: 'pg',
-        pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
-        activeTab: 'glasovanja',
-        ...pgData,
-      });
-    } else {
-      next();
-    }
-  });
+router.get([`/:slug([a-z0-9-]+)/${sm.party.votings}`], ar(async (render, req, res, next) => {
+  const pgData = await getNewData(req.params.slug);
+  if (pgData) {
+    render('poslanska-skupina/glasovanja', {
+      activeMenu: 'pg',
+      pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
+      activeTab: 'glasovanja',
+      ...pgData,
+    });
+  } else {
+    next();
+  }
 }));
 
-router.get([`/:slug([a-z0-9-]+)/${sm.party.speeches}`], ar((render, req, res, next) => {
-  getNewData(req.params.slug).then((pgData) => {
-    if (pgData) {
-      render('poslanska-skupina/govori', {
-        activeMenu: 'pg',
-        pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
-        activeTab: 'govori',
-        ...pgData,
-      });
-    } else {
-      next();
-    }
-  });
+router.get([`/:slug([a-z0-9-]+)/${sm.party.speeches}`], ar(async (render, req, res, next) => {
+  const pgData = await getNewData(req.params.slug);
+  if (pgData) {
+    render('poslanska-skupina/govori', {
+      activeMenu: 'pg',
+      pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
+      activeTab: 'govori',
+      ...pgData,
+    });
+  } else {
+    next();
+  }
 }));
 
 module.exports = router;
