@@ -9,6 +9,7 @@ const config = {
     parladata: 'https://parladata-ua.lb.djnd.si/v3',
   },
   locale: 'ua',
+  leaderId: 'changeme',
   siteMap: {
     landing: {
       legislation: 'zakonodaja',
@@ -36,6 +37,7 @@ const config = {
       wordGroups: 'skupine-besed',
     },
     member: {
+      leaderBase: 'zupan',
       base: 'p',
       overview: 'pregled',
       votings: 'glasovanja',

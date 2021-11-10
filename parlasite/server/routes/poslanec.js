@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const { asyncRender: ar } = require('../utils');
-const { siteMap: sm, urls } = require('../../config');
+const { siteMap: sm, urls, leaderId } = require('../../config');
 const { i18n } = require('../server');
 
 const router = express.Router();
@@ -69,4 +69,23 @@ router.get([`/:slug([a-z0-9-]+)/${sm.member.speeches}`], ar((render, req, res, n
   });
 }));
 
-module.exports = router;
+const leaderRouter = express.Router();
+
+leaderRouter.get('/', ar((render, req, res, next) => {
+  getNewData(leaderId).then((mpData) => {
+    if (mpData) {
+      render('poslanec/zupan', {
+        activeMenu: 'leader',
+        pageTitle: `${i18n('titles.leader')} - ${mpData.mp.name}`,
+        ...mpData,
+      });
+    } else {
+      next();
+    }
+  });
+}));
+
+module.exports = {
+  poslanec: router,
+  leader: leaderRouter,
+};
