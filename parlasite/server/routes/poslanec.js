@@ -6,6 +6,16 @@ const { i18n } = require('../server');
 
 const router = express.Router();
 
+function redirectIfLeader(req, res, next) {
+  const slug = req.params.slug || '';
+  const id = parseInt(slug.split('-')[0], 10);
+  if (id === Number(leaderId)) {
+    res.redirect(`/${sm.member.leaderBase}`);
+  } else {
+    next();
+  }
+}
+
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0], 10);
   // TODO this shouldn't be hard-coded
@@ -24,7 +34,7 @@ async function getNewData(slug) {
   return false;
 }
 
-router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], ar(async (render, req, res, next) => {
+router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], redirectIfLeader, ar(async (render, req, res, next) => {
   const mpData = await getNewData(req.params.slug);
   if (mpData) {
     render('poslanec/pregled', {
@@ -38,7 +48,7 @@ router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], a
   }
 }));
 
-router.get([`/:slug([a-z0-9-]+)/${sm.member.votings}`], ar(async (render, req, res, next) => {
+router.get([`/:slug([a-z0-9-]+)/${sm.member.votings}`], redirectIfLeader, ar(async (render, req, res, next) => {
   const mpData = await getNewData(req.params.slug);
   if (mpData) {
     render('poslanec/glasovanja', {
@@ -52,7 +62,7 @@ router.get([`/:slug([a-z0-9-]+)/${sm.member.votings}`], ar(async (render, req, r
   }
 }));
 
-router.get([`/:slug([a-z0-9-]+)/${sm.member.speeches}`], ar(async (render, req, res, next) => {
+router.get([`/:slug([a-z0-9-]+)/${sm.member.speeches}`], redirectIfLeader, ar(async (render, req, res, next) => {
   const mpData = await getNewData(req.params.slug);
   if (mpData) {
     render('poslanec/govori', {
