@@ -2,14 +2,10 @@
 
 <%- await include('./_header.ejs') %>
 
-<!-- <%# if (session.votes) { %> -->
 <div class="row">
   <div class="col-md-12">
     <%- await fetchCard('/vote/single/', motionId) %>
   </div>
 </div>
-<!-- <%# } else { %>
-  <%# await include('../empty-state/state2.ejs') %>
-<%# } %> -->
 
 <%- await include('../_partials/footer.ejs') %>
