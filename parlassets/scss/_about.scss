@@ -1,3 +1,7 @@
+.about-wrapper {
+    margin-top: 30px;
+}
+
 #about.card-container {
     padding-bottom: 45px;
     padding-top: 20px;
@@ -12,9 +16,8 @@
     color: $white;
     font-style: italic;
     font-size: 24px;
-    text-align: center;
-    margin-top: 45px;
-    margin-bottom: 45px;
+    // text-align: center;
+    margin: 45px 20px 45px 25px;
     @include respond-to(mobile) {
         font-size: 18px;
     }
@@ -36,6 +39,7 @@
     box-shadow: 10px 0 0 $cta-passive-background, -10px 0 0 $cta-passive-background;
     box-decoration-break: clone;
     color: $white;
+    font-weight: 300;
 }
 
 #about .lead-text-container a:hover .lead-text,
@@ -52,6 +56,17 @@
     color: $white;
     font-variant: small-caps;
     font-weight: 700;
+}
+
+#about .text-container {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    margin-left: 15px;
+    @include respond-to(mobile) {
+        font-size: 16px;
+    }
 }
 
 #about .video-container {
