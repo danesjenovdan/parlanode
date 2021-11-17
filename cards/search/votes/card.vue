@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="votes-list">
       <scroll-shadow ref="shadow">
         <div
@@ -31,7 +31,7 @@
 import { groupBy } from 'lodash';
 import axios from 'axios';
 import common from '@/_mixins/common.js';
-import { search as searchContext } from '@/_mixins/contextUrls.js';
+import { searchContextUrl } from '@/_mixins/contextUrls.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
 import { searchTitle } from '@/_mixins/titles.js';
@@ -39,6 +39,7 @@ import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 
 export default {
   name: 'CardSearchVotes',
@@ -49,17 +50,19 @@ export default {
     ScrollShadow,
     VoteListItem,
   },
-  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
+  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      votes: this.cardData.data?.results,
+      votes: cardData?.data?.results,
     };
   },
   computed: {
@@ -97,14 +100,8 @@ export default {
         this.card.isLoading = false;
       });
     },
-    formatDate(date) {
-      return dateFormatter(date);
-    },
-    formatSessionInfo(session) {
-      const orgNames = session?.organizations?.map((org) => org.name);
-      const orgList = orgNames?.length ? ` (${orgNames.join(', ')})` : '';
-      return `${session?.name || ''}${orgList}`;
-    },
+    formatDate: dateFormatter,
+    formatSessionInfo: sessionInfoFormatter,
   },
 };
 </script>

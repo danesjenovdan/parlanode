@@ -7,7 +7,7 @@ export const personOgImage = {
       const { cardData } = this.$root.$options.contextData;
       let coalitionText;
       if (cardData?.organization) {
-        coalitionText = cardData.organization.is_coalition
+        coalitionText = cardData?.organization?.is_coalition
           ? this.$t('coalition')
           : this.$t('opposition');
       }
@@ -58,7 +58,8 @@ export const searchOgImage = {
 export const sessionOgImage = {
   computed: {
     ogConfig() {
-      const session = this.cardData.data?.results?.session;
+      const { cardData } = this.$root.$options.contextData;
+      const session = cardData?.data?.results?.session;
       const sessionName = session?.name || '';
       const iconName = sessionClassification(session?.classification).icon;
 

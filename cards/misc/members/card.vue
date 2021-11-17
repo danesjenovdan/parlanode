@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
         <div class="row">
@@ -9,22 +9,27 @@
         </div>
         <div class="row">
           <div class="col-md-12 filters">
-            <search-field v-model="textFilter" />
+            <search-field
+              v-model="textFilter"
+              @update:modelValue="searchPeople"
+            />
             <p-search-dropdown
               v-model="groups"
               :placeholder="partiesPlaceholder"
               class="filter parties"
+              @update:modelValue="searchPeopleImmediate"
             />
             <p-search-dropdown
               v-model="workingBodies"
               :placeholder="workingBodyPlaceholder"
               class="filter working-bodies"
+              @update:modelValue="searchPeopleImmediate"
             />
             <div class="genders filter">
               <striped-button
                 v-for="gender in genders"
                 :key="gender.id"
-                :selected="selectedGenders.indexOf(gender.id) > -1"
+                :selected="selectedGenderId === gender.id"
                 :class="['gender', gender.icon]"
                 color="for"
                 @click="selectGender(gender.id)"
@@ -34,7 +39,7 @@
         </div>
       </div>
     </template>
-    <div v-if="fetching" class="nalagalnik"></div>
+    <div v-if="isLoading" class="nalagalnik"></div>
     <template v-else>
       <sortable-table
         :columns="columns"
@@ -56,30 +61,21 @@
 </template>
 
 <script>
-import axios from 'axios';
-import stableSort from 'stable';
-import { find, clamp, uniqBy } from 'lodash-es';
-import { parseISO, differenceInCalendarYears } from 'date-fns';
+import { debounce } from 'lodash-es';
 import { MEMBERS_PER_PAGE } from '@/_helpers/constants.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
+import age from '@/_helpers/age.js';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
-import { memberList } from '@/_mixins/contextUrls.js';
+import { memberListContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import SortableTable from '@/_components/SortableTable.vue';
 import Pagination from '@/_components/Pagination.vue';
-
-function getAge(date) {
-  if (!date) {
-    return 0;
-  }
-  return differenceInCalendarYears(new Date(), parseISO(date));
-}
 
 const analysesIDs = [
   {
@@ -116,64 +112,31 @@ export default {
     SortableTable,
     Pagination,
   },
-  mixins: [common, links, memberList],
+  mixins: [common, links, memberListContextUrl, cancelableRequest],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const {
-      results = [],
-      pages = 1,
-      page: initialPage = 1,
-      count = results?.length ?? 0,
-      per_page = MEMBERS_PER_PAGE,
-    } = this.cardData.data || {};
+      results: { members = [] } = {},
+      'members:pages': pages = 1,
+      'members:page': initialPage = 1,
+      'members:count': count = members.length ?? 0,
+      'members:per_page': per_page = MEMBERS_PER_PAGE,
+    } = cardData?.data || {};
 
     const membersPerPage = Array(pages);
-    membersPerPage[initialPage - 1] = results;
+    membersPerPage[initialPage - 1] = members;
 
-    const page = clamp(Number(this.cardState?.page || initialPage));
+    const page = Number(cardState?.page) || initialPage;
 
+    const initialGenders = (cardState?.genders || '').split(',');
     const genders = [
-      { id: 'he', icon: 'gender-m', label: 'moški', selected: false },
-      { id: 'she', icon: 'gender-f', label: 'ženski', selected: false },
+      { id: 'he', icon: 'gender-m', selected: initialGenders.includes('he') },
+      { id: 'she', icon: 'gender-f', selected: initialGenders.includes('she') },
     ];
-
-    // TODO: get list of groups and all working bodies from api (because pagination)
-    const selectedGroups = this.cardState.groups || [];
-    const groups = uniqBy(results.map((m) => m.group).filter(Boolean), 'slug')
-      .sort((a, b) => {
-        const aName = (a.name || '').toLowerCase();
-        const bName = (b.name || '').toLowerCase();
-        return aName.localeCompare(bName, 'sl');
-      })
-      .map((g) => ({
-        id: g.slug,
-        slug: g.slug,
-        label: g.name,
-        selected: selectedGroups.includes(g.slug),
-        // colorClass: `${g.acronym
-        //   .toLowerCase()
-        //   .replace(/[ +,]/g, '_')}-background`,
-      }));
-
-    const selectedWorkingBodies = this.cardState.workingBodies || [];
-    const workingBodies = uniqBy(
-      results.flatMap((m) => m.results?.working_bodies || []).filter(Boolean),
-      'slug'
-    )
-      .sort((a, b) => {
-        const aName = (a.name || '').toLowerCase();
-        const bName = (b.name || '').toLowerCase();
-        return aName.localeCompare(bName, 'sl');
-      })
-      .map((wb) => ({
-        id: wb.slug,
-        slug: wb.slug,
-        label: wb.name,
-        selected: selectedWorkingBodies.includes(wb.slug),
-      }));
-    // END TODO
 
     const analyses = analysesIDs.map((a) => ({
       ...a,
@@ -188,6 +151,32 @@ export default {
         : '',
     }));
 
+    const initialGroups = (cardState?.groups || '').split(',');
+    const groups = (cardData?.data?.results?.groups || []).map((g) => {
+      return {
+        id: (g.slug || '').split('-')[0],
+        slug: g.slug,
+        label: g.name,
+        selected: initialGroups.includes(g.slug),
+        color: g.color,
+      };
+    });
+
+    const initialWorkingBodies = (cardState?.working_bodies || '').split(',');
+    const workingBodies = (cardData?.data?.results?.working_bodies || []).map(
+      (g) => {
+        return {
+          id: (g.slug || '').split('-')[0],
+          slug: g.slug,
+          label: g.name,
+          selected: initialWorkingBodies.includes(g.slug),
+          color: g.color,
+        };
+      }
+    );
+
+    const initialTextFilter = cardState?.text || '';
+
     return {
       membersPerPage,
       count,
@@ -195,28 +184,28 @@ export default {
       page,
       pages,
       initialPage,
-      fetching: false,
-      currentAnalysis: this.cardState.analysis || 'demographics',
+      isLoading: false,
       analyses,
-      textFilter: this.cardState.textFilter || '',
+      analysesMaxValues: cardData?.data?.results?.maximum_scores || {},
+      currentAnalysis: cardState?.analysis || 'demographics',
+      textFilter: initialTextFilter,
       groups,
       workingBodies,
       genders,
-      selectedGenders: this.cardState.genders || [],
-      currentSort: this.cardState.sort || 'name',
-      currentSortOrder: this.cardState.sortOrder || 'asc',
+      currentSort: cardState?.sort || 'name',
+      currentSortOrder: cardState?.sortOrder || 'asc',
     };
   },
   computed: {
     partiesPlaceholder() {
-      return this.selectedGroups.length > 0
-        ? this.$t('selected-placeholder', { num: this.selectedGroups.length })
+      return this.selectedGroupIds.length > 0
+        ? this.$t('selected-placeholder', { num: this.selectedGroupIds.length })
         : this.$t('select-parties-placeholder');
     },
     workingBodyPlaceholder() {
-      return this.selectedWorkingBodies.length > 0
+      return this.selectedWorkingBodyIds.length > 0
         ? this.$t('selected-placeholder', {
-            num: this.selectedWorkingBodies.length,
+            num: this.selectedWorkingBodyIds.length,
           })
         : this.$t('select-working-body-placeholder');
     },
@@ -225,21 +214,21 @@ export default {
         return [
           { id: 'image', label: 'image', additionalClass: 'portrait' },
           { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
-          { id: 'age', label: this.$t('age') },
+          { id: 'birth_date', label: this.$t('age') },
           {
             id: 'education',
             label: this.$t('education'),
             additionalClass: 'optional',
           },
           {
-            id: 'terms',
+            id: 'mandates',
             label: this.$t('number-of-terms'),
             additionalClass: 'optional',
           },
           {
-            id: 'party',
+            id: 'group',
             label: this.$t('party'),
-            additionalClass: 'optional',
+            additionalClass: 'optional no-sort',
           },
         ];
       }
@@ -250,7 +239,7 @@ export default {
           {
             id: 'working-bodies',
             label: this.$t('working-bodies'),
-            additionalClass: 'wider working-bodies-col',
+            additionalClass: 'wider working-bodies-col no-sort',
           },
         ];
       }
@@ -262,131 +251,22 @@ export default {
           label: this.$t('analysis'),
           additionalClass: 'wider barchartcontainer',
         },
-        // { id: 'change', label: this.$t('change') },
       ];
     },
     currentPageMembers() {
       return this.membersPerPage[this.page - 1] || [];
     },
     currentPageProcessedMembers() {
-      let analysisMax = 0;
-      if (this.currentAnalysis !== 'demographics') {
-        analysisMax =
-          this.membersPerPage?.[0]?.[0]?.results?.[this.currentAnalysis] || 0;
-      }
-
-      // TODO: filter and sort from api (because pagination)
-      const lowerTextFilter = String(this.textFilter || '').toLowerCase();
-
-      const filtered = this.currentPageMembers
-        .filter((member) => {
-          let partyMatch = true;
-          let workingBodyMatch = true;
-          let genderMatch = true;
-          let textMatch = true;
-
-          if (lowerTextFilter) {
-            textMatch = member.name.toLowerCase().includes(lowerTextFilter);
-          }
-          if (this.selectedGroups.length > 0) {
-            partyMatch =
-              member.group?.slug &&
-              this.selectedGroups.find((p) => p.slug === member.group?.slug) !=
-                null;
-          }
-          if (this.selectedWorkingBodies.length > 0) {
-            const wbs = member.results?.working_bodies || [];
-            workingBodyMatch = wbs.some((wb) =>
-              this.selectedWorkingBodies.includes(wb?.slug)
-            );
-          }
-          if (this.selectedGenders.length > 0) {
-            genderMatch = this.selectedGenders.includes(
-              member.preferred_pronoun
-            );
-          }
-
-          return textMatch && partyMatch && workingBodyMatch && genderMatch;
-        })
-        .map((member) => {
-          const newMember = JSON.parse(JSON.stringify(member));
-
-          newMember.age = getAge(newMember.results?.birth_date) || '';
-          const education = newMember.results?.education;
-          newMember.education = String(education || 0);
-          newMember.terms = newMember.results?.mandates || 1;
-          if (this.currentAnalysis === 'working_bodies') {
-            const wbs = newMember.results?.working_bodies || [];
-            newMember.workingBodies = wbs.filter(Boolean);
-          } else if (this.currentAnalysis !== 'demographics') {
-            const score = newMember.results?.[this.currentAnalysis] || 0;
-            const formattedScore = numberFormatter(score, {
-              precision: this.currentAnalysisData?.precision || 0,
-              percent: this.currentAnalysisData?.unit === 'percent',
-            });
-            newMember.analysisValue = formattedScore;
-            newMember.analysisPercentage =
-              analysisMax > 0 ? (score / analysisMax) * 100 : 0;
-            // const diff =
-            //   Math.round(newMember.results?.[this.currentAnalysis].diff * 10) /
-            //   10;
-            // newMember.analysisDiff = (diff > 0 ? '+' : '') + diff;
-          }
-          return newMember;
-        });
-
-      const sortedAndFiltered = stableSort(filtered, (memberA, memberB) => {
-        let a;
-        let b;
-        switch (this.currentSort) {
-          // case 'change':
-          //   a = memberA.results?.[this.currentAnalysis].diff;
-          //   b = memberB.results?.[this.currentAnalysis].diff;
-          //   return a - b;
-          case 'analysis':
-            a = memberA.results?.[this.currentAnalysis] || 0;
-            b = memberB.results?.[this.currentAnalysis] || 0;
-            return a - b;
-          case 'name':
-            a = memberA.name;
-            b = memberB.name;
-            return a.localeCompare(b, 'sl');
-          case 'party':
-            a = (memberA.group?.name || '').toLowerCase();
-            b = (memberB.group?.name || '').toLowerCase();
-            return a.localeCompare(b, 'sl');
-          case 'education':
-            a = parseFloat(
-              String(memberA.results.education.score).replace('/', '.'),
-              10
-            );
-            b = parseFloat(
-              String(memberB.results.education.score).replace('/', '.'),
-              10
-            );
-            return a - b;
-          default:
-            a = memberA[this.currentSort];
-            b = memberB[this.currentSort];
-            return a - b;
-        }
-      });
-
-      if (this.currentSortOrder === 'desc') {
-        sortedAndFiltered.reverse();
-      }
-      // END TODO filter and sort
-
       if (this.currentAnalysis === 'demographics') {
-        return sortedAndFiltered.map((member) => [
+        return this.currentPageMembers.map((member) => [
           {
             link: this.getPersonLink(member),
             image: this.getPersonPortrait(member),
           },
           { link: this.getPersonLink(member), text: member.name },
-          member.age,
-          member.education,
-          member.terms,
+          age(member.results?.birth_date),
+          member.results?.education,
+          member.results?.mandates,
           {
             link: this.getPartyLink(member?.group),
             text: member.group?.acronym || member.group?.name || 'N/A',
@@ -394,33 +274,43 @@ export default {
         ]);
       }
       if (this.currentAnalysis === 'working_bodies') {
-        return sortedAndFiltered.map((member) => [
+        return this.currentPageMembers.map((member) => [
           {
             link: this.getPersonLink(member),
             image: this.getPersonPortrait(member),
           },
           { link: this.getPersonLink(member), text: member.name },
           {
-            text: member.workingBodies.map((wb) => wb.name).join(', '),
+            text: (member.results?.working_bodies || [])
+              .map((wb) => wb.name)
+              .join(', '),
           },
         ]);
       }
-      return sortedAndFiltered.map((member) => [
-        {
-          link: this.getPersonLink(member),
-          image: this.getPersonPortrait(member),
-        },
-        { link: this.getPersonLink(member), text: member.name },
-        {
-          barchart: true,
-          value: member.analysisValue,
-          width: member.analysisPercentage,
-        },
-        // member.analysisDiff,
-      ]);
+      return this.currentPageMembers.map((member) => {
+        const score = member.results?.[this.currentAnalysis] || 0;
+        const formattedScore = numberFormatter(score, {
+          precision: this.currentAnalysisData?.precision || 0,
+          percent: this.currentAnalysisData?.unit === 'percent',
+        });
+        const maxScore = this.analysesMaxValues[this.currentAnalysis] || 0;
+        const scorePercentage = maxScore > 0 ? (score / maxScore) * 100 : 0;
+        return [
+          {
+            link: this.getPersonLink(member),
+            image: this.getPersonPortrait(member),
+          },
+          { link: this.getPersonLink(member), text: member.name },
+          {
+            barchart: true,
+            value: formattedScore,
+            width: scorePercentage,
+          },
+        ];
+      });
     },
     currentAnalysisData() {
-      return find(this.analyses, { id: this.currentAnalysis });
+      return this.analyses.find((a) => a.id === this.currentAnalysis);
     },
     headerConfig() {
       return defaultHeaderConfig(this, {
@@ -429,32 +319,48 @@ export default {
         }`,
       });
     },
-    ogConfig() {
-      return defaultOgImage(this, {
-        title: `${this.$t('card.title')} ${
-          this.currentAnalysisData.titleSuffix
-        }`,
-      });
+    selectedGroupIds() {
+      return this.groups.filter((g) => g.selected).map((g) => g.id);
     },
-    selectedGroups() {
-      return this.groups.filter((party) => party.selected);
+    selectedWorkingBodyIds() {
+      return this.workingBodies.filter((wb) => wb.selected).map((wb) => wb.id);
     },
-    selectedWorkingBodies() {
-      return this.workingBodies
-        .filter((workingBody) => workingBody.selected)
-        .map((workingBody) => workingBody.id);
+    selectedGenderId() {
+      return this.genders.find((gender) => gender.selected)?.id;
     },
     searchUrl() {
       const url = new URL(this.cardData.url);
-      url.searchParams.set('page', this.page);
+      url.searchParams.set('members:page', this.page);
       url.searchParams.set('text', this.textFilter);
-      url.searchParams.set('order_by', this.currentAnalysis);
+      if (this.selectedGenderId) {
+        url.searchParams.set('preferred_pronoun', this.selectedGenderId);
+      } else {
+        url.searchParams.delete('preferred_pronoun');
+      }
+      if (this.selectedGroupIds.length) {
+        url.searchParams.set('groups', this.selectedGroupIds.join(','));
+      } else {
+        url.searchParams.delete('groups');
+      }
+      if (this.selectedWorkingBodyIds.length) {
+        url.searchParams.set(
+          'working_bodies',
+          this.selectedWorkingBodyIds.join(',')
+        );
+      } else {
+        url.searchParams.delete('working_bodies');
+      }
+      const sortPrefix = this.currentSortOrder === 'desc' ? '-' : '';
+      const sort =
+        this.currentSort === 'analysis'
+          ? this.currentAnalysis
+          : this.currentSort;
+      url.searchParams.set('order_by', `${sortPrefix}${sort}`);
       return url.toString();
     },
   },
   watch: {
     currentAnalysis(newValue) {
-      this.onAnalysisChange();
       if (newValue === 'demographics' || newValue === 'working_bodies') {
         this.currentSort = 'name';
         this.currentSortOrder = 'asc';
@@ -462,16 +368,27 @@ export default {
         this.currentSort = 'analysis';
         this.currentSortOrder = 'desc';
       }
+      this.searchPeopleImmediate();
+    },
+    currentSort() {
+      this.searchPeopleImmediate(true);
+    },
+    currentSortOrder() {
+      this.searchPeopleImmediate(true);
     },
   },
   methods: {
     selectGender(id) {
-      const position = this.selectedGenders.indexOf(id);
-      if (position > -1) {
-        this.selectedGenders.splice(position, 1);
+      if (this.selectedGenderId === id) {
+        this.genders.forEach((g) => {
+          g.selected = false;
+        });
       } else {
-        this.selectedGenders = [id];
+        this.genders.forEach((g) => {
+          g.selected = g.id === id;
+        });
       }
+      this.searchPeopleImmediate();
     },
     sortBy(sort) {
       if (this.currentSort === sort) {
@@ -483,40 +400,38 @@ export default {
       }
     },
     onPageChange(newPage) {
-      if (this.fetching) {
-        return;
-      }
       this.page = newPage;
       this.scrollToTop();
       if (!this.membersPerPage[newPage - 1]) {
-        this.fetching = true;
-        axios.get(this.searchUrl).then((response) => {
-          this.membersPerPage[newPage - 1] = response.data.results;
-          this.fetching = false;
+        this.isLoading = true;
+        this.makeRequest(this.searchUrl).then((response) => {
+          this.membersPerPage[newPage - 1] =
+            response?.data?.results?.members || [];
+          this.isLoading = false;
         });
       }
     },
-    onAnalysisChange() {
-      if (this.fetching) {
-        return;
-      }
-      this.page = 1;
+    searchPeopleImmediate(keepPage = false) {
+      this.isLoading = true;
       this.membersPerPage = Array(this.pages);
-      this.scrollToTop();
-      this.fetching = true;
-      axios.get(this.searchUrl).then((response) => {
-        this.membersPerPage[0] = response.data.results;
-        this.fetching = false;
+      this.count = 0;
+      if (!keepPage) {
+        this.page = 1;
+      }
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.count = response?.data?.['members:count'];
+        this.page = response?.data?.['members:page'];
+        this.membersPerPage[this.page - 1] =
+          response?.data?.results?.members || [];
+        this.isLoading = false;
       });
     },
+    searchPeople: debounce(function searchPeople() {
+      this.searchPeopleImmediate();
+    }, 750),
     scrollToTop() {
-      // eslint-disable-next-line no-restricted-properties
-      const id = this.$root.$options.contextData.mountId;
-      const el = document.getElementById(id);
-      // only scroll up if top is not visible
-      if (el && el.getBoundingClientRect().top < 0) {
-        el.scrollIntoView();
-      }
+      const el = this.$refs.card?.$el || this.$refs.card;
+      el.scrollIntoView();
     },
   },
 };

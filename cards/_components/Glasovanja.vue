@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="votes-list">
       <div class="filters">
         <div class="filter text-filter">
@@ -55,11 +55,14 @@
 
 <script>
 import { debounce, groupBy } from 'lodash-es';
-import axios, { CancelToken } from 'axios';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
-import { personVotes, partyVotes } from '@/_mixins/contextUrls.js';
+import {
+  personVotesContextUrl,
+  partyVotesContextUrl,
+} from '@/_mixins/contextUrls.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
@@ -67,6 +70,7 @@ import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Ballot from '@/_components/Ballot.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 
 export default {
   directives: {
@@ -78,7 +82,7 @@ export default {
     ScrollShadow,
     Ballot,
   },
-  mixins: [common],
+  mixins: [common, cancelableRequest],
   props: {
     contextData: {
       type: Object,
@@ -91,9 +95,11 @@ export default {
     },
   },
   data() {
-    const textFilter = this.cardState.text || '';
+    const { cardState, cardData } = this.$root.$options.contextData;
 
-    const voteFilters = (this.cardState.voteFilter || '').split(',');
+    const textFilter = cardState?.text || '';
+
+    const voteFilters = (cardState?.voteFilter || '').split(',');
     const voteOptions = [
       {
         id: 'for',
@@ -129,14 +135,13 @@ export default {
 
     return {
       card: {
-        objectCount: this.cardData.data?.count,
+        objectCount: cardData?.data?.count,
         currentPage: 1,
         isLoading: false,
       },
-      ballots: this.cardData.data?.results ?? [],
+      ballots: cardData?.data?.results ?? [],
       textFilter,
       voteOptions,
-      cancelRequest: null,
       selectedSort: 'date',
       // sortOptions: {
       //   maximum: this.$t('sort-by--inequality'),
@@ -197,36 +202,16 @@ export default {
     },
   },
   created() {
-    (this.type === 'person' ? personVotes : partyVotes).created.call(this);
+    (this.type === 'person'
+      ? personVotesContextUrl
+      : partyVotesContextUrl
+    ).created.call(this);
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
   },
   methods: {
     toggleVoteOption(voteOption) {
       voteOption.selected = !voteOption.selected;
       this.searchVotesImmediate();
-    },
-    makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
-      }
-
-      return axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          }
-        );
     },
     searchVotesImmediate() {
       this.card.isLoading = true;
@@ -255,7 +240,7 @@ export default {
       this.card.currentPage += 1;
 
       const requestedPage = this.card.currentPage;
-      axios.get(this.searchUrl).then((response) => {
+      this.makeRequest(this.searchUrl).then((response) => {
         if (response?.data?.page === requestedPage) {
           const newBallots = response?.data?.results || [];
           this.ballots.push(...newBallots);
@@ -263,14 +248,8 @@ export default {
         this.card.isLoading = false;
       });
     },
-    formatDate(date) {
-      return dateFormatter(date);
-    },
-    formatSessionInfo(session) {
-      const orgNames = session?.organizations?.map((org) => org.name);
-      const orgList = orgNames?.length ? ` (${orgNames.join(', ')})` : '';
-      return `${session?.name || ''}${orgList}`;
-    },
+    formatDate: dateFormatter,
+    formatSessionInfo: sessionInfoFormatter,
   },
 };
 </script>

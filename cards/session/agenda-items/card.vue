@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="agenda-items">
       <div class="agenda-item-headers">
         <div>{{ $t('agenda-items') }}</div>
@@ -38,18 +38,21 @@
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { sessionAgendaContextUrl } from '@/_mixins/contextUrls.js';
 
 export default {
   name: 'CardSessionAgendaItems',
-  mixins: [common],
+  mixins: [common, sessionAgendaContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      session: this.cardData.data?.session || {},
-      agendaItems: this.cardData.data?.results?.agenda_items || [],
-      documents: this.cardData.data?.results?.documents || [],
+      session: cardData?.data?.session || {},
+      agendaItems: cardData?.data?.results?.agenda_items || [],
+      documents: cardData?.data?.results?.documents || [],
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
@@ -104,7 +107,7 @@ export default {
         display: block;
 
         &:not(:last-child) {
-          margin-bottom: 6px;
+          margin-bottom: 14px;
         }
       }
     }

@@ -1,5 +1,11 @@
 <template>
   <div class="card-footer">
+    <a v-if="showFooterLogo" :href="$root.$options.contextData.urls.site">
+      <img
+        :src="`${$root.$options.contextData.urls.cdn}/img/logo-parlameter.svg`"
+        alt="parlameter logo"
+      />
+    </a>
     <div
       v-for="button in buttons"
       :key="button"
@@ -20,14 +26,19 @@ export default {
   name: 'CardFooter',
   emits: ['toggle-back'],
   data() {
+    // check template parameter to decide whether to include logo in the footer
+    const template = this.$root.$options.contextData.templateName;
+    const showFooterLogo = template
+      ? template === 'embed' || template === 'share'
+      : false;
     return {
       clicksDisabled: false,
       currentBack: null,
+      showFooterLogo,
     };
   },
   computed: {
     buttons() {
-      // eslint-disable-next-line no-restricted-properties
       const { cardData } = this.$root.$options.contextData;
       const previous = cardData?.data?.previous_versions;
       if (previous && previous.length) {
@@ -52,6 +63,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card-footer > a img {
+  max-height: 100%;
+  width: auto;
+}
 .card-info:not(.card-exit)::before {
   content: 'i';
   font-weight: 100;

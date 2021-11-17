@@ -120,6 +120,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     cardState,
     urls,
     siteMap,
+    templateName: template,
   };
   const i18nData = {
     locale,
@@ -142,6 +143,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     'parlassets-url': urls.cdn,
     'container-class': contextData.template.frameContainerClass,
     'embed-class': contextData.template.embedContainerClass,
+    'context-url': contextData.template.contextUrl,
     'ssr-outlet': outputHtml,
     'debug-data-url': cardData.url,
   });

@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <template #generator>
       <tools-tabs current-tool="discord" />
     </template>
@@ -154,8 +154,9 @@ export default {
     doubleWidth: true,
   },
   data() {
-    // const data = Object.keys(this.cardData).map((key) => {
-    //   const obj = this.cardData[key];
+    // const { cardData } = this.$root.$options.contextData;
+    // const data = Object.keys(cardData).map((key) => {
+    //   const obj = cardData[key];
     //   return {
     //     id: Number(key),
     //     ...obj,
@@ -276,11 +277,6 @@ export default {
   beforeMount() {
     this.fetchVotesForGroup(this.groups?.[0]?.acronym);
   },
-  created() {
-    // const { template, siteMap: sm } = this.$options.contextData;
-    // template.pageTitle = this.dynamicTitle;
-    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.discord}`;
-  },
   methods: {
     groupBy(array, f) {
       const groups = {};
@@ -358,7 +354,6 @@ export default {
       );
     },
     selectGroup(acronym) {
-      this.cardState.selectedGroup = acronym;
       this.selectedGroup =
         this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
@@ -392,8 +387,8 @@ export default {
       //       items.map((item) =>
       //         assign({}, item, { selected: stateItemIds.indexOf(item.id) > -1 })
       //       );
-      //     if (this.cardState) {
-      //       const state = this.cardState;
+      //     if (cardState) {
+      //       const state = cardState;
       //       if (state.text) {
       //         this.textFilter = state.text;
       //       }

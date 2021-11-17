@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="legislation-list">
       <scroll-shadow ref="shadow">
         <div
@@ -25,6 +25,7 @@ import common from '@/_mixins/common.js';
 import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
+import { searchContextUrl } from '@/_mixins/contextUrls.js';
 import links from '@/_mixins/links.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import legislationStatus from '@/_helpers/legislationStatus.js';
@@ -38,17 +39,26 @@ export default {
     SortableTable,
     ScrollShadow,
   },
-  mixins: [common, searchTitle, searchHeader, searchOgImage, links],
+  mixins: [
+    common,
+    searchContextUrl,
+    searchTitle,
+    searchHeader,
+    searchOgImage,
+    links,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      legislation: this.cardData.data?.results || [],
+      legislation: cardData?.data?.results || [],
     };
   },
   computed: {

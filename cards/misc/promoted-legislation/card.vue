@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="legislation">
       <p-tabs :start-tab="selectedTab">
         <p-tab :label="$t('under-consideration')">
@@ -85,10 +85,12 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     return {
-      inProcedure: this.cardData.data?.in_procedure || [],
-      accepted: this.cardData.data?.accepted || [],
-      selectedTab: this.cardState.selectedTab || 0,
+      inProcedure: cardData?.data?.in_procedure || [],
+      accepted: cardData?.data?.accepted || [],
+      selectedTab: cardState?.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };

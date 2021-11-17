@@ -66,7 +66,6 @@ export default {
   },
   computed: {
     embedCode() {
-      // eslint-disable-next-line no-restricted-properties
       const { mountId } = this.$root.$options.contextData;
 
       // TODO: refresh

@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="session-name">{{ session.name }}</div>
     <div class="session-date">{{ formatDate(session.start_time) }}</div>
     <hr />
@@ -80,15 +80,17 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      session: this.cardData.data?.session || {},
-      tfidf: this.cardData.data?.results?.tfidf || [],
-      attendance: this.cardData.data?.results?.attendance || [],
-      votes: this.cardData.data?.results?.votes || [],
+      session: cardData?.data?.session || {},
+      tfidf: cardData?.data?.results?.tfidf || [],
+      attendance: cardData?.data?.results?.attendance || [],
+      votes: cardData?.data?.results?.votes || [],
     };
   },
   computed: {
@@ -118,9 +120,7 @@ export default {
     },
   },
   methods: {
-    formatDate(date) {
-      return dateFormatter(date);
-    },
+    formatDate: dateFormatter,
     loadMore() {
       if (this.card.isLoading) {
         return;

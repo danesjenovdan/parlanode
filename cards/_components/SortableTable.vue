@@ -23,7 +23,7 @@
         :key="i"
         :class="getColumnClasses(columns[i], cell)"
       >
-        <template v-if="typeof cell === 'object' && cell.contents">
+        <template v-if="cell && cell.contents">
           <template v-for="(content, j) in cell.contents">
             <template v-if="content.link">
               <a :key="j" :href="content.link">{{ content.text }}</a>

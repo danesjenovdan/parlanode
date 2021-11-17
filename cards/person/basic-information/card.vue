@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="poslanec osnovne-informacije-poslanca">
       <div class="row">
         <div class="parlaicon-container">
@@ -133,7 +133,7 @@
 <script>
 import { parseISO, differenceInCalendarYears } from 'date-fns';
 import common from '@/_mixins/common.js';
-import { personOverview } from '@/_mixins/contextUrls.js';
+import { personOverviewContextUrl } from '@/_mixins/contextUrls.js';
 import { personTitle } from '@/_mixins/titles.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
@@ -143,17 +143,19 @@ export default {
   name: 'CardPersonBasicInformation',
   mixins: [
     common,
-    personOverview,
+    personOverviewContextUrl,
     personTitle,
     personHeader,
     personOgImage,
     links,
   ],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      results: this.cardData.data?.results ?? {},
-      person: this.cardData.data?.person ?? {},
-      group: this.cardData.data?.person?.group ?? {},
+      results: cardData?.data?.results ?? {},
+      person: cardData?.data?.person ?? {},
+      group: cardData?.data?.person?.group ?? {},
     };
   },
   computed: {

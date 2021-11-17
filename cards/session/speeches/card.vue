@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div v-if="count > 0" class="multiple-speeches">
       <pagination
         v-if="count > perPage"
@@ -33,6 +33,7 @@ import links from '@/_mixins/links.js';
 import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
+import { sessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
 import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 import Speech from '@/_components/Speech.vue';
 import Pagination from '@/_components/Pagination.vue';
@@ -47,23 +48,31 @@ export default {
   directives: {
     quotable,
   },
-  mixins: [links, common, sessionHeader, sessionOgImage],
+  mixins: [
+    common,
+    links,
+    sessionTranscriptContextUrl,
+    sessionHeader,
+    sessionOgImage,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const {
       results = [],
       pages = 1,
       page: initialPage = 1,
       count = results?.length ?? 0,
       per_page = SPEECHES_PER_PAGE,
-    } = this.cardData.data || {};
+    } = cardData?.data || {};
 
     const speechesPerPage = Array(pages);
     speechesPerPage[initialPage - 1] = results;
 
-    const page = Number(this.cardState.page) || initialPage;
+    const page = Number(cardState?.page) || initialPage;
 
     return {
       speechesPerPage,
@@ -72,7 +81,7 @@ export default {
       page,
       initialPage,
       fetching: false,
-      session: this.cardData.data?.session,
+      session: cardData?.data?.session,
     };
   },
   computed: {
@@ -86,12 +95,6 @@ export default {
       this.onPageChange(this.page);
     }
   },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(
-    //   this.data.session
-    // );
-  },
   methods: {
     onPageChange(newPage) {
       if (this.fetching) {
@@ -103,7 +106,7 @@ export default {
         this.fetching = true;
         axios
           .get(
-            `${this.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
+            `${this.$root.$options.contextData.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
           )
           .then((response) => {
             const responsePage = response?.data?.page || 1;
@@ -126,7 +129,6 @@ export default {
       }
     },
     scrollToTop() {
-      // eslint-disable-next-line no-restricted-properties
       const id = this.$root.$options.contextData.mountId;
       const el = document.getElementById(id);
       if (el) {

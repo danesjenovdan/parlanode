@@ -2,7 +2,6 @@
   <card-wrapper
     :content-class="{ 'is-loading': loading }"
     :header-config="headerConfig"
-    :og-config="ogConfig"
   >
     <template #generator>
       <tools-tabs current-tool="wordGroups" />
@@ -142,12 +141,14 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     return {
-      data: this.cardData,
+      data: cardData || {},
       emptyText: this.$t('empty-text'),
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
-      showRelative: this.cardState.showRelative || false,
+      showRelative: cardState?.showRelative || false,
       modalShown: false,
       modalInputText: '',
       results: {
@@ -158,8 +159,8 @@ export default {
         people: [],
         parties: [],
       },
-      selectedTab: this.cardState.selectedTab || 0,
-      words: this.cardState.words || [],
+      selectedTab: cardState?.selectedTab || 0,
+      words: cardState?.words || [],
       loading: false,
     };
   },
@@ -177,11 +178,6 @@ export default {
       }
       return state;
     },
-  },
-  created() {
-    // TODO:
-    // const { template, siteMap: sm } = this.$options.cardData;
-    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.wordGroups}`;
   },
   mounted() {
     if (this.words.length) {

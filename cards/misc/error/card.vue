@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="errored">
       <div class="icon"></div>
       <div v-t="'card-errored'" class="content"></div>
@@ -17,10 +17,11 @@ export default {
   name: 'CardMiscError',
   mixins: [common],
   data() {
-    const state = this.$options.contextData.cardState;
-    const title = state.title || this.$t('card.title');
-    const message = state?.error?.message || state.message || '';
-    // const height = state.height || 1;
+    const { cardState } = this.$root.$options.contextData;
+
+    const title = cardState?.title || this.$t('card.title');
+    const message = cardState?.error?.message || cardState?.message || '';
+    // const height = cardState?.height || 1;
     return {
       title,
       message,
@@ -34,8 +35,8 @@ export default {
     };
   },
   beforeCreate() {
-    // const state = this.$options.contextData.cardState;
-    // const width = state.width || 1;
+    // const { cardState } = this.$root.$options.contextData;
+    // const width = cardState?.width || 1;
     // this.$root.$options.cardData.cardData.big = width === 2;
   },
 };

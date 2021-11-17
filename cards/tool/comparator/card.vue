@@ -2,7 +2,6 @@
   <card-wrapper
     :content-class="{ 'is-loading': loading }"
     :header-config="headerConfig"
-    :og-config="ogConfig"
   >
     <template #generator>
       <tools-tabs current-tool="voteComparator" />
@@ -89,10 +88,7 @@
             :text="$t('empty-state-text')"
           />
           <div v-else class="glasovanja">
-            <seznam-glasovanj
-              :data="voteObject"
-              :show-filters="false"
-            />
+            <seznam-glasovanj :data="voteObject" :show-filters="false" />
           </div>
         </p-tab>
         <p-tab :label="$t('tabs.time-chart')">
@@ -208,18 +204,20 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     return {
-      parentOrgId: this.cardData.id,
+      parentOrgId: cardData?.id,
       loading: true,
       parties: [],
       samePeople: [],
       differentPeople: [],
-      special: !!this.cardState.special,
+      special: !!cardState?.special,
       data: [],
       total: 0,
       sameModalVisible: false,
       differentModalVisible: false,
-      selectedTab: this.cardState.selectedTab || 0,
+      selectedTab: cardState?.selectedTab || 0,
       headerConfig: defaultDynamicHeaderConfig(this, {
         circleIcon: 'primerjalnik',
       }),
@@ -316,9 +314,9 @@ export default {
     },
   },
   mounted() {
-    // const sameParties = this.$options.contextData.cardState.sameParties || [];
+    // const sameParties = this.$options.contextData.cardState?.sameParties || [];
     // const differentParties =
-    //   this.$options.contextData.cardState.differentParties || [];
+    //   this.$options.contextData.cardState?.differentParties || [];
     // this.parties = this.generateParties(this.$options.contextData.cardData).map(
     //   (party) => ({
     //     id: party.properId,
@@ -329,9 +327,9 @@ export default {
     //     isDifferent: differentParties.indexOf(party.properId) > -1,
     //   })
     // );
-    // const samePeople = this.$options.contextData.cardState.samePeople || [];
+    // const samePeople = this.$options.contextData.cardState?.samePeople || [];
     // const differentPeople =
-    //   this.$options.contextData.cardState.differentPeople || [];
+    //   this.$options.contextData.cardState?.differentPeople || [];
     // this.samePeople = this.generatePeople(
     //   this.$options.contextData.cardData
     // ).map((person) => ({
@@ -349,11 +347,6 @@ export default {
     //   image: person.image,
     // }));
     // this.loadResults();
-  },
-  created() {
-    // TODO:
-    // const { template, siteMap: sm } = this.$options.cardData;
-    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.voteComparator}`;
   },
   methods: {
     toggleSpecial() {
