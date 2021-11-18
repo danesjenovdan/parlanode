@@ -3,13 +3,13 @@
 /////////////////////////////
 
 // gradient
-$first: #005554;
-$second: #007a78;
-$third: #c41454;
+$first: #1E679A;
+$second: #01D9CC;
+$third: #795d98;
 
 $gradient-first: $second;
 $gradient-second: #80bdbc;
-$gradient-third: #009cdd;
+$gradient-third: $first;
 
 // tabs
 $tab-active: $second;
@@ -44,8 +44,8 @@ $icon-transcript-hover-background: #eff7f7;
 // buttons
 $button-for: $second;
 $button-against: $third;
-$button-abstained: #009cdd;
-$button-absent: #003130;
+$button-abstained: $first;
+$button-absent: #002b29;
 
 // dropdown
 $dropdown-arrow: $first;
