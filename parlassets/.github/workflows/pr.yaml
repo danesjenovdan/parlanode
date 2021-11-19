@@ -1,0 +1,45 @@
+on:
+  push:
+    branches:
+    - dev
+
+jobs:
+  pull-requests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: pull-request-ljubljana
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "ljubljana"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: "Pulling ${{ github.ref }} into ljubljana"
+
+    - name: pull-request-ajdovscina
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "ajdovscina"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: "Pulling ${{ github.ref }} into ajdovscina"
+
+    - name: pull-request-lendava
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "lendava"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: "Pulling ${{ github.ref }} into lendava"
+
+    - name: pull-request-hrastnik
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "hrastnik"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: "Pulling ${{ github.ref }} into hrastnik"
+
+    - name: pull-request-ua
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "ua"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: "Pulling ${{ github.ref }} into ua"
