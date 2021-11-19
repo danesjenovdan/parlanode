@@ -4,12 +4,12 @@ const config = {
   port: 3066,
   serverTimeout: 120000,
   urls: {
-    cdn: 'https://parlassets-ljubljana.lb.djnd.si',
-    cards: 'https://parlacards.lb.djnd.si',
-    parladata: 'https://parladata.lb.djnd.si/v3',
+    cdn: 'https://parlassets-ua.lb.djnd.si',
+    cards: 'https://parlacards-ua.lb.djnd.si',
+    parladata: 'https://parladata-ua.lb.djnd.si/v3',
   },
-  locale: 'sl-obcine',
-  leaderId: '261',
+  locale: 'ua',
+  leaderId: 'changeme',
   siteMap: {
     landing: {
       legislation: 'zakonodaja',
