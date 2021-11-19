@@ -6,6 +6,16 @@ const { i18n } = require('../server');
 
 const router = express.Router();
 
+function redirectIfLeader(req, res, next) {
+  const slug = req.params.slug || '';
+  const id = parseInt(slug.split('-')[0], 10);
+  if (id === Number(leaderId)) {
+    res.redirect(`/${sm.member.leaderBase}`);
+  } else {
+    next();
+  }
+}
+
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0], 10);
   // TODO this shouldn't be hard-coded
@@ -24,65 +34,61 @@ async function getNewData(slug) {
   return false;
 }
 
-router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], ar((render, req, res, next) => {
-  getNewData(req.params.slug).then((mpData) => {
-    if (mpData) {
-      render('poslanec/pregled', {
-        activeMenu: 'mp',
-        pageTitle: `${i18n('general.overview')} - ${mpData.mp.name}`,
-        activeTab: 'pregled',
-        ...mpData,
-      });
-    } else {
-      next();
-    }
-  });
+router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], redirectIfLeader, ar(async (render, req, res, next) => {
+  const mpData = await getNewData(req.params.slug);
+  if (mpData) {
+    render('poslanec/pregled', {
+      activeMenu: 'mp',
+      pageTitle: `${i18n('general.overview')} - ${mpData.mp.name}`,
+      activeTab: 'pregled',
+      ...mpData,
+    });
+  } else {
+    next();
+  }
 }));
 
-router.get([`/:slug([a-z0-9-]+)/${sm.member.votings}`], ar((render, req, res, next) => {
-  getNewData(req.params.slug).then((mpData) => {
-    if (mpData) {
-      render('poslanec/glasovanja', {
-        activeMenu: 'mp',
-        pageTitle: `${i18n('general.voting')} - ${mpData.mp.name}`,
-        activeTab: 'glasovanja',
-        ...mpData,
-      });
-    } else {
-      next();
-    }
-  });
+router.get([`/:slug([a-z0-9-]+)/${sm.member.votings}`], redirectIfLeader, ar(async (render, req, res, next) => {
+  const mpData = await getNewData(req.params.slug);
+  if (mpData) {
+    render('poslanec/glasovanja', {
+      activeMenu: 'mp',
+      pageTitle: `${i18n('general.voting')} - ${mpData.mp.name}`,
+      activeTab: 'glasovanja',
+      ...mpData,
+    });
+  } else {
+    next();
+  }
 }));
 
-router.get([`/:slug([a-z0-9-]+)/${sm.member.speeches}`], ar((render, req, res, next) => {
-  getNewData(req.params.slug).then((mpData) => {
-    if (mpData) {
-      render('poslanec/govori', {
-        activeMenu: 'mp',
-        pageTitle: `${i18n('general.speeches')} - ${mpData.mp.name}`,
-        activeTab: 'govori',
-        ...mpData,
-      });
-    } else {
-      next();
-    }
-  });
+router.get([`/:slug([a-z0-9-]+)/${sm.member.speeches}`], redirectIfLeader, ar(async (render, req, res, next) => {
+  const mpData = await getNewData(req.params.slug);
+  if (mpData) {
+    render('poslanec/govori', {
+      activeMenu: 'mp',
+      pageTitle: `${i18n('general.speeches')} - ${mpData.mp.name}`,
+      activeTab: 'govori',
+      ...mpData,
+    });
+  } else {
+    next();
+  }
 }));
 
 const leaderRouter = express.Router();
 
-leaderRouter.get('/', ar((render, req, res, next) => {
-  getNewData(leaderId).then((mpData) => {
-    if (mpData) {
-      render('poslanec/zupan', {
-        activeMenu: 'leader',
-        pageTitle: `${i18n('titles.leader')} - ${mpData.mp.name}`,
-        ...mpData,
-      });
-    } else {
-      next();
-    }
-  });
+leaderRouter.get('/', ar(async (render, req, res, next) => {
+  const mpData = await getNewData(leaderId);
+  if (mpData) {
+    render('poslanec/zupan', {
+      activeMenu: 'leader',
+      pageTitle: `${i18n('titles.leader')} - ${mpData.mp.name}`,
+      ...mpData,
+    });
+  } else {
+    next();
+  }
 }));
 
 module.exports = {
