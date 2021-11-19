@@ -14,32 +14,32 @@ jobs:
       with:
         destination_branch: "k8s"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Update ${{ github.ref }} from k8s"
+        pr_title: "Pulling ${{ github.ref }} into k8s"
 
     - name: pull-request-ajdovscina
       uses: repo-sync/pull-request@v2
       with:
         destination_branch: "ajdovscina"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Update ${{ github.ref }} from ajdovscina"
+        pr_title: "Pulling ${{ github.ref }} into ajdovscina"
 
     - name: pull-request-lendava
       uses: repo-sync/pull-request@v2
       with:
         destination_branch: "lendava"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Update ${{ github.ref }} from lendava"
+        pr_title: "Pulling ${{ github.ref }} into lendava"
 
     - name: pull-request-hrastnik
       uses: repo-sync/pull-request@v2
       with:
         destination_branch: "hrastnik"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Update ${{ github.ref }} from hrastnik"
+        pr_title: "Pulling ${{ github.ref }} into hrastnik"
 
     - name: pull-request-ua
       uses: repo-sync/pull-request@v2
       with:
         destination_branch: "ua"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Update ${{ github.ref }} from ua"
+        pr_title: "Pulling ${{ github.ref }} into ua"
