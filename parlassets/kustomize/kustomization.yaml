@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlassets-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ljubljana
-    newTag: '9e105917de2d1bbf64d640082660d9a6bd05240d'
+    newTag: 'e433362e4e589fdb8892e6c813102be9b43447f5'
