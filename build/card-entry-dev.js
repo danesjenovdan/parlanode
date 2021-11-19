@@ -54,5 +54,8 @@ import cardState from './state.json';
   const { template } = window.card._component.contextData;
   /* eslint-enable no-underscore-dangle */
   element.className = template.frameContainerClass;
+
+  const templateDataElement = document.querySelector('#template-data');
+  templateDataElement.innerHTML = JSON.stringify(template, null, 2);
   // eslint-disable-next-line no-console
 })().catch((error) => console.error(error));

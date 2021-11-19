@@ -2,7 +2,6 @@
   <card-wrapper
     :content-class="{ 'is-loading': loading }"
     :header-config="headerConfig"
-    :og-config="ogConfig"
   >
     <template #generator>
       <tools-tabs current-tool="voteComparator" />
@@ -89,10 +88,7 @@
             :text="$t('empty-state-text')"
           />
           <div v-else class="glasovanja">
-            <seznam-glasovanj
-              :data="voteObject"
-              :show-filters="false"
-            />
+            <seznam-glasovanj :data="voteObject" :show-filters="false" />
           </div>
         </p-tab>
         <p-tab :label="$t('tabs.time-chart')">
@@ -351,11 +347,6 @@ export default {
     //   image: person.image,
     // }));
     // this.loadResults();
-  },
-  created() {
-    // TODO:
-    // const { template, siteMap: sm } = this.$options.cardData;
-    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.voteComparator}`;
   },
   methods: {
     toggleSpecial() {

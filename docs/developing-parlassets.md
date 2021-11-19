@@ -24,5 +24,5 @@ yarn dev
 ```
 - In another terminal, run the command will serve the files
 ```sh
-yarn start
+yarn serve
 ```

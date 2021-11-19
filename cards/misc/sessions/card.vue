@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <template #generator>
       <div class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
@@ -34,9 +34,9 @@
 </template>
 
 <script>
-import { find, get } from 'lodash-es';
+import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
-import { sessions as sessionsContextUrl } from '@/_mixins/contextUrls.js';
+import { sessionListContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
@@ -56,7 +56,7 @@ export default {
     PSearchDropdown,
     BlueButtonList,
   },
-  mixins: [common, sessionsContextUrl],
+  mixins: [common, sessionListContextUrl],
   cardInfo: {
     doubleWidth: true,
   },

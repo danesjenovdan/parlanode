@@ -1,9 +1,5 @@
 <template>
-  <card-wrapper
-    :header-config="headerConfig"
-    :og-config="ogConfig"
-    @back-change="handleBackChange"
-  >
+  <card-wrapper :header-config="headerConfig" @back-change="handleBackChange">
     <div ref="chart" class="prisotnost-chart"></div>
   </card-wrapper>
 </template>
@@ -14,7 +10,10 @@ import common from '@/_mixins/common.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
-import { personOverview, partyOverview } from '@/_mixins/contextUrls.js';
+import {
+  personOverviewContextUrl,
+  partyOverviewContextUrl,
+} from '@/_mixins/contextUrls.js';
 import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
@@ -70,9 +69,10 @@ export default {
   },
   created() {
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
-    (this.type === 'person' ? personOverview : partyOverview).created.call(
-      this
-    );
+    (this.type === 'person'
+      ? personOverviewContextUrl
+      : partyOverviewContextUrl
+    ).created.call(this);
   },
   mounted() {
     this.renderChart();

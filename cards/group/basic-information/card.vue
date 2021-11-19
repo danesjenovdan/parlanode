@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <scroll-shadow ref="shadow">
       <div
         v-infinite-scroll="loadMore"
@@ -111,7 +111,7 @@
 <script>
 import axios from 'axios';
 import common from '@/_mixins/common.js';
-import { partyOverview } from '@/_mixins/contextUrls.js';
+import { partyOverviewContextUrl } from '@/_mixins/contextUrls.js';
 import { partyTitle } from '@/_mixins/titles.js';
 import { partyHeader } from '@/_mixins/altHeaders.js';
 import { partyOgImage } from '@/_mixins/ogImages.js';
@@ -129,7 +129,14 @@ export default {
     PersonWithPosition,
     ScrollShadow,
   },
-  mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
+  mixins: [
+    common,
+    partyOverviewContextUrl,
+    partyTitle,
+    partyHeader,
+    partyOgImage,
+    links,
+  ],
   data() {
     const { cardData } = this.$root.$options.contextData;
 
