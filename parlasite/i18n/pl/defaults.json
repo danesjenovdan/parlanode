@@ -165,10 +165,6 @@
     "other_votings": "Inne głosowania",
     "agenda": "Dnevni red",
     "transcripts": "Transkrypcje",
-    "state_one": "Sejm Rzeczypospolitej Polskiej nie publikuje zapisów głosowań komisji.\nPowiedz im, że muszą to zmienić.",
-    "state_two": "Državni zbor RS ne objavlja podatkov o glasovanjih na Kolegiju predsednika državnega zbora. <a class=\"funblue-light-hover\" href=\"mailto:soj@dz-rs.si\">Povej jim</a>, da morajo to spremeniti.",
-    "state_one_dz": "Przepraszamy, dane o głosowaniu z wybranego posiedzenia nie są jeszcze dostępne.",
-    "state_five": "Przepraszamy, transkrypcja wystąpień wybranego posiedzenia nie jest jeszcze dostępna online.",
     "tools_intro": "Demokracja jest procesem ciągłym, który zależy od naszego uczestnictwa w nim. Skorzystaj z poniższych narzędzi, aby pomóc ci się lepiej zaangażować!",
     "page-not-found-text": "Tutaj niczego nie ma. Czego szukasz?",
     "info_email": "info@parlameter.si"
