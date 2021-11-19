@@ -9,6 +9,7 @@ const config = {
     parladata: 'https://parladata-ajdovscina.lb.djnd.si/v3'
   },
   locale: 'sl-obcine',
+  leaderId: '261',
   siteMap: {
     landing: {
       legislation: 'zakonodaja',
@@ -36,6 +37,7 @@ const config = {
       wordGroups: 'skupine-besed',
     },
     member: {
+      leaderBase: 'zupan',
       base: 'p',
       overview: 'pregled',
       votings: 'glasovanja',

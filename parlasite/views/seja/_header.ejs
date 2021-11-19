@@ -1,7 +1,7 @@
 <div class="session-container">
-  <div class="row header  text-center">
+  <div class="row header text-center">
     <div class="col-lg-12">
-      <div class="media-object img-circle session-logo backgroundred">
+      <div class="media-object img-circle session-logo backgroundblue">
         <b>S</b>
       </div>
       <h1><%- session.name %></h1>
@@ -14,7 +14,7 @@
       </div>
       <div class="group-container-menu">
         <ul class="clearfix">
-          <!-- <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.legislation %>" class="<%- activeTab === 'zakonodaja' ? 'active' : '' %> nav-icon nav-icon-legislation"><%- i18n('general.legislation') %></a></li> -->
+          <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.agenda %>" class="<%- activeTab === 'dnevni-red' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.agenda') %></a></li>
           <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.otherVotings %>" class="<%- activeTab === 'druga-glasovanja' ? 'active' : '' %> nav-icon nav-icon-votings"><%- i18n('general.other_votings') %></a></li>
           <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.transcript %>" class="<%- activeTab === 'transkript' ? 'active' : '' %> nav-icon nav-icon-transcripts"><%- i18n('general.transcripts') %></a></li>
         </ul>

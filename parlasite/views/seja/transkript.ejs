@@ -4,14 +4,12 @@
 
 <div class="row">
   <div class="col-md-12">
-    <% if (session.type === 'dz') { %>
-      <%- await fetchCard('/session/tfidf/', session.id) %>
-    <% } %>
+    <%- await fetchCard('/session/tfidf/', session.id) %>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/session/speeches/', session.id) %>
+    <%- await fetchCard('/session/speeches/', session.id, { page: page }) %>
   </div>
 </div>
 
