@@ -2,7 +2,6 @@
   <card-wrapper
     :content-class="{ 'is-loading': loading }"
     :header-config="headerConfig"
-    :og-config="ogConfig"
   >
     <template #generator>
       <tools-tabs current-tool="wordGroups" />
@@ -179,11 +178,6 @@ export default {
       }
       return state;
     },
-  },
-  created() {
-    // TODO:
-    // const { template, siteMap: sm } = this.$options.cardData;
-    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.wordGroups}`;
   },
   mounted() {
     if (this.words.length) {

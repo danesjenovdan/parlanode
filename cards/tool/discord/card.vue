@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <template #generator>
       <tools-tabs current-tool="discord" />
     </template>
@@ -276,11 +276,6 @@ export default {
   },
   beforeMount() {
     this.fetchVotesForGroup(this.groups?.[0]?.acronym);
-  },
-  created() {
-    // const { template, siteMap: sm } = this.$options.contextData;
-    // template.pageTitle = this.dynamicTitle;
-    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.tools}/${sm.tools.discord}`;
   },
   methods: {
     groupBy(array, f) {

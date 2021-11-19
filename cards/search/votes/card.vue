@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="votes-list">
       <scroll-shadow ref="shadow">
         <div
@@ -31,7 +31,7 @@
 import { groupBy } from 'lodash';
 import axios from 'axios';
 import common from '@/_mixins/common.js';
-import { search as searchContext } from '@/_mixins/contextUrls.js';
+import { searchContextUrl } from '@/_mixins/contextUrls.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
 import { searchTitle } from '@/_mixins/titles.js';
@@ -50,7 +50,7 @@ export default {
     ScrollShadow,
     VoteListItem,
   },
-  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContext],
+  mixins: [common, searchTitle, searchHeader, searchOgImage, searchContextUrl],
   cardInfo: {
     doubleWidth: true,
   },

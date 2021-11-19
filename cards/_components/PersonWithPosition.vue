@@ -21,11 +21,10 @@
 </template>
 
 <script>
-import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 
 export default {
-  mixins: [common, links],
+  mixins: [links],
   props: {
     person: {
       type: Object,

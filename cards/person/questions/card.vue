@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <question-list
       :question-days="$options.contextData.cardData?.data?.results"
     />
@@ -8,7 +8,7 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { personOverview } from '@/_mixins/contextUrls.js';
+import { personOverviewContextUrl } from '@/_mixins/contextUrls.js';
 import { personTitle } from '@/_mixins/titles.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
@@ -19,6 +19,12 @@ export default {
   components: {
     QuestionList,
   },
-  mixins: [common, personOverview, personTitle, personHeader, personOgImage],
+  mixins: [
+    common,
+    personOverviewContextUrl,
+    personTitle,
+    personHeader,
+    personOgImage,
+  ],
 };
 </script>
