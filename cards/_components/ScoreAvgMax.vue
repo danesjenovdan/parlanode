@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" half-height>
+  <card-wrapper :header-config="headerConfig" half-height>
     <div v-if="getMaxValue <= 0">
       <!-- TODO: let empty state take care of this -->
       <div v-t="'no-results'" class="no-results" />
@@ -100,12 +100,12 @@
 <script>
 import common from '@/_mixins/common.js';
 import {
-  personOverview,
-  partyOverview,
-  personVotes,
-  partyVotes,
-  personSpeeches,
-  partySpeeches,
+  personOverviewContextUrl,
+  partyOverviewContextUrl,
+  personVotesContextUrl,
+  partyVotesContextUrl,
+  personSpeechesContextUrl,
+  partySpeechesContextUrl,
 } from '@/_mixins/contextUrls.js';
 import { personTitle, partyTitle } from '@/_mixins/titles.js';
 import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
@@ -185,15 +185,20 @@ export default {
   created() {
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
     if (this.context === 'overview') {
-      (this.type === 'person' ? personOverview : partyOverview).created.call(
-        this
-      );
+      (this.type === 'person'
+        ? personOverviewContextUrl
+        : partyOverviewContextUrl
+      ).created.call(this);
     } else if (this.context === 'votings') {
-      (this.type === 'person' ? personVotes : partyVotes).created.call(this);
+      (this.type === 'person'
+        ? personVotesContextUrl
+        : partyVotesContextUrl
+      ).created.call(this);
     } else if (this.context === 'speeches') {
-      (this.type === 'person' ? personSpeeches : partySpeeches).created.call(
-        this
-      );
+      (this.type === 'person'
+        ? personSpeechesContextUrl
+        : partySpeechesContextUrl
+      ).created.call(this);
     }
   },
   methods: {
@@ -207,7 +212,10 @@ export default {
       return { width: `${(this.results[key] / this.getMaxValue) * 100}%` };
     },
     formatNumberWithPrecision(number) {
-      return numberFormatter(number, this.precision, this.percent);
+      return numberFormatter(number, {
+        precision: this.precision,
+        percent: this.percent,
+      });
     },
   },
 };

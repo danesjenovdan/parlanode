@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="legislation-status-container">
       <div class="legislation-status">
         <i :class="['parlaicon', legislationStatus.iconClass]"></i>
@@ -10,15 +10,14 @@
       <div class="legislation-text">{{ legislation.text }}</div>
     </div>
     <p-tabs class="legislation-tabs">
-      <!-- <p-tab :label="$t('abstract')">
-        <excerpt
+      <p-tab v-if="legislation.abstract" :label="$t('abstract')">
+        <!-- <excerpt
           :content="content"
           :main-law="excerptData"
-          :documents="documents"
           :show-parent="false"
           :icon="data.abstract ? data.icon : ''"
-        />
-      </p-tab> -->
+        /> -->
+      </p-tab>
       <p-tab :label="$t('votings')">
         <div class="votes-list">
           <scroll-shadow ref="shadow">
@@ -35,6 +34,9 @@
           </scroll-shadow>
         </div>
       </p-tab>
+      <p-tab v-if="legislation.documents?.length" :label="$t('documents')">
+        <documents :documents="legislation.documents" />
+      </p-tab>
     </p-tabs>
   </card-wrapper>
 </template>
@@ -49,23 +51,27 @@ import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
+import Documents from '@/_components/Documents.vue';
 
 export default {
-  name: 'CardSessionLaw',
+  name: 'CardLegislationSingle',
   components: {
     PTab,
     PTabs,
     ScrollShadow,
     VoteListItem,
+    Documents,
   },
   mixins: [common, links],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
-      legislation: this.cardData.data?.results || {},
-      votes: this.cardData.data?.results?.votes || [],
+      legislation: cardData?.data?.results || {},
+      votes: cardData?.data?.results?.votes || [],
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
@@ -74,12 +80,6 @@ export default {
     legislationStatus() {
       return legislationStatus(this.legislation.status);
     },
-  },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getLegislationLink(
-    //   this.data
-    // );
   },
 };
 </script>

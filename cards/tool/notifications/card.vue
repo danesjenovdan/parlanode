@@ -475,13 +475,15 @@ export default {
     doubleWidth: true,
   },
   data() {
+    const { cardState } = this.$root.$options.contextData;
+
     return {
       currentStep: 1,
       keyword: '',
       matchType: 'siroko',
       frequency: 'event',
       email: '',
-      state: this.$options.contextData.cardState,
+      state: cardState || {},
       keywords: [],
       updatedId: '',
       errored: false,
@@ -508,7 +510,8 @@ export default {
   },
   methods: {
     validateEmail(email) {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const re =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     },
     firstAction() {

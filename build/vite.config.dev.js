@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
         },
       }),
       vue(),
-      devServeCards(),
+      devServeCards(process.env),
     ],
     resolve: {
       alias: {

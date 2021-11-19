@@ -24,36 +24,27 @@
 
 <script>
 import axios from 'axios';
+import copyInput from '@/_helpers/copyInput.js';
 
 export default {
   name: 'CardShare',
-  props: {
-    cardUrl: {
-      type: String,
-      default: '',
-    },
-  },
   data() {
-    let url = this.cardUrl;
-    if (!url) {
-      let parent = this.$parent;
-      while (parent) {
-        if (parent.url) {
-          url = parent.url;
-          break;
-        }
-        parent = parent.$parent;
+    // Get card url from a parent with common mixin which defines a computed url property
+    let url;
+    let parent = this.$parent;
+    while (parent) {
+      if (parent.url) {
+        url = parent.url;
+        break;
       }
+      parent = parent.$parent;
     }
+    url = `${url}&locale=${this.$i18n.locale}&template=share`;
     return {
-      shortenedUrl: `${url}&frame=true`,
+      url,
       copied: false,
+      shortenedUrl: url,
     };
-  },
-  watch: {
-    cardUrl() {
-      this.shortenUrl();
-    },
   },
   mounted() {
     this.shortenUrl();
@@ -63,7 +54,7 @@ export default {
       axios
         .get(
           `https://parla.me/shortner/generate?url=${encodeURIComponent(
-            `${this.url}&frame=true`
+            this.url
           )}`
         )
         .then((response) => {
@@ -75,25 +66,7 @@ export default {
         });
     },
     copyLink() {
-      // set focus
-      this.$refs.urlInput.focus();
-
-      // copy the selection
-      this.$refs.urlInput.setSelectionRange(
-        0,
-        this.$refs.urlInput.value.length
-      );
-      let succeed = false;
-      try {
-        succeed = document.execCommand('copy');
-      } catch (e) {
-        // eslint-disable-next-line no-console
-        console.error('failed to copy to cliboard', e);
-        return;
-      }
-
-      // change text
-      this.copied = succeed;
+      this.copied = copyInput(this.$refs.urlInput);
     },
   },
 };

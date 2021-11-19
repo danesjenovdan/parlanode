@@ -1,0 +1,39 @@
+card:
+  title: The vote
+  info: >-
+    We obtain voting records from the web page of the National Assembly of the
+    Republic of Slovenia.
+
+
+    Results of the vote are displayed in three ways: by the MP, by the
+    parliamentary group and by Government - Opposition.
+
+
+    The first tab gives you an overview of the vote. You can filter results
+    according to value of the ballot (FOR, AGAINST, ABSTAINED, ABSENT) and look
+    up individual MPs. The majority vote is printed out next to the pie chart.
+    For example, "60% FOR" means that 60% of MPs voted FOR.
+
+
+    The second tab shows parliamentary groups' votes. At the end of each line
+    the majority vote of the parliamentary group is printed and pressing the
+    button next to it gives you access to a list of MPs who voted the same as
+    the majority of the parliamentary group. The lightning sign indicates
+    discrepancies within the parliamentary group - it is next to all votes that
+    are not the same as the majority vote (MPs who are not present are not
+    included). If the majority of the parliamentary group is absent there is no
+    majority vote.
+
+
+    The third tab shows voting results according to Government - Opposition.
+    Here again we use the lightning symbol to highlight unexpected votes i.e.
+    instances where the MP's vote is different than the majority vote.
+
+
+    Lightning symbol
+
+
+    The lightning symbol indicates discrepancies within the parliamentary group
+    or within the coalition - it is next to all votes that are not the same as
+    the majority vote (MPs who were are present are not included). If the
+    majority of the parliamentary group is absent there is no majority vote.

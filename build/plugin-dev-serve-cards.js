@@ -7,13 +7,14 @@ import { groupBy, mapValues } from 'lodash-es';
 const dir = dirname(fileURLToPath(import.meta.url));
 const cardsPath = resolve(dir, '..', 'cards');
 
-export default function devServeCards() {
+export default function devServeCards(env) {
   return {
     name: 'dev-serve-cards',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const url = new URL(req.url, `http://${req.headers.host}/`);
-        if (url.pathname === '/') {
+        const pathname = url.pathname.replace(/\/$/, '');
+        if (pathname === '') {
           const cards = glob
             .sync(join(cardsPath, '**/card.vue'))
             .map((file) => file.split('/').slice(-3, -1));
@@ -38,14 +39,16 @@ export default function devServeCards() {
             )
             .join('\n');
           res.end(cardRows);
-        } else if (url.pathname.slice(1).split('/').length === 2) {
-          const [group, method] = url.pathname.slice(1).split('/');
+        } else if (pathname.slice(1).split('/').length === 2) {
+          const [group, method] = pathname.slice(1).split('/');
           const cardName = `${group}/${method}`;
           if (existsSync(join(cardsPath, cardName, 'card.vue'))) {
             const html = readFileSync(
+              // TODO: uredi, da lahko developas razlicne template (embed/share/site)
               resolve(dir, 'card-entry-dev.html'),
               'utf-8'
             )
+              .replace(/{assetsUrl}/g, env.VITE_PARLASSETS_URL)
               .replace(/{cardName}/g, cardName)
               .replace(
                 /{cardEntry}/g,

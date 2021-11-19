@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div v-if="count > 0" class="multiple-speeches">
       <pagination
         v-if="count > perPage"
@@ -11,11 +11,10 @@
       <div v-if="fetching" class="nalagalnik"></div>
       <speech
         v-for="speech in speeches"
-        :key="speech.speech_id"
+        :key="speech.id"
         v-quotable
         :speech="speech"
-        :session="cardData.data?.session"
-        :per-page="perPage"
+        :session="session"
       />
       <pagination
         v-if="!fetching && count > perPage"
@@ -25,8 +24,6 @@
         @change="onPageChange"
       />
     </div>
-    <!-- TODO: this should be empty state -->
-    <div v-else v-t="'session-processing'" class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -36,6 +33,7 @@ import links from '@/_mixins/links.js';
 import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
+import { sessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
 import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 import Speech from '@/_components/Speech.vue';
 import Pagination from '@/_components/Pagination.vue';
@@ -50,26 +48,31 @@ export default {
   directives: {
     quotable,
   },
-  mixins: [links, common, sessionHeader, sessionOgImage],
+  mixins: [
+    common,
+    links,
+    sessionTranscriptContextUrl,
+    sessionHeader,
+    sessionOgImage,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const {
       results = [],
       pages = 1,
       page: initialPage = 1,
       count = results?.length ?? 0,
       per_page = SPEECHES_PER_PAGE,
-    } = this.cardData.data || {};
+    } = cardData?.data || {};
 
     const speechesPerPage = Array(pages);
     speechesPerPage[initialPage - 1] = results;
 
-    // const state = this.$options.contextData.cardState;
-    // let page = (state && state.page) || Number(data.page);
-    // page = Math.min(Math.max(page, 0), data.pages);
-    const page = initialPage;
+    const page = Number(cardState?.page) || initialPage;
 
     return {
       speechesPerPage,
@@ -78,6 +81,7 @@ export default {
       page,
       initialPage,
       fetching: false,
+      session: cardData?.data?.session,
     };
   },
   computed: {
@@ -91,12 +95,6 @@ export default {
       this.onPageChange(this.page);
     }
   },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionTranscriptLink(
-    //   this.data.session
-    // );
-  },
   methods: {
     onPageChange(newPage) {
       if (this.fetching) {
@@ -108,10 +106,12 @@ export default {
         this.fetching = true;
         axios
           .get(
-            `${this.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
+            `${this.$root.$options.contextData.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
           )
           .then((response) => {
-            this.speechesPerPage[newPage - 1] = response.data.results;
+            const responsePage = response?.data?.page || 1;
+            this.page = responsePage;
+            this.speechesPerPage[responsePage - 1] = response?.data?.results;
             this.fetching = false;
 
             // needed if dynamically loaded to reset the css :target and scroll to selected element
@@ -129,7 +129,6 @@ export default {
       }
     },
     scrollToTop() {
-      // eslint-disable-next-line no-restricted-properties
       const id = this.$root.$options.contextData.mountId;
       const el = document.getElementById(id);
       if (el) {
@@ -144,14 +143,6 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 @import 'parlassets/scss/color_classes';
-
-.empty-dataset {
-  font-size: 16px;
-  line-height: 20px;
-  margin: 70px 0;
-  text-align: center;
-  color: $font-placeholder;
-}
 
 .multiple-speeches :deep(.speech-holder) {
   border-top: 1px solid $background;

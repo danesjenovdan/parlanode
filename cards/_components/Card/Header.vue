@@ -9,18 +9,15 @@
             class="media-object img-circle session-logo"
           >
             <b v-if="config.circleText">{{ config.circleText }}</b>
-            <img
-              v-else
-              :src="`${slugs.urls.cdn}/icons/${config.mediaImage}.svg`"
-            />
+            <img v-else :src="`${urls.cdn}/icons/${config.mediaImage}.svg`" />
           </div>
           <img
             v-else-if="config.circleImage"
-            :src="`${slugs.urls.cdn}/img/people/square/${config.circleImage}.png`"
+            :src="`${urls.cdn}/img/people/square/${config.circleImage}.png`"
             class="portrait column"
           />
           <div v-else-if="config.circleIcon" class="icon-circle">
-            <img :src="`${slugs.urls.cdn}/icons/${config.circleIcon}.svg`" />
+            <img :src="`${urls.cdn}/icons/${config.circleIcon}.svg`" />
           </div>
           <div class="header-info-container">
             <h1 v-html="config.heading"></h1>
@@ -56,8 +53,9 @@ export default {
     },
   },
   data() {
+    const { urls } = this.$root.$options.contextData;
     return {
-      slugs: this.$root.$options.contextData.slugs,
+      urls,
     };
   },
 };

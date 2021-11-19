@@ -1,10 +1,13 @@
-/* eslint-disable no-restricted-properties */
 import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 
 export default {
   methods: {
+    getLeaderLink() {
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.member.leaderBase}`;
+    },
     getPersonLink(person) {
-      if (!person.slug) {
+      if (!person?.slug) {
         return null;
       }
       const { urls, siteMap: sm } = this.$root.$options.contextData;
@@ -45,13 +48,13 @@ export default {
     getSpeechLink(speech, session, perPage = SPEECHES_PER_PAGE) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       const sessId = session?.id || speech?.session?.id || speech?.session_id;
-      const pageNum = Math.floor(speech.the_order / perPage) + 1;
-      const pageUrlPart = pageNum > 1 ? `/${pageNum}` : '';
+      const pageNum = Math.floor((speech.the_order - 1) / perPage) + 1;
+      const pageUrlPart = pageNum > 1 ? `?page=${pageNum}` : '';
       return `${urls.site}/${sm.session.base}/${sessId}/${sm.session.transcript}${pageUrlPart}#${speech.id}`;
     },
     getSpeechCardLink(speech) {
       const { urls } = this.$root.$options.contextData;
-      return `${urls.cards}/speech/single/${speech.id}?frame=true`;
+      return `${urls.cards}/speech/single/?id=${speech.id}&locale=${this.$i18n.locale}&template=share`;
     },
     getVoteLink(vote, session) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
@@ -77,16 +80,6 @@ export default {
     getLegislationListLink() {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.landing.legislation}`;
-    },
-    getSessionAgendaLink(agenda, sessionId) {
-      const { urls, siteMap: sm } = this.$root.$options.contextData;
-      return `${urls.site}/${sm.session.base}/${
-        sessionId || agenda.session.id
-      }/${sm.session.legislation}#${agenda.id}`;
-    },
-    getAgendaCardLink(agenda) {
-      const { urls } = this.$root.$options.contextData;
-      return `${urls.cards}/s/agenda-item/${agenda.id}?frame=true`;
     },
   },
 };

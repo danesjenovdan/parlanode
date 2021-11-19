@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="legislation-list-container">
       <div class="filters">
         <div class="filter text-filter">
@@ -55,6 +55,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { legislationListContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import SortableTable from '@/_components/SortableTable.vue';
@@ -82,31 +83,33 @@ export default {
     StripedButton,
     SortableTable,
   },
-  mixins: [common, links],
+  mixins: [common, legislationListContextUrl, links],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     // TODO: get from api
-    // const filters = this.cardData.data?.config?.filters || [];
+    // const filters = cardData?.data?.config?.filters || [];
     const filters = config?.filters || [];
     const filterOptions = filters.map((filter) => ({
       ...filter,
       id: filter.label,
       color: 'for',
       label: filter.label,
-      selected: this.cardState?.filter === filter.label,
+      selected: cardState?.filter === filter.label,
     }));
 
     return {
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
-      legislation: this.cardData.data?.results || [],
+      legislation: cardData?.data?.results || [],
       filterOptions,
-      currentFilter: this.cardState?.filter,
+      currentFilter: cardState?.filter,
       currentSort: 'date',
       currentSortOrder: 'desc',
-      textFilter: this.cardState?.text || '',
+      textFilter: cardState?.text || '',
       // onlyAbstracts: !!state.onlyAbstracts,
       // onlyWithVotes: !!state.onlyWithVotes,
     };
@@ -157,9 +160,10 @@ export default {
             const classification =
               l.classification == null ? 'null' : l.classification;
 
-            filterOptionMatch = this.selectedFilterOption.classifications.includes(
-              classification
-            );
+            filterOptionMatch =
+              this.selectedFilterOption.classifications.includes(
+                classification
+              );
           }
         }
 

@@ -8,7 +8,7 @@
       <div v-if="!questionDays?.length" v-t="'no-results'" class="no-results" />
       <div v-else>
         <div v-for="day in questionDays" :key="day.date">
-          <div class="date">{{ dateFormatter(day.date) }}</div>
+          <div class="date">{{ formatDate(day.date) }}</div>
           <event
             v-for="(event, i) in day.events"
             :key="`${day.date}-${i}`"
@@ -55,7 +55,7 @@ export default {
   },
   emits: ['load-more'],
   methods: {
-    dateFormatter,
+    formatDate: dateFormatter,
   },
 };
 </script>

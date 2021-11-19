@@ -17,8 +17,9 @@ export default {
   name: 'CardPrevious',
   data() {
     const { cardData } = this.$root.$options.contextData;
+
     return {
-      previous: (cardData && cardData.previous_versions) || [],
+      previous: cardData?.previous_versions || [],
     };
   },
 };

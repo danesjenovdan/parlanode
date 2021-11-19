@@ -1,5494 +1,794 @@
 {
-  "session": {
-    "name": "Posiedzenie nr 52",
-    "orgs": [
-      {
-        "acronym": "Sejm",
-        "is_coalition": false,
-        "id": 1,
-        "classification": "sejm",
-        "name": "Sejm"
-      }
-    ],
-    "date": "22. 11. 2017",
-    "org": {
-      "acronym": "Sejm",
-      "is_coalition": false,
-      "id": 1,
-      "classification": "sejm",
-      "name": "Sejm"
-    },
-    "date_ts": "2017-11-22T00:00:00",
-    "updated_at": "16. 10. 2018",
-    "in_review": false,
-    "id": 8
-  },
-  "created_at": "22.10.2018",
-  "created_for": "22.10.2018",
-  "results": [
-    {
-      "text": "Informacja bie\u017c\u0105ca.",
-      "votings": [],
-      "id": 2399,
-      "debates": [
+  "data": {
+    "results": {
+      "agenda_items": [
         {
-          "date": "2017-11-23",
-          "id": 840,
-          "end_speech": {
-            "speech_id": 125442,
-            "the_order": 853
-          },
-          "start_speech": {
-            "speech_id": 125453,
-            "the_order": 764
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie przedstawionego przez Prezydenta Rzeczypospolitej Polskiej projektu ustawy o zmianie ustawy o Krajowej Radzie S\u0105downictwa oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku o odrzucenie w pierwszym czytaniu projektu ustawy zawartego w druku nr 2002",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 2998,
+          "tags": [],
+          "name": "Potrditev zapisnika 17. seje Mestnega sveta Mestne občine Ljubljana",
+          "order": 1,
+          "text": null,
+          "documents": [
+            {
+              "id": 9287,
+              "url": "https://www.ljubljana.si/assets/Uploads/1.-tocka-zapisnik-17.-seje-predlog.pdf",
+              "name": "Potrditev zapisnika 17. seje Mestnega sveta Mestne občine Ljubljana",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 22,
-            "documents": [],
-            "for": 172,
-            "against": 265,
-            "has_votes": true,
-            "motion_id": 1296,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2398,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 814,
-          "end_speech": {
-            "speech_id": 125394,
-            "the_order": 514
-          },
-          "start_speech": {
-            "speech_id": 125398,
-            "the_order": 396
-          }
+              ]
+            }
+          ]
         },
         {
-          "date": "2017-11-24",
-          "id": 839,
-          "end_speech": {
-            "speech_id": 125402,
-            "the_order": 1505
-          },
-          "start_speech": {
-            "speech_id": 125401,
-            "the_order": 1497
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji do Spraw Energii i Skarbu Pa\u0144stwa o rz\u0105dowym projekcie ustawy o zmianie ustawy o biokomponentach i biopaliwach ciek\u0142ych oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 3,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 1991, wraz z przyj\u0119tymi poprawkami",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3024,
+          "tags": [],
+          "name": "Poročilo župana",
+          "order": 2,
+          "text": null,
+          "documents": [
+            {
+              "id": 9549,
+              "url": "https://www.ljubljana.si/assets/Uploads/4.-tocka-Postopkovni-predlog-sklepa.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 23,
-            "documents": [],
-            "for": 286,
-            "against": 148,
-            "has_votes": true,
-            "motion_id": 1295,
-            "has_outliers": true
-          }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek od 11. do 13.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3029,
+          "tags": [],
+          "name": "Kadrovske zadeve",
+          "order": 3,
+          "text": null,
+          "documents": [
+            {
+              "id": 9587,
+              "url": "https://www.ljubljana.si/assets/Uploads/14.-tocka-Sprejeti-sklepi-in-mnenja.pdf",
+              "name": "Sprejeti sklepi in mnenja",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": true,
-            "absent": 25,
-            "documents": [],
-            "for": 432,
-            "against": 2,
-            "has_votes": true,
-            "motion_id": 1293,
-            "has_outliers": true
-          }
+            {
+              "id": 9586,
+              "url": "https://www.ljubljana.si/assets/Uploads/29.-tocka-Kadrovske-zadeve.pdf",
+              "name": "Kadrovske zadeve",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 3,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 18. i 20.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3034,
+          "tags": [],
+          "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana",
+          "order": 4,
+          "text": null,
+          "documents": [
+            {
+              "id": 9624,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-tocka-Sprejeti-sklep.pdf",
+              "name": "a) Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": true,
-            "absent": 23,
-            "documents": [],
-            "for": 298,
-            "against": 136,
-            "has_votes": true,
-            "motion_id": 1294,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2397,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 836,
-          "end_speech": {
-            "speech_id": 125252,
-            "the_order": 62
-          },
-          "start_speech": {
-            "speech_id": 125275,
-            "the_order": 36
-          }
+            {
+              "id": 9623,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije19.pdf",
+              "name": "a) in b) Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9622,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.a-tocka-Porocilo-Statutarno-pravne-komisije.pdf",
+              "name": "a) Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9621,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-in-b-tocka-Porocilo-OF.pdf",
+              "name": "a) in b) Poročilo Odbora za finance",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9620,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-in-b-tocka-povec.-in-zmanjs.-nam.-prem.-JSS-MOL.pdf",
+              "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana \r\n b) Predlog Sklepa o zmanjšanju vrednosti namenskega premoženja in kapitala Javnega \r\nstanovanjskega sklada Mestne občine Ljubljana",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "date": "2017-11-24",
-          "id": 837,
-          "end_speech": {
-            "speech_id": 125281,
-            "the_order": 1435
-          },
-          "start_speech": {
-            "speech_id": 125278,
-            "the_order": 1431
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Finans\u00f3w Publicznych o rz\u0105dowym projekcie ustawy o szczeg\u00f3lnych rozwi\u0105zaniach s\u0142u\u017c\u0105cych realizacji ustawy bud\u017cetowej na rok 2018.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 3,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 2044",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3040,
+          "tags": [],
+          "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana",
+          "order": 5,
+          "text": null,
+          "documents": [
+            {
+              "id": 9686,
+              "url": "https://www.ljubljana.si/assets/Uploads/7.-b-tocka-Sprejeti-sklep.pdf",
+              "name": "b) Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": true,
-            "absent": 28,
-            "documents": [],
-            "for": 256,
-            "against": 173,
-            "has_votes": true,
-            "motion_id": 1292,
-            "has_outliers": true
-          }
+            {
+              "id": 9685,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije19.pdf",
+              "name": "a) in b) Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9684,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-in-b-tocka-Porocilo-OF.pdf",
+              "name": "a) in b) Poročilo Odbora za finance",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9683,
+              "url": "https://www.ljubljana.si/assets/Uploads/5.-a-in-b-tocka-povec.-in-zmanjs.-nam.-prem.-JSS-MOL.pdf",
+              "name": "a) Predlog Sklepa o povečanju vrednosti namenskega premoženja in kapitala Javnega stanovanjskega sklada Mestne občine Ljubljana \r\n b) Predlog Sklepa o zmanjšanju vrednosti namenskega premoženja in kapitala Javnega \r\nstanovanjskega sklada Mestne občine Ljubljana",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 13,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku mniejszo\u015bci",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3046,
+          "tags": [],
+          "name": "Predlog Sklepa o določitvi dela plače za delovno uspešnost direktorja Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2021 iz naslova povečanega obsega dela",
+          "order": 6,
+          "text": null,
+          "documents": [
+            {
+              "id": 9747,
+              "url": "https://www.ljubljana.si/assets/Uploads/20.-tocka-Sprejeti-sklep.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": false,
-            "absent": 51,
-            "documents": [],
-            "for": 62,
-            "against": 334,
-            "has_votes": true,
-            "motion_id": 1291,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2396,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 834,
-          "end_speech": {
-            "speech_id": 125235,
-            "the_order": 673
-          },
-          "start_speech": {
-            "speech_id": 125232,
-            "the_order": 658
-          }
+            {
+              "id": 9746,
+              "url": "https://www.ljubljana.si/assets/Uploads/18.-tocka-Porocilo-OSP.pdf",
+              "name": "Poročilo Odbora za stanovanjsko politiko",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9745,
+              "url": "https://www.ljubljana.si/assets/Uploads/6.-tocka-sklep-NS-JSS-MOL.pdf",
+              "name": "Sklep Nadzornega sveta JSS MOL",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9744,
+              "url": "https://www.ljubljana.si/assets/Uploads/6.-tocka-Amandmaja-zupana.pdf",
+              "name": "Amandmaja župana",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9743,
+              "url": "https://www.ljubljana.si/assets/Uploads/6.-tocka-povecan-obseg-2021-za-dir.-JSS-MOL.pdf",
+              "name": "Predlog Sklepa o določitvi dela plače za delovno uspešnost direktorja Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2021 iz naslova povečanega obsega dela",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "date": "2017-11-24",
-          "id": 835,
-          "end_speech": {
-            "speech_id": 125238,
-            "the_order": 1643
-          },
-          "start_speech": {
-            "speech_id": 125245,
-            "the_order": 1631
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Finans\u00f3w Publicznych o rz\u0105dowym projekcie ustawy o zmianie ustawy o podatku dochodowym od os\u00f3b prawnych.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 3,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 2005",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3054,
+          "tags": [],
+          "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020",
+          "order": 7,
+          "text": null,
+          "documents": [
+            {
+              "id": 9906,
+              "url": "https://www.ljubljana.si/assets/Uploads/7.-a-tocka-Sprejeti-sklep.pdf",
+              "name": "a) Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": true,
-            "absent": 39,
-            "documents": [],
-            "for": 415,
-            "against": 3,
-            "has_votes": true,
-            "motion_id": 1290,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2395,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 832,
-          "end_speech": {
-            "speech_id": 125212,
-            "the_order": 149
-          },
-          "start_speech": {
-            "speech_id": 125215,
-            "the_order": 127
-          }
+            {
+              "id": 9905,
+              "url": "https://www.ljubljana.si/assets/Uploads/9.-a-in-b-tocka-Porocilo-OUP.pdf",
+              "name": "a) in b) Poročilo Odbora za urejanje prostora",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9904,
+              "url": "https://www.ljubljana.si/assets/Uploads/7.-a-in-b-tocka-sprememba-TUS-StrMOL-in-IN-TUS-MOL.pdf",
+              "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020 \r\nb) Predlog Spremembe Izvedbenega načrta Trajnostne urbane strategije Mestne občine Ljubljana (IN TUS MOL 2014-2020)",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "date": "2017-11-24",
-          "id": 833,
-          "end_speech": {
-            "speech_id": 125220,
-            "the_order": 1471
-          },
-          "start_speech": {
-            "speech_id": 125220,
-            "the_order": 1471
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Polityki Spo\u0142ecznej i Rodziny o rz\u0105dowym projekcie ustawy o zmianie ustawy o sp\u00f3\u0142dzielniach socjalnych oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 3. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3062,
+          "tags": [],
+          "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020",
+          "order": 8,
+          "text": null,
+          "documents": [
+            {
+              "id": 9970,
+              "url": "https://www.ljubljana.si/assets/Uploads/8.-b-tocka-Sprejeti-sklep.pdf",
+              "name": "b) Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": true,
-            "absent": 26,
-            "documents": [],
-            "for": 426,
-            "against": 7,
-            "has_votes": true,
-            "motion_id": 1289,
-            "has_outliers": true
-          }
+            {
+              "id": 9969,
+              "url": "https://www.ljubljana.si/assets/Uploads/9.-a-in-b-tocka-Porocilo-OUP.pdf",
+              "name": "a) in b) Poročilo Odbora za urejanje prostora",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 9968,
+              "url": "https://www.ljubljana.si/assets/Uploads/7.-a-in-b-tocka-sprememba-TUS-StrMOL-in-IN-TUS-MOL.pdf",
+              "name": "a) Predlog Spremembe Trajnostne urbane strategije Mestne občine Ljubljana (TUS-StrMOL) 2014-2020 \r\nb) Predlog Spremembe Izvedbenega načrta Trajnostne urbane strategije Mestne občine Ljubljana (IN TUS MOL 2014-2020)",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 2. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3070,
+          "tags": [],
+          "name": "Predlog Strategije razvoja turistične destinacije Ljubljana in ljubljanska regija 2021-2027",
+          "order": 9,
+          "text": null,
+          "documents": [
+            {
+              "id": 10021,
+              "url": "https://www.ljubljana.si/assets/Uploads/18.-tocka-Sprejeti-sklep.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": false,
-            "absent": 22,
-            "documents": [],
-            "for": 202,
-            "against": 234,
-            "has_votes": true,
-            "motion_id": 1288,
-            "has_outliers": true
-          }
+            {
+              "id": 10020,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije21.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10019,
+              "url": "https://www.ljubljana.si/assets/Uploads/10.-tocka-Porocilo-OGDTK.pdf",
+              "name": "Poročilo Odbora za gospodarske dejavnosti, turizem in kmetijstvo",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10018,
+              "url": "https://www.ljubljana.si/assets/Uploads/9.-tocka-strategija-razvoja-turizma-2021-2026.pdf",
+              "name": "Predlog Strategije razvoja turistične destinacije Ljubljana in ljubljanska regija 2021-2027",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 1. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3078,
+          "tags": [],
+          "name": "Predlog Sklepa o spremembah in dopolnitvah Sklepa o ustanovitvi javnega zavoda Turizem Ljubljana",
+          "order": 10,
+          "text": null,
+          "documents": [
+            {
+              "id": 10085,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije22.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": false,
-            "absent": 24,
-            "documents": [],
-            "for": 201,
-            "against": 235,
-            "has_votes": true,
-            "motion_id": 1287,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2394,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 830,
-          "end_speech": {
-            "speech_id": 125169,
-            "the_order": 81
-          },
-          "start_speech": {
-            "speech_id": 125183,
-            "the_order": 63
-          }
+            {
+              "id": 10084,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Porocilo-OGDTK.pdf",
+              "name": "Poročilo Odbora za gospodarske dejavnosti, turizem in kmetijstvo",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10083,
+              "url": "https://www.ljubljana.si/assets/Uploads/9.-tocka-Sklep-o-spremembi-Sklepa-ustanovitvi-JZ-TL.pdf",
+              "name": "Predlog Sklepa o spremembah in dopolnitvah Sklepa o ustanovitvi javnega zavoda Turizem Ljubljana",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "date": "2017-11-24",
-          "id": 831,
-          "end_speech": {
-            "speech_id": 125190,
-            "the_order": 1447
-          },
-          "start_speech": {
-            "speech_id": 125185,
-            "the_order": 1436
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Zdrowia o rz\u0105dowym projekcie ustawy o zmianie ustawy o \u015bwiadczeniach opieki zdrowotnej finansowanych ze \u015brodk\u00f3w publicznych.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 1993, wraz z przyj\u0119t\u0105 poprawk\u0105",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3085,
+          "tags": [],
+          "name": "Predlog Sklepa o pozitivnem predhodnem mnenju k Strategiji Lutkovnega gledališča Ljubljana za obdobje 2021-2025",
+          "order": 11,
+          "text": null,
+          "documents": [
+            {
+              "id": 10148,
+              "url": "https://www.ljubljana.si/assets/Uploads/19.-tocka-Sprejeti-sklep.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": true,
-            "absent": 22,
-            "documents": [],
-            "for": 436,
-            "against": 1,
-            "has_votes": true,
-            "motion_id": 1286,
-            "has_outliers": true
-          }
+            {
+              "id": 10147,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije23.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10146,
+              "url": "https://www.ljubljana.si/assets/Uploads/35.-tocka-Porocilo-OKRD.pdf",
+              "name": "Poročilo Odbora za kulturo in raziskovalno dejavnost",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10145,
+              "url": "https://www.ljubljana.si/assets/Uploads/10.-tocka-Sklep-sveta-LGL.pdf",
+              "name": "Dodatno gradivo",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            },
+            {
+              "id": 10144,
+              "url": "https://www.ljubljana.si/assets/Uploads/10.-tocka-Predlog-Sklepa-o-pozitivnem-predhodnem-mnenju-k-Strategiji-LGL.pdf",
+              "name": "Predlog Sklepa o pozitivnem predhodnem mnenju k Strategiji Lutkovnega gledališča Ljubljana za obdobje 2021-2025",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 10. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3092,
+          "tags": [],
+          "name": "Predlog Sklepa o ugotovitvi javne koristi – Pot ob Savi",
+          "order": 12,
+          "text": null,
+          "documents": [
+            {
+              "id": 10194,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Predlog-Svetniskega-kluba-NSi-za-umik-tocke.pdf",
+              "name": "Predlog Svetniškega kluba NSi za umik točke",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 16,
+                  "name": "Umik točke iz dnevnega reda",
+                  "slug": "umik-tocke-iz-dnevnega-reda"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": false,
-            "absent": 20,
-            "documents": [],
-            "for": 200,
-            "against": 238,
-            "has_votes": true,
-            "motion_id": 1285,
-            "has_outliers": true
-          }
+            {
+              "id": 10193,
+              "url": "https://www.ljubljana.si/assets/Uploads/12.-tocka-Predlog-Svetniskega-kluba-SDS-za-umik-tocke.pdf",
+              "name": "Predlog Svetniškega kluba SDS za umik točke",
+              "tags": [
+                {
+                  "id": 16,
+                  "name": "Umik točke iz dnevnega reda",
+                  "slug": "umik-tocke-iz-dnevnega-reda"
+                }
+              ]
+            },
+            {
+              "id": 10192,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Odgovori-na-pripombe-Svetniskega-kluba-Levica.pdf",
+              "name": "Odgovori na pripombe Svetniškega kluba Levica",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10191,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije24.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10190,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Porocilo-Odbora-za-sport.pdf",
+              "name": "Poročilo Odbora za šport",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10189,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-Pripombe-Svetniskega-kluba-Levica.pdf",
+              "name": "Pripombe Svetniškega kluba Levica",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10188,
+              "url": "https://www.ljubljana.si/assets/Uploads/11.-tocka-javna-korist-Pot-ob-Savi.pdf",
+              "name": "Predlog Sklepa o ugotovitvi javne koristi – Pot ob Savi",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 4,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 9. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3099,
+          "tags": [],
+          "name": "Predlog Sklepa o seznanitvi in soglasju k predlogu Odloka o spremembah Odloka o načrtu za kakovost zraka na območju Mestne občine Ljubljana",
+          "order": 13,
+          "text": null,
+          "documents": [
+            {
+              "id": 10240,
+              "url": "https://www.ljubljana.si/assets/Uploads/21.-tocka-Sprejeti-sklep.pdf",
+              "name": "Sprejeti sklep",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 14,
+                  "name": "Sprejeti sklepi",
+                  "slug": "sprejeti-sklepi"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": false,
-            "absent": 22,
-            "documents": [],
-            "for": 198,
-            "against": 236,
-            "has_votes": true,
-            "motion_id": 1284,
-            "has_outliers": true
-          }
+            {
+              "id": 10239,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije25.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10238,
+              "url": "https://www.ljubljana.si/assets/Uploads/27.-tocka-Porocilo-OVO.pdf",
+              "name": "Poročilo Odbora za varstvo okolja",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10237,
+              "url": "https://www.ljubljana.si/assets/Uploads/13.-tocka-seznanitev-in-soglasje-o-kakovosti-zraka.pdf",
+              "name": "Predlog Sklepa o seznanitvi in soglasju k predlogu Odloka o spremembah Odloka o načrtu za kakovost zraka na območju Mestne občine Ljubljana",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 7. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3105,
+          "tags": [],
+          "name": "Predlog Pravilnika o spremembah Pravilnika o ukrepih za razvoj podeželja v Mestni občini Ljubljana za programsko obdobje 2015–2020",
+          "order": 14,
+          "text": null,
+          "documents": [
+            {
+              "id": 10280,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije26.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": false,
-            "absent": 30,
-            "documents": [],
-            "for": 197,
-            "against": 231,
-            "has_votes": true,
-            "motion_id": 1283,
-            "has_outliers": true
-          }
+            {
+              "id": 10279,
+              "url": "https://www.ljubljana.si/assets/Uploads/13.-tocka-Porocilo-OGDTK.pdf",
+              "name": "Poročilo Odbora za gospodarske dejavnosti, turizem in kmetijstvo",
+              "tags": [
+                {
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+                }
+              ]
+            },
+            {
+              "id": 10278,
+              "url": "https://www.ljubljana.si/assets/Uploads/13.-tocka-razvoj-podezelja.pdf",
+              "name": "Predlog Pravilnika o spremembah Pravilnika o ukrepih za razvoj podeželja v Mestni občini Ljubljana za programsko obdobje 2015–2020",
+              "tags": [
+                {
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
+                }
+              ]
+            }
+          ]
         },
         {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 6. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+          "id": 3110,
+          "tags": [],
+          "name": "Predlog Odloka o spremembah in dopolnitvah Odloka o priznanjih Mestne občine Ljubljana s predlogom za hitri postopek",
+          "order": 15,
+          "text": null,
+          "documents": [
+            {
+              "id": 10311,
+              "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-Statutarno-pravne-komisije27.pdf",
+              "name": "Poročilo Statutarno pravne komisije",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 15,
+                  "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+                  "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
+              ]
             },
-            "result": true,
-            "absent": 25,
-            "documents": [],
-            "for": 241,
-            "against": 194,
-            "has_votes": true,
-            "motion_id": 1282,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 5. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
+            {
+              "id": 10310,
+              "url": "https://www.ljubljana.si/assets/Uploads/14.-tocka-spremembe-odloka-o-priznanjih.pdf",
+              "name": "Predlog Odloka o spremembah in dopolnitvah Odloka o priznanjih Mestne občine Ljubljana s predlogom za hitri postopek",
+              "tags": [
                 {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
+                  "id": 13,
+                  "name": "Gradivo",
+                  "slug": "gradivo"
                 }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 43,
-            "documents": [],
-            "for": 193,
-            "against": 222,
-            "has_votes": true,
-            "motion_id": 1281,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 4. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 31,
-            "documents": [],
-            "for": 196,
-            "against": 233,
-            "has_votes": true,
-            "motion_id": 1280,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 1., 2., 3. i 8.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 29,
-            "documents": [],
-            "for": 198,
-            "against": 233,
-            "has_votes": true,
-            "motion_id": 1279,
-            "has_outliers": true
-          }
+              ]
+            }
+          ]
         }
       ],
-      "id": 2393,
-      "debates": [
+      "documents": [
         {
-          "date": "2017-11-22",
-          "id": 828,
-          "end_speech": {
-            "speech_id": 125109,
-            "the_order": 35
-          },
-          "start_speech": {
-            "speech_id": 125098,
-            "the_order": 0
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 829,
-          "end_speech": {
-            "speech_id": 125144,
-            "the_order": 1430
-          },
-          "start_speech": {
-            "speech_id": 125143,
-            "the_order": 1397
-          }
+          "id": 9273,
+          "url": "https://www.ljubljana.si/assets/Uploads/zapisnik-18.-seje-MS-MOL.pdf",
+          "name": "Zapisnik 18. seje Mestnega sveta MOL",
+          "tags": []
         }
       ]
     },
-    {
-      "text": "Sprawozdanie Komisji Administracji i Spraw Wewn\u0119trznych o uchwale Senatu w sprawie ustawy o zmianie ustawy o cudzoziemcach oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": null
+    },
+    "session": {
+      "name": "18. seja Mestnega sveta MOL",
+      "id": 423,
+      "start_time": "2020-12-14T15:30:00",
+      "end_time": null,
+      "organizations": [
         {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem ww. poprawek",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 41,
-            "documents": [],
-            "for": 2,
-            "against": 417,
-            "has_votes": true,
-            "motion_id": 1278,
-            "has_outliers": true
-          }
+          "name": "Mestni svet MOL",
+          "acronym": null,
+          "slug": "1-mestni-svet-mol"
         }
       ],
-      "id": 2392,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 826,
-          "end_speech": {
-            "speech_id": 125088,
-            "the_order": 1339
-          },
-          "start_speech": {
-            "speech_id": 125085,
-            "the_order": 1328
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 827,
-          "end_speech": {
-            "speech_id": 125095,
-            "the_order": 1768
-          },
-          "start_speech": {
-            "speech_id": 125095,
-            "the_order": 1768
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pytania w sprawach bie\u017c\u0105cych.",
-      "votings": [],
-      "id": 2391,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 825,
-          "end_speech": {
-            "speech_id": 125052,
-            "the_order": 763
-          },
-          "start_speech": {
-            "speech_id": 125002,
-            "the_order": 674
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Regulaminowej, Spraw Poselskich i Immunitetowych o poselskim projekcie ustawy o zmianie ustawy o wykonywaniu mandatu pos\u0142a i senatora.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 16,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 2008",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 21,
-            "documents": [],
-            "for": 238,
-            "against": 185,
-            "has_votes": true,
-            "motion_id": 1277,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 24,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 2. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 25,
-            "documents": [],
-            "for": 169,
-            "against": 242,
-            "has_votes": true,
-            "motion_id": 1276,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 23,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 1. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 24,
-            "documents": [],
-            "for": 173,
-            "against": 240,
-            "has_votes": true,
-            "motion_id": 1275,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 22,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku o odrzucenie projektu ustawy w ca\u0142o\u015bci",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 35,
-            "documents": [],
-            "for": 173,
-            "against": 230,
-            "has_votes": true,
-            "motion_id": 1274,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2390,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 823,
-          "end_speech": {
-            "speech_id": 124956,
-            "the_order": 657
-          },
-          "start_speech": {
-            "speech_id": 124954,
-            "the_order": 627
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 824,
-          "end_speech": {
-            "speech_id": 124973,
-            "the_order": 1630
-          },
-          "start_speech": {
-            "speech_id": 124971,
-            "the_order": 1604
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie poselskiego projektu ustawy o zmianie niekt\u00f3rych ustaw w celu zwi\u0119kszenia udzia\u0142u obywateli w procesie wybierania, funkcjonowania i kontrolowania niekt\u00f3rych organ\u00f3w publicznych.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 4,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad skierowaniem projektu ustawy zawartego w druku nr 2001 do Komisji Nadzwyczajnej",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 22,
-            "documents": [],
-            "for": 357,
-            "against": 77,
-            "has_votes": true,
-            "motion_id": 1273,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku o odrzucenie w pierwszym czytaniu projektu ustawy zawartego w druku nr 2001",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 26,
-            "documents": [],
-            "for": 199,
-            "against": 235,
-            "has_votes": true,
-            "motion_id": 1272,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad zarz\u0105dzeniem przerwy w obradach",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 30,
-            "documents": [],
-            "for": 194,
-            "against": 235,
-            "has_votes": true,
-            "motion_id": 1271,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2389,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 780,
-          "end_speech": {
-            "speech_id": 123635,
-            "the_order": 1198
-          },
-          "start_speech": {
-            "speech_id": 124828,
-            "the_order": 923
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 822,
-          "end_speech": {
-            "speech_id": 124925,
-            "the_order": 1715
-          },
-          "start_speech": {
-            "speech_id": 124922,
-            "the_order": 1683
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Kultury i \u015arodk\u00f3w Przekazu o poselskim projekcie uchwa\u0142y w sprawie upami\u0119tnienia 650. rocznicy nadania przez Kazimierza Wielkiego przywileju dla Ormian w Polsce.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu uchwa\u0142y w brzmieniu z druku nr 1979",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 25,
-            "documents": [],
-            "for": 435,
-            "against": 0,
-            "has_votes": true,
-            "motion_id": 1270,
-            "has_outliers": false
-          }
-        }
-      ],
-      "id": 2388,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 820,
-          "end_speech": {
-            "speech_id": 124610,
-            "the_order": 601
-          },
-          "start_speech": {
-            "speech_id": 124613,
-            "the_order": 584
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 819,
-          "end_speech": {
-            "speech_id": 124607,
-            "the_order": 1396
-          },
-          "start_speech": {
-            "speech_id": 124607,
-            "the_order": 1396
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Zdrowia o uchwale Senatu w sprawie ustawy o zmianie ustawy o ochronie zdrowia psychicznego oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 5. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 40,
-            "documents": [],
-            "for": 1,
-            "against": 419,
-            "has_votes": true,
-            "motion_id": 1269,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 3. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 51,
-            "documents": [],
-            "for": 1,
-            "against": 408,
-            "has_votes": true,
-            "motion_id": 1267,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 4. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 48,
-            "documents": [],
-            "for": 0,
-            "against": 412,
-            "has_votes": true,
-            "motion_id": 1268,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 42,
-            "documents": [],
-            "for": 128,
-            "against": 289,
-            "has_votes": true,
-            "motion_id": 1266,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2387,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 816,
-          "end_speech": {
-            "speech_id": 124584,
-            "the_order": 1376
-          },
-          "start_speech": {
-            "speech_id": 124587,
-            "the_order": 1358
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 818,
-          "end_speech": {
-            "speech_id": 124604,
-            "the_order": 1780
-          },
-          "start_speech": {
-            "speech_id": 124605,
-            "the_order": 1778
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 817,
-          "end_speech": {
-            "speech_id": 124602,
-            "the_order": 1776
-          },
-          "start_speech": {
-            "speech_id": 124603,
-            "the_order": 1773
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie poselskiego projektu ustawy o zmianie ustawy o Krajowej Radzie S\u0105downictwa oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 5,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku o odrzucenie w pierwszym czytaniu projektu ustawy zawartego w druku nr 1697",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 27,
-            "documents": [],
-            "for": 255,
-            "against": 173,
-            "has_votes": true,
-            "motion_id": 1265,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2386,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 814,
-          "end_speech": {
-            "speech_id": 125394,
-            "the_order": 514
-          },
-          "start_speech": {
-            "speech_id": 125398,
-            "the_order": 396
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 815,
-          "end_speech": {
-            "speech_id": 124572,
-            "the_order": 1520
-          },
-          "start_speech": {
-            "speech_id": 124570,
-            "the_order": 1506
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie przedstawionego przez Prezydenta Rzeczypospolitej Polskiej projektu ustawy o S\u0105dzie Najwy\u017cszym.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 3,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku o odrzucenie w pierwszym czytaniu projektu ustawy zawartego w druku nr 2003",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 28,
-            "documents": [],
-            "for": 173,
-            "against": 256,
-            "has_votes": true,
-            "motion_id": 1264,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2385,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 812,
-          "end_speech": {
-            "speech_id": 124428,
-            "the_order": 395
-          },
-          "start_speech": {
-            "speech_id": 124284,
-            "the_order": 239
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 813,
-          "end_speech": {
-            "speech_id": 124443,
-            "the_order": 1496
-          },
-          "start_speech": {
-            "speech_id": 124442,
-            "the_order": 1490
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Finans\u00f3w Publicznych o rz\u0105dowym projekcie ustawy o zmianie ustaw w celu przeciwdzia\u0142ania wykorzystywaniu sektora finansowego do wy\u0142udze\u0144 skarbowych.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 23,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy z druku nr 2022",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 23,
-            "documents": [],
-            "for": 367,
-            "against": 47,
-            "has_votes": true,
-            "motion_id": 1263,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 18,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 1. i 2.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 28,
-            "documents": [],
-            "for": 192,
-            "against": 222,
-            "has_votes": true,
-            "motion_id": 1262,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2384,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 810,
-          "end_speech": {
-            "speech_id": 124265,
-            "the_order": 238
-          },
-          "start_speech": {
-            "speech_id": 124243,
-            "the_order": 206
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 811,
-          "end_speech": {
-            "speech_id": 124278,
-            "the_order": 1489
-          },
-          "start_speech": {
-            "speech_id": 124275,
-            "the_order": 1480
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Finans\u00f3w Publicznych o rz\u0105dowym projekcie ustawy o zmianie ustawy o Krajowej Administracji Skarbowej oraz ustawy Przepisy wprowadzaj\u0105ce ustaw\u0119 o Krajowej Administracji Skarbowej.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 7,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 2007",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 24,
-            "documents": [],
-            "for": 272,
-            "against": 157,
-            "has_votes": true,
-            "motion_id": 1261,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2383,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 808,
-          "end_speech": {
-            "speech_id": 124234,
-            "the_order": 205
-          },
-          "start_speech": {
-            "speech_id": 124218,
-            "the_order": 175
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 809,
-          "end_speech": {
-            "speech_id": 124238,
-            "the_order": 1479
-          },
-          "start_speech": {
-            "speech_id": 124235,
-            "the_order": 1475
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Polityki Spo\u0142ecznej i Rodziny o rz\u0105dowym projekcie ustawy o zmianie ustawy o systemie ubezpiecze\u0144 spo\u0142ecznych oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 4,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 2004, wraz z przyj\u0119tymi poprawkami",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 21,
-            "documents": [],
-            "for": 226,
-            "against": 209,
-            "has_votes": true,
-            "motion_id": 1260,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 33,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 5. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 22,
-            "documents": [],
-            "for": 246,
-            "against": 159,
-            "has_votes": true,
-            "motion_id": 1259,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 33,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek od 1. do 4. oraz 6.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 21,
-            "documents": [],
-            "for": 240,
-            "against": 166,
-            "has_votes": true,
-            "motion_id": 1258,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2382,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 806,
-          "end_speech": {
-            "speech_id": 124164,
-            "the_order": 126
-          },
-          "start_speech": {
-            "speech_id": 124151,
-            "the_order": 82
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 807,
-          "end_speech": {
-            "speech_id": 124189,
-            "the_order": 1470
-          },
-          "start_speech": {
-            "speech_id": 124191,
-            "the_order": 1448
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie komisyjnego projektu ustawy o zmianie ustawy Kodeks cywilny.",
-      "votings": [],
-      "id": 2381,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 805,
-          "end_speech": {
-            "speech_id": 124119,
-            "the_order": 1219
-          },
-          "start_speech": {
-            "speech_id": 124129,
-            "the_order": 1199
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Ochrony \u015arodowiska, Zasob\u00f3w Naturalnych i Le\u015bnictwa oraz Komisji Samorz\u0105du Terytorialnego i Polityki Regionalnej o rz\u0105dowym projekcie ustawy o zmianie ustawy o odpadach.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 5,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 2025, wraz z przyj\u0119tymi poprawkami",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 33,
-            "documents": [],
-            "for": 422,
-            "against": 0,
-            "has_votes": true,
-            "motion_id": 1257,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 25,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 12. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 30,
-            "documents": [],
-            "for": 405,
-            "against": 0,
-            "has_votes": true,
-            "motion_id": 1256,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 154,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 9. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 33,
-            "documents": [],
-            "for": 47,
-            "against": 226,
-            "has_votes": true,
-            "motion_id": 1254,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 26,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 11. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 38,
-            "documents": [],
-            "for": 381,
-            "against": 15,
-            "has_votes": true,
-            "motion_id": 1255,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 143,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 7. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 35,
-            "documents": [],
-            "for": 59,
-            "against": 223,
-            "has_votes": true,
-            "motion_id": 1253,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 24,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 5. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 37,
-            "documents": [],
-            "for": 398,
-            "against": 1,
-            "has_votes": true,
-            "motion_id": 1252,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 21,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 4. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 38,
-            "documents": [],
-            "for": 395,
-            "against": 6,
-            "has_votes": true,
-            "motion_id": 1251,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 150,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 2. i 3.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 35,
-            "documents": [],
-            "for": 53,
-            "against": 222,
-            "has_votes": true,
-            "motion_id": 1250,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 23,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 1., 6., 8., 10. i 13.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 41,
-            "documents": [],
-            "for": 268,
-            "against": 128,
-            "has_votes": true,
-            "motion_id": 1249,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2380,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 803,
-          "end_speech": {
-            "speech_id": 124079,
-            "the_order": 882
-          },
-          "start_speech": {
-            "speech_id": 124077,
-            "the_order": 854
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 804,
-          "end_speech": {
-            "speech_id": 124112,
-            "the_order": 1660
-          },
-          "start_speech": {
-            "speech_id": 124099,
-            "the_order": 1644
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Polityki Spo\u0142ecznej i Rodziny o obywatelskim projekcie ustawy o ograniczeniu handlu w niedziele.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 23,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 1958, wraz z przyj\u0119tymi poprawkami",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 27,
-            "documents": [],
-            "for": 254,
-            "against": 156,
-            "has_votes": true,
-            "motion_id": 1248,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 9,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 38. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 24,
-            "documents": [],
-            "for": 174,
-            "against": 253,
-            "has_votes": true,
-            "motion_id": 1247,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 25,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 37. i 39.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 22,
-            "documents": [],
-            "for": 237,
-            "against": 176,
-            "has_votes": true,
-            "motion_id": 1246,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 6,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 36. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 22,
-            "documents": [],
-            "for": 277,
-            "against": 155,
-            "has_votes": true,
-            "motion_id": 1245,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 19,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 34. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 23,
-            "documents": [],
-            "for": 265,
-            "against": 153,
-            "has_votes": true,
-            "motion_id": 1244,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 6,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 28. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 23,
-            "documents": [],
-            "for": 273,
-            "against": 158,
-            "has_votes": true,
-            "motion_id": 1242,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 37,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 30. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 32,
-            "documents": [],
-            "for": 262,
-            "against": 129,
-            "has_votes": true,
-            "motion_id": 1243,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 17,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 23. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 21,
-            "documents": [],
-            "for": 393,
-            "against": 29,
-            "has_votes": true,
-            "motion_id": 1241,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 16,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 20. i 21.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 29,
-            "documents": [],
-            "for": 414,
-            "against": 1,
-            "has_votes": true,
-            "motion_id": 1240,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 15,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 19. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 21,
-            "documents": [],
-            "for": 268,
-            "against": 156,
-            "has_votes": true,
-            "motion_id": 1239,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 131,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 15. i 16.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 19,
-            "documents": [],
-            "for": 265,
-            "against": 45,
-            "has_votes": true,
-            "motion_id": 1237,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 153,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 17. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 28,
-            "documents": [],
-            "for": 269,
-            "against": 10,
-            "has_votes": true,
-            "motion_id": 1238,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 29,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 14. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 30,
-            "documents": [],
-            "for": 255,
-            "against": 146,
-            "has_votes": true,
-            "motion_id": 1236,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 20,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 12. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 30,
-            "documents": [],
-            "for": 27,
-            "against": 383,
-            "has_votes": true,
-            "motion_id": 1235,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 171,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 11. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 24,
-            "documents": [],
-            "for": 37,
-            "against": 228,
-            "has_votes": true,
-            "motion_id": 1234,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 27,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 9., 13., 24. i 27.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 23,
-            "documents": [],
-            "for": 149,
-            "against": 261,
-            "has_votes": true,
-            "motion_id": 1233,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 15,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 6. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 39,
-            "documents": [],
-            "for": 263,
-            "against": 143,
-            "has_votes": true,
-            "motion_id": 1231,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 131,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 7. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 35,
-            "documents": [],
-            "for": 260,
-            "against": 34,
-            "has_votes": true,
-            "motion_id": 1232,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 141,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 5. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 37,
-            "documents": [],
-            "for": 257,
-            "against": 25,
-            "has_votes": true,
-            "motion_id": 1230,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 5,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawek 3. i 18.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 31,
-            "documents": [],
-            "for": 409,
-            "against": 15,
-            "has_votes": true,
-            "motion_id": 1229,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 25,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem ww. poprawek",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 32,
-            "documents": [],
-            "for": 166,
-            "against": 237,
-            "has_votes": true,
-            "motion_id": 1228,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 4,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 1. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 40,
-            "documents": [],
-            "for": 148,
-            "against": 268,
-            "has_votes": true,
-            "motion_id": 1227,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 7,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku o odrzucenie projektu ustawy w ca\u0142o\u015bci",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 41,
-            "documents": [],
-            "for": 155,
-            "against": 257,
-            "has_votes": true,
-            "motion_id": 1226,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2379,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 801,
-          "end_speech": {
-            "speech_id": 123992,
-            "the_order": 569
-          },
-          "start_speech": {
-            "speech_id": 123966,
-            "the_order": 515
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 802,
-          "end_speech": {
-            "speech_id": 124018,
-            "the_order": 1584
-          },
-          "start_speech": {
-            "speech_id": 124021,
-            "the_order": 1521
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie rz\u0105dowego projektu ustawy o zmianie ustawy o szczeg\u00f3lnych rozwi\u0105zaniach s\u0142u\u017c\u0105cych realizacji ustawy bud\u017cetowej na rok 2017.",
-      "votings": [],
-      "id": 2378,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 800,
-          "end_speech": {
-            "speech_id": 123949,
-            "the_order": 1314
-          },
-          "start_speech": {
-            "speech_id": 123926,
-            "the_order": 1291
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Kultury i \u015arodk\u00f3w Przekazu o poselskim projekcie uchwa\u0142y w sprawie pot\u0119pienia ideologii i skutk\u00f3w rewolucji bolszewickiej.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 4,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu uchwa\u0142y w brzmieniu z druku nr 1994",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 173,
-            "documents": [],
-            "for": 283,
-            "against": 0,
-            "has_votes": true,
-            "motion_id": 1225,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 5,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawki, a tym samym za podj\u0119ciem uchwa\u0142y w brzmieniu proponowanym przez wnioskodawc\u00f3w",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 38,
-            "documents": [],
-            "for": 157,
-            "against": 260,
-            "has_votes": true,
-            "motion_id": 1224,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2377,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 798,
-          "end_speech": {
-            "speech_id": 123900,
-            "the_order": 626
-          },
-          "start_speech": {
-            "speech_id": 123896,
-            "the_order": 602
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 799,
-          "end_speech": {
-            "speech_id": 123920,
-            "the_order": 1603
-          },
-          "start_speech": {
-            "speech_id": 123908,
-            "the_order": 1586
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie g\u0142\u00f3wnego inspektora pracy z dzia\u0142alno\u015bci Pa\u0144stwowej Inspekcji Pracy w 2016 r. wraz ze stanowiskiem Rady Ochrony Pracy oraz ze stanowiskiem Komisji do Spraw Kontroli Pa\u0144stwowej oraz Komisji Polityki Spo\u0142ecznej i Rodziny.",
-      "votings": [],
-      "id": 2376,
-      "debates": [
-        {
-          "date": "2017-11-24",
-          "id": 797,
-          "end_speech": {
-            "speech_id": 123869,
-            "the_order": 1863
-          },
-          "start_speech": {
-            "speech_id": 123879,
-            "the_order": 1826
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Kultury i \u015arodk\u00f3w Przekazu oraz Komisji Ochrony \u015arodowiska, Zasob\u00f3w Naturalnych i Le\u015bnictwa o poselskim projekcie ustawy o zmianie ustawy o ochronie przyrody oraz ustawy o ochronie zabytk\u00f3w i opiece nad zabytkami.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad propozycj\u0105 niezw\u0142ocznego przyst\u0105pienia do trzeciego czytania projektu ustawy",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 27,
-            "documents": [],
-            "for": 418,
-            "against": 14,
-            "has_votes": true,
-            "motion_id": 1223,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2375,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 795,
-          "end_speech": {
-            "speech_id": 123839,
-            "the_order": 1290
-          },
-          "start_speech": {
-            "speech_id": 123824,
-            "the_order": 1271
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 796,
-          "end_speech": {
-            "speech_id": 123844,
-            "the_order": 1741
-          },
-          "start_speech": {
-            "speech_id": 123844,
-            "the_order": 1741
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie poselskiego projektu ustawy o sta\u0142ym dodatku pieni\u0119\u017cnym dla niekt\u00f3rych emeryt\u00f3w, rencist\u00f3w i os\u00f3b pobieraj\u0105cych \u015bwiadczenia przedemerytalne, zasi\u0142ki przedemerytalne, emerytury pomostowe albo nauczycielskie \u015bwiadczenia kompensacyjne.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku o odrzucenie w pierwszym czytaniu projektu ustawy zawartego w druku nr 1913",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 30,
-            "documents": [],
-            "for": 248,
-            "against": 180,
-            "has_votes": true,
-            "motion_id": 1222,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2374,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 793,
-          "end_speech": {
-            "speech_id": 123806,
-            "the_order": 1243
-          },
-          "start_speech": {
-            "speech_id": 123793,
-            "the_order": 1220
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 794,
-          "end_speech": {
-            "speech_id": 123814,
-            "the_order": 1735
-          },
-          "start_speech": {
-            "speech_id": 123815,
-            "the_order": 1725
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Kultury i \u015arodk\u00f3w Przekazu o poselskim projekcie uchwa\u0142y w sprawie uczczenia pami\u0119ci gen. J\u00f3zefa Dowbor-Mu\u015bnickiego w 150. rocznic\u0119 urodzin i 80. rocznic\u0119 \u015bmierci.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 3,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu uchwa\u0142y w brzmieniu z druku nr 1980",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 37,
-            "documents": [],
-            "for": 417,
-            "against": 3,
-            "has_votes": true,
-            "motion_id": 1221,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2373,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 791,
-          "end_speech": {
-            "speech_id": 123786,
-            "the_order": 583
-          },
-          "start_speech": {
-            "speech_id": 123775,
-            "the_order": 570
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 792,
-          "end_speech": {
-            "speech_id": 123788,
-            "the_order": 1585
-          },
-          "start_speech": {
-            "speech_id": 123788,
-            "the_order": 1585
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Finans\u00f3w Publicznych o rz\u0105dowym projekcie ustawy o zmianie ustawy o por\u0119czeniach i gwarancjach udzielanych przez Skarb Pa\u0144stwa oraz niekt\u00f3re osoby prawne oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 4,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 2006",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 32,
-            "documents": [],
-            "for": 423,
-            "against": 1,
-            "has_votes": true,
-            "motion_id": 1220,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2372,
-      "debates": [
-        {
-          "date": "2017-11-22",
-          "id": 789,
-          "end_speech": {
-            "speech_id": 123757,
-            "the_order": 174
-          },
-          "start_speech": {
-            "speech_id": 123763,
-            "the_order": 150
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 790,
-          "end_speech": {
-            "speech_id": 123772,
-            "the_order": 1474
-          },
-          "start_speech": {
-            "speech_id": 123771,
-            "the_order": 1472
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie przedstawionego przez Prezydium Sejmu projektu uchwa\u0142y w sprawie powo\u0142ania i wyboru sk\u0142adu osobowego Komisji Nadzwyczajnej do rozpatrzenia projekt\u00f3w ustaw z zakresu prawa wyborczego.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu uchwa\u0142y w brzmieniu z druku nr 2050",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 43,
-            "documents": [],
-            "for": 380,
-            "against": 35,
-            "has_votes": true,
-            "motion_id": 1219,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 3,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad zarz\u0105dzeniem przerwy w obradach",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 61,
-            "documents": [],
-            "for": 177,
-            "against": 219,
-            "has_votes": true,
-            "motion_id": 1218,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2371,
-      "debates": [
-        {
-          "date": "2017-11-24",
-          "id": 788,
-          "end_speech": {
-            "speech_id": 123744,
-            "the_order": 1763
-          },
-          "start_speech": {
-            "speech_id": 123742,
-            "the_order": 1747
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Administracji i Spraw Wewn\u0119trznych oraz Komisji \u0141\u0105czno\u015bci z Polakami za Granic\u0105 o uchwale Senatu w sprawie ustawy o zmianie ustawy o repatriacji, ustawy o Karcie Polaka oraz ustawy o cudzoziemcach.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem ww. poprawek",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 38,
-            "documents": [],
-            "for": 1,
-            "against": 421,
-            "has_votes": true,
-            "motion_id": 1216,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 17. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 45,
-            "documents": [],
-            "for": 1,
-            "against": 414,
-            "has_votes": true,
-            "motion_id": 1217,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 6. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 31,
-            "documents": [],
-            "for": 0,
-            "against": 429,
-            "has_votes": true,
-            "motion_id": 1214,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 11. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 35,
-            "documents": [],
-            "for": 0,
-            "against": 425,
-            "has_votes": true,
-            "motion_id": 1215,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 8. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 32,
-            "documents": [],
-            "for": 2,
-            "against": 426,
-            "has_votes": true,
-            "motion_id": 1213,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem poprawek od 1. do 7. i 9.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 47,
-            "documents": [],
-            "for": 3,
-            "against": 409,
-            "has_votes": true,
-            "motion_id": 1212,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2370,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 785,
-          "end_speech": {
-            "speech_id": 123708,
-            "the_order": 1327
-          },
-          "start_speech": {
-            "speech_id": 123716,
-            "the_order": 1315
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 787,
-          "end_speech": {
-            "speech_id": 123728,
-            "the_order": 1772
-          },
-          "start_speech": {
-            "speech_id": 123725,
-            "the_order": 1769
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 786,
-          "end_speech": {
-            "speech_id": 123721,
-            "the_order": 1767
-          },
-          "start_speech": {
-            "speech_id": 123724,
-            "the_order": 1764
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie poselskiego projektu ustawy o zmianie ustawy o podatku dochodowym od os\u00f3b fizycznych.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 27,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 27,
-            "documents": [],
-            "for": 401,
-            "against": 5,
-            "has_votes": true,
-            "motion_id": 1210,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy z druku nr 2019, wraz z przyj\u0119t\u0105 poprawk\u0105",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 26,
-            "documents": [],
-            "for": 432,
-            "against": 0,
-            "has_votes": true,
-            "motion_id": 1211,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 8,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem wniosku o odrzucenie w pierwszym czytaniu projektu ustawy zawartego w druku nr 1914",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 29,
-            "documents": [],
-            "for": 225,
-            "against": 198,
-            "has_votes": true,
-            "motion_id": 1209,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2369,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 782,
-          "end_speech": {
-            "speech_id": 123675,
-            "the_order": 1270
-          },
-          "start_speech": {
-            "speech_id": 123690,
-            "the_order": 1244
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 784,
-          "end_speech": {
-            "speech_id": 123707,
-            "the_order": 1743
-          },
-          "start_speech": {
-            "speech_id": 123706,
-            "the_order": 1742
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 783,
-          "end_speech": {
-            "speech_id": 123705,
-            "the_order": 1740
-          },
-          "start_speech": {
-            "speech_id": 123702,
-            "the_order": 1736
-          }
-        }
-      ]
-    },
-    {
-      "text": "Pierwsze czytanie poselskiego projektu ustawy o zmianie ustawy Kodeks wyborczy oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 4,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad skierowaniem projektu ustawy zawartego w druku nr 2023 do Komisji Nadzwyczajnej",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 22,
-            "documents": [],
-            "for": 389,
-            "against": 45,
-            "has_votes": true,
-            "motion_id": 1208,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2368,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 780,
-          "end_speech": {
-            "speech_id": 123635,
-            "the_order": 1198
-          },
-          "start_speech": {
-            "speech_id": 124828,
-            "the_order": 923
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 781,
-          "end_speech": {
-            "speech_id": 123667,
-            "the_order": 1724
-          },
-          "start_speech": {
-            "speech_id": 123672,
-            "the_order": 1716
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Kultury i \u015arodk\u00f3w Przekazu o poselskim projekcie uchwa\u0142y w 150. rocznic\u0119 urodzin Prezydenta Ignacego Mo\u015bcickiego.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 11,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu uchwa\u0142y w brzmieniu z druku nr 2018",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 32,
-            "documents": [],
-            "for": 414,
-            "against": 3,
-            "has_votes": true,
-            "motion_id": 1207,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2367,
-      "debates": [
-        {
-          "date": "2017-11-24",
-          "id": 779,
-          "end_speech": {
-            "speech_id": 123386,
-            "the_order": 1746
-          },
-          "start_speech": {
-            "speech_id": 123387,
-            "the_order": 1744
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Kultury Fizycznej, Sportu i Turystyki o uchwale Senatu w sprawie ustawy o imprezach turystycznych i powi\u0105zanych us\u0142ugach turystycznych.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem poprawek 1. i 2.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 42,
-            "documents": [],
-            "for": 0,
-            "against": 418,
-            "has_votes": true,
-            "motion_id": 1206,
-            "has_outliers": false
-          }
-        }
-      ],
-      "id": 2366,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 777,
-          "end_speech": {
-            "speech_id": 123369,
-            "the_order": 1357
-          },
-          "start_speech": {
-            "speech_id": 123373,
-            "the_order": 1340
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 778,
-          "end_speech": {
-            "speech_id": 123385,
-            "the_order": 1777
-          },
-          "start_speech": {
-            "speech_id": 123385,
-            "the_order": 1777
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Samorz\u0105du Terytorialnego i Polityki Regionalnej o poselskim projekcie ustawy o zmianie ustawy o wychowaniu w trze\u017awo\u015bci i przeciwdzia\u0142aniu alkoholizmowi oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 20,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem w ca\u0142o\u015bci projektu ustawy w brzmieniu z druku nr 2024",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": true,
-            "absent": 33,
-            "documents": [],
-            "for": 246,
-            "against": 161,
-            "has_votes": true,
-            "motion_id": 1205,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 127,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 8. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 39,
-            "documents": [],
-            "for": 49,
-            "against": 245,
-            "has_votes": true,
-            "motion_id": 1204,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 6. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 33,
-            "documents": [],
-            "for": 176,
-            "against": 249,
-            "has_votes": true,
-            "motion_id": 1203,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 130,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 5. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 40,
-            "documents": [],
-            "for": 48,
-            "against": 242,
-            "has_votes": true,
-            "motion_id": 1202,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 121,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 2. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 38,
-            "documents": [],
-            "for": 55,
-            "against": 246,
-            "has_votes": true,
-            "motion_id": 1201,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 1. wniosku mniejszo\u015bci",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 37,
-            "documents": [],
-            "for": 168,
-            "against": 253,
-            "has_votes": true,
-            "motion_id": 1200,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 117,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad przyj\u0119ciem 1. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 42,
-            "documents": [],
-            "for": 53,
-            "against": 248,
-            "has_votes": true,
-            "motion_id": 1199,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2365,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 775,
-          "end_speech": {
-            "speech_id": 123305,
-            "the_order": 922
-          },
-          "start_speech": {
-            "speech_id": 123331,
-            "the_order": 883
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 776,
-          "end_speech": {
-            "speech_id": 123353,
-            "the_order": 1682
-          },
-          "start_speech": {
-            "speech_id": 123347,
-            "the_order": 1661
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji do Spraw Energii i Skarbu Pa\u0144stwa o rz\u0105dowym projekcie ustawy o rynku mocy.",
-      "votings": [],
-      "id": 2364,
-      "debates": [
-        {
-          "date": "2017-11-24",
-          "id": 774,
-          "end_speech": {
-            "speech_id": 123280,
-            "the_order": 1825
-          },
-          "start_speech": {
-            "speech_id": 123299,
-            "the_order": 1799
-          }
-        }
-      ]
-    },
-    {
-      "text": "Sprawozdanie Komisji Infrastruktury o uchwale Senatu w sprawie ustawy o zmianie ustawy Prawo o ruchu drogowym oraz niekt\u00f3rych innych ustaw.",
-      "votings": [
-        {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 12. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 43,
-            "documents": [],
-            "for": 0,
-            "against": 415,
-            "has_votes": true,
-            "motion_id": 1198,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 21,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 10. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 44,
-            "documents": [],
-            "for": 82,
-            "against": 313,
-            "has_votes": true,
-            "motion_id": 1196,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 11. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 45,
-            "documents": [],
-            "for": 1,
-            "against": 413,
-            "has_votes": true,
-            "motion_id": 1197,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 0,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 8. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 41,
-            "documents": [],
-            "for": 0,
-            "against": 419,
-            "has_votes": true,
-            "motion_id": 1195,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 5. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 42,
-            "documents": [],
-            "for": 0,
-            "against": 417,
-            "has_votes": true,
-            "motion_id": 1194,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 2,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem 4. poprawki",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 39,
-            "documents": [],
-            "for": 0,
-            "against": 419,
-            "has_votes": true,
-            "motion_id": 1193,
-            "has_outliers": false
-          }
-        },
-        {
-          "results": {
-            "abstain": 1,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem poprawek 2., 7. i 9.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 66,
-            "documents": [],
-            "for": 4,
-            "against": 389,
-            "has_votes": true,
-            "motion_id": 1192,
-            "has_outliers": true
-          }
-        },
-        {
-          "results": {
-            "abstain": 7,
-            "classification": "14",
-            "tags": [],
-            "text": "G\u0142osowanie nad odrzuceniem poprawek 1., 3. i 6.",
-            "is_outlier": false,
-            "session": {
-              "name": "Posiedzenie nr 52",
-              "orgs": [
-                {
-                  "acronym": "Sejm",
-                  "is_coalition": false,
-                  "id": 1,
-                  "classification": "sejm",
-                  "name": "Sejm"
-                }
-              ],
-              "date": "22. 11. 2017",
-              "org": {
-                "acronym": "Sejm",
-                "is_coalition": false,
-                "id": 1,
-                "classification": "sejm",
-                "name": "Sejm"
-              },
-              "date_ts": "2017-11-22T00:00:00",
-              "updated_at": "16. 10. 2018",
-              "in_review": false,
-              "id": 8
-            },
-            "result": false,
-            "absent": 53,
-            "documents": [],
-            "for": 198,
-            "against": 202,
-            "has_votes": true,
-            "motion_id": 1191,
-            "has_outliers": true
-          }
-        }
-      ],
-      "id": 2363,
-      "debates": [
-        {
-          "date": "2017-11-23",
-          "id": 772,
-          "end_speech": {
-            "speech_id": 123251,
-            "the_order": 1395
-          },
-          "start_speech": {
-            "speech_id": 123247,
-            "the_order": 1377
-          }
-        },
-        {
-          "date": "2017-11-24",
-          "id": 773,
-          "end_speech": {
-            "speech_id": 123260,
-            "the_order": 1798
-          },
-          "start_speech": {
-            "speech_id": 123274,
-            "the_order": 1781
-          }
-        }
-      ]
+      "classification": "regular",
+      "in_review": false
     }
-  ]
+  }
 }

@@ -2,9 +2,12 @@
   <transparent-wrapper>
     <p-search-dropdown
       :model-value="allItems"
-      :placeholder="$t('search_placeholder')"
       :groups="dropdownGroups"
-      :filter="filter"
+      :placeholder="$t('search_placeholder')"
+      :filter="textFilter"
+      :is-loading="isLoading"
+      dont-filter-locally
+      @update:filter="onFilterChanged"
       @select="selectCallback"
       @search="searchCallback"
     />
@@ -12,7 +15,9 @@
 </template>
 
 <script>
+import { debounce, uniqBy } from 'lodash-es';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import links from '@/_mixins/links.js';
@@ -22,58 +27,79 @@ export default {
     TransparentWrapper,
     PSearchDropdown,
   },
-  mixins: [common, links],
+  mixins: [common, links, cancelableRequest],
   data() {
-    const people = this.cardData.data?.results?.people || [];
-    const groups = this.cardData.data?.results?.groups || [];
+    const { cardState, cardData } = this.$root.$options.contextData;
 
-    const peopleItems = people.map((person) => ({
-      id: person.slug,
-      label: person.name,
-      image: this.getPersonPortrait(person),
-      selected: false,
-    }));
+    const people = cardData?.data?.results?.people || [];
+    const groups = cardData?.data?.results?.groups || [];
 
-    const groupItems = groups.map((group) => ({
-      id: group.slug,
-      label: group.name,
-      colorClass: 'xxx',
-      //   colorClass: `${group[0].person.group.acronym
-      //     .toLowerCase()
-      //     .replace(/[ +,]/g, '_')}-background`,
-      selected: false,
-    }));
-
-    const allItems = [...groupItems, ...peopleItems];
-
-    const dropdownGroups = [
-      {
-        id: 'groups',
-        label: this.$t('parties'),
-        items: groups.map((group) => group.slug),
-      },
-      ...groups.map((group) => ({
-        id: group.slug,
-        label: group.name,
-        items: people
-          .filter((person) => person?.group?.slug === group.slug)
-          .map((person) => person.slug),
-      })),
-    ];
-
-    const initialFilter = this.cardState.query || '';
+    const initialTextFilter = cardState?.text || '';
 
     return {
       people,
       groups,
-      allItems,
-      dropdownGroups,
-      filter: initialFilter,
+      textFilter: initialTextFilter,
+      isLoading: false,
     };
   },
+  computed: {
+    allItems() {
+      const peopleItems = this.people.map((person) => ({
+        id: person.slug,
+        label: person.name,
+        image: this.getPersonPortrait(person),
+        selected: false,
+      }));
+      const groupItems = this.groups.map((group) => ({
+        id: group.slug,
+        label: group.name,
+        color: group.color,
+        selected: false,
+      }));
+      return [...groupItems, ...peopleItems];
+    },
+    dropdownGroups() {
+      const personGroups = uniqBy(
+        this.people.map((person) => person?.group),
+        (g) => g?.slug
+      );
+      return [
+        {
+          id: 'groups',
+          label: this.$t('parties'),
+          items: this.groups.map((group) => group?.slug),
+        },
+        ...personGroups.map((group) => ({
+          id: group?.slug || 'null',
+          label: group?.name || ' ',
+          items: this.people
+            .filter((person) => person?.group?.slug === group?.slug)
+            .map((person) => person?.slug),
+        })),
+      ];
+    },
+    searchUrl() {
+      const url = new URL(this.cardData.url);
+      url.searchParams.set('text', this.textFilter);
+      return url.toString();
+    },
+  },
   methods: {
+    search: debounce(function searchVotes() {
+      this.isLoading = true;
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.people = response?.data?.results?.people || [];
+        this.groups = response?.data?.results?.groups || [];
+        this.isLoading = false;
+      });
+    }, 750),
+    onFilterChanged(newFilter) {
+      this.textFilter = newFilter;
+      this.isLoading = true;
+      this.search();
+    },
     selectCallback(itemId) {
-      // eslint-disable-next-line no-restricted-properties
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       const person = this.people.find((p) => p.slug === itemId);
       if (person) {

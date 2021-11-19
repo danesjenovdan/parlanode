@@ -1,57 +1,40 @@
 {
-  "person": {
-    "is_active": true,
-    "district": [22],
-    "name": "Igor Zor\u010di\u010d",
-    "gov_id": "P294",
-    "gender": "f",
-    "party": {
-      "name": "Stranka modernega centra",
-      "classification": "pg",
-      "acronym": "SMC",
-      "has_voters": false,
-      "is_coalition": true,
-      "id": 5
-    },
-    "type": "mp",
-    "id": 12,
-    "has_function": false
-  },
-  "created_at": "16.02.2021",
-  "created_for": "15.02.2021",
-  "results": {
-    "content": "Spo\u0161tovani kolegice poslanke, kolegi poslanci, gospe in gospodje, za\u010denjam 61. izredno sejo Dr\u017eavnega zbora, ki sem jo sklical na podlagi prvega in drugega odstavka 58. \u010dlena ter drugega odstavka 60. \u010dlena Poslovnika Dr\u017eavnega zbora.\n Obve\u0161\u010den sem, da se dana\u0161nje seje ne more udele\u017eiti naslednja poslanka in poslanci: Mojca \u017dnidari\u010d do 19. ure, Marijan Pojbi\u010d, Samo Bevk do 14. ure in dr. Franc Tr\u010dek do 13. ure.\n Na sejo sem vabil kandidata za novega predsednika Vlade, Karla Viktorja Erjavca in predsednika Vlade, Janeza Ivana Jan\u0161o, k 1. to\u010dki dnevnega reda, ter predstavnike Vlade k vsem to\u010dkam dnevnega reda. Vse prisotne lepo pozdravljam!\n Prehajamo na dolo\u010ditev dnevnega reda 61. izredne seje Dr\u017eavnega zbora. Predlog dnevnega reda ste prejeli v petek, 12. februarja 2021, s sklicem seje. O predlogu dnevnega reda bomo odlo\u010dali v skladu s prvim odstavkom 64. \u010dlena Poslovnika Dr\u017eavnega zbora. Predloga za umik to\u010dke z dnevnega reda seje ali za \u0161iritev dnevnega reda seje, nisem prejel. Zboru predlagam, da za dana\u0161njo sejo dolo\u010di dnevni red, kot ste ga prejeli s sklicem.\n Prehajamo na odlo\u010danje. Poslanke in poslance prosim, da preverite delovanje glasovalnih naprav.\n Glasujemo. Navzo\u010dih je 81 poslank in poslancev, za je glasovalo 76, proti nih\u010de.\n (Za je glasovalo 76.) (Proti nih\u010de.)\n Ugotavljam, da je dnevni red 61. izredne seje zbora dolo\u010den.\n \n Prehajamo na 1. TO\u010cKO DNEVNEGA REDA \u2013 PREDLOG ZA IZVOLITEV NOVEGA PREDSEDNIKA VLADE REPUBLIKE SLOVENIJE.\n Na podlagi 116. \u010dlena Ustave Republike Slovenije in 254. ter 255. \u010dlena Poslovnika Dr\u017eavnega zbora, je skupina 11. poslank in poslancev, s prvopodpisanim Branetom Golubovi\u0107em, predlagala Dr\u017eavnemu zboru, da za novega predsednika Vlade Republike Slovenije izvoli Karla Viktorja Erjavca in s tem izglasuje nezaupnico Vladi Republike Slovenije.\n Za dopolnilno obrazlo\u017eitev predloga, dajem besedo predstavniku predlagatelja, Branetu Golubovi\u0107u.",
-    "session": {
-      "name": "61. izredna seja",
-      "orgs": [
-        {
-          "name": "Dr\u017eavni zbor",
-          "classification": "dz",
-          "acronym": "DZ",
-          "has_voters": true,
-          "is_coalition": false,
-          "id": 1
-        }
-      ],
-      "date": "12. 2. 2021",
-      "org": {
-        "name": "Dr\u017eavni zbor",
-        "classification": "dz",
-        "acronym": "DZ",
-        "has_voters": true,
-        "is_coalition": false,
-        "id": 1
+  "data": {
+    "results": {
+      "id": 32508,
+      "content": "Lepo pozdravljeni. Pred vami je še ena lokacijska preveritev, in sicer za doživljajski most Muste. Za ureditev v izrazitem javnem interesu. Naročnik Mestna občina Ljubljana, pripravljavec Oddelek za urejanje prostora in naročnik Oddelek za varstvo okolja, izdelovalec elaborata pa Ljubljanski urbanistični zavod LUZ. Lokacija je med Fužinami in Štepanjskim naseljem, prikazujemo vam kakšno lokacijo s to črtkano črto bi bila možna, koliko bi bilo možno v OPN-ju predvideno lokacijo mostu premakniti in sedanja lokacija, ki je bila tudi potrjena na arhitekturnem natečaju pač presega ta odmik. To je pravzaprav edini razlog zaradi česar je bilo potrebno narediti lokacijsko preveritev. Lokacija še tako na pogledu iz zraka. In še pogled na obe ureditvi tako na Štepanjski kot na Fužinski strani, ki bosta povezani z novim doživljajskim mostom. Prikaz še tlorisne situacije. Sam postopek je potekal kot običajno, z javno razgrnitvijo 14 dni, pridobili smo 1 pripombo, na katero smo odgovorili, kar vidite v gradivu, vendar kakšnih posebnih pripomb seveda na to ureditev ni bilo. Pravna podlaga je tudi tukaj zelo jasna. Gre za pogoj OPN-ja, ki bi onemogočil izvedbo načrtovane investicije in zato v ta namen lokacijska preveritev. Prav tako pa je v skladu s cilji urejanja prostora in v skladu z javnim interesom in varstvom okolja. Sklep, pomembno je zadnji stavek: »dopušča se premik mostu ali brvi za več kot 50 m do največ 100 m od lokacije prikazane v občinskem prostorskem načrtu«. Tako pa še vizualizacija, kako bo peš in kolesarski most izgledal, in še ena. Najlepša hvala.",
+      "the_order": 62,
+      "person": {
+        "slug": "309-liljana-jankovic-grobelsek",
+        "name": "Liljana Jankovič Grobelšek",
+        "honorific_prefix": "dr.",
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": null,
+        "image": null
       },
-      "date_ts": "2021-02-12T01:00:00",
-      "updated_at": "16. 2. 2021",
-      "in_review": false,
-      "id": 1333
+      "start_time": "2021-09-27T15:30:00",
+      "votes": [],
+      "session": {
+        "name": "25. seja Mestnega sveta MOL",
+        "id": 1450,
+        "start_time": "2021-09-27T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      }
     },
-    "quote_id": null,
-    "the_order": 0,
-    "quoted_text": null,
-    "speech_id": 212999,
-    "end_idx": null,
-    "start_idx": null
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    }
   }
 }

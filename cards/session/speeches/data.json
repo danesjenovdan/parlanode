@@ -1,225 +1,11 @@
 {
-  "id": 79,
+  "id": 1437,
   "data": {
     "results": [
       {
-        "id": 15539,
-        "content": "Spoštovane svetnice, svetniki, gospe in gospodje. Predlagam, da pričnemo s 24. sejo Mestnega sveta Mestne občine Ljubljana, zadnjo pred počitnicami. Lepo prosim, da izklopite mobilne telefone. Dvorana prezračena, hladna, mize, stoli, tipke in mikrofoni razkuženi. Prisotnih je 37 svetnic in svetnikov, opravičila se je gospa Kociper. Lahko pričnemo z delom. S sklicem ste prejeli predlog dnevnega reda 24. seje Mestnega sveta Mestne občine Ljubljana. Po sklicu seje ste prejeli predlog za razširitev dnevnega reda z novo 22. točko z naslovom Predlog  Sklepa o odvzemu statusa grajenega javnega dobra – na nepremičninah ID znak: parcela 1721 178/17, parcela 1721 178/18 in parcela 1721 178/19 in odpiram razpravo o dnevnem redu. Ni razprave. Ugotavljam navzočnost. Rezultat navzočnosti: 36. Glasovanje poteka O PREDLOGU SKLEPA: Dnevni red 24. seje Mestnega sveta Mestne občine Ljubljana z dne 5. 7. 2021 se razširi z novo 22. točko z naslovom »Predlog  Sklepa o odvzemu statusa grajenega javnega dobra – na nepremičninah ID znak: parcela 1721 178/17, parcela 1721 178/18 in parcela 1721 178/19​«. Prosim za vaš glas. 37 ZA. 3 PROTI. Sprejeto. In sedaj glasujemo o dnevnem redu: Mestni svet Mestne občine Ljubljana sprejme predlog Dnevnega reda 24. seje Mestnega sveta, skupaj s sprejeto spremembo. Prosim za vaš glas. 32 ZA. 0 PROTI. Sprejeto. Gremo na točko 1. AD 1. POTRDITEV ZAPISNIKA 23. SEJE MESTNEGA SVETA MESTNE OBČINE LJUBLJANA Razprava. Ni razprave. Ugotavljam navzočnost. Rezultat navzočnosti: 32. Glasujemo O PREDLOGU SKLEPA: Mestni svet Mestne občine Ljubljana potrdi Zapisnik 23. seje Mestnega sveta Mestne občine Ljubljana z dne 31. 5. 2021. Prosim za vaš glas. 41 ZA. 0 PROTI. Hvala, sprejeto. Gremo na točko 2. AD 2. VPRAŠANJA IN POBUDE SVETNIC IN SVETNIKOV TER ODGOVORI NA VPRAŠANJA IN POBUDE SVETNIC IN SVETNIKOV Gradivo za to točko ste prejeli s sklicem in po sklicu seje. Pisno vprašanje z zahtevo za ustno predstavitev je poslal Svetniški klub Levica glede omogočanja pogojev v OPN – ID za izgradnjo blokov na zelenicah v ČS Šiška. Vprašanja in pobude so poslali: ga. Ana Zagožen glede polnjenja vozil na ulične svetilke, znižanja turistične takse v MOL, g. Stariha glede poimenovanja jase v parku Tivoli, Svetniški klub Levica glede ozelenitve Dunajske ceste, ga. Katja Damij glede ustanovitve novega delovnega telesa mestnega sveta – odbora za digitalizacijo. In Svetniški klub NSi glede nošenja mask med tekmo v dvorani Stožice. Prejeli ste tudi odgovore na vprašanja s 23. seje. Besedo za ustno postavitev dajem g. Jakopoviču, 3 minute. Izvolite.",
-        "the_order": 1,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "261-zoran-jankovic",
-          "name": "Zoran Janković",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "start_time": "2021-07-05T15:30:00",
-        "votes": [
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 91.11111111111111,
-              "max_option": "for"
-            },
-            "id": 2438,
-            "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 23. seje Mestnega sveta Mestne občine Ljubljana z dne 31. maja 2021.",
-            "votes": {
-              "for": 41,
-              "against": 0,
-              "absent": 3,
-              "abstain": 1
-            }
-          }
-        ]
-      },
-      {
-        "id": 15540,
-        "content": "Hvala lepa. Vprašanje se nanaša na omogočanje pogojev za izgradnjo blokov Videoarta d.o.o., v lasti podjetja Bojana Gjure na zelenicah v ČS Šiška. Spremembe se nanašajo na zelene površine v Šišenski soseski 6, ki obsega območje med Vodnikovo, Rašiško in Celovško ter Kavadarsko cesto, vse predvidevajo gradnjo večstanovanjskih stavb s pritličjem in tremi nadstropji na štirih lokacijah v soseski, ki so trenutno nepozidane. Ena od sprejetih pobud celo posega v območje, kjer je bila do sedaj dopustna le gradnja objektov za vzgojo in izobraževanje. Vprašanje se nekako glasi, kako utemeljujete ustreznost spremembe namenske rabe iz območja centralnih dejavnosti za vzgojo in izobraževanje v območje centralnih dejavnosti, kjer je mogoča gradnja poslovne in ali stanovanjske stavbe glede na dejstvo, da se območje nahaja neposredno ob Poti spomina in tovarištva ter v območju neposredno poleg šole? Kako utemeljujete ustreznost spremembe namenske rabe iz območja zelenih površin, parkov v območje pretežno stanovanjskih površin, kjer je mogoča gradnja poslovnega in stanovanjskega objekta? Zakaj so bile pravzaprav enake pobude na predmetnih parcelah ob zadnjem sprejemanju dopolnitev OPN-ID zavrnjene, tokrat pa ne? Kako so se spremenila strokovna stališča? Hvala.",
-        "the_order": 2,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "237-milan-jakopovic",
-          "name": "Milan Jakopovič",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Levica ",
-            "acronym": "",
-            "slug": "20-levica"
-          },
-          "image": null
-        },
-        "start_time": "2021-07-05T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 15541,
-        "content": "Hvala lepa. Odgovor bo podal g. Gajšek, načelnik oddelka.",
-        "the_order": 3,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "261-zoran-jankovic",
-          "name": "Zoran Janković",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "start_time": "2021-07-05T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 15542,
-        "content": "Spoštovani župan, podžupanja, podžupani, mestne svetnice in mestni svetniki. V znani zadevi, ki jo je povedal gospod iz stranke Levica, Šišenska soseska 6 je zadeva takšna – gre za dolgoletni spor, že iz sredine 90-ih let med Mestno občino Ljubljana in gospodom Gjuro oziroma podjetjem Videoart. Trenutno je stanje tako, da smo lahko vsi nezadovoljni, tudi krajani so nezadovoljni, kot so se izrazili. Dejstva so pa naslednja, tri dejstva so, trenutno je poravnava na sodišču, še ni končana med MOL in gospodom Gjuro oz. podjetjem Videoart. Se pravi poravnava še ni končana. Hkrati je začel, so začeli stanovalci vseh teh blokov postopek po ZVETL-u, določitev pripadajočega zemljišča in tudi ta postopek še ni končan. In tretje dejstvo je, da je gospod Gjura oz. podjetje Videoart dalo v četrtnih spremembah in dopolnitvah pobudo za to, da bi se omogočila gradnja štirih objektov. Zdaj seveda, v primeru in edino v primeru, poudarjam, če bi se vsi strinjali, se pravi tako vsi stanovalci, ki so začeli postopek po ZVETL-u, tako vsi stanovalci, ki na eni strani nastopajo proti gospodu Gjuri v tem postopku pri ZVETL-u, Mestna občina Ljubljana in gospod Gjura v postopku poravnave na sodišču bi lahko prišlo do kompromisa, ki se mu reče, da mestna občina pridobi zemljišča, ki jih potrebuje v javnem interesu, ceste, pešpoti in javne površine, da stanovalci dobijo tisto, kar jim pripada kot pripadajoče zemljišče k stanovanjskim blokom, to je postopek po ZVETL-u in da gospod Gjura oziroma podjetje Videoart pridobi te štiri lokacije. To je zdaj možno. Mi smo seveda dali to kot dopolnjen osnutek, v javno razgrnitev in seveda zdaj čakamo na neke materialne dokaze, da bi se to v jeseni zgodilo, če se bo. Hvala lepa. AD 3. POROČILO ŽUPANA Za obdobje od 31. maja do danes. Junija je Turizem Ljubljana predstavil tematsko obarvane pakete za eno- ali večdnevna doživetja našega mesta ter začel novo komunikacijsko kampanjo Tujina Ljubljana, predstavljena je tudi aplikacijo Nexto, namenjeno odkrivanju Plečnikovih vizij in Turizem Ljubljana je proslavil svojih 20 let delovanja. Junija smo odprli prenovljene prostore kar šestih vrtcev: Vrtec Miškolin, enota Rjava cesta; Vrtec Ciciban, enota Ajda; Vrtec Jelka, enota Palčki; Vrtec Viški gaj, enota Zarja; Vrtec Kolezija, enota Murgle ter Vrtec Pedenjped v okviru nadgradnje OŠ Nove Fužine. Vse ravnateljice so na otvoritvi rekle, da imajo zdaj najlepši vrtec v najlepšem mestu. Odprli smo tudi nadgrajene objekte OŠ Vrhovci in OŠ Nove Fužine, novi prizidek OŠ Koseze ter prenovljeni igrišči na OŠ Franca Rozmana Stane in Mirana Jarca. S prenovami šol in vrtcev višamo kakovost na področju izobraževanja in bivanja za naše najmlajše. Poudarjam še enkrat, tudi letos bo šlo tretjino proračuna za predšolsko in šolsko vzgojo. 1. junija smo vzpostavili neposredno linijo mestnih avtobusov, s katero sodelavcem UKC Ljubljana in Onkološkega inštituta omogočamo lažji prihod na delovno mesto. In tudi danes oziroma od 1. julija deluje Kavalir na tem področju, pilotni, brezplačni prevoz na klic, imenuje se pa Klinko Kavalir, Evropski projekt. Med 1. in 19. junijem je potekal Festival Parada ponosa, zaključek s sprevodom po ljubljanskih ulicah (19. junija). Jaz sem bil, gospe Zagožen ni bilo, ki sem jo čakal, ko sem obljubil, da jo peljem gor na oder. 2. junija je Lekarna Ljubljana prejela sodbo Upravnega sodišča, v kateri je sodišče ugodilo tožbi lekarne glede uvrstitve Lekarne Vilharjeva v mrežo lekarn na območju MOL. Mi smo ministrstvu poslali, da nam da soglasje, ker je naložilo sodišče ministrstvu, da ponovno odloči. 6. junija je na stadionu Stožice potekal finale UEFA evropskega prvenstva v nogometu do 21 let. Vsi prezadovoljni razen mene, ker ni bila slovenska reprezentanca v finalu, ampak nažalost. Imeli smo številne akcije, 21 dreves posadili in tudi dokaz na Stritarjevi ulici je bil primer krožnega gospodarstva. 7. junija smo podelili Plečnikova odličja za letošnje leto. 8. junija smo sodelovali na tretji konferenci o mobilnosti. 9. junija je na Kongresnem trgu potekal tradicionalni sprejem najuspešnejših devetošolcev in devetošolk ljubljanskih osnovnih šol, izjemen koncert so pripravili dijaki oziroma bodoči dijaki, sedanji osnovnošolci in moram povedati, da jih je teh zlatih odličnjakov kar 958 bilo. 24. junija pa je potekalo zaključno srečanje ljubljanskih maturantk in maturantov. 10. junija smo se na žalni seji Mestnega sveta MOL poslovili od našega častnega meščana Franca Severja Frante - partizana, letalca, pisatelja in gospodarstvenika. 10. junija smo obeležili 40. obletnico OŠ Dravlje in odkrili kip Milanu Mravljetu. 10. junija smo podelili Župančičeve nagrade, najvišja priznanja Mestne občine Ljubljana na področju umetnosti in kulture. Nagrado za življenjsko delo je prejela arhitektka, scenografka in režiserka Meta Hočevar, nagrade za dveletno ustvarjanje pa koreografka in pedagoginja Andreja Podrzavnik, intermedijska umetnica Maja Smrekar in gledališki režiser Žiga Divjak, ki je bil tudi spet nagrajen na Borštnikovem srečanju. 10. junija smo obeležili svetovni dan art nuvoja - nove umetnosti. 11. junija so v Živalskem vrtu obeležili mednarodni dan risov. Od 11. do 22. junija je na Kongresnem trgu potekal 13. festival Junij v Ljubljani, ves čas brezplačen. 12. in 13. junija je bil v Ljubljani pravi kolesarski vikend s tremi velikimi kolesarskimi dogodki: 40. Maraton Franja BTC City, Barjanka in peta etapa kolesarske dirke po Sloveniji. 15. junija smo podelili certifikate udeleženkam programa Izobraževalnega centra Pika Janeza Levca. 15. junija smo obeležili svetovni dan boja proti nasilju nad starejšimi. 17. junija smo praznovali 10. obletnico zavoda Šport Ljubljana in ta dan so bile športne aktivnosti brezplačne, se pravi ko smo vse športne objekte združili pred 10. leti v zavod Šport Ljubljana. Ker že dlje časa opažamo nepravilnosti v zvezi z odlaganjem odpadkov, je Voka Snaga 17. junija začela nameščati opozorilne nalepke na podzemne zbiralnice v središču mesta in zabojnike na ekootokih. Z njimi uporabnike opozarjamo na obveznosti, prepovedi in predvidene globe pri nepravilnem odlaganju odpadkov. 18. junija so Mladi zmaji v okviru projekta Zgodbe iz Govorilnic na Špici postavili tri odslužene telefonske govorilnice in pa samopostrežno servisno popravljalnico koles. Potekal je Sejem na zraku, v okviru Slovenskih dnevov knjig. Obeležili smo 20. junija  svetovni dan beguncev. 21. junija se je zaključil drugi krog projekta Podjetno nad izzive v Ljubljanski urbani regiji (PONI LUR). 22. junija smo se udeležili odprtja stanovanjskega objekta Skupnost za mlade Gerbičeva, ki ga je odprl Republiški stanovanjski sklad. 22. junija smo se udeležili slavnostne seje predsedstva, podelitve listin in zlatih plaket ZZB NOB Slovenije. 23. junija je zaživela nova bralna enota Knjižnice pod krošnjami na Fužinah. To je že deveta bralna enota. 24. junija smo ob 30. obletnici samostojnosti Slovenije na Trgu mladinskih delovnih brigad odkrili spomenik braniteljem mesta Ljubljana 1991. Spomenik, delo kipark Metke Zupanič in Lade Sedlaček, smo postavili na predlog in pobudo vseh treh veteranskih združen v Ljubljani, kar je izjemno lepo. Slavnostni govornik je bil prvi predsednik Republike Slovenije gospod Milan Kučan. Med 25. in 27. junijem je potekal festival sodobnega plesa Poletna Plesna Vesna. 27. junija je na sklepni slovesnosti 56. Festivala Borštnikovo srečanje članica igralskega ansambla Mestnega gledališča ljubljanskega Jette Ostan Vejrup prejela Borštnikov prstan za leto 2021. Nagrajeni so bili tudi drugi člani Mestnega gledališča (dve nagradi) in Slovenskega mladinskega gledališča (devet nagrad). Čestitke vsem! Kar 9 nagrad. Potekale so na na Gospodarskem razstavišču v štirih dneh javne obravnave razgrnjenega Občinskega prostorskega načrta Mestne občine Ljubljana. Sam sem bil na dveh. Tam, kjer sem bil so kolegi, ki jih vodi Miran Gajšek odlično predstavili gradivo. Moram priznati, da je prva dva dneva, ko sem bil bilo samo vprašanje, zakaj ne moje zemljišč in zelo korektno nastopanje. 1. julija smo na Kongresnem trgu slavnostno odprli 69. Ljubljana Festival, izjemen dirigent maestra Valerija Gergijeva. 2. julija smo na Grajskem hribu odprli repliko Plečnikovega čebelnjaka. Do 10. julija Kinodvor vabi v letni kino Kinodvorišče, od 15. julija do 7. avgusta pa bo na Ljubljanskem gradu potekal Film pod zvezdami. Do 28. avgusta poteka festival Poletje v stari Ljubljani. Do 31. avgusta pa zbiramo predloge za kandidate za Drevo leta 2021. Danes smo si z nekaterimi, ki so bili pripravljeni ogledali prenovljeno Cukrarno. Mislim, da lahko vsem tistim, ki niso bili povem, da je objekt izjemno lep, imamo že uporabno dovoljenje, se zaključuje. Otvoritev bo septembra, 23. uradna in do konca tedna, smo si ogledali tudi Rog, ki je zdaj počiščen. Makro 5 pričenja konec tedna z podpisom pogodbe za gradnjo, 14 mesecev, vrednost je bila pa 14.2 mio brez DDV-ja. Sprejela nas je direktorica Centra Rog, Renata Zamida. Na mednarodnem sodelovanju smo skupaj z Brusljem in Barcelono sodelovali na spletnem dogodku o vlogi dreves in gozda v mestih. Ljubljana je že drugo leto zapored prepoznana kot svetovno mesto dreves. Tistim, ki pišejo razno razne flanke, le v vednost. 15. junija smo sodelovali na spletni otvoritvi URBACT City Festivala in predstavili projekt Čebelje poti. 16. junija smo se prek spleta udeležili srečanja s podpredsednikom Evropske komisije Dombrovskisom. Isti dan smo se udeležili še srečanja Odbora direktorjev Lige zgodovinskih mest; 24. junija pa smo na spletni konferenci Lige zgodovinskih mest predstavili projekt Cukrarna. 17. junija je v Šibeniku potekal on-line sestanek upravnega in političnega odbora mreže CIVINET. 18. junija smo sodelovali na spletnem dogodku, ki je potekal v Braziliji, in predstavili dosežke Ljubljane, Zelene prestolnice Evrope 2016. Gostili smo veleposlanika Španije in podžupanjo Sarajeva. In tisto, kar ni napisano, pristopili smo hitrem, naglem reševanju smradu v Zalogu, v sodelovanju z našo inšpekcijo, ki jo vodi Barbara Barle in pa državnim inšpektorjem tako, da smo pobrali že v petek vzorce, čakamo rezultate vzorčenja, ki naj bi bili ta teden in potem takoj gremo v čiščenje te nesnage. O vem tem je obveščen predsednik ČS in predsednik civilne iniciative. Na srečo s civilno iniciativo je bilo izjemno korektno pogovarjanje, dogovarjanje tako, da upamo, da bomo to rešili. To samo kaže, da moramo v Ljubljani narediti dve »sežigalnice«, da ne bi kdo kaj rekel, ampak sežigalnice za blato, to bo na čistilni napravi, ta druga je za predelanje smeti, ki bo pa na Tetolu. Hvala lepa za prijaznost. AD 4. KADROVSKE ZADEVE Gradivo ste prejeli po sklicu seje. Prosim gospoda Čerina za uvodno obrazložitev.",
-        "the_order": 4,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "267-mag-miran-gajsek",
-          "name": "Mag. Miran Gajšek",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "start_time": "2021-07-05T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 15543,
-        "content": "Hvala za besedo gospod župan, cenjene kolegice in kolegi. Komisija vam v presojo in v sprejem predlaga 5 sklep in 6 mnenj. Vse sklepe in mnenja, razen zadnjega, ki se nanaša na DSO Fužine, je komisija sprejela soglasno, z aklamacijo. Hvala lepa.",
-        "the_order": 5,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "259-ales-cerin",
-          "name": "Aleš Čerin",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png"
-        },
-        "start_time": "2021-07-05T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 15544,
-        "content": "Hvala lepa. Gremo na prvo točko - predlog Sklepa o razrešitvi in imenovanju nadomestnih predstavnikov Mestnega sveta Mestne občine Ljubljana v Svetu za preventivo in vzgojo v cestnem prometu. Razprava, prosim. Ni razprave. Ugotavljam navzočnost po celotni točki. Rezultat navzočnosti: 41. Glasujemo o PREDLOGU SKLEPA: Janeza Stariho se razreši z mesta predsednika Sveta za preventivo in vzgojo v cestnem prometu. Drugič, v Svet za preventivo in vzgojo v cestnem prometu se kot predstavnika Mestnega sveta Mestne občine Ljubljana imenujeta Emilija Mitrović Miloš kot predsednica in Jožef Horvat kot član. Mandat imenovanih je vezan na mandat sveta. Prosim za vaš glas. 34 ZA. 0 PROTI. Sprejet. Gremo na 2. predlog Sklepa o prenehanju mandata in imenovanju nadomestne predstavnice Mestne občine Ljubljana v Svet Osnovne šole Vodmat. Razprava prosim. Ni. Glasujemo o PREDLOGU SKLEPA: Tomažu KLEMENCU preneha mandat člana Sveta Osnovne šole Vodmat. V Svet Osnovne šole Vodmat se za predstavnico Mestne občine Ljubljana  imenuje Nina Rems. Mandat imenovane je vezan na mandat sveta šole. Prosim za vaš glas. 40 ZA. 0 PROTI. Sprejeto. Gremo na 3. predlog Sklepa o imenovanju treh predstavnikov Mestne občine Ljubljana v Svet Osnovne šole Danile Kumar. Razprava. Ni. Glasujemo o PREDLOGU SKLEPA: V Svet Osnovne šole Danile Kumar se imenujejo: Amir Crnojević, Urška Honzak, Bojan Rotar. Mandat imenovanih traja štiri leta. Prosim za vaš glas. 40 ZA. 0 PROTI. Gremo na 4. predlog Sklepa o imenovanju treh članov Mestne občine Ljubljana v Svet javnega zavoda Mednarodni grafični likovni center. Razprava. Ni razprave. Glasovanje poteka o PREDLOGU SKLEPA: V Svet  javnega zavoda  Mednarodni grafični likovni center se imenujejo Jan Babnik, Anton Kastelic, Mojca Škrinjar. Mandat imenovanih traja štiri leta. Prosim za vaš glas. 40 ZA. 0 PROTI. 5. predlog Mnenja h kandidaturi za ravnateljico Osnovne šole Bežigrad. Izvolite, gospod Čadež.",
-        "the_order": 6,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "261-zoran-jankovic",
-          "name": "Zoran Janković",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "start_time": "2021-07-05T15:30:00",
-        "votes": [
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 75.55555555555556,
-              "max_option": "for"
-            },
-            "id": 2439,
-            "title": "I. Janeza STARIHO se razreši z mesta predsednika Sveta za preventivo in vzgojo v cestnem prometu. II. V Svet za preventivo in vzgojo v cestnem prometu se kot predstavnika Mestnega sveta Mestne občine Ljubljana i m e n u j e t a : -   Emilija MITROVIĆ MILOŠ – predsednica -   Jožef HORVAT– član. III. Mandat imenovanih je vezan na mandat sveta.",
-            "votes": {
-              "for": 34,
-              "against": 0,
-              "absent": 2,
-              "abstain": 9
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 88.88888888888889,
-              "max_option": "for"
-            },
-            "id": 2440,
-            "title": "I. Tomažu KLEMENCU preneha mandat člana Sveta Osnovne šole Vodmat. II. V Svet Osnovne šole Vodmat se za predstavnico Mestne občine Ljubljana i m e n u j e : Nina REMS. Mandat imenovane je vezan na mandat sveta šole.",
-            "votes": {
-              "for": 40,
-              "against": 0,
-              "absent": 5,
-              "abstain": 0
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 88.88888888888889,
-              "max_option": "for"
-            },
-            "id": 2441,
-            "title": "I. V Svet Osnovne šole Danile Kumar s e i m e n u j e j o : -   Amir CRNOJEVIĆ -   Urška HONZAK -   dr. Bojan ROTAR II. Mandat imenovanih traja štiri leta.",
-            "votes": {
-              "for": 40,
-              "against": 0,
-              "absent": 5,
-              "abstain": 0
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 88.88888888888889,
-              "max_option": "for"
-            },
-            "id": 2442,
-            "title": "I. V Svet javnega zavoda Mednarodni grafični likovni center s e imenujejo: -  dr. Jan BABNIK -  Anton KASTELIC -  Mojca ŠKRINJAR II. Mandat imenovanih traja štiri leta.",
-            "votes": {
-              "for": 40,
-              "against": 0,
-              "absent": 5,
-              "abstain": 0
-            }
-          }
-        ]
-      },
-      {
-        "id": 15545,
-        "content": "Ja, hvala za besedo. Spoštovani vsi skupaj. Jaz, čeprav nisem več član Sveta zavoda Osnovne šole Bežigrad moram le tukaj povedati, da sem na nek način razočaran ali pa užaljen, ne vem kaj bi rekel, da predlagate zopet podporo gospe Maji Rakun Beber. V obdobju prejšnjega sveta zavoda, ko sem bil jaz član, je pred enim letom približno 7. 7. 2020 na glasovanju dobila od 11-ih glasov 3, to je svet zavoda. Ko so glasovali starši, je bilo 77% staršev za zamenjavo in, ko so glasovali učitelji, jih je bilo 80% za zamenjavo. Jaz sem že takrat prišel v besedni konflikt z gospodom Čerinom, ki se mu tu opravičujem, z vami ne bom prišel. Mislim, da je to bilo mimo pameti imenovanje. No, zdaj je bila gospa eno leto v.d. in glej ga vraga, imeli so predstavitev, imate notri za moje pojme eminentne ljudi, celo zaposlene na OŠ Bežigrad, z doktoratom in ne, vi greste podpreti zopet gospo Majo Rakun Beber. Tisti, ki imajo kakšne otroke na tej šoli, bodo vedeli kakšna ravnateljica je to in jaz mislim, da ste zamudili lepo priložnost, da se jo rešite na lep način, tako bom povedal, nič grdo. Za moje pojme gospa ni primerna za vodenje OŠ, navaja neke lepe besede, tu vidim v kandidaturi o sodelovanju, ne vem, kje ga je videla. Skratka, kar sem jaz tam bil 4 leta je bilo približno 20 anonimk, 20 – veste, kaj je to v štirih letih. Imela je preko 10 inšpekcijskih nadzorov, skratka težav je zvrhan koš. Zdaj pač jaz verjamem, da ne vem, vam je pri srcu ali kaj je to, zakaj jo tako podpirate, mislim pa, da bo jutri dan D, ko boste na lastni koži videli koliko je vredna, ko bo glasovanje. Hvala. Glasujemo o PREDLOGU SKLEPA: Maji Rakun Beber se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Bežigrad. Prosim za vaš glas. 30 ZA. 0 PROTI. Sprejeto. Gremo na 6. predlog Mnenja h kandidaturi za ravnateljico Osnovne šole Vižmarje Brod. Razprava. Ni razprave. Glasujemo o PREDLOGU SKLEPA: Nevenki Lamut se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Vižmarje Brod. Prosim za vaš glas. 38 ZA. 0 PROTI. Sprejeto. Gremo na 7. predlog Mnenja h kandidaturi za ravnatelja Srednje upravno administrativne šole Ljubljana. Razprava. Ni razprave. Glasovanje poteka o PREDLOGU SKLEPA: Dušanu Vodebu se da pozitivno mnenje h kandidaturi za ravnatelja Srednje upravno administrativne šole Ljubljana. Prosim za vaš glas. 42 ZA. 0 PROTI. Hvala lepa. Gremo na 8. predlog Mnenja h kandidaturi za ravnatelja oziroma ravnateljico Mladinskega doma Malči Beličeve. Razprava prosim. Ni. Glasujemo o PREDLOGU SKLEPA: Francetu Roglju in Miši Stržinar se da pozitivno mnenje h kandidaturi za ravnatelja oziroma ravnateljico Mladinskega doma Malči Beličeve. Prosim za vaš glas. 39 ZA. 0 PROTI. Sprejeto. Gremo na 9. predlog Mnenja h kandidaturi za direktorja Doma starejših občanov Ljubljana –Šiška. Razprava. Ni. Glasovanje poteka o PREDLOGU SKLEPA: Simonu Strgarju se da pozitivno mnenje h kandidaturi za direktorja Doma starejših občanov Ljubljana - Šiška. Prosim za vaš glas. 39 ZA. 1 PROTI. Sklep je sprejet. Gremo na 10. Predlog Sklepa o potrditvi sestave skupne liste kandidatov za člane Razvojnega sveta Ljubljanske urbane regije za mandatno obdobje 2021-2027. Razprava? Ni. Glasovanje poteka o PREDLOGU SKLEPA: Mestni svet Mestne občine Ljubljana potrjuje skupno listo kandidatov za člane Razvojnega sveta Ljubljanske urbane regije za mandatno obdobje 2021-2027. Prosim za vaš glas. 42 ZA. 0 PROTI. Gremo na 11. predlog Mnenja h kandidaturi za direktorja Doma starejših občanov Fužine. Razprava, prosim. Izvolite, gospod Horvat.",
-        "the_order": 7,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 32254,
+        "content": "To bi rad rekel. Rekli ste, da leta 2010 me ni bilo nikjer, ko so bile poplave. Glejte, gospod župan, to ja zame velika žalitev, jaz sem bil na upravi za zaščito in reševanje zaposlen leta 1994. Odlično smo sodelovali na lokaciji, ki imamo skupaj skladišče država, to je Roje 112, Obvozna pot, in vaši fantje, Kus, Oddelek za zaščito in reševanje. Sposojali smo si opremo, pomagali in zdaj, da meni očitate, da ste vi bili v škornjih. Dobro, da niste rekli, da ste bili kje na Havajih. Mislim, glejte, tako na pamet govoriti in tako tunkate, da je to prav žaljivo. Vi, če rečete, vas ni bilo nikjer. Kje pa bi mogel biti? Z vami, v vašem žepu, ali kje bi mogel biti, da bi me videli?",
+        "the_order": 91,
         "person": {
           "slug": "232-dr-zvone-cadez",
           "name": "dr. Zvone Čadež",
@@ -229,158 +15,18 @@
           "group": {
             "name": "Slovenska demokratska stranka ",
             "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "slug": "21-slovenska-demokratska-stranka",
+            "color": "#09a2cc"
           },
           "image": null
         },
-        "start_time": "2021-07-05T15:30:00",
-        "votes": [
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 66.66666666666667,
-              "max_option": "for"
-            },
-            "id": 2443,
-            "title": "Maji RAKUN BEBER se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Bežigrad.",
-            "votes": {
-              "for": 30,
-              "against": 2,
-              "absent": 13,
-              "abstain": 0
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 84.44444444444444,
-              "max_option": "for"
-            },
-            "id": 2444,
-            "title": "Nevenki LAMUT se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Vižmarje Brod.",
-            "votes": {
-              "for": 38,
-              "against": 0,
-              "absent": 7,
-              "abstain": 0
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 93.33333333333333,
-              "max_option": "for"
-            },
-            "id": 2445,
-            "title": "Dušanu VODEBU se da pozitivno mnenje h kandidaturi za ravnatelja Srednje upravno administrativne šole Ljubljana.",
-            "votes": {
-              "for": 42,
-              "against": 0,
-              "absent": 3,
-              "abstain": 0
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 86.66666666666667,
-              "max_option": "for"
-            },
-            "id": 2446,
-            "title": "Francetu ROGLJU in Miši STRŽINAR se da pozitivno mnenje h kandidaturi za ravnatelja oziroma ravnateljico Mladinskega doma Malči Beličeve.",
-            "votes": {
-              "for": 39,
-              "against": 0,
-              "absent": 6,
-              "abstain": 0
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 86.66666666666667,
-              "max_option": "for"
-            },
-            "id": 2447,
-            "title": "Mag. Simonu Strgarju se da pozitivno mnenje h kandidaturi za direktorja Doma starejših občanov Ljubljana - Šiška.",
-            "votes": {
-              "for": 39,
-              "against": 1,
-              "absent": 5,
-              "abstain": 0
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": true,
-              "max_option_percentage": 93.33333333333333,
-              "max_option": "for"
-            },
-            "id": 2448,
-            "title": "Mestni svet Mestne občine Ljubljana p o t r j u j e skupno listo kandidatov za člane Razvojnega sveta Ljubljanske urbane regije za mandatno obdobje 2021-2027.",
-            "votes": {
-              "for": 42,
-              "against": 0,
-              "absent": 3,
-              "abstain": 0
-            }
-          },
-          {
-            "result": {
-              "is_outlier": false,
-              "passed": false,
-              "max_option_percentage": 71.11111111111111,
-              "max_option": "against"
-            },
-            "id": 2466,
-            "title": "AMANDMA Svetniškega kluba Levica: V 1. členu se drugi in tretji odstavek spremenita tako, da se glasita: »Obratovalni čas linij od ponedeljka do sobote je od 5.10 do 23.00 ure in od 6.10 do 23.00 ure ob nedeljah ter praznikih, ki so dela prosti dnevi.« Obratovalni čas nočnih linij, ki povezujejo center mesta z območji: - Bežigrad – Črnuče, - Moste – Fužine – Zalog, - Šiška – Vižmarje – Brod, - Štepanjsko naselje, - Rudnik, - Vič in - Podutik, poteka od ponedeljka do sobote od 24.00 do 5. ure, ob nedeljah in praznikih, ki so dela prosti dnevi, od 24.00 do 6.00 ure ter 1. januarja od 00 do 24.00 ure.«",
-            "votes": {
-              "for": 4,
-              "against": 32,
-              "absent": 9,
-              "abstain": 0
-            }
-          }
-        ]
-      },
-      {
-        "id": 15546,
-        "content": "Hvala za besedo. Naj prvo pojasnim, da sem tudi sam član sveta DSO Fužine in naj rečem, da je svet kolektivni organ in gre v tem primeru za sklep sveta kot celote in ne sklep štirih članov, kot je bilo nekje prebrati. To bi morala recimo predsednica sveta nekako vedeti. Se je pa naredila škoda in povzročila nemir med zaposlenimi in stanovalci ter svojci z ravnanji nekaterih članov sveta, ki so izgleda plasirali napačne informacije znotraj doma in tako sedaj krožijo razne pobude, zbirajo se podpisi, pošiljajo anonimna pisma. Kot pričakovano se nekateri strinjajo s predlaganim kandidatom sveta, nekateri pa seveda ne. Marsikaj se piše o spornem ravnanju tako sedanje direktorice, kot tudi o gospodu Križaniču in to ne pelje nikamor, ker povzroča škodo in slabo voljo. Naj samo pojasnim, da je svet zavoda nadzorni organ in ima naslednje naloge: nadzira zakonitost dela in poslovanja javnega zavoda, spremlja, analizira in ocenjuje delovanje, predlaga ustanovitelju revizijo poslovanja, ki jo lahko opravi tudi notranji revizor ustanovitelja, ocenjuje delo direktorja, daje soglasje k strateškemu načrtu, programu dela, finančnemu načrtu, sistematizaciji delovnih mest, organizaciji dela, kadrovskemu načrtu, načrtu nabav in k zavodski kolektivni pogodbi ter nadzira njihovo izvajanje. Daje predhodno mnenje k imenovanju direktorja, sklepa pogodbo o zaposlitvi z direktorjem, odloča o pritožbah delavcev, ki se nanašajo na pravice, obveznosti in odgovornosti delavcev iz delovnega razmerja. Tako, da svet zavoda vsekakor bdi nad delovanjem zavoda in tu se z morebitno na novo imenovanje direktorja ne spremeni nič. Nenazadnje je sedaj na potezi Ministrstvo za delo, družino in socialne zadeve, ki da soglasje k imenovanju direktorja. Toliko z moje strani. Hvala. Predlagam, da podprete gospoda Križaniča za imenovanje.",
-        "the_order": 8,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
-        },
-        "start_time": "2021-07-05T15:30:00",
+        "start_time": "2021-10-18T15:30:00",
         "votes": []
       },
       {
-        "id": 15547,
-        "content": "Gospa Vuk.",
-        "the_order": 9,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 32255,
+        "content": "Gospod Čadež, hvala lepa. Bom eksakten, da ne bom kaj narobe rekel. Nisem bil na Mauritiusu, mogoče bi bili vi z vašim predsednikom na golfu, pa bi bili v žepih, pa ne vem golf palice. Ampak ena druga stvar, poudarjam še enkrat. Ni vas bilo nikjer na terenu, tam kjer sem jaz bil, govorim pa konkretno v Črni vasi, govorim konkretno na Tbilisijski cesti, govorim konkretno o Viču, vi ste bili na skladišču, kjer ste pesek dajali, kar je tudi hvale vredno, ampak niste pa bili v škornjih tam med ljudmi, ko razlagate kako je bilo. \nGlasovanje poteka O PREDLOGU SKLEPA: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja Odloka o občinskem podrobnem prostorskem načrtu 273 Tovil (za enoto urejanja prostora VI-521 ter dele enot urejanja prostora VI-371, VI-372, VI-374 in VI-672).\nProsim za vaš glas. \n22 ZA.\n18 PROTI.\nSprejeto. Hvala lepa tistim, ki ste bili za. Ostali ste pa očitno po svoji vesti glasovali, mi pa nismo, ali pa te, ki so. Zadnja točka, deseta točka.\nAD 10. A) PREDLOG SKLEPA O SPREMEMBI IN DOPOLNITVI SKLEPA O NAČRTU RAVNANJA Z NEPREMIČNIM PREMOŽENJEM MESTNE OBČINE LJUBLJANA V VREDNOSTI NAD 200.000 EUROV ZA LETO 2021\nB) PREDLOG SKLEPA O SPREMEMBI SKLEPA O DOLOČITVI SKUPNE VREDNOSTI PRAVNIH POSLOV NEPREMIČNEGA PREMOŽENJA, KI JIH LAHKO SKLEPA MESTNA OBČINA LJUBLJANA V LETU 2021\nC) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – PRODAJNA POGODBA ZA PROSTORE V STAVBI NA NASLOVU POKOPALIŠKA ULICA 35 V LJUBLJANI  IN ZEMLJIŠČE PARC. ŠT. 389/1, OBE K.O. 1730 MOSTE\nPredlagam, da se uvodna obrazložitev in razprava opravita za vse točke skupaj, glasovanje pa bo potekalo o vsaki točki posebej. Gradivo ste prejeli po sklicu seje s predlogom za razširitev dnevnega reda. Po sklicu ste prejeli tudi poročila pristojnega Odbora za ravnanje z nepremičninami. Prosim gospo Remih za uvodno obrazložitev.",
+        "the_order": 92,
         "person": {
           "slug": "261-zoran-jankovic",
           "name": "Zoran Janković",
@@ -390,56 +36,139 @@
           "group": null,
           "image": null
         },
-        "start_time": "2021-07-05T15:30:00",
+        "start_time": "2021-10-18T15:30:00",
         "votes": []
       },
       {
-        "id": 15548,
-        "content": "Hvala lepa. Zelo podpiram predlagan sklep in ga bom seveda podprla, da se gospodu Mateju da negativno mnenje h kandidaturi za direktorja Doma starejših občanov Fužine in nikakor se ne strinjam s tem, da je podpisovanje peticij, ki so jo podpisali eno peticijo zaposleni, drugi peticijo stanovalci in stanovalke in njihovi svojci, da je to rezultat razprave na svetu ali pa širjenje dogajanja na svetu in, da se s tem dela škoda zavodu, škoda Domu starejših občanov Fužine se dela s tem, ko se za direktorja predlaga osebo, ki vleče za sabo ogromen nahrbtnik poln težkih kamnov negativnega delovanja na svojih preteklih deloviščih, naj spomnimo samo na zadnjo izkušnjo, ki je Dom starejših občanov Preddvor, kjer se je direktovanje tega istega gospoda neslavno končalo samo po dobrem letu, kjer so se zgodilo po pričevanju sindikatov hišnih zaposlenih in stanovalk in stanovalcev zelo težko popravljive škode tako v strokovnem delu kot v samem delovanju Doma starejših občanov Preddvor. In ker nam je mar in ker nam mora biti mar, ne bi smeli dovoliti in bi moralo biti mar tudi ustanovitelju, ki mimogrede ima večinsko sestavo sveta in je ta bila pred kratkim na novo imenovana, zato je bilo glasovanje štiri proti tri, je pa vendarle pomembno povedati, da razen predstavnikov ustanovitelja so v svetu proti imenovanju te osebe za direktorja glasovali tako predstavnica MOL, kot predstavnik zaposlenih in stanovalcev, torej vsi trije drugi deležniki, ki zagotavljajo to sestavo sveta, ki pač zastopa vse deležnike v samem zavodu. Dom starejših občanov Fužine je pomemben dom, ne samo v Ljubljani ampak širše in do zdaj je deloval dobro, je bil zgled ostalim in se nikakor ne sme dovoliti preizkus, da bi sploh se postavila možnost, da se ponovi zgodba in Preddvora. Naj spomnimo, da poleg šikaniranja in pritiskov na zaposlene se je tam dogajala tudi zgodilo zaprtje kuhinje in tako imenovano »outsoursanje«, torej najetje zunanjega ponudnika prehrane, ki ni zagotavljal dietne prehrane, ki je obvezna za stanovalke in stanovalce doma starejših, kjer se je ugotovila sporna kakovost prehrane, zaradi česar je moral pač ta isti takratni direktor tudi oditi iz svoje pozicije. Zato mislim, da je edino odgovorno, da danes podpremo ta predlagani sklep in, da damo negativno mnenje in pač skušamo na ta način dati signal tudi ministrstvu, da ne bi dali soglasje k imenovanju gospoda Križaniča za direktorja. Hvala lepa.",
-        "the_order": 10,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 32256,
+        "content": "Hvala za besedo. Spoštovane svetnice, spoštovani svetniki, spoštovani župan. Mestnemu svetu v sprejem predlagamo Sklep o spremembi in dopolnitvi Sklepa o načrtu ravnanja z nepremičnim premoženjem MOL v vrednosti nad 200.000 evrov za leto 2021. V letnem načrtu ravnanja z nepremičnim premoženjem MOL v vrednosti nad 200.000 evrov se vrednost razpolaganja spreminja iz 61.586.406 na 61.897.306 evrov, in sicer zaradi prodaje nepremičnine na naslovu Pokopališka ulica 35. Posledično omenjenemu mestnemu svetu predlagamo v sprejem tudi Sklep o spremembi Sklepa o določitvi skupne vrednosti pravnih poslov nepremičnega premoženja, ki jih lahko sklepa Mestna občina Ljubljana v letu 2021. Skupna vrednost predlaganega sklepa znaša 105.081.838 evrov in Mestni svet Mestne občine Ljubljana tako določi odstotek vrednosti pravnih poslov nepremičnega premoženja v višini 20% od skupne vrednosti vseh predlaganih poslov. Tako sedaj, v letu 2021 znaša vrednost pravnih poslov ravnanja z nepremičnim premoženjem MOL 21.016.367,63 evra. Zaradi omenjenih dveh sklepov mestnemu svetu predlagamo še izdajo soglasja k pravnemu poslu, katerega vrednost presega 500.000 evrov. Gre za pravni posel, to je prodajo prostorov v stavbi na naslovu Pokopališka ulica 35 in zemljišče parc. št. 389/1, k.o. Moste, po ceni 1.006.200 evrov. Interes za nakup je izkazalo Ministrstvo za izobraževanje, znanost in šport, saj prostore potrebuje za izvajanje srednješolskega izobraževanja. Hvala lepa.",
+        "the_order": 93,
         "person": {
-          "slug": "221-martina-vuk",
-          "name": "Martina Vuk",
+          "slug": "278-simona-remih",
+          "name": "Simona Remih",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": []
+      },
+      {
+        "id": 32257,
+        "content": "Hvala lepa. Prosim gospo Žekar za stališče odbora.",
+        "the_order": 94,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": []
+      },
+      {
+        "id": 32258,
+        "content": "Odbor za ravnanje z nepremičninami je obravnaval na korespondenčni seji vsa tri gradiva in jih je potrdil s 4 glasovi za in 2 glasovoma proti od 6-ih prisotnih in predlaga mestnemu svetu, da jih potrdi. Hvala.",
+        "the_order": 95,
+        "person": {
+          "slug": "256-jelka-zekar",
+          "name": "Jelka Žekar",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": {
-            "name": "Socialni demokrati ",
-            "acronym": "",
-            "slug": "19-socialni-demokrati"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#09a2cc"
           },
           "image": null
         },
-        "start_time": "2021-07-05T15:30:00",
+        "start_time": "2021-10-18T15:30:00",
+        "votes": []
+      },
+      {
+        "id": 32259,
+        "content": "Hvala lepa. Gospod Sedmak.",
+        "the_order": 96,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": []
+      },
+      {
+        "id": 32260,
+        "content": "Hvala za besedo. Pravzaprav bi moral že na začetku najprej povedati, da je Statutarno pravna komisija obravnavala tudi Predlog za razširitev dnevnega reda in soglasno ugotovila, da so podani vsi pogoji za razširitev. K sami točki pa, oziroma trem točkam pravzaprav pa ni bilo pripomb pravnega značaja. Hvala.",
+        "the_order": 97,
+        "person": {
+          "slug": "252-marjan-sedmak",
+          "name": "Marjan Sedmak",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": {
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#09a2cc"
+          },
+          "image": null
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": []
+      },
+      {
+        "id": 32261,
+        "content": "Hvala lepa. Razprava, prosim. Ni razprave. Ugotavljam navzočnost po celi točki. Rezultat navzočnosti 33. \nGlasovanje poteka O PREDLOGU SKLEPA pod točko A): Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o spremembi in dopolnitvi Sklepa o Načrtu ravnanja z nepremičnim premoženjem Mestne občine Ljubljana v vrednosti nad 200.000 eurov za leto 2021. \nProsim za vaš glas. \n35 ZA.\n0 PROTI.\nHvala lepa. \nGlasovanje poteka O PREDLOGU SKLEPA pod točko B): Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o spremembi Sklepa o določitvi skupne vrednosti pravnih poslov nepremičnega premoženja, ki jih lahko sklepa Mestna občina Ljubljana v letu 2021.\nProsim za vaš glas. \n38 ZA.\n0 PROTI.\nHvala lepa. \nGlasovanje poteka O PREDLOGU SKLEPA pod točko C): Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – prodajna pogodba za prostore v stavbi na naslovu Pokopališka ulica 35 v Ljubljani  in zemljišče parc. št. 389/1, obe k.o. 1730 Moste.\nProsim za vaš glas. \n38 ZA.\n0 PROTI.\nHvala lepa.",
+        "the_order": 98,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        },
+        "start_time": "2021-10-18T15:30:00",
         "votes": []
       }
     ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     },
     "session": {
-      "name": "24. seja Mestnega sveta MOL",
-      "id": 81,
-      "start_time": "2021-07-05T15:30:00",
+      "name": "26. seja Mestnega sveta MOL",
+      "id": 1437,
+      "start_time": "2021-10-18T15:30:00",
       "end_time": null,
       "organizations": [
         {
           "name": "Mestni svet MOL",
           "acronym": null,
-          "slug": "1-mestni-svet-mol"
+          "slug": "1-mestni-svet-mol",
+          "color": "#09a2cc"
         }
       ],
-      "classification": null,
+      "classification": "regular",
       "in_review": false
     },
-    "count": 224,
-    "pages": 23,
-    "page": 1,
+    "count": 98,
+    "pages": 10,
+    "page": 10,
     "per_page": 10
   }
 }

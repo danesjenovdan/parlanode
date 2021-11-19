@@ -1,0 +1,45 @@
+{
+  "data": {
+    "results": {
+      "session": {
+        "name": "26. seja Mestnega sveta MOL",
+        "id": 1437,
+        "start_time": "2021-10-18T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false
+      },
+      "speech": {
+        "id": 32255,
+        "content": "Gospod Čadež, hvala lepa. Bom eksakten, da ne bom kaj narobe rekel. Nisem bil na Mauritiusu, mogoče bi bili vi z vašim predsednikom na golfu, pa bi bili v žepih, pa ne vem golf palice. Ampak ena druga stvar, poudarjam še enkrat. Ni vas bilo nikjer na terenu, tam kjer sem jaz bil, govorim pa konkretno v Črni vasi, govorim konkretno na Tbilisijski cesti, govorim konkretno o Viču, vi ste bili na skladišču, kjer ste pesek dajali, kar je tudi hvale vredno, ampak niste pa bili v škornjih tam med ljudmi, ko razlagate kako je bilo. \nGlasovanje poteka O PREDLOGU SKLEPA: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja Odloka o občinskem podrobnem prostorskem načrtu 273 Tovil (za enoto urejanja prostora VI-521 ter dele enot urejanja prostora VI-371, VI-372, VI-374 in VI-672).\nProsim za vaš glas. \n22 ZA.\n18 PROTI.\nSprejeto. Hvala lepa tistim, ki ste bili za. Ostali ste pa očitno po svoji vesti glasovali, mi pa nismo, ali pa te, ki so. Zadnja točka, deseta točka.\nAD 10. A) PREDLOG SKLEPA O SPREMEMBI IN DOPOLNITVI SKLEPA O NAČRTU RAVNANJA Z NEPREMIČNIM PREMOŽENJEM MESTNE OBČINE LJUBLJANA V VREDNOSTI NAD 200.000 EUROV ZA LETO 2021\nB) PREDLOG SKLEPA O SPREMEMBI SKLEPA O DOLOČITVI SKUPNE VREDNOSTI PRAVNIH POSLOV NEPREMIČNEGA PREMOŽENJA, KI JIH LAHKO SKLEPA MESTNA OBČINA LJUBLJANA V LETU 2021\nC) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – PRODAJNA POGODBA ZA PROSTORE V STAVBI NA NASLOVU POKOPALIŠKA ULICA 35 V LJUBLJANI  IN ZEMLJIŠČE PARC. ŠT. 389/1, OBE K.O. 1730 MOSTE\nPredlagam, da se uvodna obrazložitev in razprava opravita za vse točke skupaj, glasovanje pa bo potekalo o vsaki točki posebej. Gradivo ste prejeli po sklicu seje s predlogom za razširitev dnevnega reda. Po sklicu ste prejeli tudi poročila pristojnega Odbora za ravnanje z nepremičninami. Prosim gospo Remih za uvodno obrazložitev.",
+        "the_order": 92,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": null
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": []
+      },
+      "quote_content": "urejanja prostora VI-371, VI-372, VI-374 in VI-672).\nProsim za vaš glas. \n22 ZA.\n18 PROTI.\nSprejeto. Hvala lep",
+      "start_index": 773,
+      "end_index": 883
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    }
+  }
+}

@@ -116,7 +116,7 @@ education: Izobrazba
 number-of-votes: Število glasov
 number-of-points: Število točk
 number-of-terms: Število mandatov
-previous-occupation: Prejšnji status
+previous-occupation: Poklic / delovno mesto
 district: Okraj
 birth-date: Rojstni dan
 gender: Spol
@@ -143,21 +143,21 @@ vote-abstain: Vzdržan
 vote-abstain--m: Vzdržan
 vote-abstain--f: Vzdržana
 vote-abstain-plural: Vzdržani
-vote-absent: Ni
-vote-absent-plural: Niso
+vote-absent: Odsoten
+vote-absent-plural: Odsotni
 vote-no-majority: Ni večinskega glasu
-voted-for--f: Glasovala ZA
-voted-for--m: Glasoval ZA
-voted-for--plural: Glasovali ZA
-voted-against--f: Glasovala PROTI
-voted-against--m: Glasoval PROTI
-voted-against--plural: Glasovali PROTI
-voted-abstain--f: Glasovala KVORUM
-voted-abstain--m: Glasoval KVORUM
-voted-abstain--plural: Glasovali KVORUM
-voted-absent--f: Ni glasovala o
-voted-absent--m: Ni glasoval o
-voted-absent--plural: Niso glasovali o
+voted-for--f: ZA
+voted-for--m: ZA
+voted-for--plural: ZA
+voted-against--f: PROTI
+voted-against--m: PROTI
+voted-against--plural: PROTI
+voted-abstain--f: Vzdržana
+voted-abstain--m: Vzdržan
+voted-abstain--plural: Vzdržani
+voted-absent--f: Odsotna
+voted-absent--m: Odsoten
+voted-absent--plural: Odsotni
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
@@ -215,18 +215,12 @@ style-scores:
   simple-vocabulary: Preprosto besedje
   excessive-vocabulary: Ekscesno besedje
 question:
-  asked--m: Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.
-  asked--f: Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.
-  asked--plural: Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.
-  asked--with-name--m: >-
-    {name} je zastavil vprašanje {title}, na katerega mora odgovoriti
-    {recipient}.
-  asked--with-name--f: >-
-    {name} je zastavila vprašanje {title}, na katerega mora odgovoriti
-    {recipient}.
-  asked--with-name--plural: >-
-    {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
-    {recipient}.
+  asked--m: "Zastavil vprašanje na temo: {title}."
+  asked--f: "Zastavila vprašanje na temo: {title}."
+  asked--plural: "Zastavili vprašanje na temo: {title}."
+  asked--with-name--m: "{name} je zastavil vprašanje na temo: {title}."
+  asked--with-name--f: "{name} je zastavila vprašanje na temo: {title}."
+  asked--with-name--plural: "{name} so zastavili vprašanje na temo: {title}."
 event:
   ballot--for--m: Glasoval ZA {title}
   ballot--for--f: Glasovala ZA {title}
@@ -473,3 +467,10 @@ other-procedures: Drugi postopki
 speech-link: Povezava do govora v transkriptu
 speech-card-link: Povezava to kartice govora
 vote-roll-results: Poimensko glasovanje
+mayor: Župan
+website: Spletno mesto
+budget: Proračun
+agenda-items: Točke dnevnega reda
+material: Gradivo
+documents: Dokumenti
+other: Drugo

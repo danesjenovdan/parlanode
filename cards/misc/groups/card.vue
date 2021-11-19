@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
         <div class="row">
@@ -12,19 +12,18 @@
     <inner-card
       :processed-party-data="processedPartyData"
       :header-config="headerConfig"
-      :og-config="ogConfig"
       :current-analysis-data="currentAnalysisData"
     />
   </card-wrapper>
 </template>
 
 <script>
-import stableSort from 'stable';
 import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { partyListContextUrl } from '@/_mixins/contextUrls.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';
 
@@ -74,11 +73,13 @@ export default {
     BlueButtonList,
     InnerCard,
   },
-  mixins: [common],
+  mixins: [common, partyListContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     const analyses = analysesIDs.map((a) => ({
       ...a,
       label: this.$te(`analysis-texts--party.${a.id}.label`)
@@ -93,8 +94,8 @@ export default {
     }));
 
     return {
-      results: this.cardData.data?.results || [],
-      currentAnalysis: this.cardState.analysis || 'seat_count',
+      results: cardData?.data?.results || [],
+      currentAnalysis: cardState?.analysis || 'seat_count',
       analyses,
     };
   },
@@ -127,20 +128,17 @@ export default {
         const rawValue = party.results?.[this.currentAnalysis] || 0;
         const newParty = JSON.parse(JSON.stringify(party));
 
-        newParty.displayValue = numberFormatter(
-          rawValue,
-          this.currentAnalysisData?.precision || 0,
-          this.currentAnalysisData?.unit === 'percent'
-        );
+        newParty.displayValue = numberFormatter(rawValue, {
+          precision: this.currentAnalysisData?.precision || 0,
+          percent: this.currentAnalysisData?.unit === 'percent',
+        });
 
         newParty.chartWidth = `${(rawValue / maxValue) * 85}%`;
 
         return newParty;
       });
 
-      return stableSort(mappedData, (memberA, memberB) => {
-        // const a = memberA.results?.[this.currentAnalysis] || 0;
-        // const b = memberB.results?.[this.currentAnalysis] || 0;
+      return mappedData.sort((memberA, memberB) => {
         const a = memberA.results?.seat_count || 0;
         const b = memberB.results?.seat_count || 0;
         return b - a;

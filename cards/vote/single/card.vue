@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="date-and-stuff">
       <a
         :href="getSessionVotesLink(results.session)"
@@ -72,7 +72,6 @@
         v-if="showMobileExcerpt && content"
         :content="content"
         :main-law="excerptData"
-        :documents="data.documents"
         :show-parent="true"
         class="visible-xs"
       />
@@ -88,7 +87,6 @@
         </p-tab>
         <p-tab :label="$t('parties')">
           <poslanske-skupine
-            ref="parties"
             :members="results.members"
             :parties="results.groups"
             :state="state"
@@ -98,9 +96,8 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
-        <p-tab :label="$t('gov-side')">
+        <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
           <poslanske-skupine
-            ref="sides"
             :members="results.members"
             :parties="results.government_sides"
             :state="state"
@@ -110,13 +107,15 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
+        <p-tab v-if="results.documents?.length" :label="$t('documents')">
+          <documents :documents="results.documents" />
+        </p-tab>
       </p-tabs>
       <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
         <p-tab v-if="content" :label="$t('summary')">
           <excerpt
             :content="content"
             :main-law="excerptData"
-            :documents="results.documents"
             :show-parent="true"
           />
         </p-tab>
@@ -131,7 +130,6 @@
         </p-tab>
         <p-tab :label="$t('parties')">
           <poslanske-skupine
-            ref="parties"
             :members="results.members"
             :parties="results.groups"
             :state="state"
@@ -141,9 +139,8 @@
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
-        <p-tab :label="$t('gov-side')">
+        <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
           <poslanske-skupine
-            ref="sides"
             :members="results.members"
             :parties="results.government_sides"
             :state="state"
@@ -152,6 +149,9 @@
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
+        </p-tab>
+        <p-tab v-if="results.documents?.length" :label="$t('documents')">
+          <documents :documents="results.documents" />
         </p-tab>
       </p-tabs>
     </template>
@@ -195,12 +195,14 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { voteSessionVotesContextUrl } from '@/_mixins/contextUrls.js';
 import { parseVoteTitle } from '@/_helpers/voteTitle.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 import Excerpt from '@/_components/Excerpt.vue';
 import DataNotPublished from '@/_components/DataNotPublished.vue';
+import Documents from '@/_components/Documents.vue';
 import fixAbstractHtml from '@/_helpers/fixAbstractHtml.js';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
@@ -214,13 +216,16 @@ export default {
     PTabs,
     Excerpt,
     DataNotPublished,
+    Documents,
   },
-  mixins: [common, links],
+  mixins: [common, links, voteSessionVotesContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
-    const results = this.cardData.data?.results || {};
+    const { cardState, cardData } = this.$root.$options.contextData;
+
+    const results = cardData?.data?.results || {};
 
     // parse vote title and any associated projects from text
     const { title, projects } = parseVoteTitle(results.title);
@@ -238,8 +243,8 @@ export default {
       results,
       title,
       projects: [...(results.agenda_items || []), ...projects],
-      state: this.cardState,
-      selectedTab: this.cardState.selectedTab || 0,
+      state: cardState || {},
+      selectedTab: cardState?.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
       showMobileExcerpt: false,
@@ -259,16 +264,6 @@ export default {
     content() {
       return fixAbstractHtml(this.results.abstract);
     },
-    contentExtra() {
-      return fixAbstractHtml(this.results.extra_abstract);
-    },
-  },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionVoteLink({
-    //   session_id: this.data.session.id,
-    //   vote_id: this.data.id,
-    // });
   },
   methods: {
     focusTab(tabNumber) {
@@ -282,9 +277,7 @@ export default {
         this.visibleTooltip = target;
       }
     },
-    formatDate(date) {
-      return dateFormatter(date);
-    },
+    formatDate: dateFormatter,
   },
 };
 </script>
@@ -441,41 +434,6 @@ export default {
             }
           }
         }
-      }
-    }
-  }
-
-  .documents {
-    border-top: $section-border;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 6px 0 0 0;
-
-    @include respond-to(desktop) {
-      border-left: $section-border;
-      border-top: none;
-      flex: 2;
-      margin: 0 0 0 12px;
-      min-width: 204px;
-      padding-left: 16px;
-    }
-
-    .dropdown-label {
-      @include show-for(desktop);
-
-      font-family: Roboto Slab, Times New Roman, serif;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 21px;
-      margin-bottom: 5px;
-    }
-
-    .p- {
-      margin: 10px -2px 3px -2px;
-
-      @include respond-to(desktop) {
-        margin: 0;
       }
     }
   }

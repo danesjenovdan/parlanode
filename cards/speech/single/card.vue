@@ -1,6 +1,11 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
-    <speech v-quotable :speech="data" show-session />
+  <card-wrapper :header-config="headerConfig" max-height>
+    <speech
+      v-quotable
+      :speech="speech"
+      :session="speech?.session"
+      show-session
+    />
   </card-wrapper>
 </template>
 
@@ -10,6 +15,7 @@ import common from '@/_mixins/common.js';
 import { personTitle } from '@/_mixins/titles.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
+import { speechSessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
 import Speech from '@/_components/Speech.vue';
 import quotable from '@/_directives/quotable.js';
 
@@ -21,21 +27,23 @@ export default {
   directives: {
     quotable,
   },
-  mixins: [common, links, personTitle, sessionHeader, sessionOgImage],
+  mixins: [
+    common,
+    links,
+    speechSessionTranscriptContextUrl,
+    personTitle,
+    sessionHeader,
+    sessionOgImage,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
-    return {
-      data: this.$options.contextData.cardData,
-    };
-  },
+    const { cardData } = this.$root.$options.contextData;
 
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionSpeechLink(
-    //   this.data.results
-    // );
+    return {
+      speech: cardData?.data?.results || {},
+    };
   },
 };
 </script>

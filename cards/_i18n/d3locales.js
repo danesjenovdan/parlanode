@@ -145,7 +145,8 @@ const US = {
   ],
 };
 
-export default function getD3Locale(lang) {
+export default function getD3Locale(locale) {
+  const lang = (locale || '').split('-')[0];
   if (lang === 'sl') {
     return SI;
   }

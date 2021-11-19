@@ -1,0 +1,38 @@
+card:
+  title: All voting events
+  info: >-
+    # All voting events in the parliament. The voting events are ordered by date
+    from most recent to oldest.
+
+
+    For all voting events in a session we count the votes (FOR, AGAINST,
+    ABSTAINED) and the number of MPs who were absent and display the results.
+
+
+    Voting information is collected from the web page of the National Assembly
+    of the Republic of Slovenia [The National Assembly of the Republic of
+    Slovenia](http://www.sabor.hr/sjednica-sabora).
+
+
+    To mark unexpected voting results we use the probabilistic method of
+    analysis of main components, [as implemented in scikit-learn
+    papers](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
+    and described in [M. Tipping and C. Bishop, Probabilistic Principal
+    Component Analysis, Journal of the Royal Statistical Society, Series B, 61,
+    Part 3, pp. 611-622](http://www.miketipping.com/papers/met-mppca.pdf).
+
+
+    We transform all voting events into four-dimensional vectors where each of
+    the components shows the number of votes for a specific option (FOR,
+    AGAINST, ABSTAINED, ABSENT). Principal component analysis (PCA) model is
+    adjusted to the matrix and function
+    [score_samples](https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485)
+    gives us "log-likelihood" of each voting event in our model. The model is
+    set to maximise "log-likelihood" value to as many voting events as possible.
+    When we obtain all "log-likelihood" values we sort them from smallest to
+    biggest and use a fourth of all voting events which fit the model the least.
+    Compared to our model these voting events stand out and are therefore most
+    "unexpected". In the card they are marked with a fire icon.
+
+
+    Hands up symbol marks voting events where voting happened by raising hands.

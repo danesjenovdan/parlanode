@@ -138,6 +138,26 @@ const getUrls = () => {
   };
 };
 
+const siteMapCache = {
+  value: null,
+  default: fs.readJSONSync('./data/siteMap.default.json'),
+};
+
+const fetchSiteMap = async () => {
+  if (siteMapCache.value) {
+    return siteMapCache.value;
+  }
+  try {
+    const response = await axios.get(
+      `${process.env.VITE_PARLASITE_URL}/api/sitemap`
+    );
+    siteMapCache.value = response.data;
+    return siteMapCache.value;
+  } catch (error) {
+    return siteMapCache.default;
+  }
+};
+
 export {
   createError,
   loadCardModule,
@@ -145,4 +165,5 @@ export {
   getCardDataUrl,
   fetchCardData,
   getUrls,
+  fetchSiteMap,
 };

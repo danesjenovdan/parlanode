@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <div class="votes-list">
       <div class="filters">
         <div class="filter text-filter">
@@ -30,6 +30,11 @@
             :vote="vote"
             :session="session"
           />
+          <div
+            v-if="votes.length === 0"
+            v-t="'no-results'"
+            class="no-results"
+          ></div>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -40,12 +45,12 @@
 </template>
 
 <script>
-import axios, { CancelToken } from 'axios';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
-// import { otherVotingsTitle } from '@/_mixins/titles.js';
+import { sessionVotesContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
@@ -64,39 +69,47 @@ export default {
     ScrollShadow,
     VoteListItem,
   },
-  mixins: [common, sessionHeader, sessionOgImage, links],
+  mixins: [
+    common,
+    sessionVotesContextUrl,
+    sessionHeader,
+    sessionOgImage,
+    links,
+    cancelableRequest,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
-    const textFilter = this.cardState.text || '';
+    const { cardState, cardData } = this.$root.$options.contextData;
+
+    const textFilter = cardState?.text || '';
 
     const passedOptions = [
       {
         id: 'true',
         color: 'binary-for',
         label: this.$t('vote-passed'),
-        selected: this.cardState.passed === 'true',
+        selected: cardState?.passed === 'true',
       },
       {
         id: 'false',
         color: 'binary-against',
         label: this.$t('vote-not-passed'),
-        selected: this.cardState.passed === 'false',
+        selected: cardState?.passed === 'false',
       },
     ];
 
     return {
       card: {
-        objectCount: this.cardData.data?.count,
+        objectCount: cardData?.data?.count,
         currentPage: 1,
         isLoading: false,
       },
-      votes: this.cardData.data?.results || [],
-      session: this.cardData.data?.session || {},
+      votes: cardData?.data?.results || [],
+      session: cardData?.data?.session || {},
       passedOptions,
       textFilter,
-      cancelRequest: null,
     };
   },
   computed: {
@@ -115,12 +128,6 @@ export default {
       return url.toString();
     },
   },
-  created() {
-    // TODO:
-    // this.$options.cardData.template.contextUrl = this.getSessionVotesLink(
-    //   this.data.session
-    // );
-  },
   methods: {
     selectPassedOption(passedOption) {
       if (passedOption.selected) {
@@ -131,29 +138,6 @@ export default {
         });
       }
       this.searchVotesImmediate();
-    },
-    makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
-      }
-
-      return axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          }
-        );
     },
     searchVotesImmediate() {
       this.card.isLoading = true;
@@ -182,7 +166,7 @@ export default {
       this.card.currentPage += 1;
 
       const requestedPage = this.card.currentPage;
-      axios.get(this.searchUrl).then((response) => {
+      this.makeRequest(this.searchUrl).then((response) => {
         if (response?.data?.page === requestedPage) {
           const newVotes = response?.data?.results || [];
           this.votes.push(...newVotes);

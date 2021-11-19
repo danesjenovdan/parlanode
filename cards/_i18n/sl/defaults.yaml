@@ -146,18 +146,18 @@ vote-abstain-plural: Vzdržani
 vote-absent: Ni
 vote-absent-plural: Niso
 vote-no-majority: Ni večinskega glasu
-voted-for--f: Glasovala ZA
-voted-for--m: Glasoval ZA
-voted-for--plural: Glasovali ZA
-voted-against--f: Glasovala PROTI
-voted-against--m: Glasoval PROTI
-voted-against--plural: Glasovali PROTI
-voted-abstain--f: Glasovala KVORUM
-voted-abstain--m: Glasoval KVORUM
-voted-abstain--plural: Glasovali KVORUM
-voted-absent--f: Ni glasovala o
-voted-absent--m: Ni glasoval o
-voted-absent--plural: Niso glasovali o
+voted-for--f: ZA
+voted-for--m: ZA
+voted-for--plural: ZA
+voted-against--f: PROTI
+voted-against--m: PROTI
+voted-against--plural: PROTI
+voted-abstain--f: Vzdržana
+voted-abstain--m: Vzdržan
+voted-abstain--plural: Vzdržani
+voted-absent--f: Odsotna
+voted-absent--m: Odsoten
+voted-absent--plural: Odsotni
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
@@ -473,3 +473,10 @@ other-procedures: Drugi postopki
 speech-link: Povezava do govora v transkriptu
 speech-card-link: Povezava to kartice govora
 vote-roll-results: Poimensko glasovanje
+mayor: Župan
+website: Spletno mesto
+budget: Proračun
+agenda-items: Točke dnevnega reda
+material: Gradivo
+documents: Dokumenti
+other: Drugo

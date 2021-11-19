@@ -17,8 +17,8 @@
 export default {
   name: 'TransparentCardWrapper',
   data() {
-    // eslint-disable-next-line no-restricted-properties
     const { cardState } = this.$root.$options.contextData;
+
     return {
       hasGenerator: this.$slots.generator?.()?.length,
       showGenerator: cardState?.generator,

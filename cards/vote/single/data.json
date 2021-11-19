@@ -2,72 +2,53 @@
   "data": {
     "results": {
       "all_votes": {
-        "absent": 1.0,
-        "abstain": 0.0,
-        "for": 42.0,
-        "against": 0.0
+        "absent": 10,
+        "abstain": 13,
+        "for": 20,
+        "against": 2
       },
-      "government_sides": [
-        {
-          "max": {
-            "max_option": "for",
-            "max_option_percentage": 97.67441860465115
-          },
-          "votes": {
-            "absent": 1.0,
-            "abstain": 0.0,
-            "for": 42.0,
-            "against": 0.0
-          },
-          "outliers": [],
-          "group": {
-            "name": "Coalition",
-            "acronym": null,
-            "slug": null
-          }
-        },
-        {
-          "max": {
-            "max_option": "against",
-            "max_option_percentage": 48.93617021276596
-          },
-          "votes": {
-            "absent": 4.0,
-            "abstain": 18.0,
-            "for": 2.0,
-            "against": 23.0
-          },
-          "outliers": [],
-          "group": {
-            "name": "Opposition",
-            "acronym": null,
-            "slug": null
-          }
-        }
-      ],
+      "government_sides": [],
       "abstract_visible": false,
       "session": {
-        "name": "6. seja Mestnega sveta MOL",
-        "id": 72,
-        "start_time": "2019-07-08T15:30:00",
+        "name": "15. seja Mestnega sveta MOL",
+        "id": 1092,
+        "start_time": "2020-09-21T15:30:00",
         "end_time": null,
         "organizations": [
           {
             "name": "Mestni svet MOL",
             "acronym": null,
-            "slug": "1-mestni-svet-mol"
+            "slug": "1-mestni-svet-mol",
+            "color": "#09a2cc"
           }
         ],
-        "classification": null,
+        "classification": "regular",
         "in_review": false
       },
       "result": {
         "is_outlier": false,
-        "passed": null,
-        "max_option_percentage": 51,
+        "passed": true,
+        "max_option_percentage": 20,
         "max_option": "for"
       },
       "members": [
+        {
+          "person": {
+            "slug": "240-anton-kastelic",
+            "name": "Anton Kastelic",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
+            },
+            "image": null
+          },
+          "option": "for"
+        },
         {
           "person": {
             "slug": "241-emilija-mitrovic-milos",
@@ -76,14 +57,14 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
@@ -93,13 +74,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -110,13 +91,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -129,12 +110,12 @@
             "group": {
               "name": "Svetniški klub samostojnih svetnikov ",
               "acronym": "",
-              "slug": "18-svetniski-klub-samostojnih-svetnikov"
+              "slug": "18-svetniski-klub-samostojnih-svetnikov",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -144,13 +125,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -163,12 +144,12 @@
             "group": {
               "name": "Svetniški klub samostojnih svetnikov ",
               "acronym": "",
-              "slug": "18-svetniski-klub-samostojnih-svetnikov"
+              "slug": "18-svetniski-klub-samostojnih-svetnikov",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "absent"
         },
         {
           "person": {
@@ -180,7 +161,6 @@
             "group": null,
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -193,12 +173,12 @@
             "group": {
               "name": "Svetniški klub samostojnih svetnikov ",
               "acronym": "",
-              "slug": "18-svetniski-klub-samostojnih-svetnikov"
+              "slug": "18-svetniski-klub-samostojnih-svetnikov",
+              "color": "#09a2cc"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/masa-kociper.png"
           },
-          "outlier": false,
-          "option": "abstain"
+          "option": "absent"
         },
         {
           "person": {
@@ -208,14 +188,14 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
@@ -225,13 +205,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/bruna-antauer.png"
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -242,13 +222,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -259,13 +239,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -278,28 +258,28 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "absent"
         },
         {
           "person": {
             "slug": "253-dunja-piskur-kosmac",
             "name": "Dunja Piškur Kosmač",
             "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
+            "honorific_suffix": "dr. med",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/dunja-piskur-kosmac.png"
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -312,12 +292,12 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "absent"
         },
         {
           "person": {
@@ -327,14 +307,14 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "for"
         },
         {
           "person": {
@@ -346,12 +326,12 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -361,13 +341,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -380,12 +360,12 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "abstain"
+          "option": "absent"
         },
         {
           "person": {
@@ -395,13 +375,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -414,11 +394,11 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "absent"
         },
         {
@@ -431,7 +411,6 @@
             "group": null,
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -444,12 +423,12 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -459,13 +438,47 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
+          "option": "absent"
+        },
+        {
+          "person": {
+            "slug": "234-matjaz-vede",
+            "name": "Matjaž Vede",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Slovenska demokratska stranka ",
+              "acronym": "",
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
+            },
+            "image": null
+          },
+          "option": "abstain"
+        },
+        {
+          "person": {
+            "slug": "255-dr-marta-bon",
+            "name": "dr. Marta Bon",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
+            },
+            "image": null
+          },
           "option": "for"
         },
         {
@@ -478,42 +491,12 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "255-dr-marta-bon",
-            "name": "dr. Marta Bon",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
-            },
-            "image": null
-          },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "264-dr-anze-logar",
-            "name": "Dr. Anže Logar",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": null,
-            "image": null
-          },
-          "outlier": false,
-          "option": "absent"
+          "option": "abstain"
         },
         {
           "person": {
@@ -523,13 +506,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -542,12 +525,12 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "abstain"
         },
         {
           "person": {
@@ -557,13 +540,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -576,12 +559,12 @@
             "group": {
               "name": "Slovenska demokratska stranka ",
               "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#09a2cc"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "abstain"
         },
         {
           "person": {
@@ -591,30 +574,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "259-ales-cerin",
-            "name": "Aleš Čerin",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
-            },
-            "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-05-07_12-01-38.png"
-          },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -625,13 +591,13 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
-            "image": "https://files.parladata.lb.djnd.si/media/Screenshot_from_2021-02-01_20-22-32.png"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-02-01_20-22-32.png"
           },
-          "outlier": false,
           "option": "for"
         },
         {
@@ -642,14 +608,14 @@
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "absent"
         },
         {
           "person": {
@@ -661,8 +627,24 @@
             "group": null,
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
+        },
+        {
+          "person": {
+            "slug": "259-ales-cerin",
+            "name": "Aleš Čerin",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": null,
+            "group": {
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png"
+          },
+          "option": "absent"
         },
         {
           "person": {
@@ -674,12 +656,12 @@
             "group": {
               "name": "Socialni demokrati ",
               "acronym": "",
-              "slug": "19-socialni-demokrati"
+              "slug": "19-socialni-demokrati",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -691,12 +673,12 @@
             "group": {
               "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
               "acronym": "",
-              "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev"
+              "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -708,12 +690,12 @@
             "group": {
               "name": "Nova Slovenija – Krščanski demokrati ",
               "acronym": "",
-              "slug": "16-nova-slovenija-krscanski-demokrati"
+              "slug": "16-nova-slovenija-krscanski-demokrati",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "against"
         },
         {
           "person": {
@@ -725,12 +707,12 @@
             "group": {
               "name": "Nova Slovenija – Krščanski demokrati ",
               "acronym": "",
-              "slug": "16-nova-slovenija-krscanski-demokrati"
+              "slug": "16-nova-slovenija-krscanski-demokrati",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "against"
         },
         {
           "person": {
@@ -742,29 +724,12 @@
             "group": {
               "name": "Levica ",
               "acronym": "",
-              "slug": "20-levica"
+              "slug": "20-levica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
-        },
-        {
-          "person": {
-            "slug": "238-grega-ciglar",
-            "name": "Grega Ciglar",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": null,
-            "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
-            },
-            "image": null
-          },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
@@ -776,29 +741,29 @@
             "group": {
               "name": "Levica ",
               "acronym": "",
-              "slug": "20-levica"
+              "slug": "20-levica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "abstain"
         },
         {
           "person": {
-            "slug": "240-anton-kastelic",
-            "name": "Anton Kastelic",
+            "slug": "238-grega-ciglar",
+            "name": "Grega Ciglar",
             "honorific_prefix": null,
             "honorific_suffix": null,
             "preferred_pronoun": null,
             "group": {
-              "name": "Lista Zorana Jankovića ",
-              "acronym": "",
-              "slug": "22-lista-zorana-jankovica"
+              "name": "Lista Zorana Jankovića",
+              "acronym": "LZJ",
+              "slug": "22-lista-zorana-jankovica",
+              "color": "#09a2cc"
             },
             "image": null
           },
-          "outlier": false,
-          "option": "for"
+          "option": "absent"
         },
         {
           "person": {
@@ -810,69 +775,71 @@
             "group": null,
             "image": null
           },
-          "outlier": false,
-          "option": "absent"
+          "option": "abstain"
         }
       ],
       "groups": [
         {
           "max": {
             "max_option_percentage": 100.0,
-            "max_option": "for"
+            "max_option": "against"
           },
           "votes": {
             "absent": 0,
             "abstain": 0,
-            "for": 2,
-            "against": 0
+            "for": 0,
+            "against": 2
           },
           "outliers": [],
           "group": {
             "name": "Nova Slovenija – Krščanski demokrati ",
             "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09a2cc"
           }
         },
         {
           "max": {
             "max_option_percentage": 100.0,
-            "max_option": "for"
+            "max_option": "abstain"
           },
           "votes": {
             "absent": 0,
-            "abstain": 0,
-            "for": 1,
+            "abstain": 1,
+            "for": 0,
             "against": 0
           },
           "outliers": [],
           "group": {
             "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
             "acronym": "",
-            "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev"
+            "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev",
+            "color": "#09a2cc"
           }
         },
         {
           "max": {
             "max_option_percentage": 66.66666666666667,
-            "max_option": "for"
+            "max_option": "absent"
           },
           "votes": {
-            "absent": 0,
+            "absent": 2,
             "abstain": 1,
-            "for": 2,
+            "for": 0,
             "against": 0
           },
           "outliers": [
             {
-              "slug": "223-masa-kociper",
-              "name": "Maša Kociper",
+              "slug": "220-dr-dragan-matic",
+              "name": "dr. Dragan Matić",
               "honorific_prefix": null,
               "honorific_suffix": null,
               "preferred_pronoun": null,
               "group": {
                 "name": "Svetniški klub samostojnih svetnikov ",
                 "acronym": "",
-                "slug": "18-svetniski-klub-samostojnih-svetnikov"
+                "slug": "18-svetniski-klub-samostojnih-svetnikov",
+                "color": "#09a2cc"
               },
               "image": null
             }
@@ -880,105 +847,121 @@
           "group": {
             "name": "Svetniški klub samostojnih svetnikov ",
             "acronym": "",
-            "slug": "18-svetniski-klub-samostojnih-svetnikov"
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09a2cc"
           }
         },
         {
           "max": {
             "max_option_percentage": 100.0,
-            "max_option": "for"
+            "max_option": "abstain"
           },
           "votes": {
             "absent": 0,
-            "abstain": 0,
-            "for": 1,
+            "abstain": 1,
+            "for": 0,
             "against": 0
           },
           "outliers": [],
           "group": {
             "name": "Socialni demokrati ",
             "acronym": "",
-            "slug": "19-socialni-demokrati"
+            "slug": "19-socialni-demokrati",
+            "color": "#09a2cc"
           }
         },
         {
           "max": {
             "max_option_percentage": 100.0,
-            "max_option": "for"
+            "max_option": "abstain"
           },
           "votes": {
             "absent": 0,
-            "abstain": 0,
-            "for": 2,
+            "abstain": 2,
+            "for": 0,
             "against": 0
           },
           "outliers": [],
           "group": {
             "name": "Levica ",
             "acronym": "",
-            "slug": "20-levica"
+            "slug": "20-levica",
+            "color": "#09a2cc"
           }
         },
         {
           "max": {
-            "max_option_percentage": 55.55555555555556,
-            "max_option": "for"
+            "max_option_percentage": 60.0,
+            "max_option": "abstain"
           },
           "votes": {
-            "absent": 3,
-            "abstain": 1,
-            "for": 5,
-            "against": 0
-          },
-          "outliers": [
-            {
-              "slug": "231-ksenija-sever",
-              "name": "Ksenija Sever",
-              "honorific_prefix": null,
-              "honorific_suffix": null,
-              "preferred_pronoun": null,
-              "group": {
-                "name": "Slovenska demokratska stranka ",
-                "acronym": "",
-                "slug": "21-slovenska-demokratska-stranka"
-              },
-              "image": null
-            }
-          ],
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          }
-        },
-        {
-          "max": {
-            "max_option_percentage": 86.36363636363636,
-            "max_option": "for"
-          },
-          "votes": {
-            "absent": 3,
-            "abstain": 0,
-            "for": 19,
+            "absent": 4,
+            "abstain": 6,
+            "for": 0,
             "against": 0
           },
           "outliers": [],
           "group": {
-            "name": "Lista Zorana Jankovića ",
+            "name": "Slovenska demokratska stranka ",
             "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "slug": "21-slovenska-demokratska-stranka",
+            "color": "#09a2cc"
+          }
+        },
+        {
+          "max": {
+            "max_option_percentage": 81.81818181818181,
+            "max_option": "for"
+          },
+          "votes": {
+            "absent": 4,
+            "abstain": 0,
+            "for": 18,
+            "against": 0
+          },
+          "outliers": [],
+          "group": {
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#09a2cc"
           }
         }
       ],
-      "id": 1635,
+      "id": 5814,
       "agenda_items": null,
-      "documents": null,
-      "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 5. seje Mestnega sveta Mestne občine Ljubljana z dne 17. junija 2019.",
+      "documents": [
+        {
+          "id": 26379,
+          "url": "https://www.ljubljana.si/assets/Uploads/13.-a-tocka-Lekarna-predlog-sklepa-o-soglasju-k-osnutu-besedila-pravnega-posla.pdf",
+          "name": "a) Predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne in služnostne pogodbe za stavbni zemljišči s parc. št. 2455/3 in parc. št. 2448, obe k. o. 1737 Tabor",
+          "tags": [
+            {
+              "id": 13,
+              "name": "Gradivo",
+              "slug": "gradivo"
+            }
+          ]
+        },
+        {
+          "id": 26380,
+          "url": "https://www.ljubljana.si/assets/Uploads/12.-a-tocka-Porocilo-ORN.pdf",
+          "name": "a) Poročilo Odbora za ravnanje z nepremičninami",
+          "tags": [
+            {
+              "id": 15,
+              "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+              "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+            }
+          ]
+        }
+      ],
+      "title": "A) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – KUPOPRODAJNE IN SLUŽNOSTNE POGODBE ZA STAVBNI ZEMLJIŠČI S PARC. ŠT. 2455/3 IN PARC. ŠT. 2448, OBE K. O. 1737 TABOR  A) PREDLOG SKLEPA:  Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o o soglasju k osnutku besedila pravnega posla – kupoprodajne in služnostne pogodbe za stavbni zemljišči s parc. št. 2455/3 in parc. št. 2448, obe k. o. 1737 Tabor.",
       "legislation": null
     },
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     }
   }
 }

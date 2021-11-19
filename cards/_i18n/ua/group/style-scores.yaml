@@ -1,0 +1,55 @@
+card:
+  title: Stylistic analysis
+  info: >-
+    # The frequency of words in speeches by the parliamentary group's MPs.
+
+
+    We define excessive, above average and average vocabulary in MPs' speeches
+    by combing the qualifiers
+    [SSKJ](http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika) and
+    [SNB](http://www.fran.si/131/snb-slovar-novejsega-besedja).
+
+
+    Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in
+    imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za
+    posamezne pomene oziroma rabe).
+
+
+    Company [Amebis](http://www.amebis.si/) prepared lists of words containing
+    qualifiers from transcripts of parliamentary speeches.
+
+
+    The connected graph is showing the proportion of each type of vocabulary in
+    the MP's speeches compared to the average and calculated for the whole
+    sitting of the parliament. The proportions are calculated using the
+    following algorithm: we take all speeches by the MP and count the number of
+    words (and their recurrences) in each vocabulary category. We run this
+    analysis for all the MPs and then divide parliamentary group's value with
+    the average value (a sum of all the MPs divided by the number of the MPs).
+    Values of categories for each parliamentary group are normalised (min 1 -
+    max 100).
+
+
+    Elevated speech
+
+
+    * Kvalifikatorji iz SSKJ: evfemistično (evfem.), mitološko (mitol.),
+    pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)
+
+
+    Simple speech
+
+
+    * Kvalifikatorji iz SSKJ: narečno (nar.), pogovorno (pog.), nižje pogovorno
+    (nižje pog.)
+
+    * Kvalifikatorji iz SNB: pogovorno (pog.)
+
+
+    Excessive speech
+
+
+    * Kvalifikatorji iz SSKJ: vulgarno (vulg.), slabšalno (slabš.), ekspresivno
+    (ekspr.), ironično (iron.), otroško (otr.)
+
+    * Kvalifikatorji iz SNB: slabšalno (slabš.), vulgarno (vulg.)

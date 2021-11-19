@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig">
+  <card-wrapper :header-config="headerConfig">
     <scroll-shadow ref="shadow">
       <div
         v-infinite-scroll="loadMore"
@@ -111,7 +111,7 @@
 <script>
 import axios from 'axios';
 import common from '@/_mixins/common.js';
-import { partyOverview } from '@/_mixins/contextUrls.js';
+import { partyOverviewContextUrl } from '@/_mixins/contextUrls.js';
 import { partyTitle } from '@/_mixins/titles.js';
 import { partyHeader } from '@/_mixins/altHeaders.js';
 import { partyOgImage } from '@/_mixins/ogImages.js';
@@ -129,16 +129,25 @@ export default {
     PersonWithPosition,
     ScrollShadow,
   },
-  mixins: [common, partyOverview, partyTitle, partyHeader, partyOgImage, links],
+  mixins: [
+    common,
+    partyOverviewContextUrl,
+    partyTitle,
+    partyHeader,
+    partyOgImage,
+    links,
+  ],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
       card: {
         currentPage: 1,
         isLoading: false,
       },
-      results: this.cardData.data?.results || {},
-      group: this.cardData.data?.group || {},
-      members: this.cardData.data?.results?.members || [],
+      results: cardData?.data?.results || {},
+      group: cardData?.data?.group || {},
+      members: cardData?.data?.results?.members || [],
     };
   },
   computed: {
@@ -192,18 +201,13 @@ export default {
 @import 'parlassets/scss/helper';
 @import 'parlassets/scss/icons';
 
-.parlaicon-vodja {
-  background-image: url('#{get-parlassets-url()}/icons/vodja.svg');
-}
 .parlaicon-namestnik {
   background-image: url('#{get-parlassets-url()}/icons/namestnik.svg');
 }
 .parlaicon-sedezi {
   background-image: url('#{get-parlassets-url()}/icons/sedezi.svg');
 }
-.parlaicon-kontakt {
-  background-image: url('#{get-parlassets-url()}/icons/kontakt.svg');
-}
+
 .parlaicon-omrezja {
   width: 30px;
   height: 30px;

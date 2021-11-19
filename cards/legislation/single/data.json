@@ -27,7 +27,33 @@
           "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica skupaj s pripombami."
         }
       ],
-      "abstract": null
+      "abstract": null,
+      "documents": [
+        {
+          "id": 26379,
+          "url": "https://www.ljubljana.si/assets/Uploads/13.-a-tocka-Lekarna-predlog-sklepa-o-soglasju-k-osnutu-besedila-pravnega-posla.pdf",
+          "name": "a) Predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne in služnostne pogodbe za stavbni zemljišči s parc. št. 2455/3 in parc. št. 2448, obe k. o. 1737 Tabor",
+          "tags": [
+            {
+              "id": 13,
+              "name": "Gradivo",
+              "slug": "gradivo"
+            }
+          ]
+        },
+        {
+          "id": 26380,
+          "url": "https://www.ljubljana.si/assets/Uploads/12.-a-tocka-Porocilo-ORN.pdf",
+          "name": "a) Poročilo Odbora za ravnanje z nepremičninami",
+          "tags": [
+            {
+              "id": 15,
+              "name": "Poročila, amandmaji in dodatni predlogi sklepov",
+              "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
+            }
+          ]
+        }
+      ]
     },
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",

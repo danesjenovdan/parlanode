@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <template #generator>
       <div class="session-list-generator legislation-list">
         <div v-if="filters.length > 1" class="row">
@@ -45,7 +45,6 @@
     </template>
     <inner-card
       :header-config="headerConfig"
-      :og-config="ogConfig"
       :columns="columns"
       :items="processedData"
       :current-sort="currentSort"
@@ -59,10 +58,10 @@
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { sessionLegislationContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
-import dateParser from '@/_helpers/dateParser.js';
 import InnerCard from './InnerCard.vue';
 
 // TODO: get from config
@@ -85,13 +84,15 @@ export default {
     PSearchDropdown,
     BlueButtonList,
   },
-  mixins: [common],
+  mixins: [common, sessionLegislationContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
+    const { cardState, cardData } = this.$root.$options.contextData;
+
     // get all working bodies from result data
-    let allWorkingBodies = (this.cardData.data?.wbs || [])
+    let allWorkingBodies = (cardData?.data?.wbs || [])
       .map((x) => x.mdt)
       .filter((x) => x.id > 0);
     // prepare for dropdown ui component
@@ -108,20 +109,19 @@ export default {
       .reverse()
       .map(JSON.parse);
 
-    const state = this.cardState || {};
-
     const tabs = legislationTabs;
     return {
       tabs,
       filters: tabs.map((e) => ({ id: e.title, label: e.title })),
-      currentFilter: state.type || (state.generator ? tabs[0].title : null),
+      currentFilter:
+        cardState?.type || (cardState?.generator ? tabs[0].title : null),
       currentSort: 'updated',
       currentSortOrder: 'desc',
-      textFilter: state.text || '',
+      textFilter: cardState?.text || '',
       workingBodies: [],
       allWorkingBodies,
-      onlyAbstracts: !!state.onlyAbstracts,
-      onlyWithVotes: !!state.onlyWithVotes,
+      onlyAbstracts: !!cardState?.onlyAbstracts,
+      onlyWithVotes: !!cardState?.onlyWithVotes,
     };
   },
   computed: {

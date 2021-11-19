@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" :og-config="ogConfig" max-height>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="votes-list">
       <div class="filters">
         <div class="filter text-filter">
@@ -39,6 +39,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import { legislationListContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
@@ -52,30 +53,32 @@ export default {
     ScrollShadow,
     VoteListItem,
   },
-  mixins: [common, links],
+  mixins: [common, legislationListContextUrl, links],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
-    const textFilter = this.cardState.text || '';
+    const { cardState, cardData } = this.$root.$options.contextData;
+
+    const textFilter = cardState?.text || '';
 
     const passedOptions = [
       {
         id: 'true',
         color: 'binary-for',
         label: this.$t('vote-passed'),
-        selected: this.cardState.passed === 'true',
+        selected: cardState?.passed === 'true',
       },
       {
         id: 'false',
         color: 'binary-against',
         label: this.$t('vote-not-passed'),
-        selected: this.cardState.passed === 'false',
+        selected: cardState?.passed === 'false',
       },
     ];
 
     return {
-      votes: this.cardData.data?.results || [],
+      votes: cardData?.data?.results || [],
       passedOptions,
       textFilter,
       headerConfig: defaultHeaderConfig(this, {}),
@@ -105,11 +108,6 @@ export default {
     selectedPassedOption() {
       return this.passedOptions.find((po) => po.selected);
     },
-  },
-  created() {
-    // TODO:
-    // const { template, siteMap: sm } = this.$options.cardData;
-    // template.contextUrl = `${this.slugs.urls.base}/${sm.landing.legislation}`;
   },
   methods: {
     selectPassedOption(passedOption) {

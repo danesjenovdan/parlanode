@@ -17,18 +17,13 @@
           :info="$te('card.info') ? $t('card.info') : ''"
         />
 
-        <card-embed v-else-if="currentBack === 'embed'" :card-url="cardUrl" />
+        <card-embed v-else-if="currentBack === 'embed'" />
 
-        <card-share v-else-if="currentBack === 'share'" :card-url="cardUrl" />
+        <card-share v-else-if="currentBack === 'share'" />
 
         <card-previous v-else-if="currentBack === 'previous'" />
 
-        <div
-          v-else
-          v-cloak
-          :class="contentFrontClass"
-          class="card-content-front"
-        >
+        <div v-else v-cloak class="card-content-front">
           <slot />
         </div>
       </div>
@@ -57,25 +52,9 @@ export default {
     CardFooter,
   },
   props: {
-    contentFrontClass: {
-      type: [String, Object, Array],
-      default: '',
-    },
-    cardUrl: {
-      type: String,
-      default: '',
-    },
     headerConfig: {
       type: Object,
       required: true,
-    },
-    ogConfig: {
-      type: Object,
-      required: true,
-    },
-    info: {
-      type: String,
-      default: '',
     },
     halfHeight: {
       type: Boolean,
@@ -88,8 +67,8 @@ export default {
   },
   emits: ['back-change'],
   data() {
-    // eslint-disable-next-line no-restricted-properties
     const { cardState } = this.$root.$options.contextData;
+
     return {
       currentBack: null,
       transitionClass: null,

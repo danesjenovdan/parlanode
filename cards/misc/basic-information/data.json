@@ -1,0 +1,23 @@
+{
+  "data": {
+    "results": {
+      "name": "Občina Ljubljana",
+      "email": "glavna.pisarna@ljubljana.si",
+      "leader": {
+        "slug": "261-zoran-jankovic",
+        "name": "Zoran Janković",
+        "honorific_prefix": null,
+        "honorific_suffix": null,
+        "preferred_pronoun": null,
+        "group": null,
+        "image": null
+      },
+      "website": "https://www.ljubljana.si/sl/mestna-obcina/zupan/",
+      "budget": "https://www.ljubljana.si/sl/mestna-obcina/proracun-mestne-obcine-ljubljana/"
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    }
+  }
+}

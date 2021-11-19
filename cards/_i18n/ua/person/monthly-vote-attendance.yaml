@@ -1,0 +1,11 @@
+card:
+  title: Attendance at voting in the National Assembly through time
+  info: >-
+    # MP's attendance at voting in the National Assembly through time.
+
+
+    Every month we count all ballots casted by the MP and divide them by the
+    number of all voting instances for that month where the MP should have been
+    voting. In cases where the MP did not have a term in office in the selected
+    month we show the percentage of voting where they did not have the right to
+    vote.
