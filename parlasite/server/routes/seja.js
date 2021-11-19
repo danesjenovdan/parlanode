@@ -35,10 +35,10 @@ async function getNewData(id) {
 router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
-    render('seja/druga-glasovanja', { // TODO this used to take you to zakonodaja
+    render('seja/glasovanja', { // TODO this used to take you to zakonodaja
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`, // TODO this used to take you to zakonodaja (title.legislation)
-      activeTab: 'druga-glasovanja', // TODO this used to take you to zakonodaja
+      activeTab: 'glasovanja', // TODO this used to take you to zakonodaja
       ...sesData,
     });
   } else {
