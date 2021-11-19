@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: parlacards
+  name: parlacards-ajdovscina
 spec:
   selector:
-    app: parlacards
+    app: parlacards-ajdovscina
   ports:
     - protocol: TCP
       port: 3000
