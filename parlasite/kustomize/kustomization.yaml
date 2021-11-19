@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlasite-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlasite-hrastnik
-    newTag: '3cf942e32a70bede7f48453da3e7e007fb823867'
+    newTag: '1deac38dd593bba01a33700ed8213f0c5c507ed4'
