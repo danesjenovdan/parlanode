@@ -104,8 +104,14 @@ const asyncRender = fn => (req, res, next) => {
     });
   };
   try {
-    fn(render, req, res, next);
+    const ret = fn(render, req, res, next);
+    // if return value is a promise (also true with async functions)
+    if (ret && ret.then && ret.catch) {
+      // catch any async errors
+      ret.catch(error => next(error));
+    }
   } catch (error) {
+    // catch any sync errors
     next(error);
   }
 };
