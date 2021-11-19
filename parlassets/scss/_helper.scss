@@ -222,3 +222,7 @@ footer.footer input.form-control.newslettersubscribe.error,
   position: relative;
   text-align: center;
 }
+
+.divider hr {
+  border-color: $divider;
+}
