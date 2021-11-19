@@ -49,10 +49,10 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (ren
 router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.otherVotings}`], ar(async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
-    render('seja/druga-glasovanja', {
+    render('seja/glasovanja', {
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
-      activeTab: 'druga-glasovanja',
+      activeTab: 'glasovanja',
       ...sesData,
     });
   } else {
