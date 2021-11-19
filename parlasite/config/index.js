@@ -4,9 +4,9 @@ const config = {
   port: 3066,
   serverTimeout: 120000,
   urls: {
-    cdn: 'https://parlassets-ljubljana.lb.djnd.si',
-    cards: 'https://parlacards.lb.djnd.si',
-    parladata: 'https://parladata.lb.djnd.si/v3',
+    cdn: 'https://parlassets-ajdovscina.lb.djnd.si',
+    cards: 'https://parlacards-ajdovscina.lb.djnd.si',
+    parladata: 'https://parladata-ajdovscina.lb.djnd.si/v3'
   },
   locale: 'sl-obcine',
   leaderId: '261',
