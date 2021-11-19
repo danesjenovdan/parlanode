@@ -52,7 +52,7 @@ const config = {
     session: {
       base: 'seja',
       legislation: 'zakonodaja',
-      otherVotings: 'druga-glasovanja',
+      otherVotings: 'glasovanja',
       transcript: 'transkript',
       agenda: 'dnevni-red',
       vote: 'glasovanje',
