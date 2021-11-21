@@ -28,6 +28,12 @@ import copyInput from '@/_helpers/copyInput.js';
 
 export default {
   name: 'CardShare',
+  props: {
+    analysis: {
+      type: String,
+      default: null,
+    }
+  },
   data() {
     // Get card url from a parent with common mixin which defines a computed url property
     let url;
@@ -39,7 +45,8 @@ export default {
       }
       parent = parent.$parent;
     }
-    url = `${url}&locale=${this.$i18n.locale}&template=share`;
+    // set analysis if it is selected
+    url = `${url}&locale=${this.$i18n.locale}&template=share&analysis=${this.analysis}`;
     return {
       url,
       copied: false,
