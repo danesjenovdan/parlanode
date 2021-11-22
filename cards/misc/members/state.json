@@ -1,1 +1,1 @@
-{ "generator": true }
+{ "generator": true, "analysis": "presence_votes" }

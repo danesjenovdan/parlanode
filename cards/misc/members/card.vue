@@ -197,6 +197,10 @@ export default {
     };
   },
   computed: {
+    url() {
+      const url = common.computed.url.call(this);
+      return `${url}&analysis=${this.currentAnalysis}`;
+    },
     partiesPlaceholder() {
       return this.selectedGroupIds.length > 0
         ? this.$t('selected-placeholder', { num: this.selectedGroupIds.length })

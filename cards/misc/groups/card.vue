@@ -100,6 +100,10 @@ export default {
     };
   },
   computed: {
+    url() {
+      const url = common.computed.url.call(this);
+      return `${url}&analysis=${this.currentAnalysis}`;
+    },
     headerConfig() {
       return defaultHeaderConfig(this, {
         title: `${this.$t('card.title')} ${
