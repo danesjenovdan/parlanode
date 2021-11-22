@@ -365,13 +365,7 @@ export default {
   },
   watch: {
     currentAnalysis(newValue) {
-      if (newValue === 'demographics' || newValue === 'working_bodies') {
-        this.currentSort = 'name';
-        this.currentSortOrder = 'asc';
-      } else {
-        this.currentSort = 'analysis';
-        this.currentSortOrder = 'desc';
-      }
+      this.onCurrentAnalysisChange(newValue);
       this.searchPeopleImmediate();
     },
     currentSort() {
@@ -381,7 +375,20 @@ export default {
       this.searchPeopleImmediate(true);
     },
   },
+  mounted() {
+    // fix sort if different analysis was loaded from state
+    this.onCurrentAnalysisChange(this.currentAnalysis);
+  },
   methods: {
+    onCurrentAnalysisChange(newValue) {
+      if (newValue === 'demographics' || newValue === 'working_bodies') {
+        this.currentSort = 'name';
+        this.currentSortOrder = 'asc';
+      } else {
+        this.currentSort = 'analysis';
+        this.currentSortOrder = 'desc';
+      }
+    },
     selectGender(id) {
       if (this.selectedGenderId === id) {
         this.genders.forEach((g) => {
