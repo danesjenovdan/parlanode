@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper ref="card" :header-config="headerConfig" max-height :analysis="currentAnalysis">
+  <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
         <div class="row">

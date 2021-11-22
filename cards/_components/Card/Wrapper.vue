@@ -19,7 +19,7 @@
 
         <card-embed v-else-if="currentBack === 'embed'" />
 
-        <card-share v-else-if="currentBack === 'share'" :analysis="analysis" />
+        <card-share v-else-if="currentBack === 'share'" />
 
         <card-previous v-else-if="currentBack === 'previous'" />
 
@@ -64,10 +64,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    analysis: {
-      type: String,
-      default: null,
-    }
   },
   emits: ['back-change'],
   data() {
