@@ -100,6 +100,10 @@ export default {
     };
   },
   computed: {
+    cardUrl() {
+      const url = common.computed.cardUrl.call(this);
+      return `${url}&analysis=${this.currentAnalysis}`;
+    },
     headerConfig() {
       return defaultHeaderConfig(this, {
         title: `${this.$t('card.title')} ${
@@ -143,13 +147,6 @@ export default {
         const b = memberB.results?.seat_count || 0;
         return b - a;
       });
-    },
-    urlParameters() {
-      const params = {};
-      if (this.currentAnalysis !== 'seat_count') {
-        params.analysis = this.currentAnalysis;
-      }
-      return params;
     },
   },
 };
