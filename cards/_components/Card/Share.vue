@@ -28,25 +28,25 @@ import copyInput from '@/_helpers/copyInput.js';
 
 export default {
   name: 'CardShare',
+  inject: ['cardUrl'],
   data() {
-    // Get card url from a parent with common mixin which defines a computed url property
-    let url;
-    let parent = this.$parent;
-    while (parent) {
-      if (parent.url) {
-        url = parent.url;
-        break;
-      }
-      parent = parent.$parent;
-    }
-    url = `${url}&locale=${this.$i18n.locale}&template=share`;
     return {
-      url,
       copied: false,
-      shortenedUrl: url,
+      shortenedUrl: null,
     };
   },
+  computed: {
+    shareUrl() {
+      return `${this.cardUrl}&locale=${this.$i18n.locale}&template=share`;
+    },
+  },
+  watch: {
+    shareUrl() {
+      this.shortenUrl();
+    },
+  },
   mounted() {
+    this.shortenedUrl = this.shareUrl;
     this.shortenUrl();
   },
   methods: {
@@ -54,7 +54,7 @@ export default {
       axios
         .get(
           `https://parla.me/shortner/generate?url=${encodeURIComponent(
-            this.url
+            this.shareUrl
           )}`
         )
         .then((response) => {

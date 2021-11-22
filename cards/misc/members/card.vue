@@ -197,8 +197,8 @@ export default {
     };
   },
   computed: {
-    url() {
-      const url = common.computed.url.call(this);
+    cardUrl() {
+      const url = common.computed.cardUrl.call(this);
       return `${url}&analysis=${this.currentAnalysis}`;
     },
     partiesPlaceholder() {

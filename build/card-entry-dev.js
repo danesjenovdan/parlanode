@@ -46,6 +46,7 @@ import cardState from './state.json';
   };
 
   window.card = createApp({ ...Card, contextData });
+  window.card.config.unwrapInjectedRef = true; // TODO: remove when this is default in next vue release
   window.card.use(i18n);
   window.card.mount('#card');
 
