@@ -27,7 +27,9 @@
     </div>
     <div class="everything">
       <div class="speech-text">
-        {{ speechContent }}
+        <p v-for="paragraph in speechParagraphs" :key="paragraph">
+          {{ paragraph }}
+        </p>
         <div class="quote-button">“</div>
       </div>
       <div v-if="speech.votes?.length" class="votes">
@@ -141,6 +143,9 @@ export default {
     },
     speechContent() {
       return this.speech?.content || '';
+    },
+    speechParagraphs() {
+      return this.speechContent.split('\n');
     },
   },
   methods: {
