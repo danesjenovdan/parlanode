@@ -1,10 +1,10 @@
 card:
-  title: Attendance at votes in the National Assembly
+  title: Участь у голосуваннях
   info: >-
-    # MP's attendance at voting in the National Assembly compared to the average
-    and maximum value.
+    # Участь народного депутата в голосуваннях у Верховній Раді порівняно з середнім
+    і максимальним значенням.
 
 
-    We count all submitted ballots by the MP and divide the number by the number
-    of all voting events where the MP should have been participating. The result
-    is displayed together with the average and maximum values.
+    Ми підраховуємо всі голосування депутата і ділимо їх на кількість всіх процедур
+    голосування, в яких депутат мав брати участь. Результат відображається разом із
+    середнім і максимальним значеннями.

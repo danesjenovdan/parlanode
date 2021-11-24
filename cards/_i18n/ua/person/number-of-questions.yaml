@@ -1,9 +1,8 @@
 card:
-  title: Number of parliamentary questions and initiatives
+  title: Кількість депутатських запитань та ініціатив
   info: >-
-    # The number of parliamentary questions and initiatives by the MP in this
-    sitting of the National Assembly compared to the average and maximum value.
+    # Кількість депутатських запитань та ініціатив народного депутата у цьому скликанні
+    ВРУ порівняно із середнім та максимальним значенням.
 
 
-    Data is retrieved from the web site [National Assembly of the Republic of
-    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/).
+    Дані зібрано на порталі [Портал відкритих даних Верховної Ради України](https://data.rada.gov.ua/open/main/index).

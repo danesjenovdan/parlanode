@@ -1,9 +1,9 @@
 card:
-  title: Parliamentary questions and initiatives
+  title: Депутатські питання та ініціативи
   info: >-
-    # A list of all parliamentary questions and initiatives by the MP in this
-    parliamentary term of the National Assembly of the Republic of Slovenia.
+    # Перелік всіх депутатських запитань та ініціатив депутата в поточному скликанні
+    Верховної Ради.
 
 
-    Data is retrieved from the web site [National Assembly of the Republic of
-    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/).
+    Дані отримані з Порталу відкритих даних Верховної Ради [Портал відкритих даних
+    ВРУ](https://data.rada.gov.ua/open/main/index).

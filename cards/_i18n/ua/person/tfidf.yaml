@@ -1,13 +1,12 @@
 card:
-  title: Characterised by the following words
+  title: Характеризується такими словами
   info: >-
-    # A list of 10 words and phrases that the MP uses more often than other MPs
-    in the National Assembly.
+    # Список з 10 слів і фраз, які народний депутат вживає частіше за інших депутатів
+    у Верховній Раді.
 
 
-    We use the following statistics
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) to conduct the analysis.
+    Ми використовуємо статистику [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) для
+    проведення аналізу.
 
 
-    The corpus refers to all speeches while the document refers to all speeches
-    by the MP.
+    У корпусі йдеться про всі виступи, а в документі – про всі виступи депутата.

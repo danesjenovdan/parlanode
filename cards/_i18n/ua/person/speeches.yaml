@@ -1,10 +1,10 @@
 card:
-  title: Speeches
+  title: Промови
   info: >-
-    # A list of links to all MP's speeches in this sitting, corresponding to
-    user query, sorted by date.
+    # Перелік посилань на всі виступи депутата в поточному скликанні, що відповідають
+    запиту користувача, відсортований за датою.
 
 
-    We load links to all speeches of the selected MP obtained from the National
-    Assembly of the Republic of Slovenia web page. We then display the ones that
-    match user query (time period, the type of the session).
+    Ми завантажуємо посилання на всі виступи обраного депутата, отримані з Порталу
+    відкритих даних Верховної Ради. Потім ми відображаємо ті, які відповідають запиту
+    користувача (період, тип засідання).
