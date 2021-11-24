@@ -1,10 +1,7 @@
 card:
-  title: Membership
+  title: Членство
   info: >-
-    # List of memberships in committees, permanent delegations and parliamentary
-    friendship groups.
+    # Список членів у комітетах, постійних делегаціях та депутатських групах.
 
 
-    Information regarding memberships has been sourced from the web site
-    [National Assembly of the Republic of
-    Slovenia](https://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslankeInPoslanci/PoAbecedi).
+    Інформація щодо членства взята з порталу [Портал відкритих даних Верховної Ради](https://data.rada.gov.ua/open/main/index).
