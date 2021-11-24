@@ -1,6 +1,15 @@
 import fs from 'fs-extra';
 import axios from 'axios';
 
+const getUrls = () => {
+  return {
+    site: process.env.VITE_PARLASITE_URL,
+    cards: process.env.VITE_PARLACARDS_URL,
+    data: process.env.VITE_PARLADATA_URL,
+    cdn: process.env.VITE_PARLASSETS_URL,
+  };
+};
+
 const createError = (statusCode, error, message, code) => {
   const obj = {
     message,
@@ -68,26 +77,19 @@ function getCardDataUrl(cardName, id, date, state) {
     searchParams.set('groups', state?.groups);
   }
 
+  const { data } = getUrls();
   const qs = searchParams.toString();
-  return `{parladata}/cards/${cardName}/${qs ? `?${qs}` : ''}`;
-}
-
-function expandUrl(dataUrl) {
-  if (typeof dataUrl === 'string') {
-    return dataUrl.replace(/^{parladata}/, process.env.VITE_PARLADATA_URL);
-  }
-  return null;
+  return `${data}/cards/${cardName}/${qs ? `?${qs}` : ''}`;
 }
 
 const fetchCardData = async (dataUrl, id, date) => {
-  const expandedUrl = expandUrl(dataUrl);
-  if (expandedUrl) {
+  if (dataUrl) {
     let response;
     try {
-      response = await axios.get(expandedUrl);
+      response = await axios.get(dataUrl);
     } catch (error) {
       return {
-        url: expandedUrl,
+        url: dataUrl,
         id,
         date,
         error: createError(
@@ -101,7 +103,7 @@ const fetchCardData = async (dataUrl, id, date) => {
     }
     if (typeof response.data !== 'object') {
       return {
-        url: expandedUrl,
+        url: dataUrl,
         id,
         date,
         error: createError(
@@ -113,7 +115,7 @@ const fetchCardData = async (dataUrl, id, date) => {
       };
     }
     return {
-      url: expandedUrl,
+      url: dataUrl,
       id,
       date,
       error: false,
@@ -121,20 +123,11 @@ const fetchCardData = async (dataUrl, id, date) => {
     };
   }
   return {
-    url: expandedUrl,
+    url: dataUrl,
     id,
     date,
     error: false,
     data: null,
-  };
-};
-
-const getUrls = () => {
-  return {
-    site: process.env.VITE_PARLASITE_URL,
-    cards: process.env.VITE_PARLACARDS_URL,
-    data: process.env.VITE_PARLADATA_URL,
-    cdn: process.env.VITE_PARLASSETS_URL,
   };
 };
 
@@ -159,11 +152,11 @@ const fetchSiteMap = async () => {
 };
 
 export {
+  getUrls,
   createError,
   loadCardModule,
   loadLocale,
   getCardDataUrl,
   fetchCardData,
-  getUrls,
   fetchSiteMap,
 };

@@ -28,18 +28,6 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="parlaicon-container">
-            <span class="parlaicon parlaicon-sedezi" aria-hidden="true" />
-          </div>
-          <div class="bordertop">
-            <span class="key">
-              <span v-t="'number-of-seats'"></span>:
-              <strong>{{ results.number_of_members }}</strong>
-            </span>
-          </div>
-        </div>
-
         <div v-if="results.email" class="row">
           <div class="parlaicon-container">
             <span class="parlaicon parlaicon-kontakt" aria-hidden="true" />
@@ -53,6 +41,18 @@
                 class="funblue-light-hover"
                 >{{ shortEmail }}</a
               >
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="parlaicon-container">
+            <span class="parlaicon parlaicon-sedezi" aria-hidden="true" />
+          </div>
+          <div class="bordertop">
+            <span class="key">
+              <span v-t="'number-of-seats'"></span>:
+              <strong>{{ results.number_of_members }}</strong>
             </span>
           </div>
         </div>
