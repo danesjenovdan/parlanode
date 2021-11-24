@@ -9,12 +9,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: pull-request-k8s
+    - name: pull-request-ljubljana
       uses: repo-sync/pull-request@v2
       with:
-        destination_branch: "k8s"
+        destination_branch: "ljubljana"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Pulling ${{ github.ref }} into k8s"
+        pr_title: "Pulling ${{ github.ref }} into ljubljana"
 
     - name: pull-request-ajdovscina
       uses: repo-sync/pull-request@v2

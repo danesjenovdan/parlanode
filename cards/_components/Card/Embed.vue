@@ -22,9 +22,7 @@
           <!-- eslint-disable vue/no-v-html -->
           <textarea
             ref="embedInput"
-            :data-url="url"
             class="form-control"
-            data-id=""
             v-html="embedCode"
           ></textarea>
           <!-- eslint-enable vue/no-v-html -->
@@ -46,25 +44,17 @@ import copyInput from '@/_helpers/copyInput.js';
 
 export default {
   name: 'CardEmbed',
+  inject: ['cardUrl'],
   data() {
-    // Get card url from a parent with common mixin which defines a computed url property
-    let url;
-    let parent = this.$parent;
-    while (parent) {
-      if (parent.url) {
-        url = parent.url;
-        break;
-      }
-      parent = parent.$parent;
-    }
-    url = `${url}&locale=${this.$i18n.locale}&template=embed`;
     return {
-      url,
       copied: false,
       refresh: true,
     };
   },
   computed: {
+    embedUrl() {
+      return `${this.cardUrl}&locale=${this.$i18n.locale}&template=embed`;
+    },
     embedCode() {
       const { mountId } = this.$root.$options.contextData;
 
@@ -77,7 +67,7 @@ export default {
       // }
 
       let htmlCode = '';
-      htmlCode += `<iframe id="${mountId}" frameborder="0" width="100%" style="max-width:100%;" src="${this.url}"></iframe>`;
+      htmlCode += `<iframe id="${mountId}" frameborder="0" width="100%" style="max-width:100%;" src="${this.embedUrl}"></iframe>`;
       htmlCode +=
         '<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></' + // break up script end tag to fix parsing
         `script><script>iFrameResize({checkOrigin:false},'#${mountId}');</` + // break up script end tag to fix parsing

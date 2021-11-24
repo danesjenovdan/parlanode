@@ -16,18 +16,21 @@ const templates = {
   site: fs.readFileSync('./build/card-template-site.html', 'utf-8'),
 };
 
-const getTemplate = (name, replacements = {}) => {
-  if (!Object.prototype.hasOwnProperty.call(templates, name)) {
-    throw new Error(`Template ${name} not found`);
+const getTemplate = (templateName) => {
+  if (!Object.prototype.hasOwnProperty.call(templates, templateName)) {
+    throw new Error(`Template '${templateName}' not found`);
   }
 
-  let template = templates[name];
-  // eslint-disable-next-line no-restricted-syntax
-  for (const [key, value] of Object.entries(replacements)) {
-    template = template.replaceAll(`<!--${key}-->`, value);
-  }
+  return (replacements = {}) => {
+    let template = templates[templateName];
 
-  return template;
+    // eslint-disable-next-line no-restricted-syntax
+    for (const [key, value] of Object.entries(replacements)) {
+      template = template.replaceAll(`<!--${key}-->`, value);
+    }
+
+    return template;
+  };
 };
 
 const manifest = fs.readJSONSync('./dist/client/manifest.json');
@@ -90,16 +93,25 @@ const renderInitialState = (state) => {
 };
 
 const renderCard = async ({ cardName, id, date, locale, template, state }) => {
+  if (!id) {
+    throw new Error(`Query parameter 'id' missing`);
+  }
+  if (!template) {
+    throw new Error(`Query parameter 'template' missing`);
+  }
+
+  const renderTemplate = getTemplate(template);
+
   const [{ render }, localeData] = await Promise.all([
     await loadCardModule(cardName),
     await loadLocale(locale),
   ]);
 
   if (!render) {
-    throw new Error(`Card ${cardName} not found`);
+    throw new Error(`Card '${cardName}' not found`);
   }
   if (!localeData) {
-    throw new Error(`Locale ${locale} not found`);
+    throw new Error(`Locale '${locale}' not found`);
   }
 
   const defaultMessages = localeData.defaults ?? {};
@@ -107,6 +119,14 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
 
   const dataUrl = getCardDataUrl(cardName, id, date, state);
   const cardData = await fetchCardData(dataUrl, id, date);
+
+  if (cardData.error) {
+    // TODO: return error card instead
+    const { error, url } = cardData;
+    const message = error?.message ?? 'Request failed';
+    throw new Error(`${message} (${url})`);
+  }
+
   const cardState = { ...state };
   const urls = getUrls();
   const siteMap = await fetchSiteMap();
@@ -138,7 +158,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
 
   const outputHtml = `${styles}${preloads}<div id="${mountId}">${cardHtml}</div>${initialState}${scripts}`;
 
-  const html = getTemplate(template, {
+  const html = renderTemplate({
     'page-title': contextData.template.pageTitle,
     'parlassets-url': urls.cdn,
     'container-class': contextData.template.frameContainerClass,
