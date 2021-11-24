@@ -1,3 +1,4 @@
+import { computed } from 'vue';
 import CardWrapper from '@/_components/Card/Wrapper.vue';
 
 export default {
@@ -9,6 +10,11 @@ export default {
     return {
       cardName: contextData.cardName,
       cardData: contextData.cardData ?? {},
+    };
+  },
+  provide() {
+    return {
+      cardUrl: computed(() => this.cardUrl),
     };
   },
   created() {
@@ -41,7 +47,7 @@ export default {
     }
   },
   computed: {
-    url() {
+    cardUrl() {
       const { urls } = this.$root.$options.contextData;
       return `${urls.cards}/${this.cardName}/?id=${this.cardData.id}`;
     },
