@@ -20,12 +20,13 @@
               @update:modelValue="searchPeopleImmediate"
             />
             <p-search-dropdown
+              v-if="showWorkingBodiesFilter"
               v-model="workingBodies"
               :placeholder="workingBodyPlaceholder"
               class="filter working-bodies"
               @update:modelValue="searchPeopleImmediate"
             />
-            <div class="genders filter">
+            <div class="genders filter" v-if="showGendersFilter">
               <striped-button
                 v-for="gender in genders"
                 :key="gender.id"
@@ -194,7 +195,9 @@ export default {
       genders,
       currentSort: cardState?.sort || 'name',
       currentSortOrder: cardState?.sortOrder || 'asc',
-      demographicsFilters: cardState?.demographicsFilters || ['birth_date', 'education', 'mandates', 'group']
+      demographicsFilters: cardState?.demographicsFilters || ['birth_date', 'education', 'mandates', 'group'],
+      showWorkingBodiesFilter: cardState?.showWorkingBodiesFilter === false ? false : true,
+      showGendersFilter: cardState?.showGendersFilter === false ? false : true,
     };
   },
   computed: {

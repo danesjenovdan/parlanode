@@ -1,5 +1,7 @@
 {
   "generator": true,
   "analysis": "demographics",
-  "demographicsFilters": ["birth_date", "education"]
+  "demographicsFilters": ["birth_date", "education"],
+  "showWorkingBodiesFilter": false,
+  "showGendersFilter": false
 }
