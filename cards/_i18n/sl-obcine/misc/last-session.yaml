@@ -1,7 +1,7 @@
 card:
   title: Zadnja seja
   tfidf-title: Besede, ki so zaznamovale sejo
-  attendance-title: Prisotnost poslanskih skupin na glasovanjih seje
+  attendance-title: Prisotnost svetniških klubov na glasovanjih seje
   votes-title: Glasovanja
   info: >-
     # Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem
@@ -17,15 +17,15 @@ card:
     govori, dokument pa vsi govori na seji.
 
 
-    # Prisotnost poslanskih skupin na glasovanjih seje
+    # Prisotnost svetniških klubov na glasovanjih seje
 
 
-    Poslanske skupine razvrstimo glede na odstotek, na koliko glasovanjih
-    izbrane seje so bili prisotni njihovi poslanci in poslanke.
+    Svetniške klube razvrstimo glede na odstotek, na koliko glasovanjih
+    izbrane seje so bili prisotni njihovi svetniki in svetnice.
 
 
     # Glasovanja
 
 
     Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI,
-    VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.
+    VZDRŽAN/-A) in število svetnikov, ki niso glasovali, ter izpišemo rezultate.

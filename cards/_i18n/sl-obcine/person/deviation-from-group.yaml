@@ -1,14 +1,14 @@
 card:
   title: Neujemanje s svetniškim klubom
   info: >-
-    # Odstopanje poslanca od večinskega glasu lastne poslanske skupine v
+    # Odstopanje svetnika od večinskega glasu lastnega svetniškega kluba v
     primerjavi s povprečno in največjo vrednostjo.
 
 
-    Za vsa glasovanja preračunamo večinski glas za vsako poslansko skupino.
-    Večinski glas je opcija, za katero se je odločilo največ poslancev.
+    Za vsa glasovanja preračunamo večinski glas za vsak svetniški klub.
+    Večinski glas je opcija, za katero se je odločilo največ svetnikov.
 
 
-    Za vsakega poslanca najdemo trenutno poslansko skupino in izračunamo
+    Za vsakega svetnika najdemo trenutni svetniški klub in izračunamo
     odstotek ujemanja glasov v obdobju članstva. Pri vseh izračunih ignoriramo
     glasovnice "ni prisoten".
