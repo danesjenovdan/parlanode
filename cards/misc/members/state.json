@@ -1,4 +1,5 @@
 {
   "generator": true,
-  "analysis": "presence_votes"
+  "analysis": "demographics",
+  "demographicsFilters": ["birth_date", "education"]
 }

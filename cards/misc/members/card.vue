@@ -194,6 +194,7 @@ export default {
       genders,
       currentSort: cardState?.sort || 'name',
       currentSortOrder: cardState?.sortOrder || 'asc',
+      demographicsFilters: cardState?.demographicsFilters || ['birth_date', 'education', 'mandates', 'group']
     };
   },
   computed: {
@@ -215,26 +216,27 @@ export default {
     },
     columns() {
       if (this.currentAnalysis === 'demographics') {
-        return [
+        let filters = [
           { id: 'image', label: 'image', additionalClass: 'portrait' },
           { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
-          { id: 'birth_date', label: this.$t('age') },
-          {
-            id: 'education',
-            label: this.$t('education'),
-            additionalClass: 'optional',
-          },
-          {
-            id: 'mandates',
-            label: this.$t('number-of-terms'),
-            additionalClass: 'optional',
-          },
-          {
-            id: 'group',
-            label: this.$t('party'),
-            additionalClass: 'optional no-sort',
-          },
-        ];
+        ]
+        if (this.demographicsFilters.includes('birth_date')) filters.push({ id: 'birth_date', label: this.$t('age') })
+        if (this.demographicsFilters.includes('education')) filters.push({
+          id: 'education',
+          label: this.$t('education'),
+          additionalClass: 'optional',
+        })
+        if (this.demographicsFilters.includes('mandates')) filters.push({
+          id: 'mandates',
+          label: this.$t('number-of-terms'),
+          additionalClass: 'optional',
+        })
+        if (this.demographicsFilters.includes('group')) filters.push({
+          id: 'group',
+          label: this.$t('party'),
+          additionalClass: 'optional no-sort',
+        })
+        return filters;
       }
       if (this.currentAnalysis === 'working_bodies') {
         return [
@@ -262,20 +264,25 @@ export default {
     },
     currentPageProcessedMembers() {
       if (this.currentAnalysis === 'demographics') {
-        return this.currentPageMembers.map((member) => [
-          {
-            link: this.getPersonLink(member),
-            image: this.getPersonPortrait(member),
-          },
-          { link: this.getPersonLink(member), text: member.name },
-          age(member.results?.birth_date),
-          member.results?.education,
-          member.results?.mandates,
-          {
+        return this.currentPageMembers.map((member) => {
+          let items = [
+            {
+              link: this.getPersonLink(member),
+              image: this.getPersonPortrait(member),
+            },
+            { link: this.getPersonLink(member), text: member.name },
+          ]
+
+          if (this.demographicsFilters.includes('birth_date')) items.push(age(member.results?.birth_date));
+          if (this.demographicsFilters.includes('education')) items.push(member.results?.education);
+          if (this.demographicsFilters.includes('mandates')) items.push(member.results?.mandates);
+          if (this.demographicsFilters.includes('group')) items.push({
             link: this.getPartyLink(member?.group),
             text: member.group?.acronym || member.group?.name || 'N/A',
-          },
-        ]);
+          })
+
+          return items;
+        });
       }
       if (this.currentAnalysis === 'working_bodies') {
         return this.currentPageMembers.map((member) => [
