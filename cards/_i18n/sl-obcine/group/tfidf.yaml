@@ -1,13 +1,13 @@
 card:
   title: Besede, ki jih zaznamujejo
   info: >-
-    # Izpis 10 besed in besednih zvez, ki jih poslanska skupina uporablja
-    pogosteje kot ostale poslanske skupine v DZ.
+    # Izpis 10 besed in besednih zvez, ki jih svetniški klub uporablja
+    pogosteje kot ostali svetniški klubi v DZ.
 
 
     Analizo izvajamo po statistiki
     [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
 
 
-    Korpus predstavljajo vsi govori, dokument pa vsi govori poslank in poslancev
-    v poslanski skupini.
+    Korpus predstavljajo vsi govori, dokument pa vsi govori svetnikov in svetnic
+    v svetniškem klubu.
