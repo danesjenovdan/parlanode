@@ -1,11 +1,11 @@
 card:
   title: Govori
   info: >-
-    # Izpis povezav do vseh govorov poslancev poslanske skupine v tem sklicu, ki
+    # Izpis povezav do vseh govorov svetnikov svetniškega kluba v tem sklicu, ki
     ustrezajo uporabniškemu vnosu, razvrščenih po datumu.
 
 
-    Naložimo povezave do vseh govorov poslancev izbrane poslanske skupine, ki
+    Naložimo povezave do vseh govorov svetnikov izbranega svetniškega kluba, ki
     jih najdemo v transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa
-    prikažemo tiste, ki ustrezajo uporabniškemu vnosu (poslanci, časovno
+    prikažemo tiste, ki ustrezajo uporabniškemu vnosu (svetniki, časovno
     obdobje, vrsta seje).

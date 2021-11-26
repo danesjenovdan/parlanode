@@ -95,7 +95,7 @@ data-not-published:
   link-url: http://example.com/
   data-not-available: Parlament teh podatkov ne objavlja.
   show-of-hands: Parlament ne objavlja poimenskih rezultatov glasovanja z dvigom rok.
-  parlamentary-questions: Parlament ne objavlja poslanskih vprašanj in pobud.
+  parlamentary-questions: Parlament ne objavlja svetniških vprašanj in pobud.
 search: Išči
 title-search: Išči po naslovu
 contents-search: Išči po vsebini govorov
@@ -306,27 +306,27 @@ analysis-texts:
     label: Prisotnost na glasovanjih
     titleSuffix: ' po prisotnosti na glasovanjih'
     explanation: >-
-      Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh
+      Število glasovanj, ko je bil svetnik prisoten, delimo s številom vseh
       glasovanj in normaliziramo (min 1 - max 100).
   number_of_questions:
     label: Št. svetniških vprašanj in pobud
     titleSuffix: ' po št. svetniških vprašanj in pobud'
     explanation: >-
-      Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v
+      Število svetniških vprašanj in pobud, ki jih je svetnik/-ca zastavil/-a v
       tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.
   speeches_per_session:
     label: Št. govorov na sejo
     titleSuffix: ' po št. govorov na sejo'
     explanation: >-
-      Preštejemo poslančeve govore in število delimo s številom sej, na katerih
-      je poslanec govoril. Število vseh govorov delimo najprej s številom
-      poslancev, potem pa še s številom vseh sej (na katerih se je govorilo).
+      Preštejemo svetnikove govore in število delimo s številom sej, na katerih
+      je svetnik govoril. Število vseh govorov delimo najprej s številom
+      svetnikov, potem pa še s številom vseh sej (na katerih se je govorilo).
       Individualni rezultat primerjamo s povprečnim.
   spoken_words:
     label: Št. izgovorjenih besed
     titleSuffix: ' po št. izgovorjenih besed'
     explanation: >-
-      Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih
+      Število besed, ki jih je svetnik izgovoril v vseh svojih dosedanjih
       govorih v DZ.
   mismatch_of_pg:
     label: Neujemanje s svetniškim klubom
@@ -354,31 +354,31 @@ analysis-texts--party:
     label: Število sedežev
     titleSuffix: ' po številu sedežev'
     explanation: >-
-      Število sedežev posamezne poslanske skupine dobimo tako, da preštejemo vse
+      Število sedežev posameznega svetniškega kluba dobimo tako, da preštejemo vse
       njihove trenutno aktivne člane.
   presence_sessions:
     label: Prisotnost na sejah DZ
     titleSuffix: ' glede na rezultate analize s prisotnostjo na sejah DZ'
     explanation: >-
-      Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na
+      Preštejemo vse seje in za vsakega svetnika/-co SK preverimo, če je na
       posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo
-      kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na
-      sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom
+      kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti svetnikov SK na
+      sejah DZ delimo s številom svetnikov v SK, ta rezultat pa delimo številom
       sej in normaliziramo (min 1 - max 100).
   vote_attendance:
     label: Prisotnost na glasovanjih
     titleSuffix: ' glede na rezultate analize s prisotnostjo na glasovanjih'
     explanation: >-
-      Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine
-      (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih
-      glasovnic poslancev PS delimo s številom poslancev v PS, ta rezultat pa
+      Preštejemo vsa glasovanja, nato pa še, koliko svetnikov svetniškega kluba
+      (SK) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih
+      glasovnic svetnikov SK delimo s številom svetnikov v SK, ta rezultat pa
       delimo s številom glasovanj in normaliziramo (min 1 - max 100).
   number_of_questions:
-    label: Št. poslanskih vprašanj in pobud
-    titleSuffix: ' glede na rezultate analize po št. poslanskih vprašanj in pobud'
+    label: Št. svetniških vprašanj in pobud
+    titleSuffix: ' glede na rezultate analize po št. svetniških vprašanj in pobud'
     explanation: >-
-      Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci
-      izbrane poslanske skupine v tem sklicu DZ. Podatke pridobivamo s spletnega
+      Preštejemo vsa svetniška vprašanja in pobude, ki so jih postavili svetniki/-ce'
+      izbranega svetniškega kluba v tem sklicu DZ. Podatke pridobivamo s spletnega
       mesta DZ RS.
   number_of_amendments:
     label: Št. vloženih amandmajev
@@ -392,7 +392,7 @@ analysis-texts--party:
     label: Raznolikost besedišča
     titleSuffix: ' glede na rezultate analize z raznolikostjo besedišča'
     explanation: >-
-      Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh
+      Iz vseh svetniških govorov preštejemo unikatne besede ter število vseh
       izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda
       pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se
       ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient,
@@ -401,55 +401,55 @@ analysis-texts--party:
       (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na
       kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan
       in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) =
-      0,4375<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in
-      delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim
+      0,4375<br><br>Za vsak svetniški klub seštejemo rezultate svetnikov in
+      delimo s številom svetnikov v njej. Posamezne seštevke delimo s skupnim
       seštevkom in normaliziramo (min 1 - max 100).
   privzdignjeno:
     label: Privzdignjeno besedje
     titleSuffix: ' glede na rezultate analize s privzdignjenim besedjem'
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
-      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      privzdignjeno in preprosto besedje v svetniških govorih. Upoštevani so le
       kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
       konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
-      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      oziroma rabe). Podjetje Amebis je iz transkriptov svetniških govorov
       pripravilo sezname besed, ki imajo katerega od izbranih
       kvalifikatorjev.<br>Privzdignjeno besedje<br>Kvalifikatorji iz
       SSKJ<br>evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.),
       knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>Kvalifikatorji
-      iz SNB<br>/<br><br>Za vsako poslansko skupino seštejemo rezultate
-      poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
+      iz SNB<br>/<br><br>Za vsak svetniški klub seštejemo rezultate
+      svetnikov in delimo s številom svetnikov v njej. Posamezne seštevke delimo
       s skupnim seštevkom in normaliziramo (min 1 - max 100).
   preprosto:
     label: Preprosto besedje
     titleSuffix: ' glede na rezultate analize s preprostim besedjem'
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
-      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      privzdignjeno in preprosto besedje v svetniških govorih. Upoštevani so le
       kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
       konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
-      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      oziroma rabe). Podjetje Amebis je iz transkriptov svetniških govorov
       pripravilo sezname besed, ki imajo katerega od izbranih
       kvalifikatorjev.<br>Preprosto besedje<br>Kvalifikatorji iz SSKJ<br>narečno
       (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>Kvalifikatorji
-      iz SNB<br>pogovorno (pog.)<br><br>Za vsako poslansko skupino seštejemo
-      rezultate poslancev in delimo s številom poslancev v njej. Posamezne
+      iz SNB<br>pogovorno (pog.)<br><br>Za vsak svetniški klub seštejemo
+      rezultate svetnikov in delimo s številom svetnikov v njej. Posamezne
       seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).
   problematicno:
     label: Ekscesno besedje
     titleSuffix: ' glede na rezultate analize z ekscesnim besedjem'
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
-      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      privzdignjeno in preprosto besedje v svetniških govorih. Upoštevani so le
       kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
       konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
-      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      oziroma rabe). Podjetje Amebis je iz transkriptov svetniških govorov
       pripravilo sezname besed, ki imajo katerega od izbranih
       kvalifikatorjev.<br>Ekscesno besedje<br>Kvalifikatorji iz SSKJ
       <br>vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično
       (iron.), otroško (otr.) <br>Kvalifikatorji iz SNB<br>slabšalno (slabš.),
-      vulgarno (vulg.)<br><br>Za vsako poslansko skupino seštejemo rezultate
-      poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
+      vulgarno (vulg.)<br><br>Za vsak svetniški klub seštejemo rezultate
+      svetnikov in delimo s številom svetnikov v njej. Posamezne seštevke delimo
       s skupnim seštevkom in normaliziramo (min 1 - max 100).
 accepted: sprejeti
 rejected: zavrnjeni

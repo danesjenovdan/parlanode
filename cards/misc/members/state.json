@@ -1,4 +1,10 @@
 {
   "generator": true,
-  "analysis": "presence_votes"
+  "analysis": "demographics",
+  "showWorkingBodiesFilter": false,
+  "showGendersFilter": false,
+  "showDemographicsAge": false,
+  "showDemographicsEducation": true,
+  "showDemographicsMandates": false,
+  "showDemographicsGroup": false
 }
