@@ -9,7 +9,7 @@
 
 ### showWorkingBodiesFilter
 - type: Boolean
-- default: `false`
+- default: `true`
 
 ### workingBodies
 // to do //

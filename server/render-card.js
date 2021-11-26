@@ -127,12 +127,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     throw new Error(`${message} (${url})`);
   }
 
-  const cardState = { 
-    ...state, 
-    // showWorkingBodiesFilter: false, // optional: whether to show the working bodies filter on members page (default true)
-    // showGendersFilter: false, // optional: whether to show the genders filter on members page (default true)
-    // demographicsFilters: ["birth_date", "education"], // optional: which demographics data to show on members page under "demographics" tab (default ['birth_date', 'education', 'mandates', 'group'])
-  };
+  const cardState = { ...state };
   const urls = getUrls();
   const siteMap = await fetchSiteMap();
 

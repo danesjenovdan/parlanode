@@ -195,9 +195,12 @@ export default {
       genders,
       currentSort: cardState?.sort || 'name',
       currentSortOrder: cardState?.sortOrder || 'asc',
-      demographicsFilters: cardState?.demographicsFilters || ['birth_date', 'education', 'mandates', 'group'],
       showWorkingBodiesFilter: cardState?.showWorkingBodiesFilter === false ? false : true,
       showGendersFilter: cardState?.showGendersFilter === false ? false : true,
+      showDemographicsAge: cardState?.showDemographicsAge === false ? false : true,
+      showDemographicsEducation: cardState?.showDemographicsEducation === false ? false : true,
+      showDemographicsMandates: cardState?.showDemographicsMandates === false ? false : true,
+      showDemographicsGroup: cardState?.showDemographicsGroup === false ? false : true,
     };
   },
   computed: {
@@ -223,18 +226,18 @@ export default {
           { id: 'image', label: 'image', additionalClass: 'portrait' },
           { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
         ]
-        if (this.demographicsFilters.includes('birth_date')) filters.push({ id: 'birth_date', label: this.$t('age') })
-        if (this.demographicsFilters.includes('education')) filters.push({
+        if (this.showDemographicsAge) filters.push({ id: 'birth_date', label: this.$t('age') })
+        if (this.showDemographicsEducation) filters.push({
           id: 'education',
           label: this.$t('education'),
           additionalClass: 'optional',
         })
-        if (this.demographicsFilters.includes('mandates')) filters.push({
+        if (this.showDemographicsMandates) filters.push({
           id: 'mandates',
           label: this.$t('number-of-terms'),
           additionalClass: 'optional',
         })
-        if (this.demographicsFilters.includes('group')) filters.push({
+        if (this.showDemographicsGroup) filters.push({
           id: 'group',
           label: this.$t('party'),
           additionalClass: 'optional no-sort',
@@ -276,10 +279,10 @@ export default {
             { link: this.getPersonLink(member), text: member.name },
           ]
 
-          if (this.demographicsFilters.includes('birth_date')) items.push(age(member.results?.birth_date));
-          if (this.demographicsFilters.includes('education')) items.push(member.results?.education);
-          if (this.demographicsFilters.includes('mandates')) items.push(member.results?.mandates);
-          if (this.demographicsFilters.includes('group')) items.push({
+          if (this.showDemographicsAge) items.push(age(member.results?.birth_date));
+          if (this.showDemographicsEducation) items.push(member.results?.education);
+          if (this.showDemographicsMandates) items.push(member.results?.mandates);
+          if (this.showDemographicsGroup) items.push({
             link: this.getPartyLink(member?.group),
             text: member.group?.acronym || member.group?.name || 'N/A',
           })

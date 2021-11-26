@@ -1,7 +1,10 @@
 {
   "generator": true,
   "analysis": "demographics",
-  "demographicsFilters": ["birth_date", "education"],
   "showWorkingBodiesFilter": false,
-  "showGendersFilter": false
+  "showGendersFilter": false,
+  "showDemographicsAge": false,
+  "showDemographicsEducation": true,
+  "showDemographicsMandates": false,
+  "showDemographicsGroup": false
 }
