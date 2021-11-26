@@ -1,15 +1,14 @@
 card:
-  title: Deviation from the parliamentary group
+  title: Відхилення від депутатської фракції/групи
   info: >-
-    # MP's vote deviation from the majority vote of their parliamentary group,
-    compared to the average and maximum values.
+    # Відхилення результатів голосування депутата від результатів голосування парламентської
+    фракції/групи, до якої він належить, порівняно з середнім та максимальним значеннями.
 
 
-    For all voting events we calculate the majority vote for each parliamentary
-    group. Majority vote refers to the option that a majority of the MP's voted
-    for.
+    У всіх голосуваннях ми підраховуємо більшість голосів для кожної депутатської
+    групи. Більшість голосів – це варіант, за який проголосувала більшість депутатів.
 
 
-    For each MP we identify their current parliamentary group and we calculate
-    the percentage of matching votes during the period of their membership. In
-    all calculations we ignore the ballot "not present".
+    Для кожного депутата ми визначаємо його поточну депутатську фракцію/групу та розраховуємо
+    відсоток збігів його голосів з голосуванням фракції/групи, за період його членства.
+    Ми не підраховуємо голосування, коли депутат «відсутній».

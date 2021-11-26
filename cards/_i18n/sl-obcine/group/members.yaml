@@ -1,10 +1,10 @@
 card:
   title: Članice in člani svetniškega kluba
   info: >-
-    # Seznam vseh članov poslanske skupine.
+    # Seznam vseh članov svetniškega kluba.
 
 
-    Imena ter slike poslancev, ki predstavljajo posamezno poslansko skupino,
+    Imena ter slike svetnikov, ki predstavljajo posamezen svetniški klub,
     črpamo s spletnega mesta [DZ
     RS](http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine).
-    Prikazani so samo trenutno aktivni poslanci.
+    Prikazani so samo trenutno aktivni svetniki.

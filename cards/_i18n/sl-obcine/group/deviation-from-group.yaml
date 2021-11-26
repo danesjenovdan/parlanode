@@ -1,21 +1,21 @@
 card:
   title: Neujemanje s svetniškim klubom
   info: >-
-    # Seznam vseh poslancev poslanske skupine, ki so razvrščeni glede na
-    vrednost ujemanja z glasom poslanske skupine. Večja kot je vrednost, manjše
+    # Seznam vseh svetnikov svetniškega kluba, ki so razvrščeni glede na
+    vrednost ujemanja z glasom svetniškega kluba. Večja kot je vrednost, manjše
     je ujemanje.
 
 
-    Za vsako glasovanje izračunamo "glas poslanske skupine", ki ji pripada
-    posamezni/-a poslanec/-ka. Potem za vsakega člana/-ico izračunamo odstotek
-    glasovanj, na katerih je poslanec/-ka glasoval/-a drugače od večinskega
-    glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja
+    Za vsako glasovanje izračunamo "glas svetniškega kluba", ki mu pripada
+    posamezni/-a svetnik/-ca. Potem za vsakega člana/-ico izračunamo odstotek
+    glasovanj, na katerih je svetnik/-ca glasoval/-a drugače od večinskega
+    glasu svetniškega kluba in rezultate razvrstimo od največjega odstopanja
     proti najmanjšemu.
 
 
     Vse glasovnice z vrednostjo "NI" ignoriramo, kar ima za posledico to, da če
-    je večinski glas poslanske skupine "NI" (večina poslank in poslancev se
+    je večinski glas svetniškega kluba "NI" (večina svetnic in svetnikov se
     glasovanja ni udeležila) to glasovanje iz analize izključimo. Če ima
-    poslanska skupina več "večinskih glasov" (dve opciji imata enako največje
-    število glasov znotraj poslanske skupine) upoštevamo obe opciji pri
-    primerjavi z individualnimi poslanci ni poslankami.
+    svetniški klub več "večinskih glasov" (dve opciji imata enako največje
+    število glasov znotraj svetniškega kluba) upoštevamo obe opciji pri
+    primerjavi z individualnimi svetniki in svetnicami.

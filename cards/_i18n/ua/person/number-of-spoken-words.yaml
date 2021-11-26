@@ -1,10 +1,9 @@
 card:
-  title: Number of spoken words
+  title: Кількість сказаних слів
   info: >-
-    # The number of words spoken by the MP in all of their previous speeches in
-    the National Assembly compared to the average and maximum values.
+    # Кількість слів, сказаних народним депутатом під час усіх попередніх виступів
+    у Верховній Раді, порівняно з середнім і максимальним значеннями.
 
 
-    We count the number of words in the MP's speeches, as found in transcripts
-    obtained from the web site [National Assembly of the Republic of
-    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Ми підраховуємо кількість слів у промовах народних депутатів, стенограми засідань
+    зібрано на порталі [Портал відкритих даних Верховної Ради](https://data.rada.gov.ua/open).
