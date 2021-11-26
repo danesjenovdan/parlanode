@@ -1,7 +1,7 @@
 card:
   title: Seznam svetnikov
   info: >-
-    # Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu
+    # Množica vseh trenutno aktivnih svetnikov, ki ustrezajo uporabniškemu vnosu
     ({parties}; {districts}). Seznam je sortiran po {sortBy}.
 
 

@@ -20,12 +20,13 @@
               @update:modelValue="searchPeopleImmediate"
             />
             <p-search-dropdown
+              v-if="showWorkingBodiesFilter"
               v-model="workingBodies"
               :placeholder="workingBodyPlaceholder"
               class="filter working-bodies"
               @update:modelValue="searchPeopleImmediate"
             />
-            <div class="genders filter">
+            <div class="genders filter" v-if="showGendersFilter">
               <striped-button
                 v-for="gender in genders"
                 :key="gender.id"
@@ -194,6 +195,12 @@ export default {
       genders,
       currentSort: cardState?.sort || 'name',
       currentSortOrder: cardState?.sortOrder || 'asc',
+      showWorkingBodiesFilter: cardState?.showWorkingBodiesFilter === "false" ? false : true,
+      showGendersFilter: cardState?.showGendersFilter === "false" ? false : true,
+      showDemographicsAge: cardState?.showDemographicsAge === "false" ? false : true,
+      showDemographicsEducation: cardState?.showDemographicsEducation === "false" ? false : true,
+      showDemographicsMandates: cardState?.showDemographicsMandates === "false" ? false : true,
+      showDemographicsGroup: cardState?.showDemographicsGroup === "false" ? false : true,
     };
   },
   computed: {
@@ -215,26 +222,27 @@ export default {
     },
     columns() {
       if (this.currentAnalysis === 'demographics') {
-        return [
+        let filters = [
           { id: 'image', label: 'image', additionalClass: 'portrait' },
           { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
-          { id: 'birth_date', label: this.$t('age') },
-          {
-            id: 'education',
-            label: this.$t('education'),
-            additionalClass: 'optional',
-          },
-          {
-            id: 'mandates',
-            label: this.$t('number-of-terms'),
-            additionalClass: 'optional',
-          },
-          {
-            id: 'group',
-            label: this.$t('party'),
-            additionalClass: 'optional no-sort',
-          },
-        ];
+        ]
+        if (this.showDemographicsAge) filters.push({ id: 'birth_date', label: this.$t('age') })
+        if (this.showDemographicsEducation) filters.push({
+          id: 'education',
+          label: this.$t('education'),
+          additionalClass: 'optional',
+        })
+        if (this.showDemographicsMandates) filters.push({
+          id: 'mandates',
+          label: this.$t('number-of-terms'),
+          additionalClass: 'optional',
+        })
+        if (this.showDemographicsGroup) filters.push({
+          id: 'group',
+          label: this.$t('party'),
+          additionalClass: 'optional no-sort',
+        })
+        return filters;
       }
       if (this.currentAnalysis === 'working_bodies') {
         return [
@@ -262,20 +270,25 @@ export default {
     },
     currentPageProcessedMembers() {
       if (this.currentAnalysis === 'demographics') {
-        return this.currentPageMembers.map((member) => [
-          {
-            link: this.getPersonLink(member),
-            image: this.getPersonPortrait(member),
-          },
-          { link: this.getPersonLink(member), text: member.name },
-          age(member.results?.birth_date),
-          member.results?.education,
-          member.results?.mandates,
-          {
+        return this.currentPageMembers.map((member) => {
+          let items = [
+            {
+              link: this.getPersonLink(member),
+              image: this.getPersonPortrait(member),
+            },
+            { link: this.getPersonLink(member), text: member.name },
+          ]
+
+          if (this.showDemographicsAge) items.push(age(member.results?.birth_date));
+          if (this.showDemographicsEducation) items.push(member.results?.education);
+          if (this.showDemographicsMandates) items.push(member.results?.mandates);
+          if (this.showDemographicsGroup) items.push({
             link: this.getPartyLink(member?.group),
             text: member.group?.acronym || member.group?.name || 'N/A',
-          },
-        ]);
+          })
+
+          return items;
+        });
       }
       if (this.currentAnalysis === 'working_bodies') {
         return this.currentPageMembers.map((member) => [
