@@ -92,7 +92,7 @@
 
         <div v-if="members?.length" class="row">
           <div class="parlaicon-container parlaicon-top">
-            <span class="parlaicon parlaicon-clanstva" aria-hidden="true" />
+            <!-- <span class="parlaicon parlaicon-clanstva" aria-hidden="true" /> -->
           </div>
           <div class="bordertop">
             <template v-for="person in members" :key="person.slug">
