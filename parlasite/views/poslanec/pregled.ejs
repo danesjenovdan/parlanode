@@ -15,6 +15,9 @@
   <div class="col-md-6">
     <%- await fetchCard('/person/memberships/', mp.id) %>
   </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/person/media-reports/', mp.id) %>
+  </div>
 </div>
 
 <%- await include('../_partials/footer.ejs') %>
