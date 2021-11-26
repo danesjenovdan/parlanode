@@ -1,17 +1,17 @@
 card:
   title: Najmanjkrat glasujejo enako
   info: >-
-    # Seznam 5 poslancev, ki najmanjkrat glasujejo enako kot "glas poslanske
-    skupine". Razvrščeni so glede na vrednosti od največje proti najmanjši.
+    # Seznam 5 svetnikov, ki najmanjkrat glasujejo enako kot "glas svetniškega
+    kluba". Razvrščeni so glede na vrednosti od največje proti najmanjši.
     Večja kot je vrednost, manjše je ujemanje glasovanj.
 
 
-    Izračunamo evklidsko razdaljo med rezultati glasovanj poslanske skupine in
-    rezultati vseh ostalih poslancev (pri čemer vrednosti glasov pretvorimo v
+    Izračunamo evklidsko razdaljo med rezultati glasovanj svetniškega kluba in
+    rezultati vseh ostalih svetnikov (pri čemer vrednosti glasov pretvorimo v
     številčne vrednosti med -1 in 1).
 
 
-    Ko izračunamo "razdaljo" med vsemi poslanci, jih razvrstimo glede na
+    Ko izračunamo "razdaljo" med vsemi svetniki, jih razvrstimo glede na
     rezultat in prikažemo prvih pet.
 
 

@@ -1,14 +1,12 @@
 card:
-  title: Avg. number of speeches per session
+  title: Середня кількість виступів протягом засідання
   info: >-
-    # The average number of speeches by the MP compared to the average and
-    maximum values.
+    # Середня кількість виступів депутата порівняно із середнім і максимальним значеннями.
 
 
-    We count the MP's speeches found in transcripts retrieved from the web site
-    [National Assembly of the Republic of
-    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje)
-    and divide it by the number of sessions the MP attended. We divide the
-    number of all speeches first by the number of all the MPs and then by the
-    number of all sessions (where speeches were made). We compare the individual
-    result with the average and maximum values.
+    Ми підраховуємо кількість виступів депутата, на основі даних з Порталу відкритих
+    даних Верховної Ради (https://data.rada.gov.ua/open), отримане значення розділяємо
+    на кількість засідань, на яких був присутній депутат. Ми ділимо кількість усіх
+    виступів спочатку на кількість усіх депутатів, а потім на кількість усіх засідань
+    (на яких виступали). Ми порівнюємо індивідуальний результат із середнім і максимальним
+    значеннями.

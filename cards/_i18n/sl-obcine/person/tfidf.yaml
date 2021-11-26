@@ -1,12 +1,12 @@
 card:
   title: Besede, ki jo/ga zaznamujejo
   info: >-
-    # Izpis 10 besed in besednih zvez, ki jih poslanec/-ka uporablja pogosteje
-    kot ostali poslanci v DZ.
+    # Izpis 10 besed in besednih zvez, ki jih svetnik/-ca uporablja pogosteje
+    kot ostali svetniki v DZ.
 
 
     Analizo izvajamo po statistiki
     [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
 
 
-    Korpus predstavljajo vsi govori, dokument pa vsi poslančevi/-kini govori.
+    Korpus predstavljajo vsi govori, dokument pa vsi svetnikovi/-čini govori.

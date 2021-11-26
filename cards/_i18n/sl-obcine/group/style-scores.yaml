@@ -1,14 +1,14 @@
 card:
   title: Stilne analize
   info: >-
-    # Pogostost uporabe stilno zaznamovanih besed v govorih poslancev poslanske
-    skupine.
+    # Pogostost uporabe stilno zaznamovanih besed v govorih svetnikov svetniškega
+    kluba.
 
 
     Z združevanjem kvalifikatorjev
     [SSKJ](http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika) in
     [SNB](http://www.fran.si/131/snb-slovar-novejsega-besedja) smo definirali
-    ekscesno, privzdignjeno in preprosto besedje v poslanskih govorih.
+    ekscesno, privzdignjeno in preprosto besedje v svetniških govorih.
 
 
     Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in
@@ -16,18 +16,18 @@ card:
     posamezne pomene oziroma rabe).
 
 
-    Podjetje [Amebis](http://www.amebis.si/) je iz transkriptov poslanskih
+    Podjetje [Amebis](http://www.amebis.si/) je iz transkriptov svetniških
     govorov pripravilo sezname besed, ki imajo katerega od izbranih
     kvalifikatorjev.
 
 
-    Črtni graf prikazuje delež posameznega tipa besedja v govorih poslanske
-    skupine glede na povprečje, izračunano za celoten sklic. Delež se izračuna
-    po naslednjem algoritmu: vzamejo se vsi govori poslanske skupine, prešteje
+    Črtni graf prikazuje delež posameznega tipa besedja v govorih svetniškega
+    kluba glede na povprečje, izračunano za celoten sklic. Delež se izračuna
+    po naslednjem algoritmu: vzamejo se vsi govori svetniškega kluba, prešteje
     se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se
-    izvede za vse poslance, nato se deli vrednost kategorije za poslansko
-    skupino z vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s
-    številom poslancev). Vrednost vsake kategorije za poslansko skupino se
+    izvede za vse svetnike, nato se deli vrednost kategorije za svetniški klub
+    z vrednostjo povprečja (seštevek vrednosti vseh svetnikov, deljen s
+    številom svetnikov). Vrednost vsake kategorije za svetniški klub se
     normalizira (min. 1 – max. 100).
 
 
