@@ -9,7 +9,27 @@
 
 ### showWorkingBodiesFilter
 - type: Boolean
-- default: `true`
+- default: `'true'`
+
+### showGendersFilter
+- type: Boolean
+- default: `'true'`
+
+### showDemographicsAge
+- type: Boolean
+- default: `'true'`
+
+### showDemographicsEducation
+- type: Boolean
+- default: `'true'`
+
+### showDemographicsMandates
+- type: Boolean
+- default: `'true'`
+
+### showDemographicsGroup
+- type: Boolean
+- default: `'true'`
 
 ### workingBodies
 // to do //

@@ -195,12 +195,12 @@ export default {
       genders,
       currentSort: cardState?.sort || 'name',
       currentSortOrder: cardState?.sortOrder || 'asc',
-      showWorkingBodiesFilter: cardState?.showWorkingBodiesFilter === false ? false : true,
-      showGendersFilter: cardState?.showGendersFilter === false ? false : true,
-      showDemographicsAge: cardState?.showDemographicsAge === false ? false : true,
-      showDemographicsEducation: cardState?.showDemographicsEducation === false ? false : true,
-      showDemographicsMandates: cardState?.showDemographicsMandates === false ? false : true,
-      showDemographicsGroup: cardState?.showDemographicsGroup === false ? false : true,
+      showWorkingBodiesFilter: cardState?.showWorkingBodiesFilter === "false" ? false : true,
+      showGendersFilter: cardState?.showGendersFilter === "false" ? false : true,
+      showDemographicsAge: cardState?.showDemographicsAge === "false" ? false : true,
+      showDemographicsEducation: cardState?.showDemographicsEducation === "false" ? false : true,
+      showDemographicsMandates: cardState?.showDemographicsMandates === "false" ? false : true,
+      showDemographicsGroup: cardState?.showDemographicsGroup === "false" ? false : true,
     };
   },
   computed: {
