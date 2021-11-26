@@ -26,18 +26,17 @@ router.get('/', ar((render) => {
   });
 }));
 
-router.get('/:slug([a-z0-9-]+)', ar((render, req, res, next) => {
-  getNewData(req.params.slug).then((lawData) => {
-    if (lawData) {
-      render('zakonodaja/zakon', {
-        activeMenu: 'legislation_act',
-        pageTitle: i18n('titles.legislation'),
-        lawData,
-      });
-    } else {
-      next();
-    }
-  });
+router.get('/:slug([a-z0-9-]+)', ar(async (render, req, res, next) => {
+  const lawData = await getNewData(req.params.slug);
+  if (lawData) {
+    render('zakonodaja/zakon', {
+      activeMenu: 'legislation_act',
+      pageTitle: i18n('titles.legislation'),
+      lawData,
+    });
+  } else {
+    next();
+  }
 }));
 
 module.exports = router;
