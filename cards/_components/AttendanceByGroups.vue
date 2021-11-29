@@ -1,37 +1,38 @@
 <template>
-  <div class="presence-list">
-    <div v-for="entry in data" :key="entry.group?.slug" class="presence-item">
-      <div class="presence">
-        <div class="percent">{{ formatNumber(entry.value) }}</div>
-        <div class="party">
-          {{ entry.group?.acronym || entry.group?.name || 'N/A' }}
-        </div>
-        <div
-          :class="[
-            'line',
-            '${obj.org.acronym.replace(/[ +,]/g, \'_\').toLowerCase()}-background',
-          ]"
-          :style="`width: ${entry.value}%;`"
-        ></div>
-      </div>
-    </div>
+  <div v-if="!data?.length">
+    <div v-t="'no-results'" class="no-results" />
   </div>
+  <ul v-else class="party-list">
+    <li v-for="(party, index) in data" :key="index" class="labeled-chart">
+      <div class="column chart-label">
+        <a :href="getPartyLink(party.group)" class="funblue-light-hover">
+          {{ party.group?.acronym || party.group?.name || 'N/A' }}
+        </a>
+      </div>
+      <div class="column chart">
+        <div class="progress hugebar">
+          <div
+            :style="{ width: `${party.value}%` }"
+            class="progress-bar funblue"
+            role="progressbar"
+          ></div>
+          <div class="progress_number">{{ `${party.value}%` }}</div>
+        </div>
+      </div>
+    </li>
+  </ul>
 </template>
 
 <script>
-import numberFormatter from '@/_helpers/numberFormatter.js';
+import links from '@/_mixins/links.js';
 
 export default {
-  name: 'PrisotnostPoPoslanskihSkupinah',
+  name: 'AttendanceByGroups',
+  mixins: [links],
   props: {
     data: {
       type: Array,
-      required: true,
-    },
-  },
-  methods: {
-    formatNumber(number) {
-      return numberFormatter(number, { percent: true });
+      default: () => [],
     },
   },
 };
@@ -39,63 +40,31 @@ export default {
 
 <style lang="scss" scoped>
 @import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
 
-.presence-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-  margin: 10px 0 15px;
+.party-list .labeled-chart {
+  // min-height: 46px;
 
-  .presence-item {
-    display: flex;
+  @include respond-to(mobile) {
+    flex-direction: column;
+  }
 
-    .presence {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      padding: 12px 12px 17px 12px;
-      text-align: center;
-      background: $background;
-      position: relative;
+  .column.chart-label {
+    line-height: 1.1;
+    // margin-top: -10px;
+    // margin-bottom: -10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 200px;
 
-      .percent,
-      .party {
-        color: $font-default;
-      }
+    @include respond-to(mobile) {
+      width: 100%;
+    }
+  }
 
-      .percent {
-        font-size: 32px;
-        line-height: 38px;
-        font-weight: 500;
-
-        @include respond-to(mobile) {
-          font-size: 26px;
-        }
-      }
-
-      .party {
-        flex: 1;
-        font-size: 20px;
-        line-height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        @include respond-to(mobile) {
-          font-size: 18px;
-          line-height: 22px;
-        }
-      }
-
-      .line {
-        height: 5px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background-color: $font-default;
-      }
+  .column.chart {
+    @include respond-to(mobile) {
+      width: 100%;
+      margin-left: 0;
     }
   }
 }
