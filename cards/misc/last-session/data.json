@@ -84,7 +84,71 @@
           "value": 0.0909377560218346
         }
       ],
-      "attendance": [],
+      "attendance": [
+        {
+          "value": 100,
+          "group": {
+            "name": "Nova Slovenija – Krščanski demokrati ",
+            "acronym": "",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09a2cc"
+          }
+        },
+        {
+          "value": 90,
+          "group": {
+            "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+            "acronym": "",
+            "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev",
+            "color": "#09a2cc"
+          }
+        },
+        {
+          "value": 75,
+          "group": {
+            "name": "Svetniški klub samostojnih svetnikov ",
+            "acronym": "",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09a2cc"
+          }
+        },
+        {
+          "value": 75,
+          "group": {
+            "name": "Socialni demokrati ",
+            "acronym": "",
+            "slug": "19-socialni-demokrati",
+            "color": "#09a2cc"
+          }
+        },
+        {
+          "value": 60,
+          "group": {
+            "name": "Levica ",
+            "acronym": "",
+            "slug": "20-levica",
+            "color": "#09a2cc"
+          }
+        },
+        {
+          "value": 54,
+          "group": {
+            "name": "Slovenska demokratska stranka ",
+            "acronym": "",
+            "slug": "21-slovenska-demokratska-stranka",
+            "color": "#09a2cc"
+          }
+        },
+        {
+          "value": 44,
+          "group": {
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#09a2cc"
+          }
+        }
+      ],
       "votes": [
         {
           "all_votes": {

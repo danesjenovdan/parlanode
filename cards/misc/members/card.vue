@@ -26,7 +26,7 @@
               class="filter working-bodies"
               @update:modelValue="searchPeopleImmediate"
             />
-            <div class="genders filter" v-if="showGendersFilter">
+            <div v-if="showGendersFilter" class="genders filter">
               <striped-button
                 v-for="gender in genders"
                 :key="gender.id"
@@ -195,12 +195,13 @@ export default {
       genders,
       currentSort: cardState?.sort || 'name',
       currentSortOrder: cardState?.sortOrder || 'asc',
-      showWorkingBodiesFilter: cardState?.showWorkingBodiesFilter === "false" ? false : true,
-      showGendersFilter: cardState?.showGendersFilter === "false" ? false : true,
-      showDemographicsAge: cardState?.showDemographicsAge === "false" ? false : true,
-      showDemographicsEducation: cardState?.showDemographicsEducation === "false" ? false : true,
-      showDemographicsMandates: cardState?.showDemographicsMandates === "false" ? false : true,
-      showDemographicsGroup: cardState?.showDemographicsGroup === "false" ? false : true,
+      showWorkingBodiesFilter: cardState?.showWorkingBodiesFilter !== 'false',
+      showGendersFilter: cardState?.showGendersFilter !== 'false',
+      showDemographicsAge: cardState?.showDemographicsAge !== 'false',
+      showDemographicsEducation:
+        cardState?.showDemographicsEducation !== 'false',
+      showDemographicsMandates: cardState?.showDemographicsMandates !== 'false',
+      showDemographicsGroup: cardState?.showDemographicsGroup !== 'false',
     };
   },
   computed: {
@@ -222,26 +223,30 @@ export default {
     },
     columns() {
       if (this.currentAnalysis === 'demographics') {
-        let filters = [
+        const filters = [
           { id: 'image', label: 'image', additionalClass: 'portrait' },
           { id: 'name', label: this.$t('name'), additionalClass: 'wider name' },
-        ]
-        if (this.showDemographicsAge) filters.push({ id: 'birth_date', label: this.$t('age') })
-        if (this.showDemographicsEducation) filters.push({
-          id: 'education',
-          label: this.$t('education'),
-          additionalClass: 'optional',
-        })
-        if (this.showDemographicsMandates) filters.push({
-          id: 'mandates',
-          label: this.$t('number-of-terms'),
-          additionalClass: 'optional',
-        })
-        if (this.showDemographicsGroup) filters.push({
-          id: 'group',
-          label: this.$t('party'),
-          additionalClass: 'optional no-sort',
-        })
+        ];
+        if (this.showDemographicsAge)
+          filters.push({ id: 'birth_date', label: this.$t('age') });
+        if (this.showDemographicsEducation)
+          filters.push({
+            id: 'education',
+            label: this.$t('education'),
+            additionalClass: 'optional',
+          });
+        if (this.showDemographicsMandates)
+          filters.push({
+            id: 'mandates',
+            label: this.$t('number-of-terms'),
+            additionalClass: 'optional',
+          });
+        if (this.showDemographicsGroup)
+          filters.push({
+            id: 'group',
+            label: this.$t('party'),
+            additionalClass: 'optional no-sort',
+          });
         return filters;
       }
       if (this.currentAnalysis === 'working_bodies') {
@@ -271,21 +276,25 @@ export default {
     currentPageProcessedMembers() {
       if (this.currentAnalysis === 'demographics') {
         return this.currentPageMembers.map((member) => {
-          let items = [
+          const items = [
             {
               link: this.getPersonLink(member),
               image: this.getPersonPortrait(member),
             },
             { link: this.getPersonLink(member), text: member.name },
-          ]
+          ];
 
-          if (this.showDemographicsAge) items.push(age(member.results?.birth_date));
-          if (this.showDemographicsEducation) items.push(member.results?.education);
-          if (this.showDemographicsMandates) items.push(member.results?.mandates);
-          if (this.showDemographicsGroup) items.push({
-            link: this.getPartyLink(member?.group),
-            text: member.group?.acronym || member.group?.name || 'N/A',
-          })
+          if (this.showDemographicsAge)
+            items.push(age(member.results?.birth_date));
+          if (this.showDemographicsEducation)
+            items.push(member.results?.education);
+          if (this.showDemographicsMandates)
+            items.push(member.results?.mandates);
+          if (this.showDemographicsGroup)
+            items.push({
+              link: this.getPartyLink(member?.group),
+              text: member.group?.acronym || member.group?.name || 'N/A',
+            });
 
           return items;
         });
