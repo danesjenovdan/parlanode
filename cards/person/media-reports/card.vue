@@ -12,7 +12,11 @@
       >
         <div class="name">{{ groupedReports[medium][0].medium.name }}</div>
         <div class="material">
-          <div v-for="report in groupedReports[medium]" :key="report.url" class="link">
+          <div
+            v-for="report in groupedReports[medium]"
+            :key="report.url"
+            class="link"
+          >
             <a :href="report.url" class="funblue-light-hover" target="_blank">
               {{ report.title }}
             </a>
