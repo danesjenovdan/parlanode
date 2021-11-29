@@ -16,7 +16,9 @@
             class="progress-bar funblue"
             role="progressbar"
           ></div>
-          <div class="progress_number">{{ `${party.value}%` }}</div>
+          <div class="progress_number">
+            {{ formatNumber(party.value, { percent: true }) }}
+          </div>
         </div>
       </div>
     </li>
@@ -25,6 +27,7 @@
 
 <script>
 import links from '@/_mixins/links.js';
+import numberFormatter from '@/_helpers/numberFormatter.js';
 
 export default {
   name: 'AttendanceByGroups',
@@ -33,6 +36,11 @@ export default {
     data: {
       type: Array,
       default: () => [],
+    },
+  },
+  methods: {
+    formatNumber(number) {
+      return numberFormatter(number, { percent: true });
     },
   },
 };
