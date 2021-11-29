@@ -281,7 +281,10 @@ export default {
               link: this.getPersonLink(member),
               image: this.getPersonPortrait(member),
             },
-            { link: this.getPersonLink(member), text: member.name },
+            {
+              link: this.getPersonLink(member),
+              text: this.getPersonName(member),
+            },
           ];
 
           if (this.showDemographicsAge)
