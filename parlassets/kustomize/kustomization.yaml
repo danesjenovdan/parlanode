@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlassets-ua
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ua
-    newTag: 'a71383c5a8a323f3f1fffcd28af8dadb5824a425'
+    newTag: '1a448ffc9dbfee37c52ce951ccdd9604af281dbe'
