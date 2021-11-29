@@ -37,7 +37,7 @@ body {
 
   .logo-image-height {
     height: 100%;
-    width: auto;
+    width: 100%;
   }
 }
 
@@ -86,7 +86,7 @@ body {
 @media (max-width: 992px) {
 
   .menu-container .menu,
-  .open-search {
+  .menu-container .open-search {
     display: none;
   }
 
@@ -209,7 +209,7 @@ body {
 
   .menu-container .logo {
     width: 80px;
-    margin-top: 10px;
+    // margin-top: 10px;
   }
 
 
