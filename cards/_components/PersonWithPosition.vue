@@ -1,7 +1,7 @@
 <template>
   <div class="verticalmember">
     <div class="row">
-      <a :href="getPersonLink(person)" :title="person.name">
+      <a :href="getPersonLink(person)" :title="getPersonName(person)">
         <img
           :src="getPersonPortrait(person)"
           class="img-circle img-responsive"
@@ -11,7 +11,7 @@
       <div class="member_data">
         <h3>
           <a :href="getPersonLink(person)" class="funblue-light-hover">{{
-            person.name
+            getPersonName(person)
           }}</a>
         </h3>
         <h4>{{ positionTranslation }}</h4>
