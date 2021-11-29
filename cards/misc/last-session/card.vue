@@ -20,7 +20,9 @@
         <span v-t="'card.attendance-title'"></span>
       </span>
     </div>
-    <attendance-by-groups :data="attendance" />
+    <inner-card
+      :processed-party-data="processedAttendance"
+    />
     <hr />
     <div class="link">
       <a :href="getSessionVotesLink(session)" class="funblue-light-hover">
@@ -57,12 +59,12 @@ import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
 import BarChart from '@/_components/BarChart.vue';
-import AttendanceByGroups from '@/_components/AttendanceByGroups.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
 import links from '@/_mixins/links.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import InnerCard from './InnerCard.vue';
 
 export default {
   name: 'CardMiscLastSession',
@@ -71,9 +73,9 @@ export default {
   },
   components: {
     BarChart,
-    AttendanceByGroups,
     VoteListItem,
     ScrollShadow,
+    InnerCard,
   },
   mixins: [common, sessionHeader, sessionOgImage, links],
   cardInfo: {
@@ -118,6 +120,18 @@ export default {
       url.searchParams.set('votes:page', this.card.currentPage);
       return url.toString();
     },
+    processedAttendance() {
+      return this.attendance.map((party) => {
+        return {
+          "name": party.group?.name,
+          "acronym": party.group?.acronym,
+          "slug": party.group?.slug,
+          "color": party.group?.color,
+          "displayValue": party.value + '%',
+          "chartWidth": party.value + '%',
+        }
+      })
+    }
   },
   methods: {
     formatDate: dateFormatter,
