@@ -92,5 +92,14 @@ export default {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.landing.legislation}`;
     },
+    getPersonOrPartyLink(personOrParty) {
+      if (personOrParty?.group) {
+        // it's a person
+        return this.getPersonLink(personOrParty);
+      } else {
+        // it's a party
+        return this.getPartyLink(personOrParty);
+      }
+    }
   },
 };
