@@ -16,12 +16,6 @@
   <div class="col-md-6">
     <%- await fetchCard('/person/tfidf/', mp.id) %>
   </div>
-  <div class="col-md-6">
-    <%- await fetchCard('/person/number-of-spoken-words/', mp.id) %>
-  </div>
-  <div class="col-md-6">
-    <%- await fetchCard('/person/average-number-of-speeches-per-session/', mp.id) %>
-  </div>
 </div>
 
 <%- await include('../_partials/footer.ejs') %>
