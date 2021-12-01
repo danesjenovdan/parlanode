@@ -5,8 +5,8 @@
       {
         "slug": "240-anton-kastelic",
         "name": "Anton Kastelic",
-        "honorific_prefix": null,
-        "honorific_suffix": null,
+        "honorific_prefix": "test.",
+        "honorific_suffix": "test",
         "preferred_pronoun": null,
         "group": {
           "name": "Lista Zorana Jankovića ",

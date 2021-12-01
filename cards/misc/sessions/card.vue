@@ -4,12 +4,19 @@
       <div class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
           <div class="col-md-6">
-            <blue-button-list v-model="currentFilter" :items="filters" />
+            <blue-button-list
+              v-model="currentFilter"
+              :items="filters"
+              @update:modelValue="updateWorkingBodies"
+            />
           </div>
+          <!--
+            only show working bodies dropdown if
+            a non-root tab is selected
+          -->
           <div
             v-if="
-              currentFilter ==
-              tabs.find((t) => !t.org_ids || !t.org_ids.length).title
+              currentFilter != $t('organization-classifications.root')
             "
             class="col-md-6 filters"
           >
@@ -28,7 +35,6 @@
       :current-sort-order="currentSortOrder"
       :select-sort="selectSort"
       :processed-sessions="processedSessions"
-      :organisation-is-working-body="organisationIsWorkingBody"
     />
   </card-wrapper>
 </template>
@@ -43,11 +49,6 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';
 
-const sessionListTabs = [
-  {
-    title: '',
-  },
-];
 
 export default {
   name: 'CardMiscSessions',
@@ -63,7 +64,29 @@ export default {
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
-    const tabs = sessionListTabs;
+    // group organizations by classifications
+    const classifications = cardData.data.results.reduce((classifications, session) => {
+      session.organizations.forEach((organization) => {
+        if (!Object.keys(classifications).includes(organization.classification)) {
+          classifications[organization.classification] = {};
+        }
+        classifications[organization.classification][organization.slug] = organization;
+        // } else if (!Object.keys(classifications[organization.classification]).includes(organization.slug)) {
+        //   classifications[organization.classification].push(organization.slug)
+        // }
+      });
+      return classifications;
+    }, {});
+
+    // create tabs
+    const tabs = Object.keys(classifications).map((classificationKey) => {
+      return {
+        title: this.$t(`organization-classifications.${classificationKey}`),
+        orgSlugs: Object.keys(classifications[classificationKey]),
+        organizations: classifications[classificationKey],
+      };
+    });
+
     return {
       tabs,
       sessions: cardData?.data?.results,
@@ -72,7 +95,6 @@ export default {
       currentSort: 'date',
       currentSortOrder: 'desc',
       currentFilter: cardState?.filters || tabs[0].title,
-      justFive: cardState?.justFive || false,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
@@ -95,18 +117,10 @@ export default {
         // },
       ];
     },
-    currentAnalysisData() {
-      return find(this.analyses, { id: this.currentAnalysis });
-    },
     currentWorkingBodies() {
       return this.workingBodies
         .filter((workingBody) => workingBody.selected)
         .map((workingBody) => workingBody.id);
-    },
-    currentWorkingBodyNames() {
-      return this.workingBodies
-        .filter((workingBody) => workingBody.selected)
-        .map((workingBody) => workingBody.label);
     },
     inputPlaceholder() {
       return this.currentWorkingBodies.length > 0
@@ -116,29 +130,36 @@ export default {
         : this.$t('select-working-body-placeholder');
     },
     processedSessions() {
-      let sortedAndFiltered = this.sessions
+      // filter sessions
+      const sortedAndFiltered = this.sessions
         .filter((session) => {
+          // find the selected tab
           const selectedTab = this.tabs.find(
             (t) => t.title === this.currentFilter
           );
           if (selectedTab) {
-            if (selectedTab.org_ids && selectedTab.org_ids.length) {
-              return session.organizations.filter(
-                (org) => selectedTab.org_ids.indexOf(org.id) !== -1
+            const filteredByOrgSlugs = session.organizations.filter(
+                (org) => selectedTab.orgSlugs.includes(org.slug)
               ).length;
+
+            // if there are organizations in the dropdown
+            // we should filter by dropdown as well
+            if (selectedTab.orgSlugs.length !== 1) {
+              // there are more organizations under this tab
+              if (this.currentWorkingBodies.length !== 0) {
+                // something is selected in the dropdown
+                // we should filter more
+                let match = false;
+                session.organizations.forEach((org) => {
+                  match = match || this.currentWorkingBodies.includes(org.slug);
+                });
+                return match;
+              }
             }
-            // if no selectedTab.org_ids
-            let match = false;
-            if (this.currentWorkingBodies.length === 0) {
-              session.organizations.forEach((org) => {
-                match = match || this.organisationIsWorkingBody(org.id);
-              });
-            } else {
-              session.organizations.forEach((org) => {
-                match = match || this.currentWorkingBodies.indexOf(org.id) > -1;
-              });
-            }
-            return match;
+
+            // if we did not return yet we should
+            // return the sessions filtered by slugs
+            return filteredByOrgSlugs;
           }
           return false;
         })
@@ -176,39 +197,11 @@ export default {
       if (this.currentSortOrder === 'desc') {
         sortedAndFiltered.reverse();
       }
-      if (this.justFive) {
-        sortedAndFiltered = sortedAndFiltered.slice(0, 5);
-      }
 
       return sortedAndFiltered;
     },
   },
-  watch: {
-    currentFilter(newValue) {
-      const otherTab = this.tabs.find((t) => !t.org_ids || !t.org_ids.length);
-      if (newValue !== otherTab.title) {
-        this.workingBodies.forEach((workingBody) => {
-          workingBody.selected = false;
-        });
-      }
-    },
-    currentWorkingBodies(newValue) {
-      const otherTab = this.tabs.find((t) => !t.org_ids || !t.org_ids.length);
-      if (newValue.length !== 0 && this.currentFilter !== otherTab.title) {
-        this.currentFilter = otherTab.title;
-      }
-    },
-  },
   methods: {
-    organisationIsWorkingBody(organisationId) {
-      const orgIds = this.tabs.reduce((acc, cur) => {
-        if (cur.org_ids) {
-          return acc.concat(cur.org_ids);
-        }
-        return acc;
-      }, []);
-      return orgIds.indexOf(organisationId) === -1;
-    },
     selectSort(sortId) {
       if (this.currentSort === sortId) {
         this.currentSortOrder =
@@ -218,6 +211,26 @@ export default {
         this.currentSortOrder = 'asc';
       }
     },
+    updateWorkingBodies(argument) {
+      // when the tab is switched we should update
+      // the workingBodies array to show them in the
+      // dropdown
+
+      // get current tab
+      const tab = this.tabs.filter((tab) => {
+        return tab.title === argument;
+      })[0];
+
+      // map all organization slugs in the tab to
+      // proper objects that PSearchDropdown can consume
+      this.workingBodies = tab.orgSlugs.map((slug) => {
+        return {
+          id: slug,
+          selected: false,
+          label: tab.organizations[slug].name,
+        };
+      });
+    }
   },
 };
 </script>

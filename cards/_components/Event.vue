@@ -6,7 +6,7 @@
         <template #name>
           <span v-if="showAuthor">
             <span v-for="(author, index) in authors" :key="author.id">
-              <a :href="getPersonLink(author)" class="funblue-light-hover">{{
+              <a :href="getPersonOrPartyLink(author)" class="funblue-light-hover">{{
                 author.name
               }}</a
               ><span v-if="index + 1 < authors.length">, </span>
