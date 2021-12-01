@@ -57,12 +57,12 @@ import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
 import BarChart from '@/_components/BarChart.vue';
-import AttendanceByGroups from '@/_components/AttendanceByGroups.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
 import links from '@/_mixins/links.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import AttendanceByGroups from '@/_components/AttendanceByGroups.vue';
 
 export default {
   name: 'CardMiscLastSession',
@@ -71,9 +71,9 @@ export default {
   },
   components: {
     BarChart,
-    AttendanceByGroups,
     VoteListItem,
     ScrollShadow,
+    AttendanceByGroups,
   },
   mixins: [common, sessionHeader, sessionOgImage, links],
   cardInfo: {

@@ -6,8 +6,8 @@ import { merge } from 'lodash-es';
 import Card from '@/{cardName}/card.vue';
 
 // Sentry
-import * as Sentry from "@sentry/vue";
-import { Integrations } from "@sentry/tracing";
+import * as Sentry from '@sentry/vue';
+import { Integrations } from '@sentry/tracing';
 
 export default async (contextData, i18nData) => {
   const { locale, defaultMessages, cardMessages } = i18nData;
@@ -25,7 +25,7 @@ export default async (contextData, i18nData) => {
   // SENTRY
   Sentry.init({
     app,
-    dsn: "https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015",
+    dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
     integrations: [
       new Integrations.BrowserTracing({
         tracingOrigins: [/.+\.lb\.djnd\.si/],

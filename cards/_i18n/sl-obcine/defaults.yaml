@@ -474,3 +474,7 @@ agenda-items: Točke dnevnega reda
 material: Gradivo
 documents: Dokumenti
 other: Drugo
+organization-classifications:
+  root: Mestni svet
+  committee: Odbor
+  other: Drugo

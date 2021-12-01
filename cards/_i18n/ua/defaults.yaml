@@ -394,3 +394,7 @@ elected-to-district--f: Набрала {numVotes} голосів у {окруз�
 missing-district: округ не обраний
 sort-by--change: оновлення результатів аналізу {аналіз}
 number-of-seats: 'Кількість місць у парламентській залі:'
+organization-classifications:
+  root: Parliament
+  committee: Committees
+  other: Other working bodies
