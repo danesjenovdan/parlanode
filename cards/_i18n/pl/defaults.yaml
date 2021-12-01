@@ -467,3 +467,7 @@ sort-by--updated: data ostatniej aktualizacji danych o posiedzeniu
 sort-by--workingBody: nazwa organizacji
 title: Nazwa
 other-procedures: Drugi postopki
+organization-classifications:
+  root: Parliament
+  committee: Committees
+  other: Other working bodies
