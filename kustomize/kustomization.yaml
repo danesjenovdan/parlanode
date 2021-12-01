@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlacards-ua
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ua
-    newTag: 'd239f0fcde9eb72640b178f23d0ff19cc6d2c113'
+    newTag: '11c5fda029d4a17ce6e5b19056dd51746ed9643d'
