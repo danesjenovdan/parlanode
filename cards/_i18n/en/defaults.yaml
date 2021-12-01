@@ -458,3 +458,7 @@ sort-by--updated: date when last update was made
 sort-by--workingBody: name of the organisation
 title: Name
 other-procedures: Drugi postopki
+organization-classifications:
+  root: Parliament
+  committee: Committees
+  other: Other working bodies
