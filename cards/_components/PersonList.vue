@@ -13,7 +13,7 @@
           <div class="column name">
             <div class="person-name">
               <a :href="getPersonLink(person)" class="funblue-light-hover">
-                {{ person.name }}
+                {{ getPersonName(person) }}
               </a>
             </div>
             <template v-if="showPartyLink">

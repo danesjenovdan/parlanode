@@ -1,7 +1,7 @@
 <template>
   <card-wrapper :header-config="headerConfig">
     <div class="poslanec osnovne-informacije-poslanca">
-      <div class="row">
+      <div v-if="showGroup" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-skupina" aria-hidden="true"></span>
         </div>
@@ -150,12 +150,13 @@ export default {
     links,
   ],
   data() {
-    const { cardData } = this.$root.$options.contextData;
+    const { cardState, cardData } = this.$root.$options.contextData;
 
     return {
       results: cardData?.data?.results ?? {},
       person: cardData?.data?.person ?? {},
       group: cardData?.data?.person?.group ?? {},
+      showGroup: cardState?.showGroup !== 'false',
     };
   },
   computed: {

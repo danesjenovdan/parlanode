@@ -6,6 +6,19 @@ export default {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.member.leaderBase}`;
     },
+    getPersonName(person) {
+      if (!person?.name) {
+        return 'Unknown Name';
+      }
+      let fullName = person.name;
+      if (person.honorific_prefix) {
+        fullName = `${person.honorific_prefix} ${fullName}`;
+      }
+      if (person.honorific_suffix) {
+        fullName = `${fullName} ${person.honorific_suffix}`;
+      }
+      return fullName;
+    },
     getPersonLink(person) {
       if (!person?.slug) {
         return null;
@@ -14,10 +27,8 @@ export default {
       return `${urls.site}/${sm.member.base}/${person.slug}`;
     },
     getPersonPortrait(person) {
-      return (
-        person?.image ||
-        'https://cdn.nov.parlameter.si/v1/parlassets/img/people/square/null.png'
-      );
+      const { urls } = this.$root.$options.contextData;
+      return person?.image || `${urls.cdn}/img/people/square/null.png`;
     },
     getPartyLink(party) {
       if (!party?.slug) {
@@ -81,5 +92,14 @@ export default {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       return `${urls.site}/${sm.landing.legislation}`;
     },
+    getPersonOrPartyLink(personOrParty) {
+      if (personOrParty?.group) {
+        // it's a person
+        return this.getPersonLink(personOrParty);
+      } else {
+        // it's a party
+        return this.getPartyLink(personOrParty);
+      }
+    }
   },
 };
