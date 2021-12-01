@@ -463,3 +463,7 @@ sort-by--updated: datumu zadnje spremembe podatkov o seji
 sort-by--workingBody: imenu organizacije
 title: Ime
 other-procedures: Drugi postopki
+organization-classifications:
+  root: Parliament
+  committee: Committees
+  other: Other working bodies

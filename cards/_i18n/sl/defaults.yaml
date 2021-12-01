@@ -480,3 +480,7 @@ agenda-items: Točke dnevnega reda
 material: Gradivo
 documents: Dokumenti
 other: Drugo
+organization-classifications:
+  root: Parliament
+  committee: Committees
+  other: Other working bodies
