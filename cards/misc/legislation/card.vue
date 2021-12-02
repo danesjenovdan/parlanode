@@ -102,15 +102,25 @@ export default {
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
-    // extract pagination information into variables
-    const {
+    // check if we're embedded
+    const isEmbedded = (this.$root.$options.contextData.templateName === 'embed');
+
+    let {
       results: results = [],
       'legislation:pages': pages = 1,
       'legislation:page': initialPage = 1,
       'legislation:count': count = results.length ?? 0,
       'legislation:per_page': perPage = LEGISLATION_PER_PAGE,
     } = cardData?.data || {};
-    const page = Number(cardState?.page) || initialPage;
+    let page = Number(cardState?.page) || initialPage;
+    
+    // if we're embedded we should override our current settings
+    if (isEmbedded) {
+      pages = Math.ceil(count / 5);
+      perPage = 5;
+      page = (page * 2) - 1;
+      results = results.slice(4);
+    }
 
     // TODO explain why this is necessary
     const legislationPerPage = Array(pages);
@@ -151,6 +161,9 @@ export default {
     searchUrl() {
       // cardData.url is automagically provided by the rendering pipeline
       const url = new URL(this.cardData.url);
+
+      // set per-page setting
+      url.searchParams.set('legislation:per_page', this.perPage);
 
       url.searchParams.set('legislation:page', this.page);
       url.searchParams.set('text', this.textFilter);
