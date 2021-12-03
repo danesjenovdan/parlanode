@@ -131,7 +131,7 @@ export default {
     const filterOptions = classifications.map((classification) => ({
       id: classification,
       color: 'for', // TODO this color should be properly named
-      label: this.$t(classification),
+      label: this.$t(`legislation-classifications.${classification}`),
       selected: cardState?.filter === classification,
     }));
 
