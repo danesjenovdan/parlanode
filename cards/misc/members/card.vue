@@ -465,7 +465,7 @@ export default {
     searchPeople: debounce(function searchPeople() {
       this.searchPeopleImmediate();
     }, 750),
-    scrollToTop() {
+    scrollToTop() { // TODO extract this
       const el = this.$refs.card?.$el || this.$refs.card;
       el.scrollIntoView();
     },

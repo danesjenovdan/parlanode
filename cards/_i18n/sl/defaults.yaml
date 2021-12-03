@@ -484,3 +484,7 @@ organization-classifications:
   root: Parliament
   committee: Committees
   other: Other working bodies
+  commission: Commission
+legislation-classifications:
+  act: Akt
+  decree: Odlok
