@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" max-height>
+  <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <template #generator>
       <div class="session-list-generator">
         <div v-if="filters.length > 1" class="row">
@@ -16,7 +16,7 @@
           -->
           <div
             v-if="
-              currentFilter != $t('organization-classifications.root')
+              currentFilter != 'root'
             "
             class="col-md-6 filters"
           >
@@ -24,23 +24,33 @@
               v-model="workingBodies"
               :placeholder="inputPlaceholder"
               class="dropdown-filter"
+              @update:modelValue="searchSessionsImmediate"
             />
           </div>
         </div>
       </div>
     </template>
-    <inner-card
-      :columns="columns"
-      :current-sort="currentSort"
-      :current-sort-order="currentSortOrder"
-      :select-sort="selectSort"
-      :processed-sessions="processedSessions"
-    />
+    <div v-if="isLoading" class="nalagalnik"></div> <!-- show loader while fetching results -->
+    <template v-else>
+      <inner-card
+        :columns="columns"
+        :current-sort="currentSort"
+        :current-sort-order="currentSortOrder"
+        :select-sort="selectSort"
+        :processed-sessions="currentPageSessions"
+      />
+      <pagination
+        v-if="count > perPage"
+        :page="page"
+        :count="count"
+        :per-page="perPage"
+        @change="onPageChange"
+      />
+    </template>
   </card-wrapper>
 </template>
 
 <script>
-import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { sessionListContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
@@ -48,6 +58,12 @@ import { defaultOgImage } from '@/_mixins/ogImages.js';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import InnerCard from './InnerCard.vue';
+import Pagination from '@/_components/Pagination.vue';
+import { SESSIONS_PER_PAGE } from '@/_helpers/constants.js';
+// debounce is required for search field queries debouncing
+import { debounce } from 'lodash-es';
+// cancelableRequest is how we make requests to update the results
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 
 
 export default {
@@ -56,31 +72,56 @@ export default {
     InnerCard,
     PSearchDropdown,
     BlueButtonList,
+    Pagination
   },
-  mixins: [common, sessionListContextUrl],
+  mixins: [
+    common,
+    sessionListContextUrl,
+    cancelableRequest,
+  ],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
+    // check if we're embedded
+    const isEmbedded = (this.$root.$options.contextData.templateName === 'embed');
+
+    let {
+      results: results = [],
+      'sessions:pages': pages = 1,
+      'sessions:page': initialPage = 1,
+      'sessions:count': count = results.length ?? 0,
+      'sessions:per_page': perPage = SESSIONS_PER_PAGE,
+    } = cardData?.data || {};
+    let page = Number(cardState?.page) || initialPage;
+    
+    // if we're embedded we should override our current settings
+    if (isEmbedded) {
+      pages = Math.ceil(count / 5);
+      perPage = 5;
+      page = (page * 2) - 1;
+      results = results.slice(4);
+    }
+
+    // TODO explain why this is necessary
+    const sessionsPerPage = Array(pages);
+    sessionsPerPage[initialPage - 1] = results;
+
     // group organizations by classifications
-    const classifications = cardData.data.results.reduce((classifications, session) => {
-      session.organizations.forEach((organization) => {
-        if (!Object.keys(classifications).includes(organization.classification)) {
-          classifications[organization.classification] = {};
-        }
-        classifications[organization.classification][organization.slug] = organization;
-        // } else if (!Object.keys(classifications[organization.classification]).includes(organization.slug)) {
-        //   classifications[organization.classification].push(organization.slug)
-        // }
-      });
+    const classifications = cardData.data.organizations.reduce((classifications, organization) => {
+      if (!Object.keys(classifications).includes(organization.classification)) {
+        classifications[organization.classification] = {};
+      }
+      classifications[organization.classification][organization.slug] = organization;
       return classifications;
     }, {});
 
     // create tabs
     const tabs = Object.keys(classifications).map((classificationKey) => {
       return {
+        id: classificationKey,
         title: this.$t(`organization-classifications.${classificationKey}`),
         orgSlugs: Object.keys(classifications[classificationKey]),
         organizations: classifications[classificationKey],
@@ -91,20 +132,63 @@ export default {
       tabs,
       sessions: cardData?.data?.results,
       workingBodies: [],
-      filters: tabs.map((e) => ({ label: e.title, id: e.title })),
+      filters: tabs.map((tab) => ({ label: tab.title, id: tab.id })),
       currentSort: 'date',
       currentSortOrder: 'desc',
-      currentFilter: cardState?.filters || tabs[0].title,
+      currentFilter: cardState?.filters || tabs[0].id,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
+
+      // pagination
+      pages,
+      initialPage,
+      count,
+      perPage,
+      isLoading: false,
+      page,
+      sessionsPerPage,
     };
   },
   computed: {
+    searchUrl() {
+      // cardData.url is automagically provided by the rendering pipeline
+      const url = new URL(this.cardData.url);
+
+      // set per-page setting
+      url.searchParams.set('sessions:per_page', this.perPage);
+
+      url.searchParams.set('sessions:page', this.page);
+
+      url.searchParams.set('classification', this.currentFilter);
+
+      if (this.currentWorkingBodies.length > 0) {
+        url.searchParams.set(
+          'organizations',
+          this.currentWorkingBodies.map(
+            (workingBodySlug) => workingBodySlug.split('-')[0]
+          ).join(',')
+        );
+      }
+
+      // set sort param
+      const sortPrefix = this.currentSortOrder === 'desc' ? '-' : '';
+      let sort = 'start_time';
+      switch (this.currentSort) {
+        case 'name':
+          sort = 'name';
+          break;
+      };
+      url.searchParams.set('order_by', `${sortPrefix}${sort}`);
+
+      return url.toString();
+    },
+
     columns() {
       return [
         { id: 'image', label: '', additionalClass: 'image' },
         { id: 'name', label: this.$t('title'), additionalClass: 'wider name' },
         { id: 'date', label: this.$t('date') },
+        // TODO this should be properly optional instead of commented out
         // {
         //   id: 'updated',
         //   label: this.$t('change'),
@@ -117,11 +201,13 @@ export default {
         // },
       ];
     },
+
     currentWorkingBodies() {
       return this.workingBodies
         .filter((workingBody) => workingBody.selected)
         .map((workingBody) => workingBody.id);
     },
+
     inputPlaceholder() {
       return this.currentWorkingBodies.length > 0
         ? this.$t('selected-placeholder', {
@@ -129,76 +215,9 @@ export default {
           })
         : this.$t('select-working-body-placeholder');
     },
-    processedSessions() {
-      // filter sessions
-      const sortedAndFiltered = this.sessions
-        .filter((session) => {
-          // find the selected tab
-          const selectedTab = this.tabs.find(
-            (t) => t.title === this.currentFilter
-          );
-          if (selectedTab) {
-            const filteredByOrgSlugs = session.organizations.filter(
-                (org) => selectedTab.orgSlugs.includes(org.slug)
-              ).length;
 
-            // if there are organizations in the dropdown
-            // we should filter by dropdown as well
-            if (selectedTab.orgSlugs.length !== 1) {
-              // there are more organizations under this tab
-              if (this.currentWorkingBodies.length !== 0) {
-                // something is selected in the dropdown
-                // we should filter more
-                let match = false;
-                session.organizations.forEach((org) => {
-                  match = match || this.currentWorkingBodies.includes(org.slug);
-                });
-                return match;
-              }
-            }
-
-            // if we did not return yet we should
-            // return the sessions filtered by slugs
-            return filteredByOrgSlugs;
-          }
-          return false;
-        })
-        .sort((sessionA, sessionB) => {
-          let a;
-          let b;
-          switch (this.currentSort) {
-            case 'name':
-              a = sessionA.name;
-              b = sessionB.name;
-              return a.toLowerCase().localeCompare(b.toLowerCase(), 'sl');
-            case 'date':
-              a = sessionA.start_time || 'N/A';
-              b = sessionB.start_time || 'N/A';
-              return a.localeCompare(b, 'en');
-            // case 'updated':
-            //   a = sessionA.updated_at_ts;
-            //   b = sessionB.updated_at_ts;
-            //   if (a < b) {
-            //     return -1;
-            //   }
-            //   if (a > b) {
-            //     return 1;
-            //   }
-            //   return 0;
-            case 'workingBody':
-              a = sessionA.organizations[0].name;
-              b = sessionB.organizations[0].name;
-              return a.localeCompare(b, 'sl');
-            default:
-              return 0;
-          }
-        });
-
-      if (this.currentSortOrder === 'desc') {
-        sortedAndFiltered.reverse();
-      }
-
-      return sortedAndFiltered;
+    currentPageSessions() {
+      return this.sessionsPerPage[this.page - 1] || [];
     },
   },
   methods: {
@@ -211,14 +230,19 @@ export default {
         this.currentSortOrder = 'asc';
       }
     },
+
     updateWorkingBodies(argument) {
       // when the tab is switched we should update
       // the workingBodies array to show them in the
       // dropdown
 
+      // before updating the UI we should start a request
+      // to get new sessions
+      this.searchSessionsImmediate();
+
       // get current tab
       const tab = this.tabs.filter((tab) => {
-        return tab.title === argument;
+        return tab.id === argument;
       })[0];
 
       // map all organization slugs in the tab to
@@ -230,7 +254,46 @@ export default {
           label: tab.organizations[slug].name,
         };
       });
-    }
+    },
+
+    searchSessionsImmediate(keepPage = false) {
+      this.isLoading = true;
+      this.sessionsPerPage = Array(this.pages);
+      this.count = 0;
+      if (!keepPage) {
+        this.page = 1;
+      }
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.count = response?.data?.['sessions:count'];
+        this.page = response?.data?.['sessions:page'];
+        this.sessionsPerPage[this.page - 1] =
+          response?.data?.results || [];
+        this.isLoading = false;
+      });
+    },
+
+    searchSessions: debounce(function searchSessions() {
+      this.searchSessionsImmediate();
+    }, 750),
+
+    onPageChange(newPage) {
+      this.page = newPage;
+      this.scrollToTop();
+      if (!this.sessionsPerPage[newPage - 1]) {
+        this.isLoading = true;
+        this.makeRequest(this.searchUrl).then((response) => {
+          this.sessionsPerPage[newPage - 1] =
+            response?.data?.results || [];
+          this.isLoading = false;
+        });
+      }
+    },
+
+    // TODO extract this
+    scrollToTop() {
+      const el = this.$refs.card?.$el || this.$refs.card;
+      el.scrollIntoView();
+    },
   },
 };
 </script>

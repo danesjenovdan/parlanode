@@ -1,505 +1,10 @@
 {
+  "url": "http://localhost:8000/v3/cards/misc/sessions/?id=1",
   "data": {
     "results": [{
-        "name": "24. seja Mestnega sveta MOL",
-        "id": 2233,
-        "start_time": "2021-07-05T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "27. seja Mestnega sveta MOL",
-        "id": 2234,
-        "start_time": "2021-11-15T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "26. seja Mestnega sveta MOL",
-        "id": 2235,
-        "start_time": "2021-10-18T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "25. seja Mestnega sveta MOL",
-        "id": 2236,
-        "start_time": "2021-09-27T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "23. seja Mestnega sveta MOL",
-        "id": 2237,
-        "start_time": "2021-05-31T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "22. seja Mestnega sveta MOL",
-        "id": 2238,
-        "start_time": "2021-04-19T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "21. seja Mestnega sveta MOL",
-        "id": 2239,
-        "start_time": "2021-03-29T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "20. seja Mestnega sveta MOL",
-        "id": 2240,
-        "start_time": "2021-02-15T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "13. seja Mestnega sveta MOL",
-        "id": 2241,
-        "start_time": "2020-06-15T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "12. seja Mestnega sveta MOL",
-        "id": 2242,
-        "start_time": "2020-05-04T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "11. seja Mestnega sveta MOL",
-        "id": 2243,
-        "start_time": "2020-02-03T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "4. izredna seja Mestnega sveta MOL",
-        "id": 2244,
-        "start_time": "2019-12-16T19:00:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "irregular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "10. seja Mestnega sveta MOL",
-        "id": 2245,
-        "start_time": "2019-12-16T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "9. seja Mestnega sveta MOL",
-        "id": 2246,
-        "start_time": "2019-11-18T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "3. izredna seja Mestnega sveta MOL",
-        "id": 2247,
-        "start_time": "2019-10-21T17:40:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "irregular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "8. seja Mestnega sveta MOL",
-        "id": 2248,
-        "start_time": "2019-10-21T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "2. izredna seja Mestnega sveta MOL",
-        "id": 2249,
-        "start_time": "2019-09-23T18:00:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "irregular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "7. seja Mestnega sveta MOL",
-        "id": 2250,
-        "start_time": "2019-09-23T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "6. seja Mestnega sveta MOL",
-        "id": 2251,
-        "start_time": "2019-07-08T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "5. seja Mestnega sveta MOL",
-        "id": 2252,
-        "start_time": "2019-06-17T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "4. seja Mestnega sveta MOL",
-        "id": 2253,
-        "start_time": "2019-05-20T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "3. seja Mestnega sveta MOL",
-        "id": 2254,
-        "start_time": "2019-04-15T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "15. seja Mestnega sveta MOL",
-        "id": 2255,
-        "start_time": "2020-09-21T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "16. seja Mestnega sveta MOL",
-        "id": 2256,
-        "start_time": "2020-10-19T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "17. seja Mestnega sveta MOL",
-        "id": 2257,
-        "start_time": "2020-11-16T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "18. seja Mestnega sveta MOL",
-        "id": 2258,
-        "start_time": "2020-12-14T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "19. seja Mestnega sveta MOL",
-        "id": 2259,
-        "start_time": "2021-01-18T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "14. seja Mestnega sveta MOL",
-        "id": 2260,
-        "start_time": "2020-07-06T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "2. seja Mestnega sveta MOL",
-        "id": 2261,
-        "start_time": "2019-02-18T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "1. izredna seja Mestnega sveta MOL",
-        "id": 2262,
-        "start_time": "2019-01-21T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }],
-        "classification": "irregular",
-        "in_review": false,
-        "has_transcript": true
-      },
-      {
-        "name": "2. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2263,
-        "start_time": "2019-04-10T17:00:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
-          "color": "#09a2cc",
-          "classification": "committee"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "15. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
-        "id": 2269,
-        "start_time": "2021-03-24T16:15:00",
+        "name": "20. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
+        "id": 2640,
+        "start_time": "2021-12-01T00:00:00",
         "end_time": null,
         "organizations": [{
           "name": "Svet za varstvo pravic najemnikov stanovanj",
@@ -513,62 +18,14 @@
         "has_transcript": false
       },
       {
-        "name": "11. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
-        "id": 2273,
-        "start_time": "2020-06-10T16:30:00",
+        "name": "19. seja Odbora za zdravje in socialno varstvo MS MOL",
+        "id": 2743,
+        "start_time": "2021-11-30T17:00:00",
         "end_time": null,
         "organizations": [{
-          "name": "Svet za varstvo pravic najemnikov stanovanj",
+          "name": "Odbor za zdravje in socialno varstvo",
           "acronym": "",
-          "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
-          "color": "#09a2cc",
-          "classification": "other"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "10. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
-        "id": 2274,
-        "start_time": "2020-03-11T17:00:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Svet za varstvo pravic najemnikov stanovanj",
-          "acronym": "",
-          "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
-          "color": "#09a2cc",
-          "classification": "other"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "9. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
-        "id": 2275,
-        "start_time": "2020-02-19T16:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Svet za varstvo pravic najemnikov stanovanj",
-          "acronym": "",
-          "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
-          "color": "#09a2cc",
-          "classification": "other"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "13. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2277,
-        "start_time": "2021-11-04T17:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+          "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
           "color": "#09a2cc",
           "classification": "committee"
         }],
@@ -577,144 +34,16 @@
         "has_transcript": false
       },
       {
-        "name": "5. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
-        "id": 2281,
-        "start_time": "2019-11-06T16:30:00",
+        "name": "14. seja Komisije za priznanja MS MOL",
+        "id": 2678,
+        "start_time": "2021-11-25T13:00:00",
         "end_time": null,
         "organizations": [{
-          "name": "Svet za varstvo pravic najemnikov stanovanj",
+          "name": "Komisija za priznanja",
           "acronym": "",
-          "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+          "slug": "27-komisija-za-priznanja",
           "color": "#09a2cc",
-          "classification": "other"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "4. seja Sveta za varstvo pravic najemnikov stanovanj v MOL",
-        "id": 2282,
-        "start_time": "2019-10-02T16:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Svet za varstvo pravic najemnikov stanovanj",
-          "acronym": "",
-          "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
-          "color": "#09a2cc",
-          "classification": "other"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "10. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2287,
-        "start_time": "2021-05-24T15:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
-          "color": "#09a2cc",
-          "classification": "committee"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "9. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2289,
-        "start_time": "2021-04-12T16:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
-          "color": "#09a2cc",
-          "classification": "committee"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "2. korespondenčna seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2292,
-        "start_time": "2020-12-02T00:00:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
-          "color": "#09a2cc",
-          "classification": "committee"
-        }],
-        "classification": "correspondent",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "7. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2293,
-        "start_time": "2020-09-08T16:00:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
-          "color": "#09a2cc",
-          "classification": "committee"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "6. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2294,
-        "start_time": "2020-06-03T17:15:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
-          "color": "#09a2cc",
-          "classification": "committee"
-        }],
-        "classification": "regular",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "1. korespondenčna seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2295,
-        "start_time": "2020-04-23T00:00:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
-          "color": "#09a2cc",
-          "classification": "committee"
-        }],
-        "classification": "correspondent",
-        "in_review": false,
-        "has_transcript": false
-      },
-      {
-        "name": "1. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
-        "id": 2299,
-        "start_time": "2019-03-12T16:30:00",
-        "end_time": null,
-        "organizations": [{
-          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
-          "acronym": "",
-          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
-          "color": "#09a2cc",
-          "classification": "committee"
+          "classification": "commision"
         }],
         "classification": "regular",
         "in_review": false,
@@ -722,7 +51,7 @@
       },
       {
         "name": "18. seja Uredniškega odbora javnega glasila Ljubljana",
-        "id": 2300,
+        "id": 2641,
         "start_time": "2021-11-18T14:00:00",
         "end_time": null,
         "organizations": [{
@@ -737,9 +66,25 @@
         "has_transcript": false
       },
       {
-        "name": "22. seja Statutarno pravne komisije MS MOL",
-        "id": 2305,
-        "start_time": "2021-05-27T14:45:00",
+        "name": "27. seja Mestnega sveta MOL",
+        "id": 2610,
+        "start_time": "2021-11-15T15:30:00",
+        "end_time": null,
+        "organizations": [{
+          "name": "Mestni svet MOL",
+          "acronym": null,
+          "slug": "1-mestni-svet-mol",
+          "color": "#09A2CC",
+          "classification": "root"
+        }],
+        "classification": "regular",
+        "in_review": false,
+        "has_transcript": false
+      },
+      {
+        "name": "26. seja Statutarno pravne komisije MS MOL",
+        "id": 2677,
+        "start_time": "2021-11-11T14:45:00",
         "end_time": null,
         "organizations": [{
           "name": "Statutarno pravna komisija",
@@ -753,20 +98,224 @@
         "has_transcript": false
       },
       {
-        "name": "20 seja Statutarno pravne komisije MS MOL",
-        "id": 2307,
-        "start_time": "2021-03-25T14:45:00",
+        "name": "15. seja Odbora za finance MS MOL",
+        "id": 2950,
+        "start_time": "2021-11-10T15:00:00",
         "end_time": null,
         "organizations": [{
-          "name": "Statutarno pravna komisija",
+          "name": "Odbor za finance",
           "acronym": "",
-          "slug": "26-statutarno-pravna-komisija",
+          "slug": "23-odbor-za-finance",
           "color": "#09a2cc",
-          "classification": "other"
+          "classification": "committee"
         }],
         "classification": "regular",
         "in_review": false,
         "has_transcript": false
+      },
+      {
+        "name": "18. seja Odbora za urejanje prostora MS MOL",
+        "id": 2811,
+        "start_time": "2021-11-08T18:00:00",
+        "end_time": null,
+        "organizations": [{
+          "name": "Odbor za urejanje prostora",
+          "acronym": "",
+          "slug": "35-odbor-za-urejanje-prostora",
+          "color": "#09a2cc",
+          "classification": "committee"
+        }],
+        "classification": "regular",
+        "in_review": false,
+        "has_transcript": false
+      },
+      {
+        "name": "13. seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 2948,
+        "start_time": "2021-11-04T17:30:00",
+        "end_time": null,
+        "organizations": [{
+          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+          "acronym": "",
+          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+          "color": "#09a2cc",
+          "classification": "committee"
+        }],
+        "classification": "regular",
+        "in_review": false,
+        "has_transcript": false
+      },
+      {
+        "name": "5. korespondenčna seja Odbora za gospodarsko dejavnost, turizem in kmetijstvo MS MOL",
+        "id": 2970,
+        "start_time": "2021-11-04T00:00:00",
+        "end_time": null,
+        "organizations": [{
+          "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+          "acronym": "",
+          "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+          "color": "#09a2cc",
+          "classification": "committee"
+        }],
+        "classification": "correspondent",
+        "in_review": false,
+        "has_transcript": false
+      }
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    },
+    "sessions:count": 375,
+    "sessions:pages": 38,
+    "sessions:page": 1,
+    "sessions:per_page": 10,
+    "organizations": [{
+        "name": "Mestni svet MOL",
+        "acronym": null,
+        "slug": "1-mestni-svet-mol",
+        "color": "#09A2CC",
+        "classification": "root"
+      },
+      {
+        "name": "Odbor za finance",
+        "acronym": "",
+        "slug": "23-odbor-za-finance",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Svet za varstvo pravic najemnikov stanovanj",
+        "acronym": "",
+        "slug": "24-svet-za-varstvo-pravic-najemnikov-stanovanj",
+        "color": "#09a2cc",
+        "classification": "other"
+      },
+      {
+        "name": "Uredniški odbor glasila Ljubljana",
+        "acronym": "",
+        "slug": "25-uredniski-odbor-glasila-ljubljana",
+        "color": "#09a2cc",
+        "classification": "other"
+      },
+      {
+        "name": "Statutarno pravna komisija",
+        "acronym": "",
+        "slug": "26-statutarno-pravna-komisija",
+        "color": "#09a2cc",
+        "classification": "other"
+      },
+      {
+        "name": "Komisija za priznanja",
+        "acronym": "",
+        "slug": "27-komisija-za-priznanja",
+        "color": "#09a2cc",
+        "classification": "commision"
+      },
+      {
+        "name": "Komisija za poimenovanje naselij in ulic",
+        "acronym": "",
+        "slug": "28-komisija-za-poimenovanje-naselij-in-ulic",
+        "color": "#09a2cc",
+        "classification": "commision"
+      },
+      {
+        "name": "Komisija za pobude občanov",
+        "acronym": "",
+        "slug": "29-komisija-za-pobude-obcanov",
+        "color": "#09a2cc",
+        "classification": "commision"
+      },
+      {
+        "name": "Komisija za mednarodne odnose",
+        "acronym": "",
+        "slug": "30-komisija-za-mednarodne-odnose",
+        "color": "#09a2cc",
+        "classification": "commision"
+      },
+      {
+        "name": "Odbor za zdravje in socialno varstvo",
+        "acronym": "",
+        "slug": "32-odbor-za-zdravje-in-socialno-varstvo",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za zaščito, reševanje in civilno obrambo",
+        "acronym": "",
+        "slug": "33-odbor-za-zascito-resevanje-in-civilno-obrambo",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za varstvo okolja",
+        "acronym": "",
+        "slug": "34-odbor-za-varstvo-okolja",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za urejanje prostora",
+        "acronym": "",
+        "slug": "35-odbor-za-urejanje-prostora",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za šport",
+        "acronym": "",
+        "slug": "36-odbor-za-sport",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za stanovanjsko politiko",
+        "acronym": "",
+        "slug": "37-odbor-za-stanovanjsko-politiko",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za ravnanje z nepremičninami",
+        "acronym": "",
+        "slug": "38-odbor-za-ravnanje-z-nepremicninami",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za predšolsko vzgojo in izobraževanje",
+        "acronym": "",
+        "slug": "39-odbor-za-predsolsko-vzgojo-in-izobrazevanje",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za lokalno samoupravo",
+        "acronym": "",
+        "slug": "40-odbor-za-lokalno-samoupravo",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za kulturo in raziskovalno dejavnost",
+        "acronym": "",
+        "slug": "41-odbor-za-kulturo-in-raziskovalno-dejavnost",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za gospodarske javne službe in promet",
+        "acronym": "",
+        "slug": "42-odbor-za-gospodarske-javne-sluzbe-in-promet",
+        "color": "#09a2cc",
+        "classification": "committee"
+      },
+      {
+        "name": "Odbor za gospodarske dejavnosti, turizem in kmetijstvo",
+        "acronym": "",
+        "slug": "43-odbor-za-gospodarske-dejavnosti-turizem-in-kmetijstvo",
+        "color": "#09a2cc",
+        "classification": "committee"
       }
     ]
   }
