@@ -458,3 +458,6 @@ organization-classifications:
   root: Parliament
   committee: Committees
   other: Other working bodies
+legislation-classifications:
+  act: Act
+  decree: Decree

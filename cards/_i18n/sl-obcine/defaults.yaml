@@ -478,3 +478,6 @@ organization-classifications:
   root: Mestni svet
   committee: Odbor
   other: Drugo
+legislation-classifications:
+  act: Akt
+  decree: Odlok
