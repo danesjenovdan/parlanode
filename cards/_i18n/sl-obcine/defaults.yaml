@@ -476,8 +476,9 @@ documents: Dokumenti
 other: Drugo
 organization-classifications:
   root: Mestni svet
-  committee: Odbor
+  committee: Odbori
   other: Drugo
+  commission: Komisije
 legislation-classifications:
   act: Akt
   decree: Odlok
