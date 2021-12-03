@@ -1,10 +1,13 @@
 <template>
-  <card-wrapper :header-config="headerConfig" max-height>
+  <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <div class="legislation-list-container">
       <div class="filters">
         <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
-          <search-field v-model="textFilter" />
+          <search-field
+            v-model="textFilter"
+            @update:modelValue="searchLegislation"
+          />
         </div>
         <div class="filter" style="flex: 1"></div>
         <div class="filter buttons-filter">
@@ -17,6 +20,11 @@
             @click="selectFilterOption(filterOption)"
           />
         </div>
+        <!--
+          these filters are commented out because
+          they are currently not in use, but they
+          should be made properly optional
+        -->
         <!-- <div class="checkbox-filters">
           <div class="filter align-checkbox">
             <input
@@ -38,14 +46,24 @@
           </div>
         </div> -->
       </div>
-      <sortable-table
-        :columns="columns"
-        :items="mappedItems"
-        :sort="currentSort"
-        :sort-order="currentSortOrder"
-        :sort-callback="selectSort"
-        class="legislation-list"
-      />
+      <div v-if="isLoading" class="nalagalnik"></div> <!-- show loader while fetching results -->
+      <template v-else>
+        <sortable-table
+          :columns="columns"
+          :items="mappedItems"
+          :sort="currentSort"
+          :sort-order="currentSortOrder"
+          :sort-callback="selectSort"
+          class="legislation-list"
+        />
+        <pagination
+          v-if="count > perPage"
+          :page="page"
+          :count="count"
+          :per-page="perPage"
+          @change="onPageChange"
+        />
+      </template>
     </div>
   </card-wrapper>
 </template>
@@ -61,20 +79,13 @@ import StripedButton from '@/_components/StripedButton.vue';
 import SortableTable from '@/_components/SortableTable.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import legislationStatus from '@/_helpers/legislationStatus.js';
+import Pagination from '@/_components/Pagination.vue';
+import { LEGISLATION_PER_PAGE } from '@/_helpers/constants.js';
+// debounce is required for search field queries debouncing
+import { debounce } from 'lodash-es';
+// cancelableRequest is how we make requests to update the results
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 
-// TODO: get from api
-const config = {
-  filters: [
-    {
-      label: 'Odloki',
-      classifications: ['decree'],
-    },
-    {
-      label: 'Akti',
-      classifications: ['act'],
-    },
-  ],
-};
 
 export default {
   name: 'CardMiscLegislation',
@@ -82,23 +93,46 @@ export default {
     SearchField,
     StripedButton,
     SortableTable,
+    Pagination,
   },
-  mixins: [common, legislationListContextUrl, links],
+  mixins: [common, legislationListContextUrl, links, cancelableRequest],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
-    // TODO: get from api
-    // const filters = cardData?.data?.config?.filters || [];
-    const filters = config?.filters || [];
-    const filterOptions = filters.map((filter) => ({
-      ...filter,
-      id: filter.label,
-      color: 'for',
-      label: filter.label,
-      selected: cardState?.filter === filter.label,
+    // check if we're embedded
+    const isEmbedded = (this.$root.$options.contextData.templateName === 'embed');
+
+    let {
+      results: results = [],
+      'legislation:pages': pages = 1,
+      'legislation:page': initialPage = 1,
+      'legislation:count': count = results.length ?? 0,
+      'legislation:per_page': perPage = LEGISLATION_PER_PAGE,
+    } = cardData?.data || {};
+    let page = Number(cardState?.page) || initialPage;
+    
+    // if we're embedded we should override our current settings
+    if (isEmbedded) {
+      pages = Math.ceil(count / 5);
+      perPage = 5;
+      page = (page * 2) - 1;
+      results = results.slice(4);
+    }
+
+    // TODO explain why this is necessary
+    const legislationPerPage = Array(pages);
+    legislationPerPage[initialPage - 1] = results;
+
+    // create filterOptions from classifications contained in the API response
+    const classifications = cardData?.data?.classifications || [];
+    const filterOptions = classifications.map((classification) => ({
+      id: classification,
+      color: 'for', // TODO this color should be properly named
+      label: this.$t(`legislation-classifications.${classification}`),
+      selected: cardState?.filter === classification,
     }));
 
     return {
@@ -112,9 +146,49 @@ export default {
       textFilter: cardState?.text || '',
       // onlyAbstracts: !!state.onlyAbstracts,
       // onlyWithVotes: !!state.onlyWithVotes,
+
+      // pagination
+      pages,
+      initialPage,
+      count,
+      perPage,
+      isLoading: false,
+      page,
+      legislationPerPage,
     };
   },
   computed: {
+    searchUrl() {
+      // cardData.url is automagically provided by the rendering pipeline
+      const url = new URL(this.cardData.url);
+
+      // set per-page setting
+      url.searchParams.set('legislation:per_page', this.perPage);
+
+      url.searchParams.set('legislation:page', this.page);
+      url.searchParams.set('text', this.textFilter);
+
+      // TODO the following line is a little bit smelly
+      // classifications is an array
+      if (this.selectedFilterOption) {
+        url.searchParams.set('classification', this.selectedFilterOption.id);
+      }
+
+      // set sort param
+      const sortPrefix = this.currentSortOrder === 'desc' ? '-' : '';
+      let sort = 'timestamp';
+      switch (this.currentSort) {
+        case 'name':
+          sort = 'text';
+          break;
+        case 'status':
+          sort = 'status';
+          break;
+      };
+      url.searchParams.set('order_by', `${sortPrefix}${sort}`);
+
+      return url.toString();
+    },
     columns() {
       return [
         {
@@ -122,6 +196,10 @@ export default {
           label: this.$t('name'),
           additionalClass: 'name-col',
         },
+        // TODO this is commented out because
+        // we don't need it when we deal with
+        // municipalities, but it should be an
+        // optional thing
         // {
         //   id: 'data',
         //   label: this.$t('data'),
@@ -144,82 +222,19 @@ export default {
         },
       ];
     },
-    filteredLegislation() {
-      const lowerTextFilter = String(this.textFilter || '').toLowerCase();
-
-      return this.legislation.filter((l) => {
-        let textMatch = true;
-        let filterOptionMatch = true;
-
-        if (lowerTextFilter) {
-          textMatch = l.text.toLowerCase().includes(lowerTextFilter);
-        }
-
-        if (this.selectedFilterOption) {
-          if (this.selectedFilterOption.classifications) {
-            const classification =
-              l.classification == null ? 'null' : l.classification;
-
-            filterOptionMatch =
-              this.selectedFilterOption.classifications.includes(
-                classification
-              );
-          }
-        }
-
-        // const onlyAbstractsMatch =
-        //   !this.onlyAbstracts || legislation.abstractVisible;
-
-        // const onlyWithVotesMatch = !this.onlyWithVotes || legislation.hasVotes;
-
-        return (
-          textMatch && filterOptionMatch // && onlyAbstractsMatch && onlyWithVotesMatch
-        );
-      });
-    },
-    sortedAndFilteredLegislation() {
-      const sortedAndFilteredLegislation = this.filteredLegislation
-        .slice()
-        .sort((A, B) => {
-          let a;
-          let b;
-
-          switch (this.currentSort) {
-            case 'name':
-              a = (A.text || '').toLowerCase();
-              b = (B.text || '').toLowerCase();
-              return a.localeCompare(b, 'sl');
-            case 'date':
-              a = A.timestamp || 'N/A';
-              b = B.timestamp || 'N/A';
-              return a.localeCompare(b, 'en');
-            case 'status':
-              a = (A.status || 'in_procedure').toLowerCase();
-              b = (B.status || 'in_procedure').toLowerCase();
-              return a.localeCompare(b, 'en');
-            // case 'epa':
-            //   a = parseInt(A.epa || '0-VII', 10);
-            //   b = parseInt(B.epa || '0-VII', 10);
-            //   return a - b;
-            default:
-              return 0;
-          }
-        });
-
-      if (this.currentSortOrder === 'desc') {
-        sortedAndFilteredLegislation.reverse();
-      }
-
-      return sortedAndFilteredLegislation;
+    currentPageLegislation() {
+      return this.legislationPerPage[this.page - 1] || [];
     },
     mappedItems() {
-      return this.sortedAndFilteredLegislation.map((legislation) => {
+      return this.currentPageLegislation.map((legislation) => {
         const status = legislationStatus(legislation.status);
 
         const outcomeHtml = `<div class="outcome"><i class="parlaicon ${
           status.iconClass
         }"></i><div class="text">${this.$t(status.translationKey)}</div></div>`;
 
+        // TODO there are no abstracts so this is commented out
+        // we should have a way to make this optional
         // const dataIconsHtml = `
         //   <div class="data-icons">
         //     <i class="parlaicon icon-abstract ${
@@ -237,6 +252,7 @@ export default {
               legislation
             )}" class="funblue-light-hover">${legislation.text}</a>`,
           },
+          // TODO optional stuff commented out, this is bad
           // { html: dataIconsHtml },
           // { text: legislation.epa },
           { text: dateFormatter(legislation.timestamp || '') || 'N/A' },
@@ -248,6 +264,7 @@ export default {
       return this.filterOptions.find((fo) => fo.selected);
     },
   },
+
   methods: {
     selectFilterOption(filterOption) {
       if (filterOption.selected) {
@@ -258,6 +275,7 @@ export default {
         });
       }
     },
+
     selectSort(sortId) {
       if (this.currentSort === sortId) {
         this.currentSortOrder =
@@ -266,6 +284,59 @@ export default {
         this.currentSort = sortId;
         this.currentSortOrder = 'asc';
       }
+    },
+
+    searchLegislationImmediate(keepPage = false) {
+      this.isLoading = true;
+      this.legislationPerPage = Array(this.pages);
+      this.count = 0;
+      if (!keepPage) {
+        this.page = 1;
+      }
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.count = response?.data?.['legislation:count'];
+        this.page = response?.data?.['legislation:page'];
+        this.legislationPerPage[this.page - 1] =
+          response?.data?.results || [];
+        this.isLoading = false;
+      });
+    },
+
+    searchLegislation: debounce(function searchLegislation() {
+      this.searchLegislationImmediate();
+    }, 750),
+
+    onPageChange(newPage) {
+      this.page = newPage;
+      this.scrollToTop();
+      if (!this.legislationPerPage[newPage - 1]) {
+        this.isLoading = true;
+        this.makeRequest(this.searchUrl).then((response) => {
+          this.legislationPerPage[newPage - 1] =
+            response?.data?.results || [];
+          this.isLoading = false;
+        });
+      }
+    },
+
+    // TODO extract this
+    scrollToTop() {
+      const el = this.$refs.card?.$el || this.$refs.card;
+      el.scrollIntoView();
+    },
+  },
+
+  watch: {
+    currentSort() {
+      this.searchLegislationImmediate(true);
+    },
+
+    currentSortOrder() {
+      this.searchLegislationImmediate(true);
+    },
+
+    selectedFilterOption() {
+      this.searchLegislationImmediate(true);
     },
   },
 };
