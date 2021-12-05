@@ -102,7 +102,7 @@ export default {
       pages = Math.ceil(count / 5);
       perPage = 5;
       page = (page * 2) - 1;
-      results = results.slice(4);
+      results = results.slice(0, 5);
     }
 
     // TODO explain why this is necessary
