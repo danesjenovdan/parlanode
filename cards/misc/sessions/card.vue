@@ -2,6 +2,7 @@
   <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <template #generator>
       <div class="session-list-generator">
+        <!-- only show filters if we have more than one classification to show -->
         <div v-if="filters.length > 1" class="row">
           <div class="col-md-6">
             <blue-button-list
@@ -15,9 +16,7 @@
             a non-root tab is selected
           -->
           <div
-            v-if="
-              currentFilter != 'root'
-            "
+            v-if="currentFilter != 'root'"
             class="col-md-6 filters"
           >
             <p-search-dropdown
@@ -65,6 +64,16 @@ import { debounce } from 'lodash-es';
 // cancelableRequest is how we make requests to update the results
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
 
+function enumerateClassification(classification) {
+  switch(classification) {
+    case 'root':
+      return -1;
+    case 'other':
+      return 1;
+    default:
+      return 0;
+  };
+}
 
 export default {
   name: 'CardMiscSessions',
@@ -110,7 +119,27 @@ export default {
     sessionsPerPage[initialPage - 1] = results;
 
     // group organizations by classifications
-    const classifications = cardData.data.organizations.reduce((classifications, organization) => {
+    const classifications = cardData.data.organizations.filter((organization) => {
+      // this is to filter out organizations without a classification
+      return organization.classification !== null;
+    }).sort((a, b) => {
+      // this is to make sure root comes first and other comes last
+      switch(a.classification) {
+        case 'root':
+          return -1;
+        case 'other':
+          return 1;
+      };
+
+      switch(b.classification) {
+        case 'root':
+          return 1;
+        case 'other':
+          return -1;
+      };
+
+      return 0;
+    }).reduce((classifications, organization) => {
       if (!Object.keys(classifications).includes(organization.classification)) {
         classifications[organization.classification] = {};
       }

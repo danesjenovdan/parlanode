@@ -10,7 +10,11 @@
           />
         </div>
         <div class="filter" style="flex: 1"></div>
-        <div class="filter buttons-filter">
+        <!-- only show filters if we have more than one classification to show -->
+        <div
+          v-if="filterOptions.length > 1"
+          class="filter buttons-filter"
+        >
           <striped-button
             v-for="filterOption in filterOptions"
             :key="filterOption.id"
