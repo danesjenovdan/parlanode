@@ -47,7 +47,7 @@
     }
   },
   "menu": {
-    "legislation": "Odloki in akti",
+    "legislation": "Odloki",
     "sessions": "Seje",
     "mps": "Svetniki",
     "pgs": "Svetniški klubi",
@@ -162,7 +162,7 @@
     "vote-result--adopted": "Sprejet",
     "vote-result--received": "Prejet",
     "vote-result--in_procedure": "V obravnavi",
-    "legislation": "Odloki in akti",
+    "legislation": "Odloki",
     "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkript",
@@ -177,7 +177,7 @@
   },
   "titles": {
     "session": "Seja",
-    "legislation": "Odloki in akti",
+    "legislation": "Odloki",
     "other-votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",
