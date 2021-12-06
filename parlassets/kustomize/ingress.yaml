@@ -8,9 +8,20 @@ spec:
   tls:
     - hosts:
         - parlassets-ljubljana.lb.djnd.si
+        - cdn.ljubljana.parlameter.si
       secretName: parlassets-ljubljana-nginx-tls
   rules:
     - host: parlassets-ljubljana.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlassets-ljubljana-nginx
+                port:
+                  number: 80
+    - host: cdn.ljubljana.parlameter.si
       http:
         paths:
           - path: /
