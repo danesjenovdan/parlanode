@@ -51,7 +51,7 @@ export default {
       return this.results.map((item) => ({
         label: item.token,
         value: Math.round(item.value * 5000),
-        link: this.getSearchTermLink(item.term),
+        link: this.getSearchTermLink(item.token),
       }));
     },
     chartRows1() {
