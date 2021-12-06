@@ -120,18 +120,28 @@ export default {
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
-    const {
+    // check if we're embedded
+    const isEmbedded = (this.$root.$options.contextData.templateName !== 'embed');
+
+    let {
       results: { members = [] } = {},
       'members:pages': pages = 1,
       'members:page': initialPage = 1,
       'members:count': count = members.length ?? 0,
-      'members:per_page': per_page = MEMBERS_PER_PAGE,
+      'members:per_page': perPage = MEMBERS_PER_PAGE,
     } = cardData?.data || {};
+    let page = Number(cardState?.page) || initialPage;
+
+    // if we're embedded we should override our current settings
+    if (isEmbedded) {
+      pages = Math.ceil(count / 5);
+      perPage = 5;
+      page = (page * 2) - 1;
+      members = members.slice(0, 5);
+    }
 
     const membersPerPage = Array(pages);
     membersPerPage[initialPage - 1] = members;
-
-    const page = Number(cardState?.page) || initialPage;
 
     const initialGenders = (cardState?.genders || '').split(',');
     const genders = [
@@ -179,13 +189,6 @@ export default {
     const initialTextFilter = cardState?.text || '';
 
     return {
-      membersPerPage,
-      count,
-      perPage: per_page,
-      page,
-      pages,
-      initialPage,
-      isLoading: false,
       analyses,
       analysesMaxValues: cardData?.data?.results?.maximum_scores || {},
       currentAnalysis: cardState?.analysis || 'demographics',
@@ -202,6 +205,16 @@ export default {
         cardState?.showDemographicsEducation !== 'false',
       showDemographicsMandates: cardState?.showDemographicsMandates !== 'false',
       showDemographicsGroup: cardState?.showDemographicsGroup !== 'false',
+
+      // pagination
+      membersPerPage,
+      count,
+      perPage,
+      page,
+      pages,
+      initialPage,
+      isLoading: false,
+      isEmbedded,
     };
   },
   computed: {
@@ -359,6 +372,10 @@ export default {
     },
     searchUrl() {
       const url = new URL(this.cardData.url);
+
+      // set per-page setting
+      url.searchParams.set('members:per_page', this.perPage);
+
       url.searchParams.set('members:page', this.page);
       url.searchParams.set('text', this.textFilter);
       if (this.selectedGenderId) {
