@@ -1,14 +1,21 @@
 <template>
   <div class="event">
     <div :class="['parlaicon', eventIcon]"></div>
-    <template v-if="event.type === 'question'">
+    <template
+      v-if="
+        event.type === 'question' ||
+        event.type === 'initiative' ||
+        event.type === 'unknown'
+      "
+    >
       <i18n-t :keypath="translationKey" tag="div" class="motion">
         <template #name>
           <span v-if="showAuthor">
             <span v-for="(author, index) in authors" :key="author.id">
-              <a :href="getPersonOrPartyLink(author)" class="funblue-light-hover">{{
-                author.name
-              }}</a
+              <a
+                :href="getPersonOrPartyLink(author)"
+                class="funblue-light-hover"
+                >{{ author.name }}</a
               ><span v-if="index + 1 < authors.length">, </span>
             </span>
           </span>
@@ -76,7 +83,11 @@ export default {
   },
   computed: {
     eventIcon() {
-      if (this.event.type === 'question') {
+      if (
+        this.event.type === 'question' ||
+        this.event.type === 'initiative' ||
+        this.event.type === 'unknown'
+      ) {
         return 'parlaicon-vprasanje';
       }
       if (this.event.type === 'ballot') {
@@ -114,11 +125,21 @@ export default {
           this.showAuthor ? '--with-name' : ''
         }--${gender}`;
       }
+      if (this.event.type === 'initiative') {
+        return `initiative.asked${
+          this.showAuthor ? '--with-name' : ''
+        }--${gender}`;
+      }
       if (this.event.type === 'ballot') {
         return `event.ballot--${this.event.option}--${gender}`;
       }
       if (this.event.type === 'speech') {
         return `event.speech--${gender}`;
+      }
+      if (this.event.type === 'unknown') {
+        return `unknown.asked${
+          this.showAuthor ? '--with-name' : ''
+        }--${gender}`;
       }
       return '';
     },
