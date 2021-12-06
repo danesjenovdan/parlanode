@@ -27,7 +27,11 @@ export default {
       return results.map((item) => ({
         label: item.token,
         value: Math.round(item.value * 5000),
-        link: this.getSearchTermLink(item.term, { pgs: [group.acronym] }),
+        // TODO we used to pass pgs in here to get the link
+        // to filter only speeches that belong to this pg.
+        // this feature isn't implemented on the new parladata
+        // yet, so it's excluded. it should be reimplemented.
+        link: this.getSearchTermLink(item.token),
       }));
     },
   },
