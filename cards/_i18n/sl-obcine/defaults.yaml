@@ -221,6 +221,20 @@ question:
   asked--with-name--m: "{name} je zastavil vprašanje na temo: {title}."
   asked--with-name--f: "{name} je zastavila vprašanje na temo: {title}."
   asked--with-name--plural: "{name} so zastavili vprašanje na temo: {title}."
+initiative: 
+  asked--m: "Podal pobudo na temo: {title}."
+  asked--f: "Podala pobudo na temo: {title}."
+  asked--plural: "Podali pobudo na temo: {title}."
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}."
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}."
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}."
+unknown: 
+  asked--m: "Odprl temo: {title}."
+  asked--f: "Odprla temo: {title}."
+  asked--plural: "Odprli temo: {title}."
+  asked--with-name--m: "{name} je odprl temo: {title}."
+  asked--with-name--f: "{name} je odprla temo: {title}."
+  asked--with-name--plural: "{name} so odprli temo: {title}."
 event:
   ballot--for--m: Glasoval ZA {title}
   ballot--for--f: Glasovala ZA {title}
