@@ -2,7 +2,7 @@
   <scroll-shadow ref="shadow">
     <div class="parties" @scroll="$refs.shadow.check($event.currentTarget)">
       <div
-        v-for="(party, key) in parties"
+        v-for="(party, key) in sortedParties"
         :key="party.group?.slug || key"
         class="party"
       >
@@ -129,6 +129,12 @@ export default {
     };
   },
   computed: {
+    sortedParties() {
+      const sorted = this.parties.slice(); // copy array to avoid side effects in computed property
+      return sorted.sort((a, b) => {
+        return this.votesSum(b.votes) - this.votesSum(a.votes);
+      });
+    },
     expandedMembers() {
       return this.members.filter((member) => {
         if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
@@ -151,8 +157,12 @@ export default {
   },
   methods: {
     mapVotes,
+    votesSum(votes) {
+      const voteKeys = Object.keys(votes);
+      return voteKeys.reduce((sum, vote) => sum + votes[vote], 0);
+    },
     expandVote(event, party, option) {
-      if (find(this.parties, ['group.slug', party]).votes[option] === 0) {
+      if (find(this.sortedParties, ['group.slug', party]).votes[option] === 0) {
         return;
       }
 
