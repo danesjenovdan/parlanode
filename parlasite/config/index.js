@@ -12,7 +12,7 @@ const config = {
   },
   locale: 'sl-obcine',
   leaderId: '261',
-  siteMap: sitemap
+  siteMap: sitemap,
 };
 
 module.exports = config;
