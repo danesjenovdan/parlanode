@@ -28,7 +28,7 @@
             "recipient_people": [],
             "recipient_text": null,
             "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-rdeca-zvezda.pdf",
-            "type": "question"
+            "type": "initiative"
           }
         ]
       },
@@ -58,7 +58,7 @@
             "recipient_people": [],
             "recipient_text": null,
             "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-ADVENT.pdf",
-            "type": "question"
+            "type": "unknown"
           },
           {
             "timestamp": "2019-12-16T15:30:00",

@@ -123,6 +123,8 @@ export default {
                 const tmp = window.location.hash;
                 window.location.hash = '';
                 window.location.hash = tmp;
+              } else {
+                this.scrollToTop();
               }
             });
           });
