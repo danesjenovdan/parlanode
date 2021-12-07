@@ -47,14 +47,11 @@ export default {
   },
   computed: {
     questionDays() {
-      const grouped = groupBy(
-        this.questions.map((q) => ({ ...q, type: 'question' })),
-        (question) => {
-          const dateTime = question?.timestamp || '';
-          const date = dateTime.split('T')[0];
-          return `${date}`;
-        }
-      );
+      const grouped = groupBy(this.questions, (question) => {
+        const dateTime = question?.timestamp || '';
+        const date = dateTime.split('T')[0];
+        return `${date}`;
+      });
       return Object.keys(grouped).map((date) => ({
         date,
         events: grouped[date],
