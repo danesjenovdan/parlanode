@@ -27,7 +27,7 @@ Sentry.init({
   dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
   integrations: [
     new Integrations.BrowserTracing({
-      tracingOrigins: [/.+\.lb\.djnd\.si/],
+      tracingOrigins: [/.+\.lb\.djnd\.si/, /.+\.parlameter\.si/],
     }),
   ],
   // Set tracesSampleRate to 1.0 to capture 100%
