@@ -62,7 +62,7 @@ export default {
     // margin-bottom: -10px;
     margin-top: 0;
     margin-bottom: 0;
-    width: 200px;
+    width: 100px;
 
     @include respond-to(mobile) {
       width: 100%;
