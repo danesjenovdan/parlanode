@@ -1,5 +1,6 @@
 <template>
-  <ul>
+  <empty-state v-if="!items?.length" />
+  <ul v-else>
     <li v-if="sortCallback != null" class="headers">
       <template v-for="column in columns">
         <div
@@ -12,11 +13,6 @@
         </div>
       </template>
     </li>
-    <div
-      v-if="items.length === 0"
-      v-t="'no-results'"
-      class="empty-dataset"
-    ></div>
     <li v-for="(item, k) in items" :key="k" class="item">
       <div
         v-for="(cell, i) in item"
@@ -70,8 +66,13 @@
 </template>
 
 <script>
+import EmptyState from '@/_components/EmptyState.vue';
+
 export default {
   name: 'SortableTable',
+  components: {
+    EmptyState,
+  },
   props: {
     columns: {
       type: Array,
@@ -112,14 +113,6 @@ export default {
 
 <style scoped lang="scss">
 @import 'parlassets/scss/colors';
-
-.empty-dataset {
-  font-size: 16px;
-  font-style: italic;
-  line-height: 20px;
-  margin: 70px 0;
-  text-align: center;
-}
 
 .headers {
   .column {

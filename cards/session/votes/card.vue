@@ -24,17 +24,15 @@
           class="votes-list-shadow has-filters"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <vote-list-item
-            v-for="vote in votes"
-            :key="vote.id"
-            :vote="vote"
-            :session="session"
-          />
-          <div
-            v-if="votes.length === 0"
-            v-t="'no-results'"
-            class="no-results"
-          ></div>
+          <empty-state v-if="!votes.length" />
+          <template v-else>
+            <vote-list-item
+              v-for="vote in votes"
+              :key="vote.id"
+              :vote="vote"
+              :session="session"
+            />
+          </template>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -55,6 +53,7 @@ import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import { debounce } from 'lodash';
 
@@ -68,6 +67,7 @@ export default {
     StripedButton,
     ScrollShadow,
     VoteListItem,
+    EmptyState,
   },
   mixins: [
     common,

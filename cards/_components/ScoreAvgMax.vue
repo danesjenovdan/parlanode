@@ -1,9 +1,6 @@
 <template>
   <card-wrapper :header-config="headerConfig" half-height>
-    <div v-if="getMaxValue <= 0">
-      <!-- TODO: let empty state take care of this -->
-      <div v-t="'no-results'" class="no-results" />
-    </div>
+    <empty-state v-if="!getMaxValue || getMaxValue <= 0" small />
     <div v-else v-cloak class="card-content-front">
       <div class="progress_flex">
         <div class="column-title progress_title">
@@ -112,6 +109,7 @@ import { personHeader, partyHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage, partyOgImage } from '@/_mixins/ogImages.js';
 import PersonPin from '@/_components/PersonPin.vue';
 import PartyPin from '@/_components/PartyPin.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 
 export default {
@@ -119,6 +117,7 @@ export default {
   components: {
     PersonPin,
     PartyPin,
+    EmptyState,
   },
   mixins: [common],
   props: {

@@ -25,58 +25,60 @@
         class="person-list"
         @scroll="$refs.shadow.check($event.currentTarget)"
       >
-        <li
-          v-for="member in filteredMembers"
-          :key="member.person.slug"
-          class="item"
-        >
-          <div class="column portrait">
-            <a :href="getPersonLink(member.person)">
-              <img :src="getPersonPortrait(member.person)" />
-            </a>
-          </div>
-          <div class="column wider name">
-            <div class="person-name">
-              <a
-                :href="getPersonLink(member.person)"
-                class="funblue-light-hover"
-              >
-                {{ member.person?.name }}
+        <empty-state v-if="!filteredMembers?.length" />
+        <template v-else>
+          <li
+            v-for="member in filteredMembers"
+            :key="member.person.slug"
+            class="item"
+          >
+            <div class="column portrait">
+              <a :href="getPersonLink(member.person)">
+                <img :src="getPersonPortrait(member.person)" />
               </a>
             </div>
-            <div class="person-party">
-              <a
-                v-if="getPartyLink(member.person?.group)"
-                :href="getPartyLink(member.person?.group)"
-                class="funblue-light-hover"
-              >
-                {{
-                  member.person?.group?.acronym ||
-                  member.person?.group?.name ||
-                  'N/A'
-                }}
-              </a>
-              <span v-else>
-                {{
-                  member.person?.group?.acronym ||
-                  member.person?.group?.name ||
-                  'N/A'
-                }}
-              </span>
+            <div class="column wider name">
+              <div class="person-name">
+                <a
+                  :href="getPersonLink(member.person)"
+                  class="funblue-light-hover"
+                >
+                  {{ member.person?.name }}
+                </a>
+              </div>
+              <div class="person-party">
+                <a
+                  v-if="getPartyLink(member.person?.group)"
+                  :href="getPartyLink(member.person?.group)"
+                  class="funblue-light-hover"
+                >
+                  {{
+                    member.person?.group?.acronym ||
+                    member.person?.group?.name ||
+                    'N/A'
+                  }}
+                </a>
+                <span v-else>
+                  {{
+                    member.person?.group?.acronym ||
+                    member.person?.group?.name ||
+                    'N/A'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="column vote">
-            <div :class="`option option-${member.option}`">
-              {{
-                translateOption(member.option, member.person?.preferred_pronoun)
-              }}
+            <div class="column vote">
+              <div :class="`option option-${member.option}`">
+                {{
+                  translateOption(
+                    member.option,
+                    member.person?.preferred_pronoun
+                  )
+                }}
+              </div>
             </div>
-          </div>
-        </li>
-        <empty-circle
-          v-if="filteredMembers.length === 0"
-          :text="$t('filtered-to-none')"
-        />
+          </li>
+        </template>
       </ul>
     </scroll-shadow>
   </div>
@@ -88,7 +90,7 @@ import links from '@/_mixins/links.js';
 import SearchField from '@/_components/SearchField.vue';
 import Result from '@/_components/Result.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
-import EmptyCircle from '@/_components/EmptyCircle.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import mapVotes from '@/_helpers/mapVotes.js';
 
 export default {
@@ -98,7 +100,7 @@ export default {
     SearchField,
     Result,
     ScrollShadow,
-    EmptyCircle,
+    EmptyState,
   },
   mixins: [links],
   props: {

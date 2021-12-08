@@ -1,99 +1,116 @@
 {
-  "url": "data.json",
-  "error": false,
+  "url": "https://parladata.lb.djnd.si/v3/cards/misc/groups/?id=1",
   "data": {
     "results": [
       {
-        "name": "Nova Slovenija – Krščanski demokrati ",
-        "acronym": "",
+        "name": "Nova Slovenija – Krščanski demokrati",
+        "acronym": "NSi",
         "slug": "16-nova-slovenija-krscanski-demokrati",
+        "color": "#09A2CC",
+        "classification": "pg",
         "results": {
           "seat_count": 2,
-          "intra_disunion": null,
+          "intra_disunion": 15.0684931506849,
           "number_of_amendments": null,
-          "vocabulary_size": 0.00253937721290496,
-          "number_of_questions": 16.0,
-          "vote_attendance": 75.0
+          "vocabulary_size": 0.00154704397068996,
+          "number_of_questions": 18.0,
+          "vote_attendance": 77.2108843537415
         }
       },
       {
-        "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
-        "acronym": "",
+        "name": "Samostojni svetnik Liste kolesarjev in pešcev",
+        "acronym": "LKP",
         "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev",
+        "color": "#09A2CC",
+        "classification": "pg",
         "results": {
           "seat_count": 1,
-          "intra_disunion": null,
+          "intra_disunion": 0.0,
           "number_of_amendments": null,
-          "vocabulary_size": 0.106492104197598,
-          "number_of_questions": 44.0,
-          "vote_attendance": 70.5
+          "vocabulary_size": 0.0783152085700373,
+          "number_of_questions": 64.0,
+          "vote_attendance": 55.1020408163265
         }
       },
       {
-        "name": "Svetniški klub samostojnih svetnikov ",
-        "acronym": "",
+        "name": "Svetniški klub samostojnih svetnikov",
+        "acronym": "SKSS",
         "slug": "18-svetniski-klub-samostojnih-svetnikov",
+        "color": "#09A2CC",
+        "classification": "pg",
         "results": {
           "seat_count": 3,
-          "intra_disunion": null,
+          "intra_disunion": 32.1917808219178,
           "number_of_amendments": null,
-          "vocabulary_size": 0.00297070768531131,
-          "number_of_questions": 30.0,
-          "vote_attendance": 75.0
+          "vocabulary_size": 0.0019038559139401,
+          "number_of_questions": 52.0,
+          "vote_attendance": 48.0725623582766
         }
       },
       {
-        "name": "Socialni demokrati ",
-        "acronym": "",
+        "name": "Socialni demokrati",
+        "acronym": "SD",
         "slug": "19-socialni-demokrati",
+        "color": "#09A2CC",
+        "classification": "pg",
         "results": {
           "seat_count": 2,
-          "intra_disunion": null,
+          "intra_disunion": 0.0,
           "number_of_amendments": null,
-          "vocabulary_size": 0.012877538760433,
-          "number_of_questions": 7.0,
-          "vote_attendance": 75.0
+          "vocabulary_size": 0.00898604134588687,
+          "number_of_questions": 10.0,
+          "vote_attendance": 74.1496598639456
         }
       },
       {
         "name": "Levica ",
         "acronym": "",
         "slug": "20-levica",
+        "color": "#09a2cc",
+        "classification": "pg",
         "results": {
           "seat_count": 3,
-          "intra_disunion": null,
+          "intra_disunion": 15.7534246575342,
           "number_of_amendments": null,
-          "vocabulary_size": 0.00354615605731479,
-          "number_of_questions": 21.0,
-          "vote_attendance": 75.0
-        }
-      },
-      {
-        "name": "Slovenska demokratska stranka ",
-        "acronym": "",
-        "slug": "21-slovenska-demokratska-stranka",
-        "results": {
-          "seat_count": 10,
-          "intra_disunion": null,
-          "number_of_amendments": null,
-          "vocabulary_size": 0.0010677266031577,
+          "vocabulary_size": 0.00248506005561801,
           "number_of_questions": 97.0,
-          "vote_attendance": 75.0
+          "vote_attendance": 69.3877551020408
         }
       },
       {
-        "name": "Lista Zorana Jankovića ",
-        "acronym": "",
-        "slug": "22-lista-zorana-jankovica",
+        "name": "Slovenska demokratska stranka",
+        "acronym": "SDS",
+        "slug": "21-slovenska-demokratska-stranka",
+        "color": "#09A2CC",
+        "classification": "pg",
         "results": {
-          "seat_count": 22,
-          "intra_disunion": null,
+          "seat_count": 11,
+          "intra_disunion": 21.2328767123288,
           "number_of_amendments": null,
-          "vocabulary_size": 0.00149975660296865,
+          "vocabulary_size": 0.000722331967839857,
+          "number_of_questions": 119.0,
+          "vote_attendance": 80.9854267869535
+        }
+      },
+      {
+        "name": "Lista Zorana Jankovića",
+        "acronym": "LZJ",
+        "slug": "22-lista-zorana-jankovica",
+        "color": "#09a2cc",
+        "classification": "pg",
+        "results": {
+          "seat_count": 24,
+          "intra_disunion": 19.0068493150685,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.00105922231845265,
           "number_of_questions": 4.0,
-          "vote_attendance": 75.0
+          "vote_attendance": 87.9750425411231
         }
       }
-    ]
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    }
   }
 }
