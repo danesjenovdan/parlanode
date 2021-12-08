@@ -170,10 +170,10 @@ export default {
       return this.allPeople.filter((person) => person.selected);
     },
     groupSpeakingDays() {
-      return groupBy(this.speeches, (o) => {
-        const dateTime = o.start_time || o.session?.start_time || '';
+      return groupBy(this.speeches, (speech) => {
+        const dateTime = speech.start_time || speech.session?.start_time || '';
         const date = dateTime.split('T')[0];
-        return `${date}__${o.session?.id}`;
+        return `${date}__${speech.session?.id}`;
       });
     },
     headerConfig() {
