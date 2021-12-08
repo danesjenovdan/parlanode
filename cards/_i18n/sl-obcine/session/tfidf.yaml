@@ -9,4 +9,4 @@ card:
     [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
 
-    Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.
+    Korpus predstavljajo vsi govori vseh sej, dokument pa vsi govori na izbrani seji.

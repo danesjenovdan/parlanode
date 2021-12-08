@@ -4,11 +4,9 @@ card:
     # Pregled svetniških vprašanj na nivoju svetniškega kluba.
 
 
-    Zbrali smo vsa svetniška vprašanja, jih sortirali po svetniških klubih in
-    jih ponudili v pregled glede na svetnika/-co, ki jih je postavil/-a, glede
-    na to, na koga so bila naslovljena ali glede na čas. Omogočili smo tudi
-    iskanje po naslovu svetniških vprašanj.
+    Zbiramo smo vsa svetniška vprašanja, jih razvrsčamo po svetniških klubih in
+    ponujamo v pregled z informacijo o svetnikih_cah, ki so jih postavile_i, in
+    temi vprašanja.
 
 
-    Nabor svetniških vprašanj pridobimo s spletnega mesta [DZ
-    RS](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Nabor svetniških vprašanj pridobimo s spletnega mesta MO Ljubljana.
