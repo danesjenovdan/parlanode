@@ -1,785 +1,410 @@
 {
   "id": 235,
-  "url": "https://parladata.lb.djnd.si/v3/cards/person/speeches/?id=235",
+  "url": "http://localhost:8000/v3/cards/person/speeches/?id=235",
   "data": {
-    "results": [
-      {
-        "speech_id": 7611,
-        "content": "Hvala za besedo. Najprej bi vse lepo pozdravil. Spoštovane svetnice in svetniki. Oba predloga za častna meščana Ljubljane nikakor ne bom podprl. Prepričan sem, da imamo v Ljubljani zelo širok izbor ljudi, katere bi lahko predlagal za imenovanje. Tokr[...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 35,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+    "results": [{
+        "id": 58915,
+        "content": "Hvala za besedo. Zdaj ne vem, koliko je takih družbenih pogodb, ki bi trajale 20 let, ampak mislim, da bo s tem podpisom MOL postal neke vrste prvak v Sloveniji, pa tudi mogoče širše. Začelo se je skromno, s podaljševanjem na 12 mesecev, potem se je  [...]",
+        "the_order": 309,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-04-19T15:30:00"
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 2988,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7664,
-        "content": "Hvala za besedo. Šli smo si ogledat večkrat. To so skoraj moji sosedje bom rekel. In poznam ta konec, ker smo tudi z Oddelkom za varstvo okolja velikokrat tam čistili ambrozijo pa take stvari. In zanima me, tam sta v bistvu dva dostopa, dve cesti, ki[...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 88,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 58868,
+        "content": "Jaz se opravičujem, če nečesa dobro nisem prebral v gradivu, ampak po moje je boljše, da vprašam, kot da ostanem neveden. Namreč, tudi mene to malo bega, ker jaz sem mislil, da gre za en instrument pomoči mladim v nekem določenem obdobju, ko so pač r [...]",
+        "the_order": 262,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-04-19T15:30:00"
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 2988,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7701,
-        "content": "Hvala za besedo. Izredno sem vesel, da se bo območje bivše tovarne Rog uredilo in, da bo ponos vsem Ljubljančanom in tudi širše. Končno bo to podoba, ki si jo to mesto zasluži. Najverjetneje bo minilo še kar nekaj časa, da si Rog zopet pridobi sloves[...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 125,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 58774,
+        "content": "Gospod župan, če bi mestni potniški promet bil efektiven, če bi bil privlačen, če bi bil tako naravnan, da bi se dalo pustiti na obrobju mesta avto in priti v nekem razumnem roku v center mesta, vam povem, da tudi garažnih ne bi bilo treba. Vsaj ne v [...]",
+        "the_order": 168,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-04-19T15:30:00"
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 2988,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7703,
-        "content": "Škoda. Za vas.",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 127,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 58772,
+        "content": "Seveda, gospod župan, se je z vami možno strinjati, to kar ste rekli. Zdaj, če bi šlo samo za zvišanje parkirnine, bi lahko rekli, da s tem odvračamo avtomobiliste, da se vozijo v center in to bi recimo bilo v skladu s prometno strategijo, ki govori, [...]",
+        "the_order": 166,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-04-19T15:30:00"
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 2988,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7705,
-        "content": "Ni res. Ni res.",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 129,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 58723,
+        "content": "Odbor za kulturo in raziskovalno dejavnost je na 15. redni seji obravnaval predlog sklepa, da se sprejme predlog Sklepa o določitvi dela plače za delovno uspešnost direktorice javnega zavoda Mednarodni grafični in likovni center za leto 2020, iz nasl [...]",
+        "the_order": 117,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-04-19T15:30:00"
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 2988,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7999,
-        "content": "Hvala za besedo. Pri imenovanju predstavnikov MOL v Svet javnega zavoda Festival Ljubljane na žalost ni bil imenovan nihče izmed evidentiranih kanditatov s strani opozicijskih svetniških skupin zato sklepov o imenovanju svetnic, svetniki in svetnice [...]",
-        "session": {
-          "name": "20. seja Mestnega sveta MOL",
-          "id": 56,
-          "start_time": "2021-02-15T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 12,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 58681,
+        "content": "Hvala za besedo. Pač odloka proračuna ne bom mogel podpreti, ker verjamem, da je centristično naravnan. Gospa iz Nove Slovenije je sicer rekla, da se besno gradijo ceste, treba je pogledat, kje se gradijo besno te ceste, na našem koncu se gotovo ne g [...]",
+        "the_order": 75,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-02-15T15:30:00"
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 2988,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 8208,
-        "content": "Hvala za besedo. Mislim, da sem bil prijavljen prvi no in se vam zahvaljujem vseeno, da ste mi dal naknadno besedo.",
-        "session": {
-          "name": "19. seja Mestnega sveta MOL",
-          "id": 57,
-          "start_time": "2021-01-18T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 104,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 58631,
+        "content": "Ja, hvala za besedo. Tudi to leto je pač naš proračun neko igranje na harmoniko in lahko rečemo, da na zahodu nič novega ni. Iz leta v leto se ponavlja isti ritual, v začetku leta se proračun napihuje, potem se ta napihnjenost z rebalansi ob koncu le [...]",
+        "the_order": 25,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-01-18T15:30:00"
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 2988,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 8210,
-        "content": "Ja, v redu. Na današnji seji mestnega sveta sprejemamo rebalans proračuna za letošnje leto ter osnutka odloka o proračunu MOL za 2022 in 2023. Gradiva so zgledno pripravljena, to mormo priznati in skupaj je bilo potrebno predelati natanko 1371 strani[...]",
-        "session": {
-          "name": "19. seja Mestnega sveta MOL",
-          "id": 57,
-          "start_time": "2021-01-18T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 106,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 54263,
+        "content": "Podžupan in mestni arhitekt, Janez Koželj omenja, da sklep ni tapravi in ga zavrača, pristojni Odbor za urejanje prostora ne podpira tega sklepa in MOL v primeru, da mestni svet potrdi omenjeni sklep izgubi zadnji vzvod, da bi vendarle dobil vsaj nek [...]",
+        "the_order": 56,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-01-18T15:30:00"
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 2989,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 8212,
-        "content": "Lahko dokončam, sam mam še par besed. Zavedati se je treba, da je pri tako obsežnih gradivih in to pri najpomembnejših aktih za delovanje Mestne občine Ljubljana vsekakor potrebna širša razprava, ne pa samo glasovanje za ali proti. Dopisna seja je bi[...]",
-        "session": {
-          "name": "19. seja Mestnega sveta MOL",
-          "id": 57,
-          "start_time": "2021-01-18T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 108,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 54262,
+        "content": "Aha, se opravičujem. V redu. Jaz upam, da se slišimo. Zdaj, po tem, kar je bilo do zdaj rečeno, je očitno, da gre tam za neskladno gradnjo oziroma za gradnjo, ki ni v skladu z gradbenim dovoljenjem, ampak upam, da to bodo pristojne službe reagirale n [...]",
+        "the_order": 55,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-01-18T15:30:00"
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 2989,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 8214,
-        "content": "Korespondenčno sejo delovnega telesa skliče njegov predsednik, predsednica. Če je za nemoteno delo sveta potrebna odločitva delega telesa o gradivu, ki je znano vsem članom ali pa, če jo je potrebno sklicati v roku 48 ur. Konec citata. Dopisna seja j[...]",
-        "session": {
-          "name": "19. seja Mestnega sveta MOL",
-          "id": 57,
-          "start_time": "2021-01-18T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 110,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 54260,
+        "content": "Hvala za besedo.",
+        "the_order": 53,
         "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
+          "slug": "220-dragan-matic",
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
         },
-        "start_time": "2021-01-18T15:30:00"
-      },
-      {
-        "speech_id": 8331,
-        "content": "Hvala za besedo. Pri Predlogu Sklepa o soglasju k Osnutku besedila pravnega posla - kupoprodajne pogodbe za nezazidana stavbna zemljišča s parc. št. 127/175, 127/174 in 127/63, vsa k. o. 1730 Moste se mi poraja vprašanje, zakaj je sklicna cena za 600[...]",
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
         "session": {
-          "name": "19. seja Mestnega sveta MOL",
-          "id": 57,
-          "start_time": "2021-01-18T15:30:00",
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 2989,
+          "start_time": "2021-10-18T15:30:00",
           "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 227,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2021-01-18T15:30:00"
-      },
-      {
-        "speech_id": 8407,
-        "content": "Hvala za besedo, gospod župan. Spoštovani vsi prisotni. S Predlogom Odloka o spremembah in dopolnitvah Odloka o urejanju prometa v MOL se svetniki Slovenske demokratske stranke nikakor ne moremo strinjani, saj gre v spremembah za to, da se povečujejo[...]",
-        "session": {
-          "name": "19. seja Mestnega sveta MOL",
-          "id": 57,
-          "start_time": "2021-01-18T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 303,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2021-01-18T15:30:00"
-      },
-      {
-        "speech_id": 8425,
-        "content": "Najlepša hvala za besedo. Na podlagi 94. člena Poslovnika Mestnega sveta MOL predlagam umik 11. točke z naslovom Predlog Sklepa o ugotovitvi javne koristi Pot ob Savi. Predlagana pot, imenovana Pot ob Savi poteka na trasi zasebne poti kmetov, lastnik[...]",
-        "session": {
-          "name": "18. seja Mestnega sveta MOL",
-          "id": 58,
-          "start_time": "2020-12-14T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 7,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2020-12-14T15:30:00"
-      },
-      {
-        "speech_id": 8426,
-        "content": "Slovenije iz Ljubljane.",
-        "session": {
-          "name": "18. seja Mestnega sveta MOL",
-          "id": 58,
-          "start_time": "2020-12-14T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 8,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2020-12-14T15:30:00"
-      },
-      {
-        "speech_id": 8428,
-        "content": "Lahko sam dokončem?",
-        "session": {
-          "name": "18. seja Mestnega sveta MOL",
-          "id": 58,
-          "start_time": "2020-12-14T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 10,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2020-12-14T15:30:00"
-      },
-      {
-        "speech_id": 8462,
-        "content": "In zahtevajo ustavitev seje, zato ker je v bistvu bom reku neregularna.",
-        "session": {
-          "name": "18. seja Mestnega sveta MOL",
-          "id": 58,
-          "start_time": "2020-12-14T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 44,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2020-12-14T15:30:00"
-      },
-      {
-        "speech_id": 8464,
-        "content": "Tako.",
-        "session": {
-          "name": "18. seja Mestnega sveta MOL",
-          "id": 58,
-          "start_time": "2020-12-14T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 46,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2020-12-14T15:30:00"
-      },
-      {
-        "speech_id": 8466,
-        "content": "Prosim, da se zadeva uredi in potem nadaljujemo sejo. Hvala.",
-        "session": {
-          "name": "18. seja Mestnega sveta MOL",
-          "id": 58,
-          "start_time": "2020-12-14T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 48,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2020-12-14T15:30:00"
-      },
-      {
-        "speech_id": 8567,
-        "content": "Ja, hvala za besedo.",
-        "session": {
-          "name": "18. seja Mestnega sveta MOL",
-          "id": 58,
-          "start_time": "2020-12-14T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 149,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2020-12-14T15:30:00"
-      },
-      {
-        "speech_id": 8648,
-        "content": "Hvala za besedo. Ta trasa Pot ob Savi je sicer dobrodošla rekreacijska možnost, ne predstavlja pa nujnosti za življenje, delo in gospodarski razvoj Slovenije in Ljubljane. V sklepu je namreč navedena možnost razlastitve zasebnih lastnikov, kar pomeni[...]",
-        "session": {
-          "name": "18. seja Mestnega sveta MOL",
-          "id": 58,
-          "start_time": "2020-12-14T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 230,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka"
-          },
-          "image": null
-        },
-        "start_time": "2020-12-14T15:30:00"
+          "organizations": [{
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       }
     ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     },
     "person": {
-      "slug": "235-igor-horvat",
-      "name": "Igor Horvat",
-      "honorific_prefix": null,
+      "slug": "220-dragan-matic",
+      "name": "Dragan Matić",
+      "honorific_prefix": "dr.",
       "honorific_suffix": null,
-      "preferred_pronoun": null,
+      "preferred_pronoun": "he",
       "group": {
-        "name": "Slovenska demokratska stranka ",
-        "acronym": "",
-        "slug": "21-slovenska-demokratska-stranka"
+        "name": "Svetniški klub samostojnih svetnikov",
+        "acronym": "SKSS",
+        "slug": "18-svetniski-klub-samostojnih-svetnikov",
+        "color": "#09A2CC",
+        "classification": "pg"
       },
-      "image": null
-    }
+      "image": "https://s3.fr-par.scw.cloud/parlameter/dev/dragan-matic.png"
+    },
+    "count": 67,
+    "pages": 7,
+    "page": 1,
+    "per_page": 10
   }
 }
