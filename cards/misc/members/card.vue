@@ -121,7 +121,7 @@ export default {
     const { cardState, cardData } = this.$root.$options.contextData;
 
     // check if we're embedded
-    const isEmbedded = (this.$root.$options.contextData.templateName !== 'embed');
+    const isEmbedded = (this.$root.$options.contextData.templateName === 'embed');
 
     let {
       results: { members = [] } = {},
