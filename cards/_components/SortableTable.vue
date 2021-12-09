@@ -1,5 +1,7 @@
 <template>
-  <empty-state v-if="!items?.length" />
+  <div v-if="!items?.length" class="empty-container">
+    <empty-state />
+  </div>
   <ul v-else>
     <li v-if="sortCallback != null" class="headers">
       <template v-for="column in columns">
@@ -113,6 +115,11 @@ export default {
 
 <style scoped lang="scss">
 @import 'parlassets/scss/colors';
+
+.empty-container {
+  position: relative;
+  min-height: 265px;
+}
 
 .headers {
   .column {
