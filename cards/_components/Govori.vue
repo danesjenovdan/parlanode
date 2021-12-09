@@ -44,6 +44,7 @@
           ]"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
+          <empty-state v-if="!speeches?.length" />
           <div v-for="(daySpeeches, key) in groupSpeakingDays" :key="key">
             <div class="date">
               {{ formatDate(daySpeeches[0].start_time) }},
@@ -72,6 +73,7 @@ import Govor from '@/_components/Govor.vue';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import generateMonths from '@/_helpers/generateMonths.js';
 import common from '@/_mixins/common.js';
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
@@ -105,6 +107,7 @@ export default {
     PSearchDropdown,
     Govor,
     ScrollShadow,
+    EmptyState,
   },
   mixins: [common, cancelableRequest],
   props: {
