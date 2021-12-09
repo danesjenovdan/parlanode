@@ -5,7 +5,7 @@
     "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
     "search": {
       "part_one": "Išči",
-      "part_two": "odloke in akte, glasovanja, svetnike, svetniške klube ali njihove govore"
+      "part_two": "odloke, glasovanja, svetnike, svetniške klube ali njihove govore"
     }
   },
   "about": {
@@ -47,7 +47,7 @@
     }
   },
   "menu": {
-    "legislation": "Odloki in akti",
+    "legislation": "Odloki",
     "sessions": "Seje",
     "mps": "Svetniki",
     "pgs": "Svetniški klubi",
@@ -162,7 +162,7 @@
     "vote-result--adopted": "Sprejet",
     "vote-result--received": "Prejet",
     "vote-result--in_procedure": "V obravnavi",
-    "legislation": "Odloki in akti",
+    "legislation": "Odloki",
     "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkript",
@@ -177,7 +177,7 @@
   },
   "titles": {
     "session": "Seja",
-    "legislation": "Odloki in akti",
+    "legislation": "Odloki",
     "other-votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",

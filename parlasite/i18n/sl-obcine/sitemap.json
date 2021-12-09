@@ -1,6 +1,6 @@
 {
     "landing": {
-        "legislation": "zakonodaja",
+        "legislation": "odloki",
         "sessions": "seje",
         "members": "svetniki",
         "parties": "svetniski-klubi",
@@ -39,7 +39,7 @@
     },
     "session": {
         "base": "seja",
-        "legislation": "zakonodaja",
+        "legislation": "odloki",
         "otherVotings": "glasovanja",
         "transcript": "transkript",
         "agenda": "dnevni-red",
