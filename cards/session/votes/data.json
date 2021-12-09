@@ -1,96 +1,127 @@
 {
-  "url": "https://parladata.lb.djnd.si/v3/cards/session/votes/?id=81",
+  "id": "3385",
+  "url": "https://parladata.lb.djnd.si/v3/cards/session/votes/?id=3385",
   "data": {
     "results": [
       {
         "all_votes": {
-          "absent": 3,
+          "absent": 6,
           "abstain": 1,
-          "for": 41,
-          "against": 0
+          "for": 9,
+          "against": 29
         },
-        "passed": true,
-        "id": 2438,
+        "passed": false,
+        "id": 9178,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 23. seje Mestnega sveta Mestne občine Ljubljana z dne 31. maja 2021.",
-        "timestamp": "2021-07-05T15:35:11"
+        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se s predlaganega dnevnega reda 26. seje mestnega sveta umakne 8. točka z naslovom »Predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 106 – Kolizej«.",
+        "timestamp": "2021-10-18T15:38:33"
       },
       {
         "all_votes": {
-          "absent": 2,
-          "abstain": 9,
-          "for": 34,
-          "against": 0
-        },
-        "passed": true,
-        "id": 2439,
-        "is_outlier": false,
-        "has_outliers": false,
-        "has_named_votes": true,
-        "title": "I. Janeza STARIHO se razreši z mesta predsednika Sveta za preventivo in vzgojo v cestnem prometu. II. V Svet za preventivo in vzgojo v cestnem prometu se kot predstavnika Mestnega sveta Mestne občine Ljubljana i m e n u j e t a : -   Emilija MITROVIĆ MILOŠ – predsednica -   Jožef HORVAT– član. III. Mandat imenovanih je vezan na mandat sveta.",
-        "timestamp": "2021-07-05T15:51:37"
-      },
-      {
-        "all_votes": {
-          "absent": 5,
+          "absent": 7,
           "abstain": 0,
-          "for": 40,
-          "against": 0
+          "for": 9,
+          "against": 29
         },
-        "passed": true,
-        "id": 2440,
+        "passed": false,
+        "id": 9179,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "I. Tomažu KLEMENCU preneha mandat člana Sveta Osnovne šole Vodmat. II. V Svet Osnovne šole Vodmat se za predstavnico Mestne občine Ljubljana i m e n u j e : Nina REMS. Mandat imenovane je vezan na mandat sveta šole.",
-        "timestamp": "2021-07-05T15:52:03"
+        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se s predlaganega dnevnega reda 26. seje mestnega sveta umakne 9. točka z naslovom »Predlog Sklepa o lokacijski preveritvi za del območja Odloka o občinskem podrobnem prostorskem načrtu 273 Tovil (za enoto urejanja prostora VI-521 ter dele enot urejanja prostora VI-371, VI-372, VI-374 in VI-672)«.",
+        "timestamp": "2021-10-18T15:39:03"
       },
       {
         "all_votes": {
-          "absent": 5,
+          "absent": 23,
           "abstain": 0,
-          "for": 40,
+          "for": 22,
           "against": 0
         },
         "passed": true,
-        "id": 2441,
+        "id": 9180,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "I. V Svet Osnovne šole Danile Kumar s e i m e n u j e j o : -   Amir CRNOJEVIĆ -   Urška HONZAK -   dr. Bojan ROTAR II. Mandat imenovanih traja štiri leta.",
-        "timestamp": "2021-07-05T15:52:26"
+        "title": "Dnevni red 26. seje Mestnega sveta Mestne občine Ljubljana z dne 18. 10. 2021 se razširi z novo 10. a, b in c točko z naslovom: »a) Predlog Sklepa o spremembi in dopolnitvi Sklepa o Načrtu ravnanja z nepremičnim premoženjem Mestne občine Ljubljana v vrednosti nad 200.000 eurov za leto 2021 Predlog Sklepa o spremembi Sklepa o določitvi skupne vrednosti pravnih poslov nepremičnega premoženja, ki jih lahko sklepa Mestna občina Ljubljana v letu 2021 Predlog Sklepa o soglasju k osnutku besedila pravnega posla – prodajna pogodba za prostore v stavbi na naslovu Pokopališka ulica 35 v Ljubljani in zemljišče parc. št. 389/1, obe k.o. 1730 Moste«.",
+        "timestamp": "2021-10-18T15:39:32"
       },
       {
         "all_votes": {
-          "absent": 5,
+          "absent": 19,
           "abstain": 0,
-          "for": 40,
+          "for": 26,
           "against": 0
         },
         "passed": true,
-        "id": 2442,
+        "id": 9181,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "I. V Svet javnega zavoda Mednarodni grafični likovni center s e imenujejo: -  dr. Jan BABNIK -  Anton KASTELIC -  Mojca ŠKRINJAR II. Mandat imenovanih traja štiri leta.",
-        "timestamp": "2021-07-05T15:52:52"
+        "title": "GLASOVANJE O DNEVNEM REDU: Mestni svet Mestne občine Ljubljana sprejme predlog dnevnega reda 26. seje mestnega sveta skupaj s sprejeto spremembo.",
+        "timestamp": "2021-10-18T15:39:51"
       },
       {
         "all_votes": {
-          "absent": 13,
-          "abstain": 0,
-          "for": 30,
-          "against": 2
+          "absent": 7,
+          "abstain": 2,
+          "for": 36,
+          "against": 0
         },
         "passed": true,
-        "id": 2443,
+        "id": 9182,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "Maji RAKUN BEBER se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Bežigrad.",
-        "timestamp": "2021-07-05T15:55:38"
+        "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 25. seje Mestnega sveta Mestne občine Ljubljana z dne 27. septembra 2021.",
+        "timestamp": "2021-10-18T15:40:27"
+      },
+      {
+        "all_votes": {
+          "absent": 6,
+          "abstain": 4,
+          "for": 35,
+          "against": 0
+        },
+        "passed": true,
+        "id": 9192,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Urški KOVAČ GRAD se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Dragomelj.",
+        "timestamp": "2021-10-18T15:51:38"
+      },
+      {
+        "all_votes": {
+          "absent": 8,
+          "abstain": 0,
+          "for": 37,
+          "against": 0
+        },
+        "passed": true,
+        "id": 9193,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mojci PAJNIČ KIRN se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Sostro.",
+        "timestamp": "2021-10-18T15:51:58"
+      },
+      {
+        "all_votes": {
+          "absent": 8,
+          "abstain": 0,
+          "for": 37,
+          "against": 0
+        },
+        "passed": true,
+        "id": 9194,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "I. Mariji DERGANC preneha mandat članice Sveta Vrtca Vodmat. II. V Svet Vrtca Vodmat se za predstavnika Mestne občine Ljubljana imenuje: Marijan ZGAZIVODA. Mandat imenovanega je vezan na mandat sveta vrtca.",
+        "timestamp": "2021-10-18T15:52:47"
       },
       {
         "all_votes": {
@@ -100,80 +131,52 @@
           "against": 0
         },
         "passed": true,
-        "id": 2444,
+        "id": 9195,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "Nevenki LAMUT se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Vižmarje Brod.",
-        "timestamp": "2021-07-05T15:55:56"
+        "title": "I. Zarji BREGANT preneha mandat članice v Svetu javnega zavoda Mestna knjižnica Ljubljana. II. V Svet javnega zavoda Mestna knjižnica Ljubljana se za predstavnico Mestne občine Ljubljana imenuje: - Tatjana HAFNER. Mandat imenovane je vezan na mandat Sveta javnega zavoda Mestna knjižnica Ljubljana.",
+        "timestamp": "2021-10-18T15:53:20"
       },
       {
         "all_votes": {
-          "absent": 3,
+          "absent": 13,
           "abstain": 0,
-          "for": 42,
+          "for": 32,
           "against": 0
         },
         "passed": true,
-        "id": 2445,
+        "id": 9196,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "Dušanu VODEBU se da pozitivno mnenje h kandidaturi za ravnatelja Srednje upravno administrativne šole Ljubljana.",
-        "timestamp": "2021-07-05T15:56:16"
-      },
-      {
-        "all_votes": {
-          "absent": 6,
-          "abstain": 0,
-          "for": 39,
-          "against": 0
-        },
-        "passed": true,
-        "id": 2446,
-        "is_outlier": false,
-        "has_outliers": false,
-        "has_named_votes": true,
-        "title": "Francetu ROGLJU in Miši STRŽINAR se da pozitivno mnenje h kandidaturi za ravnatelja oziroma ravnateljico Mladinskega doma Malči Beličeve.",
-        "timestamp": "2021-07-05T15:56:38"
-      },
-      {
-        "all_votes": {
-          "absent": 5,
-          "abstain": 0,
-          "for": 39,
-          "against": 1
-        },
-        "passed": true,
-        "id": 2447,
-        "is_outlier": false,
-        "has_outliers": false,
-        "has_named_votes": true,
-        "title": "Mag. Simonu Strgarju se da pozitivno mnenje h kandidaturi za direktorja Doma starejših občanov Ljubljana - Šiška.",
-        "timestamp": "2021-07-05T15:57:01"
+        "title": "I. Za direktorico javnega zavoda Ljubljanski grad se imenuje: Mateja AVBELJ VALENTAN. II. Mandat imenovane traja pet let.",
+        "timestamp": "2021-10-18T15:53:46"
       }
     ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     },
     "session": {
-      "name": "24. seja Mestnega sveta MOL",
-      "id": 81,
-      "start_time": "2021-07-05T15:30:00",
+      "name": "26. seja Mestnega sveta MOL",
+      "id": 3385,
+      "start_time": "2021-10-18T15:30:00",
       "end_time": null,
       "organizations": [
         {
           "name": "Mestni svet MOL",
           "acronym": null,
-          "slug": "1-mestni-svet-mol"
+          "slug": "1-mestni-svet-mol",
+          "color": "#09A2CC",
+          "classification": "root"
         }
       ],
-      "classification": null,
+      "classification": "regular",
       "in_review": false
     },
-    "count": 43,
-    "pages": 5,
+    "count": 19,
+    "pages": 2,
     "page": 1,
     "per_page": 10
   }

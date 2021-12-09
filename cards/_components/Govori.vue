@@ -44,7 +44,7 @@
           ]"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <empty-state v-if="!speeches?.length" />
+          <empty-state v-if="!card.isLoading && !speeches?.length" />
           <div v-for="(daySpeeches, key) in groupSpeakingDays" :key="key">
             <div class="date">
               {{ formatDate(daySpeeches[0].start_time) }},
