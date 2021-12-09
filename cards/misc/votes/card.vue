@@ -23,6 +23,9 @@
           class="votes-list-shadow has-filters"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
+          <div v-if="!filteredVotes.length" class="empty-container">
+            <empty-state />
+          </div>
           <vote-list-item
             v-for="vote in filteredVotes"
             :key="vote.id"
@@ -44,6 +47,7 @@ import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'CardMiscVotes',
@@ -52,6 +56,7 @@ export default {
     StripedButton,
     ScrollShadow,
     VoteListItem,
+    EmptyState,
   },
   mixins: [common, legislationListContextUrl, links],
   cardInfo: {
@@ -126,6 +131,11 @@ export default {
 <style lang="scss" scoped>
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
+
+.empty-container {
+  position: relative;
+  min-height: 265px;
+}
 
 .votes-list {
   .filters {
