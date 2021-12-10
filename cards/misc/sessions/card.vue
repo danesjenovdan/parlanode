@@ -29,12 +29,13 @@
     <div v-if="isLoading" class="nalagalnik"></div>
     <!-- show loader while fetching results -->
     <template v-else>
-      <inner-card
+      <sortable-table
         :columns="columns"
-        :current-sort="currentSort"
-        :current-sort-order="currentSortOrder"
-        :select-sort="selectSort"
-        :processed-sessions="currentPageSessions"
+        :items="mappedSessions"
+        :sort="currentSort"
+        :sort-order="currentSortOrder"
+        :sort-callback="selectSort"
+        class="session-list"
       />
       <pagination
         v-if="count > perPage"
@@ -48,29 +49,32 @@
 </template>
 
 <script>
+// debounce is required for search field queries debouncing
+import { debounce } from 'lodash-es';
 import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
 import { sessionListContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+// cancelableRequest is how we make requests to update the results
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import Pagination from '@/_components/Pagination.vue';
+import SortableTable from '@/_components/SortableTable.vue';
 import { SESSIONS_PER_PAGE } from '@/_helpers/constants.js';
-// debounce is required for search field queries debouncing
-import { debounce } from 'lodash-es';
-// cancelableRequest is how we make requests to update the results
-import cancelableRequest from '@/_mixins/cancelableRequest.js';
-import InnerCard from './InnerCard.vue';
+import dateFormatter from '@/_helpers/dateFormatter.js';
+import sessionClassification from '@/_helpers/sessionClassification.js';
 
 export default {
   name: 'CardMiscSessions',
   components: {
-    InnerCard,
     PSearchDropdown,
     BlueButtonList,
     Pagination,
+    SortableTable,
   },
-  mixins: [common, sessionListContextUrl, cancelableRequest],
+  mixins: [common, links, sessionListContextUrl, cancelableRequest],
   cardInfo: {
     doubleWidth: true,
   },
@@ -226,6 +230,34 @@ export default {
 
     currentPageSessions() {
       return this.sessionsPerPage[this.page - 1] || [];
+    },
+
+    mappedSessions() {
+      return this.currentPageSessions.map((session) => [
+        {
+          link: this.getSessionLink(session),
+          image: `${this.$root.$options.contextData.urls.cdn}/icons/${
+            sessionClassification(session.classification).icon
+          }.svg`,
+        },
+        { link: this.getSessionLink(session), text: session.name },
+        session.start_time ? dateFormatter(session.start_time) : '',
+        // session.end_time ? formatDate(session.end_time) : '',
+        // {
+        //   contents: session.organizations.map((org) => ({
+        //     text: org.name,
+        //     link: null,
+        //   })),
+        // },
+      ]);
+    },
+  },
+  watch: {
+    currentSort() {
+      this.searchSessionsImmediate(true);
+    },
+    currentSortOrder() {
+      this.searchSessionsImmediate(true);
     },
   },
   methods: {
