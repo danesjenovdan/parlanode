@@ -8,7 +8,7 @@
             <blue-button-list
               v-model="currentFilter"
               :items="filters"
-              @update:modelValue="updateWorkingBodies"
+              @update:modelValue="selectTab"
             />
           </div>
           <!--
@@ -271,25 +271,27 @@ export default {
       }
     },
 
-    updateWorkingBodies(argument) {
-      // when the tab is switched we should update
-      // the workingBodies array to show them in the
-      // dropdown
+    selectTab() {
+      // update dropdown of working bodies when tab changes; this is done first
+      // to reset the selected working bodies before requesting new sessions,
+      // so it doesn't filter out all sessions
+      this.updateWorkingBodies();
 
-      // before updating the UI we should start a request
-      // to get new sessions
+      // start a request to get new sessions for this tab
       this.searchSessionsImmediate();
+    },
 
+    updateWorkingBodies() {
       // get current tab
-      const tab = this.tabs.find((t) => t.id === argument);
+      const currentTab = this.tabs.find((tab) => tab.id === this.currentFilter);
 
       // map all organization slugs in the tab to
       // proper objects that PSearchDropdown can consume
-      this.workingBodies = tab.orgSlugs.map((slug) => {
+      this.workingBodies = currentTab.orgSlugs.map((slug) => {
         return {
           id: slug,
           selected: false,
-          label: tab.organizations[slug].name,
+          label: currentTab.organizations[slug].name,
         };
       });
     },
