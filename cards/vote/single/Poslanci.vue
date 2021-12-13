@@ -228,7 +228,8 @@ export default {
 @import 'parlassets/scss/breakpoints';
 
 .filters {
-  margin-top: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   @include respond-to(desktop) {
     align-items: center;
