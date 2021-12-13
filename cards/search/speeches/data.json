@@ -3,243 +3,370 @@
   "data": {
     "results": [
       {
-        "id": 4,
-        "content": "[...]<em>Hvala</em>esedo. Spoštovani mestni svetnik gospod Dragan Matić. Iz razpoložljivega dopisa tak[...]",
-        "the_order": 4,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 61839,
+        "content": "<em>Hvala</em> lepa. Gospod Sedmak.",
+        "the_order": 23,
         "person": {
-          "slug": "106-simona-remih",
-          "name": "Simona Remih",
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": null,
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jankovic.png"
         },
-        "start_time": "2019-12-16T15:30:00",
+        "start_time": "2021-10-18T15:30:00",
         "votes": [],
         "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
         }
       },
       {
-        "id": 5,
-        "content": "[...]de izročanja arhivskega gradiva in drugih z arhivskim gradivom povezanih vprašanj. <em>Hvala</em>[...]",
-        "the_order": 5,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 61840,
+        "content": "<em>Hvala za besedo. Statutarno pravna komisija pripomb pravne narave ni imela. Hvala</em>.",
+        "the_order": 24,
         "person": {
-          "slug": "107-mag-mateja-demsic",
-          "name": "Mag. Mateja Demšič",
+          "slug": "252-marjan-sedmak",
+          "name": "Marjan Sedmak",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#09a2cc",
+            "classification": "pg"
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/marjan-sedmak.png"
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61842,
+        "content": "Spoštovani. <em>Hvala</em> za besedo, še enkrat. Na Mestno upravo smo po že obravnavanih predlogih sklepov za večino ravnateljev osnovnih šol in za večino ravnateljic in ravnateljev vrtcev še naknadno prejeli vloge svetov za ravnatelje osmih [...]",
+        "the_order": 26,
+        "person": {
+          "slug": "280-marija-fabcic",
+          "name": "Marija Fabčič",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": null,
           "image": null
         },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "id": 8,
-        "content": "[...]<em>Hvala</em>. Mi smo v skrbi za zaščito javnega interesa meščanov in državljanov v SK Levica na[...]",
-        "the_order": 8,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 61843,
+        "content": "<em>Hvala</em> lepa. Gospa Honzak, stališče odbora prosim.",
+        "the_order": 27,
         "person": {
-          "slug": "4-milan-jakopovic",
-          "name": "Milan Jakopovič",
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": null,
+          "group": null,
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jankovic.png"
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61844,
+        "content": "<em>Hvala</em> še enkrat za besedo. Odbor za predšolsko vzgojo in izobraževanje podpira sprejem predlogov Sklepa o soglasju k določitvi dela plače za delovno uspešnost ravnateljicam in ravnateljem naštetih vzgojno-izobraževalnih zavodov in Odbor za [...]",
+        "the_order": 28,
+        "person": {
+          "slug": "225-urska-honzak",
+          "name": "Urška Honzak",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
           "group": {
             "name": "Levica ",
             "acronym": "",
-            "slug": "2-levica"
+            "slug": "20-levica",
+            "color": "#09a2cc",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/urska-honzak.png"
         },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "id": 10,
-        "content": "[...]<em>Hvala</em>esedo še enkrat. Spoštovani mestni svetnik, gospod Milan Jakopovič. Pri vaših vpraš[...]",
-        "the_order": 10,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "106-simona-remih",
-          "name": "Simona Remih",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 12,
-        "content": "[...]<em>Hvala</em> za besedo. Pozdravljam vse prisotne svetnice in svetnike. Naše vprašanje je očitno[...]",
-        "the_order": 12,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "21-mojca-sojar",
-          "name": "Mojca Sojar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "6-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 13,
-        "content": "[...]novitelja. In naj se tam obrnejo. Simona, bi še kaj dodala glede drugih prostorov? <em>Hvala</em> ker se mi zdi tisto, kar se mi zdi najbolj pomembno. In sicer odprli smo 8 prenovl[...]",
-        "the_order": 13,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "105-zoran-jankovic",
-          "name": "Zoran Janković",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 15,
-        "content": "<em>Hvala za besedo gospod župan. Cenjene kolegice in spoštovani kolegi. Komisija vam v presojo in sprejem predlaga 1 sklep in 1 mnenje. Hvala</em> lepa.",
-        "the_order": 15,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "43-ales-cerin",
-          "name": "Aleš Čerin",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "8-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 30,
-        "content": "[...]to smo tudi preverjali, pravim v vseh komisijah do Bruslja. Ugotavljam navzočnost. <em>Hvala</em>i na Računskem sodišču za javno zasebna partnerstva. Dobili smo odločbo delno učink[...]",
-        "the_order": 30,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "105-zoran-jankovic",
-          "name": "Zoran Janković",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 98,
-        "content": "<em>Hvala</em> za besedo. Odbor je s 7 glasovi sprejel sklep.",
-        "the_order": 98,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "10-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "6-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
-      },
-      {
-        "id": 99,
+        "id": 61845,
         "content": "<em>Hvala</em> lepa. Gospod Sedmak.",
-        "the_order": 99,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "the_order": 29,
         "person": {
-          "slug": "105-zoran-jankovic",
+          "slug": "261-zoran-jankovic",
           "name": "Zoran Janković",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": null,
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jankovic.png"
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61846,
+        "content": "<em>Hvala za besedo še enkrat. Statutarno pravna komisija k obema točkama ni imela pripomb pravne narave. Hvala</em>.",
+        "the_order": 30,
+        "person": {
+          "slug": "252-marjan-sedmak",
+          "name": "Marjan Sedmak",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#09a2cc",
+            "classification": "pg"
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/marjan-sedmak.png"
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61850,
+        "content": "[...] sprememba pa ne predstavlja odstopanja v zunanji podobi objekta ali bistvene spremembe njihovega delovanja. <em>Hvala</em>.",
+        "the_order": 34,
+        "person": {
+          "slug": "388-katarina-konda",
+          "name": "Katarina Konda",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "",
+          "group": null,
           "image": null
         },
-        "start_time": "2019-12-16T15:30:00",
-        "votes": []
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61851,
+        "content": "<em>Hvala</em> lepa. Gospod Horvat, stališče odbora prosim.",
+        "the_order": 35,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jankovic.png"
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61859,
+        "content": "<em>Hvala</em> lepa. Gospa Sever.",
+        "the_order": 43,
+        "person": {
+          "slug": "261-zoran-jankovic",
+          "name": "Zoran Janković",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": null,
+          "group": null,
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jankovic.png"
+        },
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       }
     ],
     "mandate": {
-      "description": "Mandat mestnega sveta MOL",
-      "beginning": null
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
     },
-    "count": 166,
-    "pages": 17,
+    "count": 2298,
+    "pages": 230,
     "page": 1,
     "per_page": 10
   }

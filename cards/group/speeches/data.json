@@ -4,774 +4,420 @@
   "data": {
     "results": [
       {
-        "speech_id": 7589,
-        "content": "Hvala lepa za besedo. In po mali prekinitvi pozdravljam vse prisotne v dvorani danes v živo. Jaz se moram v začetku razprave pridružiti svoji predhodnici glede tega, kdo se je prijavljal na razpis. Namreč poznam mladega človeka, tudi občasno pisca v [...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 13,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 61827,
+        "content": "Ja, ja. Sem že tukaj, pred mikrofonom. Hvala lepa za besedo. Zdelo bi se mi škoda, da bi ta strategija pripravljena šla mimo nas kar tako, brez vsake besede, ki jo naj bi rekli o njej mestni svetniki, predvsem zato, ker me zelo veseli, da ima Ljublja [...]",
+        "the_order": 11,
         "person": {
           "slug": "219-mojca-sojar",
           "name": "Mojca Sojar",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-sojar.png"
         },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7601,
-        "content": "Hvala lepa za besedo. Tudi letos se je zgodilo enako kot lani glede predlogov za častnega meščana. Poslan je bil dober predlog za gospoda, Ljubljančana, ki je veliko naredil čisto konkretnega, fizično vidnega za Ljubljano, ki je bil letos nagrajen tu[...]",
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
         "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 25,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "219-mojca-sojar",
-          "name": "Mojca Sojar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7649,
-        "content": "Hvala za besedo. Lepo pozdravljeni vsi. Jaz bi mogoče samo spomnil, da v lanskem letu je na prihodkovni strani v veliki meri blažila ljubljanski proračun aktualna vlada. Skozi dvig glavarin, skozi pomoč LPP-ju, skozi pomoč gasilskim društvom in razni[...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 73,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 61833,
+        "content": "Hvala za besedo. Lepo vsi pozdravljeni. Najprej bi se rad tukaj predvsem zahvalil gospodu Maslu, ker sva tako dobro sodelovala pri vzpostavitvi te lokalne tržnice v Črnučah. In tudi vseh njegovih prizadevanj za obnovo teh gozdnih cest oziroma, da sed [...]",
+        "the_order": 17,
         "person": {
           "slug": "217-jozef-horvat",
           "name": "Jožef Horvat",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jozef-horvat.png"
         },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7651,
-        "content": "Gospod župan, nisem dobil odgovora za na vprašanje.",
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
         "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 75,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "217-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7653,
-        "content": "Ne, ne na stran 566.",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 77,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "217-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7656,
-        "content": "Ampak tam ni objekta nobenega bilo. Kaj rokometno oziroma nogometno igrišče? Ne vem za nečem tukaj.",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 80,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "217-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7666,
-        "content": "Ne bom razpravljala.",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 90,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 61856,
+        "content": "Jaz sem mislila, da bo gospa Ksenija zdaj začela govoriti. V redu je, hvala lepa.",
+        "the_order": 40,
         "person": {
           "slug": "219-mojca-sojar",
           "name": "Mojca Sojar",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-sojar.png"
         },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7674,
-        "content": "Hvala lepa za besedo. Ja, gospe Stušek je ponovno treba čestitati, da je pripravila dovolj obsežno, ni potrebno bolj poročilo Turizma Ljubljana, da ga je tako na hitro predstavila, ker to pomeni, da točno ve o čem govori in koliko stvari so uspeli na[...]",
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
         "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 98,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61858,
+        "content": "Ja, ja, v redu. Jaz bi samo zelo na kratko in na hitro to komentirala, vso to pripravo. V naši svetniški skupini Nove Slovenije smo za to, pa ne zaradi dragih stanovanj tako, kot je bilo omenjeno v pobudi od stranke Levica, kolegov stranke Levica ali [...]",
+        "the_order": 42,
         "person": {
           "slug": "219-mojca-sojar",
           "name": "Mojca Sojar",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-sojar.png"
         },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7678,
-        "content": "Hvala lepa za besedo. Mogoče bi jaz prejšnjo točko pa zdejšnjo mal združil in bi predlagal Turizmu Ljubljana, da na tem mestu, kjer smo prej govorili o Tomačevem, tam kjer je utonil Matija Čop na Tomačevskem produ, da postavi tudi obeležje in, da je [...]",
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
         "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 102,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61867,
+        "content": "Hvala lepa za besedo. Jaz bi zdaj tukaj, ko smo rekli, da stvar ima brado, rad povedal, da če so bili tako za te izravnalne ukrepe, bi takrat mogla ministrica Širca reči tako, kot za Cukrarno ista oblika, isti gabariti, potem imamo spomin. Ko pa enkr [...]",
+        "the_order": 51,
         "person": {
           "slug": "217-jozef-horvat",
           "name": "Jožef Horvat",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jozef-horvat.png"
         },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7680,
-        "content": "Saj tam je, tam so mestna zemljišča tako, da ni težav.",
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
         "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 104,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61898,
+        "content": "Hvala lepa. Jaz bi popolnoma pritrdil gospodu Čadežu, in sicer mi smo o tej temi oziroma o Tovilu že na Odboru za varstvo okolja kar pred nekaj leti govorili, pa potem je to vse skupaj potihnilo. No, upali smo, da se bo s temi roki za izvedbo protipo [...]",
+        "the_order": 82,
         "person": {
           "slug": "217-jozef-horvat",
           "name": "Jožef Horvat",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jozef-horvat.png"
         },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7709,
-        "content": "Hvala za besedo. V gradivu piše, da bo Center Rog deloval zlasti kot produkcijski prostor na področjih kulturnega in kreativnega sektorja s poudarkom na oblikovanju arhitektur in vizualne umetnosti in novih tehnologijah in tako naprej, da ne bom zadr[...]",
+        "start_time": "2021-10-18T15:30:00",
+        "votes": [],
         "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 133,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "219-mojca-sojar",
-          "name": "Mojca Sojar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7711,
-        "content": "--in zato, ni brezveze gospod župan. Zato je moj pomislek, tudi je bil že prej ta pomislek izražen. Zakaj morda Center Rog ne gre v sklop enega drugega javnega zavoda? In če bo odgovor na to bom zelo vesela. Tudi meni je pri klasifikaciji dejavnosti,[...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 135,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "219-mojca-sojar",
-          "name": "Mojca Sojar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7735,
-        "content": "Hvala lepa za besedo. Ja, gospod direktor, gospod Rink nam je natrosil veliko številk, ki smo jih lahko tudi sami prebrali, je kar zahtevno branje tudi to poročilo. Moji pomisleki so bili oziroma moje vprašanje je, gospod Rink bo verjetno to vedel, a[...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 159,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "219-mojca-sojar",
-          "name": "Mojca Sojar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7744,
-        "content": "Hvala lepa za besedo. Mogoče mi gremo v eno napačno smer. Mi rešujemo stanovanjski problem dobesedno za celo državo. Mi vlečemo delovno silo Zasavja, mi vlečemo delovno silo iz Velenja, iz Jesenic, iz vse povsod, prihajajo sem, ustvarijo skupnosti, n[...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 168,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 61944,
+        "content": "Če lahko repliko. Verjetno, da ne?",
+        "the_order": 29,
         "person": {
           "slug": "217-jozef-horvat",
           "name": "Jožef Horvat",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jozef-horvat.png"
         },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7759,
-        "content": "Hvala za besedo. Jaz sama nisem strokovnjakinja za gozdove, smo pa povprašali nekaj lastnikov gozdov v Ljubljani, kaj menijo o tej strategiji. Naše splošno mnenje je, da je strategija potrebna. Tako, kot za kakšne druge stvari je potrebno tudi vedeti[...]",
+        "start_time": "2021-09-27T15:30:00",
+        "votes": [],
         "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
+          "name": "25. seja Mestnega sveta MOL",
+          "id": 3386,
+          "start_time": "2021-09-27T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 183,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "219-mojca-sojar",
-          "name": "Mojca Sojar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7761,
-        "content": "In usmeritev štiri - piše postopen odkup parcel, kjer so ukrepi za obstoj in ohranitev ugodnega stanja vrst najvišje prioritete. Ta stavek mi ni povsem jasen, bi želela dobiti pojasnilo. Zanimivo pa je, da je recimo glede na vse opisano v strategiji,[...]",
-        "session": {
-          "name": "22. seja Mestnega sveta MOL",
-          "id": 54,
-          "start_time": "2021-04-19T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 185,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "219-mojca-sojar",
-          "name": "Mojca Sojar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-04-19T15:30:00"
-      },
-      {
-        "speech_id": 7775,
-        "content": "--vse tista olja, ki so bila pripojena v tej gradbeni jami in to bo prišlo. Hvala lepa.",
-        "session": {
-          "name": "21. seja Mestnega sveta MOL",
-          "id": 55,
-          "start_time": "2021-03-29T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol"
-            }
-          ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 4,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
+        "id": 61946,
+        "content": "Kar sem mislil z gospodarnim ravnanjem, to so pa rebalansi, pardon rebalansi, aneksi k pogodbam, to pa sem mislil. Hvala lepa.",
+        "the_order": 31,
         "person": {
           "slug": "217-jozef-horvat",
           "name": "Jožef Horvat",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/jozef-horvat.png"
         },
-        "start_time": "2021-03-29T15:30:00"
-      },
-      {
-        "speech_id": 7810,
-        "content": "Lahko procedurani?",
+        "start_time": "2021-09-27T15:30:00",
+        "votes": [],
         "session": {
-          "name": "21. seja Mestnega sveta MOL",
-          "id": 55,
-          "start_time": "2021-03-29T15:30:00",
+          "name": "25. seja Mestnega sveta MOL",
+          "id": 3386,
+          "start_time": "2021-09-27T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 61954,
+        "content": "Hvala lepa. Saj ste rekli, da razpravljamo za celotno točko, a ne? Glasujemo pa vsako posebej.",
         "the_order": 39,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
         "person": {
-          "slug": "217-jozef-horvat",
-          "name": "Jožef Horvat",
+          "slug": "219-mojca-sojar",
+          "name": "Mojca Sojar",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-sojar.png"
         },
-        "start_time": "2021-03-29T15:30:00"
-      },
-      {
-        "speech_id": 7812,
-        "content": "Res bi opozoril vse svetnike, da tudi, ko govorijo imajo masko gor, ne takrat, ko govorijo še najbolj širijo in bi prosil gospoda Koželja, ko govori in ostale, da imajo masko gor. Ker čez dva dni se bo začelo pa mal bolj resno.",
+        "start_time": "2021-09-27T15:30:00",
+        "votes": [],
         "session": {
-          "name": "21. seja Mestnega sveta MOL",
-          "id": 55,
-          "start_time": "2021-03-29T15:30:00",
+          "name": "25. seja Mestnega sveta MOL",
+          "id": 3386,
+          "start_time": "2021-09-27T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 41,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "217-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-03-29T15:30:00"
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       },
       {
-        "speech_id": 7820,
-        "content": "Hvala lepa za besedo. Jaz bi imel za gospo Remic eno čist vprašanje. Pred nekaj časa je naša svetnica zastavila vprašanje glede oprostitve plačila komunalnega prispevka za PGD-je. Za prostovoljna gasilska društva. Takrat ste odgovoril, da tega ne bo.[...]",
+        "id": 61958,
+        "content": "Hvala lepa. Saj ni potrebno vedno, da govorimo samo o denarju. Tudi vedno ne gre samo za denar. Vi ste to zdaj povedali kot dober gospodar, ki boste drago prodali in poceni kupili, ampak gre tudi zato, kako Ljubljana ob vseh teh gradnjah izgleda. Hva [...]",
+        "the_order": 43,
+        "person": {
+          "slug": "219-mojca-sojar",
+          "name": "Mojca Sojar",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#09A2CC",
+            "classification": "pg"
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-sojar.png"
+        },
+        "start_time": "2021-09-27T15:30:00",
+        "votes": [],
         "session": {
-          "name": "21. seja Mestnega sveta MOL",
-          "id": 55,
-          "start_time": "2021-03-29T15:30:00",
+          "name": "25. seja Mestnega sveta MOL",
+          "id": 3386,
+          "start_time": "2021-09-27T15:30:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Mestni svet MOL",
               "acronym": null,
-              "slug": "1-mestni-svet-mol"
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
             }
           ],
-          "classification": null,
-          "in_review": false
-        },
-        "the_order": 49,
-        "quoted_text": null,
-        "start_idx": null,
-        "end_idx": null,
-        "quote_id": null,
-        "person": {
-          "slug": "217-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati ",
-            "acronym": "",
-            "slug": "16-nova-slovenija-krscanski-demokrati"
-          },
-          "image": null
-        },
-        "start_time": "2021-03-29T15:30:00"
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
       }
     ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     },
     "group": {
-      "name": "Nova Slovenija – Krščanski demokrati ",
-      "acronym": "",
-      "slug": "16-nova-slovenija-krscanski-demokrati"
-    }
+      "name": "Nova Slovenija – Krščanski demokrati",
+      "acronym": "NSi",
+      "slug": "16-nova-slovenija-krscanski-demokrati",
+      "color": "#09A2CC",
+      "classification": "pg"
+    },
+    "count": 251,
+    "pages": 26,
+    "page": 1,
+    "per_page": 10
   }
 }

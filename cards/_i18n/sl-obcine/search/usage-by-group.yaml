@@ -5,6 +5,6 @@ card:
     klub.
 
 
-    Za vsak zadetek glede na iskalni niz preverimo, v koliko govorih svetnic in
+    Za vsak iskalni niz preverimo, v koliko govorih svetnic in
     svetnikov svetniških klubov se pojavi. Seštejemo jih glede na svetniški
     klub in prikažemo v krožnem grafikonu.

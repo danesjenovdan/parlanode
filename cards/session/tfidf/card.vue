@@ -1,11 +1,10 @@
 <template>
   <card-wrapper :header-config="headerConfig" max-height>
-    <div v-if="chartRows.length" class="columns">
+    <empty-state v-if="!chartRows.length" />
+    <div v-else class="columns">
       <bar-chart :data="chartRows1" :max="max" :total="total" />
       <bar-chart :data="chartRows2" :max="max" :total="total" />
     </div>
-    <!-- TODO: this should be empty state -->
-    <div v-else v-t="'session-processing'" class="empty-dataset"></div>
   </card-wrapper>
 </template>
 
@@ -15,13 +14,15 @@ import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
 import { sessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
-import BarChart from '@/_components/BarChart.vue';
 import links from '@/_mixins/links.js';
+import BarChart from '@/_components/BarChart.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'CardSessionTfidf',
   components: {
     BarChart,
+    EmptyState,
   },
   mixins: [
     common,
@@ -66,25 +67,42 @@ export default {
 
 <style lang="scss" scoped>
 @import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+
+:deep(.card-content) {
+  height: 265px;
+
+  @include respond-to(mobile) {
+    height: auto;
+  }
+}
+
+:deep(.card-content-front) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .columns {
   display: flex;
+  gap: 20px;
+  width: 100%;
+
+  @include respond-to(mobile) {
+    flex-direction: column;
+    gap: 0;
+  }
 
   .word-list {
     flex: 1 1 auto;
 
-    &:first-child {
-      margin-right: 20px;
-    }
-  }
+    @include respond-to(mobile) {
+      &:first-child {
+        margin-bottom: 0;
+      }
 
-  @include respond-to(mobile) {
-    flex-direction: column;
-
-    .word-list {
-      margin-bottom: 0;
-      margin-right: 0 !important;
+      &:last-child {
+        margin-top: -10px;
+      }
 
       :deep(.column-label) {
         flex: 0 0 33%;
@@ -98,18 +116,6 @@ export default {
         flex: 0 0 66%;
       }
     }
-
-    .word-list + .word-list {
-      margin-top: -10px;
-    }
   }
-}
-
-.empty-dataset {
-  font-size: 16px;
-  line-height: 20px;
-  margin: 70px 0;
-  text-align: center;
-  color: $font-placeholder;
 }
 </style>

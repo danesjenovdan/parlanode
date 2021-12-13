@@ -5,7 +5,7 @@
       class="questions date-list"
       @scroll="$refs.shadow.check($event.currentTarget)"
     >
-      <div v-if="!questionDays?.length" v-t="'no-results'" class="no-results" />
+      <empty-state v-if="!questionDays?.length" />
       <div v-else>
         <div v-for="day in questionDays" :key="day.date">
           <div class="date">{{ formatDate(day.date) }}</div>
@@ -27,6 +27,7 @@
 <script>
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Event from '@/_components/Event.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 
@@ -38,6 +39,7 @@ export default {
   components: {
     ScrollShadow,
     Event,
+    EmptyState,
   },
   props: {
     questionDays: {
