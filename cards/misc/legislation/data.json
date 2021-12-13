@@ -1,92 +1,9 @@
 {
-  "url": "http://localhost:8000/v3/cards/misc/legislation/?id=1",
+  "url": "https://parladata.lb.djnd.si/v3/cards/misc/legislation/?id=1",
   "data": {
-    "results": [{
-        "id": 1206,
-        "uid": null,
-        "text": "D) PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2023",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
+    "results": [
       {
-        "id": 1209,
-        "uid": null,
-        "text": "A) PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O UREJANJU PROMETA V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1204,
-        "uid": null,
-        "text": "A) PREDLOG ODLOKA O REBALANSU PRORAČUNA MESTNE OBČINE LJUBLJANA ZA LETO 2021",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1208,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O DOPOLNITVI ODLOKA O ORGANIZACIJI IN NAČINU IZVAJANJA MESTNIH LINIJSKIH PREVOZOV POTNIKOV S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1205,
-        "uid": null,
-        "text": "A) PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2022",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1212,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O SPREMEMBAH ODLOKA O UREJANJU JAVNIH PARKIRIŠČ S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1213,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O PODELITVI KONCESIJ ZA OPRAVLJANJE JAVNE SLUŽBE V OSNOVNI ZDRAVSTVENI DEJAVNOSTI V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1207,
+        "id": 1316,
         "uid": null,
         "text": "PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POKOPALIŠKEM REDU V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
         "epa": null,
@@ -98,7 +15,67 @@
         "timestamp": "2021-11-15T15:30:00"
       },
       {
-        "id": 1223,
+        "id": 1313,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O REBALANSU PRORAČUNA MESTNE OBČINE LJUBLJANA ZA LETO 2021",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1318,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O UREJANJU PROMETA V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1314,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2022",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1321,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O SPREMEMBAH ODLOKA O UREJANJU JAVNIH PARKIRIŠČ S PREDLOGOM ZA HITRI POSTOPEK",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1322,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O PODELITVI KONCESIJ ZA OPRAVLJANJE JAVNE SLUŽBE V OSNOVNI ZDRAVSTVENI DEJAVNOSTI V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1332,
         "uid": null,
         "text": "PREDLOG ODLOKA O OBČINSKEM PODROBNEM PROSTORSKEM NAČRTU 81 CENTER ZNANOSTI – DEL",
         "epa": null,
@@ -110,7 +87,31 @@
         "timestamp": "2021-11-15T15:30:00"
       },
       {
-        "id": 1229,
+        "id": 1317,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O DOPOLNITVI ODLOKA O ORGANIZACIJI IN NAČINU IZVAJANJA MESTNIH LINIJSKIH PREVOZOV POTNIKOV S PREDLOGOM ZA HITRI POSTOPEK",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1315,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2023",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1338,
         "uid": null,
         "text": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O ORGANIZACIJI IN DELOVNEM PODROČJU MESTNE UPRAVE MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
         "epa": null,
@@ -126,13 +127,10 @@
       "description": "MOL mandat ta naš, kaj je že",
       "beginning": "2018-12-17T12:00:00"
     },
-    "legislation:count": 60,
+    "legislation:count": 59,
     "legislation:pages": 6,
     "legislation:page": 1,
     "legislation:per_page": 10,
-    "classifications": [
-      "act",
-      "decree"
-    ]
+    "classifications": ["decree"]
   }
 }

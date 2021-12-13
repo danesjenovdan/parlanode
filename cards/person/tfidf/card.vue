@@ -1,8 +1,7 @@
 <template>
   <card-wrapper :header-config="headerConfig">
-    <bar-chart v-if="chartRows.length" :data="chartRows" />
-    <!-- TODO: let empty state take care of this -->
-    <div v-else v-t="'no-speeches'" class="empty-dataset"></div>
+    <empty-state v-if="!chartRows.length" />
+    <bar-chart v-else :data="chartRows" />
   </card-wrapper>
 </template>
 
@@ -13,11 +12,13 @@ import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
 import { personSpeechesContextUrl } from '@/_mixins/contextUrls.js';
 import BarChart from '@/_components/BarChart.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'CardPersonTfidf',
   components: {
     BarChart,
+    EmptyState,
   },
   mixins: [
     common,
@@ -29,7 +30,7 @@ export default {
   computed: {
     chartRows() {
       const results = this.cardData.data?.results || [];
-      const person = this.cardData.data?.person || {};
+      // const person = this.cardData.data?.person || {};
       return results.map((item) => ({
         label: item.token,
         value: Math.round(item.value * 5000),
@@ -45,14 +46,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.empty-dataset {
-  font-size: 16px;
-  line-height: 20px;
-  margin: 70px 0;
-  text-align: center;
-  font-style: italic;
-}
-
 :deep(.card-content-front) {
   display: flex;
   align-items: center;

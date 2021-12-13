@@ -1,66 +1,79 @@
 {
   "data": {
-    "results": [
-      {
+    "results": [{
         "group": {
-          "name": "Nova Slovenija – Krščanski demokrati ",
-          "acronym": "",
-          "slug": "16-nova-slovenija-krscanski-demokrati"
+          "name": "Lista Zorana Jankovića",
+          "acronym": "LZJ",
+          "slug": "22-lista-zorana-jankovica",
+          "color": "#09a2cc",
+          "classification": "pg"
         },
-        "value": 3
+        "value": 717
       },
       {
         "group": {
-          "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
-          "acronym": "",
-          "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev"
+          "name": "Slovenska demokratska stranka",
+          "acronym": "SDS",
+          "slug": "21-slovenska-demokratska-stranka",
+          "color": "#09A2CC",
+          "classification": "pg"
         },
-        "value": 12
+        "value": 491
       },
       {
         "group": {
-          "name": "Svetniški klub samostojnih svetnikov ",
-          "acronym": "",
-          "slug": "18-svetniski-klub-samostojnih-svetnikov"
+          "name": "Nova Slovenija – Krščanski demokrati",
+          "acronym": "NSi",
+          "slug": "16-nova-slovenija-krscanski-demokrati",
+          "color": "#09A2CC",
+          "classification": "pg"
         },
-        "value": 1
-      },
-      {
-        "group": {
-          "name": "Socialni demokrati ",
-          "acronym": "",
-          "slug": "19-socialni-demokrati"
-        },
-        "value": 6
+        "value": 251
       },
       {
         "group": {
           "name": "Levica ",
           "acronym": "",
-          "slug": "20-levica"
+          "slug": "20-levica",
+          "color": "#09a2cc",
+          "classification": "pg"
         },
-        "value": 8
+        "value": 208
       },
       {
         "group": {
-          "name": "Slovenska demokratska stranka ",
-          "acronym": "",
-          "slug": "21-slovenska-demokratska-stranka"
+          "name": "Svetniški klub samostojnih svetnikov",
+          "acronym": "SKSS",
+          "slug": "18-svetniski-klub-samostojnih-svetnikov",
+          "color": "#09A2CC",
+          "classification": "pg"
         },
-        "value": 4
+        "value": 97
       },
       {
         "group": {
-          "name": "Lista Zorana Jankovića ",
-          "acronym": "",
-          "slug": "22-lista-zorana-jankovica"
+          "name": "Socialni demokrati",
+          "acronym": "SD",
+          "slug": "19-socialni-demokrati",
+          "color": "#CC1244",
+          "classification": "pg"
         },
-        "value": 12
+        "value": 33
+      },
+      {
+        "group": {
+          "name": "Samostojni svetnik Liste kolesarjev in pešcev",
+          "acronym": "LKP",
+          "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev",
+          "color": "#7513CC",
+          "classification": "pg"
+        },
+        "value": 10
       }
     ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     }
   }
 }

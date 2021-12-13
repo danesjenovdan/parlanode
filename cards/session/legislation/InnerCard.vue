@@ -80,14 +80,10 @@ export default {
 };
 </script>
 
+<!-- TODO: move this global style in to the scoped style block -->
 <style lang="scss">
 @import 'parlassets/scss/colors';
 @import 'parlassets/scss/breakpoints';
-
-.empty-dataset {
-  color: $font-placeholder;
-  font-style: normal !important;
-}
 
 .legislation-list {
   .column:last-child {

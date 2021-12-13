@@ -44,6 +44,7 @@
           ]"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
+          <empty-state v-if="!card.isLoading && !speeches?.length" />
           <div v-for="(daySpeeches, key) in groupSpeakingDays" :key="key">
             <div class="date">
               {{ formatDate(daySpeeches[0].start_time) }},
@@ -72,6 +73,7 @@ import Govor from '@/_components/Govor.vue';
 import SearchField from '@/_components/SearchField.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import generateMonths from '@/_helpers/generateMonths.js';
 import common from '@/_mixins/common.js';
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
@@ -105,6 +107,7 @@ export default {
     PSearchDropdown,
     Govor,
     ScrollShadow,
+    EmptyState,
   },
   mixins: [common, cancelableRequest],
   props: {
@@ -170,10 +173,10 @@ export default {
       return this.allPeople.filter((person) => person.selected);
     },
     groupSpeakingDays() {
-      return groupBy(this.speeches, (o) => {
-        const dateTime = o.start_time || o.session?.start_time || '';
+      return groupBy(this.speeches, (speech) => {
+        const dateTime = speech.start_time || speech.session?.start_time || '';
         const date = dateTime.split('T')[0];
-        return `${date}__${o.session?.id}`;
+        return `${date}__${speech.session?.id}`;
       });
     },
     headerConfig() {

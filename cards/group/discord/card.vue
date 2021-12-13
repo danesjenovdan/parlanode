@@ -5,6 +5,7 @@
     type="party"
     :precision="2"
     context="votings"
+    :percent="true"
   />
 </template>
 

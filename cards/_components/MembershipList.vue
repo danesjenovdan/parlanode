@@ -5,29 +5,27 @@
       :class="{ 'no-tabs': noTabs }"
       @scroll="$refs.shadow.check($event.currentTarget)"
     >
-      <ul class="membership-list">
+      <empty-state v-if="!contents?.length" small />
+      <ul v-else class="membership-list">
         <template v-if="contents.length">
           <li
             v-for="membershipItem in contents"
-            :key="membershipItem.name"
+            :key="membershipItem?.name"
             class="key"
           >
             <template v-if="name === 'Delovna telesa'">
-              {{ membershipItem.name }}
+              {{ membershipItem?.name }}
             </template>
             <a
-              v-else-if="membershipItem.url != null"
-              :href="membershipItem.url"
+              v-else-if="membershipItem?.url != null"
+              :href="membershipItem?.url"
               class="funblue-light-hover"
               target="_blank"
-              >{{ membershipItem.name }}</a
+              >{{ membershipItem?.name }}</a
             >
-            <template v-else>{{ membershipItem.name }}</template>
+            <template v-else>{{ membershipItem?.name }}</template>
           </li>
         </template>
-        <div v-else class="no-results">
-          <i v-t="'membership-list.no-memberships'"></i>
-        </div>
       </ul>
     </div>
   </scroll-shadow>
@@ -35,11 +33,13 @@
 
 <script>
 import ScrollShadow from '@/_components/ScrollShadow.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'MembershipList',
   components: {
     ScrollShadow,
+    EmptyState,
   },
   props: {
     name: {

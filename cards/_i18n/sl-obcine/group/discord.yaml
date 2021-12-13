@@ -1,7 +1,7 @@
 card:
   title: Neenotnost glasovanj
   info: >-
-    # Neenotnost izbranega svetniškega kluba na glasovanjih sej Državnega zbora v
+    # Neenotnost izbranega svetniškega kluba na glasovanjih v
     primerjavi s povprečno in najvišjo stopnjo neenotnosti med vsemi svetniškimi
     klubi.
 
@@ -11,3 +11,7 @@ card:
     tistih, ki so glasovali za najbolj popularno opcijo. Ta odstotek odštejemo
     do 100 in dobimo stopnjo neenotnosti oz. odstotek svetnikov in svetnic, ki
     se z večinskim glasom niso strinjali.
+
+
+    Na podlagi rezultatov individualnih glasovanj izračunamo povprečni odstotek
+    nestrinjanja, ki ga prikažemo v kartici.

@@ -11,6 +11,11 @@ card:
     številčne vrednosti med -1 in 1).
 
 
+    Pri računanju rezultata svetniških klubov ignoriramo "odsotne" glasovnice,
+    da dobimo pozitivno mnenje svetniškega kluba. Če je celoten svetniški klub
+    odsoten to glasovanje umaknemo iz analize.
+
+
     Ko izračunamo "razdaljo" med vsemi svetniki, jih razvrstimo glede na
     rezultat in prikažemo prvih pet.
 

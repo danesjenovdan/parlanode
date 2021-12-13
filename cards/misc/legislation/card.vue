@@ -11,10 +11,7 @@
         </div>
         <div class="filter" style="flex: 1"></div>
         <!-- only show filters if we have more than one classification to show -->
-        <div
-          v-if="filterOptions.length > 1"
-          class="filter buttons-filter"
-        >
+        <div v-if="filterOptions.length > 1" class="filter buttons-filter">
           <striped-button
             v-for="filterOption in filterOptions"
             :key="filterOption.id"
@@ -50,7 +47,8 @@
           </div>
         </div> -->
       </div>
-      <div v-if="isLoading" class="nalagalnik"></div> <!-- show loader while fetching results -->
+      <div v-if="isLoading" class="nalagalnik"></div>
+      <!-- show loader while fetching results -->
       <template v-else>
         <sortable-table
           :columns="columns"
@@ -90,7 +88,6 @@ import { debounce } from 'lodash-es';
 // cancelableRequest is how we make requests to update the results
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
 
-
 export default {
   name: 'CardMiscLegislation',
   components: {
@@ -107,22 +104,21 @@ export default {
     const { cardState, cardData } = this.$root.$options.contextData;
 
     // check if we're embedded
-    const isEmbedded = (this.$root.$options.contextData.templateName === 'embed');
+    const isEmbedded = this.$root.$options.contextData.templateName === 'embed';
 
-    let {
-      results: results = [],
-      'legislation:pages': pages = 1,
-      'legislation:page': initialPage = 1,
-      'legislation:count': count = results.length ?? 0,
-      'legislation:per_page': perPage = LEGISLATION_PER_PAGE,
-    } = cardData?.data || {};
+    const data = cardData?.data || {};
+    let results = data.results ?? [];
+    let pages = data['legislation:pages'] ?? 1;
+    const initialPage = data['legislation:page'] ?? 1;
+    const count = data['legislation:count'] ?? results.length ?? 0;
+    let perPage = data['legislation:per_page'] ?? LEGISLATION_PER_PAGE;
     let page = Number(cardState?.page) || initialPage;
-    
+
     // if we're embedded we should override our current settings
     if (isEmbedded) {
       pages = Math.ceil(count / 5);
       perPage = 5;
-      page = (page * 2) - 1;
+      page = page * 2 - 1;
       results = results.slice(0, 5);
     }
 
@@ -145,7 +141,7 @@ export default {
       legislation: cardData?.data?.results || [],
       filterOptions,
       currentFilter: cardState?.filter,
-      currentSort: 'date',
+      currentSort: 'timestamp',
       currentSortOrder: 'desc',
       textFilter: cardState?.text || '',
       // onlyAbstracts: !!state.onlyAbstracts,
@@ -180,15 +176,7 @@ export default {
 
       // set sort param
       const sortPrefix = this.currentSortOrder === 'desc' ? '-' : '';
-      let sort = 'timestamp';
-      switch (this.currentSort) {
-        case 'name':
-          sort = 'text';
-          break;
-        case 'status':
-          sort = 'status';
-          break;
-      };
+      const sort = this.currentSort;
       url.searchParams.set('order_by', `${sortPrefix}${sort}`);
 
       return url.toString();
@@ -196,7 +184,7 @@ export default {
     columns() {
       return [
         {
-          id: 'name',
+          id: 'text',
           label: this.$t('name'),
           additionalClass: 'name-col',
         },
@@ -215,7 +203,7 @@ export default {
         //   additionalClass: 'narrow',
         // },
         {
-          id: 'date',
+          id: 'timestamp',
           label: this.$t('date'),
           additionalClass: 'date-col',
         },
@@ -269,6 +257,20 @@ export default {
     },
   },
 
+  watch: {
+    currentSort() {
+      this.searchLegislationImmediate(true);
+    },
+
+    currentSortOrder() {
+      this.searchLegislationImmediate(true);
+    },
+
+    selectedFilterOption() {
+      this.searchLegislationImmediate(true);
+    },
+  },
+
   methods: {
     selectFilterOption(filterOption) {
       if (filterOption.selected) {
@@ -300,8 +302,7 @@ export default {
       this.makeRequest(this.searchUrl).then((response) => {
         this.count = response?.data?.['legislation:count'];
         this.page = response?.data?.['legislation:page'];
-        this.legislationPerPage[this.page - 1] =
-          response?.data?.results || [];
+        this.legislationPerPage[this.page - 1] = response?.data?.results || [];
         this.isLoading = false;
       });
     },
@@ -316,8 +317,7 @@ export default {
       if (!this.legislationPerPage[newPage - 1]) {
         this.isLoading = true;
         this.makeRequest(this.searchUrl).then((response) => {
-          this.legislationPerPage[newPage - 1] =
-            response?.data?.results || [];
+          this.legislationPerPage[newPage - 1] = response?.data?.results || [];
           this.isLoading = false;
         });
       }
@@ -327,20 +327,6 @@ export default {
     scrollToTop() {
       const el = this.$refs.card?.$el || this.$refs.card;
       el.scrollIntoView();
-    },
-  },
-
-  watch: {
-    currentSort() {
-      this.searchLegislationImmediate(true);
-    },
-
-    currentSortOrder() {
-      this.searchLegislationImmediate(true);
-    },
-
-    selectedFilterOption() {
-      this.searchLegislationImmediate(true);
     },
   },
 };
