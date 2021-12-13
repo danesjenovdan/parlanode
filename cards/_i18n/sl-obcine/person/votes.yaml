@@ -1,12 +1,11 @@
 card:
   title: Glasovanja
   info: >-
-    # Pregled vseh glasovanj, ki so se zgodila na seji.
+    # Pregled vseh glasovanj tega mandata.
 
 
-    Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI,
-    VZDRŽAN/-A) in število svetnikov, ki niso glasovali, ter izpišemo rezultate.
+    Prikazujemo glasovanja v času trenutnega mandata skupaj z rezultatom
+    glasovanja in osebnim glasom svetnika_ce.
 
 
-    Nabor glasovanj pridobimo s spletnega mesta [DZ
-    RS](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Nabor glasovanj pridobimo s spletnega mesta MO Ljubljana.

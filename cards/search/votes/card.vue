@@ -7,6 +7,7 @@
           class="votes-list-shadow date-list"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
+          <empty-state v-if="!votes?.length" />
           <template v-for="(dayVotes, key) in votingDays" :key="key">
             <div class="date">
               {{ formatDate(dayVotes[0].timestamp) }},
@@ -37,6 +38,7 @@ import { searchOgImage } from '@/_mixins/ogImages.js';
 import { searchTitle } from '@/_mixins/titles.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
@@ -49,6 +51,7 @@ export default {
   components: {
     ScrollShadow,
     VoteListItem,
+    EmptyState,
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContextUrl],
   cardInfo: {

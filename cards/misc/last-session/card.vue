@@ -20,7 +20,9 @@
         <span v-t="'card.attendance-title'"></span>
       </span>
     </div>
-    <attendance-by-groups :data="attendance" />
+    <div class="attendance">
+      <attendance-by-groups :data="attendance" />
+    </div>
     <hr />
     <div class="link">
       <a :href="getSessionVotesLink(session)" class="funblue-light-hover">
@@ -209,6 +211,11 @@ hr,
       margin-top: -10px;
     }
   }
+}
+
+.attendance {
+  position: relative;
+  min-height: 265px;
 }
 
 .votes-list {

@@ -9,23 +9,43 @@
         </div>
       </div>
     </template>
-    <inner-card
-      :processed-party-data="processedPartyData"
-      :header-config="headerConfig"
-      :current-analysis-data="currentAnalysisData"
-    />
+    <empty-state v-if="!processedPartyData?.length" />
+    <ul v-else class="party-list">
+      <li
+        v-for="(party, index) in processedPartyData"
+        :key="index"
+        class="labeled-chart"
+      >
+        <div class="column chart-label">
+          <a :href="getPartyLink(party)" class="funblue-light-hover">
+            {{ party.acronym || party.name || 'N/A' }}
+          </a>
+        </div>
+        <div class="column chart">
+          <div class="progress hugebar">
+            <div
+              :style="{ width: party.chartWidth }"
+              class="progress-bar funblue"
+              role="progressbar"
+            ></div>
+            <div class="progress_number">{{ party.displayValue }}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </card-wrapper>
 </template>
 
 <script>
 import { find } from 'lodash-es';
 import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import { partyListContextUrl } from '@/_mixins/contextUrls.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
-import InnerCard from './InnerCard.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 
 const analysesIDs = [
   {
@@ -71,9 +91,9 @@ export default {
   name: 'CardMiscGroups',
   components: {
     BlueButtonList,
-    InnerCard,
+    EmptyState,
   },
-  mixins: [common, partyListContextUrl],
+  mixins: [common, links, partyListContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
@@ -151,3 +171,39 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import 'parlassets/scss/breakpoints';
+
+:deep(.card-content) {
+  min-height: 265px;
+}
+
+.party-list .labeled-chart {
+  // min-height: 46px;
+
+  @include respond-to(mobile) {
+    flex-direction: column;
+  }
+
+  .column.chart-label {
+    line-height: 1.1;
+    // margin-top: -10px;
+    // margin-bottom: -10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100px;
+
+    @include respond-to(mobile) {
+      width: 100%;
+    }
+  }
+
+  .column.chart {
+    @include respond-to(mobile) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+</style>

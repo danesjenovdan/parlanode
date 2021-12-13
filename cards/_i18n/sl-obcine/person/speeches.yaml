@@ -1,10 +1,10 @@
 card:
   title: Govori
   info: >-
-    # Izpis povezav do vseh svetnikovih/-činih govorov v tem sklicu, ki
+    # Izpis povezav do vseh svetnikovih_činih govorov v tem sklicu, ki
     ustrezajo uporabniškemu vnosu, razvrščenih po datumu.
 
 
-    Naložimo povezave do vseh govorov izbranega svetnik/-ca, ki jih najdemo v
-    transkriptih, pridobljenih s spletnega mesta DZ RS, nato pa prikažemo tiste,
-    ki ustrezajo uporabniškemu vnosu (časovno obdobje, vrsta seje).
+    Naložimo povezave do vseh govorov izbranega svetnik_ca, ki jih najdemo v
+    transkriptih, pridobljenih s spletnega mesta MO Ljubljana, nato pa prikažemo tiste,
+    ki ustrezajo uporabniškemu vnosu (časovno obdobje, vsebina).

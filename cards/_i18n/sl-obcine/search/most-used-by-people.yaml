@@ -5,6 +5,6 @@ card:
     največje proti najmanjši vrednosti.
 
 
-    Preštejemo, kolikokrat je posamezni/-a svetnik/-ca izrekel/-a iskani niz in
+    Preštejemo, kolikokrat je posamezni_a svetnik_ca izrekel_a iskani niz in
     osebe, ki so ga uporabile vsaj enkrat, rangiramo glede na število pojavitev.
-    Prikažemo jih pet z največ rezultati.
+    Prikažemo prvih pet.
