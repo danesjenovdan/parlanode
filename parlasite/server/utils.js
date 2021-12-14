@@ -70,16 +70,16 @@ async function fetchCard(cardPath, id, params = {}) {
     // eslint-disable-next-line no-console
     console.error(`Failed to fetch card: status=${res.status} text=${text}`);
     if (cardPath === '/misc/error') {
-      return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath} (${res.status}) ${text}</div>`;
+      return `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>Status: ${res.status}</pre><pre>${text}</pre></div>`;
     }
-    return fetchCard.call(this, '/misc/error', { message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` });
+    return fetchCard.call(this, '/misc/error', id, { message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` });
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Failed to fetch card:', error);
     if (cardPath === '/misc/error') {
-      return `<div class="alert alert-danger" style="margin-top:20px">Failed to fetch card: ${cardPath}</div>`;
+      return `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${error}</pre><pre>${error.stack}</pre></div>`;
     }
-    return fetchCard.call(this, '/misc/error', { message: `Failed to fetch card: ${cardPath}` });
+    return fetchCard.call(this, '/misc/error', id, { message: `Failed to fetch card: ${cardPath}` });
   }
 }
 
