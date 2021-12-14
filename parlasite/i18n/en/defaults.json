@@ -185,5 +185,8 @@
     "sessions-search": "Search sessions",
     "thank-you": "Thank you!",
     "ups": ":("
+  },
+  "legislation": {
+    "decree": "D"
   }
 }
