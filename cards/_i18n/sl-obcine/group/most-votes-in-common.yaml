@@ -13,7 +13,7 @@ card:
 
     Pri računanju rezultata svetniških klubov ignoriramo "odsotne" glasovnice,
     da dobimo pozitivno mnenje svetniškega kluba. Če je celoten svetniški klub
-    odsoten to glasovanje umaknemo iz analize.
+    odsoten, to glasovanje umaknemo iz analize.
 
 
     Ko izračunamo "razdaljo" med vsemi svetniki, jih razvrstimo glede na
@@ -25,6 +25,6 @@ card:
 
     * -1: proti
 
-    * 0: vzdržan/-a ali ni prisoten/-na
+    * 0: vzdržan_a ali ni prisoten_a
 
     * 1: za

@@ -1,8 +1,7 @@
 card:
   title: Št. svetniških vprašanj in pobud
   info: >-
-    # Preštejemo vsa svetniška vprašanja in pobude, ki so jih postavili svetniki
-    izbranega svetniškega kluba v tem sklicu DZ.
+    # Preštejemo vsa svetniška vprašanja in pobude, ki so jih postavili svetniki izbranega svetniškega kluba v tem sklicu mestnega sveta.
 
 
-    Podatke pridobivamo s spletnega mesta MO Ljubljana.
+    Podatke pridobivamo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).
