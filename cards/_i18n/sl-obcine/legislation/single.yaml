@@ -1,8 +1,7 @@
 card:
   title: Odlok
   info: >-
-    # Povzetek odloka in rezultati vseh z njim povezanih glasovanj.
+    # Odlok in rezultati vseh z njim povezanih glasovanj.
 
 
-    S spletnega mesta MO Ljubljana naložimo odloke in glasovanja, jih med seboj
-    povežemo in prikažemo v kartici.
+    S spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/) naložimo odloke in glasovanja, jih med seboj povežemo in prikažemo v kartici.
