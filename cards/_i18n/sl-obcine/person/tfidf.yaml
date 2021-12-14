@@ -1,12 +1,11 @@
 card:
   title: Besede, ki jo/ga zaznamujejo
   info: >-
-    # Izpis 10 besed in besednih zvez, ki jih svetnik_ca uporablja pogosteje
-    kot ostali svetniki.
+    # Izpis 10 besed in besednih zvez, ki jih svetnik_ca uporablja pogosteje kot ostali svetniki.
 
 
     Analizo izvajamo po statistiki
     [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
 
 
-    Korpus predstavljajo vsi govori, dokument pa vsi svetnikovi_čini govori.
+    Korpus predstavljajo vsi govori, dokument pa vsi svetnikovi_cini govori.

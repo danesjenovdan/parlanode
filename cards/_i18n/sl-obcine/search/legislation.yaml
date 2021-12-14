@@ -1,8 +1,7 @@
 card:
   title: Odloki, ki vsebujejo iskalni niz
   info: >-
-    # Seznam vseh odlokov, ki v naslovu vsebujejo iskalni niz
-    in so o njih glasovali v času trenutnega sklica.
+    # Seznam vseh odlokov, ki v naslovu vsebujejo iskalni niz, in so o njih glasovali v času trenutnega sklica.
 
 
     Odloke razvrstimo po podobnosti z iskalnim nizom.
