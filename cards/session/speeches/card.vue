@@ -1,6 +1,6 @@
 <template>
   <card-wrapper :header-config="headerConfig" max-height>
-    <div v-if="count > 0" class="multiple-speeches">
+    <div class="multiple-speeches">
       <pagination
         v-if="count > perPage"
         :page="page"
@@ -9,20 +9,25 @@
         @change="onPageChange"
       />
       <div v-if="fetching" class="nalagalnik"></div>
-      <speech
-        v-for="speech in speeches"
-        :key="speech.id"
-        v-quotable
-        :speech="speech"
-        :session="session"
-      />
-      <pagination
-        v-if="!fetching && count > perPage"
-        :page="page"
-        :count="count"
-        :per-page="perPage"
-        @change="onPageChange"
-      />
+      <div v-else-if="!speeches.length" class="empty-container">
+        <empty-state />
+      </div>
+      <template v-else>
+        <speech
+          v-for="speech in speeches"
+          :key="speech.id"
+          v-quotable
+          :speech="speech"
+          :session="session"
+        />
+        <pagination
+          v-if="count > perPage"
+          :page="page"
+          :count="count"
+          :per-page="perPage"
+          @change="onPageChange"
+        />
+      </template>
     </div>
   </card-wrapper>
 </template>
@@ -37,6 +42,7 @@ import { sessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
 import { SPEECHES_PER_PAGE } from '@/_helpers/constants.js';
 import Speech from '@/_components/Speech.vue';
 import Pagination from '@/_components/Pagination.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import quotable from '@/_directives/quotable.js';
 
 export default {
@@ -44,6 +50,7 @@ export default {
   components: {
     Speech,
     Pagination,
+    EmptyState,
   },
   directives: {
     quotable,
@@ -145,6 +152,11 @@ export default {
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 @import 'parlassets/scss/color_classes';
+
+.empty-container {
+  position: relative;
+  min-height: 265px;
+}
 
 .multiple-speeches :deep(.speech-holder) {
   border-top: 1px solid $background;

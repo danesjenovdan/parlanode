@@ -1,7 +1,5 @@
 <template>
-  <div v-if="!data?.length">
-    <div v-t="'no-results'" class="no-results" />
-  </div>
+  <empty-state v-if="!data?.length" small />
   <ul v-else class="party-list">
     <li v-for="(party, index) in data" :key="index" class="labeled-chart">
       <div class="column chart-label">
@@ -28,9 +26,13 @@
 <script>
 import links from '@/_mixins/links.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'AttendanceByGroups',
+  components: {
+    EmptyState,
+  },
   mixins: [links],
   props: {
     data: {
@@ -62,7 +64,7 @@ export default {
     // margin-bottom: -10px;
     margin-top: 0;
     margin-bottom: 0;
-    width: 200px;
+    width: 100px;
 
     @include respond-to(mobile) {
       width: 100%;

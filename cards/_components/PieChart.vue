@@ -114,6 +114,7 @@ export default {
         .join('path')
         .attr('data-group', (d) => d.data.group.slug)
         .attr('d', arc)
+        .attr('fill', (d) => d.data.group.color) // TODO this is probably too dependent on there being groups in data
         .call(segmentHover);
 
       svgGroup

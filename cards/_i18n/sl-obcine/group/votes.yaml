@@ -1,12 +1,12 @@
 card:
   title: Glasovanja
   info: >-
-    # Pregled vseh glasovanj, ki so se zgodila na seji.
+    # Pregled vseh glasovanj in večinskega glasu svetniškega kluba
 
 
     Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI,
-    VZDRŽAN/-A) in število svetnikov, ki niso glasovali, ter izpišemo rezultate.
+    VZDRŽAN/-A) in število svetnikov, ki niso glasovali, ter izpišemo rezultate
+    glede na najpogostejši glas ali odsotnost.
 
 
-    Nabor glasovanj pridobimo s spletnega mesta [DZ
-    RS](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Nabor glasovanj pridobimo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).

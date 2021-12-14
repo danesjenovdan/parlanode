@@ -1,9 +1,8 @@
 card:
   title: Prisotnost na glasovanjih sej občinskega sveta
   info: >-
-    # Prisotnost svetniškega kluba na glasovanjih občinskega sveta v primerjavi s povprečjem
-    in največjo vrednostjo.
+    # Prisotnost svetniškega kluba na glasovanjih občinskega sveta v primerjavi s povprečjem in največjo vrednostjo.
 
 
-    Število glasovanj, ko je svetniški klub prisoten na glasovanjih delimo s
-    številom vseh glasovanj in normaliziramo (min 1 - max 100).
+    Število glasovanj, na katerih je svetniški klub prisoten, delimo s
+    številom vseh glasovanj in pretvorimo v odstotke (* 100).

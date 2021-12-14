@@ -221,6 +221,7 @@ question:
   asked--with-name--m: "{name} je zastavil vprašanje na temo: {title}."
   asked--with-name--f: "{name} je zastavila vprašanje na temo: {title}."
   asked--with-name--plural: "{name} so zastavili vprašanje na temo: {title}."
+  asked--group: "Svetniški klub {name} je zastavil vprašanje na temo: {title}."
 initiative: 
   asked--m: "Podal pobudo na temo: {title}."
   asked--f: "Podala pobudo na temo: {title}."
@@ -228,6 +229,7 @@ initiative:
   asked--with-name--m: "{name} je podal pobudo na temo: {title}."
   asked--with-name--f: "{name} je podala pobudo na temo: {title}."
   asked--with-name--plural: "{name} so podali pobudo na temo: {title}."
+  asked--group: "Svetniški klub {name} je podal pobudo na temo: {title}."
 unknown: 
   asked--m: "Odprl temo: {title}."
   asked--f: "Odprla temo: {title}."
@@ -235,13 +237,14 @@ unknown:
   asked--with-name--m: "{name} je odprl temo: {title}."
   asked--with-name--f: "{name} je odprla temo: {title}."
   asked--with-name--plural: "{name} so odprli temo: {title}."
+  asked--group: "Svetniški klub {name} je odprl temo: {title}."
 event:
   ballot--for--m: Glasoval ZA {title}
   ballot--for--f: Glasovala ZA {title}
   ballot--against--m: Glasoval PROTI {title}
   ballot--against--f: Glasovala PROTI {title}
-  ballot--absent--m: NI glasoval za {title}
-  ballot--absent--f: NI glasovala za {title}
+  ballot--absent--m: NI glasoval o {title}
+  ballot--absent--f: NI glasovala o {title}
   ballot--abstain--m: VZDRŽAL se je glasovanja o {title}
   ballot--abstain--f: VZDRŽALA se je glasovanja o {title}
   speech--m: Govoril na {session} {org}

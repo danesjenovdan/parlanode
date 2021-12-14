@@ -1,10 +1,8 @@
 card:
   title: Število izgovorjenih besed
   info: >-
-    # Število besed, ki jih je svetnik/-ca izgovoril/-a v vseh svojih
-    dosedanjih govorih v DZ v primerjavi s povprečno in največjo vrednostjo.
+    # Število besed, ki jih je svetnik_ca izgovoril_a v vseh svojih dosedanjih govorih v tem mandatu, v primerjavi s povprečno in največjo vrednostjo.
 
 
-    Seštejemo besede v govorih svetnika/-ce, ki jih najdemo v transkriptih,
-    pridobljenih s spletnega mesta [DZ
-    RS](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Seštejemo besede v govorih svetnika_ce, ki jih najdemo v transkriptih,
+    pridobljenih s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).

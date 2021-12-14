@@ -5,11 +5,10 @@ card:
   votes-title: Glasovanja
   info: >-
     # Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem
-    mestu [DZ
-    RS](http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    mestu [Mestne občine Ljubljana](https://www.ljubljana.si/).
 
 
-    # Besede, ki so zaznamovale sejo
+    ## BESEDE, KI SO ZAZNAMOVALE SEJO
 
 
     Analizo izvajamo po statistiki
@@ -17,15 +16,15 @@ card:
     govori, dokument pa vsi govori na seji.
 
 
-    # Prisotnost svetniških klubov na glasovanjih seje
+    ## PRISOTNOST SVETNIŠKIH KLUBOV NA GLASOVANJIH SEJE
 
 
-    Svetniške klube razvrstimo glede na odstotek, na koliko glasovanjih
-    izbrane seje so bili prisotni njihovi svetniki in svetnice.
+    Svetniške klube razvrstimo glede na odstotek, ki je seštevek prisotnosti njihovih svetnikov in svetnic na glasovanjih izbrane seje.
 
 
-    # Glasovanja
+    ## GLASOVANJA
 
 
     Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI,
-    VZDRŽAN/-A) in število svetnikov, ki niso glasovali, ter izpišemo rezultate.
+    VZDRŽAN/-A) in število svetnikov, ki niso glasovali, ter izpišemo rezultat
+    glede na najpogostejši glas ali odsotnost.

@@ -1,9 +1,7 @@
 card:
   title: Seznam svetnikov
   info: >-
-    # Množica vseh trenutno aktivnih svetnikov, ki ustrezajo uporabniškemu vnosu
-    ({parties}; {districts}). Seznam je sortiran po {sortBy}.
+    # Množica vseh trenutno aktivnih svetnikov, ki ustrezajo uporabniškemu vnosu.
 
 
-    Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede
-    na preteklo obdobje. Stolpec sprememba se osveži ob koncu vsake redne seje.
+    Stolpec analiza izraža skupni rezultat trenutnega mandata.

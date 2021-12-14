@@ -29,6 +29,7 @@
           class="votes-list-shadow has-filters date-list"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
+          <empty-state v-if="!card.isLoading && !ballots?.length" />
           <template v-for="(dayBallots, key) in votingDays" :key="key">
             <div
               v-if="type === 'person' || selectedSort === 'date'"
@@ -68,6 +69,7 @@ import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Ballot from '@/_components/Ballot.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
@@ -81,6 +83,7 @@ export default {
     StripedButton,
     ScrollShadow,
     Ballot,
+    EmptyState,
   },
   mixins: [common, cancelableRequest],
   props: {

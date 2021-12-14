@@ -1,12 +1,7 @@
 card:
   title: Odloki, ki vsebujejo iskalni niz
   info: >-
-    # Seznam vseh odlokov in aktov, ki bodisi v naslovu bodisi v povzetku
-    vsebujejo vaš iskalni niz in so o njih na seji DZ glasovali v času
-    trenutnega sklica.
+    # Seznam vseh odlokov, ki v naslovu vsebujejo iskalni niz, in so o njih glasovali v času trenutnega sklica.
 
 
-    Po naslovih in povzetkih vseh odlokov in aktov, obravnavanih v tem sklicu,
-    poiščemo pojavitve iskalnega niza in izpišemo povezave do vseh tistih
-    odlokov ali aktov, v katerih se pojavi njegova lema. Na koncu zakone oziroma
-    akte razvrstimo po podobnosti z iskalnim nizom.
+    Odloke razvrstimo po podobnosti z iskalnim nizom.

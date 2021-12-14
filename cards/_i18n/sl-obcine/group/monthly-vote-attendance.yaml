@@ -1,9 +1,9 @@
 card:
-  title: Prisotnost na glasovanjih sej DZ skozi čas
+  title: Prisotnost na glasovanjih skozi čas
   info: >-
-    # Prisotnost svetniškega kluba na glasovanjih DZ skozi čas.
+    # Prisotnost svetniškega kluba na glasovanjih skozi čas.
 
 
-    Seštejemo število glasovanj, na katerih bi v izbranem mesecu morali biti
-    prisotni svetniki svetniškega kluba, in z odstotki prikažemo, kolikšnega
-    deleža glasovanj so se udeležili.
+    Izračunamo število glasovanj, na katerih bi v izbranem mesecu morali biti
+    prisotni svetniki svetniškega kluba, preštejemo njihove oddane glasovnice
+    (ignoriramo "odsotne") in z odstotki prikažemo delež glasovanj, ki so se jih udeležili.

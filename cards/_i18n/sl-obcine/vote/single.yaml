@@ -1,37 +1,20 @@
 card:
   title: Glasovanje
   info: >-
-    Nabor glasovanj pridobimo s spletnega mesta DZ RS.
+    Nabor glasovanj pridobimo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).
 
 
-    Rezultat posameznega glasovanja ima tri različne izpise: na nivoju
-    svetnikov, na nivoju svetniških klubov ter glede na stran vlade.
+    Rezultat posameznega glasovanja ima dva različna izpisa: na nivoju
+    svetnikov in na nivoju svetniških klubov.
 
 
     Prvi zavihek omogoča pregled glasov svetnikov, filtriranje glede na vrednost
     glasovnice (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih
-    svetnikov. Poleg krožnega grafikona se izpisuje večinski glas DZ na tem
-    glasovanju. "60% ZA" npr. pomeni, da je ZA glasovalo 54 od 90 svetnikov.
+    svetnikov. Poleg krožnega grafikona se izpisuje večinski glas Mestnega sveta na tem
+    glasovanju. "60 % ZA" npr. pomeni, da je ZA glasovalo 60 % vseh svetnikov z glasovalno
+    pravico na tem glasovanju.
 
 
-    Drugi zavihek prikaže glasove svetniških klubov. Na koncu vsake vrstice je
+    Drugi zavihek prikazuje glasove svetniških klubov. Na koncu vsake vrstice je
     izpisan večinski glas svetniškega kluba, gumbi z vrednostmi glasovnic pa
-    odpirajo sezname svetnikov, ki so oddali tak glas. S strelo opozarjamo na
-    razkole v svetniških klubih - izrišemo jo nad tistimi glasovi, ki niso
-    enaki večinskemu, pri čemer so odsotni izvzeti. Če je bila večina svetnikov
-    svetniškega kluba odsotnih, večinskega glasu ni.
-
-
-    Tretji zavihek rezultat izpiše glede na stran vlade. Tudi tu s strelo
-    opozarjamo na nepričakovane glasove - označujemo odstopanje od večinskega
-    glasu koalicije.
-
-
-    OZNAČEVANJE S STRELO
-
-
-    S strelo opozarjamo na razkole v svetniških klubih oziroma v koaliciji -
-    izrišemo jo nad tistimi glasovanji,  ki vsebujejo glasove, ki niso enaki
-    večinskemu glasu svetniškega kluba / koalicije, pri čemer so odsotni glasovi
-    izvzeti. Če je bila večina svetnikov svetniškega kluba odsotnih, večinskega
-    glasu ni.
+    odpirajo sezname svetnikov, ki so oddali tak glas.
