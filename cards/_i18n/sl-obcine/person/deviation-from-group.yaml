@@ -1,13 +1,12 @@
 card:
   title: Neujemanje s svetniškim klubom
   info: >-
-    # Odstopanje svetnika od večinskega glasu lastnega svetniškega kluba v
-    primerjavi s povprečno in največjo vrednostjo.
+    # Odstopanje svetnika_ce od večinskega glasu lastnega svetniškega kluba v primerjavi s povprečno in največjo vrednostjo.
 
 
     Za vsa glasovanja preračunamo večinski glas za vsak svetniški klub.
     Večinski glas je opcija, za katero se je odločilo največ svetnikov.
 
 
-    Za vsakega svetnika najdemo trenutni svetniški klub in izračunamo
+    Za vsakega svetnika_co najdemo trenutni svetniški klub in izračunamo
     odstotek ujemanja glasov v obdobju članstva.
