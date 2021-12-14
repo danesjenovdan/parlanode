@@ -3,14 +3,9 @@
 <div class="session-container">
   <div class="row header text-center">
     <div class="col-lg-12">
-      <% if (lawData.icon) { %> <!-- TODO: lawData.results.icon if icon exists in the data at all -->
-        <div class="media-object img-circle session-logo backgroundwhite" style="background-image: url('<%- config.urls.cdn %>/icons/legislation/<%= lawData.icon %>');">
-        </div>
-      <% } else { %>
-        <div class="media-object img-circle session-logo backgroundred law-logo">
-          <b>Z</b>
-        </div>
-      <% } %>
+      <div class="media-object img-circle session-logo backgroundred law-logo">
+        <b><%= i18n(`legislation.${lawData.results.classification || 'decree'}`) %></b>
+      </div>
       <h1 style="max-width: 600px; position: relative; margin: auto;"><%= lawData.results.text %></h1>
       <br>
       <h2 class="result">
