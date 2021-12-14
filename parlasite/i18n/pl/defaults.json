@@ -53,12 +53,16 @@
     "tools": "Narzędzia"
   },
   "footer": {
-    "about": "O projekcie",
-    "newsletter_sign_up": "Zapisz się do newslettera!",
-    "newsletter_submit": "Wyślij",
-    "donate": "Wesprzyj!",
-    "press": "Materiały prasowe",
-    "legal": "Informacje prawne"
+    "heading": "Parlameter",
+    "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
+    "contact_mail": "mol@parlameter.si",
+    "about_heading": "O projekcieu",
+    "about": "Predstavitev Parlametra",
+    "about_municipality": "O projektu Tvoja občina",
+    "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
+    "partners_heading": "Partnerji",
+    "legal": "Informacje prawne",
+    "support_heading": "Projekt podpira"
   },
   "search_popup": {
     "title": "Jak szukać?",
