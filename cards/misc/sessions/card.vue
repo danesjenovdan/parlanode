@@ -105,7 +105,7 @@ export default {
     sessionsPerPage[initialPage - 1] = results;
 
     // group organizations by classifications
-    const classifications = cardData.data.organizations
+    const classifications = (cardData?.data?.organizations || [])
       .filter((organization) => {
         // this is to filter out organizations without a classification
         return organization.classification != null;
@@ -152,7 +152,7 @@ export default {
       filters: tabs.map((tab) => ({ label: tab.title, id: tab.id })),
       currentSort: 'start_time',
       currentSortOrder: 'desc',
-      currentFilter: cardState?.filters || tabs[0].id,
+      currentFilter: cardState?.filters || tabs?.[0]?.id,
       headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
 

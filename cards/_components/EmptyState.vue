@@ -1,6 +1,6 @@
 <template>
-  <div :class="['empty', { small }]">
-    <div :class="['circle', icon]">{{ $t(text) }}</div>
+  <div class="empty">
+    <div :class="['circle', icon, { small }]">{{ $t(text) }}</div>
   </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
 @mixin circle($size: 220px) {
@@ -54,11 +55,16 @@ export default {
 
   .circle {
     @include circle;
-  }
 
-  &.small {
-    .circle {
+    &.small {
       @include circle(180px);
+    }
+
+    @include respond-to(mobile) {
+      &,
+      &.small {
+        @include circle(150px);
+      }
     }
   }
 }
