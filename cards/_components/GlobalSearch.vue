@@ -126,22 +126,31 @@ export default {
 }
 
 :deep(.search-dropdown) {
+  &::after {
+    display: none;
+  }
+
   .search-dropdown-input {
     background-color: $white;
   }
 
-  &::after {
+  .search-icon-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon-wrapper::after {
     content: '\e003';
     font-family: 'Glyphicons Halflings';
     border: none;
     font-size: 22px;
-    top: 0;
-    right: 0;
-    display: flex;
-    height: 100%;
-    width: 40px;
-    align-items: center;
     color: $first;
+    cursor: pointer;
   }
 }
 </style>

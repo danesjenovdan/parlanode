@@ -29,6 +29,7 @@
       @keydown.up.prevent="focus(focused - 1, true)"
       @keydown.down.prevent="focus(focused + 1, true)"
     />
+    <span class="search-icon-wrapper" @click="search"></span>
     <ul
       ref="dropdown"
       :class="[
@@ -306,6 +307,9 @@ export default {
       } else {
         this.selectItem(this.filteredItems[this.focused].id);
       }
+    },
+    search() {
+      this.$emit('search', this.localFilter);
     },
     selectItem(selectedItemId) {
       if (this.single) {
