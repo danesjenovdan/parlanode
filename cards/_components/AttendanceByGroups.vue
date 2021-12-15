@@ -1,7 +1,11 @@
 <template>
-  <empty-state v-if="!data?.length" small />
+  <empty-state v-if="!attendance?.length" small />
   <ul v-else class="party-list">
-    <li v-for="(party, index) in data" :key="index" class="labeled-chart">
+    <li
+      v-for="(party, index) in sortedAttendance"
+      :key="index"
+      class="labeled-chart"
+    >
       <div class="column chart-label">
         <a :href="getPartyLink(party.group)" class="funblue-light-hover">
           {{ party.group?.acronym || party.group?.name || 'N/A' }}
@@ -35,9 +39,18 @@ export default {
   },
   mixins: [links],
   props: {
-    data: {
+    attendance: {
       type: Array,
       default: () => [],
+    },
+  },
+  computed: {
+    sortedAttendance() {
+      return (this.attendance || []).slice().sort((a, b) => {
+        const aValue = a.group.acronym || a.group.name || '';
+        const bValue = b.group.acronym || b.group.name || '';
+        return aValue.localeCompare(bValue, 'sl');
+      });
     },
   },
   methods: {
