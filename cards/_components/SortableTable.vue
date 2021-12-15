@@ -119,6 +119,7 @@ export default {
 .empty-container {
   position: relative;
   min-height: 265px;
+  margin-bottom: 22px;
 }
 
 .headers {
