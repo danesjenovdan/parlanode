@@ -137,3 +137,9 @@ $vote-results: (
     height: 75px;
     display: inline-block;
 }
+
+.empty-icon {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/empty.svg'), '#000', '#{$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
