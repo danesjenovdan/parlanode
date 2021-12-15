@@ -121,22 +121,21 @@ export default {
     const { cardState, cardData } = this.$root.$options.contextData;
 
     // check if we're embedded
-    const isEmbedded = (this.$root.$options.contextData.templateName === 'embed');
+    const isEmbedded = this.$root.$options.contextData.templateName === 'embed';
 
-    let {
-      results: { members = [] } = {},
-      'members:pages': pages = 1,
-      'members:page': initialPage = 1,
-      'members:count': count = members.length ?? 0,
-      'members:per_page': perPage = MEMBERS_PER_PAGE,
-    } = cardData?.data || {};
+    const data = cardData?.data || {};
+    let members = data.results?.members ?? [];
+    let pages = data['members:pages'] ?? 1;
+    const initialPage = data['members:page'] ?? 1;
+    const count = data['members:count'] ?? members.length ?? 0;
+    let perPage = data['members:per_page'] ?? MEMBERS_PER_PAGE;
     let page = Number(cardState?.page) || initialPage;
 
     // if we're embedded we should override our current settings
     if (isEmbedded) {
       pages = Math.ceil(count / 5);
       perPage = 5;
-      page = (page * 2) - 1;
+      page = page * 2 - 1;
       members = members.slice(0, 5);
     }
 
@@ -482,7 +481,8 @@ export default {
     searchPeople: debounce(function searchPeople() {
       this.searchPeopleImmediate();
     }, 750),
-    scrollToTop() { // TODO extract this
+    // TODO: extract scrollToTop
+    scrollToTop() {
       const el = this.$refs.card?.$el || this.$refs.card;
       el.scrollIntoView();
     },
@@ -582,8 +582,12 @@ export default {
 
   .column.portrait {
     flex: none;
-    width: 80px + 18px - 16px;
+    width: 80px + 18px - 16px; // image width + image margin-right - header horizontal margin;
     visibility: hidden;
+
+    @include respond-to(mobile) {
+      width: 41px + 4px - 16px; // image width + image margin-right - header horizontal margin;
+    }
   }
 }
 
