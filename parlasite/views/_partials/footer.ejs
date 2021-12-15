@@ -6,23 +6,23 @@
       <div class="col-lg-12">
         <div class="row equal">
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 footer-about">
-            <h4>Parlameter</h4>
-            <p>Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.</p>
-            <a href="mailto:mol@parlameter.si">mol@parlameter.si</a>
+            <h4><%- i18n('footer.heading') %></h4>
+            <p><%- i18n('footer.desc') %></p>
+            <a href="mailto:<%- i18n('footer.contact_mail') %>"><%- i18n('footer.contact_mail') %></a>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <p class="text-uppercase">O projektu</p>
+            <p class="text-uppercase"><%- i18n('footer.about_heading') %></p>
             <p class="arrow-link">
               <a href="<%- sm.landing.about %>" target="_blank"><%- i18n('footer.about') %></a>
               <svg fill="#005554" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M94.8,50.4L59.3,14.9c-1.1-1.1-2.8-1.1-3.9,0c-1.1,1.1-1.1,2.9,0,4l29,29.1H7.6c-1.5,0-2.8,1-2.8,2.5C4.8,52,6.1,53,7.6,53  H84L55.3,81.9c-1.1,1.1-1.1,2.9,0,4c0.5,0.5,1.3,0.9,2,0.9s1.4-0.2,2-0.8L94.8,50.4z"></path></svg>
             </p>
-            <!-- <p class="arrow-link">
-              <a href="/<%- sm.landing.media %>"><%- i18n('footer.press') %></a>
+            <p class="arrow-link">
+              <a href="<%- i18n('footer.about_municipality_link') %>" target="_blank"><%- i18n('footer.about_municipality') %></a>
               <svg fill="#005554" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M94.8,50.4L59.3,14.9c-1.1-1.1-2.8-1.1-3.9,0c-1.1,1.1-1.1,2.9,0,4l29,29.1H7.6c-1.5,0-2.8,1-2.8,2.5C4.8,52,6.1,53,7.6,53  H84L55.3,81.9c-1.1,1.1-1.1,2.9,0,4c0.5,0.5,1.3,0.9,2,0.9s1.4-0.2,2-0.8L94.8,50.4z"></path></svg>
-            </p> -->
+            </p>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <p class="text-uppercase">Partnerji</p>
+            <p class="text-uppercase"><%- i18n('footer.partners_heading') %></p>
             <div class="row partners">
               <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
                 <a target="_blank" href="https://danesjenovdan.si/">
@@ -37,18 +37,19 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <p class="text-uppercase">Projekt podpira</p>
-            <a target="_blank" href="https://acfslovenia.si/">
-              <img class="img-responsive acf-logo" src="<%- config.urls.cdn %>/img/active-citizens-fund_logo.png" alt="logo">
-            </a>
+            <p class="footer-legal">
+              <a href="/<%- sm.landing.legal %>"><%- i18n('footer.legal') %></a>
+            </p>
           </div>
         </div>
       </div>
     </div>
     <div class="row border_top">
-      <div class="col-lg-12  col-md-12 col-xs-12">
-        <p class="text-right"><a href="/<%- sm.landing.legal %>">
-          <%- i18n('footer.legal') %></a></p>
+      <div class="col-lg-12 col-md-12 col-xs-12 footer-acf">
+        <p class="text-uppercase"><%- i18n('footer.support_heading') %></p>
+        <a target="_blank" href="https://acfslovenia.si/">
+          <img class="img-responsive acf-logo" src="<%- config.urls.cdn %>/img/active-citizens-fund_logo.png" alt="logo">
+        </a>
       </div>
     </div>
   </div>
@@ -72,6 +73,14 @@
 footer.footer .footer-about a {
   color: #333;
 }
+.footer-acf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-acf p {
+  margin-bottom: 0;
+}
 .arrow-link {
   display: flex;
   align-items: center;
@@ -80,8 +89,25 @@ footer.footer .footer-about a {
   width: 14px;
   margin-left: 5px;
 }
-.ajdovscina-logo, .acf-logo {
+.acf-logo {
+  max-width: 210px;
+  margin: 0 30px;
+}
+@media (max-width: 991.98px) {
+  .acf-logo {
+    max-width: 120px;
+  }
+}
+.ajdovscina-logo {
   padding: 5px 30px 0 0;
+}
+.footer-legal {
+  text-align: right;
+}
+@media (max-width: 991.98px) {
+  .footer-legal {
+    text-align: left;
+  }
 }
 footer.footer .border_top {
   padding: 20px 10px 10px 10px;
