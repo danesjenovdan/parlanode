@@ -5,7 +5,10 @@
     </div>
     <a
       :href="personLink"
-      :style="{ 'background-image': `url('${personPortraitUrl}')` }"
+      :style="{
+        'background-image': `url('${personPortraitUrl}')`,
+        'border-color': person.group?.color || '#333',
+      }"
       class="avgminimg img-circle"
       @mouseover="tooltipVisible = true"
       @mouseout="tooltipVisible = false"
