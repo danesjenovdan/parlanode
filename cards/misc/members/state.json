@@ -1,10 +1,10 @@
 {
   "generator": true,
   "analysis": "demographics",
-  "showWorkingBodiesFilter": "false",
-  "showGendersFilter": "false",
-  "showDemographicsAge": "false",
+  "showWorkingBodiesFilter": "true",
+  "showGendersFilter": "true",
+  "showDemographicsAge": "true",
   "showDemographicsEducation": "true",
-  "showDemographicsMandates": "false",
-  "showDemographicsGroup": "false"
+  "showDemographicsMandates": "true",
+  "showDemographicsGroup": "true"
 }
