@@ -556,6 +556,10 @@ export default {
         height: 100%;
       }
     }
+
+    .filter.working-bodies {
+      display: none;
+    }
   }
 }
 
