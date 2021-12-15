@@ -252,14 +252,6 @@ export default {
       ]);
     },
   },
-  watch: {
-    currentSort() {
-      this.searchSessionsImmediate(true);
-    },
-    currentSortOrder() {
-      this.searchSessionsImmediate(true);
-    },
-  },
   methods: {
     selectSort(sortId) {
       if (this.currentSort === sortId) {
@@ -269,6 +261,8 @@ export default {
         this.currentSort = sortId;
         this.currentSortOrder = 'asc';
       }
+      // start a request to get sorted sessions
+      this.searchSessionsImmediate(true);
     },
 
     selectTab() {
@@ -276,6 +270,10 @@ export default {
       // to reset the selected working bodies before requesting new sessions,
       // so it doesn't filter out all sessions
       this.updateWorkingBodies();
+
+      // reset sorting
+      this.currentSort = 'start_time';
+      this.currentSortOrder = 'desc';
 
       // start a request to get new sessions for this tab
       this.searchSessionsImmediate();
