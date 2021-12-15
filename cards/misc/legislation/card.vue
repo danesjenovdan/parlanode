@@ -390,11 +390,23 @@ export default {
     &.date-col {
       flex: 0 0 100px;
       margin-left: 30px;
+
+      @include respond-to(mobile) {
+        display: none;
+      }
     }
 
     &.status-col {
       flex: 0 0 150px;
       margin-left: 30px;
+
+      @include respond-to(mobile) {
+        flex: 0.45;
+
+        .outcome .text {
+          display: none;
+        }
+      }
     }
   }
 
