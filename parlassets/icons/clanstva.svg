@@ -17,7 +17,5 @@
    <path fill="#505050" id="svg_9" d="m19,40.5l-12,0c-0.553,0 -1,-0.448002 -1,-1l0,-12c0,-0.552 0.447,-1 1,-1l12,0c0.552999,0 1,0.448 1,1l0,12c0,0.551998 -0.447001,1 -1,1zm-11,-2l10,0l0,-10l-10,0l0,10z"/>
    <path fill="#505050" id="svg_10" d="m24,9.5c-0.528999,0 -1.040001,-0.21 -1.41,-0.59c-0.380001,-0.37 -0.59,-0.88 -0.59,-1.41s0.209999,-1.04 0.59,-1.41c0.74,-0.75 2.08,-0.75 2.83,0c0.370001,0.37 0.58,0.89 0.58,1.41s-0.209999,1.04 -0.58,1.41c-0.379999,0.38 -0.891001,0.59 -1.42,0.59z"/>
   </g>
-  <text id="svg_11" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif" font-weight="bold" font-size="5px" fill="#505050" y="63" x="0">Created by Norbert Kucsera</text>
-  <text id="svg_12" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif" font-weight="bold" font-size="5px" fill="#505050" y="68" x="0">from the Noun Project</text>
  </g>
 </svg>
