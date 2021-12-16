@@ -4,10 +4,17 @@
       <scroll-shadow ref="shadow">
         <div
           v-infinite-scroll="loadMore"
-          class="legislation-table-shadow"
+          class="legislation-list-shadow"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <sortable-table :columns="columns" :items="mappedItems" />
+          <empty-state v-if="!legislation?.length" />
+          <template v-else>
+            <legislation-list-item
+              v-for="law in legislation"
+              :key="law.id"
+              :law="law"
+            />
+          </template>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
           <div class="nalagalnik"></div>
@@ -19,8 +26,9 @@
 
 <script>
 import axios from 'axios';
-import SortableTable from '@/_components/SortableTable.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
+import EmptyState from '@/_components/EmptyState.vue';
+import LegislationListItem from '@/_components/LegislationListItem.vue';
 import common from '@/_mixins/common.js';
 import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
@@ -28,7 +36,6 @@ import { searchOgImage } from '@/_mixins/ogImages.js';
 import { searchContextUrl } from '@/_mixins/contextUrls.js';
 import links from '@/_mixins/links.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
-import legislationStatus from '@/_helpers/legislationStatus.js';
 
 export default {
   name: 'CardSearchLegislation',
@@ -36,8 +43,9 @@ export default {
     infiniteScroll,
   },
   components: {
-    SortableTable,
     ScrollShadow,
+    EmptyState,
+    LegislationListItem,
   },
   mixins: [
     common,
@@ -62,39 +70,6 @@ export default {
     };
   },
   computed: {
-    columns() {
-      return [
-        { id: 'name', label: this.$t('name'), additionalClass: 'small-text' },
-        // { id: 'epa', label: this.$t('epa'), additionalClass: 'small-text' },
-        {
-          id: 'result',
-          label: this.$t('status'),
-          additionalClass: 'small-text',
-        },
-      ];
-    },
-    mappedItems() {
-      return this.processedData.map((legislation) => {
-        const status = legislationStatus(legislation.status);
-
-        const outcomeHtml = `<div class="outcome"><i class="parlaicon ${
-          status.iconClass
-        }"></i><div class="text">${this.$t(status.translationKey)}</div></div>`;
-
-        return [
-          {
-            html: `<a href="${this.getLegislationLink(
-              legislation
-            )}" class="funblue-light-hover">${legislation.text}</a>`,
-          },
-          // { text: legislation.act_id != null ? legislation.act_id : '' },
-          { html: outcomeHtml },
-        ];
-      });
-    },
-    processedData() {
-      return this.legislation;
-    },
     searchUrl() {
       const url = new URL(this.cardData.url);
       url.searchParams.set('page', this.card.currentPage);
@@ -131,7 +106,7 @@ export default {
 @import 'parlassets/scss/colors';
 
 .legislation-list {
-  .legislation-table-shadow {
+  .legislation-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
     height: $full-card-height;
@@ -149,54 +124,6 @@ export default {
     .nalagalnik {
       position: absolute;
       top: calc(50% - 50px);
-    }
-  }
-}
-
-.legislation-list :deep(.legislation-table-shadow) {
-  ul {
-    padding: 0;
-
-    // .column:last-child {
-    //   margin-left: 8px;
-    // }
-
-    .column {
-      font-size: 16px;
-
-      a {
-        padding: 0.2em 0;
-      }
-
-      @include respond-to(desktop) {
-        font-size: 18px;
-      }
-
-      &:nth-child(2) {
-        @include respond-to(mobile) {
-          display: none;
-        }
-      }
-
-      &.small-text {
-        font-size: 14px;
-      }
-
-      .outcome .text {
-        @include respond-to(mobile) {
-          font-size: 14px !important;
-        }
-      }
-
-      &:last-child {
-        .outcome .text {
-          min-width: 92px;
-
-          @include respond-to(mobile) {
-            min-width: 75px;
-          }
-        }
-      }
     }
   }
 }

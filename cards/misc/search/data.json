@@ -6,8 +6,8 @@
       "people": [
         {
           "slug": "220-dr-dragan-matic",
-          "name": "dr. Dragan Matić",
-          "honorific_prefix": null,
+          "name": "Dragan Matić",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": {
@@ -20,8 +20,8 @@
         },
         {
           "slug": "255-dr-marta-bon",
-          "name": "dr. Marta Bon",
-          "honorific_prefix": null,
+          "name": "Marta Bon",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": {
@@ -48,8 +48,8 @@
         },
         {
           "slug": "224-mag-katja-damij",
-          "name": "mag. Katja Damij",
-          "honorific_prefix": null,
+          "name": "Katja Damij",
+          "honorific_prefix": "mag.",
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": {
@@ -62,8 +62,8 @@
         },
         {
           "slug": "246-mag-mojca-lozej",
-          "name": "mag. Mojca Lozej",
-          "honorific_prefix": null,
+          "name": "Mojca Lozej",
+          "honorific_prefix": "mag.",
           "honorific_suffix": null,
           "preferred_pronoun": null,
           "group": {
