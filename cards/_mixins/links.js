@@ -23,10 +23,9 @@ export default {
       if (personOrParty?.group) {
         // it's a person
         return this.getPersonName(personOrParty);
-      } else {
-        // it's a party
-        return personOrParty.name;
       }
+      // it's a party
+      return personOrParty.name;
     },
     getPersonLink(person) {
       if (!person?.slug) {
@@ -105,10 +104,9 @@ export default {
       if (personOrParty?.group) {
         // it's a person
         return this.getPersonLink(personOrParty);
-      } else {
-        // it's a party
-        return this.getPartyLink(personOrParty);
       }
-    }
+      // it's a party
+      return this.getPartyLink(personOrParty);
+    },
   },
 };
