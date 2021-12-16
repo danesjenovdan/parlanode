@@ -21,7 +21,7 @@
           {
             "result": {
               "is_outlier": false,
-              "passed": false,
+              "passed": null,
               "max_option_percentage": 64.44444444444444,
               "max_option": "against"
             },

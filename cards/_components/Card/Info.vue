@@ -20,7 +20,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+.card-back-info {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 :deep(.card-back-info) {
   h1,
