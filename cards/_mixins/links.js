@@ -19,6 +19,15 @@ export default {
       }
       return fullName;
     },
+    getPersonOrPartyName(personOrParty) {
+      if (personOrParty?.group) {
+        // it's a person
+        return this.getPersonName(personOrParty);
+      } else {
+        // it's a party
+        return personOrParty.name;
+      }
+    },
     getPersonLink(person) {
       if (!person?.slug) {
         return null;

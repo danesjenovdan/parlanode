@@ -96,6 +96,7 @@
 
 <script>
 import common from '@/_mixins/common.js';
+import links from '@/_mixins/links.js';
 import {
   personOverviewContextUrl,
   partyOverviewContextUrl,
@@ -119,7 +120,7 @@ export default {
     PartyPin,
     EmptyState,
   },
-  mixins: [common],
+  mixins: [common, links],
   props: {
     type: {
       type: String,
@@ -156,7 +157,7 @@ export default {
   computed: {
     getName() {
       return this.type === 'person'
-        ? this.person.name
+        ? this.getPersonName(this.person)
         : this.party.acronym || this.party.name || 'N/A';
     },
     headerConfig() {

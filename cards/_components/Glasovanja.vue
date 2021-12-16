@@ -300,6 +300,10 @@ export default {
       align-items: flex-end;
       gap: 3px;
 
+      @include respond-to(mobile) {
+        display: none;
+      }
+
       .striped-button {
         width: 80px;
       }

@@ -21,7 +21,7 @@
       </span>
     </div>
     <div class="attendance">
-      <attendance-by-groups :data="attendance" />
+      <attendance-by-groups :attendance="attendance" />
     </div>
     <hr />
     <div class="link">

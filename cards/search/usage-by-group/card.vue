@@ -1,6 +1,7 @@
 <template>
   <card-wrapper :header-config="headerConfig">
-    <pie-chart :data="pieData" />
+    <empty-state v-if="!pieData?.length" />
+    <pie-chart v-else :data="pieData" />
   </card-wrapper>
 </template>
 
@@ -11,11 +12,13 @@ import { searchTitle } from '@/_mixins/titles.js';
 import { searchHeader } from '@/_mixins/altHeaders.js';
 import { searchOgImage } from '@/_mixins/ogImages.js';
 import PieChart from '@/_components/PieChart.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'CardSearchUsageByGroup',
   components: {
     PieChart,
+    EmptyState,
   },
   mixins: [common, searchTitle, searchHeader, searchOgImage, searchContextUrl],
   data() {
