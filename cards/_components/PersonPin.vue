@@ -1,7 +1,7 @@
 <template>
   <div class="personpin-container">
     <div :class="['personpin-tooltip', { visible: tooltipVisible }]">
-      {{ person.name }}
+      {{ getPersonName(person) }}
     </div>
     <a
       :href="personLink"

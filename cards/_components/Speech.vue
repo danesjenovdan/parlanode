@@ -8,12 +8,12 @@
             <img :src="getPersonPortrait(speech.person)" class="portrait" />
           </a>
           <a :href="getPersonLink(speech.person)" class="funblue-light-hover">
-            <span class="name">{{ speech.person?.name }}</span>
+            <span class="name">{{ getPersonName(speech.person) }}</span>
           </a>
         </template>
         <template v-else>
           <img :src="getPersonPortrait(speech.person)" class="portrait" />
-          <span class="name">{{ speech.person?.name }}</span>
+          <span class="name">{{ getPersonName(speech.person) }}</span>
         </template>
       </div>
       <div v-if="showSession" class="session">
