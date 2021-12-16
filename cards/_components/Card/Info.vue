@@ -23,8 +23,15 @@ export default {
 .card-back-info {
   max-width: 600px;
   margin: 0 auto;
+}
 
-  :deep(h1, h2, h3, h4, h5, h6) {
+:deep(.card-back-info) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 16px;
