@@ -43,7 +43,7 @@
                   :href="getPersonLink(member.person)"
                   class="funblue-light-hover"
                 >
-                  {{ member.person?.name }}
+                  {{ getPersonName(member.person) }}
                 </a>
               </div>
               <div class="person-party">

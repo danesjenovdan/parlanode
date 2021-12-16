@@ -1,11 +1,14 @@
 <template>
   <div class="personpin-container">
     <div :class="['personpin-tooltip', { visible: tooltipVisible }]">
-      {{ person.name }}
+      {{ getPersonName(person) }}
     </div>
     <a
       :href="personLink"
-      :style="{ 'background-image': `url('${personPortraitUrl}')` }"
+      :style="{
+        'background-image': `url('${personPortraitUrl}')`,
+        'border-color': person.group?.color || '#333',
+      }"
       class="avgminimg img-circle"
       @mouseover="tooltipVisible = true"
       @mouseout="tooltipVisible = false"

@@ -1,5 +1,6 @@
 <template>
-  <scroll-shadow ref="shadow">
+  <empty-state v-if="!people?.length" />
+  <scroll-shadow v-else ref="shadow">
     <div
       v-infinite-scroll="() => $emit('load-more')"
       class="person-list-shadow"
@@ -46,6 +47,7 @@
 <script>
 import links from '@/_mixins/links.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 
 export default {
@@ -54,6 +56,7 @@ export default {
   },
   components: {
     ScrollShadow,
+    EmptyState,
   },
   mixins: [links],
   props: {

@@ -6,7 +6,7 @@
       </a>
       <div class="name">
         <a :href="getPersonLink(speech.person)" class="funblue-light-hover">{{
-          speech.person.name
+          getPersonName(speech.person)
         }}</a>
       </div>
     </div>

@@ -3,132 +3,132 @@
   "data": {
     "results": [
       {
-        "id": 1,
+        "id": 1332,
         "uid": null,
-        "text": "AMANDMA Svetniškega kluba Levica: V tretjem odstavku 2. člena se beseda »tretji« nadomesti z besedo »četrti«. Četrti odstavek se spremeni tako, da se glasi: »Dosedanji peti odstavek postane četrti odstavek.«",
+        "text": "PREDLOG ODLOKA O OBČINSKEM PODROBNEM PROSTORSKEM NAČRTU 81 CENTER ZNANOSTI – DEL",
         "epa": null,
-        "status": "in_procedure",
+        "status": "rejected",
         "passed": true,
         "classification": "decree",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-05-31T15:30:00"
+        "timestamp": "2021-11-15T15:30:00"
       },
       {
-        "id": 2,
+        "id": 1322,
         "uid": null,
-        "text": "AMANDMA Svetniškega kluba Levica: Besedilo 5. člena se nadomesti z novim besedilom, ki se glasi: Tretja alineja veljavnega 11. člena se spremeni tako, da glasi: »- hraniti živali, ki živijo prosto v naravi, razen na za ta namen določenih lokacijah. Prepoved hranjenja tudi ne velja za potrebe izvajanja programov in projektov MOL ter za ptice in veverice v javnih parkih in krajinskih parkih MOL.« V 11. členu se na koncu osme alineje pika nadomesti z vejico in dodajo nove deveta, deseta in enajsta alineja, ki se glasijo: - »poškodovati opremo in naprave na javnih otroških igriščih in na površinah za šport v naravi, - saditi drevesa in grmovnice, - poškodovati javne zelenice.«",
+        "text": "PREDLOG ODLOKA O PODELITVI KONCESIJ ZA OPRAVLJANJE JAVNE SLUŽBE V OSNOVNI ZDRAVSTVENI DEJAVNOSTI V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
         "epa": null,
-        "status": "received",
-        "passed": false,
+        "status": "poop",
+        "passed": true,
         "classification": "decree",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-05-31T15:30:00"
+        "timestamp": "2021-11-15T15:30:00"
       },
       {
-        "id": 3,
+        "id": 1321,
         "uid": null,
-        "text": "AMANDMA župana: V 7. členu se tretji odstavek spremeni tako, da se glasi: »Če ni mogoče določiti kršitelja, inšpektor izda odločbo za odpravo nepravilnosti in vzpostavitev v prejšnje stanje izvajalcu rednega vzdrževanja občinskih cest ali izvajalcu po tem odloku. Stroški pa gredo na račun rednega vzdrževanja občinskih cest ali javnih zelenih površin.«.",
-        "epa": null,
-        "status": "submitted",
-        "passed": null,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-05-31T15:30:00"
-      },
-      {
-        "id": 4,
-        "uid": null,
-        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o urejanju in čiščenju občinskih cest in javnih zelenih površin skupaj s sprejetima amandmajema.",
-        "epa": null,
-        "status": "retracted",
-        "passed": false,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-05-31T15:30:00"
-      },
-      {
-        "id": 5,
-        "uid": null,
-        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podlagah za odmero komunalnega prispevka za obstoječo komunalno opremo na območju Mestne občine Ljubljana sprejme po hitrem postopku.",
-        "epa": null,
-        "status": "rejected",
-        "passed": false,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-03-29T15:30:00"
-      },
-      {
-        "id": 6,
-        "uid": null,
-        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podlagah za odmero komunalnega prispevka za obstoječo komunalno opremo na območju Mestne občine Ljubljana.",
-        "epa": null,
-        "status": "adopted",
-        "passed": false,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-03-29T15:30:00"
-      },
-      {
-        "id": 7,
-        "uid": null,
-        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku.",
+        "text": "PREDLOG ODLOKA O SPREMEMBAH ODLOKA O UREJANJU JAVNIH PARKIRIŠČ S PREDLOGOM ZA HITRI POSTOPEK",
         "epa": null,
         "status": "enacted",
-        "passed": false,
+        "passed": true,
         "classification": "decree",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-05-31T15:30:00"
+        "timestamp": "2021-11-15T15:30:00"
       },
       {
-        "id": 8,
+        "id": 1318,
         "uid": null,
-        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana.",
+        "text": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O UREJANJU PROMETA V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
         "epa": null,
-        "status": null,
-        "passed": false,
+        "status": "enacted",
+        "passed": true,
         "classification": "decree",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-05-31T15:30:00"
+        "timestamp": "2021-11-15T15:30:00"
       },
       {
-        "id": 9,
+        "id": 1317,
         "uid": null,
-        "text": "Mestni svet Mestne občine Ljubljana sprejme predlog Akta o javno-zasebnem partnerstvu za projekt »Teniški center Tomačevo«.",
+        "text": "PREDLOG ODLOKA O DOPOLNITVI ODLOKA O ORGANIZACIJI IN NAČINU IZVAJANJA MESTNIH LINIJSKIH PREVOZOV POTNIKOV S PREDLOGOM ZA HITRI POSTOPEK",
         "epa": null,
-        "status": null,
-        "passed": false,
-        "classification": "act",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-04-19T15:30:00"
-      },
-      {
-        "id": 10,
-        "uid": null,
-        "text": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o spremembah in dopolnitvah Odloka o občinskem prostorskem načrtu Mestne občine Ljubljana – izvedbeni del skupaj s pripombami.",
-        "epa": null,
-        "status": null,
-        "passed": false,
+        "status": "enacted",
+        "passed": true,
         "classification": "decree",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-05-31T15:30:00"
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1316,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POKOPALIŠKEM REDU V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1315,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2023",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1314,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2022",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1313,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O REBALANSU PRORAČUNA MESTNE OBČINE LJUBLJANA ZA LETO 2021",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-11-15T15:30:00"
+      },
+      {
+        "id": 1338,
+        "uid": null,
+        "text": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O ORGANIZACIJI IN DELOVNEM PODROČJU MESTNE UPRAVE MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
+        "epa": null,
+        "status": "enacted",
+        "passed": true,
+        "classification": "decree",
+        "has_votes": true,
+        "has_abstract": false,
+        "timestamp": "2021-09-27T15:30:00"
       }
     ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     },
-    "count": 249,
-    "pages": 25,
+    "count": 61,
+    "pages": 7,
     "page": 1,
     "per_page": 10
   }
