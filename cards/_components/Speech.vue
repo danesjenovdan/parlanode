@@ -45,11 +45,23 @@
             </div>
           </div>
           <div class="result-col">
-            <result
+            <!-- <result
               :score="vote.result?.max_option_percentage"
               :option="vote.result?.max_option"
               :chart-data="mapVotes(vote.votes)"
-            />
+            /> -->
+            <template v-if="vote.result?.passed === true">
+              <i class="accepted glyphicon glyphicon-ok"></i>
+              <div v-t="'vote-passed'" class="text"></div>
+            </template>
+            <template v-else-if="vote.result?.passed === false">
+              <i class="not-accepted glyphicon glyphicon-remove"></i>
+              <div v-t="'vote-not-passed'" class="text"></div>
+            </template>
+            <template v-else>
+              <i class="glyphicon parlaicon-unknown"></i>
+              <div v-t="'vote-unknown'" class="text"></div>
+            </template>
           </div>
         </div>
       </div>
@@ -90,13 +102,9 @@
 import links from '@/_mixins/links.js';
 import { QUOTE_PADDING_LENGTH } from '@/_helpers/constants.js';
 import mapVotes from '@/_helpers/mapVotes.js';
-import Result from '@/_components/Result.vue';
 
 export default {
   name: 'Speech',
-  components: {
-    Result,
-  },
   mixins: [links],
   props: {
     quote: {
@@ -378,6 +386,40 @@ export default {
               line-height: 1.1;
               margin-top: 4px;
             }
+          }
+
+          flex-direction: column;
+          flex: 0 0 80px;
+          align-items: center;
+          justify-content: center;
+
+          .glyphicon {
+            font-size: 21px;
+
+            &.accepted {
+              color: $icon-accepted;
+            }
+
+            &.not-accepted {
+              color: $icon-rejected;
+            }
+          }
+
+          .parlaicon-unknown {
+            &::before {
+              content: '?';
+              font-family: sans-serif;
+              font-size: 1.2em;
+              font-weight: 700;
+            }
+          }
+
+          .text {
+            color: $font-default;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 8px;
           }
         }
       }
