@@ -5,12 +5,12 @@
     </div>
     <a
       :href="partyLink"
-      :class="partyCssClass"
       class="avgminimg img-circle avgminimg-party img-circle"
+      :style="{ 'background-color': party.color }"
       @mouseover="tooltipVisible = true"
       @mouseout="tooltipVisible = false"
     >
-      {{ party.acronym }}
+      {{ party.acronym ?? party.name }}
     </a>
   </div>
 </template>
@@ -36,12 +36,6 @@ export default {
     partyLink() {
       return this.getPartyLink(this.party);
     },
-    partyCssClass() {
-      return '';
-      // return `${this.party.acronym
-      //   .toLowerCase()
-      //   .replace(/[ +,]/g, '_')}-background`;
-    },
   },
 };
 </script>
@@ -58,9 +52,10 @@ export default {
   .avgminimg-party {
     line-height: 27px;
     cursor: pointer;
-    font-size: 11px;
+    font-size: 10px;
     color: $white;
     background-color: $font-default;
+    overflow: hidden;
   }
 
   .partypin-tooltip {

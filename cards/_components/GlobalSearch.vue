@@ -47,7 +47,7 @@ export default {
     allItems() {
       const peopleItems = this.people.map((person) => ({
         id: person.slug,
-        label: person.name,
+        label: this.getPersonName(person),
         image: this.getPersonPortrait(person),
         selected: false,
       }));

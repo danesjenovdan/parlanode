@@ -15,7 +15,7 @@
               <a
                 :href="getPersonOrPartyLink(author)"
                 class="funblue-light-hover"
-                >{{ author.name }}</a
+                >{{ getPersonOrPartyName(author) }}</a
               ><span v-if="index + 1 < authors.length">, </span>
             </span>
           </span>

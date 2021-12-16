@@ -1,39 +1,47 @@
 {
   "data": {
     "results": {
-      "score": 13953.0,
-      "average": 3741.62790697674,
+      "score": 14373.0,
+      "average": 4446.93333333333,
       "maximum": {
-        "score": 16591.0,
-        "mps": [
+        "score": 17465.0,
+        "members": [
           {
             "slug": "233-mojca-skrinjar",
             "name": "Mojca Škrinjar",
             "honorific_prefix": null,
             "honorific_suffix": null,
-            "preferred_pronoun": null,
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Slovenska demokratska stranka ",
-              "acronym": "",
-              "slug": "21-slovenska-demokratska-stranka"
+              "name": "Slovenska demokratska stranka",
+              "acronym": "SDS",
+              "slug": "21-slovenska-demokratska-stranka",
+              "color": "#CCBE18",
+              "classification": "pg"
             },
-            "image": null
+            "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-skrinjar.png"
           }
         ]
       }
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
     },
     "person": {
       "slug": "259-ales-cerin",
       "name": "Aleš Čerin",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": null,
+      "preferred_pronoun": "he",
       "group": {
-        "name": "Lista Zorana Jankovića ",
-        "acronym": "",
-        "slug": "22-lista-zorana-jankovica"
+        "name": "Lista Zorana Jankovića",
+        "acronym": "LZJ",
+        "slug": "22-lista-zorana-jankovica",
+        "color": "#048EA2",
+        "classification": "pg"
       },
-      "image": "/Screenshot_from_2020-11-03_17-38-05.png"
+      "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ales-cerin.png"
     }
   }
 }
