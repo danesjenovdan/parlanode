@@ -5,14 +5,22 @@
       <div class="person">
         <template v-if="getPersonLink(speech.person)">
           <a :href="getPersonLink(speech.person)">
-            <img :src="getPersonPortrait(speech.person)" class="portrait" />
+            <img
+              :src="getPersonPortrait(speech.person)"
+              class="portrait"
+              :style="{ border: getPersonBorder(speech.person) }"
+            />
           </a>
           <a :href="getPersonLink(speech.person)" class="funblue-light-hover">
             <span class="name">{{ getPersonName(speech.person) }}</span>
           </a>
         </template>
         <template v-else>
-          <img :src="getPersonPortrait(speech.person)" class="portrait" />
+          <img
+            :src="getPersonPortrait(speech.person)"
+            class="portrait"
+            :style="{ border: getPersonBorder(speech.person) }"
+          />
           <span class="name">{{ getPersonName(speech.person) }}</span>
         </template>
       </div>

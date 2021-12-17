@@ -4,7 +4,87 @@
   "data": {
     "results": [
       {
-        "id": 61892,
+        "id": 67337,
+        "content": "Hvala za besedo, gospod župan. Spoštovane svetnice in svetniki. Poglejte, vsekakor ne moremo podpreti zvišanje parkirnin v coni 1 iz 0,80 evrov na 1,20 evrov/h, saj to pomeni zvišanje kar za 50 %, če si izračunate. Povišanje parkirnin za obiskovalce  [...]",
+        "the_order": 164,
+        "person": {
+          "slug": "235-igor-horvat",
+          "name": "Igor Horvat",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "21-slovenska-demokratska-stranka",
+            "color": "#CCBE18",
+            "classification": "pg"
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
+        },
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 3772,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 67324,
+        "content": "Hvala za besedo. Spoštovani vsi prisotni. Svetniška skupina SDS vsekakor podpira predlog o dopolnitvi Odloka o organizaciji in načinu izvajanja mestnih linijskih prevozov, saj se s tem dokončno udejanja na vodstvo brezplačnem LPP prevozu za upokojenc [...]",
+        "the_order": 151,
+        "person": {
+          "slug": "235-igor-horvat",
+          "name": "Igor Horvat",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "21-slovenska-demokratska-stranka",
+            "color": "#CCBE18",
+            "classification": "pg"
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
+        },
+        "start_time": "2021-11-15T15:30:00",
+        "votes": [],
+        "session": {
+          "name": "27. seja Mestnega sveta MOL",
+          "id": 3772,
+          "start_time": "2021-11-15T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 67560,
         "content": "Hvala besedo. Odbor za urejanje prostora je na 7. korespondenčni seji obravnaval sprejem predloga Sklepa o lokacijski preveritvi za del območja Odloka o občinskem podrobnem prostorskem načrtu 273 Tovil in glasoval tako, da za ni glasoval nihče, proti [...]",
         "the_order": 76,
         "person": {
@@ -17,7 +97,7 @@
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
             "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
+            "color": "#CCBE18",
             "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
@@ -26,7 +106,7 @@
         "votes": [],
         "session": {
           "name": "26. seja Mestnega sveta MOL",
-          "id": 3385,
+          "id": 3773,
           "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
@@ -44,7 +124,7 @@
         }
       },
       {
-        "id": 61887,
+        "id": 67555,
         "content": "Ne, ne 30 minut zahtevamo.",
         "the_order": 71,
         "person": {
@@ -57,7 +137,7 @@
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
             "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
+            "color": "#CCBE18",
             "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
@@ -66,7 +146,7 @@
         "votes": [],
         "session": {
           "name": "26. seja Mestnega sveta MOL",
-          "id": 3385,
+          "id": 3773,
           "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
@@ -84,7 +164,7 @@
         }
       },
       {
-        "id": 61885,
+        "id": 67553,
         "content": "Saj tukaj eksplicitno piše.",
         "the_order": 69,
         "person": {
@@ -97,7 +177,7 @@
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
             "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
+            "color": "#CCBE18",
             "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
@@ -106,7 +186,7 @@
         "votes": [],
         "session": {
           "name": "26. seja Mestnega sveta MOL",
-          "id": 3385,
+          "id": 3773,
           "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
@@ -124,7 +204,7 @@
         }
       },
       {
-        "id": 61883,
+        "id": 67551,
         "content": "Hvala za besedo. V skladu s 112. členom poslovnika prosim za 30 minutno prekinitev seje, da se naš svetniški klub posvetuje glede glasovanja. Hvala. To imamo pravico in tudi tukaj je eksplicitno zabeleženo.",
         "the_order": 67,
         "person": {
@@ -137,7 +217,7 @@
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
             "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
+            "color": "#CCBE18",
             "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
@@ -146,7 +226,7 @@
         "votes": [],
         "session": {
           "name": "26. seja Mestnega sveta MOL",
-          "id": 3385,
+          "id": 3773,
           "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
@@ -164,7 +244,7 @@
         }
       },
       {
-        "id": 61881,
+        "id": 67549,
         "content": "Proceduralno imam.",
         "the_order": 65,
         "person": {
@@ -177,7 +257,7 @@
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
             "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
+            "color": "#CCBE18",
             "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
@@ -186,7 +266,7 @@
         "votes": [],
         "session": {
           "name": "26. seja Mestnega sveta MOL",
-          "id": 3385,
+          "id": 3773,
           "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
@@ -204,7 +284,7 @@
         }
       },
       {
-        "id": 61852,
+        "id": 67520,
         "content": "Hvala za besedo. Odbor za urejanje prostora je na 7. korespondenčni seji ni sprejel sklep, kateri je bil podan, in sicer je za glasoval eden, proti sta glasovala dva od štirih navzočih, ki so podali glas. Jaz bi pa ob tem samo mogoče dal opazko, da v [...]",
         "the_order": 36,
         "person": {
@@ -217,7 +297,7 @@
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
             "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
+            "color": "#CCBE18",
             "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
@@ -226,7 +306,7 @@
         "votes": [],
         "session": {
           "name": "26. seja Mestnega sveta MOL",
-          "id": 3385,
+          "id": 3773,
           "start_time": "2021-10-18T15:30:00",
           "end_time": null,
           "organizations": [
@@ -244,47 +324,7 @@
         }
       },
       {
-        "id": 61985,
-        "content": "Zopet hvala za besedo.",
-        "the_order": 70,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Slovenska demokratska stranka",
-            "acronym": "SDS",
-            "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
-            "classification": "pg"
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
-        },
-        "start_time": "2021-09-27T15:30:00",
-        "votes": [],
-        "session": {
-          "name": "25. seja Mestnega sveta MOL",
-          "id": 3386,
-          "start_time": "2021-09-27T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol",
-              "color": "#09A2CC",
-              "classification": "root"
-            }
-          ],
-          "classification": "regular",
-          "in_review": false,
-          "has_transcript": true
-        }
-      },
-      {
-        "id": 61979,
+        "id": 67647,
         "content": "Hvala za besedo. Odbor za urejanje prostora je na 17. redni seji podprl Predlog Sklepa o lokacijski preveritvi za dele enot urejanja prostora GO-234, GO-381, MO-224 in MO-225. Sklep je bil sprejet soglasno od 5-ih navzočih članov odbora. Hvala.",
         "the_order": 64,
         "person": {
@@ -297,7 +337,7 @@
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
             "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
+            "color": "#CCBE18",
             "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
@@ -306,7 +346,7 @@
         "votes": [],
         "session": {
           "name": "25. seja Mestnega sveta MOL",
-          "id": 3386,
+          "id": 3774,
           "start_time": "2021-09-27T15:30:00",
           "end_time": null,
           "organizations": [
@@ -324,7 +364,7 @@
         }
       },
       {
-        "id": 61970,
+        "id": 67638,
         "content": "Hvala za besedo. Odbor za urejanje prostora je na 17. redni seji sprejel sklep, da podpira Predlog Sklepa o lokacijski preveritvi za del območja OPPN 191 Podutik Kamna gorica – zahod in 34 Cesta Andrej Bitenca – Podutiška. Sklep je bil sprejet soglas [...]",
         "the_order": 55,
         "person": {
@@ -337,7 +377,7 @@
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
             "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
+            "color": "#CCBE18",
             "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
@@ -346,47 +386,7 @@
         "votes": [],
         "session": {
           "name": "25. seja Mestnega sveta MOL",
-          "id": 3386,
-          "start_time": "2021-09-27T15:30:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Mestni svet MOL",
-              "acronym": null,
-              "slug": "1-mestni-svet-mol",
-              "color": "#09A2CC",
-              "classification": "root"
-            }
-          ],
-          "classification": "regular",
-          "in_review": false,
-          "has_transcript": true
-        }
-      },
-      {
-        "id": 61928,
-        "content": "Hvala za besedo. Jaz bi tukaj samo se mogoče dotaknil v bistvu, s strani gospoda Čerina je bilo predstavljeno, da vi kot Lista Zorana Jankovića prevzemate vso odgovornost za ustanovitev tega novega Javnega zavoda Center Rog in boste podprli vse štiri [...]",
-        "the_order": 13,
-        "person": {
-          "slug": "235-igor-horvat",
-          "name": "Igor Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Slovenska demokratska stranka",
-            "acronym": "SDS",
-            "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09A2CC",
-            "classification": "pg"
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
-        },
-        "start_time": "2021-09-27T15:30:00",
-        "votes": [],
-        "session": {
-          "name": "25. seja Mestnega sveta MOL",
-          "id": 3386,
+          "id": 3774,
           "start_time": "2021-09-27T15:30:00",
           "end_time": null,
           "organizations": [
@@ -418,13 +418,13 @@
         "name": "Slovenska demokratska stranka",
         "acronym": "SDS",
         "slug": "21-slovenska-demokratska-stranka",
-        "color": "#09A2CC",
+        "color": "#CCBE18",
         "classification": "pg"
       },
       "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
     },
-    "count": 61,
-    "pages": 7,
+    "count": 73,
+    "pages": 8,
     "page": 1,
     "per_page": 10
   }
