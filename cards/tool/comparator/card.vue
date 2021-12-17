@@ -180,7 +180,6 @@ import PTabs from '@/_components/Tabs.vue';
 import Tag from '@/_components/Tag.vue';
 import TextFrame from '@/_components/TextFrame.vue';
 import TimeChart from '@/_components/TimeChart.vue';
-import generators from '@/_mixins/generatePeopleAndParties.js';
 
 export default {
   name: 'CardToolComparator',
@@ -199,7 +198,7 @@ export default {
     TimeChart,
     // SeznamGlasovanj,
   },
-  mixins: [common, links, generators],
+  mixins: [common, links],
   cardInfo: {
     doubleWidth: true,
   },

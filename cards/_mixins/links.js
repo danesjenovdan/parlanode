@@ -23,10 +23,12 @@ export default {
       if (personOrParty?.group) {
         // it's a person
         return this.getPersonName(personOrParty);
-      } else {
-        // it's a party
-        return personOrParty.name;
       }
+      // it's a party
+      return personOrParty.name;
+    },
+    getPersonBorder(person) {
+      return `2px solid ${person?.group?.color || '#333'}`;
     },
     getPersonLink(person) {
       if (!person?.slug) {
@@ -105,10 +107,9 @@ export default {
       if (personOrParty?.group) {
         // it's a person
         return this.getPersonLink(personOrParty);
-      } else {
-        // it's a party
-        return this.getPartyLink(personOrParty);
       }
-    }
+      // it's a party
+      return this.getPartyLink(personOrParty);
+    },
   },
 };

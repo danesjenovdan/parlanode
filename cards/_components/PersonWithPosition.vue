@@ -5,14 +5,14 @@
         <img
           :src="getPersonPortrait(person)"
           class="img-circle img-responsive"
-          alt=""
+          :style="{ border: getPersonBorder(person) }"
         />
       </a>
       <div class="member_data">
         <h3>
-          <a :href="getPersonLink(person)" class="funblue-light-hover">{{
-            getPersonName(person)
-          }}</a>
+          <a :href="getPersonLink(person)" class="funblue-light-hover">
+            {{ getPersonName(person) }}
+          </a>
         </h3>
         <h4>{{ positionTranslation }}</h4>
       </div>

@@ -292,6 +292,7 @@ export default {
             {
               link: this.getPersonLink(member),
               image: this.getPersonPortrait(member),
+              imageStyle: { border: this.getPersonBorder(member) },
             },
             {
               link: this.getPersonLink(member),
@@ -319,6 +320,7 @@ export default {
           {
             link: this.getPersonLink(member),
             image: this.getPersonPortrait(member),
+            imageStyle: { border: this.getPersonBorder(member) },
           },
           { link: this.getPersonLink(member), text: member.name },
           {
@@ -340,6 +342,7 @@ export default {
           {
             link: this.getPersonLink(member),
             image: this.getPersonPortrait(member),
+            imageStyle: { border: this.getPersonBorder(member) },
           },
           { link: this.getPersonLink(member), text: member.name },
           {
