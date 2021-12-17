@@ -52,7 +52,12 @@
           @mouseenter="focus(index)"
         >
           <div class="search-dropdown-label">
-            <img v-if="item.image" :src="item.image" class="image" />
+            <img
+              v-if="item.image"
+              :src="item.image"
+              :style="item.imageStyle"
+              class="image"
+            />
             <span
               v-else-if="item.color"
               :style="{ background: item.color }"

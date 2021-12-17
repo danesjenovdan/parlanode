@@ -27,6 +27,9 @@ export default {
       // it's a party
       return personOrParty.name;
     },
+    getPersonBorder(person) {
+      return `2px solid ${person?.group?.color || '#333'}`;
+    },
     getPersonLink(person) {
       if (!person?.slug) {
         return null;
