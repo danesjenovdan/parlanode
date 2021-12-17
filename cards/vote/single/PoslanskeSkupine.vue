@@ -8,13 +8,13 @@
       >
         <div class="description">
           <div class="name">
-            <template v-if="party.group?.acronym">
+            <template v-if="getPartyLink(party.group)">
               <a :href="getPartyLink(party.group)" class="funblue-light-hover">
-                {{ party.group?.acronym }}
+                {{ party.group?.acronym || party.group?.name || 'N/A' }}
               </a>
             </template>
             <template v-else>
-              {{ party.group?.name }}
+              {{ party.group?.acronym || party.group?.name || 'N/A' }}
             </template>
           </div>
           <result
@@ -50,24 +50,42 @@
               class="item"
             >
               <div class="column portrait">
-                <a :href="getPersonLink(member.person)"
-                  ><img :src="getPersonPortrait(member.person)"
-                /></a>
+                <a :href="getPersonLink(member.person)">
+                  <img
+                    :src="getPersonPortrait(member.person)"
+                    :style="{ border: getPersonBorder(member.person) }"
+                  />
+                </a>
               </div>
-              <div class="column name">
-                <a
-                  :href="getPersonLink(member.person)"
-                  class="funblue-light-hover"
-                >
-                  {{ getPersonName(member.person) }}
-                </a>
-                <br />
-                <a
-                  :href="getPartyLink(member.group)"
-                  class="funblue-light-hover"
-                >
-                  {{ member.person.group?.acronym }}
-                </a>
+              <div class="column wider name">
+                <div class="person-name">
+                  <a
+                    :href="getPersonLink(member.person)"
+                    class="funblue-light-hover"
+                  >
+                    {{ getPersonName(member.person) }}
+                  </a>
+                </div>
+                <div class="person-party">
+                  <a
+                    v-if="getPartyLink(member.person?.group)"
+                    :href="getPartyLink(member.person?.group)"
+                    class="funblue-light-hover"
+                  >
+                    {{
+                      member.person?.group?.acronym ||
+                      member.person?.group?.name ||
+                      'N/A'
+                    }}
+                  </a>
+                  <span v-else>
+                    {{
+                      member.person?.group?.acronym ||
+                      member.person?.group?.name ||
+                      'N/A'
+                    }}
+                  </span>
+                </div>
               </div>
             </li>
           </ul>
@@ -204,6 +222,7 @@ export default {
   background: $background;
   margin-bottom: 12px;
   padding: 10px 18px 14px;
+
   @include respond-to(desktop) {
     padding-bottom: 0;
     padding-top: 0;
@@ -215,6 +234,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   @include respond-to(desktop) {
     flex-wrap: nowrap;
     height: 79px;
@@ -244,6 +264,7 @@ export default {
 
   .striped-button {
     flex: 1;
+
     &:not(:last-child) {
       margin-right: 6px;
     }
@@ -282,11 +303,29 @@ export default {
 
 .members {
   padding-top: 14px;
+
   @include respond-to(desktop) {
     padding-top: 0;
   }
-  .person-list .item {
-    border-color: $font-placeholder;
+
+  .person-list {
+    .item {
+      border-color: $font-placeholder;
+    }
+
+    .person-name,
+    .person-party {
+      line-height: 1.1;
+    }
+
+    .person-name {
+      font-weight: 300;
+    }
+
+    .person-party {
+      font-size: 14px;
+      margin-top: 5px;
+    }
   }
 }
 </style>

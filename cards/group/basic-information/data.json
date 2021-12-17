@@ -2,102 +2,130 @@
   "url": "https://parladata.lb.djnd.si/v3/cards/group/basic-information/?id=22",
   "data": {
     "results": {
-      "number_of_members": 22,
+      "number_of_members": 24,
       "social_networks": {},
-      "email": null,
+      "email": "lzj@ljubljana.si",
       "presidents": [
         {
           "slug": "259-ales-cerin",
           "name": "Aleš Čerin",
-          "honorific_prefix": "test.",
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png"
-        }
-      ],
-      "deputies": [
-        {
-          "slug": "259-ales-cerin",
-          "name": "Aleš Čerin",
           "honorific_prefix": null,
-          "honorific_suffix": "test suffix",
-          "preferred_pronoun": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/Screenshot_from_2021-07-14_17-03-15.png"
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ales-cerin.png"
         }
       ],
+      "deputies": [],
       "members": [
         {
           "slug": "240-anton-kastelic",
           "name": "Anton Kastelic",
-          "honorific_prefix": "test",
-          "honorific_suffix": "test",
-          "preferred_pronoun": null,
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/tone-kastelic.png"
+        },
+        {
+          "slug": "265-anze-miklavec",
+          "name": "Anže Miklavec",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/anze-miklavec.png"
         },
         {
           "slug": "242-bruna-antauer",
           "name": "Bruna Antauer",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/bruna-antauer.png"
+        },
+        {
+          "slug": "266-daniel-avdagic",
+          "name": "Daniel Avdagić",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/daniel-avdagic.png"
         },
         {
           "slug": "243-danilo-saric",
           "name": "Danilo Šarić",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/danilo-saric.png"
         },
         {
-          "slug": "255-dr-marta-bon",
-          "name": "dr. Marta Bon",
+          "slug": "254-dejan-crnek",
+          "name": "Dejan Crnek",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/dejan-crnek.png"
         },
         {
           "slug": "253-dunja-piskur-kosmac",
           "name": "Dunja Piškur Kosmač",
           "honorific_prefix": null,
-          "honorific_suffix": "dr. med",
+          "honorific_suffix": "dr. med.",
           "preferred_pronoun": "she",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/dunja-piskur-kosmac.png"
         },
@@ -106,79 +134,61 @@
           "name": "Emilija Mitrović Miloš",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/emilija-mitrovic-milos.png"
         },
         {
           "slug": "248-francka-trobec",
           "name": "Francka Trobec",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/francka-trobec.png"
         },
         {
           "slug": "238-grega-ciglar",
           "name": "Grega Ciglar",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
+            "name": "Lista Zorana Jankovića",
+            "acronym": "LZJ",
+            "slug": "22-lista-zorana-jankovica",
+            "color": "#048EA2",
+            "classification": "pg"
           },
-          "image": null
-        },
-        {
-          "slug": "245-iztok-kordis",
-          "name": "Iztok Kordiš",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
-        },
-        {
-          "slug": "256-jelka-zekar",
-          "name": "Jelka Žekar",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Lista Zorana Jankovića ",
-            "acronym": "",
-            "slug": "22-lista-zorana-jankovica"
-          },
-          "image": null
+          "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/grega-ciglar.png"
         }
       ]
     },
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     },
     "group": {
-      "name": "Lista Zorana Jankovića ",
-      "acronym": "",
-      "slug": "22-lista-zorana-jankovica"
+      "name": "Lista Zorana Jankovića",
+      "acronym": "LZJ",
+      "slug": "22-lista-zorana-jankovica",
+      "color": "#048EA2",
+      "classification": "pg"
     },
-    "members:count": 19,
-    "members:pages": 2,
+    "members:count": 23,
+    "members:pages": 3,
     "members:page": 1,
     "members:per_page": 10
   }
