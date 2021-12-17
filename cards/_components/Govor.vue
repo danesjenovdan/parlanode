@@ -2,7 +2,10 @@
   <li class="person-speech">
     <div class="person-container">
       <a :href="getPersonLink(speech.person)" class="portrait">
-        <img :src="getPersonPortrait(speech.person)" />
+        <img
+          :src="getPersonPortrait(speech.person)"
+          :style="{ border: getPersonBorder(speech.person) }"
+        />
       </a>
       <div class="name">
         <a :href="getPersonLink(speech.person)" class="funblue-light-hover">{{

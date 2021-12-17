@@ -51,7 +51,10 @@
             >
               <div class="column portrait">
                 <a :href="getPersonLink(member.person)">
-                  <img :src="getPersonPortrait(member.person)" />
+                  <img
+                    :src="getPersonPortrait(member.person)"
+                    :style="{ border: getPersonBorder(member.person) }"
+                  />
                 </a>
               </div>
               <div class="column wider name">

@@ -9,7 +9,10 @@
       <ul class="person-list">
         <li v-for="person in people" :key="person.slug" class="person">
           <a :href="getPersonLink(person)" class="portrait column">
-            <img :src="getPersonPortrait(person)" />
+            <img
+              :src="getPersonPortrait(person)"
+              :style="{ border: getPersonBorder(person) }"
+            />
           </a>
           <div class="column name">
             <div class="person-name">
