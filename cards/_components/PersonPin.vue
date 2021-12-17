@@ -4,10 +4,10 @@
       {{ getPersonName(person) }}
     </div>
     <a
-      :href="personLink"
+      :href="getPersonLink(person)"
       :style="{
-        'background-image': `url('${personPortraitUrl}')`,
-        'border-color': person.group?.color || '#333',
+        'background-image': `url('${getPersonPortrait(person)}')`,
+        border: getPersonBorder(person),
       }"
       class="avgminimg img-circle"
       @mouseover="tooltipVisible = true"
@@ -32,14 +32,6 @@ export default {
     return {
       tooltipVisible: false,
     };
-  },
-  computed: {
-    personLink() {
-      return this.getPersonLink(this.person);
-    },
-    personPortraitUrl() {
-      return this.getPersonPortrait(this.person);
-    },
   },
 };
 </script>

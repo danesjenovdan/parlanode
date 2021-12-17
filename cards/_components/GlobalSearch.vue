@@ -49,6 +49,7 @@ export default {
         id: person.slug,
         label: this.getPersonName(person),
         image: this.getPersonPortrait(person),
+        imageStyle: { border: this.getPersonBorder(person) },
         selected: false,
       }));
       const groupItems = this.groups.map((group) => ({
