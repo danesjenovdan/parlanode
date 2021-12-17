@@ -3,7 +3,7 @@
     <div class="errored">
       <div class="icon"></div>
       <div v-t="'card-errored'" class="content"></div>
-      <div class="message" v-text="message"></div>
+      <pre class="message" v-text="message"></pre>
     </div>
   </card-wrapper>
 </template>
@@ -48,7 +48,7 @@ export default {
 .errored {
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 100%;
   justify-content: center;
   min-height: 180px;
 
@@ -73,12 +73,8 @@ export default {
   }
 
   .message {
-    width: 100%;
-    text-align: center;
     margin-top: 10px;
-    font-size: 12px;
-    font-family: monospace;
-    color: $font-placeholder;
+    font-size: 10px;
   }
 }
 

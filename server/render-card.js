@@ -117,14 +117,16 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const defaultMessages = localeData.defaults ?? {};
   const cardMessages = localeData[cardName] ?? {};
 
-  const dataUrl = getCardDataUrl(cardName, id, date, state);
-  const cardData = await fetchCardData(dataUrl, id, date);
+  let cardData = {};
+  if (cardName !== 'misc/error') {
+    const dataUrl = getCardDataUrl(cardName, id, date, state);
+    cardData = await fetchCardData(dataUrl, id, date);
 
-  if (cardData.error) {
-    // TODO: return error card instead
-    const { error, url } = cardData;
-    const message = error?.message ?? 'Request failed';
-    throw new Error(`${message} (${url})`);
+    if (cardData.error) {
+      const { error, url } = cardData;
+      const message = error?.message ?? 'Request failed';
+      throw new Error(`${message} (${url})`);
+    }
   }
 
   const cardState = { ...state };
