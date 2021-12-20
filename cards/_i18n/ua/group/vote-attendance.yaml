@@ -1,9 +1,9 @@
 card:
-  title: Attendance at voting in the National Assembly
+  title: Участь у голосуваннях
   info: >-
-    # Parliamentary group's attendance at voting in the National Assembly
-    compared to the average and maximum value.
+    # Участь парламентської фракції/групи в голосуваннях у Верховній Раді порівняно
+    з середнім і максимальним значенням.
 
 
-    The number of voting events where the parliamentary group was present is
-    divided by the number of all voting events and normalised (min 1-max 100).
+    Кількість голосувань, на яких була присутня парламентська фракція/група ділиться
+    на кількість усіх голосування та стандартизується (мінімум 1 – максимум 100).

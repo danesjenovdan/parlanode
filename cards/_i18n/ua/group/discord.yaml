@@ -1,13 +1,11 @@
 card:
-  title: Vote discord
+  title: Розбіжність у голосуванні
   info: >-
-    # Vote discord within the selected parliamentary group for voting events in
-    the National Assembly compared to the average and maximum value of disparity
-    within all the parliamentary groups.
+    # Розбіжність у голосуванні в межах обраної депутатської фракції/групи, порівняно
+    з середнім і максимальним значенням диспропорції в усіх депутатських фракціях/групах.
 
 
-    For each voting event we count which ballot (FOR, AGAINST, ABSTAINED,
-    ABSENT) was submitted by the parliamentary group's MPs. We calculate the
-    percentage of those who voted for the most popular option. That percentage
-    is subtracted from 100 to get the level of discord i. e. the percentage of
-    MPs who did not vote the same as the majority.
+    Для кожного голосування ми підраховуємо, як голосували депутати (ЗА, ПРОТИ,УТРИМАВСЯ,ВІДСУТНІЙ).
+    Ми розраховуємо відсоток тих, хто проголосував за найпопулярніший варіант. Цей
+    відсоток віднімається від 100, щоб отримати рівень розбіжності. Отриманий результат
+    є відсоток депутатів, які проголосували не так, як більшість.

@@ -1,36 +1,31 @@
 card:
-  title: Other voting events
+  title: Інші голосування
   info: >-
-    # An overview of all votes which occurred during the session
+    # Огляд усіх голосувань, що відбулися під час засідання.
 
 
-    For all voting events in a session we count the votes (FOR, AGAINST,
-    ABSTAINED) and the number of MPs who were absent, and display the results.
+    Для всіх голосувань під час засідання ми рахуємо депутатські голоси (ЗА, ПРОТИ,
+    УТРИМАВСЯ), кількість народних депутатів, які не голосували, та відображаємо результат.
 
 
-    We obtain voting records from the web page [National Assembly of the
-    Republic of Slovenia](http://www.dz-rs.si).
+    Дані про голосування отримано з порталу [Портал відкритих даних Верховної Ради](https://data.rada.gov.ua/ogd/zal/ppz/skl9/plenary_vote_results-skl9.tsv).
 
 
-    Unexpected votes
+    Неочікувані голосування
 
 
-    To mark unexpected voting results we use the probabilistic method of
-    analysis of main components, [as implemented in scikit-learn
-    papers](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
-    and described in [M. Tipping and C. Bishop, Probabilistic Principal
-    Component Analysis, Journal of the Royal Statistical Society, Series B, 61,
-    Part 3, pp. 611-622](http://www.miketipping.com/papers/met-mppca.pdf).
+    Для позначення неочікуваних результатів голосувань, ми використовуємо імовірнісний
+    метод аналізу основних компонентів [як реалізований у статтях scikit-learn](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
+    і описано в [M. Tipping and C. Bishop, Probabilistic Principal Component Analysis,
+    Journal of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622](http://www.miketipping.com/papers/met-mppca.pdf).
 
 
-    We transform all voting events into four-dimensional vectors where each of
-    the components shows the number of votes for a specific option (FOR,
-    AGAINST, ABSTAINED, ABSENT). Principal component analysis (PCA) model is
-    adjusted to the matrix and function
-    [score_samples](https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485)
-    gives us "log-likelihood" of each voting event in our model. The model is
-    set to maximise "log-likelihood" value to as many voting events as possible.
-    When we obtain all "log-likelihood" values we sort them from smallest to
-    biggest and use a fourth of all voting events which fit the model the least.
-    Compared to our model these voting events stand out and are therefore most
-    "unexpected". In the card they are marked with a fire icon.
+    Ми перетворюємо всі голосування на чотиривимірні вектори, кожен з яких показує
+    кількість голосів за певний варіант (ЗА, ПРОТИ, УТРИМАВСЯ, ВІДСУТНІЙ). Модель
+    аналізу головних компонентів (PCA) налаштована на матрицю і функція [score_samples](https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485)
+    дає нам "ймовірність" кожної події голосування в нашій моделі. Модель налаштована
+    таким чином, щоб максимізувати значення «ймовірності» для якомога більшої кількості
+    подій голосування. Коли ми отримуємо всі значення «ймовірності», ми сортуємо їх
+    від найменшого до найбільшого і використовуємо четверту частину всіх подій голосування,
+    які найменше відповідають моделі. Порівняно з нашою моделлю ці голосування виділяються
+    і тому є найбільш «несподіваними». У картці вони позначені значком вогню.
