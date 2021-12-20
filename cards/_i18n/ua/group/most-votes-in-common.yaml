@@ -1,25 +1,25 @@
 card:
-  title: Most likely to vote the same
+  title: Найчастіше голосують однаково
   info: >-
-    # List of 5 MPs that most often vote the same as the "vote of the
-    parliamentary group". MPs are ranked in an ascending order. The lower the
-    value, the bigger the commonalities between the two MPs.
+    # Перелік 5 народних депутатів, які найчастіше голосують так само, як фракція/група.
+    Депутати ранжуються за зростанням. Чим менше значення, тим більше спільного між
+    двома депутатами.
 
 
-    We calculate the Euclidean distance between the results of a parliamentary
-    group's voting and everyone else's voting (votes are converted to numerical
-    values between -1 and 1).
+    Ми підраховуємо “Евклідову відстань” між результатами голосування фракції/групи
+    та голосуванням усіх інших (значення голосів конвертуються на числові значення
+    від -1 до 1).
 
 
-    When we calculate the "distance" between all the MPs we rank them based on
-    result and show the top 5.
+    Ми розраховуємо «проміжок» між усіма депутатами, ранжуємо їх за результатами та
+    показуємо топ-5 значень.
 
 
-    The numerical values of votes
+    Числові значення голосів
 
 
-    * -1: against
+    * -1: проти
 
-    * 0: abstained or absent
+    * 0: утримався або відсутній
 
-    * 1: for
+    * 1: за

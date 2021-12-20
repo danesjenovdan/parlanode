@@ -1,28 +1,26 @@
 card:
-  title: Latest session
+  title: Останнє засідання
   info: >-
-    # An overview of analysis of the latest session available at [National
-    Assembly of the Republic of
-    Slovenia](http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    #Огляд аналізу останнього засідання доступний на порталі [Портал відкритих даних
+    ВРУ](https://data.rada.gov.ua/open/main/index).
 
 
-    # Words that marked the session
+    # Ключові слова засідань
 
 
-    We perform the analysis according to the
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) statistic. The corpus are all
-    speeches while the document are all speeches at this particular session.
+    Ми зробили аналіз згідно з [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) статистикою.
+    Корпус – це всі виступи, тоді як документ – це всі виступи на окремому засіданні.
 
 
-    # Attendance at voting events by parliamentary group
+    # Відвідуваність депутатських фракцій/груп згідно із голосуваннями
 
 
-    Parliamentary groups are sorted based on the percentage of votes their
-    members attended.
+    Депутатські фракції/групи відсортовані за відсотком голосувань, які відвідали
+    їх члени.
 
 
-    # Voting events
+    # Голосування
 
 
-    For all voting events at a session we count individual votes (FOR, AGAINST,
-    ABSTAIN) and the number of MPs who did not vote, and display the results.
+    Для всіх голосувань під час засідання ми рахуємо депутатські голоси (ЗА, ПРОТИ,
+    УТРИМАВСЯ), кількість народних депутатів, які не голосували, та відображаємо результат.

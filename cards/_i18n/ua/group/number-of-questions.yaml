@@ -1,9 +1,8 @@
 card:
-  title: The number of parliamentary questions and initiatives
+  title: Кількість депутатських запитань та ініціатив
   info: >-
-    # We count all the parliamentary questions and initiatives by the
-    parliamentary group's MPs in this sitting of the National Assembly.
+    # Ми підраховуємо усі депутатські запитання та ініціативи представників фракції/групи
+    в поточному скликанні ВРУ.
 
 
-    Data is retrieved from web site [National Assembly of the Republic of
-    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/).
+    Дані зібрано на порталі [Портал відкритих даних Верховної Ради України](https://data.rada.gov.ua/open/main/index).

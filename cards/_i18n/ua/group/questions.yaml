@@ -1,15 +1,13 @@
 card:
-  title: Parliamentary questions and initiatives
+  title: Депутатські питання та ініціативи
   info: >-
-    # An overview of parliamentary questions by parliamentary group.
+    # Огляд всіх депутатських запитань представників фракції/групи.
 
 
-    We collected all parliamentary questions and sorted them by parliamentary
-    groups. Questions can be viewed by the MP who gave them, by the person to
-    whom the question was addressed to, and by date. It is also possible to
-    search through questions by their title.
+    Ми зібрали всі депутатські запитання та розсортували їх за фракціями/групами.
+    Запитання можна переглянути за ПІБ депутата, який їх поставив; за особою, якій
+    було адресовано запитання; за датою. Також можна шукати запитання за їх назвою.
 
 
-    We obtain records of parliamentary questions from the web page [National
-    Assembly of the Republic of
-    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Дані отримані з Порталу відкритих даних Верховної Ради [Портал відкритих даних
+    ВРУ](https://data.rada.gov.ua/open/main/index).
