@@ -28,7 +28,10 @@ export default {
       return personOrParty.name;
     },
     getPersonBorder(person) {
-      return `2px solid ${person?.group?.color || '#333'}`;
+      if (person?.group) {
+        return `2px solid ${person?.group?.color || '#333'}`;
+      }
+      return null;
     },
     getPersonLink(person) {
       if (!person?.slug) {
