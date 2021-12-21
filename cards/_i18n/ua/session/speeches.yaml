@@ -1,7 +1,7 @@
 card:
-  title: Transcript
+  title: Стенограма
   info: >-
-    We mechanically break up transcripts of sessions, published as an HTML
-    document on the web page [National Assembly of the Republic of
-    Slovenia](http://www.dz-rs.si), into separate speeches. Speeches are then
-    combined in their original order in a card transcript.
+    Ми механічно розділяємо стенограми сесій, опубліковані у вигляді HTML-документа
+    на порталі [Портал відкритих даних Верховної Ради] (https://data.rada.gov.ua/open/data/stenogram-skl9),
+    на окремі виступи. Промови потім об’єднуються в оригінальному порядку на картці
+    стенограм.

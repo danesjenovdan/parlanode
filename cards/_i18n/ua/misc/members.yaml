@@ -1,10 +1,10 @@
 card:
-  title: List of all MPs
+  title: Список всіх народних депутатів
   info: >-
-    # A set of all currently active MPs, corresponding to user entry ({parties};
-    {districts}). The list is sorted by {sortBy}.
+    # Перелік усіх чинних на даний момент нардепів, що відповідають запиту користувача
+    ({parties}; {districts}). Перелік відсортовано за {sortBy}.
 
 
-    Column "Analysis" reflects the sum result and the column "Change" reflects
-    the difference compared to previous data that was collected. The column
-    "Change" is refreshed at the end of each session.
+    Колонка «Аналіз» відображає підсумковий результат, а колонка «Зміни» відображає
+    різницю порівняно з попередніми зібраними даними. Колонка «Зміни» оновлюється
+    в кінці кожного сеансу.

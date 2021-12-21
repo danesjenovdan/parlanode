@@ -113,6 +113,7 @@ export default {
         font-size: 12px;
         background-color: $tab-hover;
         color: $white;
+        line-height: 1;
       }
 
       .separator {
