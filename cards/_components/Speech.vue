@@ -169,7 +169,7 @@ export default {
     speechContent() {
       return this.showParagraphs
         ? this.speech?.content || ''
-        : this.speech?.content.replace('\n', ' ') || '';
+        : this.speech?.content.replace(/\n/g, ' ').replace(/\r/g, ' ') || '';
     },
     speechParagraphs() {
       return this.speechContent.split('\n');
