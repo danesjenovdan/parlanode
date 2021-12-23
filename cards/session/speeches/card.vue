@@ -90,7 +90,7 @@ export default {
       initialPage,
       fetching: false,
       session: cardData?.data?.session,
-      showParagraphs: cardState?.showParagraphs.toString() !== 'false',
+      showParagraphs: cardState?.showParagraphs?.toString() !== 'false',
     };
   },
   computed: {
