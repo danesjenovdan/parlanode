@@ -19,6 +19,7 @@
           v-quotable
           :speech="speech"
           :session="session"
+          :show-paragraphs="showParagraphs"
         />
         <pagination
           v-if="count > perPage"
@@ -89,6 +90,7 @@ export default {
       initialPage,
       fetching: false,
       session: cardData?.data?.session,
+      showParagraphs: cardState?.showParagraphs.toString() !== 'false',
     };
   },
   computed: {
