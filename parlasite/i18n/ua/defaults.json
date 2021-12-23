@@ -1,15 +1,15 @@
 {
   "landing": {
-    "title": "Parlameter",
-    "lead": "Parlameter analyses voting and speeches in the parliament to help you monitor your politicians.",
+    "title": "ЧЕСНО.Parlameter",
+    "lead": "ЧЕСНО.Parlameter аналізує голосування та промови у Верховній Раді та допомагає моніторити діяльність ваших обранців.",
     "search": {
-      "part_one": "Search",
-      "part_two": "legislation, voting, representatives, parties or their speeches"
+      "part_one": "Пошук",
+      "part_two": "закони, голосування, нардепи, фракції та промови"
     }
   },
   "about": {
-    "lead": "Parlameter analyses voting and speeches in the parliament to help you monitor your politicians.",
-    "afterlead": "User friendly visual design and technologically advanced modular setup increase the transparency of the most important democratic institution.",
+    "lead": "Parlameter аналізує голосування та промови у Верховній Раді та допомагає моніторити діяльність ваших обранців.",
+    "afterlead": "Зручний інтерфейс та технологічна модульна система збільшують прозорість найголовніших демократичних інститутів.",
     "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
     "columns": {
       "first": {
@@ -46,64 +46,70 @@
     }
   },
   "menu": {
-    "legislation": "Legislation",
-    "sessions": "Sessions",
-    "mps": "Representatives",
-    "pgs": "Parliamentary groups",
-    "tools": "Tools"
+    "legislation": "Закони",
+    "sessions": "Сесії",
+    "mps": "Представники",
+    "pgs": "Парламентські групи",
+    "tools": "Інструменти"
   },
   "footer": {
-    "about": "About the project",
+    "about": "Про проєкт",
+    "heading": "ЧЕСНО.Parliameter",
+    "desc": "Проєкт Parlameter був розроблений Громадським рухом ЧЕСНО у партнерстві з Danes Je Nov Dan за підтримки Національного фонду на підтримку демократії (NED).",
+    "contact_mail": "info@chesno.org",
     "newsletter_sign_up": "Sign up for the newsletter!",
     "newsletter_submit": "Submit",
     "donate": "Donate!",
     "press": "Press corner",
-    "legal": "Legal notice"
+    "legal": "Legal notice",
+    "about_heading": "Дізнатися ще",
+    "partners_heading": "Партнери",
+    "support_heading": "За підтримки"
   },
   "search_popup": {
-    "title": "How to search?",
-    "first_paragraph": "The default search is broad. (it will return all speeches containing any of the words entered).",
-    "second_paragraph": "If you want to modify your search query you can use the following operators:",
+    "title": "Як шукати?",
+    "first_paragraph": "Пошук за замовчуванням – широкий, він поверне усі промови, які містять уведені слова.",
+    "second_paragraph": "Якщо вихочете вдосконалити пошуковий запит, то можете скористатися наступними операторами:",
     "operators": [
       {
         "name": "AND",
-        "description": "the engine will return only those results that include all the words in the query (regardless of their order)",
-        "example_title": "Example:",
-        "example_text": "Ivan AND Cankar",
+        "description": "пошук поверне лише ті результати, які включатимуть всі слова у запиті (не залежно від їх порядку)",
+        "example_title": "Наприклад:",
+        "example_text": "Іван AND Галина",
         "example_result_title": "Results:",
         "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
         "example_excluded_result_title": "",
         "example_excluded_result_text": ""
       },
       {
-        "name": "\"QUOTATIONS MARKS\"",
-        "description": "the engine will return only the results that contain an exact match between the double quotes",
-        "example_title": "Example:",
-        "example_text": "Humanitarian crisis",
+        "name": "\"ЛАПКИ\"",
+        "description": "пошуковик поверне лише результати, які містять точне співпадіння зі словами у лапках",
+        "example_title": "Приклад:",
+        "example_text": "економічна криза",
         "example_result_title": "",
         "example_result_text": "",
         "example_excluded_result_title": "",
         "example_excluded_result_text": ""
       },
       {
-        "name": "! (EXCLAMATION POINT)",
-        "description": "results will always include the words marked with an exclamation point, while other words serve to rank the results",
-        "example_title": "Example:",
-        "example_text": "Parliamentary !group",
-        "example_result_title": "Results:",
-        "example_result_text": "Parliamentary group,<br> group of MPs,<br> international group",
-        "example_excluded_result_title": "No search results found",
-        "example_excluded_result_text": "Poslanska služba"
+        "name": "! (ЗНАК ОКЛИКУ)",
+        "description": "результати завжди міститимуть слова, які позначено знаком оклику, водночас інші слова забезпечуватимуть вагу результатів",
+        "example_title": "Приклад:",
+        "example_text": "Парламентська !група",
+        "example_result_title": "Результати:",
+        "example_result_text": "група депутатів,<br> інтернаціональна група",
+        "example_excluded_result_title": "Нічого не знайдено",
+        "example_excluded_result_text": " "
       },
       {
-        "name": "-(MINUS)",
-        "description": "the results will not include the words preceded by the minus sign",
-        "example_title": "Example:",
-        "example_text": "-Parliamentary group",
-        "example_result_title": "Results:",
-        "example_result_text": "group of MPs,<br> international group",
-        "example_excluded_result_title": "Not a result:",
-        "example_excluded_result_text": "Parliamentary group"
+        "name": "- (Мінус)",
+        "description": "результати не будуть містити слів із знаком мінус",
+        "example_title": "Приклад:",
+        "example_text": "-Депутатська група",
+        "example_result_title": "Результати:",
+        "example_result_text": "інтернаціональна група",
+        "example_excluded_result_title": "Не у результатах:",
+        "example_excluded_result_text": "Депутатська група"
       }
     ]
   },
@@ -177,9 +183,9 @@
   "titles": {
     "session": "Session",
     "legislation": "Legislation",
-    "other-votings": "Other voting events",
+    "other-votings": "Голосування",
     "agenda": "Dnevni red",
-    "transcript": "Transcript",
+    "transcript": "Стенограми",
     "voting": "The vote",
     "session-list": "List of sessions",
     "sessions-search": "Search sessions",
