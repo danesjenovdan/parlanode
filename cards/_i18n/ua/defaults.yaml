@@ -137,7 +137,7 @@ contents-search: Пошук за змістом
 working-body: Відповідальний робочий орган
 vote-types: Типи голосів
 select-placeholder: Виберіть
-selected-placeholder: 'Обрані: {кількість}'
+selected-placeholder: 'Обрані: {num}'
 data: Дата
 name: Ім'я
 epa: Урядовий персональний номер
