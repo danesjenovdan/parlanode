@@ -27,4 +27,4 @@ spec:
             - name: VITE_PARLACARDS_URL
               value: https://parlacards-ua.lb.djnd.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite-ua.lb.djnd.si
+              value: https://parlameter.chesno.org
