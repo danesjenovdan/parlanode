@@ -2,15 +2,25 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: parlasite-ua
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-production"
+  # annotations:
+  #   cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  tls:
-    - hosts:
-        - parlasite-ua.lb.djnd.si
-      secretName: parlasite-ua-tls
+  # tls:
+  #   - hosts:
+  #       - parlasite-ua.lb.djnd.si
+  #     secretName: parlasite-ua-tls
   rules:
     - host: parlasite-ua.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlasite-ua
+                port:
+                  number: 3066
+    - host: parlameter.chesno.org
       http:
         paths:
           - path: /
