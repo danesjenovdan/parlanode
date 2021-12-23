@@ -1,4 +1,8 @@
 card:
   title: Dnevni red
   info: >-
-    # Dnevni red izbrane seje s povezavami na obravnavane dokumente, razvrščene po točkah, in zapisnik, kot je objavljen na spletnem mestu [Mestne občine Ljubljana](https://www.ljubljana.si/).
+    # Dnevni red izbrane seje
+
+    Prikažemo točke dnevnega reda izbrane seje s povezavami na obravnavane
+    dokumente in zapisnik seje. Podatke pridobimo s spletnega mesta
+    [Mestne občine Ljubljana](https://www.ljubljana.si/).
