@@ -86,9 +86,9 @@ const analysesIDs = [
     id: 'presence_votes',
     unit: 'percent',
   },
-  {
-    id: 'number_of_questions',
-  },
+  // {
+  //   id: 'number_of_questions',
+  // },
   {
     id: 'speeches_per_session',
   },
@@ -98,9 +98,9 @@ const analysesIDs = [
   // {
   //   id: 'mismatch_of_pg',
   // },
-  {
-    id: 'working_bodies',
-  },
+  // {
+  //   id: 'working_bodies',
+  // },
 ];
 
 export default {

@@ -59,9 +59,9 @@ const analysesIDs = [
     id: 'vote_attendance',
     unit: 'percent',
   },
-  {
-    id: 'number_of_questions',
-  },
+  // {
+  //   id: 'number_of_questions',
+  // },
   // {
   //   id: 'number_of_amendments',
   // },
