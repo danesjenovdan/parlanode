@@ -1,14 +1,13 @@
 card:
-  title: Words that marked the session
+  title: Ключові слова засідання
   info: >-
-    # A list of 10 words and phrases which were used more often during this
-    session than during any other sessions.
+    # Список з 10 слів і фраз, які використовувалися під час цього засідання частіше,
+    ніж під час інших засідань.
 
 
-    We use the following statistics
-    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) to conduct the
-    analysis.
+    Ми використовуємо статистику [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) для
+    проведення аналізу.
 
 
-    The corpus refers to all speeches while the document refers to all speeches
-    at this particular session.
+    У корпусі йдеться про всі виступи, а в документі – про всі виступи на конкретному
+    засіданні.

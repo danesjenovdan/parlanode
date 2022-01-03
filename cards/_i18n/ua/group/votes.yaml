@@ -1,13 +1,11 @@
 card:
-  title: Voting events
+  title: Голосування
   info: >-
-    # An overview of all votes which occurred during the session.
+    # Огляд усіх голосувань, що відбулися під час засідання.
 
 
-    For all voting events in a session we count the votes (FOR, AGAINST,
-    ABSTAINED) and the number of MPs who were absent and display the results.
+    Для всіх голосувань під час засідання ми рахуємо депутатські голоси (ЗА, ПРОТИ,
+    УТРИМАВСЯ), кількість народних депутатів, які не голосували, та відображаємо результат.
 
 
-    We obtain voting records from the web page [National Assembly of the
-    Republic of
-    Slovenia](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Дані про голосування отримано з порталу [Портал відкритих даних Верховної Ради](https://data.rada.gov.ua/ogd/zal/ppz/skl9/plenary_vote_results-skl9.tsv).
