@@ -1,8 +1,8 @@
 card:
-  title: Use by parliamentary groups
+  title: Статистика вжитку ключових слів за парламентськими групами
   info: >-
     # Frequency of use of searched query by parliamentary group.
 
-
-    For every searched query we count the number of times it appears in MPs'
-    speeches. The results are displayed in a pie chart by parliamentary groups.
+    Ми підраховуємо скільки разів ключові слова вживалися нардепами, які
+    належать до парламентських груп. Результати відображаються у
+    вигляді секторної діаграми у розрізі парламентських груп.
