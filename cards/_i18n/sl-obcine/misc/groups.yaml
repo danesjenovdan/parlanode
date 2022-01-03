@@ -1,4 +1,8 @@
 card:
   title: Seznam svetniških klubov
   info: >-
-    # Prikazani so samo trenutno aktivni svetniški klubi.
+    # Trenutno aktivni svetniški klubi.
+
+    Na zavihkih prikažemo svetniške klube po številu sedežev ter glede
+    na rezultate analize s prisotnostjo na glasovanjih in rezultate
+    analize po št. svetniških vprašanj in pobud.

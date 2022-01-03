@@ -35,9 +35,14 @@
     </div>
     <div class="everything">
       <div class="speech-text">
+        <template v-if="showParagraphs">
         <p v-for="paragraph in speechParagraphs" :key="paragraph">
           {{ paragraph }}
         </p>
+        </template>
+        <template v-else>
+          <p>{{ speechContent }}</p>
+        </template>
         <div class="quote-button">“</div>
       </div>
       <div v-if="speech.votes?.length" class="votes">
@@ -131,6 +136,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    showParagraphs: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
@@ -158,7 +167,9 @@ export default {
       return { pre, quote, post };
     },
     speechContent() {
-      return this.speech?.content || '';
+      return this.showParagraphs
+        ? this.speech?.content || ''
+        : this.speech?.content.replace(/\n/g, ' ').replace(/\r/g, ' ') || '';
     },
     speechParagraphs() {
       return this.speechContent.split('\n');

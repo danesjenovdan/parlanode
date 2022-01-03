@@ -1,13 +1,12 @@
 card:
-  title: Characterised by the following words
+  title: Характеризується такими словами
   info: >-
-    # List of 10 words and phrases that the parliamentary group uses more often
-    than other parliamentary groups in the National Assembly.
+    # Список з 10 слів і фраз, які фракція/група вживає частіше за інші фракції/групи
+    у Верховній Раді.
 
 
-    We use the following statistics
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) to conduct the analysis.
+    Ми використовуємо статистику [tf-idf](https://en.wikipedia.org/wiki/Tf-idf) для
+    проведення аналізу.
 
 
-    The corpus refers to all speeches while the document refers to all speeches
-    by the parliamentary group's MPs.
+    У корпусі йдеться про всі виступи, а в документі – про всі виступи фракції/групи.

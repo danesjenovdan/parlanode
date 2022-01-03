@@ -1,25 +1,25 @@
 card:
-  title: Least often vote the same
+  title: Найрідше голосують однаково
   info: >-
-    # List of 5 MPs who most often vote differently than the "vote of the
-    parliamentary group". MPs are ranked in a descending order. The higher the
-    value, the lower the commonalities between the two MPs.
+    # Перелік 5 народних депутатів, які найчастіше голосують відмінно від фракції/групи.
+    Депутати ранжуються за спаданням. Чим більше значення, тим менше спільного між
+    двома депутатами.
 
 
-    We calculate the Euclidean distance between the results of a parliamentary
-    group's voting and everyone else's voting (votes are converted to numerical
-    values between -1 and 1).
+    Ми підраховуємо “Евклідову відстань” між результатами голосування фракції/групи
+    та голосуванням усіх інших (значення голосів конвертуються на числові значення
+    від -1 до 1).
 
 
-    We calculate the "distance" between all the MPs, rank them based on results
-    and show the top 5.
+    Ми розраховуємо «проміжок» між усіма депутатами, ранжуємо їх за результатами та
+    показуємо топ-5 значень.
 
 
-    The numerical values of votes
+    Числові значення голосів
 
 
-    * -1: against
+    * -1: проти
 
-    * 0: abstained or absent
+    * 0: утримався або відсутній
 
-    * 1: for
+    * 1: за

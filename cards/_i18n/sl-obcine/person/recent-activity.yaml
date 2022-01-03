@@ -1,7 +1,8 @@
 card:
   title: Zadnjih 30 dni aktivnosti
   info: >-
-    # Povezave do vseh svetnikovih_cinih glasovanj in govorov, ki so se zgodili v zadnjih tridesetih dneh.
+    # Povezave do vseh glasovanj in govorov te osebe, ki so se zgodili v zadnjih tridesetih
+    dneh.
 
 
     Podatke pridobivamo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).

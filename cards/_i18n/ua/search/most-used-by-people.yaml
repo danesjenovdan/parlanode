@@ -1,10 +1,7 @@
 card:
-  title: The term most often used by
+  title: Статистика вжитку ключових слів за нардепами
   info: >-
     # A list of 5 MPs who used the searched query most often, sorted from
-    highest to lowest value.
 
-
-    We count the number of times each MP used the searched query and rank all
-    the MPs who used the searched query at least one. We display the 5 MP who
-    have the highest result.
+    Ми підраховуємо скільки разів ключові слова вживалися нардепами та відображаємо
+    результати від найбільш до найменш вживаного.

@@ -1,9 +1,7 @@
 card:
-  title: Voting events which contain the query
+  title: Голосування
   info: >-
     # A list of all voting events which contain the query, sorted by time.
 
-
-    From all voting events we identify and print out links to all votes where
-    the searched query was mentioned. Results are then sorted by date (newer to
-    older) and similarity with the query.
+    Ми знаходимо голосування, де згадувався пошуковий запит. Результати впорядковуються
+    за датою від найновіших до найстаріших.
