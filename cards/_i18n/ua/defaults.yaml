@@ -97,7 +97,7 @@ tabs:
   vote-list: Список голосувань
   time-chart: Хронологія
   bar-chart: Динаміка робочого механізму
-select-parties-people: Оберіть парламентську групу або окремих народних депутатів.
+select-parties-people: Оберіть парламентську фракцію/групу або окремих народних депутатів.
 empty-state-text: Для перегляду голосувань додайте щонайменше два значення.
 speakers: Доповідачі
 empty-text: Щоб переглянути результат додайте щонайменше два слова.
@@ -107,15 +107,15 @@ only-abstracts: Лише з тезами
 icon: Ярлик
 exposed: Викрито
 edit-info: Редагувати інформацію
-only-parties: Тільки парламентські групи
-add-member: Додати учасника
-save-membership: Зберегти участь
-edit-membership: Редагувати участь
+only-parties: Тільки парламентські фракції/групи
+add-member: Додати члена
+save-membership: Зберегти членство
+edit-membership: Редагувати членство
 edit-memberships: Редагувати участь
-member: Учасник
+member: Член
 only-mps: Тільки народні депутати
 display-name: Відображати ім’я
-update-session: Оновити сесію
+update-session: Оновити засідання
 tags: Теги
 add-tag: Додати тег
 votes: Голоси
@@ -137,7 +137,7 @@ contents-search: Пошук за змістом
 working-body: Відповідальний робочий орган
 vote-types: Типи голосів
 select-placeholder: Виберіть
-selected-placeholder: 'Обрані: {кількість}'
+selected-placeholder: 'Обрані: {num}'
 data: Дата
 name: Ім'я
 epa: Урядовий персональний номер
@@ -232,7 +232,7 @@ previous:
 style-scores:
   elevated-vocabulary: Піднесена промова
   simple-vocabulary: Проста промова
-  excessive-vocabulary: Занадто довга промова
+  excessive-vocabulary: Довга промова
 question:
   asked--f: 'Поставила запитання: «{Назва}» Потребує відповіді від: {адресат}.'
   asked--with-name--m: '{ім’я} поставив запитання «{назва}» до {адресат}.'
@@ -265,7 +265,7 @@ months:
 - Листопад
 - Грудень
 vote_types:
-  whole_law: проголосувати за закон повністю
+  whole_law: закон проголосовано повністю
   amendment: поправка
   no_confidence: Вотум недовіри
   record_conclusion: запис рішення
@@ -304,7 +304,7 @@ all-voting-districts: усі виборчі округи
 voting-district: виборчий округ
 sort-by--name: алфавіт
 sort-by--district: округ
-sort-by--party: фракція
+sort-by--party: парламентська фракція/група
 sort-by--analysis: результат аналізу {аналіз}
 sort-by--age: вік
 sort-by--education: освітній рівень
@@ -336,8 +336,8 @@ analysis-texts:
     explanation: Кількість слів, сказаних народним депутатом у всіх попередніх промовах
       у Верховній Раді.
   mismatch_of_pg:
-    label: Відхилення від фракції
-    titleSuffix: ' відхилення від фракції'
+    label: Відхилення від фракції/групи
+    titleSuffix: ' відхилення від фракції/групи'
     explanation: Відступ від голосування більшості.
 all-votes: усі голосування
 all-working-bodies: усі відповідальні комітети

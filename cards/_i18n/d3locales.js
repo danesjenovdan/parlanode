@@ -145,6 +145,55 @@ const US = {
   ],
 };
 
+const UA = {
+  decimal: '.',
+  thousands: ',',
+  grouping: [3],
+  currency: ['$', ''],
+  dateTime: '%a %b %e %X %Y',
+  date: '%m/%d/%Y',
+  time: '%H:%M:%S',
+  periods: ['AM', 'PM'],
+  days: [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ],
+  shortDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  months: [
+    'Січень',
+    'Лютий',
+    'Березень',
+    'Квітень',
+    'Травень',
+    'Червень',
+    'Липень',
+    'Серпень',
+    'Вересень',
+    'Жовтень',
+    'Листопад',
+    'Грудень',
+  ],
+  shortMonths: [
+    'Січ',
+    'Лют',
+    'Бер',
+    'Кві',
+    'Тра',
+    'Чер',
+    'Лип',
+    'Сер',
+    'Вер',
+    'Жов',
+    'Лис',
+    'Гру',
+  ],
+};
+
 export default function getD3Locale(locale) {
   const lang = (locale || '').split('-')[0];
   if (lang === 'sl') {
@@ -152,6 +201,9 @@ export default function getD3Locale(locale) {
   }
   if (lang === 'hr') {
     return HR;
+  }
+  if (lang === 'ua') {
+    return UA;
   }
   return US;
 }

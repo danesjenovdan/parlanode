@@ -1,9 +1,6 @@
 card:
-  title: Use through time
+  title: Статистика пошукового запиту
   info: >-
     # Frequency of use of searched query through time.
 
-
-    We count the number of occurrences of searched query by month. We then
-    display the results for either the whole term of office or for the previous
-    year.
+    Ми підраховуємо скільки разів пошуковий запит траплявся за місяць упродовж року.

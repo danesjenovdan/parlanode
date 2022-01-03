@@ -4,17 +4,28 @@ card:
     Nabor glasovanj pridobimo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).
 
 
-    Rezultat posameznega glasovanja ima dva različna izpisa: na nivoju
-    svetnikov in na nivoju svetniških klubov.
+    Rezultat posameznega glasovanja ima dva različna izpisa: na nivoju svetnikov in
+    na nivoju svetniških klubov.
 
 
-    Prvi zavihek omogoča pregled glasov svetnikov, filtriranje glede na vrednost
-    glasovnice (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih
-    svetnikov. Poleg krožnega grafikona se izpisuje večinski glas Mestnega sveta na tem
-    glasovanju. "60 % ZA" npr. pomeni, da je ZA glasovalo 60 % vseh svetnikov z glasovalno
-    pravico na tem glasovanju.
+    Prvi zavihek omogoča pregled glasov svetnikov, filtriranje glede na vrednost glasovnice
+    (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih svetnikov. Poleg
+    krožnega grafikona se izpisuje večinski glas Mestnega sveta na tem glasovanju.
+    "60 % ZA" npr. pomeni, da je ZA glasovalo 60 % vseh svetnikov z glasovalno pravico
+    na tem glasovanju.
 
 
-    Drugi zavihek prikazuje glasove svetniških klubov. Na koncu vsake vrstice je
-    izpisan večinski glas svetniškega kluba, gumbi z vrednostmi glasovnic pa
-    odpirajo sezname svetnikov, ki so oddali tak glas.
+    Drugi zavihek prikazuje glasove svetniških klubov. Na koncu vsake vrstice je izpisan
+    večinski glas svetniškega kluba, gumbi z vrednostmi glasovnic pa odpirajo sezname
+    svetnikov, ki so oddali tak glas.
+
+
+    Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
+    pri vzdržanih in odsotnih glasov ne moremo zagotavljati. Prisotnost svetnikov
+    se na sejah mestnega sveta ne preverja na vsakem glasovanju, zato se lahko zgodi,
+    da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
+    z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
+    kot odsotna (rezultat: ni glasoval/a).
+
+
+    V tretjem zaviku prikazujemo dokumente, ki so povezani z glasovanjem.

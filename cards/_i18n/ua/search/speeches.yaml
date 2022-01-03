@@ -1,10 +1,8 @@
 card:
-  title: Speeches where the searched query was used
+  title: Промови
   info: >-
     # A list of links to all the speeches where the searched query was used.
 
-
-    From all transcribed speeches we identify and print out links to all votes
-    where the searched query was mentioned. Results are then sorted by date from
-    newer to older. The user can then search through displayed speeches by a
-    time period, an MP, a parliamentary group or a session.
+    Ми знаходимо стенограми промов, де згадувався
+    пошуковий запит. Результати впорядковуються за датою від найновіших
+    до найстаріших.
