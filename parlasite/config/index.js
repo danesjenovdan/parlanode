@@ -12,7 +12,7 @@ const config = {
   },
   locale: 'sl-obcine',
   leaderId: '261',
-  rootOrgId: '1',
+  rootOrgId: '2',
   siteMap: sitemap,
 };
 
