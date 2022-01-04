@@ -1,6 +1,6 @@
 const express = require('express');
 const { asyncRender: ar } = require('../utils');
-const { siteMap: sm } = require('../../config');
+const { siteMap: sm, rootOrgId } = require('../../config');
 const { i18n } = require('../server');
 
 const router = express.Router();
@@ -32,6 +32,7 @@ router.get(`/${sm.landing.parties}`, ar((render) => {
   render('landing/poslanske-skupine', {
     activeMenu: 'pgs',
     pageTitle: i18n('menu.pgs'),
+    rootOrgId,
   });
 }));
 
