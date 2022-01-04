@@ -9,7 +9,7 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/session/speeches/', session.id, { page: page }) %>
+    <%- await fetchCard('/session/speeches/', session.id, { page: page, showParagraphs: false }) %>
   </div>
 </div>
 
