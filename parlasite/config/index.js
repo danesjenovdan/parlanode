@@ -12,7 +12,8 @@ const config = {
   },
   locale: 'ua',
   leaderId: 'changeme',
-  siteMap: sitemap
+  siteMap: sitemap,
+  rootOrgId: '1',
 };
 
 module.exports = config;
