@@ -123,9 +123,25 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     cardData = await fetchCardData(dataUrl, id, date);
 
     if (cardData.error) {
-      const { error, url } = cardData;
-      const message = error?.message ?? 'Request failed';
-      throw new Error(`${message} (${url})`);
+      // if the API answers with a 404 we should gracefully
+      // handle it instead of erroring out
+      //
+      // we change the name of the card to misc/error to render
+      // the error card and we pass the error object to the
+      // card state
+      //
+      // the misc/error card checks if cardState.error.statusCode
+      // equals 404 and reacts accordingly
+      //
+      // all other cases error out completely
+      if (cardData.error.statusCode === 404) {
+        cardName = 'misc/error';
+        state.error = cardData.error;
+      } else {
+        const { error, url } = cardData;
+        const message = error?.message ?? 'Request failed';
+        throw new Error(`${message} (${url})`);
+      }
     }
   }
 
