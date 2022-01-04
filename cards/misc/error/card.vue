@@ -2,8 +2,11 @@
   <card-wrapper :header-config="headerConfig">
     <div class="errored">
       <div class="icon"></div>
-      <div v-t="'card-errored'" class="content"></div>
-      <pre class="message" v-text="message"></pre>
+      <empty-state v-if="is404" />
+      <template v-else>
+        <div v-t="'card-errored'" class="content"></div>
+        <pre class="message" v-text="message"></pre>
+      </template>
     </div>
   </card-wrapper>
 </template>
@@ -12,9 +15,13 @@
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'CardMiscError',
+  components: {
+    EmptyState
+  },
   mixins: [common],
   data() {
     const { cardState } = this.$root.$options.contextData;
@@ -22,9 +29,12 @@ export default {
     const title = cardState?.title || this.$t('card.title');
     const message = cardState?.error?.message || cardState?.message || '';
     // const height = cardState?.height || 1;
+
+    const is404 = Number(cardState?.error?.statusCode) === 404 || false;
     return {
       title,
       message,
+      is404,
       // contentClass: height === 2 ? 'full' : 'half',
       headerConfig: defaultHeaderConfig(this, {
         title,
