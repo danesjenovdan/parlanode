@@ -243,8 +243,8 @@ event:
   ballot--for--f: Glasovala ZA {title}
   ballot--against--m: Glasoval PROTI {title}
   ballot--against--f: Glasovala PROTI {title}
-  ballot--absent--m: NI glasoval o {title}
-  ballot--absent--f: NI glasovala o {title}
+  ballot--absent--m: Ni bil prisoten na glasovanju o {title}
+  ballot--absent--f: Ni bila prisotna na glasovanju o {title}
   ballot--abstain--m: VZDRŽAL se je glasovanja o {title}
   ballot--abstain--f: VZDRŽALA se je glasovanja o {title}
   speech--m: Govoril na {session} {org}
