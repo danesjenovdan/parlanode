@@ -146,6 +146,10 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   }
 
   const cardState = { ...state };
+  // force altHeader if card is shared or embedded
+  if (template === 'share' || template === 'embed') {
+    cardState.altHeader = true;
+  }
   const urls = getUrls();
   const siteMap = await fetchSiteMap();
 
