@@ -86,7 +86,9 @@ export default {
       votes: cardData?.data?.results || [],
       passedOptions,
       textFilter,
-      headerConfig: defaultHeaderConfig(this, {}),
+      headerConfig: defaultHeaderConfig(this, {
+        heading: cardData?.data?.mandate?.description,
+      }),
       ogConfig: defaultOgImage(this, {}),
     };
   },

@@ -87,7 +87,7 @@ export default {
     return {
       results: cardData?.data?.results ?? {},
       headerConfig: defaultHeaderConfig(this, {
-        title: cardData?.data?.results?.name,
+        heading: cardData?.data?.results?.name,
       }),
     };
   },
