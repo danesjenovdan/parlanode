@@ -153,7 +153,10 @@ export default {
       currentSort: 'start_time',
       currentSortOrder: 'desc',
       currentFilter: cardState?.filters || tabs?.[0]?.id,
-      headerConfig: defaultHeaderConfig(this),
+      headerConfig: defaultHeaderConfig(this, {
+        heading: cardData?.data?.mandate?.description,
+        title: this.$t('card.title'),
+      }),
       ogConfig: defaultOgImage(this),
 
       // pagination

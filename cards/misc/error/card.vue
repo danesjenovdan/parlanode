@@ -37,7 +37,7 @@ export default {
       is404,
       // contentClass: height === 2 ? 'full' : 'half',
       headerConfig: defaultHeaderConfig(this, {
-        title,
+        heading: title,
       }),
       ogConfig: defaultOgImage(this, {
         title,
