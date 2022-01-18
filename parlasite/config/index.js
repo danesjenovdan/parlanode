@@ -10,7 +10,7 @@ const config = {
     cards: 'https://parlacards-slovenija.lb.djnd.si',
     parladata: 'https://parladata-slovenija.lb.djnd.si/v3',
   },
-  locale: 'sl-obcine',
+  locale: 'sl',
   leaderId: '261',
   rootOrgId: '1',
   siteMap: sitemap,
