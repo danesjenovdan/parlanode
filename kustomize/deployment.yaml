@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlacards-deployment
+  name: parlacards-slovenija-deployment
   labels:
-    app: parlacards
+    app: parlacards-slovenija
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlacards
+      app: parlacards-slovenija
   template:
     metadata:
       labels:
-        app: parlacards
+        app: parlacards-slovenija
     spec:
       containers:
-        - name: parlacards
-          image: parlacards
+        - name: parlacards-slovenija
+          image: parlacards-slovenija
           ports:
             - containerPort: 3000
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-ljubljana.lb.djnd.si
+              value: https://parlassets-slovenija.lb.djnd.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata.lb.djnd.si/v3
+              value: https://parladata-slovenija.lb.djnd.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards.lb.djnd.si
+              value: https://parlacards-slovenija.lb.djnd.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite.lb.djnd.si
+              value: https://parlasite-slovenija.lb.djnd.si
