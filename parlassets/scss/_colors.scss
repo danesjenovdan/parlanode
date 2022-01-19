@@ -3,8 +3,8 @@
 /////////////////////////////
 
 // gradient
-$first: #1E679A;
-$second: #01D9CC;
+$first: #1F6599;
+$second: #00D9CC;
 $third: #795d98;
 
 $gradient-first: $second;
@@ -17,7 +17,8 @@ $tab-hover: rgba($second, 0.7);
 $tab-passive: $first;
 
 // links
-$link: $first;
+$link: #58347E;
+$link-hover: #7e4ab4;
 $link-hover-background: #eff7f7;
 
 // card footer buttons
@@ -29,7 +30,7 @@ $scroller: #eff7f7;
 $element: $first;
 
 // divider
-$divider: #c8c8c8;
+$divider: #ECECEC;
 
 // barcharts
 $barchart-this: $second;
@@ -64,12 +65,14 @@ $tools-arrow: $cta-passive-background;
 $load-icon: $link;
 
 // common
-$white: #ffffff;
-$font-default: #333333;
-$font-placeholder: #c8c8c8;
-$background: #f0f0f0;
-$tools-border: #c8c8c8;
+$true-white: #FFFFFF;
+$white: #F9F9FA;
+$font-default: #000000;
+$font-placeholder: #d3d3d3;
+$background: $white;
+$tools-border: #d3d3d3;
 $tools-background-hover: #dddbdb;
+$light-gray: #F9F9FA;
 
 // prisotnost skozi cas chart
 $time-presence-present-passive: #bbebff;
