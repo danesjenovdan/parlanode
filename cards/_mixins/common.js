@@ -49,7 +49,12 @@ export default {
   computed: {
     cardUrl() {
       const { urls } = this.$root.$options.contextData;
-      return `${urls.cards}/${this.cardName}/?id=${this.cardData.id}`;
+      const beforeStateUrl = `${urls.cards}/${this.cardName}/?id=${this.cardData.id}`;
+      const cardState = this.$root.$options.contextData.cardState;
+      const stateParams = Object.keys(cardState).reduce((prev, curr) => {
+        return `${prev}&${encodeURIComponent(curr)}=${encodeURIComponent(cardState[curr])}`
+      }, '');
+      return `${beforeStateUrl}${stateParams}`
     },
   },
 };

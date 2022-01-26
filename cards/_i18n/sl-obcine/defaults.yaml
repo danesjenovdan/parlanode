@@ -138,13 +138,17 @@ maximum: Največ
 coalition: koalicija
 opposition: opozicija
 vote-for: Za
+vote-for-plural: Za
 vote-against: Proti
+vote-against-plural: Proti
 vote-abstain: Vzdržan
 vote-abstain--m: Vzdržan
 vote-abstain--f: Vzdržana
 vote-abstain-plural: Vzdržani
 vote-absent: Odsoten
 vote-absent-plural: Odsotni
+vote-did-not-vote: Ni glasoval
+vote-did-not-vote-plural: Brez glasu
 vote-no-majority: Ni večinskega glasu
 voted-for--f: ZA
 voted-for--m: ZA
@@ -158,6 +162,9 @@ voted-abstain--plural: Vzdržani
 voted-absent--f: Odsotna
 voted-absent--m: Odsoten
 voted-absent--plural: Odsotni
+voted-did-not-vote--f: Ni glasovala
+voted-did-not-vote--m: Ni glasoval
+voted-did-not-vote--plural: Brez glasu
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
@@ -243,8 +250,8 @@ event:
   ballot--for--f: Glasovala ZA {title}
   ballot--against--m: Glasoval PROTI {title}
   ballot--against--f: Glasovala PROTI {title}
-  ballot--absent--m: NI glasoval o {title}
-  ballot--absent--f: NI glasovala o {title}
+  ballot--absent--m: Ni bil prisoten na glasovanju o {title}
+  ballot--absent--f: Ni bila prisotna na glasovanju o {title}
   ballot--abstain--m: VZDRŽAL se je glasovanja o {title}
   ballot--abstain--f: VZDRŽALA se je glasovanja o {title}
   speech--m: Govoril na {session} {org}

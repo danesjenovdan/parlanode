@@ -123,13 +123,33 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     cardData = await fetchCardData(dataUrl, id, date);
 
     if (cardData.error) {
-      const { error, url } = cardData;
-      const message = error?.message ?? 'Request failed';
-      throw new Error(`${message} (${url})`);
+      // if the API answers with a 404 we should gracefully
+      // handle it instead of erroring out
+      //
+      // we change the name of the card to misc/error to render
+      // the error card and we pass the error object to the
+      // card state
+      //
+      // the misc/error card checks if cardState.error.statusCode
+      // equals 404 and reacts accordingly
+      //
+      // all other cases error out completely
+      if (cardData.error.statusCode === 404) {
+        cardName = 'misc/error';
+        state.error = cardData.error;
+      } else {
+        const { error, url } = cardData;
+        const message = error?.message ?? 'Request failed';
+        throw new Error(`${message} (${url})`);
+      }
     }
   }
 
   const cardState = { ...state };
+  // force altHeader if card is shared or embedded
+  if (template === 'share' || template === 'embed') {
+    cardState.altHeader = true;
+  }
   const urls = getUrls();
   const siteMap = await fetchSiteMap();
 
@@ -163,6 +183,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const html = renderTemplate({
     'page-title': contextData.template.pageTitle,
     'parlassets-url': urls.cdn,
+    'parlasite-url': urls.site,
     'container-class': contextData.template.frameContainerClass,
     'embed-class': contextData.template.embedContainerClass,
     'context-url': contextData.template.contextUrl,

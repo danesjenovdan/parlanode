@@ -136,7 +136,9 @@ export default {
     }));
 
     return {
-      headerConfig: defaultHeaderConfig(this),
+      headerConfig: defaultHeaderConfig(this, {
+        heading: cardData?.data?.mandate?.description,
+      }),
       ogConfig: defaultOgImage(this),
       legislation: cardData?.data?.results || [],
       filterOptions,
