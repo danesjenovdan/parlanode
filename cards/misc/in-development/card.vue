@@ -50,7 +50,6 @@ export default {
     background-position: center 40px;
     background-repeat: no-repeat;
     font-size: 17px;
-    font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
     font-style: italic;
     font-weight: 300;
     height: $size;

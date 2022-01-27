@@ -245,7 +245,6 @@ export default {
     }
 
     .date {
-      font-family: Roboto Slab;
     }
   }
 }
@@ -254,7 +253,6 @@ export default {
   margin: 0;
   padding: 0;
   position: relative;
-  font-family: Roboto Slab;
   font-size: 14px;
   font-weight: 300;
   line-height: 28px;

@@ -63,7 +63,6 @@ export default {
 
   .content {
     font-size: 17px;
-    font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
     font-style: italic;
     font-weight: 300;
     line-height: 19px;

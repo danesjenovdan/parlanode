@@ -284,6 +284,7 @@ export default {
       overflow: hidden;
       height: 20px;
       margin-top: 6px;
+      margin-bottom: 4px;
     }
 
     .text-filter {
@@ -305,7 +306,7 @@ export default {
       }
 
       .striped-button {
-        width: 80px;
+        width: 90px;
       }
     }
   }

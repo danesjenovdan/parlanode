@@ -71,7 +71,6 @@ export default {
     width: 100%;
     background-color: $first;
     color: $white;
-    font-family: 'Roboto Slab', serif;
     padding: 10px 50px 10px 10px;
     position: relative;
 

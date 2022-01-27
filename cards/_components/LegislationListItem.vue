@@ -51,7 +51,6 @@ export default {
   .column {
     &.name-col {
       flex: 3;
-      font-family: 'Roboto Slab', sans-serif;
       font-size: 14px;
 
       a {

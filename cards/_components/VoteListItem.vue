@@ -196,7 +196,7 @@ export default {
   }
 
   .session_votes {
-    font-size: 30px;
+    font-size: 24px;
     line-height: 40px;
     margin: 15px 0 10px 0;
 
