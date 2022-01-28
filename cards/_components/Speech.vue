@@ -336,8 +336,8 @@ export default {
 .speech-holder {
   padding-left: 16px;
   padding-right: 16px;
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -16px;
+  margin-right: -16px;
 
   .everything,
   .quote {
