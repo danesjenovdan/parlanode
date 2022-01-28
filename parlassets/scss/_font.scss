@@ -59,7 +59,7 @@ h1 {
 }
 
 %list-text {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   @include respond-to(mobile) { font-size: 14px; }
 }
