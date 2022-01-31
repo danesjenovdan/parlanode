@@ -3,52 +3,61 @@
     <div class="session-name">{{ session.name }}</div>
     <div class="session-date">{{ formatDate(session.start_time) }}</div>
     <hr />
-    <div class="link">
-      <a :href="getSessionTranscriptLink(session)" class="funblue-light-hover">
-        <span class="glyphicon glyphicon-comment"></span>
-        <span v-t="'card.tfidf-title'"></span>
-      </a>
-    </div>
-    <div v-if="chartRows.length" class="columns">
-      <bar-chart :data="chartRows1" :max="max" :total="total" />
-      <bar-chart :data="chartRows2" :max="max" :total="total" />
-    </div>
-    <hr />
-    <div class="link">
-      <span class="link-color">
-        <span class="glyphicon glyphicon-comment"></span>
-        <span v-t="'card.attendance-title'"></span>
-      </span>
-    </div>
-    <div class="attendance">
-      <attendance-by-groups :attendance="attendance" />
-    </div>
-    <hr />
-    <div class="link">
-      <a :href="getSessionVotesLink(session)" class="funblue-light-hover">
-        <span class="glyphicon glyphicon-comment"></span>
-        <span v-t="'card.votes-title'"></span>
-      </a>
-    </div>
-    <div class="votes-list">
-      <scroll-shadow ref="shadow">
-        <div
-          v-infinite-scroll="loadMore"
-          class="votes-list-shadow"
-          @scroll="$refs.shadow.check($event.currentTarget)"
+    <template v-if="tfidf.length > 0">
+      <div class="link">
+        <a
+          :href="getSessionTranscriptLink(session)"
+          class="funblue-light-hover"
         >
-          <vote-list-item
-            v-for="vote in votes"
-            :key="vote.id"
-            :vote="vote"
-            :session="session"
-          />
-        </div>
-        <div v-if="card.isLoading" class="nalagalnik__wrapper">
-          <div class="nalagalnik"></div>
-        </div>
-      </scroll-shadow>
-    </div>
+          <span class="glyphicon glyphicon-comment"></span>
+          <span v-t="'card.tfidf-title'"></span>
+        </a>
+      </div>
+      <div class="columns">
+        <bar-chart :data="chartRows1" :max="max" :total="total" />
+        <bar-chart :data="chartRows2" :max="max" :total="total" />
+      </div>
+      <hr />
+    </template>
+    <template v-if="attendance.length > 0">
+      <div class="link">
+        <span class="link-color">
+          <span class="glyphicon glyphicon-comment"></span>
+          <span v-t="'card.attendance-title'"></span>
+        </span>
+      </div>
+      <div class="attendance">
+        <attendance-by-groups :attendance="attendance" />
+      </div>
+      <hr />
+    </template>
+    <template v-if="votes.length > 0">
+      <div class="link">
+        <a :href="getSessionVotesLink(session)" class="funblue-light-hover">
+          <span class="glyphicon glyphicon-comment"></span>
+          <span v-t="'card.votes-title'"></span>
+        </a>
+      </div>
+      <div class="votes-list">
+        <scroll-shadow ref="shadow">
+          <div
+            v-infinite-scroll="loadMore"
+            class="votes-list-shadow"
+            @scroll="$refs.shadow.check($event.currentTarget)"
+          >
+            <vote-list-item
+              v-for="vote in votes"
+              :key="vote.id"
+              :vote="vote"
+              :session="session"
+            />
+          </div>
+          <div v-if="card.isLoading" class="nalagalnik__wrapper">
+            <div class="nalagalnik"></div>
+          </div>
+        </scroll-shadow>
+      </div>
+    </template>
   </card-wrapper>
 </template>
 
