@@ -36,13 +36,13 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import { sessionAgendaContextUrl } from '@/_mixins/contextUrls.js';
 
 export default {
   name: 'CardSessionAgendaItems',
-  mixins: [common, sessionAgendaContextUrl],
+  mixins: [common, sessionAgendaContextUrl, sessionHeader],
   cardInfo: {
     doubleWidth: true,
   },
@@ -53,7 +53,6 @@ export default {
       session: cardData?.data?.session || {},
       agendaItems: cardData?.data?.results?.agenda_items || [],
       documents: cardData?.data?.results?.documents || [],
-      headerConfig: defaultHeaderConfig(this),
       ogConfig: defaultOgImage(this),
     };
   },

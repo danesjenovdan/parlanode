@@ -5,23 +5,23 @@
         <div class="alt-header">
           <div
             v-if="config.circleText || config.mediaImage"
-            :class="config.circleClass"
             class="media-object img-circle session-logo"
+            :style="{'background-color': (config.circleColor || '#333')}"
           >
             <b v-if="config.circleText">{{ config.circleText }}</b>
             <img v-else :src="`${urls.cdn}/icons/${config.mediaImage}.svg`" />
           </div>
           <img
-            v-else-if="config.circleImage"
-            :src="`${urls.cdn}/img/people/square/${config.circleImage}.png`"
+            v-else-if="config.circlePerson"
+            :src="getPersonPortrait(config.circlePerson)"
             class="portrait column"
           />
           <div v-else-if="config.circleIcon" class="icon-circle">
             <img :src="`${urls.cdn}/icons/${config.circleIcon}.svg`" />
           </div>
           <div class="header-info-container">
-            <h1 v-html="config.heading"></h1>
-            <h2 class="partyinfo">{{ config.subheading }}</h2>
+            <h1 v-if="config.heading" v-html="config.heading"></h1>
+            <h2 v-if="config.subheading" class="partyinfo">{{ config.subheading }}</h2>
             <h2 class="cardname">{{ config.title }}</h2>
           </div>
         </div>
@@ -40,8 +40,11 @@
 </template>
 
 <script>
+import links from '@/_mixins/links.js';
+
 export default {
   name: 'CardHeader',
+  mixins: [links],
   props: {
     config: {
       type: Object,
@@ -60,3 +63,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.session-logo {
+  margin-left: 0;
+}
+</style>

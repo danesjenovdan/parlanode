@@ -358,6 +358,7 @@ export default {
     },
     headerConfig() {
       return defaultHeaderConfig(this, {
+        heading: this.cardData?.data?.mandate?.description,
         title: `${this.$t('card.title')} ${
           this.currentAnalysisData.titleSuffix
         }`,
