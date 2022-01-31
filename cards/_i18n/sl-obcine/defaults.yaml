@@ -138,13 +138,17 @@ maximum: Največ
 coalition: koalicija
 opposition: opozicija
 vote-for: Za
+vote-for-plural: Za
 vote-against: Proti
+vote-against-plural: Proti
 vote-abstain: Vzdržan
 vote-abstain--m: Vzdržan
 vote-abstain--f: Vzdržana
 vote-abstain-plural: Vzdržani
 vote-absent: Odsoten
 vote-absent-plural: Odsotni
+vote-did-not-vote: Ni glasoval
+vote-did-not-vote-plural: Brez glasu
 vote-no-majority: Ni večinskega glasu
 voted-for--f: ZA
 voted-for--m: ZA
@@ -158,6 +162,9 @@ voted-abstain--plural: Vzdržani
 voted-absent--f: Odsotna
 voted-absent--m: Odsoten
 voted-absent--plural: Odsotni
+voted-did-not-vote--f: Ni glasovala
+voted-did-not-vote--m: Ni glasoval
+voted-did-not-vote--plural: Brez glasu
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
