@@ -56,7 +56,7 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { defaultOgImage } from '@/_mixins/ogImages.js';
 import { sessionLegislationContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
@@ -84,7 +84,7 @@ export default {
     PSearchDropdown,
     BlueButtonList,
   },
-  mixins: [common, sessionLegislationContextUrl],
+  mixins: [common, sessionHeader, sessionLegislationContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
@@ -125,11 +125,6 @@ export default {
     };
   },
   computed: {
-    headerConfig() {
-      return defaultHeaderConfig(this, {
-        title: this.dynamicTitle,
-      });
-    },
     ogConfig() {
       return defaultOgImage(this, {
         title: this.dynamicTitle,

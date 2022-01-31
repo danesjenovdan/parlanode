@@ -6,15 +6,18 @@ export const personHeader = {
     headerConfig() {
       const { cardState } = this.$root.$options.contextData;
       let coalitionText;
-      if (this.cardData.organization) {
-        coalitionText = this.cardData.organization.is_coalition
+      if (this.cardData.data?.person?.group) {
+        coalitionText = this.cardData.data.person.group.is_coalition
           ? this.$t('coalition')
           : this.$t('opposition');
       }
+      console.log(this.cardData.data.person);
       return {
-        circleImage: this.cardData.image,
-        heading: this.cardData.name,
-        subheading: `${this.cardData.organization?.acronym} | ${coalitionText}`,
+        circlePerson: this.cardData.data?.person,
+        heading: this.cardData.data?.person?.name,
+        subheading: this.cardData.data?.person?.group?.name,
+        // TODO temporarily removed coalition designation in alt header
+        // subheading: `${this.cardData.organization?.acronym} | ${coalitionText}`,
         alternative: cardState?.altHeader,
         title: this.$t('card.title'),
       };
@@ -29,13 +32,14 @@ export const partyHeader = {
       const coalitionText = this.cardData.is_coalition
         ? this.$t('coalition')
         : this.$t('opposition');
+      console.log(this.cardData);
       return {
         mediaImage: 'party',
-        circleClass: `${(this.cardData.acronym || '')
-          .replace(/[ +,]/g, '_')
-          .toLowerCase()}-background`,
-        heading: this.cardData.name,
-        subheading: `${this.cardData.acronym} | ${coalitionText}`,
+        circleColor: this.cardData.data?.group?.color,
+        heading: this.cardData.data?.group?.name,
+        subheading: this.cardData.data?.group?.acronym,
+        // TODO temporarily removed coalition designation in alt header
+        // subheading: `${this.cardData.acronym} | ${coalitionText}`,
         alternative: cardState?.altHeader,
         title: this.$t('card.title'),
       };
@@ -49,8 +53,7 @@ export const searchHeader = {
       const { cardState } = this.$root.$options.contextData;
       return {
         circleIcon: 'og-search',
-        // heading: this.keywords, // TODO: get this from contextData not from card
-        subheading: 'iskalni niz', // TODO: translate this
+        heading: `"${cardState.text}"`,
         alternative: cardState?.altHeader,
         title: this.$t('card.title'),
       };
@@ -62,12 +65,13 @@ export const sessionHeader = {
   computed: {
     headerConfig() {
       const { cardState } = this.$root.$options.contextData;
-      const session = this.cardData.data?.results?.session;
+      const session = this.cardData.data?.session;
       const sessionName = session?.name || '';
       const imageName = sessionClassification(session?.classification).icon;
 
       return {
         mediaImage: imageName,
+        circleColor: '#ffffff',
         heading: sessionName,
         subheading: session?.date,
         alternative: cardState?.altHeader,

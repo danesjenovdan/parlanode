@@ -60,27 +60,49 @@
                     >{{ votePercentages.absent }}% not present</span
                   >
                 </div>
+                <div
+                  :style="{ width: votePercentages['did not vote'] + '%' }"
+                  class="progress-bar ney"
+                >
+                  <span class="sr-only"
+                    >{{ votePercentages['did not vote'] }}% did not vote</span
+                  >
+                </div>
               </div>
               <div class="row">
-                <div class="col-xs-3">
+                <div :class="{ 'col-xs-3': !voteNumbers['did not vote'], 'col-xs-4': voteNumbers['did not vote'] }">
                   {{ voteNumbers?.for }}
-                  <div v-t="'vote-for'" class="type"></div>
+                  <div v-t="'vote-for-plural'" class="type"></div>
                   <div class="indicator aye">&nbsp;</div>
                 </div>
-                <div class="col-xs-3">
+                <div
+                  :class="{ 'col-xs-3': !voteNumbers['did not vote'], 'col-xs-4': voteNumbers['did not vote'] }"
+                  v-if="!voteNumbers['did not vote']"
+                >
                   {{ voteNumbers?.against }}
-                  <div v-t="'vote-against'" class="type"></div>
+                  <div v-t="'vote-against-plural'" class="type"></div>
                   <div class="indicator ney">&nbsp;</div>
                 </div>
-                <div class="col-xs-3">
+                <div
+                  :class="{ 'col-xs-3': !voteNumbers['did not vote'], 'col-xs-4': voteNumbers['did not vote'] }"
+                  v-if="!voteNumbers['did not vote']"
+                >
                   {{ voteNumbers?.abstain }}
-                  <div v-t="'vote-abstain'" class="type"></div>
+                  <div v-t="'vote-abstain-plural'" class="type"></div>
                   <div class="indicator abstention">&nbsp;</div>
                 </div>
-                <div class="col-xs-3">
+                <div :class="{ 'col-xs-3': !voteNumbers['did not vote'], 'col-xs-4': voteNumbers['did not vote'] }">
                   {{ voteNumbers?.absent }}
-                  <div v-t="'vote-absent'" class="type"></div>
+                  <div v-t="'vote-absent-plural'" class="type"></div>
                   <div class="indicator not">&nbsp;</div>
+                </div>
+                <div
+                  :class="{ 'col-xs-3': !voteNumbers['did not vote'], 'col-xs-4': voteNumbers['did not vote'] }"
+                  v-if="voteNumbers['did not vote'] > 0"
+                >
+                  {{ voteNumbers['did not vote'] }}
+                  <div v-t="'vote-did-not-vote-plural'" class="type"></div>
+                  <div class="indicator ney">&nbsp;</div>
                 </div>
               </div>
             </div>
