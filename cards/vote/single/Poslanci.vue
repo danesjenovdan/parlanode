@@ -5,8 +5,8 @@
       <div class="vote-filters">
         <striped-button
           v-for="vote in votes"
-          :key="vote.id"
-          :color="vote.id"
+          :key="vote.id.replace(/ /g, '-')"
+          :color="vote.id.replace(/ /g, '-')"
           :selected="vote.selected"
           :small-text="vote.label"
           :text="String(allVotes[vote.id])"
@@ -123,9 +123,48 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    didNotVotePresent: {
+      type: Boolean,
+      default: false,
+    }
   },
   emits: ['namefilter'],
-  data() {
+  data() {const selectableBallotOptions = [
+      {
+        id: 'for',
+        label: this.$t('vote-for'),
+        selected: this.getSelectedOption('for'),
+      },
+      {
+        id: 'against',
+        label: this.$t('vote-against'),
+        selected: this.getSelectedOption('against'),
+      },
+      {
+        id: 'abstain',
+        label: this.$t('vote-abstain-plural'),
+        selected: this.getSelectedOption('abstain'),
+      },
+      {
+        id: 'absent',
+        label: this.$t('vote-absent-plural'),
+        selected: this.getSelectedOption('absent'),
+      },
+      {
+        id: 'did not vote',
+        label: this.$t('vote-did-not-vote-plural'),
+        selected: this.getSelectedOption('did not vote'),
+      },
+    ];
+
+    const filteredBallotOptions = selectableBallotOptions.filter((ballotOption) => {
+      if (this.didNotVotePresent) {
+        return (ballotOption.id !== 'absent') && (ballotOption.id !== 'against');
+      } else {
+        return ballotOption.id !== 'did not vote';
+      }
+    });
+
     return {
       nameFilter: '',
       columns: [
@@ -134,28 +173,7 @@ export default {
         { id: 'party', label: 'PS' },
         { id: 'votes', label: 'Glasovi', additionalClass: 'optional' },
       ],
-      votes: [
-        {
-          id: 'for',
-          label: this.$t('vote-for'),
-          selected: this.getSelectedOption('for'),
-        },
-        {
-          id: 'against',
-          label: this.$t('vote-against'),
-          selected: this.getSelectedOption('against'),
-        },
-        {
-          id: 'abstain',
-          label: this.$t('vote-abstain-plural'),
-          selected: this.getSelectedOption('abstain'),
-        },
-        {
-          id: 'absent',
-          label: this.$t('vote-absent-plural'),
-          selected: this.getSelectedOption('absent'),
-        },
-      ],
+      votes: filteredBallotOptions,
     };
   },
   computed: {
@@ -209,7 +227,7 @@ export default {
     mapVotes,
     translateOption(option, preferredPronoun) {
       const form = preferredPronoun === 'she' ? '--f' : '--m';
-      return this.$t(`voted-${option}${form}`);
+      return this.$t(`voted-${option.replace(/ /g, '-')}${form}`);
     },
     toggleVote(id) {
       if (this.allVotes[id] !== 0) {

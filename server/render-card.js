@@ -146,6 +146,10 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   }
 
   const cardState = { ...state };
+  // force altHeader if card is shared or embedded
+  if (template === 'share' || template === 'embed') {
+    cardState.altHeader = true;
+  }
   const urls = getUrls();
   const siteMap = await fetchSiteMap();
 
@@ -179,6 +183,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const html = renderTemplate({
     'page-title': contextData.template.pageTitle,
     'parlassets-url': urls.cdn,
+    'parlasite-url': urls.site,
     'container-class': contextData.template.frameContainerClass,
     'embed-class': contextData.template.embedContainerClass,
     'context-url': contextData.template.contextUrl,

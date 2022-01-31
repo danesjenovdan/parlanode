@@ -73,6 +73,7 @@ export default {
       legislation: cardData?.data?.results || {},
       votes: cardData?.data?.results?.votes || [],
       headerConfig: defaultHeaderConfig(this, {
+        heading: cardData?.data?.mandate?.description,
         title: this.$t(`legislation-classifications.${cardData?.data?.results?.classification}`),
       }),
       ogConfig: defaultOgImage(this),

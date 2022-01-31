@@ -82,6 +82,7 @@
             :result="results.result"
             :all-votes="allVotes"
             :state="state"
+            :did-not-vote-present="didNotVotePresent"
             @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
           />
         </p-tab>
@@ -94,6 +95,7 @@
             :selected-option="state.selectedOption || null"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
+            :did-not-vote-present="didNotVotePresent"
           />
         </p-tab>
         <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
@@ -105,6 +107,7 @@
             :selected-option="state.selectedOption || null"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
+            :did-not-vote-present="didNotVotePresent"
           />
         </p-tab>
         <p-tab v-if="results.documents?.length" :label="$t('documents')">
@@ -125,6 +128,7 @@
             :result="results.result"
             :all-votes="allVotes"
             :state="state"
+            :did-not-vote-present="didNotVotePresent"
             @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
           />
         </p-tab>
@@ -137,6 +141,7 @@
             :selected-option="state.selectedOption || null"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
+            :did-not-vote-present="didNotVotePresent"
           />
         </p-tab>
         <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
@@ -148,6 +153,7 @@
             :selected-option="state.selectedOption || null"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
+            :did-not-vote-present="didNotVotePresent"
           />
         </p-tab>
         <p-tab v-if="results.documents?.length" :label="$t('documents')">
@@ -180,6 +186,11 @@
                 <div v-t="'vote-absent'" class="type"></div>
                 <div class="indicator not">&nbsp;</div>
               </div>
+              <div class="col-xs-3">
+                {{ allVotes['did not vote'] }}
+                <div v-t="'vote-did-not-vote'" class="type"></div>
+                <div class="indicator not">&nbsp;</div>
+              </div>
             </div>
           </div>
         </div>
@@ -206,6 +217,7 @@ import Documents from '@/_components/Documents.vue';
 import fixAbstractHtml from '@/_helpers/fixAbstractHtml.js';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
+import { BALLOT_OPTIONS } from '@/_helpers/constants.js';
 
 export default {
   name: 'CardVoteSingle',
@@ -231,13 +243,15 @@ export default {
     const { title, projects } = parseVoteTitle(results.title);
 
     const allVotes = {};
-    ['for', 'against', 'abstain', 'absent'].forEach((key) => {
+    BALLOT_OPTIONS.forEach((key) => {
       if (typeof results.all_votes[key] !== 'number') {
         allVotes[key] = '?';
       } else {
         allVotes[key] = results.all_votes[key];
       }
     });
+
+    const didNotVotePresent = allVotes['did not vote'] > 0;
 
     return {
       results,
@@ -251,6 +265,7 @@ export default {
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
       allVotes,
+      didNotVotePresent,
     };
   },
   computed: {
