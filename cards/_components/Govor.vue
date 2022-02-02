@@ -112,7 +112,6 @@ export default {
       font-size: 14px;
       line-height: 20px;
       font-weight: 300;
-      font-family: 'Roboto Slab', serif;
       padding: 0.15em 0.3em;
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;

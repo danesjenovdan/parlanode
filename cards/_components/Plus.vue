@@ -14,7 +14,6 @@
   color: $first;
   position: relative;
   top: 3px;
-  font-family: 'Roboto', sans-serif;
   margin-left: 5px;
 }
 </style>

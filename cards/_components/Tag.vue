@@ -16,7 +16,6 @@
   font-size: 14px;
   cursor: pointer;
   margin-left: 5px;
-  font-family: 'Roboto', sans-serif;
 
   &::after {
     content: '×';
