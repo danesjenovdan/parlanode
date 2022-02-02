@@ -24,7 +24,7 @@
 }
 
 .modal-header {
-    background: $cta-passive-background;
+    @include gradient('horizontal');
 
     .modal-title {
         font-size: 20px;
@@ -140,7 +140,7 @@
     }
 
     .light-bg {
-        background-color: $link-hover-background;
+        background-color: $light-gray;
         padding: 10px 15px;
         margin-bottom: 30px;
 

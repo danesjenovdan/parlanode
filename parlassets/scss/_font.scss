@@ -1,10 +1,9 @@
 @import 'breakpoints';
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&subset=latin,latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,700&subset=latin,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,600,700,800&subset=cyrillic-ext');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 
     /* font rendering improvement */
@@ -28,14 +27,14 @@ h1 {
 .header {
     .nav {
         .navbar-nav {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             font-size: 18px;
             font-weight: 500;
         }
     }
 }
 .footer {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 14px;
     .mailto {
@@ -60,7 +59,7 @@ h1 {
 }
 
 %list-text {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   @include respond-to(mobile) { font-size: 14px; }
 }
