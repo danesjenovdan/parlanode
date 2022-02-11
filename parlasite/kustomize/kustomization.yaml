@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlasite-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ajdovscina
-    newTag: 'e237add917b4d1dd20cd9a3e5201add3d3576554'
+    newTag: 'cfcfbc80e24c3734beefca36d766f6f412c2747b'
