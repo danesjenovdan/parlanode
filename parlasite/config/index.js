@@ -17,7 +17,6 @@ const config = {
   leaderId: 'changeme',
   rootOrgId: '1',
   siteMap: sitemap,
-  rootOrgId: '1',
 };
 
 module.exports = config;
