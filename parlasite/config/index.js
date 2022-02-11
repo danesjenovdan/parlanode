@@ -7,15 +7,15 @@ const config = {
     // cdn: 'http://localhost:8080',
     // cards: 'http://localhost:7004',
     // parladata: 'http://localhost:8000/v3',
-    cdn: 'https://parlassets-ljubljana.lb.djnd.si',
-    cards: 'https://parlacards.lb.djnd.si',
-    parladata: 'https://parladata.lb.djnd.si/v3',
+    cdn: 'https://parlassets-ajdovscina.lb.djnd.si',
+    cards: 'https://parlacards-ajdovscina.lb.djnd.si',
+    parladata: 'https://parladata-ajdovscina.lb.djnd.si/v3'
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
   metaImagesTheme: 'ljubljana',
   locale: 'sl-obcine',
   leaderId: '261',
-  rootOrgId: '1',
+  rootOrgId: '2',
   siteMap: sitemap,
 };
 
