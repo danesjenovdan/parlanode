@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const { asyncRender: ar } = require('../utils');
+const { asyncRender: ar, getOgImageUrl } = require('../utils');
 const { siteMap: sm, urls } = require('../../config');
 const { i18n } = require('../server');
 
@@ -28,6 +28,11 @@ router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.party.overview}`], ar
   const pgData = await getNewData(req.params.slug);
   if (pgData) {
     render('poslanska-skupina/pregled', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: i18n('general.overview'),
+        h1: pgData.group.name,
+        acronym: pgData.group.acronym,
+      }),
       activeMenu: 'pg',
       pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
       activeTab: 'pregled',
@@ -42,8 +47,13 @@ router.get([`/:slug([a-z0-9-]+)/${sm.party.votings}`], ar(async (render, req, re
   const pgData = await getNewData(req.params.slug);
   if (pgData) {
     render('poslanska-skupina/glasovanja', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: i18n('general.voting'),
+        h1: pgData.group.name,
+        acronym: pgData.group.acronym,
+      }),
       activeMenu: 'pg',
-      pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
+      pageTitle: `${i18n('general.voting')} - ${pgData.group.name}`,
       activeTab: 'glasovanja',
       ...pgData,
     });
@@ -56,8 +66,13 @@ router.get([`/:slug([a-z0-9-]+)/${sm.party.speeches}`], ar(async (render, req, r
   const pgData = await getNewData(req.params.slug);
   if (pgData) {
     render('poslanska-skupina/govori', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: i18n('general.speeches'),
+        h1: pgData.group.name,
+        acronym: pgData.group.acronym,
+      }),
       activeMenu: 'pg',
-      pageTitle: `${i18n('general.overview')} - ${pgData.group.name}`,
+      pageTitle: `${i18n('general.speeches')} - ${pgData.group.name}`,
       activeTab: 'govori',
       ...pgData,
     });
