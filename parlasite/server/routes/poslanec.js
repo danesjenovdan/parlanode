@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const { asyncRender: ar } = require('../utils');
+const { asyncRender: ar, getOgImageUrl } = require('../utils');
 const { siteMap: sm, urls, leaderId } = require('../../config');
 const { i18n } = require('../server');
 
@@ -38,6 +38,12 @@ router.get(['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`], r
   const mpData = await getNewData(req.params.slug);
   if (mpData) {
     render('poslanec/pregled', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: i18n('general.overview'),
+        h1: mpData.mp.name,
+        h2: mpData.mp.group ? mpData.mp.group.name || mpData.mp.group.acronym : '',
+        image: mpData.mp.image,
+      }),
       activeMenu: 'mp',
       pageTitle: `${i18n('general.overview')} - ${mpData.mp.name}`,
       activeTab: 'pregled',
@@ -52,6 +58,12 @@ router.get([`/:slug([a-z0-9-]+)/${sm.member.votings}`], redirectIfLeader, ar(asy
   const mpData = await getNewData(req.params.slug);
   if (mpData) {
     render('poslanec/glasovanja', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: i18n('general.voting'),
+        h1: mpData.mp.name,
+        h2: mpData.mp.group ? mpData.mp.group.name || mpData.mp.group.acronym : '',
+        image: mpData.mp.image,
+      }),
       activeMenu: 'mp',
       pageTitle: `${i18n('general.voting')} - ${mpData.mp.name}`,
       activeTab: 'glasovanja',
@@ -66,6 +78,12 @@ router.get([`/:slug([a-z0-9-]+)/${sm.member.speeches}`], redirectIfLeader, ar(as
   const mpData = await getNewData(req.params.slug);
   if (mpData) {
     render('poslanec/govori', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: i18n('general.speeches'),
+        h1: mpData.mp.name,
+        h2: mpData.mp.group ? mpData.mp.group.name || mpData.mp.group.acronym : '',
+        image: mpData.mp.image,
+      }),
       activeMenu: 'mp',
       pageTitle: `${i18n('general.speeches')} - ${mpData.mp.name}`,
       activeTab: 'govori',
@@ -82,6 +100,11 @@ leaderRouter.get('/', ar(async (render, req, res, next) => {
   const mpData = await getNewData(leaderId);
   if (mpData) {
     render('poslanec/zupan', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: i18n('titles.leader'),
+        h1: mpData.mp.name,
+        image: mpData.mp.image,
+      }),
       activeMenu: 'leader',
       pageTitle: `${i18n('titles.leader')} - ${mpData.mp.name}`,
       ...mpData,

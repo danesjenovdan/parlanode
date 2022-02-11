@@ -1,5 +1,5 @@
 const express = require('express');
-const { asyncRender: ar } = require('../utils');
+const { asyncRender: ar, getOgImageUrl } = require('../utils');
 const { siteMap: sm } = require('../../config');
 const { i18n } = require('../server');
 
@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.get('/', ar((render) => {
   render('seje', {
+    ogImageUrl: getOgImageUrl('generic', { title: i18n('titles.session-list') }),
     activeMenu: 'sessions',
     pageTitle: i18n('titles.session-list'),
   });
