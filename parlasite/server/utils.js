@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const _ = require('lodash');
 const fetch = require('node-fetch');
-const { urls, locale } = require('../config');
+const { urls, locale, metaImagesTheme } = require('../config');
 
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
@@ -153,10 +153,17 @@ function i18n(lang) {
   return get;
 }
 
+function getOgImageUrl(type, params = {}) {
+  const url = `${urls.metaImages}/${type}`;
+  const query = stringifyParams({ theme: metaImagesTheme, ...params });
+  return `${url}${query}`;
+}
+
 module.exports = {
   slovenianDate,
   fetchCard,
   asyncRoute,
   asyncRender,
   i18n,
+  getOgImageUrl,
 };
