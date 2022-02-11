@@ -9,7 +9,7 @@ const config = {
     // parladata: 'http://localhost:8000/v3',
     cdn: 'https://parlassets-ajdovscina.lb.djnd.si',
     cards: 'https://parlacards-ajdovscina.lb.djnd.si',
-    parladata: 'https://parladata-ajdovscina.lb.djnd.si/v3'
+    parladata: 'https://parladata-ajdovscina.lb.djnd.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
   metaImagesTheme: 'ljubljana',
