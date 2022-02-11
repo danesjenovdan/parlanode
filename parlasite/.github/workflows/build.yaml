@@ -2,7 +2,7 @@ name: Publish Docker image
 on:
   push:
     branches:
-      - 'obcine'
+      - 'lendava'
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -22,12 +22,14 @@ jobs:
           username: nologin
           password: ${{ secrets.SCW_SECRET_TOKEN }}
       -
-        name: Build and push PARLASITE
+        name: Build and push PARLASITE LENDAVA
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: rg.fr-par.scw.cloud/djnd/parlasite:${{ github.sha }}
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parlasite-lendava:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasite-lendava:latest
       -
         name: Update image versions in kustomize/kustomization.yaml
         run: |
