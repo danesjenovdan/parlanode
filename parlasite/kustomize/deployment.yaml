@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   name: parlasite-deployment
   labels:
-    app: parlasite
+    app: parlasite-hrastnik
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlasite
+      app: parlasite-hrastnik
   template:
     metadata:
       labels:
-        app: parlasite
+        app: parlasite-hrastnik
     spec:
       securityContext:
         fsGroup: 1000
       containers:
-        - name: parlasite
-          image: parlasite
+        - name: parlasite-hrastnik
+          image: parlasite-hrastnik
           ports:
             - containerPort: 3066
           resources:
