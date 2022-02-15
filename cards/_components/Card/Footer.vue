@@ -67,6 +67,10 @@ export default {
   max-height: 100%;
   width: auto;
 }
+.card-footer .logo {
+  height: 30px;
+  width: auto;
+}
 .card-info:not(.card-exit)::before {
   content: 'i';
   font-weight: 100;
