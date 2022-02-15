@@ -28,10 +28,17 @@ export default {
     links,
   ],
   computed: {
-    chartRows() {
+    topTfidf() {
       const results = this.cardData.data?.results || [];
-      // const person = this.cardData.data?.person || {};
-      return results.map((item) => ({
+      // api returns unsorted tfidf, sort them in descending order
+      const sortedTfidf = results.slice().sort((a, b) => {
+        return (b.value ?? 0) - (a.value ?? 0);
+      });
+      // api can return more than 10, limit them to 10 for calculations
+      return sortedTfidf.slice(0, 10);
+    },
+    chartRows() {
+      return this.topTfidf.map((item) => ({
         label: item.token,
         value: Math.round(item.value * 5000),
         // TODO we used to pass mps in here to get the link
