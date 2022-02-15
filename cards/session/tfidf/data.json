@@ -1,104 +1,147 @@
 {
+  "url": "https://parladata.lb.djnd.si/v3/cards/session/tfidf/?id=4168",
   "data": {
     "results": [
       {
-        "token": "spol",
-        "value": 0.246344318403517
+        "token": "družba",
+        "value": 0.0649233965554864
       },
       {
-        "token": "Ljubljana",
-        "value": 0.204686330185489
+        "token": "posloven",
+        "value": 0.0661663440015767
       },
       {
-        "token": "zanimati",
-        "value": 0.199903427769295
+        "token": "posel",
+        "value": 0.068056256837716
       },
       {
-        "token": "turističen",
-        "value": 0.176712614779037
+        "token": "področje",
+        "value": 0.0691963382532768
       },
       {
-        "token": "stanovanjski",
-        "value": 0.167561675106752
+        "token": "prodajen",
+        "value": 0.0693141915778484
       },
       {
-        "token": "turizem",
-        "value": 0.15706138249097
+        "token": "delati",
+        "value": 0.0712676588906523
       },
       {
-        "token": "taksa",
-        "value": 0.153965199002198
+        "token": "ljubljanski",
+        "value": 0.0755873558739385
       },
       {
-        "token": "transspolen",
-        "value": 0.139727208001054
+        "token": "soglasje",
+        "value": 0.0756186788589449
       },
       {
-        "token": "praviti",
-        "value": 0.129364526179302
+        "token": "vrtec",
+        "value": 0.0772066304648733
       },
       {
-        "token": "ideologija",
-        "value": 0.12587877984522
+        "token": "vprašanje",
+        "value": 0.0807290612954896
       },
       {
-        "token": "nočitev",
-        "value": 0.12587877984522
+        "token": "razprava",
+        "value": 0.0815514000311092
       },
       {
-        "token": "pomeniti",
-        "value": 0.125671256330064
+        "token": "sežigalnica",
+        "value": 0.0853589306078116
+      },
+      {
+        "token": "dejavnost",
+        "value": 0.0856413875998821
+      },
+      {
+        "token": "odbor",
+        "value": 0.0867854826700776
+      },
+      {
+        "token": "podjetje",
+        "value": 0.0913725702878917
+      },
+      {
+        "token": "evro",
+        "value": 0.0920540594004258
+      },
+      {
+        "token": "krožen",
+        "value": 0.0943406055683293
+      },
+      {
+        "token": "nov",
+        "value": 0.0951840777671819
+      },
+      {
+        "token": "praven",
+        "value": 0.0979836094662166
+      },
+      {
+        "token": "strategija",
+        "value": 0.103072967524244
+      },
+      {
+        "token": "načrt",
+        "value": 0.103975683431049
+      },
+      {
+        "token": "mesto",
+        "value": 0.115327230422128
+      },
+      {
+        "token": "zrak",
+        "value": 0.117999367007224
       },
       {
         "token": "točka",
-        "value": 0.124745588664621
+        "value": 0.142776116650773
       },
       {
-        "token": "oseba",
-        "value": 0.122109605351352
+        "token": "zavod",
+        "value": 0.155691761069873
       },
       {
-        "token": "lgbt",
-        "value": 0.116053163701186
+        "token": "občina",
+        "value": 0.165172370243051
       },
       {
-        "token": "moški",
-        "value": 0.116053163701186
+        "token": "svet",
+        "value": 0.195723360074662
       },
       {
-        "token": "MOL",
-        "value": 0.109713293891235
+        "token": "javen",
+        "value": 0.222004918562596
       },
       {
-        "token": "mesten",
-        "value": 0.107602575216692
+        "token": "sklep",
+        "value": 0.239217440091254
       },
       {
-        "token": "namestitev",
-        "value": 0.102204735545352
-      },
-      {
-        "token": "rad",
-        "value": 0.0990288917582951
+        "token": "predlog",
+        "value": 0.293585040111993
       }
     ],
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "description": "Mestni svet MOL 2018–2022",
+      "beginning": "2018-12-17T12:00:00"
     },
     "session": {
-      "name": "24. seja Mestnega sveta MOL",
-      "id": 80,
-      "start_time": "2021-07-05T15:30:00",
+      "name": "29. seja Mestnega sveta MOL",
+      "id": 4168,
+      "start_time": "2022-01-31T15:30:00",
       "end_time": null,
       "organizations": [
         {
           "name": "Mestni svet MOL",
           "acronym": null,
-          "slug": "1-mestni-svet-mol"
+          "slug": "1-mestni-svet-mol",
+          "color": "#09A2CC",
+          "classification": "root"
         }
       ],
-      "classification": null,
+      "classification": "regular",
       "in_review": false
     }
   }
