@@ -11,7 +11,6 @@
   text-align: center;
   background-color: $light-background;
   padding: 30px;
-  font-family: 'Roboto Slab', serif;
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 10px;
