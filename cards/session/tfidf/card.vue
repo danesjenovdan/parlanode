@@ -42,14 +42,22 @@ export default {
     };
   },
   computed: {
+    topTfidf() {
+      // api returns unsorted tfidf, sort them in descending order
+      const sortedTfidf = this.results.slice().sort((a, b) => {
+        return (b.value ?? 0) - (a.value ?? 0);
+      });
+      // api can return more than 10, limit them to 10 for calculations
+      return sortedTfidf.slice(0, 10);
+    },
     max() {
-      return max(this.results.map((item) => item.value || 0)) * 5000;
+      return max(this.topTfidf.map((item) => item.value || 0)) * 5000;
     },
     total() {
-      return sum(this.results.map((item) => item.value || 0)) * 5000;
+      return sum(this.topTfidf.map((item) => item.value || 0)) * 5000;
     },
     chartRows() {
-      return this.results.map((item) => ({
+      return this.topTfidf.map((item) => ({
         label: item.token,
         value: Math.round(item.value * 5000),
         link: this.getSearchTermLink(item.token),

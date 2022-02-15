@@ -4,109 +4,139 @@
     "results": {
       "tfidf": [
         {
-          "token": "sredstvo",
-          "value": 0.0881070507657887
+          "token": "družba",
+          "value": 0.0649233965554864
         },
         {
-          "token": "sprejeti",
-          "value": 0.0903276267310015
+          "token": "posloven",
+          "value": 0.0661663440015767
         },
         {
-          "token": "načrt",
-          "value": 0.0908861585711442
+          "token": "posel",
+          "value": 0.068056256837716
         },
         {
-          "token": "višina",
-          "value": 0.0995117537148091
+          "token": "področje",
+          "value": 0.0691963382532768
         },
         {
-          "token": "svet",
-          "value": 0.103233677933117
+          "token": "prodajen",
+          "value": 0.0693141915778484
         },
         {
-          "token": "proračun",
-          "value": 0.105081972949283
+          "token": "delati",
+          "value": 0.0712676588906523
         },
         {
-          "token": "iti",
-          "value": 0.105870678525943
+          "token": "ljubljanski",
+          "value": 0.0755873558739385
         },
         {
-          "token": "točka",
-          "value": 0.108269415602228
+          "token": "soglasje",
+          "value": 0.0756186788589449
         },
         {
-          "token": "projekt",
-          "value": 0.110462571109347
+          "token": "vrtec",
+          "value": 0.0772066304648733
+        },
+        {
+          "token": "vprašanje",
+          "value": 0.0807290612954896
+        },
+        {
+          "token": "razprava",
+          "value": 0.0815514000311092
+        },
+        {
+          "token": "sežigalnica",
+          "value": 0.0853589306078116
+        },
+        {
+          "token": "dejavnost",
+          "value": 0.0856413875998821
+        },
+        {
+          "token": "odbor",
+          "value": 0.0867854826700776
+        },
+        {
+          "token": "podjetje",
+          "value": 0.0913725702878917
         },
         {
           "token": "evro",
-          "value": 0.118352754760015
+          "value": 0.0920540594004258
         },
         {
-          "token": "odlok",
-          "value": 0.136267590727779
+          "token": "krožen",
+          "value": 0.0943406055683293
+        },
+        {
+          "token": "nov",
+          "value": 0.0951840777671819
+        },
+        {
+          "token": "praven",
+          "value": 0.0979836094662166
+        },
+        {
+          "token": "strategija",
+          "value": 0.103072967524244
+        },
+        {
+          "token": "načrt",
+          "value": 0.103975683431049
+        },
+        {
+          "token": "mesto",
+          "value": 0.115327230422128
+        },
+        {
+          "token": "zrak",
+          "value": 0.117999367007224
+        },
+        {
+          "token": "točka",
+          "value": 0.142776116650773
+        },
+        {
+          "token": "zavod",
+          "value": 0.155691761069873
         },
         {
           "token": "občina",
-          "value": 0.155289276092338
+          "value": 0.165172370243051
+        },
+        {
+          "token": "svet",
+          "value": 0.195723360074662
         },
         {
           "token": "javen",
-          "value": 0.156254917101542
-        },
-        {
-          "token": "imeti",
-          "value": 0.167662923589736
+          "value": 0.222004918562596
         },
         {
           "token": "sklep",
-          "value": 0.169855411948093
-        },
-        {
-          "token": "Ljubljana",
-          "value": 0.212208054580367
-        },
-        {
-          "token": "mio",
-          "value": 0.226065526941905
+          "value": 0.239217440091254
         },
         {
           "token": "predlog",
-          "value": 0.255683411625044
-        },
-        {
-          "token": "mesten",
-          "value": 0.258684390634728
-        },
-        {
-          "token": "hvala",
-          "value": 0.27849085209864
+          "value": 0.293585040111993
         }
       ],
       "attendance": [
         {
-          "value": 75.0,
+          "value": 69.3548387096774,
           "group": {
-            "name": "Svetniški klub samostojnih svetnikov",
-            "acronym": "SKSS",
-            "slug": "18-svetniski-klub-samostojnih-svetnikov",
-            "color": "#18C7C1",
+            "name": "Nova Slovenija – Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "16-nova-slovenija-krscanski-demokrati",
+            "color": "#665F0C",
             "classification": "pg"
           }
         },
         {
-          "value": 75.0,
-          "group": {
-            "name": "Socialni demokrati",
-            "acronym": "SD",
-            "slug": "19-socialni-demokrati",
-            "color": "#E0D874",
-            "classification": "pg"
-          }
-        },
-        {
-          "value": 0.0,
+          "value": 70.9677419354839,
           "group": {
             "name": "Samostojni svetnik Liste kolesarjev in pešcev",
             "acronym": "LKP",
@@ -116,7 +146,27 @@
           }
         },
         {
-          "value": 75.0,
+          "value": 20.4301075268817,
+          "group": {
+            "name": "Svetniški klub samostojnih svetnikov",
+            "acronym": "SKSS",
+            "slug": "18-svetniski-klub-samostojnih-svetnikov",
+            "color": "#18C7C1",
+            "classification": "pg"
+          }
+        },
+        {
+          "value": 48.3870967741936,
+          "group": {
+            "name": "Socialni demokrati",
+            "acronym": "SD",
+            "slug": "19-socialni-demokrati",
+            "color": "#E0D874",
+            "classification": "pg"
+          }
+        },
+        {
+          "value": 70.9677419354839,
           "group": {
             "name": "Levica",
             "acronym": null,
@@ -126,7 +176,7 @@
           }
         },
         {
-          "value": 75.0,
+          "value": 72.9032258064516,
           "group": {
             "name": "Slovenska demokratska stranka",
             "acronym": "SDS",
@@ -136,7 +186,7 @@
           }
         },
         {
-          "value": 75.0,
+          "value": 85.3494623655914,
           "group": {
             "name": "Lista Zorana Jankovića",
             "acronym": "LZJ",
@@ -144,179 +194,179 @@
             "color": "#048EA2",
             "classification": "pg"
           }
-        },
-        {
-          "value": 75.0,
-          "group": {
-            "name": "Nova Slovenija – Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "16-nova-slovenija-krscanski-demokrati",
-            "color": "#665F0C",
-            "classification": "pg"
-          }
         }
       ],
       "votes": [
         {
           "all_votes": {
-            "absent": 7,
+            "for": 23,
+            "against": 1,
+            "abstain": 6,
+            "absent": 15,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 10724,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "GLASOVANJE O DNEVNEM REDU: Mestni svet Mestne občine Ljubljana sprejme predlog dnevnega reda 29. seje mestnega sveta skupaj s spremembo.",
+          "timestamp": "2022-01-31T15:32:56"
+        },
+        {
+          "all_votes": {
+            "for": 28,
+            "against": 1,
+            "abstain": 3,
+            "absent": 13,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 10725,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 28. seje Mestnega sveta Mestne občine Ljubljana z dne 13. decembra 2021.",
+          "timestamp": "2022-01-31T15:33:44"
+        },
+        {
+          "all_votes": {
+            "for": 37,
+            "against": 0,
             "abstain": 1,
-            "for": 21,
-            "against": 16
+            "absent": 7,
+            "did not vote": 0
           },
           "passed": true,
-          "id": 9172,
+          "id": 10726,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Dnevni red 27. seje Mestnega sveta Mestne občine Ljubljana z dne 15. 11. 2021 se razširi z novo 21. točko z naslovom: »Predlog Sklepa o spremembi družbene pogodbe družbe BEŽIGRAJSKI ŠPORTNI PARK športni marketing d.o.o.«.",
-          "timestamp": "2021-11-15T15:39:12"
+          "title": "I. Gregorju SLABETU preneha mandat predstavnika Mestne občine Ljubljana v Svetu javnega zavoda Regionalna razvojna agencija Ljubljanske urbane regije. II. V Svet javnega zavoda Regionalna razvojna agencija Ljubljanske urbane regije se kot predstavnica Mestne občine Ljubljana imenuje: -   Tanja BIZJAN. III. Mandat imenovane je vezan na mandat sveta zavoda.",
+          "timestamp": "2022-01-31T15:59:50"
         },
         {
           "all_votes": {
-            "absent": 19,
+            "for": 37,
+            "against": 0,
             "abstain": 0,
-            "for": 22,
-            "against": 4
-          },
-          "passed": true,
-          "id": 9173,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "GLASOVANJE O DNEVNEM REDU: Mestni svet Mestne občine Ljubljana sprejme predlog dnevnega reda 27. seje mestnega sveta skupaj s sprejeto spremembo.",
-          "timestamp": "2021-11-15T15:39:32"
-        },
-        {
-          "all_votes": {
             "absent": 8,
-            "abstain": 4,
-            "for": 33,
-            "against": 0
+            "did not vote": 0
           },
           "passed": true,
-          "id": 9177,
+          "id": 10727,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 26. seje Mestnega sveta Mestne občine Ljubljana z dne 18. oktobra 2021.",
-          "timestamp": "2021-11-15T15:40:10"
+          "title": "I. Tanji AMON preneha mandat predsednice Sveta za varstvo pravic najemnikov stanovanj v Mestni občini Ljubljana. II. V Svet za varstvo pravic najemnikov stanovanj v Mestni občini Ljubljana se kot nadomestnega člana na funkcijo predsednika imenuje: Marjan PERGER. III. Mandat imenovanega je vezan na mandat Mestnega sveta Mestne občine Ljubljana.",
+          "timestamp": "2022-01-31T16:00:28"
         },
         {
           "all_votes": {
-            "absent": 3,
-            "abstain": 2,
-            "for": 40,
-            "against": 0
-          },
-          "passed": true,
-          "id": 9202,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "I. V Svet Srednje šole tehniških strok Šiška se za predstavnika Mestne občine Ljubljana imenuje: -   Beno PEHANI. II. Mandat imenovanega traja štiri leta.",
-          "timestamp": "2021-11-15T15:54:32"
-        },
-        {
-          "all_votes": {
-            "absent": 6,
-            "abstain": 0,
-            "for": 39,
-            "against": 0
-          },
-          "passed": true,
-          "id": 9203,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "I. V Svet Gimnazije Jožeta Plečnika Ljubljana se za predstavnika Mestne občine Ljubljana imenuje: -   Igor SELAN. II. Mandat imenovanega traja štiri leta.",
-          "timestamp": "2021-11-15T15:54:57"
-        },
-        {
-          "all_votes": {
-            "absent": 6,
-            "abstain": 0,
-            "for": 39,
-            "against": 0
-          },
-          "passed": true,
-          "id": 9204,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "I. V Svet Srednje frizerske šole Ljubljana se za predstavnico Mestne občine Ljubljana imenuje: -   Vesna HABINC. II. Mandat imenovane traja štiri leta.",
-          "timestamp": "2021-11-15T15:55:19"
-        },
-        {
-          "all_votes": {
-            "absent": 5,
-            "abstain": 0,
-            "for": 40,
-            "against": 0
-          },
-          "passed": true,
-          "id": 9205,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "I. V Svet javnega vzgojno-izobraževalnega zavoda Center za usposabljanje, vzgojo in izobraževanje Janeza Levca Ljubljana se imenujejo: - Barbara KAMPJUT, - Mateja NOSE, - Tanja VRZIĆ. II. Mandat imenovanih traja štiri leta.",
-          "timestamp": "2021-11-15T15:55:51"
-        },
-        {
-          "all_votes": {
-            "absent": 5,
-            "abstain": 0,
-            "for": 40,
-            "against": 0
-          },
-          "passed": true,
-          "id": 9206,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Andreji ŠKVARČ se da pozitivno mnenje h kandidaturi za ravnateljico Vrtca Najdihojca.",
-          "timestamp": "2021-11-15T15:56:08"
-        },
-        {
-          "all_votes": {
-            "absent": 5,
-            "abstain": 0,
-            "for": 40,
-            "against": 0
-          },
-          "passed": true,
-          "id": 9207,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Darinki MARTINČIČ ZALOKAR se da pozitivno mnenje h kandidaturi za ravnateljico Srednje šole tehniških strok Šiška.",
-          "timestamp": "2021-11-15T15:56:31"
-        },
-        {
-          "all_votes": {
-            "absent": 11,
-            "abstain": 0,
             "for": 34,
-            "against": 0
+            "against": 0,
+            "abstain": 0,
+            "absent": 11,
+            "did not vote": 0
           },
           "passed": true,
-          "id": 9208,
+          "id": 10728,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Nobenemu od kandidatov se ne da pozitivnega mnenja h kandidaturi za ravnatelja/ravnateljico Srednje šole za oblikovanje in fotografijo Ljubljana.",
-          "timestamp": "2021-11-15T15:56:55"
+          "title": "I. Dunji PIŠKUR KOSMAČ preneha mandat predstavnice Mestne občine Ljubljana v Svetu javnega zdravstvenega zavoda Onkološki inštitut Ljubljana. II. V Svet javnega zdravstvenega zavoda Onkološki inštitut Ljubljana se kot predstavnica Mestne občine Ljubljana imenuje: -   Francka TROBEC. II. Mandat imenovane je vezan na mandat sveta zavoda.",
+          "timestamp": "2022-01-31T16:01:04"
+        },
+        {
+          "all_votes": {
+            "for": 37,
+            "against": 0,
+            "abstain": 0,
+            "absent": 8,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 10729,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "I. V Svet Srednje zdravstvene šole Ljubljana se za predstavnika Mestne občine Ljubljana imenuje: -   Ivan Peter BENKO. II. Mandat imenovanega traja štiri leta.",
+          "timestamp": "2022-01-31T16:01:29"
+        },
+        {
+          "all_votes": {
+            "for": 37,
+            "against": 0,
+            "abstain": 0,
+            "absent": 8,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 10730,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "I. V Svet Srednje gradbene, geodetske in okoljevarstvene šole Ljubljana se za predstavnico Mestne občine Ljubljana imenuje: -   Iva PADAR. II. Mandat imenovane traja štiri leta.",
+          "timestamp": "2022-01-31T16:01:56"
+        },
+        {
+          "all_votes": {
+            "for": 34,
+            "against": 0,
+            "abstain": 0,
+            "absent": 11,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 10731,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "I. V Svet Srednje šole za oblikovanje in fotografijo se za predstavnico Mestne občine Ljubljana imenuje: -   Sania HUSKIĆ HOČEVAR II. Mandat imenovane traja štiri leta.",
+          "timestamp": "2022-01-31T16:02:19"
+        },
+        {
+          "all_votes": {
+            "for": 37,
+            "against": 0,
+            "abstain": 0,
+            "absent": 8,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 10732,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "I. V Svet javnega vzgojno – izobraževalnega zavoda Glasbene šole Franca Šturma se imenujeta: -   Alenka LOVIŠČEK STOJANOVIČ -   dr. Gregor ŠEGA. II. Mandat imenovanih traja štiri leta.",
+          "timestamp": "2022-01-31T16:02:48"
+        },
+        {
+          "all_votes": {
+            "for": 36,
+            "against": 0,
+            "abstain": 0,
+            "absent": 9,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 10733,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "I. V Svet javnega zavoda Cene Štupar – Centra za permanentno izobraževanje se imenujeta: -   Ida MEDVED -   Melita OVEN. II. Mandat imenovanih traja štiri leta.",
+          "timestamp": "2022-01-31T16:03:14"
         }
       ]
     },
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
+      "description": "Mestni svet MOL 2018–2022",
       "beginning": "2018-12-17T12:00:00"
     },
     "session": {
-      "name": "27. seja Mestnega sveta MOL",
-      "id": 3384,
-      "start_time": "2021-11-15T15:30:00",
+      "name": "29. seja Mestnega sveta MOL",
+      "id": 4168,
+      "start_time": "2022-01-31T15:30:00",
       "end_time": null,
       "organizations": [
         {
@@ -331,8 +381,8 @@
       "in_review": false,
       "has_transcript": true
     },
-    "votes:count": 52,
-    "votes:pages": 6,
+    "votes:count": 31,
+    "votes:pages": 4,
     "votes:page": 1,
     "votes:per_page": 10
   }
