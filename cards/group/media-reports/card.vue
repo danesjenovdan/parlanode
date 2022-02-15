@@ -6,17 +6,13 @@
         <div>{{ $t('media-reports') }}</div>
       </div>
       <div
-        v-for="medium in Object.keys(groupedReports)"
+        v-for="(reports, medium) in groupedReports"
         :key="medium"
         class="media-report"
       >
-        <div class="name">{{ groupedReports[medium][0].medium.name }}</div>
+        <div class="name">{{ reports[0].medium.name }}</div>
         <div class="material">
-          <div
-            v-for="report in groupedReports[medium]"
-            :key="report.url"
-            class="link"
-          >
+          <div v-for="report in reports" :key="report.url" class="link">
             <a :href="report.url" class="funblue-light-hover" target="_blank">
               {{ report.title }}
             </a>
@@ -28,13 +24,12 @@
 </template>
 
 <script>
+import { groupBy, orderBy } from 'lodash-es';
 import common from '@/_mixins/common.js';
 import { partyHeader } from '@/_mixins/altHeaders.js';
 import { partyOgImage } from '@/_mixins/ogImages.js';
 import { partyOverviewContextUrl } from '@/_mixins/contextUrls.js';
 import { partyTitle } from '@/_mixins/titles.js';
-
-import { groupBy } from 'lodash-es';
 
 export default {
   name: 'CardPersonMediaReports',
@@ -57,7 +52,15 @@ export default {
   },
   computed: {
     groupedReports() {
-      return groupBy(this.mediaReports, (report) => report.medium.url);
+      // first sort all reports by medium order
+      const sortedReports = orderBy(
+        this.mediaReports,
+        ['medium.order', 'report_date'],
+        ['asc', 'desc']
+      );
+      // because objects keys are guarantied to be in insertion order in js
+      // and we sorted reports, groupBy will be ordered correctly
+      return groupBy(sortedReports, (report) => report.medium.url);
     },
   },
 };
