@@ -1,157 +1,166 @@
 {
   "id": "3385",
-  "url": "https://parladata.lb.djnd.si/v3/cards/session/votes/?id=3385",
+  "url": "https://parladata.lb.djnd.si/v3/cards/session/votes/?id=3791",
   "data": {
-    "results": [
-      {
+    "results": [{
         "all_votes": {
-          "absent": 6,
-          "abstain": 1,
-          "for": 9,
-          "against": 29
-        },
-        "passed": false,
-        "id": 9178,
-        "is_outlier": false,
-        "has_outliers": false,
-        "has_named_votes": true,
-        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se s predlaganega dnevnega reda 26. seje mestnega sveta umakne 8. točka z naslovom »Predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 106 – Kolizej«.",
-        "timestamp": "2021-10-18T15:38:33"
-      },
-      {
-        "all_votes": {
-          "absent": 7,
-          "abstain": 0,
-          "for": 9,
-          "against": 29
-        },
-        "passed": false,
-        "id": 9179,
-        "is_outlier": false,
-        "has_outliers": false,
-        "has_named_votes": true,
-        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se s predlaganega dnevnega reda 26. seje mestnega sveta umakne 9. točka z naslovom »Predlog Sklepa o lokacijski preveritvi za del območja Odloka o občinskem podrobnem prostorskem načrtu 273 Tovil (za enoto urejanja prostora VI-521 ter dele enot urejanja prostora VI-371, VI-372, VI-374 in VI-672)«.",
-        "timestamp": "2021-10-18T15:39:03"
-      },
-      {
-        "all_votes": {
-          "absent": 23,
-          "abstain": 0,
-          "for": 22,
-          "against": 0
-        },
-        "passed": true,
-        "id": 9180,
-        "is_outlier": false,
-        "has_outliers": false,
-        "has_named_votes": true,
-        "title": "Dnevni red 26. seje Mestnega sveta Mestne občine Ljubljana z dne 18. 10. 2021 se razširi z novo 10. a, b in c točko z naslovom: »a) Predlog Sklepa o spremembi in dopolnitvi Sklepa o Načrtu ravnanja z nepremičnim premoženjem Mestne občine Ljubljana v vrednosti nad 200.000 eurov za leto 2021 Predlog Sklepa o spremembi Sklepa o določitvi skupne vrednosti pravnih poslov nepremičnega premoženja, ki jih lahko sklepa Mestna občina Ljubljana v letu 2021 Predlog Sklepa o soglasju k osnutku besedila pravnega posla – prodajna pogodba za prostore v stavbi na naslovu Pokopališka ulica 35 v Ljubljani in zemljišče parc. št. 389/1, obe k.o. 1730 Moste«.",
-        "timestamp": "2021-10-18T15:39:32"
-      },
-      {
-        "all_votes": {
-          "absent": 19,
-          "abstain": 0,
-          "for": 26,
-          "against": 0
-        },
-        "passed": true,
-        "id": 9181,
-        "is_outlier": false,
-        "has_outliers": false,
-        "has_named_votes": true,
-        "title": "GLASOVANJE O DNEVNEM REDU: Mestni svet Mestne občine Ljubljana sprejme predlog dnevnega reda 26. seje mestnega sveta skupaj s sprejeto spremembo.",
-        "timestamp": "2021-10-18T15:39:51"
-      },
-      {
-        "all_votes": {
-          "absent": 7,
-          "abstain": 2,
           "for": 36,
-          "against": 0
+          "against": 0,
+          "abstain": 0,
+          "absent": 9,
+          "did not vote": 0
         },
         "passed": true,
-        "id": 9182,
+        "id": 10434,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 25. seje Mestnega sveta Mestne občine Ljubljana z dne 27. septembra 2021.",
-        "timestamp": "2021-10-18T15:40:27"
+        "title": "Plaketo glavnega mesta Ljubljana za leto 2019 prejmejo: - Stanislava Marija Ferenčak Marin - prof. dr. Tamara Lah Turnšek - Anja Rupel - Zdravstveni dom Ljubljana - Policijska uprava Ljubljana - Društvo general Maister Ljubljana - Zavod Nora, center sodobnih zasvojenosti, program LOGOUT",
+        "timestamp": "2019-04-15T16:04:43"
       },
       {
         "all_votes": {
-          "absent": 6,
+          "for": 25,
+          "against": 8,
+          "abstain": 8,
+          "absent": 4,
+          "did not vote": 0
+        },
+        "passed": true,
+        "id": 10437,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mestni svet Mestne občine Ljubljana sprejme Zaključni račun proračuna Mestne občine Ljubljana za leto 2018.",
+        "timestamp": "2019-04-15T16:28:32"
+      },
+      {
+        "all_votes": {
+          "for": 25,
+          "against": 9,
+          "abstain": 8,
+          "absent": 3,
+          "did not vote": 0
+        },
+        "passed": true,
+        "id": 10440,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o rebalansu proračuna Mestne občine Ljubljana za leto 2019.",
+        "timestamp": "2019-04-15T16:55:52"
+      },
+      {
+        "all_votes": {
+          "for": 39,
+          "against": 0,
           "abstain": 4,
-          "for": 35,
-          "against": 0
+          "absent": 2,
+          "did not vote": 0
         },
         "passed": true,
-        "id": 9192,
+        "id": 10443,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "Urški KOVAČ GRAD se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Dragomelj.",
-        "timestamp": "2021-10-18T15:51:38"
+        "title": "Mestni svet Mestne občine Ljubljana sprejme Letno poročilo javnega zavoda Turizem Ljubljana za poslovno leto 2018.",
+        "timestamp": "2019-04-15T17:15:08"
       },
       {
         "all_votes": {
-          "absent": 8,
+          "for": 36,
+          "against": 0,
+          "abstain": 6,
+          "absent": 3,
+          "did not vote": 0
+        },
+        "passed": true,
+        "id": 10720,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mestni svet Mestne občine Ljubljana sprejme Letno poročilo Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2018.",
+        "timestamp": "2019-04-15T17:28:10"
+      },
+      {
+        "all_votes": {
+          "for": 36,
+          "against": 0,
           "abstain": 0,
-          "for": 37,
-          "against": 0
+          "absent": 9,
+          "did not vote": 0
         },
         "passed": true,
-        "id": 9193,
+        "id": 10721,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "Mojci PAJNIČ KIRN se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Sostro.",
-        "timestamp": "2021-10-18T15:51:58"
+        "title": "Mestni svet Mestne občine Ljubljana sprejme Poročilo nadzornega sveta Javnega stanovanjskega sklada Mestne občine Ljubljana za leto 2018.",
+        "timestamp": "2019-04-15T17:28:23"
       },
       {
         "all_votes": {
-          "absent": 8,
+          "for": 37,
+          "against": 0,
           "abstain": 0,
-          "for": 37,
-          "against": 0
+          "absent": 8,
+          "did not vote": 0
         },
         "passed": true,
-        "id": 9194,
+        "id": 10722,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "I. Mariji DERGANC preneha mandat članice Sveta Vrtca Vodmat. II. V Svet Vrtca Vodmat se za predstavnika Mestne občine Ljubljana imenuje: Marijan ZGAZIVODA. Mandat imenovanega je vezan na mandat sveta vrtca.",
-        "timestamp": "2021-10-18T15:52:47"
+        "title": "Presežek odhodkov nad prihodki iz upravljanja sredstev Mestne občine Ljubljana v letu 2018 v višini 136.068 evrov se krije iz presežka prihodkov nad odhodki iz preteklih let tako, da 31. decembra 2018 znaša presežek prihodkov nad odhodki 236.261 evrov.",
+        "timestamp": "2019-04-15T17:28:49"
       },
       {
         "all_votes": {
+          "for": 37,
+          "against": 0,
+          "abstain": 0,
           "absent": 7,
-          "abstain": 0,
-          "for": 38,
-          "against": 0
+          "did not vote": 1
         },
-        "passed": true,
-        "id": 9195,
+        "passed": null,
+        "id": 10723,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "I. Zarji BREGANT preneha mandat članice v Svetu javnega zavoda Mestna knjižnica Ljubljana. II. V Svet javnega zavoda Mestna knjižnica Ljubljana se za predstavnico Mestne občine Ljubljana imenuje: - Tatjana HAFNER. Mandat imenovane je vezan na mandat Sveta javnega zavoda Mestna knjižnica Ljubljana.",
-        "timestamp": "2021-10-18T15:53:20"
+        "title": "Povečanje sredstev na računih iz namenskega premoženja v letu 2018 v višini 1.820.034 evrov se prišteje k presežku prejemkov nad izdatki iz preteklih let tako, da je na dan 31. december 2018 izkazan presežek prihodkov nad odhodki v višini 2.066.218 evrov.",
+        "timestamp": "2019-04-15T17:29:14"
       },
       {
         "all_votes": {
-          "absent": 13,
+          "for": 37,
+          "against": 0,
           "abstain": 0,
-          "for": 32,
-          "against": 0
+          "absent": 8,
+          "did not vote": 0
         },
         "passed": true,
-        "id": 9196,
+        "id": 10447,
         "is_outlier": false,
         "has_outliers": false,
         "has_named_votes": true,
-        "title": "I. Za direktorico javnega zavoda Ljubljanski grad se imenuje: Mateja AVBELJ VALENTAN. II. Mandat imenovane traja pet let.",
-        "timestamp": "2021-10-18T15:53:46"
+        "title": "Mestni svet Mestne občine Ljubljana sprejme Poročilo o uresničevanju Stanovanjskega programa Mestne občine Ljubljana za leto 2018.",
+        "timestamp": "2019-04-15T17:29:30"
+      },
+      {
+        "all_votes": {
+          "for": 35,
+          "against": 0,
+          "abstain": 6,
+          "absent": 4,
+          "did not vote": 0
+        },
+        "passed": true,
+        "id": 10448,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Mestni svet Mestne občine Ljubljana sprejme Stanovanjski program Mestne občine Ljubljana 2019 – 2022.",
+        "timestamp": "2019-04-15T18:01:41"
       }
     ],
     "mandate": {
@@ -159,25 +168,23 @@
       "beginning": "2018-12-17T12:00:00"
     },
     "session": {
-      "name": "26. seja Mestnega sveta MOL",
-      "id": 3385,
-      "start_time": "2021-10-18T15:30:00",
+      "name": "3. seja Mestnega sveta MOL",
+      "id": 3791,
+      "start_time": "2019-04-15T15:30:00",
       "end_time": null,
-      "organizations": [
-        {
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
-        }
-      ],
+      "organizations": [{
+        "name": "Mestni svet MOL",
+        "acronym": null,
+        "slug": "1-mestni-svet-mol",
+        "color": "#09A2CC",
+        "classification": "root"
+      }],
       "classification": "regular",
       "in_review": false
     },
-    "count": 19,
-    "pages": 2,
-    "page": 1,
+    "count": 56,
+    "pages": 6,
+    "page": 5,
     "per_page": 10
   }
 }
