@@ -56,7 +56,10 @@
         }
       }
 
-      &.portrait img { border-radius: 50%; }
+      &.portrait img {
+        border-radius: 50%;
+        object-fit: cover;
+      }
 
       &.name { text-align: left; }
 
