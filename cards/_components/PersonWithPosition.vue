@@ -91,7 +91,10 @@ export default {
 
   .img-responsive {
     width: 40px;
+    height: 40px;
     margin: 10px 15px 10px 0;
+    object-fit: cover;
+
     @include respond-to(desktop) {
       margin-right: 25px;
     }

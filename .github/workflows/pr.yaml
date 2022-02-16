@@ -43,3 +43,10 @@ jobs:
         destination_branch: "ua"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         pr_title: "Pulling ${{ github.ref }} into ua"
+
+    - name: pull-request-slovenija
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "slovenija"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: "Pulling ${{ github.ref }} into slovenija"
