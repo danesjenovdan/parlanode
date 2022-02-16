@@ -579,6 +579,10 @@ export default {
       display: none;
     }
   }
+
+  &.portrait img {
+    object-fit: cover;
+  }
 }
 
 .person-list :deep(.headers) {
