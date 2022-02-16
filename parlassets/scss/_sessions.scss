@@ -321,6 +321,7 @@
     margin-bottom: 20px;
     display: inline-block;
     padding: 0;
+    object-fit: cover;
 
     &.backgroundred {
         background-color: $first;
