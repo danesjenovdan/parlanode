@@ -276,19 +276,6 @@ export default {
   }
 }
 
-.person-list .person {
-  flex-wrap: wrap;
-
-  .column.portrait {
-    margin: 0 8px 8px 0;
-
-    img {
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
-
 .nalagalnik__wrapper {
   position: absolute;
   top: 0;
