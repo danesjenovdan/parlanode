@@ -477,6 +477,7 @@ mayor: Župan
 website: Spletno mesto
 budget: Proračun
 agenda-items: Točke dnevnega reda
+agenda-item-point: '{num}. točka'
 material: Gradivo
 documents: Dokumenti
 other: Drugo
