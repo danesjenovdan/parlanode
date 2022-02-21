@@ -169,6 +169,7 @@
     "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkript",
+    "minutes": "Zapisnik",
     "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!",
     "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
     "info_email": "info@parlameter.si"
@@ -184,6 +185,7 @@
     "other-votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",
+    "minutes": "Zapisnik",
     "voting": "Glasovanje",
     "session-list": "Seznam sej",
     "sessions-search": "Išči seje",
