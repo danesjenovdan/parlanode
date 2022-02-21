@@ -56,8 +56,8 @@ localeFiles.forEach((localeFile) => {
     possibleCardName !== 'd3locales.js'
   ) {
     // const cardLocaleFile = path.resolve(localeFile);
-    // if (possibleCardName.includes('quote/single')) {
-    //   const newCardLocaleFile = cardLocaleFile.replace('quote/single', 'speech/quote');
+    // if (possibleCardName.includes('tool/')) {
+    //   const newCardLocaleFile = cardLocaleFile.replace('tool/', 'tools/');
     //   const newDirName = path.dirname(newCardLocaleFile);
     //   if (!fs.existsSync(newDirName)) {
     //     fs.mkdirSync(newDirName);

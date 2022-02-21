@@ -1,9 +1,8 @@
 <template>
   <card-wrapper :header-config="headerConfig" max-height>
-    <speech
-      v-quotable
-      :speech="speech"
-      :session="speech?.session || {}"
+    <minutes-item
+      :agenda-item="agendaItem"
+      :session="agendaItem?.session || {}"
       show-session
     />
   </card-wrapper>
@@ -15,22 +14,18 @@ import common from '@/_mixins/common.js';
 import { personTitle } from '@/_mixins/titles.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
-import { speechSessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
-import Speech from '@/_components/Speech.vue';
-import quotable from '@/_directives/quotable.js';
+import { agendaSessionVotesContextUrl } from '@/_mixins/contextUrls.js';
+import MinutesItem from '@/_components/MinutesItem.vue';
 
 export default {
-  name: 'CardSpeechSingle',
+  name: 'CardMinutesSingle',
   components: {
-    Speech,
-  },
-  directives: {
-    quotable,
+    MinutesItem,
   },
   mixins: [
     common,
     links,
-    speechSessionTranscriptContextUrl,
+    agendaSessionVotesContextUrl,
     personTitle,
     sessionHeader,
     sessionOgImage,
@@ -42,7 +37,7 @@ export default {
     const { cardData } = this.$root.$options.contextData;
 
     return {
-      speech: cardData?.data?.results || {},
+      agendaItem: cardData?.data?.results || {},
     };
   },
 };
