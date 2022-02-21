@@ -38,7 +38,6 @@ export default {
 
     return {
       agendaItem: cardData?.data?.results || {},
-      session: cardData?.data?.session || {},
     };
   },
 };
