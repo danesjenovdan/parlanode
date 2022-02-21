@@ -55,15 +55,15 @@ localeFiles.forEach((localeFile) => {
     possibleCardName !== 'defaults' &&
     possibleCardName !== 'd3locales.js'
   ) {
-    const cardLocaleFile = path.resolve(localeFile);
-    if (possibleCardName.includes('tool/')) {
-      const newCardLocaleFile = cardLocaleFile.replace('tool/', 'tools/');
-      const newDirName = path.dirname(newCardLocaleFile);
-      if (!fs.existsSync(newDirName)) {
-        fs.mkdirSync(newDirName);
-      }
-      fs.renameSync(cardLocaleFile, newCardLocaleFile);
-    }
+    // const cardLocaleFile = path.resolve(localeFile);
+    // if (possibleCardName.includes('tool/')) {
+    //   const newCardLocaleFile = cardLocaleFile.replace('tool/', 'tools/');
+    //   const newDirName = path.dirname(newCardLocaleFile);
+    //   if (!fs.existsSync(newDirName)) {
+    //     fs.mkdirSync(newDirName);
+    //   }
+    //   fs.renameSync(cardLocaleFile, newCardLocaleFile);
+    // }
 
     // eslint-disable-next-line no-console
     console.error(
