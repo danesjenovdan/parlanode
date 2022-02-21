@@ -140,7 +140,7 @@ import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
 // import axios from 'axios';
 
 export default {
-  name: 'CardToolDiscord',
+  name: 'CardToolsDiscord',
   components: {
     ToolsTabs,
     PSearchDropdown,

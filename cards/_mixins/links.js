@@ -86,6 +86,14 @@ export default {
       const sessId = session?.id || vote?.session?.id || vote?.session_id;
       return `${urls.site}/${sm.session.base}/${sessId}/${sm.session.vote}/${vote?.id}`;
     },
+    getSessionAgendaLink(session) {
+      const { urls, siteMap: sm } = this.$root.$options.contextData;
+      return `${urls.site}/${sm.session.base}/${session?.id}/${sm.session.agenda}`;
+    },
+    getSessionAgendaCardLink(agendaItem) {
+      const { urls } = this.$root.$options.contextData;
+      return `${urls.cards}/minutes/single/?id=${agendaItem.id}&locale=${this.$i18n.locale}&template=share`;
+    },
     getSearchTermLink(term, { mps = [], pgs = [] } = {}) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
       const url = `${urls.site}/${sm.landing.sessions}/${sm.sessions.search.base}`;

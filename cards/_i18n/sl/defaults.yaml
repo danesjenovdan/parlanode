@@ -472,11 +472,14 @@ title: Ime
 other-procedures: Drugi postopki
 speech-link: Povezava do govora v transkriptu
 speech-card-link: Povezava to kartice govora
+minutes-agenda-link: Povezava do dnevnega reda
+minutes-item-card-link: Povezava to kartice točke zapisnika
 vote-roll-results: Poimensko glasovanje
 mayor: Župan
 website: Spletno mesto
 budget: Proračun
 agenda-items: Točke dnevnega reda
+agenda-item-point: '{num}. točka'
 material: Gradivo
 documents: Dokumenti
 other: Drugo
