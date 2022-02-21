@@ -143,3 +143,9 @@ $vote-results: (
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.agenda-item-icon {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/calendar.svg'), '#000', '#{$white}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
