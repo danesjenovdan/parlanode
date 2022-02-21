@@ -21,6 +21,9 @@
             <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.transcript %>" class="<%- activeTab === 'transkript' ? 'active' : '' %> nav-icon nav-icon-transcripts"><%- i18n('general.transcripts') %></a></li>
           <% } %>
           <!-- END DO NOT SHOW TRANSCRIPTS FOR WORKING GROUP SESSIONS -->
+          <% if (!session.has_transcript && session.has_minutes) { %>
+            <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.minutes %>" class="<%- activeTab === 'minutes' ? 'active' : '' %> nav-icon nav-icon-transcripts"><%- i18n('general.minutes') %></a></li>
+          <% } %>
         </ul>
       </div>
     </div>
