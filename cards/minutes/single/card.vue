@@ -1,6 +1,10 @@
 <template>
   <card-wrapper :header-config="headerConfig" max-height>
-    <minutes-item :agenda-item="agendaItem" :session="session" show-session />
+    <minutes-item
+      :agenda-item="agendaItem"
+      :session="agendaItem?.session"
+      show-session
+    />
   </card-wrapper>
 </template>
 
@@ -10,7 +14,7 @@ import common from '@/_mixins/common.js';
 import { personTitle } from '@/_mixins/titles.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
-// import { speechSessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
+import { agendaSessionVotesContextUrl } from '@/_mixins/contextUrls.js';
 import MinutesItem from '@/_components/MinutesItem.vue';
 
 export default {
@@ -21,7 +25,7 @@ export default {
   mixins: [
     common,
     links,
-    // speechSessionTranscriptContextUrl,
+    agendaSessionVotesContextUrl,
     personTitle,
     sessionHeader,
     sessionOgImage,

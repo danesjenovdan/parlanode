@@ -127,3 +127,14 @@ export const voteSessionVotesContextUrl = {
     );
   },
 };
+
+export const agendaSessionVotesContextUrl = {
+  created() {
+    const { template } = this.$root.$options.contextData;
+    template.contextUrl = links.methods.getSessionAgendaLink.call(
+      this,
+      this.cardData.data?.results,
+      this.cardData.data?.results?.session
+    );
+  },
+};
