@@ -133,6 +133,27 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.transcript}`], ar(async (rend
   }
 }));
 
+router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.minutes}`], ar(async (render, req, res, next) => {
+  const sesData = await getNewData(req.params.id);
+  if (sesData) {
+    render('seja/zapisnik', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: `${i18n('titles.session')} - ${i18n('titles.minutes')}`,
+        h1: sesData.session.name,
+        h2: slovenianDate(sesData.session.start_time),
+        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+      }),
+      activeMenu: 'session',
+      pageTitle: `${i18n('titles.session')} - ${i18n('titles.minutes')}`,
+      activeTab: 'minutes',
+      ...sesData,
+      page: req.query.page || 1,
+    });
+  } else {
+    next();
+  }
+}));
+
 router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar(async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
