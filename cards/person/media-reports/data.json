@@ -1,38 +1,65 @@
 {
   "data": {
-    "results": [{
-      "title": "Neka novica",
-      "url": "https://www.google.com/",
-      "report_date": "2021-11-24",
-      "medium": {
-        "name": "Danes je nov dan",
-        "url": "https://djnd.si/"
+    "results": [
+      {
+        "title": "report 2-15",
+        "url": "http://example.com/whatever",
+        "report_date": "2022-02-15",
+        "medium": {
+          "name": "Test medij",
+          "url": "http://example.com",
+          "order": 2
+        }
+      },
+      {
+        "title": "report 1-15",
+        "url": "http://google.com/whatever2",
+        "report_date": "2022-02-15",
+        "medium": {
+          "name": "drugi medij",
+          "url": "http://google.com",
+          "order": 1
+        }
+      },
+      {
+        "title": "report 1-14",
+        "url": "http://google.com/whatever2",
+        "report_date": "2022-02-14",
+        "medium": {
+          "name": "drugi medij",
+          "url": "http://google.com",
+          "order": 1
+        }
+      },
+      {
+        "title": "report 2-16",
+        "url": "http://example.com/whatever",
+        "report_date": "2022-02-16",
+        "medium": {
+          "name": "Test medij",
+          "url": "http://example.com",
+          "order": 2
+        }
       }
-    }, {
-      "title": "Neka druga novica",
-      "url": "https://www.google.com/",
-      "report_date": "2021-11-24",
-      "medium": {
-        "name": "Danes je nov dan",
-        "url": "https://djnd.si/"
-      }
-    }],
+    ],
     "mandate": {
       "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "beginning": "2018-12-17T12:00:00"
     },
     "person": {
-      "slug": "230-ana-zagozen",
-      "name": "Ana Zagožen",
+      "slug": "259-ales-cerin",
+      "name": "Aleš Čerin",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": null,
+      "preferred_pronoun": "he",
       "group": {
-        "name": "Slovenska demokratska stranka ",
-        "acronym": "",
-        "slug": "21-slovenska-demokratska-stranka"
+        "name": "Lista Zorana Jankovića",
+        "acronym": "LZJ",
+        "slug": "22-lista-zorana-jankovica",
+        "color": "#048EA2",
+        "classification": "pg"
       },
-      "image": null
+      "image": "/media/ales-cerin.png"
     }
   }
 }

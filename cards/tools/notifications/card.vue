@@ -465,7 +465,7 @@ import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 
 export default {
-  name: 'CardToolNotifications',
+  name: 'CardToolsNotifications',
   components: {
     TransparentWrapper,
     ToolsTabs,

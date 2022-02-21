@@ -229,7 +229,7 @@ question:
   asked--with-name--f: "{name} je zastavila vprašanje na temo: {title}."
   asked--with-name--plural: "{name} so zastavili vprašanje na temo: {title}."
   asked--group: "Svetniški klub {name} je zastavil vprašanje na temo: {title}."
-initiative: 
+initiative:
   asked--m: "Podal pobudo na temo: {title}."
   asked--f: "Podala pobudo na temo: {title}."
   asked--plural: "Podali pobudo na temo: {title}."
@@ -237,7 +237,7 @@ initiative:
   asked--with-name--f: "{name} je podala pobudo na temo: {title}."
   asked--with-name--plural: "{name} so podali pobudo na temo: {title}."
   asked--group: "Svetniški klub {name} je podal pobudo na temo: {title}."
-unknown: 
+unknown:
   asked--m: "Odprl temo: {title}."
   asked--f: "Odprla temo: {title}."
   asked--plural: "Odprli temo: {title}."
@@ -490,11 +490,14 @@ title: Ime
 other-procedures: Drugi postopki
 speech-link: Povezava do govora v transkriptu
 speech-card-link: Povezava to kartice govora
+minutes-agenda-link: Povezava do dnevnega reda
+minutes-item-card-link: Povezava to kartice točke zapisnika
 vote-roll-results: Poimensko glasovanje
 mayor: Župan
 website: Spletno mesto
 budget: Proračun
 agenda-items: Točke dnevnega reda
+agenda-item-point: '{num}. točka'
 material: Gradivo
 documents: Dokumenti
 other: Drugo
