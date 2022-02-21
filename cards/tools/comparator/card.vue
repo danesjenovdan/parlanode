@@ -182,7 +182,7 @@ import TextFrame from '@/_components/TextFrame.vue';
 import TimeChart from '@/_components/TimeChart.vue';
 
 export default {
-  name: 'CardToolComparator',
+  name: 'CardToolsComparator',
   components: {
     ToolsTabs,
     BarChart,

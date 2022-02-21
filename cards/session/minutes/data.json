@@ -1,0 +1,298 @@
+{
+  "id": 3778,
+  "url": "http://localhost:8000/v3/cards/session/minutes/?id=3778",
+  "data": {
+    "results": [
+      {
+        "id": 28631,
+        "name": "1. Potrditev zapisnika 20. seje Mestnega sveta Mestne občine Ljubljana",
+        "order": 1,
+        "text": "# Sample Markdown content\r\n\r\nsome text here some text here some text here some _text here some text here_ some text here some text _**here some text here**_ some text here some text here some text here some text here \r\n\r\n- one\r\n- two\r\n- three\r\n\r\n----\r\n\r\n\r\n\r\n> quote me\r\n\r\n\r\n\r\n```\r\nsome text here some **text here some** text here some text here some text here some text here some text here some text here some text here some text here some text here \r\n```",
+        "votes": [
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 91.11111111111111,
+              "max_option": "for"
+            },
+            "id": 9952,
+            "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 20. seje Mestnega sveta Mestne občine Ljubljana z dne 15. februarja 2021.",
+            "votes": {
+              "for": 41,
+              "against": 0,
+              "abstain": 1,
+              "absent": 3,
+              "did not vote": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 28634,
+        "name": "2. Vprašanja in pobude svetnikov ter odgovori na vprašanja in pobude",
+        "order": 2,
+        "text": null,
+        "votes": []
+      },
+      {
+        "id": 28788,
+        "name": "3. Poročilo župana",
+        "order": 64,
+        "text": null,
+        "votes": []
+      },
+      {
+        "id": 28791,
+        "name": "4. Kadrovske zadeve",
+        "order": 65,
+        "text": null,
+        "votes": [
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 51.11111111111111,
+              "max_option": "for"
+            },
+            "id": 10201,
+            "title": "I. V Svet javnega zdravstvenega zavoda Univerzitetni klinični center Ljubljana se za predstavnika Mestne občine Ljubljana imenuje: Rudi DOLŠAK. II. Mandat imenovanega traja štiri leta.",
+            "votes": {
+              "for": 23,
+              "against": 6,
+              "abstain": 5,
+              "absent": 11,
+              "did not vote": 0
+            }
+          },
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 51.11111111111111,
+              "max_option": "absent"
+            },
+            "id": 10202,
+            "title": "Mestna občina Ljubljana ne daje podpore nobeni kandidatki za ravnateljico Osnovne šole Vide Pregarc.",
+            "votes": {
+              "for": 22,
+              "against": 0,
+              "abstain": 0,
+              "absent": 23,
+              "did not vote": 0
+            }
+          },
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 75.55555555555556,
+              "max_option": "for"
+            },
+            "id": 10203,
+            "title": "Ini KREFT TOMAN, Miši STRŽINAR in Mariji VINCEK se da pozitivno mnenje h kandidaturi za ravnateljico Mladinskega doma Jarše.",
+            "votes": {
+              "for": 34,
+              "against": 3,
+              "abstain": 4,
+              "absent": 4,
+              "did not vote": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 28794,
+        "name": "5. Predlog Odloka o podlagah za odmero komunalnega prispevka za obstoječo komunalno opremo na območju Mestne občine Ljubljana s predlogom za hitri postopek",
+        "order": 66,
+        "text": null,
+        "votes": [
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 68.88888888888889,
+              "max_option": "for"
+            },
+            "id": 10206,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podlagah za odmero komunalnega prispevka za obstoječo komunalno opremo na območju Mestne občine Ljubljana sprejme po hitrem postopku.",
+            "votes": {
+              "for": 31,
+              "against": 3,
+              "abstain": 1,
+              "absent": 10,
+              "did not vote": 0
+            }
+          },
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 84.44444444444444,
+              "max_option": "for"
+            },
+            "id": 10207,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podlagah za odmero komunalnega prispevka za obstoječo komunalno opremo na območju Mestne občine Ljubljana.",
+            "votes": {
+              "for": 38,
+              "against": 1,
+              "abstain": 4,
+              "absent": 2,
+              "did not vote": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 28796,
+        "name": "6. Predlogi sklepov o soglasju k dodelitvi dela plače za delovno uspešnost ravnateljem javnih vzgojno-izobraževalnih zavodov: Vrtca Črnuče,  Vrtca dr. France Prešeren, Vrtca Galjevica, Vrtca Hansa Christiana Andersena, Vrtca Jarše, Vrtca Jelka, Vrtca Kolezija, Vrtca Ledina, Vrtca Miškolin, Vrtca Mladi rod, Vrtca Mojca, Vrtca Najdihojca, Vrtca Otona Zupančiča, Vrtca Pedenjped, Vrtca Pod Gradom, Vrtca Šentvid, Vrtca Trnovo, vrtca Viški vrtci, Vrtca Vodmat in Vrtca Vrhovci iz naslova povečanega obsega dela",
+        "order": 67,
+        "text": null,
+        "votes": [
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 75.55555555555556,
+              "max_option": "for"
+            },
+            "id": 10209,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predloge sklepov o soglasju k dodelitvi dela plače za delovno uspešnost ravnateljem javnih vzgojno-izobraževalnih zavodov: Vrtca Črnuče, Vrtca dr. France Prešeren, Vrtca Galjevica, Vrtca Hansa Christiana Andersena, Vrtca Jarše, Vrtca Jelka, Vrtca Kolezija, Vrtca Ledina, Vrtca Miškolin, Vrtca Mladi rod, Vrtca Mojca, Vrtca Najdihojca, Vrtca Otona Zupančiča, Vrtca Pedenjped, Vrtca Pod Gradom, Vrtca Šentvid, Vrtca Trnovo, vrtca Viški vrtci, Vrtca Vodmat in Vrtca Vrhovci iz naslova povečanega obsega dela.",
+            "votes": {
+              "for": 34,
+              "against": 0,
+              "abstain": 5,
+              "absent": 6,
+              "did not vote": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 28798,
+        "name": "7. Predlog Sklepa o pozitivnem predhodnem mnenju k Strateškem načrtu javnega zavoda Center urbane kulture Kino Šiška 2021 -2025",
+        "order": 68,
+        "text": null,
+        "votes": [
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 82.22222222222221,
+              "max_option": "for"
+            },
+            "id": 10211,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o pozitivnem predhodnem mnenju k Strateškem načrtu javnega zavoda Center urbane kulture Kino Šiška 2021 -2025.",
+            "votes": {
+              "for": 37,
+              "against": 0,
+              "abstain": 7,
+              "absent": 1,
+              "did not vote": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 28800,
+        "name": "8. Predlog Sklepa o pozitivnem predhodnem mnenju k Strateškemu načrtu javnega zavoda Festival Ljubljana 2021 – 2025",
+        "order": 69,
+        "text": null,
+        "votes": [
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 64.44444444444444,
+              "max_option": "for"
+            },
+            "id": 10213,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o pozitivnem predhodnem mnenju k Strateškemu načrtu javnega zavoda Festival Ljubljana 2021 – 2025.",
+            "votes": {
+              "for": 29,
+              "against": 0,
+              "abstain": 13,
+              "absent": 3,
+              "did not vote": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 28802,
+        "name": "9. Predlog Sklepa o pozitivnem predhodnem mnenju k Strategiji razvoja 2021-2025 javnega zavoda Muzej in galerije mesta Ljubljane",
+        "order": 70,
+        "text": null,
+        "votes": [
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 95.55555555555556,
+              "max_option": "for"
+            },
+            "id": 10215,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o pozitivnem predhodnem mnenju k Strategiji razvoja 2021-2025 javnega zavoda Muzej in galerije mesta Ljubljane.",
+            "votes": {
+              "for": 43,
+              "against": 0,
+              "abstain": 1,
+              "absent": 1,
+              "did not vote": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 28804,
+        "name": "10. Predlog Sklepa o pozitivnem predhodnem mnenju k Strateškem načrtu javnega zavoda Mednarodni grafični likovni center 2021 – 2025",
+        "order": 71,
+        "text": null,
+        "votes": [
+          {
+            "result": {
+              "is_outlier": false,
+              "passed": true,
+              "max_option_percentage": 88.88888888888889,
+              "max_option": "for"
+            },
+            "id": 10216,
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o pozitivnem predhodnem mnenju k Strateškem načrtu javnega zavoda Mednarodni grafični likovni center 2021 – 2025.",
+            "votes": {
+              "for": 40,
+              "against": 0,
+              "abstain": 2,
+              "absent": 3,
+              "did not vote": 0
+            }
+          }
+        ]
+      }
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    },
+    "session": {
+      "name": "21. seja Mestnega sveta MOL",
+      "id": 3778,
+      "start_time": "2021-03-29T15:30:00",
+      "end_time": null,
+      "organizations": [
+        {
+          "name": "Mestni svet MOL",
+          "acronym": null,
+          "slug": "1-mestni-svet-mol",
+          "color": "#09A2CC",
+          "classification": "root"
+        }
+      ],
+      "classification": "regular",
+      "in_review": false
+    },
+    "count": 17,
+    "pages": 2,
+    "page": 1,
+    "per_page": 10
+  }
+}
