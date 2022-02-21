@@ -121,7 +121,7 @@ import TextFrame from '@/_components/TextFrame.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 
 export default {
-  name: 'CardToolWordGroups',
+  name: 'CardToolsWordGroups',
   components: {
     ToolsTabs,
     BarChart,
