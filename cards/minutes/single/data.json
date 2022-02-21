@@ -1,85 +1,54 @@
 {
-  "id": 30435,
-  "url": "https://parladata.lb.djnd.si/v3/cards/session/agenda-item/?id=30435",
+  "id": 28631,
+  "url": "http://localhost:8000/v3/cards/minutes/single/?id=28631",
   "data": {
     "results": {
-      "id": 30435,
-      "tags": [],
-      "name": "2. Imenovanje podpredsednika/ce Odbora za gospodarske dejavnosti, turizem in kmetijstvo",
-      "order": 2,
-      "text": "# Sample Markdown content\r\n\r\nsome text here some text here some text here some _text here some text here_ some text here some text _**here some text here**_ some text here some text here some text here some text here \r\n\r\n- one\r\n- two\r\n- three\r\n\r\n----\r\n\r\n\r\n\r\n> quote me\r\n\r\n\r\n\r\n```\r\nsome text here some **text here some** text here some text here some text here some text here some text here some text here some text here some text here some text here \r\n```",
-      "documents": [],
+      "id": 28631,
+      "name": "1. Potrditev zapisnika 20. seje Mestnega sveta Mestne občine Ljubljana",
+      "order": 1,
+      "text": null,
       "votes": [
         {
           "result": {
             "is_outlier": false,
             "passed": true,
-            "max_option_percentage": 48.888888888888886,
+            "max_option_percentage": 91.11111111111111,
             "max_option": "for"
           },
-          "id": 9915,
-          "title": "GLASOVANJE O DNEVNEM REDU: Mestni svet Mestne občine Ljubljana sprejme predlog dnevnega reda 27. seje mestnega sveta skupaj s sprejeto spremembo.",
+          "id": 9952,
+          "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 20. seje Mestnega sveta Mestne občine Ljubljana z dne 15. februarja 2021.",
           "votes": {
-            "absent": 19,
-            "abstain": 0,
-            "for": 22,
-            "against": 4
-          }
-        },
-        {
-          "result": {
-            "is_outlier": false,
-            "passed": true,
-            "max_option_percentage": 46.666666666666664,
-            "max_option": "for"
-          },
-          "id": 9914,
-          "title": "Dnevni red 27. seje Mestnega sveta Mestne občine Ljubljana z dne 15. 11. 2021 se razširi z novo 21. točko z naslovom: »Predlog Sklepa o spremembi družbene pogodbe družbe BEŽIGRAJSKI ŠPORTNI PARK športni marketing d.o.o.«.",
-          "votes": {
-            "absent": 7,
+            "for": 41,
+            "against": 0,
             "abstain": 1,
-            "for": 21,
-            "against": 16
+            "absent": 3,
+            "did not vote": 0
           }
-        },
-        {
-          "result": {
-            "is_outlier": false,
-            "passed": true,
-            "max_option_percentage": 73.33333333333333,
-            "max_option": "for"
-          },
-          "id": 9919,
-          "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 26. seje Mestnega sveta Mestne občine Ljubljana z dne 18. oktobra 2021.",
-          "votes": {
-            "absent": 8,
-            "abstain": 4,
-            "for": 33,
-            "against": 0
-          }
-        }
-      ]
-    },
-    "mandate": {
-      "description": "Mestni svet MOL 2018–2022",
-      "beginning": "2018-12-17T12:00:00"
-    },
-    "session": {
-      "name": "27. seja Mestnega sveta MOL",
-      "id": 3772,
-      "start_time": "2021-11-15T15:30:00",
-      "end_time": null,
-      "organizations": [
-        {
-          "name": "Mestni svet MOL",
-          "acronym": null,
-          "slug": "1-mestni-svet-mol",
-          "color": "#09A2CC",
-          "classification": "root"
         }
       ],
-      "classification": "regular",
-      "in_review": false
+      "session": {
+        "name": "21. seja Mestnega sveta MOL",
+        "id": 3778,
+        "start_time": "2021-03-29T15:30:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Mestni svet MOL",
+            "acronym": null,
+            "slug": "1-mestni-svet-mol",
+            "color": "#09A2CC",
+            "classification": "root"
+          }
+        ],
+        "classification": "regular",
+        "in_review": false,
+        "has_transcript": true,
+        "has_minutes": true
+      }
+    },
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
     }
   }
 }
