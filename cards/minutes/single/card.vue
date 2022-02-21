@@ -14,7 +14,7 @@ import { sessionOgImage } from '@/_mixins/ogImages.js';
 import MinutesItem from '@/_components/MinutesItem.vue';
 
 export default {
-  name: 'CardSessionMinutesItem',
+  name: 'CardMinutesSingle',
   components: {
     MinutesItem,
   },

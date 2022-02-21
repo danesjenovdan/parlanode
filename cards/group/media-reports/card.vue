@@ -37,7 +37,7 @@ import { partyTitle } from '@/_mixins/titles.js';
 import { groupBy } from 'lodash-es';
 
 export default {
-  name: 'CardPersonMediaReports',
+  name: 'CardGroupMediaReports',
   mixins: [
     common,
     partyOverviewContextUrl,
