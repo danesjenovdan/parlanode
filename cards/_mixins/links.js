@@ -92,7 +92,7 @@ export default {
     },
     getSessionAgendaCardLink(agendaItem) {
       const { urls } = this.$root.$options.contextData;
-      return `${urls.cards}/session/minutes-item/?id=${agendaItem.id}&locale=${this.$i18n.locale}&template=share`;
+      return `${urls.cards}/minutes/single/?id=${agendaItem.id}&locale=${this.$i18n.locale}&template=share`;
     },
     getSearchTermLink(term, { mps = [], pgs = [] } = {}) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;

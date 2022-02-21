@@ -7,7 +7,7 @@
         </a>
         <a :href="getSessionAgendaLink(session)" class="funblue-light-hover">
           <span class="name">{{
-            $t('agenda-item-point', { num: itemNumber })
+            $t('agenda-item-point', { num: agendaItem.order })
           }}</span>
         </a>
       </div>
@@ -62,13 +62,13 @@
       <a
         :href="getSessionAgendaLink(session)"
         class="link"
-        :title="$t('speech-link')"
+        :title="$t('minutes-agenda-link')"
       ></a>
       <a
         v-if="!showSession"
         :href="getSessionAgendaCardLink(agendaItem)"
         class="share"
-        :title="$t('speech-card-link')"
+        :title="$t('minutes-item-card-link')"
       ></a>
     </div>
   </div>
