@@ -2,7 +2,7 @@
   <card-wrapper :header-config="headerConfig" max-height>
     <minutes-item
       :agenda-item="agendaItem"
-      :session="agendaItem?.session"
+      :session="agendaItem?.session || {}"
       show-session
     />
   </card-wrapper>
@@ -38,7 +38,6 @@ export default {
 
     return {
       agendaItem: cardData?.data?.results || {},
-      session: cardData?.data?.session || {},
     };
   },
 };

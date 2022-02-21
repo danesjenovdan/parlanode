@@ -3,7 +3,7 @@
     <speech
       v-quotable
       :speech="speech"
-      :session="speech?.session"
+      :session="speech?.session || {}"
       show-session
     />
   </card-wrapper>
