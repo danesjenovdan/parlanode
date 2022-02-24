@@ -1,8 +1,8 @@
 card:
   title: Največkrat glasujejo enako
   info: >-
-    # Seznam 5 poslancev, ki največkrat glasujejo enako kot izbrani/-a
-    poslanec/-ka. Poslanci so razvrščeni glede na vrednosti od najmanjše proti
+    # Seznam 5 poslancev, ki največkrat glasujejo enako kot izbrani_a
+    poslanec_ka. Poslanci so razvrščeni glede na vrednosti od najmanjše proti
     največji. Manjša kot je vrednost, večje je ujemanje glasovanj.
 
 
@@ -21,6 +21,6 @@ card:
 
     * -1: proti
 
-    * 0: vzdržan/-a ali ni prisoten/-na
+    * 0: vzdržan_a ali ni prisoten_na
 
     * 1: za

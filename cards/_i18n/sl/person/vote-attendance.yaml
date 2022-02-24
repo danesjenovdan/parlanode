@@ -1,10 +1,10 @@
 card:
   title: Prisotnost na glasovanjih sej DZ
   info: >-
-    # Prisotnosti poslanca/-ke na glasovanjih DZ v primerjavi s povprečjem in
+    # Prisotnosti poslanca_ke na glasovanjih DZ v primerjavi s povprečjem in
     največjo vrednostjo.
 
 
-    Preštejemo vse oddane glasovnice poslanca/-ke in število delimo s številom
-    vseh glasovanj, na katerih bi moral/-a poslanec/-ka glasovati. Rezultat
+    Preštejemo vse oddane glasovnice poslanca_ke in število delimo s številom
+    vseh glasovanj, na katerih bi moral_a poslanec_ka glasovati. Rezultat
     izpišemo skupaj s povprečno in največjo vrednostjo.
