@@ -11,6 +11,11 @@ card:
     številčne vrednosti med -1 in 1).
 
 
+    Pri računanju rezultata poslanskih skupin ignoriramo "odsotne" glasovnice,
+    da dobimo pozitivno mnenje poslanske skupine. Če je celotna poslanska
+    skupina odsotna, to glasovanje umaknemo iz analize.
+
+
     Ko izračunamo "razdaljo" med vsemi poslanci, jih razvrstimo glede na
     rezultat in prikažemo prvih pet.
 
@@ -20,6 +25,6 @@ card:
 
     * -1: proti
 
-    * 0: vzdržan/-a ali ni prisoten/-na
+    * 0: vzdržan_a ali ni prisoten_a
 
     * 1: za
