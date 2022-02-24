@@ -5,7 +5,7 @@
     "description": "Razišči, kdo so poslanci in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je Državni zbor sprejel v tem mandatu.",
     "search": {
       "part_one": "Išči",
-      "part_two": "odloke in akte, glasovanja, svetnike, svetniške klube ali njihove govore"
+      "part_two": "odloke in akte, glasovanja, poslance, poslanske skupine ali njihove govore"
     }
   },
   "about": {
@@ -49,14 +49,14 @@
   "menu": {
     "legislation": "Odloki in akti",
     "sessions": "Seje",
-    "mps": "Svetniki",
-    "pgs": "Svetniški klubi",
+    "mps": "Poslanci",
+    "pgs": "Poslanske skupine",
     "tools": "Orodja"
   },
   "footer": {
     "heading": "Parlameter",
     "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
-    "contact_mail": "mol@parlameter.si",
+    "contact_mail": "info@parlameter.si",
     "about_heading": "O projektu",
     "about": "Predstavitev Parlametra",
     "about_municipality": "O projektu Tvoja občina",
