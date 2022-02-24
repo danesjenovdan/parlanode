@@ -1,4 +1,4 @@
-const sitemap = require('../i18n/sl-obcine/sitemap.json');
+const sitemap = require('../i18n/sl/sitemap.json');
 
 const config = {
   port: 3066,
