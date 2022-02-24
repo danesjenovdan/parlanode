@@ -1,10 +1,8 @@
 card:
   title: Zadnjih 30 dni aktivnosti
   info: >-
-    # Povezave do vseh poslančevih/-kinih glasovanj in govorov, ki so se zgodili
-    v zadnjih desetih dneh, ko je bil/-a poslanec/-ka aktiven/-a.
+    # Povezave do vseh glasovanj in govorov te osebe, ki so se zgodili v zadnjih
+    tridesetih dneh.
 
 
-    Podatke dobimo s spletnega mesta Državnega zbora. Na kartici izpisujemo
-    povezave do vseh poslančevih/-kinih glasovanj in govorov, ki so se zgodili v
-    zadnjih desetih dneh, ko je bil/-a poslanec/-ka aktiven/-a.
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).

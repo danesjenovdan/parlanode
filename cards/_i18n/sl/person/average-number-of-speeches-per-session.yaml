@@ -1,14 +1,13 @@
 card:
   title: Povprečno število govorov na sejo
   info: >-
-    # Povprečno število govorov poslanca/-ke na sejo v primerjavi s povprečno in
+    # Povprečno število govorov poslanca_ke na sejo v primerjavi s povprečno in
     največjo vrednostjo.
 
 
-    Preštejemo poslačeve/-kine govore, ki jih najdemo v transkriptih,
-    pridobljenih s spletnega mesta [DZ
-    RS](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje)
-    in število delimo s številom sej, na katerih je bil/-a poslanec/-ka
-    prisoten/-na. Število vseh govorov delimo najprej s številom poslancev,
-    potem pa še s številom vseh sej (na katerih se je govorilo). Individualni
-    rezultat primerjamo s povprečnim in najvišjim.
+    Preštejemo govore poslanca_ke, ki jih najdemo v transkriptih, pridobljenih s
+    spletnega mesta [DZ RS](https://www.dz-rs.si/), in število delimo s številom
+    sej, na katerih je bil_a poslanec_ka prisoten_na. Število vseh govorov
+    delimo najprej s številom poslancev, potem pa še s številom vseh sej (na
+    katerih se je govorilo). Individualni rezultat primerjamo s povprečnim in
+    najvišjim.
