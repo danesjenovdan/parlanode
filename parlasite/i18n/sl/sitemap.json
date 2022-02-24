@@ -25,14 +25,14 @@
         "wordGroups": "skupine-besed"
     },
     "member": {
-        "leaderBase": "zupan",
-        "base": "p",
+        "leaderBase": "predsednik-dz",
+        "base": "poslanec",
         "overview": "pregled",
         "votings": "glasovanja",
         "speeches": "govori"
     },
     "party": {
-        "base": "ps",
+        "base": "poslanska-skupina",
         "overview": "pregled",
         "votings": "glasovanja",
         "speeches": "govori"
