@@ -4,6 +4,6 @@ card:
     # Pregled pogostosti pojavljanja iskalnega niza v govorih glede na čas.
 
 
-    Preštejemo pojavitve iskanega niza skozi cel mandat in jih seštejemo po
+    Preštejemo pojavitve iskanega niza skozi mandat in jih seštejemo po
     mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem
     letu.

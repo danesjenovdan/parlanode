@@ -1,7 +1,7 @@
 card:
   title: Neujemanje s poslansko skupino
   info: >-
-    # Odstopanje poslanca od večinskega glasu lastne poslanske skupine v
+    # Odstopanje poslanca_ke od večinskega glasu lastne poslanske skupine v
     primerjavi s povprečno in največjo vrednostjo.
 
 
@@ -9,6 +9,6 @@ card:
     Večinski glas je opcija, za katero se je odločilo največ poslancev.
 
 
-    Za vsakega poslanca najdemo trenutno poslansko skupino in izračunamo
-    odstotek ujemanja glasov v obdobju članstva. Pri vseh izračunih ignoriramo
-    glasovnice "ni prisoten".
+    Za vsakega poslanca_ko najdemo trenutno poslansko skupino in izračunamo
+    odstotek neujemanja glasov v obdobju članstva v DZ. Večji kot
+    je prikazan odstotek, večje je neujemanje poslanca_ke s poslansko skupino.

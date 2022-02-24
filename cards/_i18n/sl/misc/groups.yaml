@@ -1,2 +1,8 @@
 card:
   title: Seznam poslanskih skupin
+  info: >-
+    # Trenutno aktivne poslanske skupine.
+
+    Na zavihkih prikažemo poslanske skupine po številu sedežev ter glede
+    na rezultate analize s prisotnostjo na glasovanjih in rezultate
+    analize po št. poslanskih vprašanj in pobud.

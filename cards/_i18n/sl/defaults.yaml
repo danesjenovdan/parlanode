@@ -34,7 +34,7 @@ steps:
   - textfirst: Samo še tvoj e-naslov
   - textfirst: Zabeleženo!
     textsecond: Na e-naslov
-    textthird: si vklopil/-a obvestila za iskalni niz
+    textthird: si vklopil_a obvestila za iskalni niz
     textfourth: >-
       Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
       mejlu.
@@ -336,7 +336,7 @@ analysis-texts:
     label: Št. poslanskih vprašanj in pobud
     titleSuffix: ' po št. poslanskih vprašanj in pobud'
     explanation: >-
-      Število poslanskih vprašanj in pobud, ki jih je poslanec/-ka zastavil/-a v
+      Število poslanskih vprašanj in pobud, ki jih je poslanec_ka zastavil_a v
       tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.
   speeches_per_session:
     label: Št. govorov na sejo
@@ -371,8 +371,8 @@ deputy-leader--m: Namestnik
 deputy-leader--f: Namestnica
 number-of-seats: 'Število poslanskih sedežev'
 contact: 'Kontakt'
-mp: Poslanec/-ka
-addressee: Naslovljenec/-ka
+mp: Poslanec_ka
+addressee: Naslovljenec_ka
 analysis-texts--party:
   seat_count:
     label: Število sedežev
@@ -384,9 +384,9 @@ analysis-texts--party:
     label: Prisotnost na sejah DZ
     titleSuffix: ' glede na rezultate analize s prisotnostjo na sejah DZ'
     explanation: >-
-      Preštejemo vse seje in za vsakega poslanca/-ko PS preverimo, če je na
-      posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo
-      kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti poslancev PS na
+      Preštejemo vse seje in za vsakega poslanca_ko PS preverimo, če je na
+      posamezni seji vsaj enkrat glasoval_a. V primeru, da je, osebo štejemo
+      kot prisotnego na tej seji. Seštevek vseh prisotnosti poslancev PS na
       sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom
       sej in normaliziramo (min 1 - max 100).
   vote_attendance:
