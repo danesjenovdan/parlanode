@@ -5,5 +5,5 @@ card:
     in največjo vrednostjo.
 
 
-    Število glasovanj, ko je poslanska skupina prisotna na glasovanjih delimo s
-    številom vseh glasovanj in normaliziramo (min 1 - max 100).
+    Število glasovanj, na katerih je poslanska skupina prisotna, delimo s
+    številom vseh glasovanj in pretvorimo v odstotke (* 100).

@@ -6,6 +6,4 @@ card:
 
     Po transkriptih vseh sej poiščemo in izpišemo povezave do vseh govorov, v
     katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu od
-    najnovejše do najstarejše. Zajeto množico poslancev določajo uporabniške
-    nastavitve filtrov, in sicer glede na časovno obdobje, poslanca/-ko in/ali
-    poslansko skupino in/ali sejo.
+    najnovejše do najstarejše.

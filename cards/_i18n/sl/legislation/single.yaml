@@ -1,10 +1,10 @@
 card:
   title: Zakon
   info: >-
-    # Povzetek zakona/akta in rezultati vseh z njim povezanih glasovanj.
+    # Zakon in rezultati vseh z njim povezanih glasovanj.
 
 
-    Iz [www.dz-rs.si](https://www.dz-rs.si) naložimo glasovanja, ki so večinoma
-    opremljena z EPA številkami. Glasovanja, ki imajo isto EPA številko,
-    združimo pod zakonom ali aktom, ki mu številka pripada. Kartico opremimo še
-    s povzetkom zakona, ki ga pripravimo sami.
+    S spletnega mesta [DZ RS](https://www.dz-rs.si/) pridobimo informacije o
+    zakonih in glasovanjih, ki jih med seboj povežemo. V prvem zavihku
+    (Glasovanja) prikažemo vsa glasovanja, ki so povezana z izbranim zakonom, v
+    drugem zavihku (Dokumenti) pa prikažemo z zakonom povezane dokumente.

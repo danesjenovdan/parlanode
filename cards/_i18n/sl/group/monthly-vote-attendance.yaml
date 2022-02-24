@@ -1,9 +1,9 @@
 card:
   title: Prisotnost na glasovanjih sej DZ skozi čas
   info: >-
-    # Prisotnost poslanske skupine na glasovanjih DZ skozi čas.
+    # Prisotnost poslanske skupine na glasovanjih sej DZ skozi čas.
 
 
-    Seštejemo število glasovanj, na katerih bi v izbranem mesecu morali biti
-    prisotni poslanci poslanske skupine, in z odstotki prikažemo, kolikšnega
-    deleža glasovanj so se udeležili.
+    Izračunamo število glasovanj, na katerih bi v izbranem mesecu morali biti
+    prisotni poslanci poslanske skupine, preštejemo njihove oddane glasovnice
+    (ignoriramo "odsotne") in z odstotki prikažemo delež glasovanj, ki so se jih udeležili.
