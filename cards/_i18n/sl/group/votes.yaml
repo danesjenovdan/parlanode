@@ -1,12 +1,20 @@
 card:
   title: Glasovanja
   info: >-
-    # Pregled vseh glasovanj, ki so se zgodila na seji.
+    # Pregled vseh glasovanj in večinskega glasu poslanske skupine
 
 
     Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI,
-    VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.
+    VZDRŽAN_A) in število poslancev, ki niso glasovali, ter izpišemo rezultate
+    glede na najpogostejši glas ali odsotnost.
 
 
-    Nabor glasovanj pridobimo s spletnega mesta [DZ
-    RS](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Nabor glasovanj pridobimo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
+
+
+    Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
+    pri vzdržanih in odsotnih glasovih ne moremo zagotavljati. Prisotnost poslancev
+    se na sejah DZ ne preverja na vsakem glasovanju, zato se lahko zgodi,
+    da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
+    z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
+    kot odsotna (rezultat: ni glasoval/a).

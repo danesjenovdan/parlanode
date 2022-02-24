@@ -1,9 +1,8 @@
 card:
   title: Poslanska vprašanja in pobude
   info: >-
-    # Izpis vseh poslanskih vprašanj in pobud, ki ji je poslanec/-ka postavil/-a
-    v tem sklicu DZ RS.
+    # Izpis vseh poslanskih vprašanj in pobud, ki ji je poslanec_ka postavil_a
+    v tem mandatu.
 
 
-    Podatke pridobivamo s spletnega mesta [DZ
-    RS](https://www.dz-rs.si/wps/portal/Home/deloDZ/poslanskaVprasanjaInPobude/).
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).

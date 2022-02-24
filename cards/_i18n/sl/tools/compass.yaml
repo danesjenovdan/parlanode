@@ -6,8 +6,8 @@ card:
     glasovalna zgodovina razlikuje.
 
 
-    Za vsakega/-o poslanca/-ko posebej prikličemo zgodovino glasovanj (ali
-    neprisotnosti). Zgodovino glasovanj vsake/-ga poslanke/-ca primejamo z
+    Za vsakega_o poslanca_ko posebej prikličemo zgodovino glasovanj (ali
+    neprisotnosti). Zgodovino glasovanj vsake_ga poslanke_ca primejamo z
     zgodovino glasovanj vseh drugih poslancev in preštejemo, kolikokrat sta
     poslanca glasovala enako. Rezultate postavimo v dvodimenzionalno matriko
     (vrstice in stolpci so poslanci, vrednost X(i,j) predstavlja, kolikokrat sta
@@ -23,7 +23,7 @@ card:
 
     O prvi matriki lahko razmišljamo kot o poslancih, ki se nahajajo v
     N-dimenzionalnem prostoru (N je število glasovanj, ki jih primerjamo med
-    sabo, oz. najdaljša zgodovina glasovanj enega poslanca/-ke). Algoritem
+    sabo, oz. najdaljša zgodovina glasovanj enega poslanca_ke). Algoritem
     ustvari preslikavo iz N dimenzij na 2, pri čemer skuša čim bolj ohraniti
     razdalje med poslanci. Dlje kot sta poslanca na političnem kompasu, bolj se
     njuna glasovalna zgodovina razlikuje.

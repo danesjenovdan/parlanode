@@ -11,3 +11,7 @@ card:
     tistih, ki so glasovali za najbolj popularno opcijo. Ta odstotek odštejemo
     do 100 in dobimo stopnjo neenotnosti oz. odstotek poslank in poslancev, ki
     se z večinskim glasom niso strinjali.
+
+
+    Na podlagi rezultatov individualnih glasovanj izračunamo povprečni odstotek
+    nestrinjanja, ki ga prikažemo v kartici.
