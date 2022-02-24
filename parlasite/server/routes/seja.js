@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const { asyncRender: ar } = require('../utils');
+const { asyncRender: ar, getOgImageUrl, slovenianDate } = require('../utils');
 const { siteMap: sm, urls } = require('../../config');
 const { i18n } = require('../server');
 
@@ -32,10 +32,36 @@ async function getNewData(id) {
   return false;
 }
 
+const SESSION_CLASSIFICATIONS = {
+  unknown: {
+    icon: 'seja-neznana',
+  },
+  regular: {
+    icon: 'seja-redna',
+  },
+  irregular: {
+    icon: 'seja-izredna',
+  },
+  correspondent: {
+    icon: 'seja-na-daljavo',
+  },
+};
+
+function sessionClassification(classification) {
+  const key = classification || 'unknown';
+  return SESSION_CLASSIFICATIONS[key] || SESSION_CLASSIFICATIONS.unknown;
+}
+
 router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     render('seja/dnevni-red', { // TODO this used to take you to zakonodaja
+      ogImageUrl: getOgImageUrl('circle', {
+        title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
+        h1: sesData.session.name,
+        h2: slovenianDate(sesData.session.start_time),
+        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+      }),
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`, // TODO this used to take you to zakonodaja (title.legislation)
       activeTab: 'dnevni-red', // TODO this used to take you to zakonodaja
@@ -50,6 +76,12 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.otherVotings}`], ar(async (re
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     render('seja/glasovanja', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
+        h1: sesData.session.name,
+        h2: slovenianDate(sesData.session.start_time),
+        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+      }),
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
       activeTab: 'glasovanja',
@@ -64,6 +96,12 @@ router.get(`/:id(\\d+)/${sm.session.agenda}`, ar(async (render, req, res, next) 
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     render('seja/dnevni-red', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
+        h1: sesData.session.name,
+        h2: slovenianDate(sesData.session.start_time),
+        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+      }),
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
       activeTab: 'dnevni-red',
@@ -78,9 +116,36 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.transcript}`], ar(async (rend
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     render('seja/transkript', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: `${i18n('titles.session')} - ${i18n('titles.transcript')}`,
+        h1: sesData.session.name,
+        h2: slovenianDate(sesData.session.start_time),
+        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+      }),
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.transcript')}`,
       activeTab: 'transkript',
+      ...sesData,
+      page: req.query.page || 1,
+    });
+  } else {
+    next();
+  }
+}));
+
+router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.minutes}`], ar(async (render, req, res, next) => {
+  const sesData = await getNewData(req.params.id);
+  if (sesData) {
+    render('seja/zapisnik', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: `${i18n('titles.session')} - ${i18n('titles.minutes')}`,
+        h1: sesData.session.name,
+        h2: slovenianDate(sesData.session.start_time),
+        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+      }),
+      activeMenu: 'session',
+      pageTitle: `${i18n('titles.session')} - ${i18n('titles.minutes')}`,
+      activeTab: 'minutes',
       ...sesData,
       page: req.query.page || 1,
     });
@@ -96,6 +161,12 @@ router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar(async (render, re
     const isValid = await isMotionValid(sesData.session.id, motionId);
     if (isValid) {
       render('seja/glasovanje', {
+        ogImageUrl: getOgImageUrl('circle', {
+          title: `${i18n('titles.session')} - ${i18n('titles.voting')}`,
+          h1: sesData.session.name,
+          h2: slovenianDate(sesData.session.start_time),
+          icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+        }),
         activeMenu: 'session',
         pageTitle: `${i18n('titles.session')} - ${i18n('titles.voting')}`,
         activeTab: 'glasovanje',

@@ -43,6 +43,7 @@
         "otherVotings": "glasovanja",
         "transcript": "transkript",
         "agenda": "dnevni-red",
-        "vote": "glasovanje"
+        "vote": "glasovanje",
+        "minutes": "zapisnik"
     }
 }
