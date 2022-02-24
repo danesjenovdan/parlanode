@@ -5,27 +5,34 @@ card:
   votes-title: Glasovanja
   info: >-
     # Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem
-    mestu [DZ
-    RS](http://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    mestu [DZ RS](https://www.dz-rs.si/).
 
 
-    # Besede, ki so zaznamovale sejo
+    ## BESEDE, KI SO ZAZNAMOVALE SEJO
 
 
-    Analizo izvajamo po statistiki
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf). Korpus predstavljajo vsi
-    govori, dokument pa vsi govori na seji.
+    Analizo izvajamo po statistiki [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.
 
 
-    # Prisotnost poslanskih skupin na glasovanjih seje
+    ## PRISOTNOST POSLANSKIH SKUPIN NA GLASOVANJIH SEJE
 
 
-    Poslanske skupine razvrstimo glede na odstotek, na koliko glasovanjih
-    izbrane seje so bili prisotni njihovi poslanci in poslanke.
+    Poslanske skupine razvrstimo glede na odstotek, ki je seštevek prisotnosti
+    njihovih poslank in poslancev na glasovanjih izbrane seje.
 
 
-    # Glasovanja
+    ## GLASOVANJA
 
 
     Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI,
-    VZDRŽAN/-A) in število poslancev, ki niso glasovali, ter izpišemo rezultate.
+    VZDRŽAN_A) in število poslancev, ki niso glasovali, ter izpišemo rezultat
+    glede na najpogostejši glas ali odsotnost.
+
+
+    Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
+    pri vzdržanih in odsotnih glasov ne moremo zagotavljati. Prisotnost poslancev
+    se na sejah DZ ne preverja na vsakem glasovanju, zato se lahko zgodi,
+    da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
+    z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
+    kot odsotna (rezultat: ni glasoval/a).

@@ -24,9 +24,9 @@ card:
     govorih glede na povprečje, izračunano za celoten sklic. Delež se izračuna
     po naslednjem algoritmu: vzamejo se vsi poslančevi/-kini govori, prešteje se
     število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se
-    izvede za vse poslance, nato se deli vrednost kategorije za poslanca/-ko z
+    izvede za vse poslance, nato se deli vrednost kategorije za poslanca_ko z
     vrednostjo povprečja (seštevek vrednosti vseh poslancev, deljen s številom
-    poslancev). Vrednost vsake kategorije za poslanca/-ko se normalizira (min. 1
+    poslancev). Vrednost vsake kategorije za poslanca_ko se normalizira (min. 1
     – max. 100).
 
 
