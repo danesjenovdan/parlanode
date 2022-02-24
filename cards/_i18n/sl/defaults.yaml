@@ -116,7 +116,7 @@ education: Izobrazba
 number-of-votes: Število glasov
 number-of-points: Število točk
 number-of-terms: Število mandatov
-previous-occupation: Prejšnji status
+previous-occupation: Poklic / delovno mesto
 district: Okraj
 birth-date: Rojstni dan
 gender: Spol
@@ -138,13 +138,17 @@ maximum: Največ
 coalition: koalicija
 opposition: opozicija
 vote-for: Za
+vote-for-plural: Za
 vote-against: Proti
+vote-against-plural: Proti
 vote-abstain: Vzdržan
 vote-abstain--m: Vzdržan
 vote-abstain--f: Vzdržana
 vote-abstain-plural: Vzdržani
-vote-absent: Ni
-vote-absent-plural: Niso
+vote-absent: Odsoten
+vote-absent-plural: Odsotni
+vote-did-not-vote: Ni glasoval
+vote-did-not-vote-plural: Brez glasu
 vote-no-majority: Ni večinskega glasu
 voted-for--f: ZA
 voted-for--m: ZA
@@ -158,6 +162,9 @@ voted-abstain--plural: Vzdržani
 voted-absent--f: Odsotna
 voted-absent--m: Odsoten
 voted-absent--plural: Odsotni
+voted-did-not-vote--f: Ni glasovala
+voted-did-not-vote--m: Ni glasoval
+voted-did-not-vote--plural: Brez glasu
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
@@ -215,25 +222,36 @@ style-scores:
   simple-vocabulary: Preprosto besedje
   excessive-vocabulary: Ekscesno besedje
 question:
-  asked--m: Zastavil vprašanje {title}, na katerega mora odgovoriti {recipient}.
-  asked--f: Zastavila vprašanje {title}, na katerega mora odgovoriti {recipient}.
-  asked--plural: Zastavili vprašanje {title}, na katerega mora odgovoriti {recipient}.
-  asked--with-name--m: >-
-    {name} je zastavil vprašanje {title}, na katerega mora odgovoriti
-    {recipient}.
-  asked--with-name--f: >-
-    {name} je zastavila vprašanje {title}, na katerega mora odgovoriti
-    {recipient}.
-  asked--with-name--plural: >-
-    {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
-    {recipient}.
+  asked--m: "Zastavil vprašanje na temo: {title}."
+  asked--f: "Zastavila vprašanje na temo: {title}."
+  asked--plural: "Zastavili vprašanje na temo: {title}."
+  asked--with-name--m: "{name} je zastavil vprašanje na temo: {title}."
+  asked--with-name--f: "{name} je zastavila vprašanje na temo: {title}."
+  asked--with-name--plural: "{name} so zastavili vprašanje na temo: {title}."
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}."
+initiative:
+  asked--m: "Podal pobudo na temo: {title}."
+  asked--f: "Podala pobudo na temo: {title}."
+  asked--plural: "Podali pobudo na temo: {title}."
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}."
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}."
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}."
+  asked--group: "Poslanska skupina {name} je podala pobudo na temo: {title}."
+unknown:
+  asked--m: "Odprl temo: {title}."
+  asked--f: "Odprla temo: {title}."
+  asked--plural: "Odprli temo: {title}."
+  asked--with-name--m: "{name} je odprl temo: {title}."
+  asked--with-name--f: "{name} je odprla temo: {title}."
+  asked--with-name--plural: "{name} so odprli temo: {title}."
+  asked--group: "Poslanska skupina {name} je odprla temo: {title}."
 event:
   ballot--for--m: Glasoval ZA {title}
   ballot--for--f: Glasovala ZA {title}
   ballot--against--m: Glasoval PROTI {title}
   ballot--against--f: Glasovala PROTI {title}
-  ballot--absent--m: NI glasoval za {title}
-  ballot--absent--f: NI glasovala za {title}
+  ballot--absent--m: Ni bil prisoten na glasovanju o {title}
+  ballot--absent--f: Ni bila prisotna na glasovanju o {title}
   ballot--abstain--m: VZDRŽAL se je glasovanja o {title}
   ballot--abstain--f: VZDRŽALA se je glasovanja o {title}
   speech--m: Govoril na {session} {org}
@@ -309,8 +327,8 @@ analysis-texts:
   demographics:
     label: Demografija
   presence_votes:
-    label: Prisotnost na glasovanjih sej DZ
-    titleSuffix: ' po prisotnosti na glasovanjih sej DZ'
+    label: Prisotnost na glasovanjih
+    titleSuffix: ' po prisotnosti na glasovanjih'
     explanation: >-
       Število glasovanj, ko je bil poslanec prisoten, delimo s številom vseh
       glasovanj in normaliziramo (min 1 - max 100).
@@ -372,8 +390,8 @@ analysis-texts--party:
       sejah DZ delimo s številom poslancev v PS, ta rezultat pa delimo številom
       sej in normaliziramo (min 1 - max 100).
   vote_attendance:
-    label: Prisotnost na glasovanjih sej DZ
-    titleSuffix: ' glede na rezultate analize s prisotnostjo na glasovanjih sej DZ'
+    label: Prisotnost na glasovanjih
+    titleSuffix: ' glede na rezultate analize s prisotnostjo na glasovanjih'
     explanation: >-
       Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine
       (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih
@@ -484,10 +502,10 @@ material: Gradivo
 documents: Dokumenti
 other: Drugo
 organization-classifications:
-  root: Parliament
-  committee: Committees
-  other: Other working bodies
-  commission: Commission
+  root: Državni zbor
+  committee: Odbori
+  other: Drugo
+  commission: Komisije
 legislation-classifications:
   act: Akt
   decree: Odlok
