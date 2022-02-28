@@ -52,25 +52,25 @@ function sessionClassification(classification) {
   return SESSION_CLASSIFICATIONS[key] || SESSION_CLASSIFICATIONS.unknown;
 }
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
-  const sesData = await getNewData(req.params.id);
-  if (sesData) {
-    render('seja/dnevni-red', { // TODO this used to take you to zakonodaja
-      ogImageUrl: getOgImageUrl('circle', {
-        title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
-        h1: sesData.session.name,
-        h2: slovenianDate(sesData.session.start_time),
-        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
-      }),
-      activeMenu: 'session',
-      pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`, // TODO this used to take you to zakonodaja (title.legislation)
-      activeTab: 'dnevni-red', // TODO this used to take you to zakonodaja
-      ...sesData,
-    });
-  } else {
-    next();
-  }
-}));
+// router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
+//   const sesData = await getNewData(req.params.id);
+//   if (sesData) {
+//     render('seja/dnevni-red', { // TODO this used to take you to zakonodaja
+//       ogImageUrl: getOgImageUrl('circle', {
+//         title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
+//         h1: sesData.session.name,
+//         h2: slovenianDate(sesData.session.start_time),
+//         icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+//       }),
+//       activeMenu: 'session',
+//       pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`, // TODO this used to take you to zakonodaja (title.legislation)
+//       activeTab: 'dnevni-red', // TODO this used to take you to zakonodaja
+//       ...sesData,
+//     });
+//   } else {
+//     next();
+//   }
+// }));
 
 router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.otherVotings}`], ar(async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);

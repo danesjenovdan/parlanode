@@ -32,7 +32,7 @@
 <style>
   .searchinfo {
     top: auto;
-    bottom: -55px;
+    bottom: -105px;
     right: -20px;
   }
   @media (max-width: 767px) {
@@ -44,23 +44,23 @@
 
 <div id="session-search-results">
   <div class="row">
-    <div class="col-md-12">
-      <%- await fetchCard('/search/speeches/', 1, { text: query, people: mps, groups: pgs }) %>
-    </div>
-    <div class="col-md-12">
-      <%- await fetchCard('/search/legislation/', 1, { text: query }) %>
-    </div>
-    <div class="col-md-12">
-      <%- await fetchCard('/search/votes/', 1, { text: query }) %>
-    </div>
-    <div class="col-md-12">
-      <%- await fetchCard('/search/usage-through-time/', 1, { text: query, people: mps, groups: pgs }) %>
-    </div>
     <div class="col-md-6">
       <%- await fetchCard('/search/most-used-by-people/', 1, { text: query, people: mps, groups: pgs }) %>
     </div>
     <div class="col-md-6">
       <%- await fetchCard('/search/usage-by-group/', 1, { text: query, people: mps, groups: pgs }) %>
+    </div>
+    <div class="col-md-12">
+      <%- await fetchCard('/search/speeches/', 1, { text: query, people: mps, groups: pgs }) %>
+    </div>
+    <!-- <div class="col-md-12">
+      <%# await fetchCard('/search/legislation/', 1, { text: query }) %>
+    </div> -->
+    <div class="col-md-12">
+      <%- await fetchCard('/search/votes/', 1, { text: query }) %>
+    </div>
+    <div class="col-md-12">
+      <%- await fetchCard('/search/usage-through-time/', 1, { text: query, people: mps, groups: pgs }) %>
     </div>
   </div>
 </div>
