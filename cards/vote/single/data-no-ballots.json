@@ -1,0 +1,71 @@
+{
+    "url": "http://localhost:8000/v3/cards/vote/single/?id=36",
+    "data": {
+        "results": {
+            "all_votes": {
+                "for": 0,
+                "against": 0,
+                "abstain": 0,
+                "absent": 0,
+                "did not vote": 0
+            },
+            "government_sides": {},
+            "abstract_visible": false,
+            "session": {
+                "name": "9. seja Mestnega sveta MOL",
+                "id": 2,
+                "start_time": "2019-11-18T15:30:00",
+                "end_time": null,
+                "organizations": [
+                    {
+                        "name": "Mestni svet MOL",
+                        "acronym": null,
+                        "slug": "1-mestni-svet-mol",
+                        "color": "#09a2cc",
+                        "classification": ""
+                    }
+                ],
+                "classification": "regular",
+                "in_review": false,
+                "has_transcript": true,
+                "has_minutes": true
+            },
+            "result": {
+                "is_outlier": false,
+                "passed": null,
+                "max_option_percentage": null,
+                "max_option": null
+            },
+            "members": [],
+            "groups": [],
+            "id": 35,
+            "agenda_items": null,
+            "documents": [
+                {
+                    "id": 426,
+                    "url": "https://www.ljubljana.si/assets/Uploads/7.-tocka-predlog-Sklepa-o-ust-JZSL-.pdf",
+                    "name": null,
+                    "tags": []
+                },
+                {
+                    "id": 427,
+                    "url": "https://www.ljubljana.si/assets/Uploads/9.-tocka-Porocilo-OS.pdf",
+                    "name": null,
+                    "tags": []
+                },
+                {
+                    "id": 428,
+                    "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-SPK-k-11.-seji-MS-MOL.pdf",
+                    "name": null,
+                    "tags": []
+                }
+            ],
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o ustanovitvi Javnega zavoda ŠPORT LJUBLJANA.",
+            "legislation": null
+        },
+        "mandate": {
+            "description": "Mandat mestnega sveta MOL",
+            "beginning": null
+        }
+    }
+}
