@@ -78,7 +78,7 @@
       <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
         <p-tab :label="$t('mps')">
           <poslanci
-            :members="results.members"
+            :members="mappedMembers"
             :result="results.result"
             :all-votes="allVotes"
             :state="state"
@@ -88,8 +88,8 @@
         </p-tab>
         <p-tab :label="$t('parties')">
           <poslanske-skupine
-            :members="results.members"
-            :parties="results.groups"
+            :members="mappedMembers"
+            :parties="extendedGroups"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
@@ -100,7 +100,7 @@
         </p-tab>
         <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
           <poslanske-skupine
-            :members="results.members"
+            :members="mappedMembers"
             :parties="results.government_sides"
             :state="state"
             :selected-party="state.selectedParty || null"
@@ -124,7 +124,7 @@
         </p-tab>
         <p-tab :label="$t('mps')">
           <poslanci
-            :members="results.members"
+            :members="mappedMembers"
             :result="results.result"
             :all-votes="allVotes"
             :state="state"
@@ -134,8 +134,8 @@
         </p-tab>
         <p-tab :label="$t('parties')">
           <poslanske-skupine
-            :members="results.members"
-            :parties="results.groups"
+            :members="mappedMembers"
+            :parties="extendedGroups"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
@@ -146,7 +146,7 @@
         </p-tab>
         <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
           <poslanske-skupine
-            :members="results.members"
+            :members="mappedMembers"
             :parties="results.government_sides"
             :state="state"
             :selected-party="state.selectedParty || null"
@@ -166,27 +166,27 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="session_votes">
             <div class="row">
-              <div class="col-xs-3">
+              <div :class="{ 'col-xs-3': !didNotVotePresent, 'col-xs-4': didNotVotePresent }">
                 {{ allVotes.for }}
                 <div v-t="'vote-for'" class="type"></div>
                 <div class="indicator aye">&nbsp;</div>
               </div>
-              <div class="col-xs-3">
+              <div :class="{ 'col-xs-3': !didNotVotePresent, 'col-xs-4': didNotVotePresent }">
                 {{ allVotes.against }}
                 <div v-t="'vote-against'" class="type"></div>
                 <div class="indicator ney">&nbsp;</div>
               </div>
-              <div class="col-xs-3">
+              <div v-if="!didNotVotePresent" class="col-xs-3">
                 {{ allVotes.abstain }}
                 <div v-t="'vote-abstain'" class="type"></div>
                 <div class="indicator abstention">&nbsp;</div>
               </div>
-              <div class="col-xs-3">
+              <div v-if="!didNotVotePresent" class="col-xs-3">
                 {{ allVotes.absent }}
                 <div v-t="'vote-absent'" class="type"></div>
                 <div class="indicator not">&nbsp;</div>
               </div>
-              <div class="col-xs-3">
+              <div v-if="didNotVotePresent" class="col-xs-4">
                 {{ allVotes['did not vote'] }}
                 <div v-t="'vote-did-not-vote'" class="type"></div>
                 <div class="indicator not">&nbsp;</div>
@@ -253,6 +253,71 @@ export default {
 
     const didNotVotePresent = allVotes['did not vote'] > 0;
 
+    const mappedMembers = () => {
+      // checks if a member is anonymous and scaffolds its object
+      return results.members.map((member, i) => {
+        if (member.person === null) {
+          const mappedMember = member;
+          mappedMember.person = {
+            slug: null,
+            name: this.$t('anonymous.person.name'),
+            honorific_prefix: null,
+            honorific_suffix: null,
+            preferred_pronoun: null,
+            group: {
+                name: this.$t('anonymous.group.name'),
+                acronym: this.$t('anonymous.group.acronym'),
+                slug: null,
+                color: null,
+                classification: "pg"
+            },
+            image: null
+          };
+          return mappedMember;
+        }
+        return member;
+      });
+    };
+
+    const extendedGroups = () => {
+      // checks for anonymous members and scaffolds an anonymous group
+      if (results.members.filter((member) => member.person === null).length > 0) {
+        const ballots = results.members.filter((member) => member.person === null);
+        const votes = {};
+        votes.for = ballots.filter((ballot) => ballot.option === 'for').length;
+        votes.against = ballots.filter((ballot) => ballot.option === 'against').length;
+        votes.abstain = ballots.filter((ballot) => ballot.option === 'abstain').length;
+        votes.absent = ballots.filter((ballot) => ballot.option === 'absent').length;
+        votes['did not vote'] = ballots.filter((ballot) => ballot.option === 'did not vote').length;
+
+        const maxOption = Object.keys(votes).reduce((max_option, key) => {
+          if (votes[max_option] < votes[key]) {
+            return key;
+          }
+          return max_option;
+        }, 'for');
+
+        const groups = results.groups;
+        groups.push({
+          max: {
+            max_option_percentage: votes[maxOption] / ballots.length * 100,
+            max_option: maxOption,
+          },
+          votes,
+          outliers: [],
+          group: {
+              name: this.$t('anonymous.group.name'),
+              acronym: this.$t('anonymous.group.acronym'),
+              slug: null,
+              color: null,
+              classification: "pg"
+          },
+        });
+        return groups;
+      }
+      return results.groups;
+    };
+
     return {
       results,
       title,
@@ -266,6 +331,8 @@ export default {
       visibleTooltipTopPos: '20px',
       allVotes,
       didNotVotePresent,
+      extendedGroups: extendedGroups(),
+      mappedMembers: mappedMembers(),
     };
   },
   computed: {
