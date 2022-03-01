@@ -1,0 +1,936 @@
+{
+    "url": "http://localhost:8000/v3/cards/vote/single/?id=36",
+    "data": {
+        "results": {
+            "all_votes": {
+                "for": 39,
+                "against": 0,
+                "abstain": 4,
+                "absent": 2,
+                "did not vote": 0
+            },
+            "government_sides": {},
+            "abstract_visible": false,
+            "session": {
+                "name": "9. seja Mestnega sveta MOL",
+                "id": 2,
+                "start_time": "2019-11-18T15:30:00",
+                "end_time": null,
+                "organizations": [
+                    {
+                        "name": "Mestni svet MOL",
+                        "acronym": null,
+                        "slug": "1-mestni-svet-mol",
+                        "color": "#09a2cc",
+                        "classification": ""
+                    }
+                ],
+                "classification": "regular",
+                "in_review": false,
+                "has_transcript": true,
+                "has_minutes": true
+            },
+            "result": {
+                "is_outlier": false,
+                "passed": null,
+                "max_option_percentage": 86.66666666666667,
+                "max_option": "for"
+            },
+            "members": [
+                {
+                    "person": {
+                        "slug": "10-jozef-horvat",
+                        "name": "Jožef Horvat",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Nova Slovenija – Krščanski demokrati ",
+                            "acronym": "",
+                            "slug": "6-nova-slovenija-krscanski-demokrati",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "21-mojca-sojar",
+                        "name": "Mojca Sojar",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Nova Slovenija – Krščanski demokrati ",
+                            "acronym": "",
+                            "slug": "6-nova-slovenija-krscanski-demokrati",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "2-janez-stariha",
+                        "name": "Janez Stariha",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+                            "acronym": "",
+                            "slug": "3-samostojni-svetnik-liste-kolesarjev-in-pescev",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "6-martina-vuk",
+                        "name": "Martina Vuk",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Socialni demokrati ",
+                            "acronym": "",
+                            "slug": "5-socialni-demokrati",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": null,
+                        "name": "mag. Marko Koprivc",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": null,
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "41-prof-janez-kozelj",
+                        "name": "prof. Janez Koželj",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "42-tjasa-ficko",
+                        "name": "Tjaša Ficko",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "43-ales-cerin",
+                        "name": "Aleš Čerin",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "37-marjan-sedmak",
+                        "name": "Marjan Sedmak",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "20-igor-horvat",
+                        "name": "Igor Horvat",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "40-jelka-zekar",
+                        "name": "Jelka Žekar",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "18-mojca-skrinjar",
+                        "name": "Mojca Škrinjar",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "39-dejan-crnek",
+                        "name": "Dejan Crnek",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": null,
+                        "name": "Dr. Anže Logar",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": null,
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "22-dr-marta-bon",
+                        "name": "dr. Marta Bon",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "17-dr-zvone-cadez",
+                        "name": "dr. Zvone Čadež",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "30-iztok-kordis",
+                        "name": "Iztok Kordiš",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "13-ida-medved",
+                        "name": "Ida Medved",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": null,
+                        "name": "Anže MIKLAVEC",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": null,
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "14-uros-minodras",
+                        "name": "Uroš Minodraš",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "33-francka-trobec",
+                        "name": "Francka Trobec",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "16-ksenija-sever",
+                        "name": "Ksenija Sever",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "32-tone-podobnik",
+                        "name": "Tone Podobnik",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "15-ana-zagozen",
+                        "name": "Ana Zagožen",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "34-stanka-ferencak-marin",
+                        "name": "Stanka Ferenčak Marin",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "12-gregor-slabe",
+                        "name": "Gregor Slabe",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "38-dunja-piskur-kosmac",
+                        "name": "Dunja Piškur Kosmač",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "11-marusa-babnik",
+                        "name": "Maruša Babnik",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Slovenska demokratska stranka ",
+                            "acronym": "",
+                            "slug": "7-slovenska-demokratska-stranka",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "35-tomaz-kucic",
+                        "name": "Tomaž Kučič",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "29-nada-verbic",
+                        "name": "Nada Verbič",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "27-bruna-antauer",
+                        "name": "Bruna Antauer",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "31-mag-mojca-lozej",
+                        "name": "mag. Mojca Lozej",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "8-masa-kociper",
+                        "name": "Maša Kociper",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Svetniški klub samostojnih svetnikov ",
+                            "acronym": "",
+                            "slug": "4-svetniski-klub-samostojnih-svetnikov",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "absent"
+                },
+                {
+                    "person": {
+                        "slug": null,
+                        "name": "Daniel AVDAGIČ",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": null,
+                        "image": null
+                    },
+                    "option": "absent"
+                },
+                {
+                    "person": {
+                        "slug": "9-mag-katja-damij",
+                        "name": "mag. Katja Damij",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Svetniški klub samostojnih svetnikov ",
+                            "acronym": "",
+                            "slug": "4-svetniski-klub-samostojnih-svetnikov",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "24-jozka-hegler",
+                        "name": "Jožka Hegler",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "5-dr-dragan-matic",
+                        "name": "dr. Dragan Matić",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Svetniški klub samostojnih svetnikov ",
+                            "acronym": "",
+                            "slug": "4-svetniski-klub-samostojnih-svetnikov",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "28-danilo-saric",
+                        "name": "Danilo Šarić",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "36-julka-zibert",
+                        "name": "Julka Žibert",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": {
+                        "slug": "26-emilija-mitrovic-milos",
+                        "name": "Emilija Mitrović Miloš",
+                        "honorific_prefix": null,
+                        "honorific_suffix": null,
+                        "preferred_pronoun": null,
+                        "group": {
+                            "name": "Lista Zorana Jankovića ",
+                            "acronym": "",
+                            "slug": "8-lista-zorana-jankovica",
+                            "color": "#09a2cc",
+                            "classification": "pg"
+                        },
+                        "image": null
+                    },
+                    "option": "for"
+                },
+                {
+                    "person": null,
+                    "option": "abstain"
+                },
+                {
+                    "person": null,
+                    "option": "for"
+                },
+                {
+                    "person": null,
+                    "option": "abstain"
+                },
+                {
+                    "person": null,
+                    "option": "abstain"
+                },
+                {
+                    "person": null,
+                    "option": "abstain"
+                }
+            ],
+            "groups": [
+                {
+                    "max": {
+                        "max_option_percentage": null,
+                        "max_option": null
+                    },
+                    "votes": {
+                        "for": 0,
+                        "against": 0,
+                        "abstain": 0,
+                        "absent": 0,
+                        "did not vote": 0
+                    },
+                    "outliers": [],
+                    "group": {
+                        "name": "Levica ",
+                        "acronym": "",
+                        "slug": "2-levica",
+                        "color": "#09a2cc",
+                        "classification": "pg"
+                    }
+                },
+                {
+                    "max": {
+                        "max_option_percentage": 100.0,
+                        "max_option": "for"
+                    },
+                    "votes": {
+                        "for": 1,
+                        "against": 0,
+                        "abstain": 0,
+                        "absent": 0,
+                        "did not vote": 0
+                    },
+                    "outliers": [],
+                    "group": {
+                        "name": "Samostojni svetnik Liste kolesarjev in pešcev ",
+                        "acronym": "",
+                        "slug": "3-samostojni-svetnik-liste-kolesarjev-in-pescev",
+                        "color": "#09a2cc",
+                        "classification": "pg"
+                    }
+                },
+                {
+                    "max": {
+                        "max_option_percentage": 66.66666666666667,
+                        "max_option": "for"
+                    },
+                    "votes": {
+                        "for": 2,
+                        "against": 0,
+                        "abstain": 0,
+                        "absent": 1,
+                        "did not vote": 0
+                    },
+                    "outliers": [],
+                    "group": {
+                        "name": "Svetniški klub samostojnih svetnikov ",
+                        "acronym": "",
+                        "slug": "4-svetniski-klub-samostojnih-svetnikov",
+                        "color": "#09a2cc",
+                        "classification": "pg"
+                    }
+                },
+                {
+                    "max": {
+                        "max_option_percentage": 100.0,
+                        "max_option": "for"
+                    },
+                    "votes": {
+                        "for": 1,
+                        "against": 0,
+                        "abstain": 0,
+                        "absent": 0,
+                        "did not vote": 0
+                    },
+                    "outliers": [],
+                    "group": {
+                        "name": "Socialni demokrati ",
+                        "acronym": "",
+                        "slug": "5-socialni-demokrati",
+                        "color": "#09a2cc",
+                        "classification": "pg"
+                    }
+                },
+                {
+                    "max": {
+                        "max_option_percentage": 100.0,
+                        "max_option": "for"
+                    },
+                    "votes": {
+                        "for": 2,
+                        "against": 0,
+                        "abstain": 0,
+                        "absent": 0,
+                        "did not vote": 0
+                    },
+                    "outliers": [],
+                    "group": {
+                        "name": "Nova Slovenija – Krščanski demokrati ",
+                        "acronym": "",
+                        "slug": "6-nova-slovenija-krscanski-demokrati",
+                        "color": "#09a2cc",
+                        "classification": "pg"
+                    }
+                },
+                {
+                    "max": {
+                        "max_option_percentage": 100.0,
+                        "max_option": "for"
+                    },
+                    "votes": {
+                        "for": 9,
+                        "against": 0,
+                        "abstain": 0,
+                        "absent": 0,
+                        "did not vote": 0
+                    },
+                    "outliers": [],
+                    "group": {
+                        "name": "Slovenska demokratska stranka ",
+                        "acronym": "",
+                        "slug": "7-slovenska-demokratska-stranka",
+                        "color": "#09a2cc",
+                        "classification": "pg"
+                    }
+                },
+                {
+                    "max": {
+                        "max_option_percentage": 100.0,
+                        "max_option": "for"
+                    },
+                    "votes": {
+                        "for": 20,
+                        "against": 0,
+                        "abstain": 0,
+                        "absent": 0,
+                        "did not vote": 0
+                    },
+                    "outliers": [],
+                    "group": {
+                        "name": "Lista Zorana Jankovića ",
+                        "acronym": "",
+                        "slug": "8-lista-zorana-jankovica",
+                        "color": "#09a2cc",
+                        "classification": "pg"
+                    }
+                }
+            ],
+            "id": 36,
+            "agenda_items": null,
+            "documents": [
+                {
+                    "id": 429,
+                    "url": "https://www.ljubljana.si/assets/Uploads/8.-tocka-predlog-OPPN-147.pdf",
+                    "name": null,
+                    "tags": []
+                },
+                {
+                    "id": 431,
+                    "url": "https://www.ljubljana.si/assets/Uploads/33.-tocka-Porocilo-OUP.pdf",
+                    "name": null,
+                    "tags": []
+                },
+                {
+                    "id": 433,
+                    "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-SPK-k-12.-seji-MS-MOL.pdf",
+                    "name": null,
+                    "tags": []
+                }
+            ],
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 147 - območje ob vzhodni obvoznici in Litijski cesti.",
+            "legislation": null
+        },
+        "mandate": {
+            "description": "Mandat mestnega sveta MOL",
+            "beginning": null
+        }
+    }
+}

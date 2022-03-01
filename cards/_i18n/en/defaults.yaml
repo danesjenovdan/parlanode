@@ -466,3 +466,9 @@ organization-classifications:
 legislation-classifications:
   act: Act
   decree: Decree
+anonymous:
+  person:
+    name: Unknown person
+  group:
+    name: Unknown party
+    acronym: N/A
