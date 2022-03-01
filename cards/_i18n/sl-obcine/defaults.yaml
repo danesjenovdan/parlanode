@@ -509,3 +509,9 @@ organization-classifications:
 legislation-classifications:
   act: Akt
   decree: Odlok
+anonymous:
+  person:
+    name: Neznana oseba
+  group:
+    name: Neznana poslanska skupina
+    acronym: N/A
