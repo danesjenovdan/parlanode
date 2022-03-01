@@ -1,0 +1,83 @@
+{
+    "url": "http://localhost:8000/v3/cards/vote/single/?id=37",
+    "data": {
+        "results": {
+            "all_votes": {
+                "for": 23,
+                "against": 2,
+                "abstain": 16,
+                "absent": 4,
+                "did not vote": 0
+            },
+            "government_sides": {},
+            "abstract_visible": false,
+            "session": {
+                "name": "9. seja Mestnega sveta MOL",
+                "id": 2,
+                "start_time": "2019-11-18T15:30:00",
+                "end_time": null,
+                "organizations": [
+                    {
+                        "name": "Mestni svet MOL",
+                        "acronym": null,
+                        "slug": "1-mestni-svet-mol",
+                        "color": "#09a2cc",
+                        "classification": ""
+                    }
+                ],
+                "classification": "regular",
+                "in_review": false,
+                "has_transcript": true,
+                "has_minutes": true
+            },
+            "result": {
+                "is_outlier": false,
+                "passed": true,
+                "max_option_percentage": 51.11111111111111,
+                "max_option": "for"
+            },
+            "members": [],
+            "groups": [],
+            "id": 37,
+            "agenda_items": null,
+            "documents": [
+                {
+                    "id": 435,
+                    "url": "https://www.ljubljana.si/assets/Uploads/9.-tocka-soglasje-k-pravnemu-poslu.pdf",
+                    "name": null,
+                    "tags": []
+                },
+                {
+                    "id": 436,
+                    "url": "https://www.ljubljana.si/assets/Uploads/12.-tocka-Porocilo-ORN.pdf",
+                    "name": null,
+                    "tags": []
+                },
+                {
+                    "id": 437,
+                    "url": "https://www.ljubljana.si/assets/Uploads/Porocilo-SPK-k-13.-seji-MS-MOL.pdf",
+                    "name": null,
+                    "tags": []
+                },
+                {
+                    "id": 438,
+                    "url": "https://www.ljubljana.si/assets/Uploads/10.-tocka-Predlog-svetniskega-kluna-NSi-za-umik-tocke.pdf",
+                    "name": null,
+                    "tags": []
+                },
+                {
+                    "id": 439,
+                    "url": "https://www.ljubljana.si/assets/Uploads/9.-tocka-Sprejeti-sklep.pdf",
+                    "name": null,
+                    "tags": []
+                }
+            ],
+            "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne pogodbe za nezazidana stavbna zemljišča s parc. št. 1324, 1347/5, 1332/2, 1333/2, 1333/6, 1348/3, 2240/86 in 1348/2, vse k. o. 2636 Bežigrad.",
+            "legislation": null
+        },
+        "mandate": {
+            "description": "Mandat mestnega sveta MOL",
+            "beginning": null
+        }
+    }
+}
