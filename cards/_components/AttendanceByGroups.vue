@@ -19,7 +19,7 @@
       <div class="column chart">
         <div class="progress hugebar">
           <div
-            :style="{ width: `${party.value}%` }"
+            :style="{ width: `${Math.round(party.value)}%` }"
             class="progress-bar funblue"
             role="progressbar"
           ></div>
