@@ -11,16 +11,18 @@
           {{ party.group?.acronym || party.group?.name || 'N/A' }}
         </a>
       </div>
+      <div class="column chart-percent">
+        <div class="progress_number">
+          {{ formatNumber(party.value, { percent: true }) }}
+        </div>
+      </div>
       <div class="column chart">
         <div class="progress hugebar">
           <div
-            :style="{ width: `${party.value}%` }"
+            :style="{ width: `${Math.round(party.value)}%` }"
             class="progress-bar funblue"
             role="progressbar"
           ></div>
-          <div class="progress_number">
-            {{ formatNumber(party.value, { percent: true }) }}
-          </div>
         </div>
       </div>
     </li>
@@ -69,6 +71,7 @@ export default {
 
   @include respond-to(mobile) {
     flex-direction: column;
+    align-items: start;
   }
 
   .column.chart-label {
@@ -81,6 +84,14 @@ export default {
 
     @include respond-to(mobile) {
       width: 100%;
+    }
+  }
+
+  .column.chart-percent {
+    width: 60px;
+    flex: none;
+    .progress_number {
+      padding-left: 0;
     }
   }
 
