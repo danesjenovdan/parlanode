@@ -140,19 +140,20 @@ export default {
   emits: ['selectedparty', 'selectedoption'],
   data() {
     const selectableBallotOptions = [
-        { id: 'for', label: this.$t('vote-for') },
-        { id: 'against', label: this.$t('vote-against') },
-        { id: 'abstain', label: this.$t('vote-abstain-plural') },
-        { id: 'absent', label: this.$t('vote-absent-plural') },
-        { id: 'did not vote', label: this.$t('vote-did-not-vote-plural') },
-      ];
-    const filteredBallotOptions = selectableBallotOptions.filter((ballotOption) => {
-      if (this.didNotVotePresent) {
-        return (ballotOption.id !== 'absent') && (ballotOption.id !== 'against');
-      } else {
+      { id: 'for', label: this.$t('vote-for') },
+      { id: 'against', label: this.$t('vote-against') },
+      { id: 'abstain', label: this.$t('vote-abstain-plural') },
+      { id: 'absent', label: this.$t('vote-absent-plural') },
+      { id: 'did not vote', label: this.$t('vote-did-not-vote-plural') },
+    ];
+    const filteredBallotOptions = selectableBallotOptions.filter(
+      (ballotOption) => {
+        if (this.didNotVotePresent) {
+          return ballotOption.id !== 'absent' && ballotOption.id !== 'against';
+        }
         return ballotOption.id !== 'did not vote';
       }
-    });
+    );
     return {
       votes: filteredBallotOptions,
       expandedParty: null,

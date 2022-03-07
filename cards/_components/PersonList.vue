@@ -30,7 +30,7 @@
                   {{ person.group?.acronym || person.group?.name || 'N/A' }}
                 </a>
                 <span v-else>
-                  {{ person.group?.acronym || person.group?.name || 'N/A' }}
+                  {{ $t(unaffiliatedKey(person)) }}
                 </span>
               </div>
             </template>
@@ -77,6 +77,13 @@ export default {
     },
   },
   emits: ['load-more'],
+  methods: {
+    unaffiliatedKey(person) {
+      let suffix = '--f';
+      if (person.preferred_pronoun === 'he') suffix = '--m';
+      return `unaffiliated${suffix}`;
+    },
+  },
 };
 </script>
 

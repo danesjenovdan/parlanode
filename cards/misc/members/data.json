@@ -210,13 +210,7 @@
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
-          "group": {
-            "name": "Lista Zorana Jankovića",
-            "acronym": "LZJ",
-            "slug": "22-lista-zorana-jankovica",
-            "color": "#048EA2",
-            "classification": "pg"
-          },
+          "group": null,
           "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ales-cerin.png",
           "results": {
             "mandates": 4,
