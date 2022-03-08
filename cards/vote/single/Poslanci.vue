@@ -179,7 +179,12 @@ export default {
       return this.votes.filter((vote) => vote.selected).map((vote) => vote.id);
     },
     filteredMembers() {
-      return this.members.filter((member) => {
+      const sortedMembers = this.members.slice().sort((a, b) => {
+        const aValue = a?.person?.name || '';
+        const bValue = b?.person?.name || '';
+        return aValue.localeCompare(bValue, 'sl');
+      });
+      return sortedMembers.filter((member) => {
         let nameMatch = true;
         let optionMatch = true;
 
@@ -225,7 +230,7 @@ export default {
     mapVotes,
     translateOption(option, preferredPronoun) {
       const form = preferredPronoun === 'she' ? '--f' : '--m';
-      return this.$t(`voted-${option.replace(/ /g, '-')}${form}`);
+      return this.$t(`voted-${(option || '').replace(/ /g, '-')}${form}`);
     },
     toggleVote(id) {
       if (this.allVotes[id] !== 0) {
