@@ -62,11 +62,7 @@
                   }}
                 </a>
                 <span v-else>
-                  {{
-                    member.person?.group?.acronym ||
-                    member.person?.group?.name ||
-                    'N/A'
-                  }}
+                  {{ $t(unaffiliatedKey(member.person)) }}
                 </span>
               </div>
             </div>
@@ -126,10 +122,11 @@ export default {
     didNotVotePresent: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   emits: ['namefilter'],
-  data() {const selectableBallotOptions = [
+  data() {
+    const selectableBallotOptions = [
       {
         id: 'for',
         label: this.$t('vote-for'),
@@ -157,13 +154,14 @@ export default {
       },
     ];
 
-    const filteredBallotOptions = selectableBallotOptions.filter((ballotOption) => {
-      if (this.didNotVotePresent) {
-        return (ballotOption.id !== 'absent') && (ballotOption.id !== 'against');
-      } else {
+    const filteredBallotOptions = selectableBallotOptions.filter(
+      (ballotOption) => {
+        if (this.didNotVotePresent) {
+          return ballotOption.id !== 'absent' && ballotOption.id !== 'against';
+        }
         return ballotOption.id !== 'did not vote';
       }
-    });
+    );
 
     return {
       nameFilter: '',
@@ -239,6 +237,11 @@ export default {
           }
         });
       }
+    },
+    unaffiliatedKey(person) {
+      let suffix = '--f';
+      if (person?.preferred_pronoun === 'he') suffix = '--m';
+      return `unaffiliated${suffix}`;
     },
   },
 };
