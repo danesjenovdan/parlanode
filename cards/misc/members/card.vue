@@ -149,7 +149,7 @@ export default {
     ];
 
     // parse hidden analyses into an array
-    const hiddenAnalyses = cardState?.hiddenAnalyses.split('|');
+    const hiddenAnalyses = cardState?.hiddenAnalyses?.split('|') || [];
 
     // filter out hidden analyses and translate them
     const analyses = analysesIDs.filter((a) => !hiddenAnalyses.includes(a.id)).map((a) => ({
