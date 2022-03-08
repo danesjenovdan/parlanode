@@ -5,9 +5,9 @@
       class="questions date-list"
       @scroll="$refs.shadow.check($event.currentTarget)"
     >
-      <empty-state v-if="!questionDays?.length" />
+      <empty-state v-if="!sortedQuestionDays?.length" />
       <div v-else>
-        <div v-for="day in questionDays" :key="day.date">
+        <div v-for="day in sortedQuestionDays" :key="day.date">
           <div class="date">{{ formatDate(day.date) }}</div>
           <event
             v-for="(event, i) in day.events"
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { orderBy } from 'lodash-es';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Event from '@/_components/Event.vue';
 import EmptyState from '@/_components/EmptyState.vue';
@@ -56,6 +57,11 @@ export default {
     },
   },
   emits: ['load-more'],
+  computed: {
+    sortedQuestionDays() {
+      return orderBy(this.questionDays, ['date'], ['desc']);
+    },
+  },
   methods: {
     formatDate: dateFormatter,
   },
