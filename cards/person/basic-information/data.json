@@ -1,35 +1,30 @@
 {
-  "url": "data.json",
-  "error": false,
+  "id": 91,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/basic-information/?id=91",
   "data": {
     "results": {
-      "education": "EDUTEST",
-      "education_level": 7,
-      "previous_occupation": "TEST",
-      "number_of_mandates": 2,
-      "date_of_birth": "2012-12-12",
+      "education": null,
+      "education_level": null,
+      "previous_occupation": null,
+      "number_of_mandates": null,
+      "date_of_birth": "1974-09-30",
       "date_of_death": null,
       "number_of_voters": null,
       "districts": [],
-      "social_networks": [],
-      "email": "lalala@test.si"
+      "social_networks": []
     },
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
+      "description": "VIII",
       "beginning": null
     },
     "person": {
-      "slug": "230-ana-zagozen",
-      "name": "Ana Zagožen",
+      "slug": "91-mateja-udovc",
+      "name": "Mateja Udovč",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": null,
-      "group": {
-        "name": "Slovenska demokratska stranka ",
-        "acronym": "SDS",
-        "slug": "21-slovenska-demokratska-stranka"
-      },
-      "image": null
+      "preferred_pronoun": "",
+      "group": null,
+      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P312.png"
     }
   }
 }
