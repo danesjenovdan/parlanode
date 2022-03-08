@@ -6,5 +6,6 @@
   "showDemographicsAge": "true",
   "showDemographicsEducation": "true",
   "showDemographicsMandates": "true",
-  "showDemographicsGroup": "true"
+  "showDemographicsGroup": "true",
+  "hiddenAnalyses": "spoken_words|mismatch_of_pg"
 }
