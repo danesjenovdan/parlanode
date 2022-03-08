@@ -130,6 +130,11 @@ export default {
         .range([margin.left, width - margin.right])
         .padding(0.1);
 
+      // prevent x axis labels from touching by only showing some of them
+      // dividing by 16 means it will show up to max 16 ticks
+      const xValuesGap = Math.ceil(x.domain().length / 16);
+      const xTickValues = x.domain().filter((d, i) => !(i % xValuesGap));
+
       const y = d3
         .scaleLinear()
         .domain([0, d3.max(series, (d) => d3.max(d, (d2) => d2[1]))])
@@ -220,7 +225,7 @@ export default {
         .append('g')
         .attr('class', 'axis-bottom')
         .attr('transform', `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(x).tickFormat(formatMonth))
+        .call(d3.axisBottom(x).tickValues(xTickValues).tickFormat(formatMonth))
         .call((g) => g.selectAll('.domain').remove());
 
       // left axis
