@@ -92,12 +92,12 @@ const analysesIDs = [
   {
     id: 'speeches_per_session',
   },
-  // {
-  //   id: 'spoken_words',
-  // },
-  // {
-  //   id: 'mismatch_of_pg',
-  // },
+  {
+    id: 'spoken_words',
+  },
+  {
+    id: 'mismatch_of_pg',
+  },
   {
     id: 'working_bodies',
   },
@@ -148,7 +148,11 @@ export default {
       { id: 'she', icon: 'gender-f', selected: initialGenders.includes('she') },
     ];
 
-    const analyses = analysesIDs.map((a) => ({
+    // parse hidden analyses into an array
+    const hiddenAnalyses = cardState?.hiddenAnalyses.split('|');
+
+    // filter out hidden analyses and translate them
+    const analyses = analysesIDs.filter((a) => !hiddenAnalyses.includes(a.id)).map((a) => ({
       ...a,
       label: this.$te(`analysis-texts.${a.id}.label`)
         ? this.$t(`analysis-texts.${a.id}.label`)
