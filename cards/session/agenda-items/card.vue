@@ -8,6 +8,7 @@
       <div
         v-for="agendaItem in agendaItems"
         :key="agendaItem.id"
+        :id="agendaItem.id"
         class="agenda-item"
       >
         <div class="name">{{ agendaItem.name }}</div>
@@ -85,6 +86,10 @@ export default {
   .agenda-item {
     background: $background;
     margin: 12px 0;
+
+    &:target {
+      background: $link-hover-background;
+    }
 
     > div {
       padding: 15px;

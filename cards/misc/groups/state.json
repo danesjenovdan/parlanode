@@ -1,4 +1,5 @@
 {
   "generator": true,
-  "analysis": "vote_attendance"
+  "analysis": "vote_attendance",
+  "hiddenAnalyses": "number_of_amendments|intra_disunion|vocabulary_size"
 }

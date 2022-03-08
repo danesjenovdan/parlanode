@@ -1,1543 +1,1716 @@
 {
-  "id": 230,
+  "id": 37,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/recent-activity/?id=37",
   "data": {
     "results": [
       {
-        "date": "2021-05-31T00:00:00",
+        "date": "2022-02-14T00:00:00",
         "events": [
           {
-            "vote": {
-              "all_votes": {
-                "absent": 7,
-                "abstain": 8,
-                "for": 29,
-                "against": 1
-              },
-              "passed": true,
-              "id": 2437,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 182 Pod hribom – del skupaj s pripombami.",
-              "timestamp": "2021-07-05T18:33:05",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 7,
-                "abstain": 5,
-                "for": 33,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2436,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 266 Tacen –zahod – severni del skupaj s pripombami.",
-              "timestamp": "2021-07-05T18:21:15",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 8,
-                "abstain": 1,
-                "for": 36,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2435,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica.",
-              "timestamp": "2021-07-05T18:12:38",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 9,
-                "abstain": 3,
-                "for": 33,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2434,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 121 Poslovna cona Vižmarje.",
-              "timestamp": "2021-07-05T18:07:42",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 7,
-                "abstain": 4,
-                "for": 34,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2433,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o zazidalnem načrtu za območji urejanja MS 1/2-1 in MR 1/1 ZELENA JAMA.",
-              "timestamp": "2021-07-05T18:03:12",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 9,
-                "abstain": 2,
-                "for": 34,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2432,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za enoto urejanja prostora GO-225.",
-              "timestamp": "2021-07-05T17:58:06",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 8,
-                "abstain": 0,
-                "for": 37,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2431,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 311 Zalog (za prostorsko enoto PE1).",
-              "timestamp": "2021-07-05T17:54:06",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 14,
-                "abstain": 0,
-                "for": 31,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2430,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana.",
-              "timestamp": "2021-07-05T17:45:10",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 17,
-                "abstain": 0,
-                "for": 28,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2428,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o oglaševanju.",
-              "timestamp": "2021-07-05T17:44:59",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 16,
-                "abstain": 0,
-                "for": 29,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2426,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o določitvi plovbnega režima.",
-              "timestamp": "2021-07-05T17:44:45",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 11,
-                "abstain": 0,
-                "for": 34,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2429,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana sprejme po hitrem postopku.",
-              "timestamp": "2021-07-05T17:44:24",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 21,
-                "abstain": 0,
-                "for": 24,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2427,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembi in dopolnitvi Odloka o oglaševanju sprejme po hitrem postopku.",
-              "timestamp": "2021-07-05T17:44:07",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 8,
-                "abstain": 0,
-                "for": 37,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2425,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembi in dopolnitvi Odloka o določitvi plovbnega režima sprejme po hitrem postopku.",
-              "timestamp": "2021-07-05T17:43:56",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 22,
-                "abstain": 0,
-                "for": 23,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2424,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o organizaciji in načinu izvajanja mestnih linijskih prevozov potnikov.",
-              "timestamp": "2021-07-05T17:39:23",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 9,
-                "abstain": 0,
-                "for": 4,
-                "against": 32
-              },
-              "passed": false,
-              "id": 2423,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "AMANDMA Svetniškega kluba Levica: V 1. členu se drugi in tretji odstavek spremenita tako, da se glasita: »Obratovalni čas linij od ponedeljka do sobote je od 5.10 do 23.00 ure in od 6.10 do 23.00 ure ob nedeljah ter praznikih, ki so dela prosti dnevi.« Obratovalni čas nočnih linij, ki povezujejo center mesta z območji: - Bežigrad – Črnuče, - Moste – Fužine – Zalog, - Šiška – Vižmarje – Brod, - Štepanjsko naselje, - Rudnik, - Vič in - Podutik, poteka od ponedeljka do sobote od 24.00 do 5. ure, ob nedeljah in praznikih, ki so dela prosti dnevi, od 24.00 do 6.00 ure ter 1. januarja od 00 do 24.00 ure.«",
-              "timestamp": "2021-07-05T17:39:10",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 8,
-                "abstain": 1,
-                "for": 36,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2422,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o spremembah in dopolnitvah Odloka o organizaciji in načinu izvajanja mestnih linijskih prevozov potnikov sprejme po hitrem postopku.",
-              "timestamp": "2021-07-05T17:33:40",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 10,
-                "abstain": 10,
-                "for": 23,
-                "against": 2
-              },
-              "passed": true,
-              "id": 2421,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k določitvi dela plače za redno delovno uspešnost direktorju, namestnici direktorja za razvoj zdravstvene dejavnosti in strokovni direktorici Zdravstvenega doma Ljubljana za obdobje 1. 7. 2020 do 31. 12. 2020.",
-              "timestamp": "2021-07-05T17:28:42",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 24,
-                "abstain": 0,
-                "for": 21,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2420,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Strategije razvoja socialnega varstva v Mestni občini Ljubljana za obdobje od 2021 do 2027.",
-              "timestamp": "2021-07-05T17:22:30",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 9,
-                "abstain": 10,
-                "for": 26,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2419,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana se seznani s Poročilom o izvajanju Strategije razvoja socialnega varstva v Mestni občini Ljubljana od 2013 do 2020.",
-              "timestamp": "2021-07-05T17:22:16",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 13,
-                "abstain": 0,
-                "for": 32,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2418,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana.",
-              "timestamp": "2021-07-05T16:59:55",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 9,
-                "abstain": 2,
-                "for": 34,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2417,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog, da se Odlok o podelitvi koncesije za opravljanje javne službe v osnovni zdravstveni dejavnosti v Mestni občini Ljubljana sprejme po hitrem postopku.",
-              "timestamp": "2021-07-05T16:59:38",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 4,
-                "abstain": 4,
-                "for": 37,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2416,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predloge sklepov o soglasju k določitvi dela plače za delovno uspešnost ravnateljicam in ravnateljem ter direktorju vzgojno-izobraževalnih zavodov: Vrtec Ciciban, Osnovna šola Božidarja Jakca, Osnovna šola Danile Kumar, Osnovna šola dr. Vita Kraigherja, Osnovna šola Dravlje, Osnovna šola Hinka Smrekarja, Osnovna šola Jožeta Moškriča, Osnovna šola Karla Destovnika Kajuha, Osnovna šola Ketteja in Murna, Osnovna šola Martina Krpana, Osnovna šola Nove Jarše, Osnovna šola Poljane, Osnovna šola Spodnja Šiška, Osnovna šola Šmartno pod Šmarno goro, Osnovna šola Trnovo, Osnovna šola Vič, Osnovna šola Zadobrova, Center za usposabljanje, vzgojo in izobraževanje Janeza Levca Ljubljana, Javni zavod Cene Štupar – Center za izobraževanje Ljubljana iz naslova povečanega obsega dela.",
-              "timestamp": "2021-07-05T16:57:18",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 4,
-                "abstain": 6,
-                "for": 24,
-                "against": 11
-              },
-              "passed": true,
-              "id": 2415,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o manjši notranji igralni površini v javnih vrtcih Mestne občine Ljubljana za šolski leti 2021/2022 in 2022/2023.",
-              "timestamp": "2021-07-05T16:55:07",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "against",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 11,
-                "abstain": 0,
-                "for": 34,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2414,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "B) PREDLOG SKLEPA O DOLOČITVI OBSEGA IN IZPLAČILA REDNE DELOVNE USPEŠNOSTI DIREKTORICE REGIONALNE RAZVOJNE AGENCIJE LJUBLJANSKE URBANE REGIJE IN NJENIH NAMESTNIKOV PREDLOG SKLEPA pod točko B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi obsega in izplačila redne delovne uspešnosti direktorice Regionalne razvojne agencije Ljubljanske urbane regije in njenih namestnikov.",
-              "timestamp": "2021-07-05T16:32:30",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 4,
-                "abstain": 7,
-                "for": 34,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2413,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "A) PREDLOG SKLEPA O SOGLASJU K DODELITVI DELA PLAČE ZA DELOVNO USPEŠNOST DIREKTORICI REGIONALNE RAZVOJNE AGENCIJE LJUBLJANSKE URBANE REGIJE ZA OBDOBJE JANUAR 2020 – DECEMBER 2020 IZ NASLOVA POVEČANEGA OBSEGA DELA PREDLOG SKLEPA pod točko A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k dodelitvi dela plače za delovno uspešnost direktorici Regionalne razvojne agencije Ljubljanske urbane regije za obdobje januar 2020 – december 2020 iz naslova povečanega obsega dela.",
-              "timestamp": "2021-07-05T16:32:15",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 18,
-                "abstain": 0,
-                "for": 27,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2412,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "E) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – POGODBE NAMESTO RAZLASTITVE ZA NEPREMIČNINE S PARC. ŠT. 607, PARC. ŠT. 609/1, PARC. ŠT. 609/3, PARC. ŠT. 610/1, PARC. ŠT. 610/2, PARC. ŠT.611/1 IN PARC. ŠT.611/3, VSE K. O. 1736 BRINJE I PREDLOG SKLEPA k točki E: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – pogodbe namesto razlastitve za nepremičnine s parc. št. 607, parc. št. 609/1, parc. št. 609/3, parc. št. 610/1, parc. št. 610/2, parc. št.611/1 in parc. št.611/3, vse k. o. 1736 Brinje I.",
-              "timestamp": "2021-07-05T16:27:42",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 18,
-                "abstain": 0,
-                "for": 24,
-                "against": 3
-              },
-              "passed": true,
-              "id": 2411,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "D) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA – KUPOPRODAJNE POGODBE ZA STAVBNO ZEMLJIŠČE, PARC. ŠT. 433/5, K. O. 1738 DRAVLJE PREDLOG SKLEPA k točki D: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne pogodbe za stavbno zemljišče, parc. št. 433/5, k. o. 1738 Dravlje.",
-              "timestamp": "2021-07-05T16:27:24",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 17,
-                "abstain": 0,
-                "for": 28,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2410,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "C) PREDLOG SKLEPA O SOGLASJU K OSNUTKU BESEDILA PRAVNEGA POSLA - PRODAJNE POGODBE ZA SOLASTNIŠKI DELEŽ 5051/20000 NEPREMIČNIN NA NASLOVU ČOPOVA ULICA 7, 9, 9A IN 9B V LJUBLJANI PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o soglasju k osnutku besedila pravnega posla - prodajne pogodbe za solastniški delež 5051/20000 nepremičnin na naslovu Čopova ulica 7, 9, 9a in 9b v Ljubljani.",
-              "timestamp": "2021-07-05T16:27:06",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 18,
-                "abstain": 0,
-                "for": 27,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2409,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "B) PREDLOG SKLEPA O SPREMEMBI SKLEPA O DOLOČITVI SKUPNE VREDNOSTI PRAVNIH POSLOV NEPREMIČNEGA PREMOŽENJA, KI JIH LAHKO SKLEPA MESTNA OBČINA LJUBLJANA V LETU 2021 PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o spremembi Sklepa o določitvi skupne vrednosti pravnih poslov nepremičnega premoženja, ki jih lahko sklepa Mestna občina Ljubljana v letu 2021.",
-              "timestamp": "2021-07-05T16:26:47",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 6,
-                "abstain": 14,
-                "for": 25,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2408,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "A) PREDLOG SKLEPA O DOPOLNITVAH SKLEPA O NAČRTU RAVNANJA Z NEPREMIČNIM PREMOŽENJEM MESTNE OBČINE LJUBLJANA V VREDNOSTI NAD 200.000 EUROV ZA LETO 2021 PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o dopolnitvah Sklepa o Načrtu ravnanja z nepremičnim premoženjem Mestne občine Ljubljana v vrednosti nad 200.000 eurov za leto 2021.",
-              "timestamp": "2021-07-05T16:26:33",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 4,
-                "abstain": 3,
-                "for": 38,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2407,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o določitvi plačil za člane Nadzornega sveta Veterinarske postaje Ljubljana d.o.o.",
-              "timestamp": "2021-07-05T16:18:05",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 1,
-                "abstain": 0,
-                "for": 32,
-                "against": 12
-              },
-              "passed": true,
-              "id": 2406,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mateju KRIŽANIČU se da negativno mnenje h kandidaturi za direktorja Doma starejših občanov Fužine.",
-              "timestamp": "2021-07-05T16:14:51",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "against",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 3,
-                "abstain": 0,
-                "for": 42,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2405,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana p o t r j u j e skupno listo kandidatov za člane Razvojnega sveta Ljubljanske urbane regije za mandatno obdobje 2021-2027.",
-              "timestamp": "2021-07-05T15:57:28",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 5,
-                "abstain": 0,
-                "for": 39,
-                "against": 1
-              },
-              "passed": true,
-              "id": 2404,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mag. Simonu Strgarju se da pozitivno mnenje h kandidaturi za direktorja Doma starejših občanov Ljubljana - Šiška.",
-              "timestamp": "2021-07-05T15:57:01",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 6,
-                "abstain": 0,
-                "for": 39,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2403,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Francetu ROGLJU in Miši STRŽINAR se da pozitivno mnenje h kandidaturi za ravnatelja oziroma ravnateljico Mladinskega doma Malči Beličeve.",
-              "timestamp": "2021-07-05T15:56:38",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 3,
-                "abstain": 0,
-                "for": 42,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2402,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Dušanu VODEBU se da pozitivno mnenje h kandidaturi za ravnatelja Srednje upravno administrativne šole Ljubljana.",
-              "timestamp": "2021-07-05T15:56:16",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 7,
-                "abstain": 0,
-                "for": 38,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2401,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Nevenki LAMUT se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Vižmarje Brod.",
-              "timestamp": "2021-07-05T15:55:56",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 13,
-                "abstain": 0,
-                "for": 30,
-                "against": 2
-              },
-              "passed": true,
-              "id": 2400,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Maji RAKUN BEBER se da pozitivno mnenje h kandidaturi za ravnateljico Osnovne šole Bežigrad.",
-              "timestamp": "2021-07-05T15:55:38",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "absent",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 5,
-                "abstain": 0,
-                "for": 40,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2399,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "I. V Svet javnega zavoda Mednarodni grafični likovni center s e imenujejo: -  dr. Jan BABNIK -  Anton KASTELIC -  Mojca ŠKRINJAR II. Mandat imenovanih traja štiri leta.",
-              "timestamp": "2021-07-05T15:52:52",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 5,
-                "abstain": 0,
-                "for": 40,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2398,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "I. V Svet Osnovne šole Danile Kumar s e i m e n u j e j o : -   Amir CRNOJEVIĆ -   Urška HONZAK -   dr. Bojan ROTAR II. Mandat imenovanih traja štiri leta.",
-              "timestamp": "2021-07-05T15:52:26",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 5,
-                "abstain": 0,
-                "for": 40,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2397,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "I. Tomažu KLEMENCU preneha mandat člana Sveta Osnovne šole Vodmat. II. V Svet Osnovne šole Vodmat se za predstavnico Mestne občine Ljubljana i m e n u j e : Nina REMS. Mandat imenovane je vezan na mandat sveta šole.",
-              "timestamp": "2021-07-05T15:52:03",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 2,
-                "abstain": 9,
-                "for": 34,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2396,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "I. Janeza STARIHO se razreši z mesta predsednika Sveta za preventivo in vzgojo v cestnem prometu. II. V Svet za preventivo in vzgojo v cestnem prometu se kot predstavnika Mestnega sveta Mestne občine Ljubljana i m e n u j e t a : -   Emilija MITROVIĆ MILOŠ – predsednica -   Jožef HORVAT– član. III. Mandat imenovanih je vezan na mandat sveta.",
-              "timestamp": "2021-07-05T15:51:37",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "absent": 3,
-                "abstain": 1,
-                "for": 41,
-                "against": 0
-              },
-              "passed": true,
-              "id": 2395,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Mestni svet Mestne občine Ljubljana potrdi zapisnik 23. seje Mestnega sveta Mestne občine Ljubljana z dne 31. maja 2021.",
-              "timestamp": "2021-07-05T15:35:11",
-              "session": {
-                "name": "24. seja Mestnega sveta MOL",
-                "id": 80,
-                "start_time": "2021-07-05T15:30:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Mestni svet MOL",
-                    "acronym": null,
-                    "slug": "1-mestni-svet-mol"
-                  }
-                ],
-                "classification": null,
-                "in_review": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "timestamp": "2021-07-05T15:30:00",
+            "timestamp": "2022-02-14T00:00:00",
             "answer_timestamp": null,
-            "title": "polnjenje vozila na ulične svetilke",
+            "title": "v zvezi s sproščanjem ukrepov za zajezitev bolezni Covid-19",
             "authors": [
               {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
                 "honorific_prefix": null,
                 "honorific_suffix": null,
-                "preferred_pronoun": null,
+                "preferred_pronoun": "he",
                 "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka"
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
                 },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
               }
             ],
             "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-polnjenje-vozila-na-ulicne-svetilke.pdf",
+            "recipient_text": "Vlada",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/7939a159242df487094fac42667a966ebab4da080a4db494eeaaccfa661663cc",
             "type": "question"
           },
           {
-            "timestamp": "2021-07-05T15:30:00",
+            "timestamp": "2022-02-14T00:00:00",
             "answer_timestamp": null,
-            "title": "turistična taksa",
+            "title": "glede podpore za nakup električnega pogonskega kolesa za priklop na invalidski voziček",
             "authors": [
               {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
                 "honorific_prefix": null,
                 "honorific_suffix": null,
-                "preferred_pronoun": null,
+                "preferred_pronoun": "he",
                 "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka"
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
                 },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
               }
             ],
             "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-turisticna-taksa.pdf",
+            "recipient_text": "minister za okolje in prostor",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/48b801906e7a807df8a61f2157176fc9a1a1f1c88610fba972fb66aad0a47cb2",
             "type": "question"
           }
         ]
       },
       {
-        "date": "2021-07-05T00:00:00",
-        "events": []
+        "date": "2022-02-10T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-10T00:00:00",
+            "answer_timestamp": null,
+            "title": "glede vključevanja lokalne skupnosti in zaposlenih v razvoj državne hotelske infrastrukture v Pomurju",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "minister za gospodarski razvoj in tehnologijo",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/e73252dcaed3981ae98f1a90baf7a377a06cb177f50ca1dbc004f123d7bd00cf",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-16T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-16T00:00:00",
+            "answer_timestamp": null,
+            "title": "v zvezi s pogojnimi dovoljenji za stanovanjske stavbe daljšega obstoja",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "minister za okolje in prostor",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/75ad525a8848b5be7120ed42b611194f6c87f09cd3805993ca47665c0c590b4d",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-18T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-18T00:00:00",
+            "answer_timestamp": null,
+            "title": "glede neukrepanja pristojnih pri sumih kršitev pravilne uporabe dvojezičnih napisov in informacij na slovenskem ozemlju, kjer živijo pripadniki madžarske manjšine",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "Vlada",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/5ba7ac5587c6ca9ea6096b5c73b507bf391587ac1c9114b338ac8e196d94010b",
+            "type": "question"
+          },
+          {
+            "speech_id": 319581,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 319531,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 319587,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 319589,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 319591,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 319605,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 319619,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 319585,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          },
+          {
+            "speech_id": 319597,
+            "start_time": "2022-02-18T00:00:00",
+            "session": {
+              "name": "17. redna seja",
+              "id": 2255,
+              "start_time": "2022-02-17T00:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Odbor za zdravstvo",
+                  "acronym": "Odbor za zdravstvo",
+                  "slug": "33-odbor-za-zdravstvo",
+                  "color": "#09a2cc",
+                  "classification": "committee"
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            },
+            "type": "speech"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-22T00:00:00",
+        "events": [
+          {
+            "vote": {
+              "all_votes": {
+                "for": 46,
+                "against": 36,
+                "abstain": 2,
+                "absent": 5,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2898,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Resolucija o nacionalnem programu za kulturo 2022–2029 - Glasovanje",
+              "timestamp": "2022-02-22T15:49:42",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "against",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 39,
+                "against": 39,
+                "abstain": 2,
+                "absent": 9,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2899,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Resolucija o nacionalnem programu za kulturo 2022–2029 - Amandma: K poglavju IX. SKUPNI CILJI ZA VSA PODROČJA KULTURE (STRAN 55) 18. 02. 2022 [SD - Poslanska skupina Socialnih demokratov]",
+              "timestamp": "2022-02-22T15:35:40",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 41,
+                "against": 9,
+                "abstain": 30,
+                "absent": 9,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2900,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Evidenčni sklep o primernosti predloga zakona 22. 02. 2022",
+              "timestamp": "2022-02-22T15:31:50",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 58,
+                "against": 6,
+                "abstain": 18,
+                "absent": 7,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2901,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o dopolnitvi Zakona o nadzoru državne meje - Glasovanje o zakonu v celoti",
+              "timestamp": "2022-02-22T15:18:09",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 81,
+                "against": 0,
+                "abstain": 0,
+                "absent": 8,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2902,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Sklep o pripravi uradnega prečiščenega besedila zakona",
+              "timestamp": "2022-02-22T15:17:25",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 83,
+                "against": 0,
+                "abstain": 0,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2903,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Glasovanje o zakonu v celoti",
+              "timestamp": "2022-02-22T15:16:43",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 58,
+                "against": 0,
+                "abstain": 24,
+                "absent": 7,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2904,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 7. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
+              "timestamp": "2022-02-22T15:15:37",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 57,
+                "against": 0,
+                "abstain": 24,
+                "absent": 8,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2905,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 6. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
+              "timestamp": "2022-02-22T15:15:12",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 58,
+                "against": 0,
+                "abstain": 24,
+                "absent": 7,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2906,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 5. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
+              "timestamp": "2022-02-22T15:14:47",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 58,
+                "against": 0,
+                "abstain": 24,
+                "absent": 7,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2907,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 4. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+              "timestamp": "2022-02-22T15:14:22",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 60,
+                "against": 0,
+                "abstain": 23,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2908,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 3.a. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
+              "timestamp": "2022-02-22T15:13:58",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 58,
+                "against": 0,
+                "abstain": 25,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2909,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 3. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
+              "timestamp": "2022-02-22T15:13:34",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 57,
+                "against": 1,
+                "abstain": 22,
+                "absent": 9,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2910,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 2. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
+              "timestamp": "2022-02-22T15:13:10",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 46,
+                "against": 37,
+                "abstain": 1,
+                "absent": 5,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2911,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah Zakona o zdravstveni inšpekciji - Glasovanje o zakonu v celoti",
+              "timestamp": "2022-02-22T15:12:20",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 75,
+                "against": 0,
+                "abstain": 8,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2912,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o spremembah in dopolnitvah Zakona o spodbujanju investicij  - Glasovanje o zakonu v celoti",
+              "timestamp": "2022-02-22T15:11:36",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 46,
+                "against": 1,
+                "abstain": 36,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2913,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o ukrepih za omilitev posledic dviga cen energentov v gospodarstvu in kmetijstvu - Glasovanje o zakonu v celoti",
+              "timestamp": "2022-02-22T15:10:41",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 39,
+                "against": 45,
+                "abstain": 0,
+                "absent": 5,
+                "did not vote": 0
+              },
+              "passed": false,
+              "id": 2914,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o ukrepih za omilitev posledic dviga cen energentov v gospodarstvu in kmetijstvu - Amandma: K 10.e členu 21. 02. 2022 [LMŠ - Poslanska skupina Liste Marjana Šarca]",
+              "timestamp": "2022-02-22T15:09:39",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 47,
+                "against": 6,
+                "abstain": 30,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2915,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o ukrepih za omilitev posledic dviga cen energentov v gospodarstvu in kmetijstvu - Amandma: K 10. členu 21. 02. 2022 [SDS - Poslanska skupina Slovenske demokratske stranke, NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, Konkretno - Poslanska skupina Konkretno]",
+              "timestamp": "2022-02-22T15:09:12",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 32,
+                "against": 46,
+                "abstain": 6,
+                "absent": 5,
+                "did not vote": 0
+              },
+              "passed": false,
+              "id": 2916,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o ukrepih za omilitev posledic dviga cen energentov v gospodarstvu in kmetijstvu - Amandma: K 2. členu 21. 02. 2022 [LMŠ - Poslanska skupina Liste Marjana Šarca, SD - Poslanska skupina Socialnih demokratov, SAB - Poslanska skupina Stranke Alenke Bratušek]",
+              "timestamp": "2022-02-22T15:08:47",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 46,
+                "against": 1,
+                "abstain": 36,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2917,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o nujnih ukrepih za omilitev posledic zaradi vpliva visokih cen energentov - Glasovanje o zakonu v celoti",
+              "timestamp": "2022-02-22T15:07:53",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 46,
+                "against": 7,
+                "abstain": 30,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2918,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o nujnih ukrepih za omilitev posledic zaradi vpliva visokih cen energentov - Amandma: K 5. členu 21. 02. 2022 [SDS - Poslanska skupina Slovenske demokratske stranke, NSi, Konkretno - Poslanska skupina Konkretno]",
+              "timestamp": "2022-02-22T15:03:33",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 36,
+                "against": 46,
+                "abstain": 2,
+                "absent": 5,
+                "did not vote": 0
+              },
+              "passed": false,
+              "id": 2919,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o nujnih ukrepih za omilitev posledic zaradi vpliva visokih cen energentov - Amandma: K 5.. členu 21. 02. 2022 [LMŠ - Poslanska skupina Liste Marjana Šarca]",
+              "timestamp": "2022-02-22T15:02:59",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 25,
+                "against": 52,
+                "abstain": 6,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": false,
+              "id": 2920,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o nujnih ukrepih za omilitev posledic zaradi vpliva visokih cen energentov - Amandma: K 4. členu 21. 02. 2022 [SAB - Poslanska skupina Stranke Alenke Bratušek]",
+              "timestamp": "2022-02-22T15:02:21",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 53,
+                "against": 6,
+                "abstain": 24,
+                "absent": 6,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2921,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o interventnih ukrepih za podporo trgu dela - Glasovanje o zakonu v celoti",
+              "timestamp": "2022-02-22T15:01:30",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "abstain",
+            "type": "ballot"
+          },
+          {
+            "timestamp": "2022-02-22T00:00:00",
+            "answer_timestamp": null,
+            "title": "glede brezplačnega prostovoljnega cepljenja proti klopnemu meningoencefalitisu (KME) za vse starostne skupine",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "minister za zdravje",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/f63e096a1a8df647c9507b8c78dd2ba04e5051eb42151d49cfcbd1c4ff1622ab",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-15T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-15T00:00:00",
+            "answer_timestamp": null,
+            "title": "v zvezi z nogometno šolo v Lendavi",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "ministrica za izobraževanje znanost in šport",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/7a5bf6667ddfd07dfab90d9a5491a02b8c1a7c30b5063290bdddd636d8ad9b89",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-17T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-17T00:00:00",
+            "answer_timestamp": null,
+            "title": "v zvezi z sredstvi za obnovo gasilskega doma PGD Motovilci",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "minister za obrambo",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/1f7b5b27d8d2a3f86845d90eb40183436d2e930ed9bf9b526d4c53ff24b42def",
+            "type": "question"
+          },
+          {
+            "timestamp": "2022-02-17T00:00:00",
+            "answer_timestamp": null,
+            "title": "v zvezi z razmerji na trgu z odkupom energije",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "Vlada",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/1c6c99ebdb40eb92ff26eb1537db049dc53da841a78f89d54bafc2fa226363fe",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-11T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-11T00:00:00",
+            "answer_timestamp": null,
+            "title": "v zvezi s stroški, povezanimi z obvladovanjem epidemije Covid-19 v letu 2021",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "minister za zdravje",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/93b1779a5e1c5eb934cb1bab90225a78ff611d87dacc9f90f4de86cec65ef9ac",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-24T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-24T00:00:00",
+            "answer_timestamp": null,
+            "title": "v zvezi z rezervami pri zavarovalnicah, ki izvajajo prostovoljno dopolnilno zdravstveno zavarovanje",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "minister za zdravje, minister za finance",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/e30149200375a7642fb534fc629a74f37d5806068d4e722d8a81c10dfac65e6d",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-07T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-07T00:00:00",
+            "answer_timestamp": null,
+            "title": "v zvezi z dosledno uporabo besede Rom",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "Vlada",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/67134975ff0bbe3424a1abfa9afa2aead367828cfc0fec001de13477198c4803",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-21T00:00:00",
+        "events": [
+          {
+            "vote": {
+              "all_votes": {
+                "for": 43,
+                "against": 29,
+                "abstain": 4,
+                "absent": 13,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2896,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Zakon o ratifikaciji Sporazuma med Vlado Republike Slovenije in Organizacijo za sodelovanje pri skupnem oboroževanju (OCCAR) o upravljanju programa Boxer s strani OCCAR - Glasovanje o Predlogu sklepa o nedopustnosti razpisa zakonodajnega referenduma",
+              "timestamp": "2022-02-21T11:42:15",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "against",
+            "type": "ballot"
+          },
+          {
+            "vote": {
+              "all_votes": {
+                "for": 65,
+                "against": 4,
+                "abstain": 6,
+                "absent": 14,
+                "did not vote": 0
+              },
+              "passed": true,
+              "id": 2897,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Dnevni red v celoti",
+              "timestamp": "2022-02-21T10:02:14",
+              "session": {
+                "name": "95. izredna seja",
+                "id": 2261,
+                "start_time": "2022-02-21T00:00:00",
+                "end_time": null,
+                "organizations": [
+                  {
+                    "name": "Državni zbor",
+                    "acronym": "DZ",
+                    "slug": "1-drzavni-zbor",
+                    "color": "#09A2CC",
+                    "classification": "root"
+                  }
+                ],
+                "classification": "irregular",
+                "in_review": true,
+                "has_transcript": false,
+                "has_minutes": false,
+                "has_legislation": false
+              }
+            },
+            "option": "for",
+            "type": "ballot"
+          },
+          {
+            "timestamp": "2022-02-21T00:00:00",
+            "answer_timestamp": null,
+            "title": "v zvezi z oglasnimi objekti in panoji",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "Vlada",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/c68e0004f1b97267db5dbaaed407017614a55d74c753f1a8bd81c2a6bfeecfef",
+            "type": "question"
+          }
+        ]
+      },
+      {
+        "date": "2022-02-09T00:00:00",
+        "events": [
+          {
+            "timestamp": "2022-02-09T00:00:00",
+            "answer_timestamp": null,
+            "title": "glede izvajanja Akcijskega načrta za obdobje 2019 – 2021 za izvajanje Državne strategije »eno zdravje« za obvladovanje odpornosti mikrobov",
+            "authors": [
+              {
+                "slug": "37-dejan-zidan",
+                "name": "Dejan Židan",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                  "name": "Socialni demokrati",
+                  "acronym": "SD",
+                  "slug": "4-socialni-demokrati",
+                  "color": "#B3422E",
+                  "classification": "pg"
+                },
+                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+              }
+            ],
+            "recipient_people": [],
+            "recipient_text": "Vlada",
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/568d84ea69d84967c0945ccdd13f481fa176653365bab3ac545dfc474b75a4d4",
+            "type": "question"
+          }
+        ]
       }
     ],
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
+      "description": "VIII",
       "beginning": null
     },
     "person": {
-      "slug": "230-ana-zagozen",
-      "name": "Ana Zagožen",
+      "slug": "37-dejan-zidan",
+      "name": "Dejan Židan",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": null,
+      "preferred_pronoun": "he",
       "group": {
-        "name": "Slovenska demokratska stranka ",
-        "acronym": "",
-        "slug": "21-slovenska-demokratska-stranka"
+        "name": "Socialni demokrati",
+        "acronym": "SD",
+        "slug": "4-socialni-demokrati",
+        "color": "#B3422E",
+        "classification": "pg"
       },
-      "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
+      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
     }
   }
 }
