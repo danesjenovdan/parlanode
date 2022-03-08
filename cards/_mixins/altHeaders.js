@@ -5,13 +5,13 @@ export const personHeader = {
   computed: {
     headerConfig() {
       const { cardState } = this.$root.$options.contextData;
-      let coalitionText;
-      if (this.cardData.data?.person?.group) {
-        coalitionText = this.cardData.data.person.group.is_coalition
-          ? this.$t('coalition')
-          : this.$t('opposition');
-      }
-      console.log(this.cardData.data.person);
+      // let coalitionText;
+      // if (this.cardData.data?.person?.group) {
+      //   coalitionText = this.cardData.data.person.group.is_coalition
+      //     ? this.$t('coalition')
+      //     : this.$t('opposition');
+      // }
+      // console.log(this.cardData.data.person);
       return {
         circlePerson: this.cardData.data?.person,
         heading: this.cardData.data?.person?.name,
@@ -29,10 +29,10 @@ export const partyHeader = {
   computed: {
     headerConfig() {
       const { cardState } = this.$root.$options.contextData;
-      const coalitionText = this.cardData.is_coalition
-        ? this.$t('coalition')
-        : this.$t('opposition');
-      console.log(this.cardData);
+      // const coalitionText = this.cardData.is_coalition
+      //   ? this.$t('coalition')
+      //   : this.$t('opposition');
+      // console.log(this.cardData);
       return {
         mediaImage: 'party',
         circleColor: this.cardData.data?.group?.color,

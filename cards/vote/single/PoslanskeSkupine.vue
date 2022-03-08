@@ -168,7 +168,12 @@ export default {
       });
     },
     expandedMembers() {
-      return this.members.filter((member) => {
+      const sortedMembers = this.members.slice().sort((a, b) => {
+        const aValue = a?.person?.name || '';
+        const bValue = b?.person?.name || '';
+        return aValue.localeCompare(bValue, 'sl');
+      });
+      return sortedMembers.filter((member) => {
         if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
           return (
             member.person.group?.is_coalition ===
