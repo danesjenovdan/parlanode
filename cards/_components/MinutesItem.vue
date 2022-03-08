@@ -5,20 +5,15 @@
         <a :href="getSessionAgendaLink(session)">
           <div class="portrait agenda-item-icon" />
         </a>
-        <a :href="getSessionAgendaLink(session)" class="funblue-light-hover">
-          <span class="name">{{
-            $t('agenda-item-point', { num: agendaItem.order })
-          }}</span>
-        </a>
       </div>
-      <div v-if="showSession" class="session">
+      <!-- <div v-if="showSession" class="session">
         <a
           :href="getSessionTranscriptLink(session)"
           class="funblue-light-hover"
           >{{ session?.name }}</a
         ><br />
         <span class="date">{{ session?.date }}</span>
-      </div>
+      </div> -->
     </div>
     <div class="everything">
       <div class="title">{{ agendaItem.name }}</div>
@@ -89,10 +84,6 @@ export default {
       type: Object,
       required: true,
     },
-    itemNumber: {
-      type: Number,
-      default: 0,
-    },
     session: {
       type: Object,
       required: true,
@@ -137,7 +128,7 @@ export default {
     flex-wrap: wrap;
     height: auto;
     justify-content: flex-start;
-    width: 220px;
+    width: 75px;
   }
 
   .person {
@@ -268,6 +259,9 @@ export default {
 
   .everything {
     flex: 1;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
 
     @include respond-to(desktop) {
       padding: 2px 8px 0 8px;
