@@ -2,7 +2,7 @@
   <div :id="agendaItem.id" class="speech-holder">
     <div class="person-session">
       <div class="person">
-        <a :href="getSessionAgendaLink(session)">
+        <a :href="getSessionAgendaLink(agendaItem, session)">
           <div class="portrait agenda-item-icon" />
         </a>
       </div>
@@ -55,7 +55,7 @@
     </div>
     <div class="links">
       <a
-        :href="getSessionAgendaLink(session)"
+        :href="getSessionAgendaLink(agendaItem, session)"
         class="link"
         :title="$t('minutes-agenda-link')"
       ></a>
