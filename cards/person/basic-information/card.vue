@@ -8,9 +8,16 @@
         <div class="bordertop0">
           <span class="key">
             <span v-t="'party'"></span>:
-            <a :href="getPartyLink(group)" class="funblue-light-hover">
+            <a
+              v-if="getPartyLink(group)"
+              :href="getPartyLink(group)"
+              class="funblue-light-hover"
+            >
               {{ group.acronym || group.name || 'N/A' }}
             </a>
+            <span v-else>
+              {{ $t(unaffiliatedKey) }}
+            </span>
           </span>
         </div>
       </div>
@@ -174,6 +181,11 @@ export default {
         return `elected-to-district-with-points${suffix}`;
       }
       return `elected-to-district${suffix}`;
+    },
+    unaffiliatedKey() {
+      let suffix = '--f';
+      if (this.person.preferred_pronoun === 'he') suffix = '--m';
+      return `unaffiliated${suffix}`;
     },
     shortEmail() {
       if (this.results.email?.length) {

@@ -92,12 +92,12 @@ const analysesIDs = [
   {
     id: 'speeches_per_session',
   },
-  // {
-  //   id: 'spoken_words',
-  // },
-  // {
-  //   id: 'mismatch_of_pg',
-  // },
+  {
+    id: 'spoken_words',
+  },
+  {
+    id: 'mismatch_of_pg',
+  },
   {
     id: 'working_bodies',
   },
@@ -148,7 +148,11 @@ export default {
       { id: 'she', icon: 'gender-f', selected: initialGenders.includes('she') },
     ];
 
-    const analyses = analysesIDs.map((a) => ({
+    // parse hidden analyses into an array
+    const hiddenAnalyses = cardState?.hiddenAnalyses.split('|');
+
+    // filter out hidden analyses and translate them
+    const analyses = analysesIDs.filter((a) => !hiddenAnalyses.includes(a.id)).map((a) => ({
       ...a,
       label: this.$te(`analysis-texts.${a.id}.label`)
         ? this.$t(`analysis-texts.${a.id}.label`)
@@ -300,17 +304,30 @@ export default {
             },
           ];
 
-          if (this.showDemographicsAge)
+          if (this.showDemographicsAge) {
             items.push(age(member.results?.birth_date));
-          if (this.showDemographicsEducation)
+          }
+          if (this.showDemographicsEducation) {
             items.push(member.results?.education);
-          if (this.showDemographicsMandates)
+          }
+          if (this.showDemographicsMandates) {
             items.push(member.results?.mandates);
-          if (this.showDemographicsGroup)
-            items.push({
-              link: this.getPartyLink(member?.group),
-              text: member.group?.acronym || member.group?.name || 'N/A',
-            });
+          }
+          if (this.showDemographicsGroup) {
+            if (this.getPartyLink(member?.group)) {
+              items.push({
+                link: this.getPartyLink(member?.group),
+                text: member.group?.acronym || member.group?.name || 'N/A',
+              });
+            } else {
+              let suffix = '--f';
+              if (member?.preferred_pronoun === 'he') suffix = '--m';
+              items.push({
+                link: null,
+                text: this.$t(`unaffiliated${suffix}`),
+              });
+            }
+          }
 
           return items;
         });

@@ -172,6 +172,9 @@ filtered-to-none: Brez zadetkov
 mps: Poslanci
 party: Poslanska skupina
 parties: Poslanske skupine
+unaffiliated--f: nepovezana
+unaffiliated--m: nepovezan
+unaffiliated--plural: nepovezani
 time-period: Časovno obdobje
 session-type: Vrsta seje
 no-results: Brez zadetkov.
