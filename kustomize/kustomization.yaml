@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlacards-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ajdovscina
-    newTag: 'd422a1a1b9e218504b64503f40a345c09636edea'
+    newTag: 'ed2a6d93e4dcfa8c129a29478de5df970b603ef7'
