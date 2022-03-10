@@ -5,17 +5,14 @@ export const personOgImage = {
   computed: {
     ogConfig() {
       const { cardData } = this.$root.$options.contextData;
-      let coalitionText;
-      if (cardData?.organization) {
-        coalitionText = cardData?.organization?.is_coalition
-          ? this.$t('coalition')
-          : this.$t('opposition');
-      }
+      const person = cardData?.data?.person || {};
       return {
         name: 'circle',
-        image: cardData?.image,
-        h1: cardData?.name,
-        h2: `${cardData?.organization?.acronym} | ${coalitionText}`,
+        image: person.image,
+        h1: person.name,
+        h2: person.group?.is_in_coalition
+          ? `${person.group?.acronym} | ${this.$t('coalition')}`
+          : person.group?.acronym,
         title: this.$t('card.title'),
       };
     },
@@ -26,14 +23,14 @@ export const partyOgImage = {
   computed: {
     ogConfig() {
       const { cardData } = this.$root.$options.contextData;
-      const coalitionText = cardData?.is_coalition
-        ? this.$t('coalition')
-        : this.$t('opposition');
+      const group = cardData?.data?.group || {};
       return {
         name: 'circle',
-        acronym: cardData?.acronym,
-        h1: cardData?.name,
-        h2: `${cardData?.acronym} | ${coalitionText}`,
+        acronym: group.acronym,
+        h1: group.name,
+        h2: group.is_in_coalition
+          ? `${group.acronym} | ${this.$t('coalition')}`
+          : group.acronym,
         title: this.$t('card.title'),
       };
     },
