@@ -4,8 +4,14 @@
       <div class="media-object img-circle session-logo" style="background-color: <%= group.color %>;">
         <img src="<%- config.urls.cdn %>/icons/party.svg" class="img-responsive">
       </div>
+
       <h1><%- group.name %></h1>
-      <h2><%- group.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %></h2>
+
+      <div class="group-extra-info">
+        <h2><%- group.is_in_coalition ? i18n('general.coalition') : '&nbsp;' %></h2>
+        <h3>&nbsp;</h3>
+      </div>
+
       <div class="group-container-menu">
         <ul class="clearfix">
           <li><a href="/<%- sm.party.base %>/<%- group.slug %>/<%- sm.party.overview %>" class="<%- activeTab === 'pregled' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.overview') %></a></li>
