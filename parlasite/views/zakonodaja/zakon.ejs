@@ -6,7 +6,9 @@
       <div class="media-object img-circle session-logo backgroundred law-logo">
         <b><%= i18n(`legislation.${lawData.results.classification || 'decree'}`) %></b>
       </div>
+
       <h1 style="max-width: 600px; position: relative; margin: auto;"><%= lawData.results.text %></h1>
+
       <br>
       <h2 class="result">
         <div class="parlaicon vote-result--<%= lawData.results.status || 'in_procedure' %>" class="result-icon"></div>
