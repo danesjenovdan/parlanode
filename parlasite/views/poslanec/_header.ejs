@@ -1,27 +1,19 @@
-<% if (mp.end_time) { %>
-<style>
-body > .container {
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-</style>
-<% } %>
-
 <div class="member-container">
   <div class="row header text-center">
     <div class="col-lg-12">
       <img src="<%- mp.image || (config.urls.cdn + '/img/people/square/null.png') %>" class="media-object img-circle session-logo person-logo" style="border: 2px solid <%= mp.group && mp.group.color || '#333' %>;">
+
       <h1><%- mp.honorific_prefix %> <%- mp.name %> <%- mp.honorific_suffix %></h1>
+
+      <div class="member-extra-info">
       <% if (mp.group) { %>
-      <h2><a href="/<%- sm.party.base %>/<%- mp.group.slug || '' %>"><%= mp.group.name ? mp.group.name : mp.group.acronym ? mp.group.acronym : '' %></a></h2>
+        <h2><a href="/<%- sm.party.base %>/<%- mp.group.slug || '' %>"><%= mp.group.name ? mp.group.name : mp.group.acronym ? mp.group.acronym : '' %></a></h2>
       <% } else { %>
-      <h2><span><%- i18n('general.unaffiliated') %></span></h2>
+        <h2><span><%- i18n('general.unaffiliated') %></span></h2>
       <% } %>
-      <!-- <h3><%- mp.group && mp.group.is_coalition ? i18n('general.coalition') : i18n('general.opposition') %></h3> -->
-      <% if (mp.end_time) { %>
-      <h3><%- i18n('general.inactive') %></h3>
-      <% } %>
+        <h3><%- mp.group && mp.group.is_in_coalition ? i18n('general.coalition') : '&nbsp;' %></h3>
+      </div>
+
       <% if (typeof activeTab !== 'undefined') { %>
       <div class="group-container-menu">
         <ul class="clearfix">
