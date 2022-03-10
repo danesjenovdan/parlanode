@@ -47,7 +47,7 @@
     }
   },
   "menu": {
-    "legislation": "Odloki in akti",
+    "legislation": "Zakonodaja",
     "sessions": "Seje",
     "mps": "Poslanci",
     "pgs": "Poslanske skupine",
@@ -166,7 +166,7 @@
     "vote-result--adopted": "Sprejet",
     "vote-result--received": "Prejet",
     "vote-result--in_procedure": "V obravnavi",
-    "legislation": "Odloki in akti",
+    "legislation": "Zakonodaja",
     "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkript",
@@ -183,7 +183,7 @@
   },
   "titles": {
     "session": "Seja",
-    "legislation": "Odloki in akti",
+    "legislation": "Zakonodaja",
     "other-votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",
