@@ -8,37 +8,17 @@
   padding: 0 20px;
   position: relative;
   top: 0;
-  .header {
-    margin-bottom: 20px;
-  }
-  @extend %group-member-header-headings;
-  h2 {
-    margin-bottom: 40px;
-  }
-  h3 {
-    margin-bottom: 68px;
-  }
 
-  .me_group {
-    padding-bottom: 30px;
-    .progress-bar {
-      background: $barchart-default;
-    }
-    .col150 {
-      width: 20%;
-    }
-    .col280 {
-      width: 80%;
-    }
-    .group_data_title {
-      font-size: 18px;
-      font-weight: 500;
-    }
-    .group_data_title a {
-      color: inherit;
+  .header {
+    @extend %group-member-header-headings;
+    margin-bottom: 20px;
+
+    .group-extra-info {
+      margin-bottom: 30px;
     }
   }
 }
+
 .group-container-menu {
   ul {
     padding: 0;
