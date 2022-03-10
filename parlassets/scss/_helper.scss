@@ -170,8 +170,10 @@ $cdn_home_icon: get-parlassets-url() + '/icons/';
 }
 
 %group-member-header-headings {
-  h1 {
-      margin: 0 auto 5px auto;
+  h1,
+  h2,
+  h3 {
+      margin: 0 auto;
       font-size: 24px;
       line-height: 1.4;
       font-weight: 500;
@@ -184,14 +186,11 @@ $cdn_home_icon: get-parlassets-url() + '/icons/';
   h2 {
       font-size: 18px;
       font-weight: 300;
-      margin-bottom: 8px;
-      margin-top: 0;
   }
   h3 {
       font-family: Roboto Slab, serif;
       font-size: 14px;
       font-weight: 300;
-      margin: 0;
   }
 }
 
