@@ -1,136 +1,137 @@
 {
-  "url": "https://parladata.lb.djnd.si/v3/cards/misc/legislation/?id=1",
+  "id": 1,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/misc/legislation/?id=1",
   "data": {
     "results": [
       {
-        "id": 1316,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POKOPALIŠKEM REDU V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
+        "id": 1,
+        "uid": "PZ8|C1257A70003EE6A1C12582BA003CBD29",
+        "text": "Zakon o dopolnitvi Zakona o zdravniški službi",
+        "epa": "16-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-06-28T00:00:00"
       },
       {
-        "id": 1313,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O REBALANSU PRORAČUNA MESTNE OBČINE LJUBLJANA ZA LETO 2021",
-        "epa": null,
+        "id": 2,
+        "uid": "PZ8|C1257A70003EE6A1C12582C100383CC1",
+        "text": "Zakon o spremembah in dopolnitvah Zakona o stvarnem premoženju države in samoupravnih lokalnih skupnosti",
+        "epa": "29-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-07-05T00:00:00"
       },
       {
-        "id": 1318,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O UREJANJU PROMETA V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
+        "id": 3,
+        "uid": "PZ8|C1257A70003EE6A1C12582CC0038BF40",
+        "text": "Zakon za zaščito vrednosti kapitalske naložbe Republike Slovenije v Novi Ljubljanski banki d.d., Ljubljana",
+        "epa": "42-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-07-16T00:00:00"
       },
       {
-        "id": 1314,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2022",
-        "epa": null,
+        "id": 4,
+        "uid": "PZ8|C1257A70003EE6A1C12582D7002E5B0A",
+        "text": "Zakon o trgu finančnih instrumentov",
+        "epa": "62-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-07-27T00:00:00"
       },
       {
-        "id": 1321,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O SPREMEMBAH ODLOKA O UREJANJU JAVNIH PARKIRIŠČ S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
+        "id": 5,
+        "uid": "PZ8|C1257A70003EE6A1C12582D7002EFCDE",
+        "text": "Zakon o spremembah in dopolnitvah Zakona o investicijskih skladih in družbah za upravljanje",
+        "epa": "63-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-07-27T00:00:00"
       },
       {
-        "id": 1322,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O PODELITVI KONCESIJ ZA OPRAVLJANJE JAVNE SLUŽBE V OSNOVNI ZDRAVSTVENI DEJAVNOSTI V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
+        "id": 6,
+        "uid": "PZ8|C1257A70003EE6A1C12582D700321DF9",
+        "text": "Zakon o spremembah in dopolnitvah Zakona o upravljavcih alternativnih investicijskih skladov",
+        "epa": "66-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-07-27T00:00:00"
       },
       {
-        "id": 1332,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O OBČINSKEM PODROBNEM PROSTORSKEM NAČRTU 81 CENTER ZNANOSTI – DEL",
-        "epa": null,
+        "id": 7,
+        "uid": "PZ8|C1257A70003EE6A1C1258300002D9FCD",
+        "text": "Zakon o spremembah in dopolnitvah Zakona o zdravstvenem varstvu in zdravstvenem zavarovanju",
+        "epa": "117-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-09-06T00:00:00"
       },
       {
-        "id": 1317,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O DOPOLNITVI ODLOKA O ORGANIZACIJI IN NAČINU IZVAJANJA MESTNIH LINIJSKIH PREVOZOV POTNIKOV S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
+        "id": 8,
+        "uid": "PZ8|C1257A70003EE6A1C125830000407FFA",
+        "text": "Zakon o spremembah in dopolnitvah Zakona o dohodnini",
+        "epa": "119-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-09-06T00:00:00"
       },
       {
-        "id": 1315,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2023",
-        "epa": null,
+        "id": 9,
+        "uid": "PZ8|C1257A70003EE6A1C12583050044B233",
+        "text": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju",
+        "epa": "121-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
+        "timestamp": "2018-09-11T00:00:00"
       },
       {
-        "id": 1338,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O ORGANIZACIJI IN DELOVNEM PODROČJU MESTNE UPRAVE MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
+        "id": 10,
+        "uid": "PZ8|C1257A70003EE6A1C125830500455F03",
+        "text": "Zakon o spremembi Zakona o delovnih razmerjih",
+        "epa": "122-VIII",
         "status": "enacted",
-        "passed": true,
-        "classification": "decree",
+        "passed": null,
+        "classification": "legislation",
         "has_votes": true,
         "has_abstract": false,
-        "timestamp": "2021-09-27T15:30:00"
+        "timestamp": "2018-09-11T00:00:00"
       }
     ],
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": "2018-12-17T12:00:00"
+      "description": "VIII",
+      "beginning": null
     },
-    "legislation:count": 59,
-    "legislation:pages": 6,
+    "legislation:count": 454,
+    "legislation:pages": 46,
     "legislation:page": 1,
     "legislation:per_page": 10,
-    "classifications": ["decree"]
+    "classifications": ["act", "legislation"]
   }
 }

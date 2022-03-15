@@ -148,6 +148,8 @@ export default {
       textFilter: cardState?.text || '',
       // onlyAbstracts: !!state.onlyAbstracts,
       // onlyWithVotes: !!state.onlyWithVotes,
+      showEpaColumn:
+        cardState?.showEpaColumn && cardState?.showEpaColumn !== 'false',
 
       // pagination
       pages,
@@ -199,11 +201,13 @@ export default {
         //   label: this.$t('data'),
         //   additionalClass: 'narrow no-sort',
         // },
-        // {
-        //   id: 'epa',
-        //   label: this.$t('epa'),
-        //   additionalClass: 'narrow',
-        // },
+        this.showEpaColumn
+          ? {
+              id: 'epa',
+              label: this.$t('epa'),
+              additionalClass: 'epa-col',
+            }
+          : null,
         {
           id: 'timestamp',
           label: this.$t('date'),
@@ -214,7 +218,7 @@ export default {
           label: this.$t('status'),
           additionalClass: 'status-col',
         },
-      ];
+      ].filter(Boolean);
     },
     currentPageLegislation() {
       return this.legislationPerPage[this.page - 1] || [];
@@ -248,10 +252,10 @@ export default {
           },
           // TODO optional stuff commented out, this is bad
           // { html: dataIconsHtml },
-          // { text: legislation.epa },
+          this.showEpaColumn ? { text: legislation.epa } : null,
           { text: dateFormatter(legislation.timestamp || '') || 'N/A' },
           { html: outcomeHtml },
-        ];
+        ].filter(Boolean);
       });
     },
     selectedFilterOption() {
@@ -388,6 +392,15 @@ export default {
 .legislation-list-container :deep(.legislation-list) {
   .column {
     margin: 0;
+
+    &.epa-col {
+      flex: 0 0 80px;
+      margin-left: 30px;
+
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
 
     &.date-col {
       flex: 0 0 100px;
