@@ -13,6 +13,7 @@
               v-for="law in legislation"
               :key="law.id"
               :law="law"
+              :show-epa-column="showEpaColumn"
             />
           </template>
         </div>
@@ -59,7 +60,7 @@ export default {
     doubleWidth: true,
   },
   data() {
-    const { cardData } = this.$root.$options.contextData;
+    const { cardData, cardState } = this.$root.$options.contextData;
 
     return {
       card: {
@@ -67,6 +68,8 @@ export default {
         isLoading: false,
       },
       legislation: cardData?.data?.results || [],
+      showEpaColumn:
+        cardState?.showEpaColumn && cardState?.showEpaColumn !== 'false',
     };
   },
   computed: {
