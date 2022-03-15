@@ -431,10 +431,10 @@ export default {
       this.searchPeopleImmediate();
     },
     currentSort() {
-      this.searchPeopleImmediate(true);
+      this.searchPeopleImmediate();
     },
     currentSortOrder() {
-      this.searchPeopleImmediate(true);
+      this.searchPeopleImmediate();
     },
   },
   mounted() {
@@ -484,13 +484,11 @@ export default {
         });
       }
     },
-    searchPeopleImmediate(keepPage = false) {
+    searchPeopleImmediate() {
       this.isLoading = true;
       this.membersPerPage = Array(this.pages);
       this.count = 0;
-      if (!keepPage) {
-        this.page = 1;
-      }
+      this.page = 1;
       this.makeRequest(this.searchUrl).then((response) => {
         this.count = response?.data?.['members:count'];
         this.page = response?.data?.['members:page'];
