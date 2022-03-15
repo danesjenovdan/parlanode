@@ -265,15 +265,15 @@ export default {
 
   watch: {
     currentSort() {
-      this.searchLegislationImmediate(true);
+      this.searchLegislationImmediate();
     },
 
     currentSortOrder() {
-      this.searchLegislationImmediate(true);
+      this.searchLegislationImmediate();
     },
 
     selectedFilterOption() {
-      this.searchLegislationImmediate(true);
+      this.searchLegislationImmediate();
     },
   },
 
@@ -298,13 +298,11 @@ export default {
       }
     },
 
-    searchLegislationImmediate(keepPage = false) {
+    searchLegislationImmediate() {
       this.isLoading = true;
       this.legislationPerPage = Array(this.pages);
       this.count = 0;
-      if (!keepPage) {
-        this.page = 1;
-      }
+      this.page = 1;
       this.makeRequest(this.searchUrl).then((response) => {
         this.count = response?.data?.['legislation:count'];
         this.page = response?.data?.['legislation:page'];
