@@ -132,7 +132,7 @@ export default {
     legislationPerPage[initialPage - 1] = results;
 
     // create filterOptions from classifications contained in the API response
-    const classifications = cardData?.data?.classifications || [];
+    const classifications = cardData?.data?.results?.classifications || [];
     const filterOptions = classifications.map((classification) => ({
       id: classification,
       color: 'for', // TODO this color should be properly named
