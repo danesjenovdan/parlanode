@@ -1,400 +1,302 @@
 {
-  "id": 230,
+  "id": 81,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/questions/?id=81",
   "data": {
     "results": [
       {
-        "date": "2019-07-08T00:00:00",
-        "events": [
+        "timestamp": "2021-12-10T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi z uvedbo kavcijskega sistema za zbiranje embalaže za pijače",
+        "authors": [
           {
-            "timestamp": "2019-07-08T15:30:00",
-            "answer_timestamp": null,
-            "title": "rdeča zvezda",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-rdeca-zvezda.pdf",
-            "type": "initiative"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za okolje in prostor",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/d30244c4dc909f5ef9e590dfdca5a229325007cbec760d6e9be164c65650bf88",
+        "type": "question"
       },
       {
-        "date": "2019-12-16T00:00:00",
-        "events": [
+        "timestamp": "2021-11-10T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi s spodbudami za proizvajalce embalaže za shranjevanje živil, ki je skladna z regulacijo dajanja plastičnih proizvodov za enkratno uporabo na trg",
+        "authors": [
           {
-            "timestamp": "2019-12-16T15:30:00",
-            "answer_timestamp": null,
-            "title": "ADVENT",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-ADVENT.pdf",
-            "type": "unknown"
-          },
-          {
-            "timestamp": "2019-12-16T15:30:00",
-            "answer_timestamp": null,
-            "title": "koši za pasje iztrebke",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-kosi-za-pasje-iztrebke.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za gospodarski razvoj in tehnologijo",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/49f2cc319bbf88b5bc418e54e58955d1e8db213381f3bda4e63b1d6cc28796fb",
+        "type": "question"
       },
       {
-        "date": "2019-05-20T00:00:00",
-        "events": [
+        "timestamp": "2021-11-02T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi s projektno dokumentacijo za traso Velenje jug–Šentrupert v okviru tretje razvojne osi",
+        "authors": [
           {
-            "timestamp": "2019-05-20T15:30:00",
-            "answer_timestamp": null,
-            "title": "tekoče stopnice",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/3.-tocka-Pobuda-svetnice-Ane-Zagozen-tekoce-stopnice.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za infrastrukturo",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/9ef17174846b81c61ff40d651cd33a603d90c252d335ad23f038a9daf6b7957e",
+        "type": "question"
       },
       {
-        "date": "2019-04-15T00:00:00",
-        "events": [
+        "timestamp": "2021-10-20T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi z uvedbo kavcijskega sistema za zbiranje embalaže za pijače",
+        "authors": [
           {
-            "timestamp": "2019-04-15T15:30:00",
-            "answer_timestamp": null,
-            "title": "stanovanja",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-stanovanja.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "Vlada",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/38fb9a9215dc5e5c11f5dc6e75df12c565810a601e1670b7097e210290c92565",
+        "type": "initiative"
       },
       {
-        "date": "2020-02-03T00:00:00",
-        "events": [
+        "timestamp": "2021-10-08T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi z izgradnjo kolesarske steze od križišča Pondor proti Prekopi",
+        "authors": [
           {
-            "timestamp": "2020-02-03T15:30:00",
-            "answer_timestamp": null,
-            "title": "posip na pločnikih",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-posip-na-plocnikih.pdf",
-            "type": "question"
-          },
-          {
-            "timestamp": "2020-02-03T15:30:00",
-            "answer_timestamp": null,
-            "title": "Štepanjsko naselje",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-Stepanjsko-naselje.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za infrastrukturo",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/17555a60b62c7755d693c0d2912a4616633a54aeb43282e78534bbbe5d586875",
+        "type": "initiative"
       },
       {
-        "date": "2021-07-05T00:00:00",
-        "events": [
+        "timestamp": "2021-09-20T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi z nadzorom prodaje kmetijskih pridelkov na obcestnih stojnicah",
+        "authors": [
           {
-            "timestamp": "2021-07-05T15:30:00",
-            "answer_timestamp": null,
-            "title": "polnjenje vozila na ulične svetilke",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-polnjenje-vozila-na-ulicne-svetilke.pdf",
-            "type": "question"
-          },
-          {
-            "timestamp": "2021-07-05T15:30:00",
-            "answer_timestamp": null,
-            "title": "turistična taksa",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-turisticna-taksa.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za kmetijstvo gozdarstvo in prehrano",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/3949244b8e8cd90ac9eab726f802dd0b1ed2a044d458c2967408ef39df5523fe",
+        "type": "question"
       },
       {
-        "date": "2020-12-14T00:00:00",
-        "events": [
+        "timestamp": "2021-07-14T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi z zagotovitvijo notarskih storitev v Žalcu",
+        "authors": [
           {
-            "timestamp": "2020-12-14T15:30:00",
-            "answer_timestamp": null,
-            "title": "Advent v Ljubljani",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-Advent-v-Ljubljani.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za pravosodje",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/6aa9288e5180b984c8573cb7e5275ccfb0cdeb285588b796d8aed679eb0c27f6",
+        "type": "initiative"
       },
       {
-        "date": "2021-03-29T00:00:00",
-        "events": [
+        "timestamp": "2021-07-02T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi s sistemskim reševanjem problematike otrok s posebnimi potrebami",
+        "authors": [
           {
-            "timestamp": "2021-03-29T15:30:00",
-            "answer_timestamp": null,
-            "title": "table",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-table.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za delo družino socialne zadeve in enake možnosti",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/75f127e3027bd572e5e247181b8e7f0c44b6ddf344823486d8e8602bc4056b8e",
+        "type": "question"
       },
       {
-        "date": "2020-05-04T00:00:00",
-        "events": [
+        "timestamp": "2021-06-02T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi s Pravilnikom o merilih sorazmernosti pri pogoju ugotavljanja znižanja prihodkov",
+        "authors": [
           {
-            "timestamp": "2020-05-04T15:30:00",
-            "answer_timestamp": null,
-            "title": "vodostaj",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-vodostaj.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za finance",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/f35dfc288b57857aae0458ff17de522458b08ae565e4932958833f5ea5112d18",
+        "type": "question"
       },
       {
-        "date": "2019-09-23T00:00:00",
-        "events": [
+        "timestamp": "2021-05-26T00:00:00",
+        "answer_timestamp": null,
+        "title": "v zvezi z umestitvijo gostinskih poklicev na seznam deficitarnih poklicev",
+        "authors": [
           {
-            "timestamp": "2019-09-23T15:30:00",
-            "answer_timestamp": null,
-            "title": "ločevanje odpadkov",
-            "authors": [
-              {
-                "slug": "230-ana-zagozen",
-                "name": "Ana Zagožen",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": null,
-                "group": {
-                  "name": "Slovenska demokratska stranka ",
-                  "acronym": "",
-                  "slug": "21-slovenska-demokratska-stranka",
-                  "color": "#09a2cc"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": null,
-            "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ane-Zagozen-locevanje-odpadkov.pdf",
-            "type": "question"
+            "slug": "81-aleksander-rebersek",
+            "name": "Aleksander Reberšek",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Nova Slovenija - Krščanski demokrati",
+              "acronym": "NSi",
+              "slug": "7-nova-slovenija-krscanski-demokrati",
+              "color": "#31A8B1",
+              "classification": "pg",
+              "is_in_coalition": true
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
           }
-        ]
+        ],
+        "recipient_people": [],
+        "recipient_text": "minister za delo družino socialne zadeve in enake možnosti",
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/9583c020f40a032cb8f7bf3bd5c841dcbe23d6f16fe5d41c4b20d70efdba0b82",
+        "type": "initiative"
       }
     ],
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": "2018-12-17T12:00:00"
+      "description": "VIII",
+      "beginning": null
     },
     "person": {
-      "slug": "230-ana-zagozen",
-      "name": "Ana Zagožen",
+      "slug": "81-aleksander-rebersek",
+      "name": "Aleksander Reberšek",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": null,
+      "preferred_pronoun": "he",
       "group": {
-        "name": "Slovenska demokratska stranka ",
-        "acronym": "",
-        "slug": "21-slovenska-demokratska-stranka",
-        "color": "#09a2cc"
+        "name": "Nova Slovenija - Krščanski demokrati",
+        "acronym": "NSi",
+        "slug": "7-nova-slovenija-krscanski-demokrati",
+        "color": "#31A8B1",
+        "classification": "pg",
+        "is_in_coalition": true
       },
-      "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-    }
+      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+    },
+    "count": 82,
+    "pages": 9,
+    "page": 1,
+    "per_page": 10
   }
 }
