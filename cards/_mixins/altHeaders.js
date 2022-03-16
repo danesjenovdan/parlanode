@@ -73,25 +73,25 @@ export const sessionHeader = {
 };
 
 export const defaultHeaderConfig = (comp, overrides = {}) => {
+  const { cardState } = comp.$root.$options.contextData;
   const headerConfig = {
     circleIcon: 'og-list',
     heading: '&nbsp;',
     subheading: '',
-    alternative: comp.$options.contextData.cardState?.altHeader,
+    alternative: cardState?.altHeader,
     title: comp.$t('card.title'),
   };
   return assign({}, headerConfig, overrides);
 };
 
 export const defaultDynamicHeaderConfig = (comp, overrides = {}) => {
+  const { cardState } = comp.$root.$options.contextData;
   const headerConfig = {
     circleIcon: 'og-list',
     heading: '&nbsp;',
     subheading: '',
-    alternative: comp.$options.contextData.cardState?.altHeader,
-    title: comp.$options.contextData.cardState?.cardTitle
-      ? comp.$options.contextData.cardState?.cardTitle
-      : comp.$t('card.title'),
+    alternative: cardState?.altHeader,
+    title: cardState?.cardTitle ? cardState?.cardTitle : comp.$t('card.title'),
   };
   return assign({}, headerConfig, overrides);
 };
