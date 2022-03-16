@@ -7,7 +7,7 @@
         </a>
       </div>
     </div>
-    <!-- <div class="column epa-col">{{ epa }}</div> -->
+    <div v-if="showEpaColumn" class="column epa-col">{{ law.epa }}</div>
     <div class="column result-col">
       <div>
         <div class="outcome">
@@ -29,6 +29,10 @@ export default {
     law: {
       type: Object,
       required: true,
+    },
+    showEpaColumn: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -62,7 +66,15 @@ export default {
       }
     }
 
+    &.epa-col {
+      flex: 0 0 80px;
+      margin-left: 30px;
+    }
+
     &.result-col {
+      flex: 0 0 160px;
+      margin-left: 30px;
+
       .outcome .text {
         min-width: 92px;
 

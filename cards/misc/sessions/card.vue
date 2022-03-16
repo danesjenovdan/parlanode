@@ -265,7 +265,7 @@ export default {
         this.currentSortOrder = 'asc';
       }
       // start a request to get sorted sessions
-      this.searchSessionsImmediate(true);
+      this.searchSessionsImmediate();
     },
 
     selectTab() {
@@ -297,13 +297,11 @@ export default {
       });
     },
 
-    searchSessionsImmediate(keepPage = false) {
+    searchSessionsImmediate() {
       this.isLoading = true;
       this.sessionsPerPage = Array(this.pages);
       this.count = 0;
-      if (!keepPage) {
-        this.page = 1;
-      }
+      this.page = 1;
       this.makeRequest(this.searchUrl).then((response) => {
         this.count = response?.data?.['sessions:count'];
         this.page = response?.data?.['sessions:page'];
