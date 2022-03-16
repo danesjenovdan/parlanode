@@ -2,8 +2,7 @@
   <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <div class="legislation-list-container">
       <div class="filters">
-        <!-- remove `v-if="type !== 'session'"` when pagination and search works on session -->
-        <div v-if="type !== 'session'" class="filter text-filter">
+        <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
           <search-field
             v-model="textFilter"
@@ -112,7 +111,7 @@ export default {
     const isEmbedded = this.$root.$options.contextData.templateName === 'embed';
 
     const data = cardData?.data || {};
-    let results = data.results ?? [];
+    let results = data.results?.legislation ?? [];
     let pages = data['legislation:pages'] ?? 1;
     const initialPage = data['legislation:page'] ?? 1;
     const count = data['legislation:count'] ?? results.length ?? 0;
@@ -125,14 +124,6 @@ export default {
       perPage = 5;
       page = page * 2 - 1;
       results = results.slice(0, 5);
-    }
-
-    // FIXME: implement pagination on session legislation and remove this hack
-    // show all at once on session
-    if (this.type === 'session') {
-      pages = 1;
-      perPage = results.length;
-      page = 1;
     }
 
     // create an array with `size = number of pages` and use it to cache results for each page
@@ -332,7 +323,8 @@ export default {
       this.makeRequest(this.searchUrl).then((response) => {
         this.count = response?.data?.['legislation:count'];
         this.page = response?.data?.['legislation:page'];
-        this.legislationPerPage[this.page - 1] = response?.data?.results || [];
+        this.legislationPerPage[this.page - 1] =
+          response?.data?.results?.legislation || [];
         this.isLoading = false;
       });
     },
@@ -347,7 +339,8 @@ export default {
       if (!this.legislationPerPage[newPage - 1]) {
         this.isLoading = true;
         this.makeRequest(this.searchUrl).then((response) => {
-          this.legislationPerPage[newPage - 1] = response?.data?.results || [];
+          this.legislationPerPage[newPage - 1] =
+            response?.data?.results?.legislation || [];
           this.isLoading = false;
         });
       }
