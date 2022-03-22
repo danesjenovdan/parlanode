@@ -93,9 +93,9 @@
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
+            :did-not-vote-present="didNotVotePresent"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
-            :did-not-vote-present="didNotVotePresent"
           />
         </p-tab>
         <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
@@ -105,9 +105,9 @@
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
+            :did-not-vote-present="didNotVotePresent"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
-            :did-not-vote-present="didNotVotePresent"
           />
         </p-tab>
         <p-tab v-if="results.documents?.length" :label="$t('documents')">
@@ -139,9 +139,9 @@
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
+            :did-not-vote-present="didNotVotePresent"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
-            :did-not-vote-present="didNotVotePresent"
           />
         </p-tab>
         <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
@@ -151,9 +151,9 @@
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
+            :did-not-vote-present="didNotVotePresent"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
-            :did-not-vote-present="didNotVotePresent"
           />
         </p-tab>
         <p-tab v-if="results.documents?.length" :label="$t('documents')">
@@ -166,12 +166,22 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="session_votes">
             <div class="row">
-              <div :class="{ 'col-xs-3': !didNotVotePresent, 'col-xs-4': didNotVotePresent }">
+              <div
+                :class="{
+                  'col-xs-3': !didNotVotePresent,
+                  'col-xs-4': didNotVotePresent,
+                }"
+              >
                 {{ allVotes.for }}
                 <div v-t="'vote-for'" class="type"></div>
                 <div class="indicator aye">&nbsp;</div>
               </div>
-              <div :class="{ 'col-xs-3': !didNotVotePresent, 'col-xs-4': didNotVotePresent }">
+              <div
+                :class="{
+                  'col-xs-3': !didNotVotePresent,
+                  'col-xs-4': didNotVotePresent,
+                }"
+              >
                 {{ allVotes.against }}
                 <div v-t="'vote-against'" class="type"></div>
                 <div class="indicator ney">&nbsp;</div>
@@ -215,9 +225,9 @@ import Excerpt from '@/_components/Excerpt.vue';
 import DataNotPublished from '@/_components/DataNotPublished.vue';
 import Documents from '@/_components/Documents.vue';
 import fixAbstractHtml from '@/_helpers/fixAbstractHtml.js';
+import { BALLOT_OPTIONS } from '@/_helpers/constants.js';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
-import { BALLOT_OPTIONS } from '@/_helpers/constants.js';
 
 export default {
   name: 'CardVoteSingle',
@@ -255,7 +265,7 @@ export default {
 
     const mappedMembers = () => {
       // checks if a member is anonymous and scaffolds its object
-      return results.members.map((member, i) => {
+      return results.members.map((member) => {
         if (member.person === null) {
           const mappedMember = member;
           mappedMember.person = {
@@ -265,13 +275,13 @@ export default {
             honorific_suffix: null,
             preferred_pronoun: null,
             group: {
-                name: this.$t('anonymous.group.name'),
-                acronym: this.$t('anonymous.group.acronym'),
-                slug: null,
-                color: null,
-                classification: "pg"
+              name: this.$t('anonymous.group.name'),
+              acronym: this.$t('anonymous.group.acronym'),
+              slug: null,
+              color: null,
+              classification: 'pg',
             },
-            image: null
+            image: null,
           };
           return mappedMember;
         }
@@ -281,36 +291,48 @@ export default {
 
     const extendedGroups = () => {
       // checks for anonymous members and scaffolds an anonymous group
-      if (results.members.filter((member) => member.person === null).length > 0) {
-        const ballots = results.members.filter((member) => member.person === null);
+      if (
+        results.members.filter((member) => member.person === null).length > 0
+      ) {
+        const ballots = results.members.filter(
+          (member) => member.person === null
+        );
         const votes = {};
         votes.for = ballots.filter((ballot) => ballot.option === 'for').length;
-        votes.against = ballots.filter((ballot) => ballot.option === 'against').length;
-        votes.abstain = ballots.filter((ballot) => ballot.option === 'abstain').length;
-        votes.absent = ballots.filter((ballot) => ballot.option === 'absent').length;
-        votes['did not vote'] = ballots.filter((ballot) => ballot.option === 'did not vote').length;
+        votes.against = ballots.filter(
+          (ballot) => ballot.option === 'against'
+        ).length;
+        votes.abstain = ballots.filter(
+          (ballot) => ballot.option === 'abstain'
+        ).length;
+        votes.absent = ballots.filter(
+          (ballot) => ballot.option === 'absent'
+        ).length;
+        votes['did not vote'] = ballots.filter(
+          (ballot) => ballot.option === 'did not vote'
+        ).length;
 
-        const maxOption = Object.keys(votes).reduce((max_option, key) => {
-          if (votes[max_option] < votes[key]) {
+        const maxOption = Object.keys(votes).reduce((newMaxOption, key) => {
+          if (votes[newMaxOption] < votes[key]) {
             return key;
           }
-          return max_option;
+          return newMaxOption;
         }, 'for');
 
-        const groups = results.groups;
+        const { groups } = results;
         groups.push({
           max: {
-            max_option_percentage: votes[maxOption] / ballots.length * 100,
+            max_option_percentage: (votes[maxOption] / ballots.length) * 100,
             max_option: maxOption,
           },
           votes,
           outliers: [],
           group: {
-              name: this.$t('anonymous.group.name'),
-              acronym: this.$t('anonymous.group.acronym'),
-              slug: null,
-              color: null,
-              classification: "pg"
+            name: this.$t('anonymous.group.name'),
+            acronym: this.$t('anonymous.group.acronym'),
+            slug: null,
+            color: null,
+            classification: 'pg',
           },
         });
         return groups;
