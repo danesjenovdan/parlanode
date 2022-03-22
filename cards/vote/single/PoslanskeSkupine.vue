@@ -10,11 +10,11 @@
           <div class="name">
             <template v-if="getPartyLink(party.group)">
               <a :href="getPartyLink(party.group)" class="funblue-light-hover">
-                {{ party.group?.acronym || party.group?.name || 'N/A' }}
+                {{ partyName(party) }}
               </a>
             </template>
             <template v-else>
-              {{ party.group?.acronym || party.group?.name || 'N/A' }}
+              {{ partyName(party) }}
             </template>
           </div>
           <result
@@ -32,17 +32,17 @@
               }"
               :color="vote.id.replace(/ /g, '-')"
               :selected="
-                party.group?.slug === expandedParty &&
+                slugOrGovSide(party) === expandedParty &&
                 vote.id === expandedOption
               "
               :small-text="vote.label"
               :text="String(party.votes[vote.id])"
               :disabled="party.votes[vote.id] === 0"
-              @click="expandVote($event, party.group?.slug, vote.id)"
+              @click="expandVote(party, vote.id)"
             />
           </div>
         </div>
-        <div v-if="party.group?.slug === expandedParty" class="members">
+        <div v-if="slugOrGovSide(party) === expandedParty" class="members">
           <ul class="person-list">
             <li
               v-for="member in expandedMembers"
@@ -96,7 +96,6 @@
 </template>
 
 <script>
-import { find } from 'lodash-es';
 import links from '@/_mixins/links.js';
 import StripedButton from '@/_components/StripedButton.vue';
 import Result from '@/_components/Result.vue';
@@ -173,19 +172,19 @@ export default {
         const bValue = b?.person?.name || '';
         return aValue.localeCompare(bValue, 'sl');
       });
-      return sortedMembers.filter((member) => {
-        if (['coalition', 'opposition'].indexOf(this.expandedParty) > -1) {
-          return (
-            member.person.group?.is_coalition ===
-              (this.expandedParty === 'coalition') &&
-            member.option === this.expandedOption
-          );
-        }
-        return (
-          member.person.group?.slug === this.expandedParty &&
-          member.option === this.expandedOption
+      const optionMembers = sortedMembers.filter(
+        (member) => member.option === this.expandedOption
+      );
+      if (['coalition', 'opposition'].includes(this.expandedParty)) {
+        return optionMembers.filter(
+          (member) =>
+            member.person.group?.is_in_coalition ===
+            (this.expandedParty === 'coalition')
         );
-      });
+      }
+      return optionMembers.filter(
+        (member) => member.person.group?.slug === this.expandedParty
+      );
     },
   },
   mounted() {
@@ -198,26 +197,33 @@ export default {
       const voteKeys = Object.keys(votes);
       return voteKeys.reduce((sum, vote) => sum + votes[vote], 0);
     },
-    expandVote(event, party, option) {
-      if (find(this.sortedParties, ['group.slug', party]).votes[option] === 0) {
+    partyName(party) {
+      if (['coalition', 'opposition'].includes(party.group?.name)) {
+        return this.$t(party.group.name);
+      }
+      return party.group?.acronym || party.group?.name || 'N/A';
+    },
+    slugOrGovSide(party) {
+      if (party?.group?.slug) {
+        return party?.group?.slug;
+      }
+      if (['coalition', 'opposition'].includes(party?.group?.name)) {
+        return party?.group?.name;
+      }
+      return null;
+    },
+    expandVote(party, option) {
+      if (party.votes[option] === 0) {
         return;
       }
 
-      if (this.expandedParty === party && this.expandedOption === option) {
+      const slug = this.slugOrGovSide(party);
+      if (this.expandedParty === slug && this.expandedOption === option) {
         this.expandedParty = null;
         this.expandedOption = null;
       } else {
-        this.expandedParty = party;
+        this.expandedParty = slug;
         this.expandedOption = option;
-        // const thing = event.currentTarget;
-        // $(thing)
-        //   .parents('.parties')
-        //   .scrollTop(
-        //     $(thing).parents('.parties').scrollTop() +
-        //       $(thing).offset().top -
-        //       $(thing).parents('.parties').offset().top -
-        //       10
-        //   );
       }
 
       this.$emit('selectedparty', this.expandedParty);
