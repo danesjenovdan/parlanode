@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/members/', 1, { generator: true }) %>
+<%- await fetchCard('/misc/members/', 1, { generator: true, hiddenAnalyses: "spoken_words|mismatch_of_pg" }) %>
 
 <%- await include('../_partials/footer.ejs') %>

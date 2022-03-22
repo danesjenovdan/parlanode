@@ -48,10 +48,10 @@
       <%- await fetchCard('/search/speeches/', 1, { text: query, people: mps, groups: pgs }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/legislation/', 1, { text: query }) %>
+      <%- await fetchCard('/search/votes/', 1, { text: query }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/votes/', 1, { text: query }) %>
+      <%- await fetchCard('/search/legislation/', 1, { text: query }) %>
     </div>
     <div class="col-md-12">
       <%- await fetchCard('/search/usage-through-time/', 1, { text: query, people: mps, groups: pgs }) %>
