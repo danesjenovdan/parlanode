@@ -12,7 +12,7 @@ const config = {
     parladata: 'https://parladata-slovenija.lb.djnd.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
-  metaImagesTheme: 'sl',
+  metaImagesTheme: 'si',
   locale: 'sl',
   leaderId: '261',
   rootOrgId: '1',
