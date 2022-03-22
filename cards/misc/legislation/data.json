@@ -10,8 +10,8 @@
           "text": "Zakon o ratifikaciji Sporazuma med Vlado Republike Slovenije in Vlado Mongolije o mednarodnem cestnem prevozu potnikov in blaga",
           "epa": "1506-VIII",
           "status": "enacted",
-          "passed": null,
-          "classification": "legislation",
+          "passed": true,
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-12-23T00:00:00"
@@ -21,7 +21,7 @@
           "uid": "PA|646A15E41827FD7FC12587B40022C72E",
           "text": "Resolucija o nacionalnem programu za kulturo 2022–2029",
           "epa": "2382-VIII",
-          "status": "in_procedure",
+          "status": null,
           "passed": null,
           "classification": "act",
           "has_votes": true,
@@ -33,9 +33,9 @@
           "uid": "PZ8|C1257A70003EE6A1C12587B30028C06F",
           "text": "Zakon o elektronskih komunikacijah",
           "epa": "2379-VIII",
-          "status": "enacted",
-          "passed": null,
-          "classification": "legislation",
+          "status": "rejected",
+          "passed": false,
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-12-22T00:00:00"
@@ -45,9 +45,9 @@
           "uid": "PZ8|C1257A70003EE6A1C12587AA005549F2",
           "text": "Zakon o začasnih ukrepih za preprečevanje energetske revščine",
           "epa": "2350-VIII",
-          "status": "rejected",
+          "status": null,
           "passed": null,
-          "classification": "legislation",
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-12-13T00:00:00"
@@ -58,8 +58,8 @@
           "text": "Zakon o spremembah in dopolnitvi Zakona o financiranju občin",
           "epa": "2333-VIII",
           "status": "enacted",
-          "passed": null,
-          "classification": "legislation",
+          "passed": true,
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-12-03T00:00:00"
@@ -70,8 +70,8 @@
           "text": "Zakon o spremembah in dopolnitvah Zakona o zdravniški službi",
           "epa": "2311-VIII",
           "status": "enacted",
-          "passed": null,
-          "classification": "legislation",
+          "passed": true,
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-11-26T00:00:00"
@@ -81,9 +81,9 @@
           "uid": "PZ8|C1257A70003EE6A1C1258792004575E9",
           "text": "Zakon o spremembah Zakona o interventnih ukrepih za omilitev in odpravo posledic epidemije Covid-19",
           "epa": "2295-VIII",
-          "status": "in_procedure",
+          "status": null,
           "passed": null,
-          "classification": "legislation",
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-11-19T00:00:00"
@@ -94,8 +94,8 @@
           "text": "Zakon o dodatnih ukrepih za preprečevanje širjenja, omilitev, obvladovanje, okrevanje in odpravo posledic COVID-19",
           "epa": "2297-VIII",
           "status": "enacted",
-          "passed": null,
-          "classification": "legislation",
+          "passed": true,
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-11-19T00:00:00"
@@ -106,8 +106,8 @@
           "text": "Zakon o spremembah in dopolnitvah Zakona o posebnih pravicah italijanske in madžarske narodne skupnosti na področju vzgoje in izobraževanja",
           "epa": "2290-VIII",
           "status": "enacted",
-          "passed": null,
-          "classification": "legislation",
+          "passed": true,
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-11-19T00:00:00"
@@ -118,14 +118,14 @@
           "text": "Zakon o spremembah in dopolnitvah Zakona o spodbujanju investicij",
           "epa": "2284-VIII",
           "status": "enacted",
-          "passed": null,
-          "classification": "legislation",
+          "passed": true,
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
           "timestamp": "2021-11-18T00:00:00"
         }
       ],
-      "classifications": ["act", "legislation"]
+      "classifications": ["act", "law"]
     },
     "mandate": {
       "description": "VIII",
