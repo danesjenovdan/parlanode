@@ -1,5 +1,3 @@
-const sitemap = require('../i18n/sl-obcine/sitemap.json');
-
 const config = {
   port: 3066,
   serverTimeout: 120000,
@@ -13,11 +11,10 @@ const config = {
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
   metaImagesTheme: 'ljubljana',
-  locale: 'sl-obcine',
+  locale: 'sl-obcina-ljubljana',
   leaderId: '261',
   rootOrgId: '1',
   mandateId: '1',
-  siteMap: sitemap,
 };
 
 module.exports = config;
