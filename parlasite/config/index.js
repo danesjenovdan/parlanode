@@ -10,10 +10,10 @@ const config = {
     parladata: 'https://parladata-hrastnik.lb.djnd.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
-  metaImagesTheme: 'ljubljana',
-  locale: 'sl-obcina-ljubljana',
+  metaImagesTheme: 'hrastnik',
+  locale: 'sl-obcina-hrastnik',
   leaderId: '261',
-  rootOrgId: '1',
+  rootOrgId: '6',
   mandateId: '1',
 };
 
