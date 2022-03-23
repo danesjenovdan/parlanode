@@ -14,7 +14,7 @@ const config = {
   locale: 'sl-obcina-ljubljana',
   leaderId: '261',
   rootOrgId: '1',
-  mandateId: '1',
+  mandateId: '2',
 };
 
 module.exports = config;
