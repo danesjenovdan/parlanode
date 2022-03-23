@@ -17,7 +17,6 @@ const config = {
   leaderId: '261',
   rootOrgId: '1',
   mandateId: '1',
-  siteMap: sitemap,
 };
 
 module.exports = config;

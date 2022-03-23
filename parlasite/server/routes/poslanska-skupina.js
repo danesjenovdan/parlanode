@@ -1,8 +1,10 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const { asyncRender: ar, getOgImageUrl } = require('../utils');
-const { siteMap: sm, urls } = require('../../config');
+const { urls } = require('../../config');
 const { i18n } = require('../server');
+
+const sm = i18n.siteMap;
 
 const router = express.Router();
 
