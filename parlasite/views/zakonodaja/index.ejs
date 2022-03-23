@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/legislation/', 1, { generator: true }) %>
+<%- await fetchCard('/misc/legislation/', rootOrgId, { generator: true }) %>
 
 <%- await include('../_partials/footer.ejs') %>
