@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const { asyncRender: ar, getOgImageUrl, slovenianDate } = require('../utils');
-const { urls } = require('../../config');
+const { urls, locale } = require('../../config');
 const { i18n } = require('../server');
 
 const sm = i18n.siteMap;
@@ -57,7 +57,7 @@ function sessionClassification(classification) {
 router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
-    if (sesData.session.has_legislation) {
+    if (sesData.session.has_legislation && !locale.startsWith('sl-obcina')) {
       render('seja/zakonodaja', {
         ogImageUrl: getOgImageUrl('circle', {
           title: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
