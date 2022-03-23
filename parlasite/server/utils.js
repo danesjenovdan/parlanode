@@ -126,6 +126,7 @@ function expandProps(msg, props) {
 
 function i18n(lang) {
   const messages = fs.readJsonSync(`./i18n/${lang}/defaults.json`);
+  const siteMap = fs.readJsonSync(`./i18n/${lang}/sitemap.json`);
 
   const get = (path, props = {}) => {
     const msg = messages[path] || _.get(messages, path);
@@ -149,6 +150,8 @@ function i18n(lang) {
     const msg = messages[path] || _.get(messages, path);
     return !(msg == null || msg === '[empty]' || msg === '');
   };
+
+  get.siteMap = siteMap;
 
   return get;
 }
