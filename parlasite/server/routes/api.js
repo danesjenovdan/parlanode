@@ -1,10 +1,10 @@
 const express = require('express');
-const config = require('../../config');
+const { i18n } = require('../server');
 
 const router = express.Router();
 
 router.get('/sitemap', (req, res) => {
-  res.json(config.siteMap);
+  res.json(i18n.siteMap);
 });
 
 module.exports = router;

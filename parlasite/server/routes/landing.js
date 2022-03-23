@@ -1,7 +1,9 @@
 const express = require('express');
 const { asyncRender: ar, getOgImageUrl } = require('../utils');
-const { siteMap: sm, rootOrgId } = require('../../config');
+const { rootOrgId } = require('../../config');
 const { i18n } = require('../server');
+
+const sm = i18n.siteMap;
 
 const router = express.Router();
 
@@ -34,7 +36,6 @@ router.get(`/${sm.landing.parties}`, ar((render) => {
     ogImageUrl: getOgImageUrl('generic', { title: i18n('menu.pgs') }),
     activeMenu: 'pgs',
     pageTitle: i18n('menu.pgs'),
-    rootOrgId,
   });
 }));
 
