@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlasite-lendava
     newName: rg.fr-par.scw.cloud/djnd/parlasite-lendava
-    newTag: '25ded2ee9b348603a2c001f7fdfb7cb3ba54a4e2'
+    newTag: 'b476b8d9ef1cedcfec58e3a70075255970c2e9f1'
