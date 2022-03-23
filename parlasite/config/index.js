@@ -16,6 +16,7 @@ const config = {
   locale: 'sl-obcine',
   leaderId: '261',
   rootOrgId: '1',
+  mandateId: '1',
   siteMap: sitemap,
 };
 

@@ -23,7 +23,7 @@
   </div>
   <% if (showInfoCard) { %>
   <div class="col-md-6">
-    <%- await fetchCard('/misc/basic-information/', rootOrgId); %>
+    <%- await fetchCard('/misc/basic-information/', mandateId); %>
   </div>
   <% } %>
 </div>
@@ -49,7 +49,7 @@
           }
           </style>
           <div class="search-container">
-            <%- await fetchCard('/misc/search/', rootOrgId); %>
+            <%- await fetchCard('/misc/search/', mandateId); %>
           </div>
           <div class="searchinfo" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
         </div>
