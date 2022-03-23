@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlacards-lendava
     newName: rg.fr-par.scw.cloud/djnd/parlacards-lendava
-    newTag: '2659207e9d81f885e42e0daddf67eecae7d5165b'
+    newTag: 'a9de17d8e0fe79bb79524cd527c30b05b3f7617f'
