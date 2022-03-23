@@ -25,7 +25,7 @@ function setupExpress() {
     app.locals.lang = config.locale;
     app.locals.i18n = i18n;
     app.locals.config = config;
-    app.locals.sm = config.siteMap;
+    app.locals.sm = i18n.siteMap;
 
     // serve static assets
     app.use(serveStatic('public'));
