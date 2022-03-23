@@ -14,7 +14,7 @@
 
       <div class="group-container-menu">
         <ul class="clearfix">
-          <% if (session.has_legislation && (lang !== 'sl-obcine')) { %>
+          <% if (session.has_legislation && !lang.startsWith('sl-obcina')) { %>
             <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.legislation %>" class="<%- activeTab === 'zakonodaja' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.legislation') %></a></li>
           <% } %>
           <% if (session.has_minutes) { %>
