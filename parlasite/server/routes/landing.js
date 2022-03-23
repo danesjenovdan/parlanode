@@ -36,7 +36,6 @@ router.get(`/${sm.landing.parties}`, ar((render) => {
     ogImageUrl: getOgImageUrl('generic', { title: i18n('menu.pgs') }),
     activeMenu: 'pgs',
     pageTitle: i18n('menu.pgs'),
-    rootOrgId,
   });
 }));
 
