@@ -229,6 +229,10 @@ export default {
     stroke: $time-chart-passive;
   }
 
+  text {
+    font-family: Roboto, sans-serif;
+  }
+
   .dot {
     fill: $time-chart-passive;
 
