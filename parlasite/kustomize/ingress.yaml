@@ -8,9 +8,20 @@ spec:
   tls:
     - hosts:
         - parlasite.lb.djnd.si
+        - ljubljana.parlameter.si
       secretName: parlasite-tls
   rules:
     - host: parlasite.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlasite
+                port:
+                  number: 3066
+    - host: ljubljana.parlameter.si
       http:
         paths:
           - path: /
