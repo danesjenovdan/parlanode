@@ -1,5 +1,5 @@
 {
-  "url": "http://localhost:8000/v3/cards/vote/single/?id=2959",
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/vote/single/?id=2959",
   "data": {
     "results": {
       "all_votes": {
@@ -72,8 +72,6 @@
         "has_legislation": false
       },
       "result": {
-        "is_outlier": false,
-        "passed": true,
         "max_option_percentage": 48.888888888888886,
         "max_option": "for"
       },
@@ -86,12 +84,12 @@
             "honorific_suffix": null,
             "preferred_pronoun": "he",
             "group": {
-              "name": "Konkretno",
-              "acronym": "Konkretno",
-              "slug": "5-konkretno",
-              "color": "#39617B",
+              "name": "Poslanska skupina nepovezanih poslancev",
+              "acronym": "NeP",
+              "slug": "90-poslanska-skupina-nepovezanih-poslancev",
+              "color": "#C3CB2C",
               "classification": "pg",
-              "is_in_coalition": true
+              "is_in_coalition": false
             },
             "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/np-igor-zorcic.jpg"
           },
@@ -1951,6 +1949,22 @@
           },
           "outliers": [
             {
+              "slug": "65-robert-polnar",
+              "name": "Robert Polnar",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he",
+              "group": {
+                "name": "Demokratična stranka upokojencev Slovenije",
+                "acronym": "DeSUS",
+                "slug": "9-demokraticna-stranka-upokojencev-slovenije",
+                "color": "#61B485",
+                "classification": "pg",
+                "is_in_coalition": true
+              },
+              "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/desus-robert-polnar.jpg"
+            },
+            {
               "slug": "58-ivan-hrsak",
               "name": "Ivan Hršak",
               "honorific_prefix": null,
@@ -1965,22 +1979,6 @@
                 "is_in_coalition": true
               },
               "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/desus-ivan-hrsak.jpg"
-            },
-            {
-              "slug": "65-robert-polnar",
-              "name": "Robert Polnar",
-              "honorific_prefix": null,
-              "honorific_suffix": null,
-              "preferred_pronoun": "he",
-              "group": {
-                "name": "Demokratična stranka upokojencev Slovenije",
-                "acronym": "DeSUS",
-                "slug": "9-demokraticna-stranka-upokojencev-slovenije",
-                "color": "#61B485",
-                "classification": "pg",
-                "is_in_coalition": true
-              },
-              "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P346.png"
             }
           ],
           "group": {
@@ -2063,7 +2061,7 @@
                 "classification": "pg",
                 "is_in_coalition": false
               },
-              "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P294.png"
+              "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/np-igor-zorcic.jpg"
             }
           ],
           "group": {
