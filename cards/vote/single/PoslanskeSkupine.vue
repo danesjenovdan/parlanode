@@ -176,11 +176,12 @@ export default {
         (member) => member.option === this.expandedOption
       );
       if (['coalition', 'opposition'].includes(this.expandedParty)) {
-        return optionMembers.filter(
-          (member) =>
-            member.person.group?.is_in_coalition ===
-            (this.expandedParty === 'coalition')
-        );
+        const expandedCoalition = this.expandedParty === 'coalition';
+        return optionMembers.filter((member) => {
+          // explicitly cast to boolean for equality check in case of undefined
+          const memberCoalition = Boolean(member.person.group?.is_in_coalition);
+          return memberCoalition === expandedCoalition;
+        });
       }
       return optionMembers.filter(
         (member) => member.person.group?.slug === this.expandedParty
