@@ -27,4 +27,4 @@ spec:
             - name: VITE_PARLACARDS_URL
               value: https://parlacards-slovenija.lb.djnd.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite-slovenija.lb.djnd.si
+              value: https://parlameter.si
