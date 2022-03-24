@@ -88,7 +88,9 @@ export default {
               .duration(0)
               .style('opacity', 0.33);
             svgGroup
-              .selectAll(`[data-group="${d.data.group.slug}"]`)
+              .selectAll(
+                `[data-group="${d.data.group?.slug || `null-${d.index}`}"]`
+              )
               .interrupt()
               .transition()
               .duration(0)
@@ -112,9 +114,9 @@ export default {
         .selectAll('path')
         .data(pieArcs)
         .join('path')
-        .attr('data-group', (d) => d.data.group.slug)
+        .attr('data-group', (d) => d.data.group?.slug || `null-${d.index}`)
         .attr('d', arc)
-        .attr('fill', (d) => d.data.group.color) // TODO this is probably too dependent on there being groups in data
+        .attr('fill', (d) => d.data.group?.color || '#000')
         .call(segmentHover);
 
       svgGroup
@@ -123,8 +125,8 @@ export default {
         .selectAll('text')
         .data(pieArcs)
         .join('text')
-        .attr('data-group', (d) => d.data.group.slug)
-        .text((d) => d.data.group.name)
+        .attr('data-group', (d) => d.data.group?.slug || `null-${d.index}`)
+        .text((d) => d.data.group?.name || 'N/A')
         .attr('text-anchor', 'middle')
         .attr('dominant-baseline', (d) => (isBottom(d) ? 'auto' : 'hanging'))
         .attr('fill', '#000')
@@ -193,12 +195,14 @@ export default {
         .selectAll('polyline')
         .data(pieArcs)
         .join('polyline')
-        .attr('data-group', (d) => d.data.group.slug)
+        .attr('data-group', (d) => d.data.group?.slug || `null-${d.index}`)
         .attr('stroke', '#888')
         .attr('fill', 'none')
         .attr('points', (d) => {
           const labelBBox = svgGroup
-            .select(`text[data-group="${d.data.group.slug}"]`)
+            .select(
+              `text[data-group="${d.data.group?.slug || `null-${d.index}`}"]`
+            )
             .node()
             .getBBox();
 

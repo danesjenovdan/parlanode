@@ -1,6 +1,6 @@
 {
   "generator": true,
-  "analysis": "demographics",
+  "analysis": "number_of_questions",
   "showWorkingBodiesFilter": "true",
   "showGendersFilter": "true",
   "showDemographicsAge": "true",

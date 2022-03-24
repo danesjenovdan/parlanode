@@ -12,7 +12,7 @@ export default {
         this.cancelRequest();
         this.cancelRequest = null;
       }
-      return axios
+      const request = axios
         .get(url, {
           cancelToken: new CancelToken((c) => {
             this.cancelRequest = c;
@@ -28,6 +28,16 @@ export default {
             throw error;
           }
         );
+      return {
+        then(responseHandler) {
+          // catch cancelations to prevent sending them to sentry as errors
+          return request.then(responseHandler).catch((error) => {
+            if (!axios.isCancel(error)) {
+              throw error;
+            }
+          });
+        },
+      };
     },
   },
 };
