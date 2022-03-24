@@ -1,1696 +1,417 @@
 {
-  "id": 37,
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/recent-activity/?id=37",
+  "id": 81,
+  "url": "http://localhost:8000/v3/cards/person/recent-activity/?id=81",
   "data": {
     "results": [
       {
-        "date": "2022-02-14T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-14T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi s sproščanjem ukrepov za zajezitev bolezni Covid-19",
-            "authors": [
-              {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": "Vlada",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/7939a159242df487094fac42667a966ebab4da080a4db494eeaaccfa661663cc",
-            "type": "question"
+        "vote": {
+          "all_votes": {
+            "for": 45,
+            "against": 40,
+            "abstain": 1,
+            "absent": 4,
+            "did not vote": 0
           },
-          {
-            "timestamp": "2022-02-14T00:00:00",
-            "answer_timestamp": null,
-            "title": "glede podpore za nakup električnega pogonskega kolesa za priklop na invalidski voziček",
-            "authors": [
+          "passed": true,
+          "id": 2922,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o dohodnini - Glasovanje o zakonu v celoti",
+          "timestamp": "2022-03-11T15:55:53",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
               {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
               }
             ],
-            "recipient_people": [],
-            "recipient_text": "minister za okolje in prostor",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/48b801906e7a807df8a61f2157176fc9a1a1f1c88610fba972fb66aad0a47cb2",
-            "type": "question"
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
           }
-        ]
+        },
+        "option": "for",
+        "type": "ballot"
       },
       {
-        "date": "2022-02-10T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-10T00:00:00",
-            "answer_timestamp": null,
-            "title": "glede vključevanja lokalne skupnosti in zaposlenih v razvoj državne hotelske infrastrukture v Pomurju",
-            "authors": [
+        "vote": {
+          "all_votes": {
+            "for": 20,
+            "against": 52,
+            "abstain": 14,
+            "absent": 4,
+            "did not vote": 0
+          },
+          "passed": false,
+          "id": 2923,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o dohodnini - Amandma: K 15. členu 6. 12. 2021 [Levica - Poslanska skupina Levica]",
+          "timestamp": "2022-03-11T15:42:58",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
               {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
               }
             ],
-            "recipient_people": [],
-            "recipient_text": "minister za gospodarski razvoj in tehnologijo",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/e73252dcaed3981ae98f1a90baf7a377a06cb177f50ca1dbc004f123d7bd00cf",
-            "type": "question"
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
           }
-        ]
+        },
+        "option": "against",
+        "type": "ballot"
       },
       {
-        "date": "2022-02-16T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-16T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi s pogojnimi dovoljenji za stanovanjske stavbe daljšega obstoja",
-            "authors": [
+        "vote": {
+          "all_votes": {
+            "for": 20,
+            "against": 46,
+            "abstain": 20,
+            "absent": 4,
+            "did not vote": 0
+          },
+          "passed": false,
+          "id": 2924,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o dohodnini - Amandma: K 4. členu 6. 12. 2021 [Levica - Poslanska skupina Levica]",
+          "timestamp": "2022-03-11T15:42:32",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
               {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
               }
             ],
-            "recipient_people": [],
-            "recipient_text": "minister za okolje in prostor",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/75ad525a8848b5be7120ed42b611194f6c87f09cd3805993ca47665c0c590b4d",
-            "type": "question"
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
           }
-        ]
+        },
+        "option": "against",
+        "type": "ballot"
       },
       {
-        "date": "2022-02-18T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-18T00:00:00",
-            "answer_timestamp": null,
-            "title": "glede neukrepanja pristojnih pri sumih kršitev pravilne uporabe dvojezičnih napisov in informacij na slovenskem ozemlju, kjer živijo pripadniki madžarske manjšine",
-            "authors": [
+        "vote": {
+          "all_votes": {
+            "for": 8,
+            "against": 51,
+            "abstain": 27,
+            "absent": 4,
+            "did not vote": 0
+          },
+          "passed": false,
+          "id": 2925,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o dohodnini - Amandma: K 3. členu 6. 12. 2021 [Levica - Poslanska skupina Levica]",
+          "timestamp": "2022-03-11T15:42:04",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
               {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
               }
             ],
-            "recipient_people": [],
-            "recipient_text": "Vlada",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/5ba7ac5587c6ca9ea6096b5c73b507bf391587ac1c9114b338ac8e196d94010b",
-            "type": "question"
-          },
-          {
-            "speech_id": 319581,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
-          },
-          {
-            "speech_id": 319531,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
-          },
-          {
-            "speech_id": 319587,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
-          },
-          {
-            "speech_id": 319589,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
-          },
-          {
-            "speech_id": 319591,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
-          },
-          {
-            "speech_id": 319605,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
-          },
-          {
-            "speech_id": 319619,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
-          },
-          {
-            "speech_id": 319585,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
-          },
-          {
-            "speech_id": 319597,
-            "start_time": "2022-02-18T00:00:00",
-            "session": {
-              "name": "17. redna seja",
-              "id": 2255,
-              "start_time": "2022-02-17T00:00:00",
-              "end_time": null,
-              "organizations": [
-                {
-                  "name": "Odbor za zdravstvo",
-                  "acronym": "Odbor za zdravstvo",
-                  "slug": "33-odbor-za-zdravstvo",
-                  "color": "#09a2cc",
-                  "classification": "committee"
-                }
-              ],
-              "classification": "regular",
-              "in_review": true,
-              "has_transcript": true,
-              "has_minutes": false,
-              "has_legislation": false
-            },
-            "type": "speech"
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
           }
-        ]
+        },
+        "option": "against",
+        "type": "ballot"
       },
       {
-        "date": "2022-02-22T00:00:00",
-        "events": [
-          {
-            "vote": {
-              "all_votes": {
-                "for": 46,
-                "against": 36,
-                "abstain": 2,
-                "absent": 5,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2898,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Resolucija o nacionalnem programu za kulturo 2022–2029 - Glasovanje",
-              "timestamp": "2022-02-22T15:49:42",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "against",
-            "type": "ballot"
+        "vote": {
+          "all_votes": {
+            "for": 54,
+            "against": 0,
+            "abstain": 32,
+            "absent": 4,
+            "did not vote": 0
           },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 39,
-                "against": 39,
-                "abstain": 2,
-                "absent": 9,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2899,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Resolucija o nacionalnem programu za kulturo 2022–2029 - Amandma: K poglavju IX. SKUPNI CILJI ZA VSA PODROČJA KULTURE (STRAN 55) 18. 02. 2022 [SD - Poslanska skupina Socialnih demokratov]",
-              "timestamp": "2022-02-22T15:35:40",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 41,
-                "against": 9,
-                "abstain": 30,
-                "absent": 9,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2900,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Evidenčni sklep o primernosti predloga zakona 22. 02. 2022",
-              "timestamp": "2022-02-22T15:31:50",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 58,
-                "against": 6,
-                "abstain": 18,
-                "absent": 7,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2901,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o dopolnitvi Zakona o nadzoru državne meje - Glasovanje o zakonu v celoti",
-              "timestamp": "2022-02-22T15:18:09",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 81,
-                "against": 0,
-                "abstain": 0,
-                "absent": 8,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2902,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Sklep o pripravi uradnega prečiščenega besedila zakona",
-              "timestamp": "2022-02-22T15:17:25",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 83,
-                "against": 0,
-                "abstain": 0,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2903,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Glasovanje o zakonu v celoti",
-              "timestamp": "2022-02-22T15:16:43",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 58,
-                "against": 0,
-                "abstain": 24,
-                "absent": 7,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2904,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 7. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
-              "timestamp": "2022-02-22T15:15:37",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 57,
-                "against": 0,
-                "abstain": 24,
-                "absent": 8,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2905,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 6. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
-              "timestamp": "2022-02-22T15:15:12",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 58,
-                "against": 0,
-                "abstain": 24,
-                "absent": 7,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2906,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 5. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
-              "timestamp": "2022-02-22T15:14:47",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 58,
-                "against": 0,
-                "abstain": 24,
-                "absent": 7,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2907,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 4. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
-              "timestamp": "2022-02-22T15:14:22",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 60,
-                "against": 0,
-                "abstain": 23,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2908,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 3.a. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
-              "timestamp": "2022-02-22T15:13:58",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 58,
-                "against": 0,
-                "abstain": 25,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2909,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 3. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
-              "timestamp": "2022-02-22T15:13:34",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 57,
-                "against": 1,
-                "abstain": 22,
-                "absent": 9,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2910,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju - Amandma: K 2. členu 18. 02. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, SDS - Poslanska skupina Slovenske demokratske stranke, Konkretno - Poslanska skupina Konkretno]",
-              "timestamp": "2022-02-22T15:13:10",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 46,
-                "against": 37,
-                "abstain": 1,
-                "absent": 5,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2911,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah Zakona o zdravstveni inšpekciji - Glasovanje o zakonu v celoti",
-              "timestamp": "2022-02-22T15:12:20",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 75,
-                "against": 0,
-                "abstain": 8,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2912,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o spremembah in dopolnitvah Zakona o spodbujanju investicij  - Glasovanje o zakonu v celoti",
-              "timestamp": "2022-02-22T15:11:36",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 46,
-                "against": 1,
-                "abstain": 36,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2913,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o ukrepih za omilitev posledic dviga cen energentov v gospodarstvu in kmetijstvu - Glasovanje o zakonu v celoti",
-              "timestamp": "2022-02-22T15:10:41",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 39,
-                "against": 45,
-                "abstain": 0,
-                "absent": 5,
-                "did not vote": 0
-              },
-              "passed": false,
-              "id": 2914,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o ukrepih za omilitev posledic dviga cen energentov v gospodarstvu in kmetijstvu - Amandma: K 10.e členu 21. 02. 2022 [LMŠ - Poslanska skupina Liste Marjana Šarca]",
-              "timestamp": "2022-02-22T15:09:39",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 47,
-                "against": 6,
-                "abstain": 30,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2915,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o ukrepih za omilitev posledic dviga cen energentov v gospodarstvu in kmetijstvu - Amandma: K 10. členu 21. 02. 2022 [SDS - Poslanska skupina Slovenske demokratske stranke, NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, Konkretno - Poslanska skupina Konkretno]",
-              "timestamp": "2022-02-22T15:09:12",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 32,
-                "against": 46,
-                "abstain": 6,
-                "absent": 5,
-                "did not vote": 0
-              },
-              "passed": false,
-              "id": 2916,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o ukrepih za omilitev posledic dviga cen energentov v gospodarstvu in kmetijstvu - Amandma: K 2. členu 21. 02. 2022 [LMŠ - Poslanska skupina Liste Marjana Šarca, SD - Poslanska skupina Socialnih demokratov, SAB - Poslanska skupina Stranke Alenke Bratušek]",
-              "timestamp": "2022-02-22T15:08:47",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 46,
-                "against": 1,
-                "abstain": 36,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2917,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o nujnih ukrepih za omilitev posledic zaradi vpliva visokih cen energentov - Glasovanje o zakonu v celoti",
-              "timestamp": "2022-02-22T15:07:53",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 46,
-                "against": 7,
-                "abstain": 30,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2918,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o nujnih ukrepih za omilitev posledic zaradi vpliva visokih cen energentov - Amandma: K 5. členu 21. 02. 2022 [SDS - Poslanska skupina Slovenske demokratske stranke, NSi, Konkretno - Poslanska skupina Konkretno]",
-              "timestamp": "2022-02-22T15:03:33",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 36,
-                "against": 46,
-                "abstain": 2,
-                "absent": 5,
-                "did not vote": 0
-              },
-              "passed": false,
-              "id": 2919,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o nujnih ukrepih za omilitev posledic zaradi vpliva visokih cen energentov - Amandma: K 5.. členu 21. 02. 2022 [LMŠ - Poslanska skupina Liste Marjana Šarca]",
-              "timestamp": "2022-02-22T15:02:59",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 25,
-                "against": 52,
-                "abstain": 6,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": false,
-              "id": 2920,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o nujnih ukrepih za omilitev posledic zaradi vpliva visokih cen energentov - Amandma: K 4. členu 21. 02. 2022 [SAB - Poslanska skupina Stranke Alenke Bratušek]",
-              "timestamp": "2022-02-22T15:02:21",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 53,
-                "against": 6,
-                "abstain": 24,
-                "absent": 6,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2921,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o interventnih ukrepih za podporo trgu dela - Glasovanje o zakonu v celoti",
-              "timestamp": "2022-02-22T15:01:30",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "abstain",
-            "type": "ballot"
-          },
-          {
-            "timestamp": "2022-02-22T00:00:00",
-            "answer_timestamp": null,
-            "title": "glede brezplačnega prostovoljnega cepljenja proti klopnemu meningoencefalitisu (KME) za vse starostne skupine",
-            "authors": [
+          "passed": true,
+          "id": 2926,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o gasilstvu - Glasovanje o zakonu v celoti",
+          "timestamp": "2022-03-11T15:41:00",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
               {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
               }
             ],
-            "recipient_people": [],
-            "recipient_text": "minister za zdravje",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/f63e096a1a8df647c9507b8c78dd2ba04e5051eb42151d49cfcbd1c4ff1622ab",
-            "type": "question"
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
           }
-        ]
+        },
+        "option": "for",
+        "type": "ballot"
       },
       {
-        "date": "2022-02-15T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-15T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi z nogometno šolo v Lendavi",
-            "authors": [
-              {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": "ministrica za izobraževanje znanost in šport",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/7a5bf6667ddfd07dfab90d9a5491a02b8c1a7c30b5063290bdddd636d8ad9b89",
-            "type": "question"
-          }
-        ]
-      },
-      {
-        "date": "2022-02-17T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-17T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi z sredstvi za obnovo gasilskega doma PGD Motovilci",
-            "authors": [
-              {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": "minister za obrambo",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/1f7b5b27d8d2a3f86845d90eb40183436d2e930ed9bf9b526d4c53ff24b42def",
-            "type": "question"
+        "vote": {
+          "all_votes": {
+            "for": 78,
+            "against": 0,
+            "abstain": 5,
+            "absent": 7,
+            "did not vote": 0
           },
-          {
-            "timestamp": "2022-02-17T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi z razmerji na trgu z odkupom energije",
-            "authors": [
+          "passed": true,
+          "id": 3441,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Sklep da besedilo predloga za tretjo obravnavo pripravi Vlada",
+          "timestamp": "2022-03-11T15:40:08",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
               {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
               }
             ],
-            "recipient_people": [],
-            "recipient_text": "Vlada",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/1c6c99ebdb40eb92ff26eb1537db049dc53da841a78f89d54bafc2fa226363fe",
-            "type": "question"
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
           }
-        ]
+        },
+        "option": "for",
+        "type": "ballot"
       },
       {
-        "date": "2022-02-11T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-11T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi s stroški, povezanimi z obvladovanjem epidemije Covid-19 v letu 2021",
-            "authors": [
-              {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": "minister za zdravje",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/93b1779a5e1c5eb934cb1bab90225a78ff611d87dacc9f90f4de86cec65ef9ac",
-            "type": "question"
-          }
-        ]
-      },
-      {
-        "date": "2022-02-24T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-24T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi z rezervami pri zavarovalnicah, ki izvajajo prostovoljno dopolnilno zdravstveno zavarovanje",
-            "authors": [
-              {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": "minister za zdravje, minister za finance",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/e30149200375a7642fb534fc629a74f37d5806068d4e722d8a81c10dfac65e6d",
-            "type": "question"
-          }
-        ]
-      },
-      {
-        "date": "2022-02-07T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-07T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi z dosledno uporabo besede Rom",
-            "authors": [
-              {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
-              }
-            ],
-            "recipient_people": [],
-            "recipient_text": "Vlada",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/67134975ff0bbe3424a1abfa9afa2aead367828cfc0fec001de13477198c4803",
-            "type": "question"
-          }
-        ]
-      },
-      {
-        "date": "2022-02-21T00:00:00",
-        "events": [
-          {
-            "vote": {
-              "all_votes": {
-                "for": 43,
-                "against": 29,
-                "abstain": 4,
-                "absent": 13,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2896,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Zakon o ratifikaciji Sporazuma med Vlado Republike Slovenije in Organizacijo za sodelovanje pri skupnem oboroževanju (OCCAR) o upravljanju programa Boxer s strani OCCAR - Glasovanje o Predlogu sklepa o nedopustnosti razpisa zakonodajnega referenduma",
-              "timestamp": "2022-02-21T11:42:15",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "against",
-            "type": "ballot"
+        "vote": {
+          "all_votes": {
+            "for": 45,
+            "against": 1,
+            "abstain": 40,
+            "absent": 4,
+            "did not vote": 0
           },
-          {
-            "vote": {
-              "all_votes": {
-                "for": 65,
-                "against": 4,
-                "abstain": 6,
-                "absent": 14,
-                "did not vote": 0
-              },
-              "passed": true,
-              "id": 2897,
-              "is_outlier": false,
-              "has_outliers": false,
-              "has_named_votes": true,
-              "title": "Dnevni red v celoti",
-              "timestamp": "2022-02-21T10:02:14",
-              "session": {
-                "name": "95. izredna seja",
-                "id": 2261,
-                "start_time": "2022-02-21T00:00:00",
-                "end_time": null,
-                "organizations": [
-                  {
-                    "name": "Državni zbor",
-                    "acronym": "DZ",
-                    "slug": "1-drzavni-zbor",
-                    "color": "#09A2CC",
-                    "classification": "root"
-                  }
-                ],
-                "classification": "irregular",
-                "in_review": true,
-                "has_transcript": false,
-                "has_minutes": false,
-                "has_legislation": false
-              }
-            },
-            "option": "for",
-            "type": "ballot"
-          },
-          {
-            "timestamp": "2022-02-21T00:00:00",
-            "answer_timestamp": null,
-            "title": "v zvezi z oglasnimi objekti in panoji",
-            "authors": [
+          "passed": true,
+          "id": 2927,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Amandma: K 67. členu 11. 03. 2022 [SDS - Poslanska skupina Slovenske demokratske stranke, NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, Konkretno - Poslanska skupina Konkretno]",
+          "timestamp": "2022-03-11T15:39:24",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
               {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
               }
             ],
-            "recipient_people": [],
-            "recipient_text": "Vlada",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/c68e0004f1b97267db5dbaaed407017614a55d74c753f1a8bd81c2a6bfeecfef",
-            "type": "question"
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
           }
-        ]
+        },
+        "option": "for",
+        "type": "ballot"
       },
       {
-        "date": "2022-02-09T00:00:00",
-        "events": [
-          {
-            "timestamp": "2022-02-09T00:00:00",
-            "answer_timestamp": null,
-            "title": "glede izvajanja Akcijskega načrta za obdobje 2019 – 2021 za izvajanje Državne strategije »eno zdravje« za obvladovanje odpornosti mikrobov",
-            "authors": [
+        "vote": {
+          "all_votes": {
+            "for": 3,
+            "against": 51,
+            "abstain": 29,
+            "absent": 7,
+            "did not vote": 0
+          },
+          "passed": false,
+          "id": 2928,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Amandma: K 60. členu 11. 03. 2022 [SNS - Poslanska skupina Slovenske nacionalne stranke]",
+          "timestamp": "2022-03-11T15:36:38",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
               {
-                "slug": "37-dejan-zidan",
-                "name": "Dejan Židan",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                  "name": "Socialni demokrati",
-                  "acronym": "SD",
-                  "slug": "4-socialni-demokrati",
-                  "color": "#B3422E",
-                  "classification": "pg"
-                },
-                "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
               }
             ],
-            "recipient_people": [],
-            "recipient_text": "Vlada",
-            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/568d84ea69d84967c0945ccdd13f481fa176653365bab3ac545dfc474b75a4d4",
-            "type": "question"
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
           }
-        ]
+        },
+        "option": "against",
+        "type": "ballot"
+      },
+      {
+        "vote": {
+          "all_votes": {
+            "for": 23,
+            "against": 46,
+            "abstain": 17,
+            "absent": 4,
+            "did not vote": 0
+          },
+          "passed": false,
+          "id": 2929,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Amandma: K 60. členu 10. 03. 2022 [LMŠ - Poslanska skupina Liste Marjana Šarca, Levica - Poslanska skupina Levica]",
+          "timestamp": "2022-03-11T15:36:10",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
+          }
+        },
+        "option": "against",
+        "type": "ballot"
+      },
+      {
+        "vote": {
+          "all_votes": {
+            "for": 46,
+            "against": 0,
+            "abstain": 38,
+            "absent": 6,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 2930,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Amandma: K 58. členu 11. 03. 2022 [SDS - Poslanska skupina Slovenske demokratske stranke, NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, Konkretno - Poslanska skupina Konkretno]",
+          "timestamp": "2022-03-11T15:31:22",
+          "session": {
+            "name": "98. izredna seja",
+            "id": 2280,
+            "start_time": "2022-03-11T00:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "DZ",
+                "slug": "1-drzavni-zbor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "irregular",
+            "in_review": true,
+            "has_transcript": false,
+            "has_minutes": false,
+            "has_legislation": false
+          }
+        },
+        "option": "for",
+        "type": "ballot"
       }
     ],
     "mandate": {
@@ -1698,19 +419,24 @@
       "beginning": null
     },
     "person": {
-      "slug": "37-dejan-zidan",
-      "name": "Dejan Židan",
+      "slug": "81-aleksander-rebersek",
+      "name": "Aleksander Reberšek",
       "honorific_prefix": null,
       "honorific_suffix": null,
       "preferred_pronoun": "he",
       "group": {
-        "name": "Socialni demokrati",
-        "acronym": "SD",
-        "slug": "4-socialni-demokrati",
-        "color": "#B3422E",
-        "classification": "pg"
+        "name": "Nova Slovenija - Krščanski demokrati",
+        "acronym": "NSi",
+        "slug": "7-nova-slovenija-krscanski-demokrati",
+        "color": "#31A8B1",
+        "classification": "pg",
+        "is_in_coalition": true
       },
-      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P211.png"
-    }
+      "image": "/media/nsi-aleksander-rebersek.jpg"
+    },
+    "count": 859,
+    "pages": 86,
+    "page": 1,
+    "per_page": 10
   }
 }
