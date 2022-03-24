@@ -196,6 +196,8 @@
     "leader": "Predsednik DZ"
   },
   "legislation": {
-    "decree": "O"
+    "act": "A",
+    "decree": "O",
+    "law": "Z"
   }
 }
