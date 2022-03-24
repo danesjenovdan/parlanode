@@ -152,18 +152,20 @@ export default {
     const hiddenAnalyses = cardState?.hiddenAnalyses?.split('|') || [];
 
     // filter out hidden analyses and translate them
-    const analyses = analysesIDs.filter((a) => !hiddenAnalyses.includes(a.id)).map((a) => ({
-      ...a,
-      label: this.$te(`analysis-texts.${a.id}.label`)
-        ? this.$t(`analysis-texts.${a.id}.label`)
-        : '',
-      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`)
-        ? this.$t(`analysis-texts.${a.id}.titleSuffix`)
-        : '',
-      explanation: this.$te(`analysis-texts.${a.id}.explanation`)
-        ? this.$t(`analysis-texts.${a.id}.explanation`)
-        : '',
-    }));
+    const analyses = analysesIDs
+      .filter((a) => !hiddenAnalyses.includes(a.id))
+      .map((a) => ({
+        ...a,
+        label: this.$te(`analysis-texts.${a.id}.label`)
+          ? this.$t(`analysis-texts.${a.id}.label`)
+          : '',
+        titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`)
+          ? this.$t(`analysis-texts.${a.id}.titleSuffix`)
+          : '',
+        explanation: this.$te(`analysis-texts.${a.id}.explanation`)
+          ? this.$t(`analysis-texts.${a.id}.explanation`)
+          : '',
+      }));
 
     const initialGroups = (cardState?.groups || '').split(',');
     const groups = (cardData?.data?.results?.groups || []).map((g) => {
