@@ -1,3 +1,11 @@
+// non-locale aware version of formatter if Intl is not supported by the browser
+const fallbackFormatter = (
+  number,
+  { precision = 0, percent = false, prefix = '' } = {}
+) => {
+  return prefix + number.toFixed(precision) + (percent ? '%' : '');
+};
+
 export default (
   number,
   { precision = 0, percent = false, locale = 'sl' } = {}
@@ -8,6 +16,10 @@ export default (
   if (number > 0 && number < minValueAboveZero) {
     number = minValueAboveZero;
     prefix = '< ';
+  }
+
+  if (typeof Intl === 'undefined' || typeof Intl.NumberFormat === 'undefined') {
+    return fallbackFormatter(number, { precision, percent, prefix });
   }
 
   // formatter needs 0-1 for percentages, but we always supply whole number
