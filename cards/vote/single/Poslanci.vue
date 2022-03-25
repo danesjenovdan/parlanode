@@ -62,11 +62,7 @@
                   }}
                 </a>
                 <span v-else>
-                  {{
-                    member.person?.group?.acronym ||
-                    member.person?.group?.name ||
-                    'N/A'
-                  }}
+                  {{ $t(unaffiliatedKey(member.person)) }}
                 </span>
               </div>
             </div>
@@ -126,10 +122,11 @@ export default {
     didNotVotePresent: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   emits: ['namefilter'],
-  data() {const selectableBallotOptions = [
+  data() {
+    const selectableBallotOptions = [
       {
         id: 'for',
         label: this.$t('vote-for'),
@@ -157,13 +154,14 @@ export default {
       },
     ];
 
-    const filteredBallotOptions = selectableBallotOptions.filter((ballotOption) => {
-      if (this.didNotVotePresent) {
-        return (ballotOption.id !== 'absent') && (ballotOption.id !== 'against');
-      } else {
+    const filteredBallotOptions = selectableBallotOptions.filter(
+      (ballotOption) => {
+        if (this.didNotVotePresent) {
+          return ballotOption.id !== 'absent' && ballotOption.id !== 'against';
+        }
         return ballotOption.id !== 'did not vote';
       }
-    });
+    );
 
     return {
       nameFilter: '',
@@ -181,7 +179,12 @@ export default {
       return this.votes.filter((vote) => vote.selected).map((vote) => vote.id);
     },
     filteredMembers() {
-      return this.members.filter((member) => {
+      const sortedMembers = this.members.slice().sort((a, b) => {
+        const aValue = a?.person?.name || '';
+        const bValue = b?.person?.name || '';
+        return aValue.localeCompare(bValue, 'sl');
+      });
+      return sortedMembers.filter((member) => {
         let nameMatch = true;
         let optionMatch = true;
 
@@ -227,7 +230,7 @@ export default {
     mapVotes,
     translateOption(option, preferredPronoun) {
       const form = preferredPronoun === 'she' ? '--f' : '--m';
-      return this.$t(`voted-${option.replace(/ /g, '-')}${form}`);
+      return this.$t(`voted-${(option || '').replace(/ /g, '-')}${form}`);
     },
     toggleVote(id) {
       if (this.allVotes[id] !== 0) {
@@ -239,6 +242,11 @@ export default {
           }
         });
       }
+    },
+    unaffiliatedKey(person) {
+      let suffix = '--f';
+      if (person?.preferred_pronoun === 'he') suffix = '--m';
+      return `unaffiliated${suffix}`;
     },
   },
 };

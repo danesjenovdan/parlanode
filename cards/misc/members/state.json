@@ -1,10 +1,11 @@
 {
   "generator": true,
-  "analysis": "demographics",
+  "analysis": "number_of_questions",
   "showWorkingBodiesFilter": "true",
   "showGendersFilter": "true",
   "showDemographicsAge": "true",
   "showDemographicsEducation": "true",
   "showDemographicsMandates": "true",
-  "showDemographicsGroup": "true"
+  "showDemographicsGroup": "true",
+  "hiddenAnalyses": "spoken_words|mismatch_of_pg"
 }

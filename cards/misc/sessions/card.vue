@@ -158,6 +158,9 @@ export default {
         title: this.$t('card.title'),
       }),
       ogConfig: defaultOgImage(this),
+      showOrganizationColumn:
+        cardState?.showOrganizationColumn &&
+        cardState?.showOrganizationColumn !== 'false',
 
       // pagination
       pages,
@@ -209,12 +212,14 @@ export default {
         //   label: this.$t('change'),
         //   additionalClass: 'optional',
         // },
-        // {
-        //   id: 'workingBody',
-        //   label: this.$t('organization'),
-        //   additionalClass: 'wider optional',
-        // },
-      ];
+        this.showOrganizationColumn
+          ? {
+              id: 'workingBody',
+              label: this.$t('organization'),
+              additionalClass: 'wider optional',
+            }
+          : null,
+      ].filter(Boolean);
     },
 
     currentWorkingBodies() {
@@ -236,23 +241,27 @@ export default {
     },
 
     mappedSessions() {
-      return this.currentPageSessions.map((session) => [
-        {
-          link: this.getSessionLink(session),
-          image: `${this.$root.$options.contextData.urls.cdn}/icons/${
-            sessionClassification(session.classification).icon
-          }.svg`,
-        },
-        { link: this.getSessionLink(session), text: session.name },
-        session.start_time ? dateFormatter(session.start_time) : '',
-        // session.end_time ? formatDate(session.end_time) : '',
-        // {
-        //   contents: session.organizations.map((org) => ({
-        //     text: org.name,
-        //     link: null,
-        //   })),
-        // },
-      ]);
+      return this.currentPageSessions.map((session) =>
+        [
+          {
+            link: this.getSessionLink(session),
+            image: `${this.$root.$options.contextData.urls.cdn}/icons/${
+              sessionClassification(session.classification).icon
+            }.svg`,
+          },
+          { link: this.getSessionLink(session), text: session.name },
+          session.start_time ? dateFormatter(session.start_time) : '',
+          // session.end_time ? formatDate(session.end_time) : '',
+          this.showOrganizationColumn
+            ? {
+                contents: session.organizations.map((org) => ({
+                  text: org.name,
+                  link: null,
+                })),
+              }
+            : null,
+        ].filter(Boolean)
+      );
     },
   },
   methods: {
@@ -265,7 +274,7 @@ export default {
         this.currentSortOrder = 'asc';
       }
       // start a request to get sorted sessions
-      this.searchSessionsImmediate(true);
+      this.searchSessionsImmediate();
     },
 
     selectTab() {
@@ -297,13 +306,11 @@ export default {
       });
     },
 
-    searchSessionsImmediate(keepPage = false) {
+    searchSessionsImmediate() {
       this.isLoading = true;
       this.sessionsPerPage = Array(this.pages);
       this.count = 0;
-      if (!keepPage) {
-        this.page = 1;
-      }
+      this.page = 1;
       this.makeRequest(this.searchUrl).then((response) => {
         this.count = response?.data?.['sessions:count'];
         this.page = response?.data?.['sessions:page'];

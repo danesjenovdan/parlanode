@@ -59,20 +59,20 @@ const analysesIDs = [
     id: 'vote_attendance',
     unit: 'percent',
   },
-  // {
-  //   id: 'number_of_questions',
-  // },
-  // {
-  //   id: 'number_of_amendments',
-  // },
-  // {
-  //   id: 'intra_disunion',
-  //   precision: 2,
-  // },
-  // {
-  //   id: 'vocabulary_size',
-  //   precision: 2,
-  // },
+  {
+    id: 'number_of_questions',
+  },
+  {
+    id: 'number_of_amendments',
+  },
+  {
+    id: 'intra_disunion',
+    precision: 2,
+  },
+  {
+    id: 'vocabulary_size',
+    precision: 2,
+  },
   // {
   //   id: 'privzdignjeno',
   //   precision: 3,
@@ -100,18 +100,24 @@ export default {
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
-    const analyses = analysesIDs.map((a) => ({
-      ...a,
-      label: this.$te(`analysis-texts--party.${a.id}.label`)
-        ? this.$t(`analysis-texts--party.${a.id}.label`)
-        : '',
-      titleSuffix: this.$te(`analysis-texts--party.${a.id}.titleSuffix`)
-        ? this.$t(`analysis-texts--party.${a.id}.titleSuffix`)
-        : '',
-      explanation: this.$te(`analysis-texts--party.${a.id}.explanation`)
-        ? this.$t(`analysis-texts--party.${a.id}.explanation`)
-        : '',
-    }));
+    // parse hidden analyses into an array
+    const hiddenAnalyses = cardState?.hiddenAnalyses?.split('|') || [];
+
+    // filter out hidden analyses and translate them
+    const analyses = analysesIDs
+      .filter((a) => !hiddenAnalyses.includes(a.id))
+      .map((a) => ({
+        ...a,
+        label: this.$te(`analysis-texts--party.${a.id}.label`)
+          ? this.$t(`analysis-texts--party.${a.id}.label`)
+          : '',
+        titleSuffix: this.$te(`analysis-texts--party.${a.id}.titleSuffix`)
+          ? this.$t(`analysis-texts--party.${a.id}.titleSuffix`)
+          : '',
+        explanation: this.$te(`analysis-texts--party.${a.id}.explanation`)
+          ? this.$t(`analysis-texts--party.${a.id}.explanation`)
+          : '',
+      }));
 
     return {
       results: cardData?.data?.results || [],
@@ -158,7 +164,11 @@ export default {
           percent: this.currentAnalysisData?.unit === 'percent',
         });
 
-        newParty.chartWidth = `${(rawValue / maxValue) * 85}%`;
+        if (maxValue > 0) {
+          newParty.chartWidth = `${(rawValue / maxValue) * 85}%`;
+        } else {
+          newParty.chartWidth = `0%`;
+        }
 
         return newParty;
       });

@@ -1,94 +1,156 @@
 {
+  "id": 99,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/monthly-vote-attendance/?id=99",
   "data": {
     "results": [
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
+        "timestamp": "2018-06-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
+        "timestamp": "2018-07-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
+        "timestamp": "2018-08-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
+        "timestamp": "2018-09-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
+        "timestamp": "2018-10-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
+        "timestamp": "2018-11-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2018-12-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-01-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-02-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
+        "timestamp": "2019-03-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-04-01"
       },
       {
-        "present": 96.6666666666667,
-        "no_mandate": 0.0,
-        "absent": 3.3333333333333,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2019-05-01"
       },
       {
-        "present": 85.7142857142857,
-        "no_mandate": 0.0,
-        "absent": 14.285714285714306,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2019-06-01"
       },
       {
-        "present": 92.8571428571429,
-        "no_mandate": 0.0,
-        "absent": 7.142857142857096,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2019-07-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-09-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-10-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-11-01"
       },
       {
-        "present": 92.8571428571429,
-        "no_mandate": -7.14285714285714,
-        "absent": 14.285714285714235,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2019-12-01"
       },
       {
-        "present": 85.7142857142857,
-        "no_mandate": 0.0,
-        "absent": 14.285714285714306,
-        "timestamp": "2020-02-01"
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
+        "timestamp": "2020-01-01"
       },
       {
-        "present": 95.4545454545455,
+        "present": 44.7761194029851,
+        "no_mandate": 55.2238805970149,
+        "absent": 0.0,
+        "timestamp": "2020-03-01"
+      },
+      {
+        "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 4.545454545454504,
+        "absent": 0.0,
+        "timestamp": "2020-04-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2020-05-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
         "timestamp": "2020-06-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": -100.0,
-        "absent": 100.0,
+        "present": 96.969696969697,
+        "no_mandate": 0.0,
+        "absent": 3.0303030303030027,
         "timestamp": "2020-07-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": -100.0,
-        "absent": 100.0,
+        "present": 99.2857142857143,
+        "no_mandate": 0.0,
+        "absent": 0.714285714285694,
         "timestamp": "2020-09-01"
       },
       {
@@ -110,9 +172,9 @@
         "timestamp": "2020-12-01"
       },
       {
-        "present": 85.1851851851852,
+        "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 14.814814814814795,
+        "absent": 0.0,
         "timestamp": "2021-01-01"
       },
       {
@@ -120,20 +182,99 @@
         "no_mandate": 0.0,
         "absent": 0.0,
         "timestamp": "2021-02-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2021-03-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2021-04-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2021-05-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2021-06-01"
+      },
+      {
+        "present": 99.2063492063492,
+        "no_mandate": 0.0,
+        "absent": 0.7936507936507979,
+        "timestamp": "2021-07-01"
+      },
+      {
+        "present": 98.5294117647059,
+        "no_mandate": 0.0,
+        "absent": 1.4705882352941018,
+        "timestamp": "2021-09-01"
+      },
+      {
+        "present": 94.3661971830986,
+        "no_mandate": 0.0,
+        "absent": 5.633802816901394,
+        "timestamp": "2021-10-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2021-11-01"
+      },
+      {
+        "present": 96.5986394557823,
+        "no_mandate": 0.684931506849315,
+        "absent": 2.71642903736838,
+        "timestamp": "2021-12-01"
+      },
+      {
+        "present": 66.6666666666667,
+        "no_mandate": 0.0,
+        "absent": 33.3333333333333,
+        "timestamp": "2022-01-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2022-02-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2022-03-01"
       }
     ],
+    "mandate": {
+      "description": "VIII",
+      "beginning": null
+    },
     "person": {
-      "slug": "259-ales-cerin",
-      "name": "Aleš Čerin",
+      "slug": "99-andrej-cernigoj",
+      "name": "Andrej Černigoj",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": null,
+      "preferred_pronoun": "he",
       "group": {
-        "name": "Lista Zorana Jankovića ",
-        "acronym": "",
-        "slug": "22-lista-zorana-jankovica"
+        "name": "Nova Slovenija - Krščanski demokrati",
+        "acronym": "NSi",
+        "slug": "7-nova-slovenija-krscanski-demokrati",
+        "color": "#31A8B1",
+        "classification": "pg",
+        "is_in_coalition": true
       },
-      "image": null
+      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-andrej-cernigoj.jpg"
     }
   }
 }

@@ -1,136 +1,139 @@
 {
-  "url": "https://parladata.lb.djnd.si/v3/cards/misc/legislation/?id=1",
+  "id": 1,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/misc/legislation/?id=1",
   "data": {
-    "results": [
-      {
-        "id": 1316,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POKOPALIŠKEM REDU V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1313,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O REBALANSU PRORAČUNA MESTNE OBČINE LJUBLJANA ZA LETO 2021",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1318,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O UREJANJU PROMETA V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1314,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2022",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1321,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O SPREMEMBAH ODLOKA O UREJANJU JAVNIH PARKIRIŠČ S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1322,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O PODELITVI KONCESIJ ZA OPRAVLJANJE JAVNE SLUŽBE V OSNOVNI ZDRAVSTVENI DEJAVNOSTI V MESTNI OBČINI LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1332,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O OBČINSKEM PODROBNEM PROSTORSKEM NAČRTU 81 CENTER ZNANOSTI – DEL",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1317,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O DOPOLNITVI ODLOKA O ORGANIZACIJI IN NAČINU IZVAJANJA MESTNIH LINIJSKIH PREVOZOV POTNIKOV S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1315,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O PRORAČUNU MESTNE OBČINE LJUBLJANA ZA LETO 2023",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-11-15T15:30:00"
-      },
-      {
-        "id": 1338,
-        "uid": null,
-        "text": "PREDLOG ODLOKA O SPREMEMBAH IN DOPOLNITVAH ODLOKA O ORGANIZACIJI IN DELOVNEM PODROČJU MESTNE UPRAVE MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK",
-        "epa": null,
-        "status": "enacted",
-        "passed": true,
-        "classification": "decree",
-        "has_votes": true,
-        "has_abstract": false,
-        "timestamp": "2021-09-27T15:30:00"
-      }
-    ],
-    "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": "2018-12-17T12:00:00"
+    "results": {
+      "legislation": [
+        {
+          "id": 895,
+          "uid": "PZ8|C1257A70003EE6A1C125862C00537B8D",
+          "text": "Zakon o ratifikaciji Sporazuma med Vlado Republike Slovenije in Vlado Mongolije o mednarodnem cestnem prevozu potnikov in blaga",
+          "epa": "1506-VIII",
+          "status": "enacted",
+          "passed": true,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-12-23T00:00:00"
+        },
+        {
+          "id": 479,
+          "uid": "PA|646A15E41827FD7FC12587B40022C72E",
+          "text": "Resolucija o nacionalnem programu za kulturo 2022–2029",
+          "epa": "2382-VIII",
+          "status": null,
+          "passed": null,
+          "classification": "act",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-12-22T00:00:00"
+        },
+        {
+          "id": 911,
+          "uid": "PZ8|C1257A70003EE6A1C12587B30028C06F",
+          "text": "Zakon o elektronskih komunikacijah",
+          "epa": "2379-VIII",
+          "status": "rejected",
+          "passed": false,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-12-22T00:00:00"
+        },
+        {
+          "id": 913,
+          "uid": "PZ8|C1257A70003EE6A1C12587AA005549F2",
+          "text": "Zakon o začasnih ukrepih za preprečevanje energetske revščine",
+          "epa": "2350-VIII",
+          "status": null,
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-12-13T00:00:00"
+        },
+        {
+          "id": 452,
+          "uid": "PZ8|C1257A70003EE6A1C12587A30023BEFC",
+          "text": "Zakon o spremembah in dopolnitvi Zakona o financiranju občin",
+          "epa": "2333-VIII",
+          "status": "enacted",
+          "passed": true,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-12-03T00:00:00"
+        },
+        {
+          "id": 451,
+          "uid": "PZ8|C1257A70003EE6A1C12587990036E87B",
+          "text": "Zakon o spremembah in dopolnitvah Zakona o zdravniški službi",
+          "epa": "2311-VIII",
+          "status": "enacted",
+          "passed": true,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-11-26T00:00:00"
+        },
+        {
+          "id": 449,
+          "uid": "PZ8|C1257A70003EE6A1C1258792004575E9",
+          "text": "Zakon o spremembah Zakona o interventnih ukrepih za omilitev in odpravo posledic epidemije Covid-19",
+          "epa": "2295-VIII",
+          "status": null,
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-11-19T00:00:00"
+        },
+        {
+          "id": 450,
+          "uid": "PZ8|C1257A70003EE6A1C125879200626406",
+          "text": "Zakon o dodatnih ukrepih za preprečevanje širjenja, omilitev, obvladovanje, okrevanje in odpravo posledic COVID-19",
+          "epa": "2297-VIII",
+          "status": "enacted",
+          "passed": true,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-11-19T00:00:00"
+        },
+        {
+          "id": 878,
+          "uid": "PZ8|C1257A70003EE6A1C125879200304830",
+          "text": "Zakon o spremembah in dopolnitvah Zakona o posebnih pravicah italijanske in madžarske narodne skupnosti na področju vzgoje in izobraževanja",
+          "epa": "2290-VIII",
+          "status": "enacted",
+          "passed": true,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-11-19T00:00:00"
+        },
+        {
+          "id": 447,
+          "uid": "PZ8|C1257A70003EE6A1C125879100499642",
+          "text": "Zakon o spremembah in dopolnitvah Zakona o spodbujanju investicij",
+          "epa": "2284-VIII",
+          "status": "enacted",
+          "passed": true,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-11-18T00:00:00"
+        }
+      ],
+      "classifications": ["act", "law"]
     },
-    "legislation:count": 59,
-    "legislation:pages": 6,
+    "mandate": {
+      "description": "VIII",
+      "beginning": null
+    },
+    "legislation:count": 454,
+    "legislation:pages": 46,
     "legislation:page": 1,
-    "legislation:per_page": 10,
-    "classifications": ["decree"]
+    "legislation:per_page": 10
   }
 }

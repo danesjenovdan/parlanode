@@ -86,9 +86,9 @@ export default {
       const sessId = session?.id || vote?.session?.id || vote?.session_id;
       return `${urls.site}/${sm.session.base}/${sessId}/${sm.session.vote}/${vote?.id}`;
     },
-    getSessionAgendaLink(session) {
+    getSessionAgendaLink(agendaItem, session) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
-      return `${urls.site}/${sm.session.base}/${session?.id}/${sm.session.agenda}`;
+      return `${urls.site}/${sm.session.base}/${session?.id}/${sm.session.agenda}#${agendaItem.id}`;
     },
     getSessionAgendaCardLink(agendaItem) {
       const { urls } = this.$root.$options.contextData;

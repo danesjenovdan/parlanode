@@ -101,7 +101,7 @@ export default {
         .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
         .map((obj) => {
           const present = Math.max(0, Math.round(obj.present)) || 0;
-          const noTerm = Math.max(0, Math.round(obj['no-term'])) || 0;
+          const noTerm = Math.max(0, Math.round(obj.no_mandate)) || 0;
           return {
             date: obj.timestamp,
             present,
@@ -129,6 +129,11 @@ export default {
         .domain(data.map((d) => d.date))
         .range([margin.left, width - margin.right])
         .padding(0.1);
+
+      // prevent x axis labels from touching by only showing some of them
+      // dividing by 16 means it will show up to max 16 ticks
+      const xValuesGap = Math.ceil(x.domain().length / 16);
+      const xTickValues = x.domain().filter((d, i) => !(i % xValuesGap));
 
       const y = d3
         .scaleLinear()
@@ -220,7 +225,7 @@ export default {
         .append('g')
         .attr('class', 'axis-bottom')
         .attr('transform', `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(x).tickFormat(formatMonth))
+        .call(d3.axisBottom(x).tickValues(xTickValues).tickFormat(formatMonth))
         .call((g) => g.selectAll('.domain').remove());
 
       // left axis

@@ -92,15 +92,15 @@ const analysesIDs = [
   {
     id: 'speeches_per_session',
   },
-  // {
-  //   id: 'spoken_words',
-  // },
-  // {
-  //   id: 'mismatch_of_pg',
-  // },
-  // {
-  //   id: 'working_bodies',
-  // },
+  {
+    id: 'spoken_words',
+  },
+  {
+    id: 'mismatch_of_pg',
+  },
+  {
+    id: 'working_bodies',
+  },
 ];
 
 export default {
@@ -148,18 +148,24 @@ export default {
       { id: 'she', icon: 'gender-f', selected: initialGenders.includes('she') },
     ];
 
-    const analyses = analysesIDs.map((a) => ({
-      ...a,
-      label: this.$te(`analysis-texts.${a.id}.label`)
-        ? this.$t(`analysis-texts.${a.id}.label`)
-        : '',
-      titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`)
-        ? this.$t(`analysis-texts.${a.id}.titleSuffix`)
-        : '',
-      explanation: this.$te(`analysis-texts.${a.id}.explanation`)
-        ? this.$t(`analysis-texts.${a.id}.explanation`)
-        : '',
-    }));
+    // parse hidden analyses into an array
+    const hiddenAnalyses = cardState?.hiddenAnalyses?.split('|') || [];
+
+    // filter out hidden analyses and translate them
+    const analyses = analysesIDs
+      .filter((a) => !hiddenAnalyses.includes(a.id))
+      .map((a) => ({
+        ...a,
+        label: this.$te(`analysis-texts.${a.id}.label`)
+          ? this.$t(`analysis-texts.${a.id}.label`)
+          : '',
+        titleSuffix: this.$te(`analysis-texts.${a.id}.titleSuffix`)
+          ? this.$t(`analysis-texts.${a.id}.titleSuffix`)
+          : '',
+        explanation: this.$te(`analysis-texts.${a.id}.explanation`)
+          ? this.$t(`analysis-texts.${a.id}.explanation`)
+          : '',
+      }));
 
     const initialGroups = (cardState?.groups || '').split(',');
     const groups = (cardData?.data?.results?.groups || []).map((g) => {
@@ -300,17 +306,30 @@ export default {
             },
           ];
 
-          if (this.showDemographicsAge)
+          if (this.showDemographicsAge) {
             items.push(age(member.results?.birth_date));
-          if (this.showDemographicsEducation)
+          }
+          if (this.showDemographicsEducation) {
             items.push(member.results?.education);
-          if (this.showDemographicsMandates)
+          }
+          if (this.showDemographicsMandates) {
             items.push(member.results?.mandates);
-          if (this.showDemographicsGroup)
-            items.push({
-              link: this.getPartyLink(member?.group),
-              text: member.group?.acronym || member.group?.name || 'N/A',
-            });
+          }
+          if (this.showDemographicsGroup) {
+            if (this.getPartyLink(member?.group)) {
+              items.push({
+                link: this.getPartyLink(member?.group),
+                text: member.group?.acronym || member.group?.name || 'N/A',
+              });
+            } else {
+              let suffix = '--f';
+              if (member?.preferred_pronoun === 'he') suffix = '--m';
+              items.push({
+                link: null,
+                text: this.$t(`unaffiliated${suffix}`),
+              });
+            }
+          }
 
           return items;
         });
@@ -414,10 +433,10 @@ export default {
       this.searchPeopleImmediate();
     },
     currentSort() {
-      this.searchPeopleImmediate(true);
+      this.searchPeopleImmediate();
     },
     currentSortOrder() {
-      this.searchPeopleImmediate(true);
+      this.searchPeopleImmediate();
     },
   },
   mounted() {
@@ -467,13 +486,11 @@ export default {
         });
       }
     },
-    searchPeopleImmediate(keepPage = false) {
+    searchPeopleImmediate() {
       this.isLoading = true;
       this.membersPerPage = Array(this.pages);
       this.count = 0;
-      if (!keepPage) {
-        this.page = 1;
-      }
+      this.page = 1;
       this.makeRequest(this.searchUrl).then((response) => {
         this.count = response?.data?.['members:count'];
         this.page = response?.data?.['members:page'];
