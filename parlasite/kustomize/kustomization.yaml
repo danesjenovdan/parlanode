@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlasite-ua
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ua
-    newTag: 'f6c5e6bdd363af9f9f2204e32a052ceced9b9479'
+    newTag: '07d6e3743442fd370752abdce57e9365a287885b'
