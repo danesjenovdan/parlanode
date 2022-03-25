@@ -101,7 +101,7 @@ export default {
         .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
         .map((obj) => {
           const present = Math.max(0, Math.round(obj.present)) || 0;
-          const noTerm = Math.max(0, Math.round(obj['no-term'])) || 0;
+          const noTerm = Math.max(0, Math.round(obj.no_mandate)) || 0;
           return {
             date: obj.timestamp,
             present,
