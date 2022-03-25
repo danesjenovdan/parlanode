@@ -1,7 +1,7 @@
 {
   "landing": {
     "title": "Parlameter",
-    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v mestnem svetu MOL.",
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Občinskem svetu Občine Ajdovščina.",
     "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
     "search": {
       "part_one": "Išči",
@@ -173,7 +173,8 @@
     "minutes": "Zapisnik",
     "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!",
     "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
-    "info_email": "info@parlameter.si"
+    "info_email": "info@parlameter.si",
+    "unaffiliated": "nepovezan/a"
   },
   "social": {
     "facebook": "https://www.facebook.com/parlameter",

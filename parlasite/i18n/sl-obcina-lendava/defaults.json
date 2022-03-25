@@ -1,11 +1,11 @@
 {
   "landing": {
     "title": "Parlameter",
-    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
-    "description": "Razišči, kdo so poslanci in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je Državni zbor sprejel v tem mandatu.",
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Občinskem svetu Občine Lendava.",
+    "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
     "search": {
       "part_one": "Išči",
-      "part_two": "odloke in akte, glasovanja, poslance, poslanske skupine ali njihove govore"
+      "part_two": "odloke, glasovanja, svetnike, svetniške klube ali njihove govore"
     }
   },
   "about": {
@@ -47,16 +47,16 @@
     }
   },
   "menu": {
-    "legislation": "Zakonodaja",
+    "legislation": "Odloki",
     "sessions": "Seje",
-    "mps": "Poslanci",
-    "pgs": "Poslanske skupine",
+    "mps": "Svetniki",
+    "pgs": "Svetniški klubi",
     "tools": "Orodja"
   },
   "footer": {
     "heading": "Parlameter",
     "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
-    "contact_mail": "info@parlameter.si",
+    "contact_mail": "mol@parlameter.si",
     "about_heading": "O projektu",
     "about": "Predstavitev Parlametra",
     "about_municipality": "O projektu Tvoja občina",
@@ -166,7 +166,7 @@
     "vote-result--adopted": "Sprejet",
     "vote-result--received": "Prejet",
     "vote-result--in_procedure": "V obravnavi",
-    "legislation": "Zakonodaja",
+    "legislation": "Odloki",
     "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkript",
@@ -183,7 +183,7 @@
   },
   "titles": {
     "session": "Seja",
-    "legislation": "Zakonodaja",
+    "legislation": "Odloki",
     "other-votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",
@@ -193,11 +193,9 @@
     "sessions-search": "Išči seje",
     "thank-you": "Hvala!",
     "ups": ":(",
-    "leader": "Predsednik DZ"
+    "leader": "Župan"
   },
   "legislation": {
-    "act": "A",
-    "decree": "O",
-    "law": "Z"
+    "decree": "O"
   }
 }

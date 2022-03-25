@@ -1,7 +1,8 @@
 const express = require('express');
 const { asyncRender: ar, getOgImageUrl } = require('../utils');
-const { siteMap: sm } = require('../../config');
 const { i18n } = require('../server');
+
+const sm = i18n.siteMap;
 
 const router = express.Router();
 

@@ -4,22 +4,26 @@
       <div class="media-object img-circle session-logo backgroundblue">
         <b>S</b>
       </div>
+
       <h1><%- session.name %></h1>
-      <div class="date">
-        <%= slovenianDate(session.start_time) %>
+
+      <div class="session-extra-info">
+        <h2><%- session.organizations[0].name %></h2>
+        <h3><%- slovenianDate(session.start_time) %></h3>
       </div>
-      <div class="datepublished">
-        <!-- <%- i18n('general.data_published') %>: <%- slovenianDate(session.start_time) %> <%= session.in_review ? i18n('general.in_review') : '' %> -->
-      </div>
+
       <div class="group-container-menu">
         <ul class="clearfix">
-          <!-- <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.agenda %>" class="<%- activeTab === 'dnevni-red' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.agenda') %></a></li> -->
+          <% if (session.has_legislation && !lang.startsWith('sl-obcina')) { %>
+            <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.legislation %>" class="<%- activeTab === 'zakonodaja' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.legislation') %></a></li>
+          <% } %>
+          <% if (session.has_minutes) { %>
+            <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.agenda %>" class="<%- activeTab === 'dnevni-red' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.agenda') %></a></li>
+          <% } %>
           <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.otherVotings %>" class="<%- activeTab === 'glasovanja' ? 'active' : '' %> nav-icon nav-icon-votings"><%- i18n('general.other_votings') %></a></li>
-          <!-- DO NOT SHOW TRANSCRIPTS FOR WORKING GROUP SESSIONS -->
           <% if (session.has_transcript) { %>
             <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.transcript %>" class="<%- activeTab === 'transkript' ? 'active' : '' %> nav-icon nav-icon-transcripts"><%- i18n('general.transcripts') %></a></li>
           <% } %>
-          <!-- END DO NOT SHOW TRANSCRIPTS FOR WORKING GROUP SESSIONS -->
           <% if (!session.has_transcript && session.has_minutes) { %>
             <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.minutes %>" class="<%- activeTab === 'minutes' ? 'active' : '' %> nav-icon nav-icon-transcripts"><%- i18n('general.minutes') %></a></li>
           <% } %>

@@ -1,8 +1,10 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const { asyncRender: ar, getOgImageUrl, slovenianDate } = require('../utils');
-const { siteMap: sm, urls } = require('../../config');
+const { urls, locale } = require('../../config');
 const { i18n } = require('../server');
+
+const sm = i18n.siteMap;
 
 const router = express.Router();
 
@@ -55,18 +57,46 @@ function sessionClassification(classification) {
 // router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
 //   const sesData = await getNewData(req.params.id);
 //   if (sesData) {
-//     render('seja/dnevni-red', { // TODO this used to take you to zakonodaja
-//       ogImageUrl: getOgImageUrl('circle', {
-//         title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
-//         h1: sesData.session.name,
-//         h2: slovenianDate(sesData.session.start_time),
-//         icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
-//       }),
-//       activeMenu: 'session',
-//       pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`, // TODO this used to take you to zakonodaja (title.legislation)
-//       activeTab: 'dnevni-red', // TODO this used to take you to zakonodaja
-//       ...sesData,
-//     });
+//     if (sesData.session.has_legislation && !locale.startsWith('sl-obcina')) {
+//       render('seja/zakonodaja', {
+//         ogImageUrl: getOgImageUrl('circle', {
+//           title: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+//           h1: sesData.session.name,
+//           h2: slovenianDate(sesData.session.start_time),
+//           icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+//         }),
+//         activeMenu: 'session',
+//         pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+//         activeTab: 'zakonodaja',
+//         ...sesData,
+//       });
+//     } else if (sesData.session.has_minutes) {
+//       render('seja/dnevni-red', {
+//         ogImageUrl: getOgImageUrl('circle', {
+//           title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
+//           h1: sesData.session.name,
+//           h2: slovenianDate(sesData.session.start_time),
+//           icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+//         }),
+//         activeMenu: 'session',
+//         pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
+//         activeTab: 'dnevni-red',
+//         ...sesData,
+//       });
+//     } else {
+//       render('seja/glasovanja', {
+//         ogImageUrl: getOgImageUrl('circle', {
+//           title: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
+//           h1: sesData.session.name,
+//           h2: slovenianDate(sesData.session.start_time),
+//           icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+//         }),
+//         activeMenu: 'session',
+//         pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
+//         activeTab: 'glasovanja',
+//         ...sesData,
+//       });
+//     }
 //   } else {
 //     next();
 //   }

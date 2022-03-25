@@ -1,5 +1,3 @@
-const sitemap = require('../i18n/ua/sitemap.json');
-
 const config = {
   port: 3066,
   serverTimeout: 120000,
@@ -16,7 +14,7 @@ const config = {
   locale: 'ua',
   leaderId: 'changeme',
   rootOrgId: '1',
-  siteMap: sitemap,
+  mandateId: '1',
 };
 
 module.exports = config;
