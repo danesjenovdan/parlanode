@@ -1,6 +1,6 @@
 <template>
   <div class="card-footer">
-    <a v-if="showFooterLogo" :href="$root.$options.contextData.urls.site">
+    <a :href="$root.$options.contextData.urls.site">
       <img
         :src="`${$root.$options.contextData.urls.cdn}/img/logo-parlameter.svg`"
         alt="parlameter logo"
@@ -65,8 +65,10 @@ export default {
 <style lang="scss" scoped>
 .card-footer > a img {
   max-height: 100%;
+  height: 30px;
   width: auto;
 }
+
 .card-info:not(.card-exit)::before {
   content: 'i';
   font-weight: 100;

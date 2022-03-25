@@ -119,7 +119,6 @@ export default {
 
 .excerpt {
   font-size: 13px;
-  font-family: 'Roboto Slab', serif;
   font-weight: 300;
   line-height: 1.5em;
   margin: 12px 0;
@@ -153,7 +152,6 @@ hr {
     background-image: url('#{get-parlassets-url()}/icons/zakon.svg');
     background-size: 20px 19px;
     background-repeat: no-repeat;
-    font-family: Roboto, sans-serif;
     font-weight: 300;
     margin-top: 12px;
     padding-left: 30px;
@@ -285,7 +283,6 @@ hr {
 }
 
 .no-abstract {
-  font-family: 'Roboto Slab', serif;
   text-align: center;
   font-size: 16px;
   color: $font-default;
@@ -324,10 +321,8 @@ hr {
 
 .search-dropdown-input {
   background-color: $white;
-  font-family: 'Roboto', sans-serif;
 }
 
 .search-dropdown-label {
-  font-family: 'Roboto', sans-serif;
 }
 </style>

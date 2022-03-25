@@ -408,7 +408,6 @@ export default {
   margin-bottom: 20px;
 
   .date {
-    font-family: Roboto Slab;
     font-size: 14px;
     line-height: 22px;
   }
@@ -487,7 +486,6 @@ export default {
   }
 
   .name {
-    font-family: 'Roboto Slab', 'Times New Roman', serif;
     font-size: 11px;
     font-weight: 300;
     line-height: 1.45em;
@@ -506,7 +504,6 @@ export default {
       margin: 6px 0;
 
       &.projects {
-        font-family: Roboto, sans-serif;
         font-size: 12px;
         line-height: 1.2;
         font-weight: 600;
@@ -552,7 +549,6 @@ export default {
   background-color: $font-default;
   color: #fff;
   top: 45%;
-  font-family: Roboto;
   padding: 3px 10px;
   border-radius: 3px;
   text-transform: uppercase;

@@ -113,7 +113,6 @@ export default {
 
     border-bottom: 1px solid $font-placeholder;
     border-top: 1px solid $font-placeholder;
-    font-family: Roboto Slab, Times New Roman, serif;
     font-size: 11px;
     font-weight: 300;
     line-height: 1.45em;
@@ -150,7 +149,7 @@ export default {
     .text {
       color: $font-default;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
       text-transform: uppercase;
       margin-left: 6px;
       margin-top: 2px;

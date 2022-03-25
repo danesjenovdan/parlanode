@@ -19,7 +19,6 @@
 
   font-weight: 400;
   font-size: 14px;
-  font-family: 'Roboto';
   line-height: 56px;
 
   width: 166px;

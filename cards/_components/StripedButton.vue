@@ -151,11 +151,11 @@ export default {
   }
 
   .text {
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1;
 
     @include respond-to(desktop) {
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 
