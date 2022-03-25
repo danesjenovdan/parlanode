@@ -79,11 +79,7 @@
                     }}
                   </a>
                   <span v-else>
-                    {{
-                      member.person?.group?.acronym ||
-                      member.person?.group?.name ||
-                      'N/A'
-                    }}
+                    {{ $t(unaffiliatedKey(member.person)) }}
                   </span>
                 </div>
               </div>
@@ -161,8 +157,21 @@ export default {
   },
   computed: {
     sortedParties() {
-      const sorted = this.parties.slice(); // copy array to avoid side effects in computed property
-      return sorted.sort((a, b) => {
+      const includesCoalition = this.parties
+        .map((party) => party?.group?.name)
+        .includes('coalition');
+
+      // if we have coalition, sort alphabetically (coalition on top)
+      if (includesCoalition) {
+        return this.parties.slice().sort((a, b) => {
+          const aValue = a?.group?.name || '';
+          const bValue = b?.group?.name || '';
+          return aValue.localeCompare(bValue, 'sl');
+        });
+      }
+
+      // otherwise sort by total number of votes
+      return this.parties.slice().sort((a, b) => {
         return this.votesSum(b.votes) - this.votesSum(a.votes);
       });
     },
@@ -229,6 +238,11 @@ export default {
 
       this.$emit('selectedparty', this.expandedParty);
       this.$emit('selectedoption', this.expandedOption);
+    },
+    unaffiliatedKey(person) {
+      let suffix = '--f';
+      if (person?.preferred_pronoun === 'he') suffix = '--m';
+      return `unaffiliated${suffix}`;
     },
   },
 };
