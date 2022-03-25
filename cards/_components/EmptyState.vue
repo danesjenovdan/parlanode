@@ -25,25 +25,26 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use 'sass:math';
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
 @mixin circle($size: 220px) {
   width: $size;
   height: $size;
-  padding: #{$size / 1.6} #{$size / 8} 0;
+  padding: #{math.div($size, 1.6)} #{math.div($size, 8)} 0;
   background-color: $light-background;
-  background-size: $size / 3;
-  background-position: center #{$size / 5};
+  background-size: math.div($size, 3);
+  background-position: center #{math.div($size, 5)};
   background-repeat: no-repeat;
   border-radius: 50%;
-  font-size: ($size / 220px) * 17px;
+  font-size: math.div($size, 220px) * 17px;
   font-style: italic;
   line-height: 1.1;
   text-align: center;
   position: absolute;
-  top: calc(50% - #{$size / 2});
-  left: calc(50% - #{$size / 2});
+  top: calc(50% - #{math.div($size, 2)});
+  left: calc(50% - #{math.div($size, 2)});
 }
 
 .empty {

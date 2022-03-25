@@ -126,7 +126,7 @@ export default {
         .data(pieArcs)
         .join('text')
         .attr('data-group', (d) => d.data.group?.slug || `null-${d.index}`)
-        .text((d) => d.data.group?.name || 'N/A')
+        .text((d) => d.data.group?.acronym || d.data.group?.name || 'N/A')
         .attr('text-anchor', 'middle')
         .attr('dominant-baseline', (d) => (isBottom(d) ? 'auto' : 'hanging'))
         .attr('fill', '#000')

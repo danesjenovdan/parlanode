@@ -1,125 +1,125 @@
 {
-  "id": 91,
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/monthly-vote-attendance/?id=91",
+  "id": 99,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/monthly-vote-attendance/?id=99",
   "data": {
     "results": [
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2018-06-01"
       },
       {
-        "present": 86.6666666666667,
-        "no_mandate": 0.0,
-        "absent": 13.3333333333333,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2018-07-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2018-08-01"
       },
       {
-        "present": 40.0,
-        "no_mandate": 0.0,
-        "absent": 60.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2018-09-01"
       },
       {
-        "present": 94.7368421052632,
-        "no_mandate": 0.0,
-        "absent": 5.263157894736807,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2018-10-01"
       },
       {
-        "present": 98.0392156862745,
-        "no_mandate": 0.0,
-        "absent": 1.9607843137254974,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2018-11-01"
       },
       {
-        "present": 95.2380952380952,
-        "no_mandate": 0.0,
-        "absent": 4.761904761904802,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2018-12-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-01-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-02-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-03-01"
       },
       {
-        "present": 97.1428571428571,
-        "no_mandate": 0.0,
-        "absent": 2.857142857142904,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2019-04-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-05-01"
       },
       {
-        "present": 94.7368421052632,
-        "no_mandate": 0.0,
-        "absent": 5.263157894736807,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2019-06-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-07-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-09-01"
       },
       {
-        "present": 98.780487804878,
-        "no_mandate": 0.0,
-        "absent": 1.2195121951219932,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2019-10-01"
       },
       {
-        "present": 99.5073891625616,
-        "no_mandate": 0.0,
-        "absent": 0.4926108374384057,
+        "present": 0.0,
+        "no_mandate": 100.0,
+        "absent": 0.0,
         "timestamp": "2019-11-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2019-12-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 0.0,
+        "no_mandate": 100.0,
         "absent": 0.0,
         "timestamp": "2020-01-01"
       },
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
+        "present": 44.7761194029851,
+        "no_mandate": 55.2238805970149,
         "absent": 0.0,
         "timestamp": "2020-03-01"
       },
@@ -130,27 +130,27 @@
         "timestamp": "2020-04-01"
       },
       {
-        "present": 97.9381443298969,
+        "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 2.0618556701030997,
+        "absent": 0.0,
         "timestamp": "2020-05-01"
       },
       {
-        "present": 97.8260869565217,
+        "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 2.1739130434782936,
+        "absent": 0.0,
         "timestamp": "2020-06-01"
       },
       {
-        "present": 100.0,
+        "present": 96.969696969697,
         "no_mandate": 0.0,
-        "absent": 0.0,
+        "absent": 3.0303030303030027,
         "timestamp": "2020-07-01"
       },
       {
-        "present": 100.0,
+        "present": 99.2857142857143,
         "no_mandate": 0.0,
-        "absent": 0.0,
+        "absent": 0.714285714285694,
         "timestamp": "2020-09-01"
       },
       {
@@ -178,15 +178,15 @@
         "timestamp": "2021-01-01"
       },
       {
-        "present": 96.4285714285714,
+        "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 3.571428571428598,
+        "absent": 0.0,
         "timestamp": "2021-02-01"
       },
       {
-        "present": 98.3240223463687,
+        "present": 100.0,
         "no_mandate": 0.0,
-        "absent": 1.675977653631307,
+        "absent": 0.0,
         "timestamp": "2021-03-01"
       },
       {
@@ -208,9 +208,9 @@
         "timestamp": "2021-06-01"
       },
       {
-        "present": 100.0,
+        "present": 99.2063492063492,
         "no_mandate": 0.0,
-        "absent": 0.0,
+        "absent": 0.7936507936507979,
         "timestamp": "2021-07-01"
       },
       {
@@ -220,9 +220,9 @@
         "timestamp": "2021-09-01"
       },
       {
-        "present": 95.7746478873239,
+        "present": 94.3661971830986,
         "no_mandate": 0.0,
-        "absent": 4.225352112676106,
+        "absent": 5.633802816901394,
         "timestamp": "2021-10-01"
       },
       {
@@ -232,15 +232,15 @@
         "timestamp": "2021-11-01"
       },
       {
-        "present": 93.8775510204082,
-        "no_mandate": 0.680272108843537,
-        "absent": 5.442176870748257,
+        "present": 96.5986394557823,
+        "no_mandate": 0.684931506849315,
+        "absent": 2.71642903736838,
         "timestamp": "2021-12-01"
       },
       {
-        "present": 100.0,
+        "present": 66.6666666666667,
         "no_mandate": 0.0,
-        "absent": 0.0,
+        "absent": 33.3333333333333,
         "timestamp": "2022-01-01"
       },
       {
@@ -248,6 +248,12 @@
         "no_mandate": 0.0,
         "absent": 0.0,
         "timestamp": "2022-02-01"
+      },
+      {
+        "present": 100.0,
+        "no_mandate": 0.0,
+        "absent": 0.0,
+        "timestamp": "2022-03-01"
       }
     ],
     "mandate": {
@@ -255,19 +261,20 @@
       "beginning": null
     },
     "person": {
-      "slug": "91-mateja-udovc",
-      "name": "Mateja Udovč",
+      "slug": "99-andrej-cernigoj",
+      "name": "Andrej Černigoj",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": "",
+      "preferred_pronoun": "he",
       "group": {
-        "name": "Stranka modernega centra",
-        "acronym": "SMC",
-        "slug": "5-stranka-modernega-centra",
-        "color": "#09a2cc",
-        "classification": "pg"
+        "name": "Nova Slovenija - Krščanski demokrati",
+        "acronym": "NSi",
+        "slug": "7-nova-slovenija-krscanski-demokrati",
+        "color": "#31A8B1",
+        "classification": "pg",
+        "is_in_coalition": true
       },
-      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P312.png"
+      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-andrej-cernigoj.jpg"
     }
   }
 }
