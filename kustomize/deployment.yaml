@@ -28,3 +28,5 @@ spec:
               value: https://parlacards-slovenija.lb.djnd.si
             - name: VITE_PARLASITE_URL
               value: https://parlameter.si
+            - name: VITE_METAIMAGES_URL
+              value: https://meta-image-generator.lb.djnd.si/parlameter
