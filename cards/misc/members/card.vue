@@ -26,6 +26,13 @@
               class="filter working-bodies"
               @update:modelValue="searchPeopleImmediate"
             />
+            <p-search-dropdown
+              v-if="showDistrictsFilter"
+              v-model="districts"
+              :placeholder="districtsPlaceholder"
+              class="filter districts"
+              @update:modelValue="searchPeopleImmediate"
+            />
             <div v-if="showGendersFilter" class="genders filter">
               <striped-button
                 v-for="gender in genders"
@@ -191,6 +198,16 @@ export default {
       }
     );
 
+    const initialDistricts = (cardState?.districts || '').split(',');
+    const districts = (cardData?.data?.results?.districts || []).map((g) => {
+      return {
+        id: (g.slug || '').split('-')[0],
+        slug: g.slug,
+        label: g.name,
+        selected: initialDistricts.includes(g.slug),
+      };
+    });
+
     const initialTextFilter = cardState?.text || '';
 
     return {
@@ -200,10 +217,14 @@ export default {
       textFilter: initialTextFilter,
       groups,
       workingBodies,
+      districts,
       genders,
       currentSort: cardState?.sort || 'name',
       currentSortOrder: cardState?.sortOrder || 'asc',
       showWorkingBodiesFilter: cardState?.showWorkingBodiesFilter !== 'false',
+      showDistrictsFilter:
+        cardState?.showDistrictsFilter &&
+        cardState?.showDistrictsFilter !== 'false',
       showGendersFilter: cardState?.showGendersFilter !== 'false',
       showDemographicsAge: cardState?.showDemographicsAge !== 'false',
       showDemographicsEducation:
@@ -238,6 +259,13 @@ export default {
             num: this.selectedWorkingBodyIds.length,
           })
         : this.$t('select-working-body-placeholder');
+    },
+    districtsPlaceholder() {
+      return this.selectedDistrictIds.length > 0
+        ? this.$t('selected-placeholder', {
+            num: this.selectedDistrictIds.length,
+          })
+        : this.$t('select-district-placeholder');
     },
     columns() {
       if (this.currentAnalysis === 'demographics') {
@@ -389,6 +417,9 @@ export default {
     selectedWorkingBodyIds() {
       return this.workingBodies.filter((wb) => wb.selected).map((wb) => wb.id);
     },
+    selectedDistrictIds() {
+      return this.districts.filter((d) => d.selected).map((d) => d.id);
+    },
     selectedGenderId() {
       return this.genders.find((gender) => gender.selected)?.id;
     },
@@ -417,6 +448,11 @@ export default {
         );
       } else {
         url.searchParams.delete('working_bodies');
+      }
+      if (this.selectedDistrictIds.length) {
+        url.searchParams.set('districts', this.selectedDistrictIds.join(','));
+      } else {
+        url.searchParams.delete('districts');
       }
       const sortPrefix = this.currentSortOrder === 'desc' ? '-' : '';
       const sort =
@@ -578,7 +614,8 @@ export default {
       }
     }
 
-    .filter.working-bodies {
+    .filter.working-bodies,
+    .filter.districts {
       display: none;
     }
   }
