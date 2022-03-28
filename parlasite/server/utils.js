@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const _ = require('lodash');
 const fetch = require('node-fetch');
-const { urls, locale, metaImagesTheme } = require('../config');
+const { urls, locale } = require('../config');
 
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
@@ -158,7 +158,7 @@ function i18n(lang) {
 
 function getOgImageUrl(type, params = {}) {
   const url = `${urls.metaImages}/${type}`;
-  const query = stringifyParams({ theme: metaImagesTheme, ...params });
+  const query = stringifyParams({ theme: locale, ...params });
   return `${url}${query}`;
 }
 

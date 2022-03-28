@@ -10,7 +10,6 @@ const config = {
     parladata: 'https://parladata.lb.djnd.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
-  metaImagesTheme: 'ljubljana',
   locale: 'sl-obcina-ljubljana',
   leaderId: '261',
   rootOrgId: '1',
