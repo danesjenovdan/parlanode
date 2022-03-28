@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlacards-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija
-    newTag: 'c0f07d567edc13827e97b44063f7ffe9e92f94b9'
+    newTag: 'eed772712af9aefeb88f77718f1856ff45f5f015'
