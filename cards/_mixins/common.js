@@ -37,6 +37,10 @@ export default {
         // This is the default value. If you want to override, add a mixin from
         // contextUrls.js in the specific card.
         contextUrl: rootOptions.contextData.urls.site,
+
+        // This is the default value. If you want to override, add a mixin from
+        // ogImages.js in the specific card.
+        ogImage: `${rootOptions.contextData.urls.cdn}/img/OG.png`,
       };
     } else {
       // eslint-disable-next-line no-console
@@ -50,11 +54,15 @@ export default {
     cardUrl() {
       const { urls } = this.$root.$options.contextData;
       const beforeStateUrl = `${urls.cards}/${this.cardName}/?id=${this.cardData.id}`;
-      const cardState = this.$root.$options.contextData.cardState;
+      const { cardState } = this.$root.$options.contextData;
+
+      // TODO: replace with stringifyParams
       const stateParams = Object.keys(cardState).reduce((prev, curr) => {
-        return `${prev}&${encodeURIComponent(curr)}=${encodeURIComponent(cardState[curr])}`
+        return `${prev}&${encodeURIComponent(curr)}=${encodeURIComponent(
+          cardState[curr]
+        )}`;
       }, '');
-      return `${beforeStateUrl}${stateParams}`
+      return `${beforeStateUrl}${stateParams}`;
     },
   },
 };

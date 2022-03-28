@@ -167,7 +167,6 @@ import axios from 'axios';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultDynamicHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
@@ -220,7 +219,6 @@ export default {
       headerConfig: defaultDynamicHeaderConfig(this, {
         circleIcon: 'primerjalnik',
       }),
-      ogConfig: defaultOgImage(this, { icon: 'primerjalnik' }),
     };
   },
   computed: {

@@ -31,6 +31,7 @@ import cardState from './state.json';
     cards: import.meta.env.VITE_PARLACARDS_URL,
     data: import.meta.env.VITE_PARLADATA_URL,
     cdn: import.meta.env.VITE_PARLASSETS_URL,
+    metaImages: import.meta.env.VITE_METAIMAGES_URL,
   };
 
   const cardName = '{cardName}';
