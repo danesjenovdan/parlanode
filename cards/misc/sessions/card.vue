@@ -11,11 +11,8 @@
               @update:modelValue="selectTab"
             />
           </div>
-          <!--
-            only show working bodies dropdown if
-            a non-root tab is selected
-          -->
-          <div v-if="currentFilter != 'root'" class="col-md-6 filters">
+          <!-- only show working bodies dropdown if we have more than one organization -->
+          <div v-if="workingBodies?.length > 1" class="col-md-6 filters">
             <p-search-dropdown
               v-model="workingBodies"
               :placeholder="inputPlaceholder"
@@ -84,7 +81,7 @@ export default {
     const isEmbedded = this.$root.$options.contextData.templateName === 'embed';
 
     const data = cardData?.data || {};
-    let results = data.results ?? [];
+    let results = data.results?.sessions ?? [];
     let pages = data['sessions:pages'] ?? 1;
     const initialPage = data['sessions:page'] ?? 1;
     const count = data['sessions:count'] ?? results.length ?? 0;
@@ -104,7 +101,7 @@ export default {
     sessionsPerPage[initialPage - 1] = results;
 
     // group organizations by classifications
-    const classifications = (cardData?.data?.organizations || [])
+    const classifications = (cardData?.data?.results?.organizations || [])
       .filter((organization) => {
         // this is to filter out organizations without a classification
         return organization.classification != null;
@@ -128,11 +125,15 @@ export default {
         return 0;
       })
       .reduce((returnValue, organization) => {
-        const { classification, slug } = organization;
-        returnValue[classification] = returnValue[classification] ?? {};
-        returnValue[classification][slug] = organization;
+        if (organization.session_count > 0) {
+          const { classification, slug } = organization;
+          returnValue[classification] = returnValue[classification] ?? {};
+          returnValue[classification][slug] = organization;
+        }
         return returnValue;
       }, {});
+
+    console.log(classifications);
 
     // create tabs
     const tabs = Object.keys(classifications).map((classificationKey) => {
@@ -146,7 +147,7 @@ export default {
 
     return {
       tabs,
-      sessions: cardData?.data?.results,
+      // sessions: cardData?.data?.results,
       workingBodies: [],
       filters: tabs.map((tab) => ({ label: tab.title, id: tab.id })),
       currentSort: 'start_time',
@@ -312,7 +313,8 @@ export default {
       this.makeRequest(this.searchUrl).then((response) => {
         this.count = response?.data?.['sessions:count'];
         this.page = response?.data?.['sessions:page'];
-        this.sessionsPerPage[this.page - 1] = response?.data?.results || [];
+        this.sessionsPerPage[this.page - 1] =
+          response?.data?.results?.sessions || [];
         this.isLoading = false;
       });
     },
@@ -327,7 +329,8 @@ export default {
       if (!this.sessionsPerPage[newPage - 1]) {
         this.isLoading = true;
         this.makeRequest(this.searchUrl).then((response) => {
-          this.sessionsPerPage[newPage - 1] = response?.data?.results || [];
+          this.sessionsPerPage[newPage - 1] =
+            response?.data?.results?.sessions || [];
           this.isLoading = false;
         });
       }
