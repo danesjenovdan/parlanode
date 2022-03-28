@@ -188,27 +188,23 @@ export default {
       }
       return searchHeader.computed.headerConfig.call(this);
     },
-    ogConfig() {
-      if (this.type === 'person') {
-        return personOgImage.computed.ogConfig.call(this);
-      }
-      if (this.type === 'party') {
-        return partyOgImage.computed.ogConfig.call(this);
-      }
-      return searchOgImage.computed.ogConfig.call(this);
-    },
   },
   created() {
     if (this.type === 'person') {
       personSpeechesContextUrl.created.call(this);
       personTitle.created.call(this);
+      personOgImage.created.call(this);
+      return;
     }
     if (this.type === 'party') {
       partySpeechesContextUrl.created.call(this);
       partyTitle.created.call(this);
+      partyOgImage.created.call(this);
+      return;
     }
     searchContextUrl.created.call(this);
     searchTitle.created.call(this);
+    searchOgImage.created.call(this);
   },
   methods: {
     searchSpeechesImmediate() {

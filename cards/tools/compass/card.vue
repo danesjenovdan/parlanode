@@ -12,7 +12,6 @@
 <script>
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import Compass from './Compass.vue';
 
@@ -29,7 +28,6 @@ export default {
   data() {
     return {
       headerConfig: defaultHeaderConfig(this, { circleIcon: 'og-kompas' }),
-      ogConfig: defaultOgImage(this, { icon: 'og-kompas' }),
     };
   },
 };
