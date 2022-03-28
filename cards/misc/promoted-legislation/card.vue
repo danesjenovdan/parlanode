@@ -70,7 +70,6 @@
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 
@@ -92,7 +91,6 @@ export default {
       accepted: cardData?.data?.accepted || [],
       selectedTab: cardState?.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
-      ogConfig: defaultOgImage(this),
     };
   },
 };

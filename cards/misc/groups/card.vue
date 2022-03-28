@@ -42,7 +42,6 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import { partyListContextUrl } from '@/_mixins/contextUrls.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import EmptyState from '@/_components/EmptyState.vue';
@@ -133,13 +132,6 @@ export default {
     headerConfig() {
       return defaultHeaderConfig(this, {
         heading: this.cardData?.data?.mandate?.description,
-        title: `${this.$t('card.title')} ${
-          this.currentAnalysisData.titleSuffix
-        }`,
-      });
-    },
-    ogConfig() {
-      return defaultOgImage(this, {
         title: `${this.$t('card.title')} ${
           this.currentAnalysisData.titleSuffix
         }`,

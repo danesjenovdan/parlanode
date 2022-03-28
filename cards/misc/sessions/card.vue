@@ -55,7 +55,6 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { sessionListContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 // cancelableRequest is how we make requests to update the results
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
@@ -157,7 +156,6 @@ export default {
         heading: cardData?.data?.mandate?.description,
         title: this.$t('card.title'),
       }),
-      ogConfig: defaultOgImage(this),
       showOrganizationColumn:
         cardState?.showOrganizationColumn &&
         cardState?.showOrganizationColumn !== 'false',
