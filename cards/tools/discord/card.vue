@@ -133,7 +133,6 @@ import Toggle from '@/_components/Toggle.vue';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import SearchField from '@/_components/SearchField.vue';
 import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
@@ -245,12 +244,6 @@ export default {
         title: this.dynamicTitle,
       });
     },
-    ogConfig() {
-      return defaultOgImage(this, {
-        icon: 'seznam-glasovanj',
-        title: this.dynamicTitle,
-      });
-    },
     dynamicTitle() {
       return (
         this.$t('card.title') +
@@ -259,7 +252,6 @@ export default {
           : this.$t('sort-by--inequality').toLowerCase())
       );
     },
-
     voteLinkTarget() {
       if (typeof window !== 'undefined') {
         if (window === window.top) {

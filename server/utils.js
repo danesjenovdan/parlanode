@@ -7,6 +7,7 @@ const getUrls = () => {
     cards: process.env.VITE_PARLACARDS_URL,
     data: process.env.VITE_PARLADATA_URL,
     cdn: process.env.VITE_PARLASSETS_URL,
+    metaImages: process.env.VITE_METAIMAGES_URL,
   };
 };
 

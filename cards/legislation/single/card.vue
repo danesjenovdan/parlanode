@@ -45,7 +45,6 @@
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import legislationStatus from '@/_helpers/legislationStatus.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
@@ -74,9 +73,10 @@ export default {
       votes: cardData?.data?.results?.votes || [],
       headerConfig: defaultHeaderConfig(this, {
         heading: cardData?.data?.mandate?.description,
-        title: this.$t(`legislation-classifications.${cardData?.data?.results?.classification}`),
+        title: this.$t(
+          `legislation-classifications.${cardData?.data?.results?.classification}`
+        ),
       }),
-      ogConfig: defaultOgImage(this),
     };
   },
   computed: {
