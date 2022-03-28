@@ -11,6 +11,10 @@
 - type: Boolean
 - default: `'true'`
 
+### showDistrictsFilter
+- type: Boolean
+- default: `'false'`
+
 ### showGendersFilter
 - type: Boolean
 - default: `'true'`
@@ -49,14 +53,14 @@ The selected tab.
     * `'number_of_questions'`
     * `'speeches_per_session'`
     * `'working_bodies'`
-  
+
 ### genders
 - type: Array
 - default: `[]`
 - array elements options: `'he'`, `'she'`
 
 ### sort
-- type: String 
+- type: String
 - default: `'name'`
 - options:
     * `'name'`
@@ -69,6 +73,6 @@ The selected tab.
 ### sortOrder
 - type: String
 - default: `'asc'`
-- options: 
+- options:
     * `'asc'`
     * `'desc'`
