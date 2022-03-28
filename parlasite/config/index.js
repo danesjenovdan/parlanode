@@ -1,5 +1,3 @@
-const sitemap = require('../i18n/sl/sitemap.json');
-
 const config = {
   port: 3066,
   serverTimeout: 120000,
@@ -12,7 +10,6 @@ const config = {
     parladata: 'https://parladata-slovenija.lb.djnd.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
-  metaImagesTheme: 'si',
   locale: 'sl',
   leaderId: '261',
   rootOrgId: '1',
