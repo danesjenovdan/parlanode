@@ -10,7 +10,6 @@ const config = {
     parladata: 'https://parladata-ua.lb.djnd.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
-  metaImagesTheme: 'ua',
   locale: 'ua',
   leaderId: 'changeme',
   rootOrgId: '1',
