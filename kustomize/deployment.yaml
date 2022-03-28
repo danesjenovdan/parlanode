@@ -21,10 +21,10 @@ spec:
             - containerPort: 3000
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-ljubljana.lb.djnd.si
+              value: https://cdn.ljubljana.parlameter.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata.lb.djnd.si/v3
+              value: https://data.ljubljana.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards.lb.djnd.si
+              value: https://glej.ljubljana.parlameter.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite.lb.djnd.si
+              value: https://ljubljana.parlameter.si
