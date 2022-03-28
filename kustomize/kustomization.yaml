@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlacards-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlacards-hrastnik
-    newTag: '791c9077caec21c4e4531c26853172d0f1a25015'
+    newTag: '80a90fc0d2baad4057fb80f3dac21a38ad6b3922'
