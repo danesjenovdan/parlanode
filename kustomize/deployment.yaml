@@ -28,3 +28,5 @@ spec:
               value: https://parlacards-hrastnik.lb.djnd.si
             - name: VITE_PARLASITE_URL
               value: https://parlasite-hrastnik.lb.djnd.si
+            - name: VITE_METAIMAGES_URL
+              value: https://meta-image-generator.lb.djnd.si/parlameter
