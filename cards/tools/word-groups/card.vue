@@ -105,7 +105,6 @@
 import axios from 'axios';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import common from '@/_mixins/common.js';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';
@@ -147,7 +146,6 @@ export default {
       data: cardData || {},
       emptyText: this.$t('empty-text'),
       headerConfig: defaultHeaderConfig(this),
-      ogConfig: defaultOgImage(this),
       showRelative: cardState?.showRelative || false,
       modalShown: false,
       modalInputText: '',
