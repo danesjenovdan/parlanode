@@ -1,6 +1,5 @@
 const express = require('express');
 const { asyncRender: ar, getOgImageUrl } = require('../utils');
-const { rootOrgId } = require('../../config');
 const { i18n } = require('../server');
 
 const sm = i18n.siteMap;

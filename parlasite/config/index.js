@@ -10,7 +10,6 @@ const config = {
     parladata: 'https://parladata-ajdovscina.lb.djnd.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
-  metaImagesTheme: 'ajdovscina',
   locale: 'sl-obcina-ajdovscina',
   leaderId: '261',
   rootOrgId: '2',
