@@ -166,12 +166,6 @@ export default {
       }
       return partyHeader.computed.headerConfig.call(this);
     },
-    ogConfig() {
-      if (this.type === 'person') {
-        return personOgImage.computed.ogConfig.call(this);
-      }
-      return partyOgImage.computed.ogConfig.call(this);
-    },
     getScore() {
       return this.results?.score ?? 0;
     },
@@ -184,6 +178,7 @@ export default {
   },
   created() {
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
+    (this.type === 'person' ? personOgImage : partyOgImage).created.call(this);
     if (this.context === 'overview') {
       (this.type === 'person'
         ? personOverviewContextUrl

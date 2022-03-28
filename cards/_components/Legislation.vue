@@ -80,7 +80,6 @@ import {
   legislationListContextUrl,
   sessionLegislationContextUrl,
 } from '@/_mixins/contextUrls.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import SortableTable from '@/_components/SortableTable.vue';
@@ -141,7 +140,6 @@ export default {
     }));
 
     return {
-      ogConfig: defaultOgImage(this),
       legislation: cardData?.data?.results || [],
       filterOptions,
       currentFilter: cardState?.filter,

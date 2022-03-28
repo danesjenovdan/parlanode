@@ -41,7 +41,6 @@
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import { legislationListContextUrl } from '@/_mixins/contextUrls.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
@@ -89,7 +88,6 @@ export default {
       headerConfig: defaultHeaderConfig(this, {
         heading: cardData?.data?.mandate?.description,
       }),
-      ogConfig: defaultOgImage(this, {}),
     };
   },
   computed: {

@@ -9,7 +9,6 @@
 <script>
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 
 export default {
   name: 'CardMiscInDevelopment',
@@ -21,9 +20,6 @@ export default {
     return {
       title,
       headerConfig: defaultHeaderConfig(this, {
-        title,
-      }),
-      ogConfig: defaultOgImage(this, {
         title,
       }),
     };
