@@ -14,13 +14,12 @@
 <script>
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'CardMiscError',
   components: {
-    EmptyState
+    EmptyState,
   },
   mixins: [common],
   data() {
@@ -38,9 +37,6 @@ export default {
       // contentClass: height === 2 ? 'full' : 'half',
       headerConfig: defaultHeaderConfig(this, {
         heading: title,
-      }),
-      ogConfig: defaultOgImage(this, {
-        title,
       }),
     };
   },

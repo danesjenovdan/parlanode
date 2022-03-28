@@ -215,7 +215,6 @@
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
-import { defaultOgImage } from '@/_mixins/ogImages.js';
 import { voteSessionVotesContextUrl } from '@/_mixins/contextUrls.js';
 import { parseVoteTitle } from '@/_helpers/voteTitle.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
@@ -347,7 +346,6 @@ export default {
       state: cardState || {},
       selectedTab: cardState?.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
-      ogConfig: defaultOgImage(this),
       showMobileExcerpt: false,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',

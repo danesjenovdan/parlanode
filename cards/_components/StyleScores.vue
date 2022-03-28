@@ -117,12 +117,6 @@ export default {
       }
       return partyHeader.computed.headerConfig.call(this);
     },
-    ogConfig() {
-      if (this.type === 'person') {
-        return personOgImage.computed.ogConfig.call(this);
-      }
-      return partyOgImage.computed.ogConfig.call(this);
-    },
     maxValue() {
       return Math.max(
         this.results.sophisticated,
@@ -133,6 +127,7 @@ export default {
   },
   created() {
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
+    (this.type === 'person' ? personOgImage : partyOgImage).created.call(this);
     (this.type === 'person'
       ? personSpeechesContextUrl
       : partySpeechesContextUrl

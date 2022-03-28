@@ -183,12 +183,6 @@ export default {
       }
       return partyHeader.computed.headerConfig.call(this);
     },
-    ogConfig() {
-      if (this.type === 'person') {
-        return personOgImage.computed.ogConfig.call(this);
-      }
-      return partyOgImage.computed.ogConfig.call(this);
-    },
     searchUrl() {
       const url = new URL(this.cardData.url);
       url.searchParams.set('page', this.card.currentPage);
@@ -210,6 +204,7 @@ export default {
       : partyVotesContextUrl
     ).created.call(this);
     (this.type === 'person' ? personTitle : partyTitle).created.call(this);
+    (this.type === 'person' ? personOgImage : partyOgImage).created.call(this);
   },
   methods: {
     toggleVoteOption(voteOption) {
