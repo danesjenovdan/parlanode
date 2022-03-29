@@ -1,0 +1,52 @@
+#framed {
+  .logo {
+    max-width: 120px;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .logo svg {
+    width: 100%;
+  }
+  .gradient-parent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    @include gradient('horizontal');
+  }
+  .gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f0f0+0,f0f0f0+100&0.6+0,1+14 */
+    background: -moz-linear-gradient(top, rgba(240, 240, 240, 0.6) 0%, rgba(240, 240, 240, 1) 14%, rgba(240, 240, 240, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(240, 240, 240, 0.6) 0%, rgba(240, 240, 240, 1) 14%, rgba(240, 240, 240, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(240, 240, 240, 0.6) 0%, rgba(240, 240, 240, 1) 14%, rgba(240, 240, 240, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99f0f0f0', endColorstr='#f0f0f0', GradientType=0);
+    /* IE6-9 */
+  }
+  .permalink {
+    color: $font-default;
+    margin: auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Roboto Slab';
+    font-weight: 300;
+  }
+  .permalink:hover {
+    text-decoration: none;
+  }
+}

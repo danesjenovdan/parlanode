@@ -1,0 +1,11 @@
+.date-list {
+  .date {
+    background-color: $background;
+    padding: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,201 @@
+.about-wrapper {
+    margin-top: 30px;
+}
+
+#about.card-container {
+    padding-bottom: 45px;
+    padding-top: 20px;
+}
+
+#about.card-container::before {
+    display: none;
+}
+
+#about .lead-text-container {
+    font-family: "Roboto Slab", sans-serif;
+    color: $white;
+    font-style: italic;
+    font-size: 24px;
+    // text-align: center;
+    margin: 45px 20px 45px 25px;
+    @include respond-to(mobile) {
+        font-size: 18px;
+    }
+}
+
+#about .lead-text-container a,
+#about .lead-text-container a:hover,
+#about .lead-text-container a:focus,
+#about .lead-text-container a:visited {
+    display: inline-block;
+    text-decoration: none;
+}
+
+#about .lead-text-container .lead-text {
+    background-color: $cta-passive-background;
+    padding: 5px 0;
+    line-height: 2;
+    /* fix inline multiline text padding */
+    box-shadow: 10px 0 0 $cta-passive-background, -10px 0 0 $cta-passive-background;
+    box-decoration-break: clone;
+    color: $white;
+    font-weight: 300;
+}
+
+#about .lead-text-container a:hover .lead-text,
+#about .lead-text-container a:focus .lead-text,
+#about .lead-text-container a:active .lead-text {
+    background-color: $cta-hover-background;
+    /* fix inline multiline text padding */
+    box-shadow: 10px 0 0 $cta-hover-background, -10px 0 0 $cta-hover-background;
+    color: $white;
+    text-decoration: none;
+}
+
+#about .lead-text a {
+    color: $white;
+    font-variant: small-caps;
+    font-weight: 700;
+}
+
+#about .text-container {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    margin-left: 15px;
+    @include respond-to(mobile) {
+        font-size: 16px;
+    }
+}
+
+#about .video-container {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+#about .padded-text {
+    font-size: 16px;
+    padding: 25px 15px;
+    line-height: 1.6;
+}
+
+#about .public-col {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#about .public-col p {
+    text-align: center;
+    padding: 0 15px;
+}
+
+#about .gradient-title {
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: $first;
+}
+
+@supports ( -webkit-background-clip: text ) {
+    #about .gradient-title {
+
+        @include gradient(horizontal);
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+#about .title-container {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+#about .post-entry {
+    background: $background;
+    padding: 20px;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#about .post-entry .post-info {
+    flex-grow: 2;
+    color: $font-placeholder;
+}
+
+#about .post-entry .post-title {
+    font-size: 18px;
+}
+
+#about .thumbnail .caption-icon,
+#about .post-entry .post-download {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+#about .post-entry .post-download i {
+    vertical-align: middle;
+    color: $link;
+}
+
+#about .thumbnail {
+    background: $background;
+    border: none;
+    border-radius: 0;
+    font-style: italic;
+}
+
+#about .thumbnail .caption {
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    margin-bottom: -4px;
+    color: $font-placeholder;
+}
+
+#about .thumbnail .caption-text {
+    flex-grow: 2;
+}
+
+#about .thumbnail .caption-icon i {
+    font-size: 24px;
+    line-height: 20px;
+    vertical-align: bottom;
+    color: $link;
+}
+
+#about .legal-text-container {
+    a {
+        @include link-hover;
+    }
+
+    h3 {
+        text-align: left;
+    }
+}
+
+.wise-iframe-wrapper {
+    position: relative;
+    padding-bottom: 56.10%;
+    height: 0;
+    overflow: hidden;
+}
+
+.wise-iframe-wrapper iframe,
+.wise-iframe-wrapper object,
+.wise-iframe-wrapper embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

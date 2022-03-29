@@ -1,0 +1,182 @@
+/////////////////////////////
+/////// GLOBAL COLORS ///////
+/////////////////////////////
+
+// gradient
+$first: #005554;
+$second: #007a78;
+$third: #c41454;
+
+$gradient-first: $second;
+$gradient-second: #80bdbc;
+$gradient-third: #009cdd;
+
+// tabs
+$tab-active: $second;
+$tab-hover: rgba($second, 0.7);
+$tab-passive: $first;
+
+// links
+$link: $first;
+$link-hover-background: #eff7f7;
+
+// card footer buttons
+$card-footer-button-passive-background: $first;
+$card-footer-button-hover-background: $second;
+
+// scroller
+$scroller: #eff7f7;
+$element: $first;
+
+// divider
+$divider: #c8c8c8;
+
+// barcharts
+$barchart-this: $gradient-third;
+$barchart-other: $second;
+$barchart-default: $second;
+
+// icons
+$icon-accepted: $second;
+$icon-rejected: $third;
+$icon-session: $third;
+$icon-transcript: $first;
+$icon-transcript-hover-background: #eff7f7;
+
+
+// buttons
+$button-for: $second;
+$button-against: $third;
+$button-abstained: #009cdd;
+$button-absent: #003130;
+
+// dropdown
+$dropdown-arrow: $first;
+$dropdown-selected-element: #efefef;
+
+// other
+$light-background: #F1F5F7;
+$light-background-link: #900900;
+$tools-arrow: $second;
+$cta-passive-background: $second;
+$cta-hover-background: rgba($second, 0.7);
+$tools-arrow: $cta-passive-background;
+$load-icon: $link;
+
+// common
+$white: #ffffff;
+$font-default: #333333;
+$font-placeholder: #c8c8c8;
+$background: #f0f0f0;
+$tools-border: #c8c8c8;
+$tools-background-hover: #dddbdb;
+
+// prisotnost skozi cas chart
+$time-presence-present-passive: #bbebff;
+$time-presence-present-active: $second;
+$time-presence-absent-passive: #ffe0da;
+$time-presence-absent-active: $third;
+$time-presence-no-term-passive: $font-placeholder;
+$time-presence-no-term-active: $button-absent;
+
+// raba skozi cas chart
+$time-use-bar-active: $second;
+$time-use-bar-passive: $tab-hover;
+
+// time chart
+$time-chart-active: $third;
+$time-chart-passive: $first;
+
+
+/////////////////////////////
+//////// OLD COLORS /////////
+/////////////////////////////
+
+$party-colors: (
+  'smc': #8fcfee,
+  'sds': #22a2e0,
+  'desus': #5388aa,
+  'sd': #4f6379,
+  'zl': #857799,
+  'levica': #857799,
+  'nsi': #b7888a,
+  'ps_np': #d9776b,
+  'ps-np': #d9776b,
+  'imns': #ba594c,
+  'sab': #2780aa,
+  'sns': #6a5157,
+  'lmš': #6e6983,
+  'nep': #853f36,
+  'nep_-_zl': #853f36,
+  'nep_-_ač': #853f36,
+  'nep_-_mh': #853f36,
+  'nep_-_bk': #853f36,
+  'nep_-_jv': #853f36,
+
+// added to slovenia
+  'vsi': #c25746,
+  'koalicija': #59566c,
+  'koalicija_2': #59566c,
+);
+
+
+$vote-colors: (
+  'for': $button-for,
+  'against': $button-against,
+  'absent': $button-absent,
+  'abstain': $button-abstained,
+);
+
+$proper-vote-colors: (
+  'for': $button-for,
+  'against': $button-against,
+  'absent': $button-absent,
+  'abstain': $button-abstained
+);
+
+$option-colors: (
+  'for': $button-for,
+  'against': $button-against,
+  'absent': $button-absent,
+  'abstain': $button-abstained
+);
+
+// hover colors TODO
+$white-hover: rgba($white, 0.7);
+$second-hover: rgba($second, 0.7);
+$link-hover-background-hover: $link-hover-background;
+$link-hover: rgba($link, 0.7);
+$button-for-hover: rgba($button-for, 0.7);
+$button-against-hover: rgba($button-against, 0.7);
+$button-absent-hover: rgba($button-absent, 0.7);
+$button-abstained-hover: rgba($button-abstained, 0.7);
+$first-light-hover: #feefec;
+
+$party-colors-hover: ();
+@each $party, $color in $party-colors {
+  $party-colors-hover: map-merge($party-colors-hover, (#{$party}: rgba($color, 0.7)));
+}
+
+$option-colors-hover: (
+  'for': $button-for-hover,
+  'against': $button-against-hover,
+  'absent': $button-absent-hover,
+  'abstain': $button-abstained-hover
+);
+
+$proper-vote-colors-hover: (
+  'for': $button-for-hover,
+  'against': $button-against-hover,
+  'absent': $button-absent-hover,
+  'abstain': $button-abstained-hover
+);
+
+$binary-vote-colors: (
+  'binary-for': $icon-accepted,
+  'binary-against': $icon-rejected
+);
+
+$binary-vote-colors-hover: (
+  'binary-for': rgba($icon-accepted, 0.7),
+  'binary-against': rgba($icon-rejected, 0.7),
+);

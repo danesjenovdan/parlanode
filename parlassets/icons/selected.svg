@@ -1,0 +1,21 @@
+<svg width="40" height="38.75" xmlns="http://www.w3.org/2000/svg">
+ <title>Rectangle 48</title>
+
+ <desc>Created with Sketch.</desc>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1" fill-rule="evenodd" fill="none">
+   <g id="svg_2" fill="#000000">
+    <g id="svg_3" transform="rotate(-45 23.292892456054684,16) translate(-26.292892456054688,-23) translate(2.7928929328918457,-0.5) ">
+     <path fill="#ffffff" id="svg_4" d="m29.292892,38l0,4l38,0l0,-4l-38,0zm0,-14l0,14l4,0l0,-14l-4,0z"/>
+    </g>
+   </g>
+  </g>
+  <text id="svg_5" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif" font-weight="bold" font-size="5px" fill="#000000" y="46" x="0">Created by Liau Jian Jie</text>
+  <text id="svg_6" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif" font-weight="bold" font-size="5px" fill="#000000" y="51" x="0">from the Noun Project</text>
+ </g>
+</svg>
