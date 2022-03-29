@@ -7,11 +7,15 @@ FROM node:16-alpine as build
 WORKDIR /app
 
 # install dependencies
-COPY package.json yarn.lock ./
+COPY parlacards/package.json parlacards/yarn.lock ./
 RUN yarn
 
 # copy all files and run build
-COPY . .
+# NOTE: image needs to be build in root not in parlacards folder to have access to parlassets folder
+#       so specify paths relative to the root
+COPY parlassets /parlassets
+COPY parlacards .
+ARG VITE_PARLASSETS_URL
 RUN yarn build
 
 # ---
@@ -23,7 +27,7 @@ FROM node:16-alpine
 WORKDIR /app
 
 # install production dependencies only
-COPY package.json yarn.lock ./
+COPY parlacards/package.json parlacards/yarn.lock ./
 ENV NODE_ENV=production
 RUN yarn && yarn cache clean
 

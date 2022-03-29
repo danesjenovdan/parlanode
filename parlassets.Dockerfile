@@ -7,11 +7,11 @@ FROM node:16-alpine as build
 WORKDIR /app
 
 # install dependencies
-COPY package.json yarn.lock ./
+COPY parlassets/package.json parlassets/yarn.lock ./
 RUN yarn
 
 # copy all files and run build
-COPY . .
+COPY parlassets .
 ENV NODE_ENV=production
 RUN yarn sass
 

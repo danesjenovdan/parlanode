@@ -1,5 +1,5 @@
 import 'make-promises-safe';
-import './load-env.js';
+// import './load-env.js';
 import { resolve } from 'path';
 import { fastify as createFastify } from 'fastify';
 import fastifyStatic from 'fastify-static';
