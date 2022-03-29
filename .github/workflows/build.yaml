@@ -38,7 +38,7 @@ jobs:
           context: .
           file: parlacards.Dockerfile
           build-args:
-            - VITE_PARLASSETS_URL=https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+            - VITE_PARLASSETS_URL=https://parlassets-lendava.lb.djnd.si
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-lendava:${{ github.sha }}
