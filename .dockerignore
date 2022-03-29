@@ -2,6 +2,7 @@
 **/.DS_Store
 **/*.log
 **/README.md
+**/LICENSE
 
 # docker
 **/.dockerignore
@@ -23,3 +24,5 @@ parlacards/.eslintignore
 parlacards/.prettierrc.json
 parlacards/jsconfig.json
 parlacards/dist/
+
+parlassets/scss/style.css

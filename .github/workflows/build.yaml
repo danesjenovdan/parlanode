@@ -25,7 +25,8 @@ jobs:
         name: Build and push parlassets
         uses: docker/build-push-action@v2
         with:
-          context: ./parlassets
+          context: .
+          file: parlassets.Dockerfile
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:${{ github.sha }}
