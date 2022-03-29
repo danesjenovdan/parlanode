@@ -12,7 +12,6 @@ images:
   - name: parlacards-TODO-BRANCH-NAME-HERE
     newName: rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE
     newTag: 'latest'
-images:
   - name: parlassets-TODO-BRANCH-NAME-HERE
     newName: rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE
     newTag: 'latest'
