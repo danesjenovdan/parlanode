@@ -37,8 +37,8 @@ jobs:
         with:
           context: .
           file: parlacards.Dockerfile
-          build-args:
-            - VITE_PARLASSETS_URL=https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+          build-args: |
+            VITE_PARLASSETS_URL=https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:${{ github.sha }}
