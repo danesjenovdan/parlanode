@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlacards-deployment
+  name: parlacards
   labels:
     app: parlacards
 spec:
@@ -19,14 +19,21 @@ spec:
           image: parlacards
           ports:
             - containerPort: 3000
+          resources:
+            requests:
+              memory: 200Mi
+              cpu: 200m
+            limits:
+              memory: 200Mi
+              cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-ljubljana.lb.djnd.si
+              value: https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata.lb.djnd.si/v3
+              value: https://parladata-TODO-BRANCH-NAME-HERE.lb.djnd.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards.lb.djnd.si
+              value: https://parlacards-TODO-BRANCH-NAME-HERE.lb.djnd.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite.lb.djnd.si
+              value: https://parlasite-TODO-BRANCH-NAME-HERE.lb.djnd.si
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter

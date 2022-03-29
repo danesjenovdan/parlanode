@@ -1,11 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter
+namespace: parlameter-TODO-BRANCH-NAME-HERE
 resources:
-  - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+  - parlacards/deployment.yaml
+  - parlacards/ingress.yaml
+  - parlacards/service.yaml
+  - parlassets/deployment.yaml
+  - parlassets/ingress.yaml
+  - parlassets/service.yaml
 images:
-  - name: parlacards
-    newName: rg.fr-par.scw.cloud/djnd/parlacards
+  - name: parlacards-TODO-BRANCH-NAME-HERE
+    newName: rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE
+    newTag: 'latest'
+images:
+  - name: parlassets-TODO-BRANCH-NAME-HERE
+    newName: rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE
     newTag: 'latest'

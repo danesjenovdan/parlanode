@@ -1,22 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parlassets-ljubljana-nginx
+  name: parlacards
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   tls:
     - hosts:
-        - parlassets-ljubljana.lb.djnd.si
-      secretName: parlassets-ljubljana-nginx-tls
+        - parlacards-TODO-BRANCH-NAME-HERE.lb.djnd.si
+      secretName: parlacards-tls
   rules:
-    - host: parlassets-ljubljana.lb.djnd.si
+    - host: parlacards-TODO-BRANCH-NAME-HERE.lb.djnd.si
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: parlassets-ljubljana-nginx
+                name: parlacards
                 port:
-                  number: 80
+                  number: 3000
