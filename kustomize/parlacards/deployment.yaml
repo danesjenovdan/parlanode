@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlacards
-          image: parlacards
+          image: parlacards-TODO-BRANCH-NAME-HERE
           ports:
             - containerPort: 3000
           resources:
