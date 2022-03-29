@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: parlassets-ljubljana-nginx
+spec:
+  selector:
+    app: parlassets-ljubljana
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

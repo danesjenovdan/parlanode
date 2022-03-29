@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: parlassets-ljubljana-nginx
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+spec:
+  tls:
+    - hosts:
+        - parlassets-ljubljana.lb.djnd.si
+      secretName: parlassets-ljubljana-nginx-tls
+  rules:
+    - host: parlassets-ljubljana.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlassets-ljubljana-nginx
+                port:
+                  number: 80

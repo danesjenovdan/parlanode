@@ -1,0 +1,97 @@
+// ALT HEADER
+.alt-header-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .alt-header {
+        width: 100%;
+        padding: 0 20px 20px 20px;
+
+        display: flex;
+
+        .session-logo {
+            $size: 80px;
+            $padding: 10px;
+
+            display: block;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 0;
+            border: none;
+            flex-shrink: 0;
+            width: $size;
+            height: $size;
+            background-color: $icon-session;
+            padding: $padding;
+
+            b {
+                font-size: 20px;
+                line-height: $size - ($padding * 2);
+            }
+        }
+
+        .header-info-container {
+            vertical-align: baseline;
+            float: left;
+
+            padding-top: 4px;
+
+            h1 {
+                font-size: 16px !important;
+            }
+
+            h1, h2 {
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0;
+                padding: 0;
+                line-height: 18px;
+            }
+
+            h2.partyinfo {
+                font-weight: 300;
+                font-family: 'Roboto Slab';
+            }
+
+            h2.cardname {
+                font-weight: 300;
+
+                font-size: 18px;
+                line-height: 20px;
+
+                margin-top: 18px;
+
+                color: $first;
+            }
+        }
+
+        .icon-circle {
+          $size: 80px;
+          background: $second;
+          border-radius: 50%;
+          flex-shrink: 0;
+          height: $size;
+          margin-right: 18px;
+          padding: 20px;
+          width: $size;
+          img { width: 100%; }
+        }
+    }
+
+    .portrait {
+        border-radius: 50%;
+        flex: none;
+        height: 80px;
+        margin: 0 18px 0 0;
+        width: 80px;
+
+        float: left;
+    }
+
+    .alt-header-border {
+        height: 1px;
+        width: 100%;
+        @include gradient('horizontal');
+    }
+}

@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: parlameter
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+images:
+  - name: parlassets-ljubljana
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-ljubljana
+    newTag: 'ba4f185c8a2127fb16eda548cc6d77b50159c0aa'

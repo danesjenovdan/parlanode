@@ -1,0 +1,60 @@
+// TODO DELETE THIS
+
+.rayen {
+  overflow: hidden;
+  position: relative;
+  padding: 0 !important;
+}
+.rayen:hover {
+    background-color: $first !important;
+}
+.rayen:focus {
+    text-decoration: none;
+}
+
+.rayen::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $second;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+
+.rayen>span {
+  display: block;
+}
+
+.rayen::before,
+.rayen>span {
+  padding: 10px 40px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.rayen:hover::before {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.rayen:hover>span {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+
+// .rayen.active:hover::before {
+//   -webkit-transform: translate3d(-100%, 0, 0);
+//   transform: translate3d(-100%, 0, 0);
+// }
+// .rayen.active:hover>span {
+//   -webkit-transform: translate3d(0, 0, 0);
+//   transform: translate3d(0, 0, 0);
+// }
+.rayen.active:hover {
+    background-color: $second !important;
+}
