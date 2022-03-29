@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlassets
-          image: parlassets
+          image: parlassets-lendava
           ports:
             - containerPort: 80
           resources:

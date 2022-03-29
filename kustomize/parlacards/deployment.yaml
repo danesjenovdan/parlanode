@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: parlacards
   labels:
-    app: parlacards-lendava
+    app: parlacards
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlacards-lendava
+      app: parlacards
   template:
     metadata:
       labels:
-        app: parlacards-lendava
+        app: parlacards
     spec:
       containers:
-        - name: parlacards-lendava
+        - name: parlacards
           image: parlacards-lendava
           ports:
             - containerPort: 3000
