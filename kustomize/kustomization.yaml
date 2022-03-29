@@ -2,10 +2,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: parlameter-ajdovscina
 resources:
-  - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+  - parlacards/deployment.yaml
+  - parlacards/ingress.yaml
+  - parlacards/service.yaml
+  - parlassets/deployment.yaml
+  - parlassets/ingress.yaml
+  - parlassets/service.yaml
 images:
   - name: parlacards-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ajdovscina
-    newTag: '64f225564ac8ebd3032d521e90751394d426c5a3'
+    newTag: 'c025877a70879d8d48bee6978b46b8375b81f2ae'
+  - name: parlassets-ajdovscina
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-ajdovscina
+    newTag: 'c025877a70879d8d48bee6978b46b8375b81f2ae'

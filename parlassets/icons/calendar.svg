@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="7 7 50 50" fill="#000">
+  <path d="M53.5 11H49V8a1 1 0 1 0-2 0v3H17V8a1 1 0 0 0-2 0v3h-4.5A3.5 3.5 0 0 0 7 14.5v39a3.5 3.5 0 0 0 3.5 3.5h43a3.5 3.5 0 0 0 3.5-3.5v-39a3.5 3.5 0 0 0-3.5-3.5zm-43 2H15v3a1 1 0 0 0 2 0v-3h30v3a1 1 0 1 0 2 0v-3h4.5c.83 0 1.5.67 1.5 1.5V21H9v-6.5c0-.83.67-1.5 1.5-1.5zm43 42h-43A1.5 1.5 0 0 1 9 53.5V23h46v30.5c0 .83-.67 1.5-1.5 1.5z"/>
+  <circle cx="24" cy="30" r="2"/>
+  <circle cx="32" cy="30" r="2"/>
+  <circle cx="40" cy="30" r="2"/>
+  <circle cx="48" cy="30" r="2"/>
+  <circle cx="16" cy="38" r="2"/>
+  <circle cx="24" cy="38" r="2"/>
+  <circle cx="32" cy="38" r="2"/>
+  <circle cx="40" cy="38" r="2"/>
+  <circle cx="48" cy="38" r="2"/>
+  <circle cx="16" cy="46" r="2"/>
+  <circle cx="24" cy="46" r="2"/>
+  <path d="M32 43a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+</svg>

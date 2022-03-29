@@ -1,0 +1,618 @@
+.card-container {
+    margin-top: 20px;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $white;
+    @include card(1);
+    @extend %scroller;
+}
+.card-header {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+
+    // 2 row height
+    min-height: 105px;
+    align-items: center;
+    // 2 row end
+
+    &.shadow {
+        box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-header-border {
+      @include gradient('vertical');
+      display: flex;
+      float: none;
+      height: auto;
+      margin-left: 20px;
+      width: 3px;
+      flex-shrink: 0;
+      align-self: stretch;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.1em;
+      padding-left: 13px;
+      padding-right: 13px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      @include respond-to(mobile) { font-size: 18px; }
+    }
+}
+.card-content {
+    width: 100%;
+    padding: 0 20px 0 20px;
+    margin: 0 0 0px 0;
+}
+
+
+.card-content-front { height: 100%; }
+// muki made this global (removed col-md-12 > etc.)
+.card-container .card-content.full {
+    $height: $full-card-height;
+    max-height: $height;
+    .card-content-front { max-height: $height }
+    .card-content-info { max-height: $height }
+    @include respond-to(desktop) { height: $height }
+}
+.card-container .card-content.half {
+    $height: $half-card-height;
+    max-height: $height;
+    .card-content-front { max-height: $height }
+    .card-content-info { max-height: $height }
+    @include respond-to(desktop) { height: $height; }
+}
+// end of muki made this global (removed col-md-12 > etc.)
+
+.card-placeholder {
+    background-color: $background;
+    width: 100%;
+    height: 300px;
+}
+.card-footer {
+    width: 100%;
+    position: relative;
+
+    height: 60px;
+    padding: 14px 20px 14px 20px;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        @include gradient('horizontal');
+    }
+}
+.card-circle-button,
+.card-circle-button-vue {
+    width: 30px;
+    height: 30px;
+    display: block;
+    float: right;
+    margin-left: 8px;
+    @include border-radius(50%);
+    background-color: $card-footer-button-passive-background;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+    &:hover {
+        background-color: $card-footer-button-hover-background;
+    }
+}
+.card-info {
+    font-weight: 100;
+}
+.card-embed {
+    background-image: url($cdn_home_icon + 'embed.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% 70%;
+}
+.card-share {
+    background-image: url($cdn_home_icon + 'share.svg');
+    background-repeat: no-repeat;
+    background-position: 6px center;
+    background-size: 50% 50%;
+}
+
+/*
+
+*/
+.card-header-embed {
+
+    height: 115px;
+
+    .headerimage-container {
+        float: left;
+        width: 80px;
+        height: 80px;
+    }
+
+    .headerwords-container {
+        float: left;
+        margin-left: 15px;
+
+        h1 {
+            color: $first;
+            font-weight: 200;
+            font-size: 20px !important;
+            line-height: 20px !important;
+        }
+
+        h2 {
+            color: $font-placeholder;
+            font-size: 18px;
+            font-weight: 200;
+
+            margin-top: 20px;
+            margin-bottom: 0;
+
+            .name {
+                font-weight: 400;
+            }
+        }
+    }
+}
+/*.card-content.half {*/
+    .embed-divider {
+        display: none;
+    }
+/*}*/
+.card-embed-header-divider {
+    height: 1px;
+
+    background-image: url($cdn_home_img + 'shortline.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.cardhelper{
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.card-circle-button.card-circle-open,
+.card-circle-button-vue.card-circle-open {
+    background-image:none;
+}
+.card-circle-button.card-circle-open::after,
+.card-circle-button-vue.card-circle-open:after {
+
+}
+.card-circle-button.card-circle-close,
+.card-circle-button-vue.card-circle-close {
+
+}
+.card-circle-button.card-circle-closed,
+.card-circle-button-vue.card-circle-closed {
+    background-image:none;
+    content: "X";
+}
+
+
+
+
+// CARD BACK
+.card-container {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.1, 1.08);
+    transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.1, 1.08); //(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.1, 1.08);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.1, 1.08), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.1, 1.08);
+    -webkit-font-smoothing: antialiased;
+    // this is a hack TODO
+    overflow: visible;
+}
+
+.card-container.flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+
+    .front {
+        pointer-events: none;
+    }
+}
+
+.front {
+    backface-visibility: hidden;
+    // this is a hack TODO (same as above)
+    overflow: hidden;
+    position: relative;
+}
+
+.back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background: $white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.card-exit {
+    background-color: $card-footer-button-passive-background;
+    background-image: none;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: center;
+}
+
+.info-text {
+    position: relative;
+    margin: auto;
+    max-width: 600px;
+    font-weight: 300;
+    margin-bottom: 1.5em;
+
+    &.lead {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &.heading {
+        font-weight: 400;
+        margin-bottom: 0.25em;
+        text-transform: uppercase;
+    }
+}
+
+label {
+    text-shadow: none;
+    font-weight: 400;
+}
+
+input.form-control, textarea.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #000;
+}
+
+.btn-parlameter {
+    background-color: $first;
+    border: none;
+    color: $white;
+    height: 34px;
+    line-height: 30px;
+    padding: 0 10px;;
+    margin-top: 5px;
+}
+.btn-full-width {
+    width: 100%;
+}
+.btn-margin-left {
+    margin-left: 20px;
+}
+
+// toggle
+/* The switch - the box around the slider */
+.embed-switch-container {
+    width: 100%;
+    height: 35px;
+    overflow: hidden;
+    position: relative;
+}
+
+.embed-label {
+    float: left;
+    line-height: 30px;
+    margin-right: 20px;
+}
+
+.embed-switch-box {
+    display: block;
+    position: relative;
+    margin-top: 1px;
+    float: left;
+    overflow: hidden;
+    border-radius: 60px;
+
+    .embed-switch {
+        display: inline-block;
+        height: 20px;
+        margin-top: 5px;
+        overflow: hidden;
+        width: 57px;
+        transition: all 0.5s;
+
+        .embed-switches {
+            width: 93px;
+            height: 20px;
+            position: relative;
+            left: 0;
+            transition: all 0.5s;
+        }
+
+        .leftswitch {
+            float: left;
+            width: 50%;
+            text-align: left;
+            background-color: $tab-passive;
+            padding-left: 10px;
+            color: $white;
+        }
+
+        .rightswitch {
+            float: right;
+            width: 50%;
+            text-align: right;
+            background-color: $background;
+            padding-right: 10px;
+        }
+    }
+}
+
+
+
+.embed-switch-ball {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: $first;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    transition: all 0.5s;
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+}
+
+.embed-switch-box.off {
+    .embed-switches {
+        left: -36.5px;
+    }
+}
+
+.embed-switch-box.off + .embed-switch-ball {
+    right: 47px;
+}
+
+.embed-switch-big-box {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 80px;
+    padding: 0 10px;
+    height: 35px;
+
+    cursor: pointer;
+}
+
+.embed-divider {
+    width: 100%;
+    height: 31px;
+    padding: 25px 0;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 0px;
+        background-color: #000;
+
+        display: block;
+        position: relative;
+    }
+}
+
+
+// "back side of the card
+// card rippling animation
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(500);
+    }
+    100% {
+        transform: scale(1);
+        top: -30px;
+        left: -30px;
+    }
+}
+
+
+.card-container, .card-content {
+    overflow: hidden;
+}
+.card-content.scrollme {
+    overflow-y: auto;
+}
+.card-header {
+    z-index: 2;
+}
+.card-footer {
+    z-index: 4;
+}
+.card-content {
+    position: relative;
+    z-index: 1;
+    min-height: $half-card-height;
+
+    &__empty {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: auto;
+        padding-top: 10vh;
+
+        @include respond-to(mobile) {
+            padding-top: 30px;
+        }
+    }
+
+    &__empty-inner {
+        background: $background;
+        width: 216px;
+        height: 216px;
+        border-radius: 50%;
+        padding: 40px;
+
+        @include respond-to(mobile) {
+            width: 196px;
+            height: 196px;
+        }
+
+        img {
+            margin: 0 auto 5px;
+            display: block;
+
+            @include respond-to(mobile) {
+                max-width: 60px;
+            }
+        }
+
+        p {
+            font-family: "Roboto Slab", sans-serif;
+            color: $font-default;
+            font-style: italic;
+            font-size: 16px;
+            text-align: center;
+
+            @include respond-to(mobile) {
+                font-size: 14px;
+            }
+        }
+    }
+
+
+}
+.card-container::before {
+    content: '';
+    background-color: $card-footer-button-hover-background;
+    position: absolute;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 96px;
+    bottom: 16px;
+
+    transition: transform 0.4s ease-out;
+
+    z-index: 3;
+}
+.card-container.clicked-info::before {
+    right: 96px;
+    bottom: 18px;
+}
+.card-container.clicked-embed::before {
+    right: 58px;
+    bottom: 18px;
+}
+.card-container.clicked-share::before {
+    right: 20px;
+    bottom: 18px;
+}
+.card-container.covered::before {
+    animation: ripple 1s forwards;
+}
+.card-container.revealed::before {
+    background-color: $card-footer-button-hover-background;
+    animation: ripple 1s forwards;
+}
+
+.card-footer .card-logo {
+    width: 50px;
+    float: left;
+}
+.card-footer .card-logo a:hover {
+    background: transparent;
+}
+
+.card-content-info {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.card-scroll {
+    padding: 0;
+
+    .card-content-info,
+    .card-content-share,
+    .card-content-embed {
+        margin: 0 20px;
+    }
+
+    .filters {
+        padding: 0 20px 20px;
+        display: flex;
+        position: relative;
+        z-index: 9;
+        justify-content: space-between;
+        $label-height: 26px;
+
+        .filter-label {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: $label-height;
+        }
+
+        .search-dropdown-input {
+            padding-top: 11px;
+            padding-bottom: 11px;
+        }
+
+        .search-dropdown-options { top: 50px; }
+
+        &--shadow {
+            box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: opacity 0.3s ease-in-out;
+        }
+    }
+
+    &__wrapper {
+        margin: 0 20px;
+        height: 420px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include respond-to(mobile) {
+            height: 267px;
+        }
+
+        .date {
+            background-color: $background;
+            font-weight: bold;
+            padding: 10px;
+        }
+    }
+}

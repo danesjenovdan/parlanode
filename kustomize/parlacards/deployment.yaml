@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parlacards
+  labels:
+    app: parlacards
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parlacards
+  template:
+    metadata:
+      labels:
+        app: parlacards
+    spec:
+      containers:
+        - name: parlacards
+          image: parlacards-ajdovscina
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: 200Mi
+              cpu: 200m
+            limits:
+              memory: 200Mi
+              cpu: 200m
+          env:
+            - name: VITE_PARLASSETS_URL
+              value: https://parlassets-ajdovscina.lb.djnd.si
+            - name: VITE_PARLADATA_URL
+              value: https://parladata-ajdovscina.lb.djnd.si/v3
+            - name: VITE_PARLACARDS_URL
+              value: https://parlacards-ajdovscina.lb.djnd.si
+            - name: VITE_PARLASITE_URL
+              value: https://parlasite-ajdovscina.lb.djnd.si
+            - name: VITE_METAIMAGES_URL
+              value: https://meta-image-generator.lb.djnd.si/parlameter
