@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: parlacards-hrastnik
+  name: parlacards
 spec:
   selector:
-    app: parlacards-hrastnik
+    app: parlacards
   ports:
     - protocol: TCP
       port: 3000
