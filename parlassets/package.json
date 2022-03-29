@@ -1,0 +1,32 @@
+{
+  "name": "parlassets",
+  "version": "1.0.0",
+  "description": "Assets for frontend for Parlameter",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --functions=scss/functions.js scss/style.scss scss/style.css && postcss --replace scss/style.css",
+    "dev": "cross-env NODE_ENV=development nodemon --ext scss --exec \"npm run sass\"",
+    "serve": "http-server -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danesjenovdan/parlassets.git"
+  },
+  "author": "danesjenovdan",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/danesjenovdan/parlassets/issues"
+  },
+  "homepage": "https://github.com/danesjenovdan/parlassets#readme",
+  "dependencies": {
+    "autoprefixer": "^9.7.4",
+    "cross-env": "^6.0.3",
+    "cssnano": "^4.1.10",
+    "http-server": "^0.12.1",
+    "lodash": "^4.17.15",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.2",
+    "postcss-cli": "^7.1.0"
+  },
+  "devDependencies": {}
+}

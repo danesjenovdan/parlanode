@@ -1,0 +1,24 @@
+# garbage
+.DS_Store
+*.log
+README.md
+
+# docker
+.dockerignore
+Dockerfile
+
+# git
+.git
+.gitignore
+
+# dev only stuff
+.idea
+.vscode
+.env.local
+.env.*.local
+.eslintrc.js
+.eslintignore
+.prettierrc.json
+jsconfig.json
+node_modules/
+dist/

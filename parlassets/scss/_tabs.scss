@@ -1,0 +1,99 @@
+@import "colors";
+@import "breakpoints";
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  .tabs-headers {
+    display: flex;
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .tabs-header {
+      align-items: center;
+      background: $background;
+      color: $font-placeholder;
+      cursor: pointer;
+      display: flex;
+      flex: 1;
+      font-size: 11px;
+      justify-content: center;
+      margin-right: 4px;
+      padding: 10px;
+      text-align: center;
+      user-select: none;
+      &:last-child { margin-right: 0; }
+      &.active {
+        background: $second;
+        color: $white;
+        cursor: default;
+      }
+      @include respond-to(desktop) { font-size: 14px; }
+    }
+  }
+  .tabs-content {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+  }
+  &.dark {
+    .tabs-headers .tabs-header {
+      color: white;
+      font-size: 13px;
+      font-weight: 300;
+      padding-bottom: 7px;
+      padding-top: 8px;
+      text-transform: uppercase;
+      background: $first;
+      &.active { background: $second; }
+      &:hover { background: $second-hover }
+      @include respond-to(desktop) {
+        font-size: 16px;
+        padding-bottom: 15px;
+        padding-top: 16px;
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  border-bottom: none;
+  padding-bottom: 40px;
+  display: flex;
+  & > li {
+    flex: 1;
+    margin-left: 3px;
+    text-align: center;
+
+    &:first-child { margin-left: 0 }
+    & > a {
+      background: $background;
+      border: none;
+      border-radius: 0;
+      color: $font-placeholder;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      margin: 0 1px 0 0;
+      padding: 10px 7px;
+      &:hover { border: none; }
+    }
+    &.active {
+      & > a, & > a:focus, & > a:hover {
+        color: $white;
+        background: $second;
+        border: none;
+      }
+    }
+    &:hover {
+      & > a, & > a:focus, & > a:hover {
+        color: $white;
+        background: $second;
+        border: none;
+      }
+    }
+  }
+  @include respond-to(mobile) { font-size: 11px; }
+}

@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: parlassets
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+spec:
+  tls:
+    - hosts:
+        - parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+      secretName: parlassets-tls
+  rules:
+    - host: parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlassets
+                port:
+                  number: 80

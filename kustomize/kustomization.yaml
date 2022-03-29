@@ -2,10 +2,17 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: parlameter-lendava
 resources:
-  - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+  - parlacards/deployment.yaml
+  - parlacards/ingress.yaml
+  - parlacards/service.yaml
+  - parlassets/deployment.yaml
+  - parlassets/ingress.yaml
+  - parlassets/service.yaml
 images:
   - name: parlacards-lendava
     newName: rg.fr-par.scw.cloud/djnd/parlacards-lendava
-    newTag: '3d0b3cd71b70df039636a1c627abdb8b0e5ae7b2'
+    newTag: 'latest'
+images:
+  - name: parlassets-lendava
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-lendava
+    newTag: 'latest'

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parlassets
+  labels:
+    app: parlassets
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parlassets
+  template:
+    metadata:
+      labels:
+        app: parlassets
+    spec:
+      containers:
+        - name: parlassets
+          image: parlassets
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 100m
+            limits:
+              memory: 100Mi
+              cpu: 100m
