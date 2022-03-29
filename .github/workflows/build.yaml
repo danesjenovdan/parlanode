@@ -34,7 +34,10 @@ jobs:
         name: Build and push parlacards
         uses: docker/build-push-action@v2
         with:
-          context: ./parlacards
+          context: .
+          file: parlacards.Dockerfile
+          build-args:
+            - VITE_PARLASSETS_URL=https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:${{ github.sha }}
