@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': resolve(root, 'cards'),
-        parlassets: resolve(root, 'parlassets'),
+        parlassets: resolve(root, '..', 'parlassets'),
       },
     },
     css: {
@@ -40,6 +40,7 @@ export default defineConfig(({ mode }) => {
     server: {
       port: process.env.VITE_PORT || 3000,
       strictPort: true,
+      host: '0.0.0.0',
     },
   };
 });

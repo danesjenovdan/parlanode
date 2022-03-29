@@ -6,6 +6,7 @@
   "scripts": {
     "sass": "node-sass --functions=scss/functions.js scss/style.scss scss/style.css && postcss --replace scss/style.css",
     "dev": "cross-env NODE_ENV=development nodemon --ext scss --exec \"npm run sass\"",
+    "dev:serve": "cross-env NODE_ENV=development nodemon --ext scss --exec \"npm run sass && npm run serve\"",
     "serve": "http-server -p 8080"
   },
   "repository": {
