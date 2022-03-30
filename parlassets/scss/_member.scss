@@ -1,0 +1,85 @@
+.member-container {
+  height: 100%;
+  left: 0;
+  margin-left: -9px;
+  margin-right: -9px;
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 0 20px;
+  position: relative;
+  top: 0;
+
+  .header {
+    @extend %group-member-header-headings;
+    margin-bottom: 20px;
+
+    .member-extra-info {
+      margin-bottom: 30px;
+
+      a {
+        color: $link;
+      }
+    }
+  }
+}
+
+.poslanec {
+  // border-bottom: 1px solid $background;
+  padding: 11px 0;
+  position: relative;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 12px 0 0 0;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+/* added by muki */
+.member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 0;
+
+  .image {
+    max-width: 75px;
+    max-height: 75px;
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  p {
+    margin: 0;
+    display: flex;
+    flex-shrink: 1;
+
+    padding-left: 5px;
+    padding-right: 10px;
+
+    justify-content: flex-start;
+  }
+
+  span {
+    margin: 0;
+    display: flex;
+    flex-grow: 2;
+    flex-shrink: 0;
+
+    justify-content: flex-end;
+
+    color: $font-placeholder;
+    font-weight: 500;
+  }
+}
+.member.lastel {
+  border: none;
+  padding-bottom: 10px;
+}
+/* end of added by muki */

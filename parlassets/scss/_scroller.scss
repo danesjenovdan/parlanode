@@ -1,0 +1,16 @@
+%scroller {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $scroller;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $element;
+    border-radius: 0;
+  }
+}

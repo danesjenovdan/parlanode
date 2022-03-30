@@ -1,25 +1,28 @@
 # garbage
-.DS_Store
-*.log
-README.md
+**/.DS_Store
+**/*.log
+**/README.md
+**/LICENSE
 
 # docker
-.dockerignore
-Dockerfile
+**/.dockerignore
+**/Dockerfile
 
 # git
-.git
-.gitignore
-.gitmodules
+**/.git
+**/.gitignore
+**/.gitmodules
 
 # dev only stuff
-.idea
-.vscode
-.env.local
-.env.*.local
-.eslintrc.cjs
-.eslintignore
-.prettierrc.json
-jsconfig.json
-node_modules/
-dist/
+**/.idea
+**/.vscode
+**/node_modules/
+
+parlacards/.env*
+parlacards/.eslintrc.cjs
+parlacards/.eslintignore
+parlacards/.prettierrc.json
+parlacards/jsconfig.json
+parlacards/dist/
+
+parlassets/scss/style.css

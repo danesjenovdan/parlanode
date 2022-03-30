@@ -1,0 +1,275 @@
+.card-govor, .card-govori {
+  $toggle-arrow-height: 72px;
+  $similar-speech-tab-height: 126px;
+  $similar-speech-tab-content-distance: 17px;
+  $similar-speech-tabs-offset-bottom: 46px;
+
+  $blue: $second;
+  $light-gray: $background;
+  $medium-gray: $font-placeholder;
+
+  %text-styling {
+    font-family: Roboto Slab;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+  }
+
+  %link-styling {
+    color: $blue;
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    &:hover { color: $blue; }
+  }
+
+  .portrait {
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 4px $font-placeholder;
+    height: 32px;
+    width: 32px;
+  }
+
+  .card-header-person {
+    align-items: center;
+    border-bottom: 1px solid $light-gray;
+    display: flex;
+    height: 75px;
+    padding: 0;
+
+    .name {
+      font-size: 18px !important;
+      font-weight: 300;
+    }
+
+    .portrait {
+      margin-right: 24px;
+      margin-left: 33px;
+    }
+  }
+
+  .card-content {
+    padding-bottom: 72px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+
+    .everything { display: block; }
+    .quote { display: none; }
+
+    &.similar-expanded {
+      .speech-text { visibility: hidden; }
+      .similar-speech-content { display: block; }
+      .similar-speech-tabs ul li.active:before { display: block; }
+    }
+
+    &.closed {
+      max-height: 204px;
+      padding-bottom: 0;
+      .toggle-arrow {
+        transform: none;
+      }
+    }
+    &.just-quote {
+      padding-bottom: 0;
+      .quote-button {
+        background: $medium-gray;
+        cursor: default;
+        display: block;
+        top: 50%;
+      }
+      .speech-text {
+        color: $font-placeholder;
+        span { color: #000; }
+      }
+      .full-text-link {
+        @extend %link-styling;
+        margin-bottom: 54px;
+      }
+      &.closed { max-height: none; }
+      .everything { display: none; }
+      .quote { display: block; }
+    }
+  }
+
+
+  .speech-text {
+    @extend %text-styling;
+    margin: 36px 0;
+    padding: 0 133px;
+    position: relative;
+
+    @include respond-to(mobile) {
+      padding: 0;
+    }
+  }
+
+  .quote-button {
+    background: $first;
+    border-radius: 50%;
+    color: $white;
+    cursor: pointer;
+    display: none;
+    font-family: "Times New Roman", serif;
+    font-size: 44px;
+    height: 33px;
+    left: 50px;
+    line-height: 52px;
+    margin-top: -16px;
+    position: absolute;
+    text-align: center;
+    user-select: none;
+    width: 33px;
+    @include respond-to(mobile) { display: none !important; }
+  }
+
+  .similar-speech {
+    margin-bottom: $similar-speech-tabs-offset-bottom;
+
+    .similar-speech-content {
+      $vertical-offset: 40px;
+      $horizontal-offset: 60px;
+
+      background: $light-gray;
+      display: none;
+      padding: 0 28px 59px 28px;
+      position: absolute;
+      top: $vertical-offset;
+      left: $horizontal-offset;
+      width: calc(100% - #{$horizontal-offset * 2});
+      height: calc(100% - #{$vertical-offset +
+        $similar-speech-tab-height +
+        $toggle-arrow-height +
+        $similar-speech-tab-content-distance +
+        $similar-speech-tabs-offset-bottom});
+
+        .tab-pane { height: 100%; }
+
+        $heading-height: 66px;
+        .similar-speech-heading {
+          border-bottom: 1px solid $medium-gray;
+          font-size: 18px !important;
+          font-weight: 300;
+          height: $heading-height;
+          line-height: $heading-height;
+          position: relative;
+          .close-button {
+            background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="%23#{str-slice("#{$first}", 2)}" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
+            cursor: pointer;
+            height: 17px;
+            position: absolute;
+            right: 0;
+            top: 26px;
+            width: 17px;
+          }
+        }
+
+        .similar-speech-text {
+          $offset-top-bottom: 36px;
+          @extend %text-styling;
+          margin: $offset-top-bottom 0;
+          max-height: calc(100% - #{$heading-height + 2 * $offset-top-bottom});
+          overflow-y: auto;
+          padding: 0 48px;
+        }
+
+        .similar-speech-link {
+          @extend %link-styling;
+        }
+      }
+
+      .similar-speech-tabs {
+        display: flex;
+        padding: 0 60px 0 80px;
+
+        .title {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20px;
+          text-transform: uppercase;
+          width: 110px;
+        }
+
+        ul {
+          display: flex;
+          flex: 1;
+          list-style-type: none;
+          margin: 0;
+
+          li {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            margin-right: 16px;
+            position: relative;
+            &:last-child { margin-right: 0; }
+
+            &.active:before {
+              background: $light-gray;
+              bottom: $similar-speech-tab-height;
+              content: '';
+              display: none;
+              height: $similar-speech-tab-content-distance;
+              left: 0;
+              position: absolute;
+              width: 100%;
+            }
+
+            .speech {
+              align-items: center;
+              background: $light-gray;
+              color: inherit;
+              display: flex;
+              flex-direction: column;
+              height: $similar-speech-tab-height;
+              padding-top: 10px;
+              position: relative;
+              &:hover, &:focus, &:active { text-decoration: none; }
+
+              .name {
+                font-size: 15px;
+                font-weight: 300;
+                height: 50px;
+                line-height: 18px;
+                padding: 9px 4px 0 4px;
+                text-align: center;
+              }
+
+              .date {
+                font-family: Roboto Slab;
+                font-size: 15px;
+              }
+
+              .rating {
+                background: $blue;
+                bottom: 0;
+                height: 7px;
+                left: 0;
+                position: absolute;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .toggle-arrow {
+      background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="%23#{str-slice("#{$first}", 2)}"/></svg>') rgba(#f9f9f9, 0.9);
+      border-bottom: 20px solid rgba(#f9f9f9, 0.9);
+      bottom: 0;
+      cursor: pointer;
+      font-size: 100px;
+      height: $toggle-arrow-height;
+      left: 0;
+      line-height: $toggle-arrow-height;
+      position: absolute;
+      text-align: center;
+      transform: rotate(180deg);
+      transform-origin: center;
+      width: 100%;
+    }
+}

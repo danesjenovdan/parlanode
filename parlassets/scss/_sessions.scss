@@ -1,0 +1,616 @@
+.session-container {
+  height: 100%;
+  left: 0;
+  margin-left: -9px;
+  margin-right: -9px;
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 0 20px;
+  position: relative;
+  top: 0;
+
+  .header {
+    @extend %group-member-header-headings;
+    margin-bottom: 20px;
+
+    .session-extra-info {
+      margin-bottom: 30px;
+    }
+  }
+
+  .result {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .result-icon {
+      width: 28px !important;
+      height: 28px;
+      background-size: contain !important;
+      background-repeat: no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
+    .text {
+      margin-left: 12px;
+    }
+  }
+}
+
+.session-types {
+  .session-types-title {
+    color: $font-placeholder;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .session-types-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .session-type {
+      align-items: center;
+      border: 1px solid $font-placeholder;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      padding: 5px 20px;
+      text-transform: uppercase;
+      width: calc(33.33% - 6.667px);
+      background-color: $first;
+      &.active,
+      &:hover {
+        background: $second;
+        color: $white;
+      }
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+      @include respond-to(mobile) {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+    }
+  }
+}
+
+.narrow-inner-container {
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .search {
+    .form-control {
+      border-radius: 0;
+      border-right: medium none;
+      font-size: 20px;
+      height: 50px;
+      border-color: $font-placeholder;
+      border-right: none;
+
+      &:focus {
+        border-color: $second;
+      }
+      &:focus ~ .input-group-btn .btn {
+        border-color: $second;
+      }
+    }
+    .btn {
+      border-color: $font-placeholder;
+      border-left: none;
+      border-radius: 0;
+      color: $second;
+      height: 50px;
+      transition: border-color 0.15s;
+    }
+  }
+  h3.searchresults {
+    font-size: 18px;
+    color: $font-placeholder;
+    font-weight: 500;
+  }
+}
+
+.session-list {
+  display: flex;
+  flex-wrap: wrap;
+  .session {
+    background-color: $second;
+    box-shadow: 0 1.5px 4px rgba(#000, 0.24), 0 1.5px 6px rgba(#000, 0.12);
+    box-sizing: border-box;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 500;
+    min-height: 210px;
+    justify-content: center;
+    margin: 0 11px 11px 0;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: calc(25% - 8.25px);
+    &:nth-of-type(4n) {
+      margin-right: 0;
+    }
+    &:focus,
+    &:active,
+    &:hover {
+      text-decoration: none;
+    }
+    &.active,
+    &:hover {
+      color: $font-placeholder;
+    }
+    &.active {
+      cursor: default;
+      &:after {
+        $arrow-size: 22px;
+        background: $second;
+        content: '';
+        width: $arrow-size;
+        height: $arrow-size;
+        transform: rotate(45deg);
+        position: absolute;
+        bottom: -$arrow-size / 2;
+        left: calc(50% - #{$arrow-size / 2});
+      }
+    }
+    .session-date {
+      color: $font-placeholder;
+    }
+    @include respond-to(mobile) {
+      font-size: 14px;
+      min-height: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  .tmpContainer {
+    margin: 5px 10px 17px 10px;
+    width: 100%;
+    .card-container {
+      margin-top: 0;
+    }
+  }
+}
+
+.session-container {
+  .paneltab {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    &.border-right {
+      border-right: 1px solid $background;
+    }
+    .member {
+      border-bottom: 1px solid $background;
+      padding: 10px 0;
+      position: relative;
+      h3 {
+        @extend %list-text;
+        margin: 12px 0 0 0;
+      }
+      h4 {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+    .session_other_members {
+      img {
+        width: 15.67%;
+        float: left;
+        margin-right: 1%;
+      }
+    }
+  }
+}
+.sessionsGetSessionByDate {
+  .tab-pane {
+    padding: 10px 0;
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        margin-bottom: 15px;
+        p {
+          display: inline-block;
+          font-size: 16px;
+          font-weight: 300;
+          border-bottom: 1px solid $background;
+          margin-bottom: 10px;
+          padding: 0 20px 10px 20px;
+        }
+      }
+    }
+    .date {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  .nav-tabs {
+    border: medium none;
+    text-align: center;
+    li {
+      display: inline-block;
+      float: none;
+      margin: 0;
+      text-align: center;
+      a {
+        border: medium none;
+        border-radius: 0;
+        color: $second;
+        font-size: 40px;
+        line-height: 20px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    li.active {
+      a {
+        color: $first;
+      }
+    }
+  }
+}
+.session-logo {
+  $size: 90px;
+  $padding: 10px;
+
+  color: $white;
+  text-align: center;
+  width: $size;
+  height: $size;
+  margin: 0 auto 20px auto;
+  padding: $padding;
+  background-color: $font-default;
+
+  &.backgroundred {
+    background-color: $icon-session;
+  }
+
+  &.backgroundblue {
+    background-color: $gradient-third;
+  }
+
+  &.law-logo {
+    background-color: $icon-transcript;
+  }
+
+  &.backgroundwhite {
+    background-color: $white;
+
+    // icon styles
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &.law-logo {
+    background-color: $icon-transcript;
+  }
+
+  b {
+    display: inline-block;
+    line-height: $size - ($padding * 2);
+    font-size: 24px;
+  }
+}
+
+.person-logo {
+  color: $white;
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 0;
+  object-fit: cover;
+
+  &.backgroundred {
+    background-color: $first;
+  }
+
+  b {
+    display: inline-block;
+    line-height: 90px;
+    font-size: 24px;
+  }
+}
+
+.session_transcript_menu {
+  ul {
+    padding: 0;
+    li {
+      display: table;
+      overflow: hidden;
+      float: left;
+      text-align: center;
+      list-style: none;
+      margin-right: 10px;
+      a {
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 30px;
+        //                width: 160px;
+        color: $font-placeholder;
+        border: 1px solid $font-placeholder;
+        padding: 0 20px;
+        text-transform: uppercase;
+      }
+      a.active,
+      a:hover {
+        color: $white;
+        background: $second;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.session_transcript {
+  .panel {
+    background-color: $white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+  .panel-group .panel {
+    border-radius: 4px;
+    margin-bottom: 0;
+  }
+  .panel-default {
+    border-color: $font-placeholder;
+  }
+  .panel-default > .panel-heading {
+    background-color: $white;
+    border-color: $font-placeholder;
+    color: $font-default;
+  }
+  .panel-group .panel-heading {
+    border-bottom: 0 none;
+  }
+  .panel-heading {
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 10px 15px;
+  }
+  .panel-title {
+    color: inherit;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 0;
+    img {
+      width: 50px;
+      float: left;
+      margin-right: 1%;
+    }
+    a .status {
+      background: url($cdn_home_img + 'arrup.png') top center no-repeat;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      float: right;
+    }
+    a.collapsed .status {
+      background: url($cdn_home_img + 'arrdown.png') top center no-repeat;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .panel-collapse.collapsed .status {
+    text-align: center;
+    background: rgba(240, 240, 240, 0.4);
+    cursor: pointer;
+    margin-top: -60px;
+    padding: 15px 0;
+  }
+  .panel-collapse .status {
+    margin-top: 0px;
+    cursor: pointer;
+    text-align: center;
+    background: rgba(240, 240, 240, 0.4);
+    cursor: pointer;
+    margin-top: -60px;
+    padding: 15px 0;
+    z-index: 10;
+    position: relative;
+  }
+  .panel-collapse .status a {
+    background: url($cdn_home_img + 'arrup.png') top center no-repeat;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .panel-collapse .status a:hover {
+    text-decoration: none;
+  }
+  .panel-collapse.collapsed .status a {
+    background: url($cdn_home_img + 'arrdown.png') top center no-repeat;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+  }
+  .panel-collapse.collapsed .status .fadeover {
+    height: 20px;
+    margin-top: -20px;
+    position: absolute;
+    width: 98.7%;
+    display: block;
+    background: rgba(240, 240, 240, 0.4);
+  }
+  .panel-collapse .status .fadeover {
+    display: none;
+  }
+  .panel-collapse.collapsed .alltrans {
+    height: 100px;
+    overflow: hidden;
+  }
+  .t {
+  }
+  .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top: none;
+  }
+  .panel-body {
+    padding-left: 150px;
+    padding-right: 150px;
+    font-weight: 300;
+    font-size: 18px;
+  }
+}
+.session_voting {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  .single_voting {
+    background: $background;
+    margin-bottom: 20px;
+  }
+  .session_title {
+    margin: 15px 0;
+  }
+  .border-left {
+    border-left: 2px solid $font-placeholder;
+  }
+  .accepted {
+    text-align: center;
+    line-height: 100px;
+    font-size: 24px;
+  }
+  .accepted.aye {
+    color: $icon-accepted;
+  }
+  .accepted.nay {
+    color: $icon-rejected;
+  }
+  .session_votes {
+    text-align: center;
+    font-size: 35px;
+    line-height: 40px;
+    margin: 15px 0;
+    .type {
+      font-size: 18px;
+      line-height: 30px;
+      text-transform: uppercase;
+    }
+    .indicator {
+      width: 30px;
+      height: 5px;
+      display: block;
+      line-height: 3px;
+      font-size: 3px;
+      margin: 0 auto;
+    }
+    .progress.smallbar .aye,
+    .indicator.aye {
+      background: $button-for;
+    }
+    .progress.smallbar .ney,
+    .indicator.ney {
+      background: $button-against;
+    }
+    .progress.smallbar .abstention,
+    .indicator.abstention {
+      background: $button-abstained;
+    }
+    .progress.smallbar .not,
+    .indicator.not {
+      background: $button-absent;
+    }
+  }
+  a {
+    color: inherit;
+  }
+  a:hover {
+    color: $second;
+  }
+}
+.session_report {
+  background: $background;
+  padding: 10px 20px;
+  .type {
+    float: left;
+    padding-right: 30px;
+    .indicator {
+      display: block;
+      float: left;
+      line-height: 50px;
+      width: 12px;
+    }
+    .number {
+      display: block;
+      float: left;
+      font-size: 30px;
+      line-height: 25px;
+      padding-left: 5px;
+    }
+    font {
+      font-size: 21px;
+      line-height: 18px;
+      text-transform: uppercase;
+    }
+    .status0,
+    .status1 {
+      line-height: 50px;
+      font-size: 18px;
+      color: $font-placeholder;
+      b {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .session_voting .session_votes {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 15px 0;
+  }
+
+  .session_voting .session_votes .type {
+    font-size: 14px;
+    line-height: 30px;
+    text-transform: uppercase;
+  }
+}
+
+.odpri-vse {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: $second;
+  font-size: 18px;
+  line-height: 26.4px;
+  cursor: pointer;
+}
+
+.session-search-container {
+  margin-top: 70px;
+  margin-bottom: 70px;
+
+  h2 {
+    font-weight: 500;
+    color: $font-default;
+  }
+}
+h2.izberi-vrsto-seje {
+  font-size: 18px;
+  color: $font-placeholder;
+  font-weight: 500;
+}
+
+span.session-date {
+  display: inline;
+  font-size: 16px;
+  color: $font-placeholder;
+}
