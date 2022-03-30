@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
-  border-bottom: 1px solid #c8c8c8;
+  border-bottom: 1px solid $divider;
   position: relative;
 }
 
@@ -284,7 +284,7 @@ footer.footer {
       content: '';
       height: 1px;
       width: calc(100% - 30px);
-      background-color: $font-placeholder;
+      background-color: $divider;
       position: absolute;
       display: block;
       top: 0;

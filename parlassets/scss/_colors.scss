@@ -3,13 +3,13 @@
 /////////////////////////////
 
 // gradient
-$first: #005554;
-$second: #007a78;
-$third: #c41454;
+$first: #1F6599;
+$second: #00D9CC;
+$third: #795d98;
 
 $gradient-first: $second;
 $gradient-second: #80bdbc;
-$gradient-third: #009cdd;
+$gradient-third: $first;
 
 // tabs
 $tab-active: $second;
@@ -17,8 +17,9 @@ $tab-hover: rgba($second, 0.7);
 $tab-passive: $first;
 
 // links
-$link: $first;
-$link-hover-background: #eff7f7;
+$link: #58347E;
+$link-hover: #7e4ab4;
+$link-hover-background: #F6F1FC;
 
 // card footer buttons
 $card-footer-button-passive-background: $first;
@@ -29,12 +30,12 @@ $scroller: #eff7f7;
 $element: $first;
 
 // divider
-$divider: #c8c8c8;
+$divider: #ECECEC;
 
 // barcharts
-$barchart-this: $gradient-third;
-$barchart-other: $second;
-$barchart-default: $second;
+$barchart-this: $second;
+$barchart-other: $first;
+$barchart-default: $first;
 
 // icons
 $icon-accepted: $second;
@@ -47,8 +48,8 @@ $icon-transcript-hover-background: #eff7f7;
 // buttons
 $button-for: $second;
 $button-against: $third;
-$button-abstained: #009cdd;
-$button-absent: #003130;
+$button-abstained: $first;
+$button-absent: #002b29;
 
 // dropdown
 $dropdown-arrow: $first;
@@ -64,12 +65,14 @@ $tools-arrow: $cta-passive-background;
 $load-icon: $link;
 
 // common
-$white: #ffffff;
-$font-default: #333333;
-$font-placeholder: #c8c8c8;
-$background: #f0f0f0;
-$tools-border: #c8c8c8;
+$true-white: #FFFFFF;
+$white: #F9F9FA;
+$font-default: #000000;
+$font-placeholder: #d3d3d3;
+$background: $white;
+$tools-border: #d3d3d3;
 $tools-background-hover: #dddbdb;
+$light-gray: #F9F9FA;
 
 // prisotnost skozi cas chart
 $time-presence-present-passive: #bbebff;
