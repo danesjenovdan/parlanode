@@ -11,7 +11,7 @@ resources:
 images:
   - name: parlacards-ua
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ua
-    newTag: 'latest'
+    newTag: 'c7446290fcd18c952ad0bee7ad47ef5b12bd4d89'
   - name: parlassets-ua
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ua
-    newTag: 'latest'
+    newTag: 'c7446290fcd18c952ad0bee7ad47ef5b12bd4d89'
