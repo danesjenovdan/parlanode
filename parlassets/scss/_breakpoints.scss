@@ -1,0 +1,28 @@
+$breakpoint: 768px;
+
+$breakpoints: (
+  small-mobile: "(max-width: #{479px})",
+  before-limbo: "(min-width: #{480px}) and (max-width: #{$breakpoint - 1px})",
+  up-to-limbo: "(max-width: #{991px})",
+  above-limbo: "(min-width: #{992px})",
+  limbo: "(min-width: #{$breakpoint}) and (max-width: #{991px})",
+  mobile: "(max-width: #{$breakpoint - 1px})",
+  desktop: "(min-width: #{$breakpoint})"
+);
+
+@mixin respond-to($breakpoint) {
+  $mediaQuery: map-get($breakpoints, $breakpoint);
+  @media #{$mediaQuery} {
+    @content;
+  }
+}
+
+@mixin show-for($breakpoint, $displayType: block) {
+  display: none;
+  @include respond-to($breakpoint) {
+    display: $displayType;
+  }
+}
+
+$full-card-height: 544px;
+$half-card-height: 180px;

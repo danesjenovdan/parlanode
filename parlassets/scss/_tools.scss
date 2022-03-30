@@ -1,0 +1,117 @@
+.tool-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tool {
+  text-align: center;
+  min-width: 290px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+@media only screen and (max-width : 767px) {
+  .tool {
+    margin-bottom: 15px;
+  }
+}
+
+.tool__overlay-link {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-indent: -9999px;
+  z-index: 2;
+}
+
+.tool-content {
+  border: 1px solid $tools-border;
+  padding: 22px 18px 45px 27px;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.tool-content:hover {
+  background-color: $tools-background-hover;
+  transition: all linear 0.3s;
+}
+
+.tool-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.96px;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", sans-serif;
+}
+
+.tool-desc {
+  line-height: 24px;
+  font-weight: 300;
+  max-width: 238px;
+  margin: 0 auto;
+  padding-bottom: 17px;
+}
+
+.tool-arrow {
+  width: 36px;
+  height: 29px;
+  background-image: url(encode-svg(str-replace(fs-readFile('icons/arrow_right.svg'), '#000', '#{$tools-arrow}')));
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: right ease-out 0.3s;
+}
+
+.tool:hover .tool-arrow {
+  right: 50%;
+  margin-right: -18px;
+}
+
+.circle {
+  height: 101px;
+  width: 102px;
+  background-color: $white;
+  padding: 27px 15px 24px 27px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0 auto;
+}
+
+.obvestila .circle {
+  background-image: url($cdn_home_img + 'orodja/obvestila.svg');
+  background-size: 60px 50px;
+}
+
+.primerjalnik-glasovanj .circle {
+  background-image: url($cdn_home_img + 'orodja/primerjalnik.svg');
+  background-size: 58px 48px;
+}
+
+.raziskovalec-neenotnosti .circle {
+  background-image: url($cdn_home_img + 'orodja/neenotnost.svg');
+  background-size: 44px 44px;
+}
+
+.parlamentarni-kompas .circle {
+  background-image: url($cdn_home_img + 'orodja/kompas.svg');
+  background-size: 50px 50px;
+}
+
+.parlatube .circle {
+  background-image: url($cdn_home_img + 'orodja/parlatube.svg');
+  background-size: 39px 25px;
+}
+
+.skupine-besed .circle {
+  background-image: url($cdn_home_img + 'orodja/skupine-besed.svg');
+  background-size: 50px 50px;
+}
