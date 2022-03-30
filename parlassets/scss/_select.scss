@@ -1,0 +1,30 @@
+.select {
+  $height: 31px;
+  display: inline-block;
+  height: $height;
+  position: relative;
+  vertical-align: top;
+
+  select {
+    appearance: none;
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $font-placeholder;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: $font-default;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 12px;
+    height: $height;
+    justify-content: flex-start;
+    line-height: $height;
+    outline: none;
+    padding: 0 26px 0 13px;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
+
+  @include arrow(12px, 6px, 13px, 10px);
+}

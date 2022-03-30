@@ -1,0 +1,208 @@
+.modal-dialog {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100%;
+
+    &.modal-wide {
+        width: 800px;
+    }
+
+    .modal-content {
+        width: calc(100% - 20px);
+        margin: 21px 10px 10px;
+        border: none;
+        border-radius: 0;
+    }
+
+    &.modal-center {
+        display: flex;
+        > .modal-center-wrapper {
+            margin: auto;
+        }
+    }
+}
+
+.modal-header {
+    background: $cta-passive-background;
+
+    .modal-title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-left: 15px;
+        color: $white;
+    }
+
+    .modal-logo {
+        width: 60px;
+        height: 60px;
+        background: $white;
+        border-radius: 50%;
+        margin: -35px auto -25px;
+        img {
+            padding: 18px 10px;
+        }
+    }
+
+    .modal-close,
+    .modal-back {
+        font-family: "Roboto Slab", sans-serif;
+        font-weight: 300;
+        font-size: 42px;
+        line-height: 24px;
+        color: $white;
+        opacity: 1;
+        text-shadow: none;
+        vertical-align: baseline;
+    }
+
+    .modal-back {
+        float: left;
+        margin-top: -5px;
+    }
+}
+
+.modal-body {
+    padding-top: 30px;
+    padding-bottom: 15px;
+
+    .form-group.has-feedback {
+        .form-control {
+            padding-left: 32.5px;
+            padding-right: 12px;
+        }
+        .form-control-feedback {
+            left: 0;
+            right: auto;
+        }
+        &[class*="col-"] {
+            .form-control-feedback {
+                left: 15px;
+            }
+        }
+    }
+
+    .form-control {
+        border-color: $second;
+    }
+
+    .large-text {
+        font-size: 18px;
+        height: 35px;
+    }
+
+    .xlarge-text {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .checkbox {
+        $size: 35px;
+        $top-offset: 5px;
+
+        & + label {
+            line-height: $size;
+            padding-left: $size + 10px;
+            font-size: 16px;
+            line-height: 1.4;
+            margin-top: -$top-offset;
+
+            &:before {
+                height: $size;
+                width: $size;
+                margin-top: $top-offset;
+            }
+        }
+
+        &:checked + label:before {
+            background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26.5" height="23.125" fill="%23#{str-slice("#{$second}", 2)}" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>');
+        }
+    }
+
+    .input-group-addon {
+        border: none;
+        background: none;
+    }
+
+    #donation-message {
+        resize: vertical;
+        min-height: 130px;
+    }
+
+    #donation-amount {
+        text-align: right;
+    }
+
+    .heart {
+        fill: $first;
+        width: 150px;
+        display: inline-block;
+    }
+
+    .light-bg {
+        background-color: $link-hover-background;
+        padding: 10px 15px;
+        margin-bottom: 30px;
+
+        .row > div {
+            min-width: 160px;
+            float: left;
+        }
+    }
+
+    .flex-wrap {
+        @include respond-to(desktop) {
+            display: flex;
+            flex-wrap: wrap;
+            > div {
+                display: flex;
+            }
+        }
+    }
+}
+
+.modal-footer {
+
+    .col-less-padding {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .btn-payment,
+    .btn-multiline {
+        background-color: $first;
+        border: none;
+        color: $white;
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+
+    .btn-payment {
+        padding-top: 65px;
+        font-size: 10px;
+        background-position: center 15px;
+        background-repeat: no-repeat;
+
+        &.icon-card {
+            background-image: url("../img/icons/kartica.png");
+        }
+        &.icon-paypal {
+            background-image: url("../img/icons/paypal.png");
+        }
+        &.icon-poloznica {
+            background-image: url("../img/icons/poloznica.png");
+        }
+    }
+
+    .btn-donation-container {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        input {
+            margin-top: 8px;
+            border-color: $second;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+}

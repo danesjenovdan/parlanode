@@ -1,19 +1,16 @@
-name: Publish Docker image
+name: Build and publish Docker image
 on:
   push:
     branches:
       - 'ua'
 jobs:
   push_to_registry:
-    name: Push Docker image to Docker Hub
+    name: Build and push Docker image to registry
     runs-on: ubuntu-latest
     steps:
       -
         name: Check out the repo
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
-          fetch-depth: 0
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -25,10 +22,23 @@ jobs:
           username: nologin
           password: ${{ secrets.SCW_SECRET_TOKEN }}
       -
-        name: Build and push parlacards-ua
+        name: Build and push parlassets
         uses: docker/build-push-action@v2
         with:
           context: .
+          file: parlassets.Dockerfile
+          push: true
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parlassets-ua:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlassets-ua:latest
+      -
+        name: Build and push parlacards
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: parlacards.Dockerfile
+          build-args: |
+            VITE_PARLASSETS_URL=https://parlassets-ua.lb.djnd.si
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-ua:${{ github.sha }}
@@ -39,16 +49,7 @@ jobs:
           sed -i "s/newTag: .*\+/newTag\: '${{ github.sha }}'/" kustomize/kustomization.yaml
       -
         name: Commit and push new image versions
-        uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+        uses: EndBug/add-and-commit@v9
         with:
           add: '.'
-          author_name: GitHub action
-
-          # The message for the commit
-          # Default: 'Commit from GitHub Actions (name of the workflow)'
           message: 'Update image versions in kustomize/kustomization.yaml'
-
-          # The flag used on the pull strategy. Use NO-PULL to avoid the action pulling at all.
-          # Default: '--no-rebase'
-          # 'NO-PULL or --no-rebase or --no-ff or --rebase'
-          pull_strategy: 'NO-PULL'

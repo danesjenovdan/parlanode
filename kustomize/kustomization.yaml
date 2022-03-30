@@ -2,10 +2,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: parlameter-ua
 resources:
-  - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+  - parlacards/deployment.yaml
+  - parlacards/ingress.yaml
+  - parlacards/service.yaml
+  - parlassets/deployment.yaml
+  - parlassets/ingress.yaml
+  - parlassets/service.yaml
 images:
   - name: parlacards-ua
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ua
-    newTag: '87f3dc10531cb4225f995bf1f24a106ed7c48cf1'
+    newTag: 'latest'
+  - name: parlassets-ua
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-ua
+    newTag: 'latest'

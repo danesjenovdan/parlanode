@@ -1,0 +1,208 @@
+%list-flex {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%list-generator {
+  .card-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .analyses {
+    @extend %list-flex;
+
+    @include show-for(desktop, flex);
+
+    margin: 14px 0;
+
+    li {
+      align-items: center;
+      border: none;
+      box-sizing: border-box;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      font-size: 10px;
+      height: 61px;
+      line-height: 16px;
+      margin-right: 3px;
+      padding: 0 12px;
+      text-transform: uppercase;
+      background-color: $tab-passive;
+
+      @include respond-to(limbo) {
+        font-size: 12px;
+      }
+
+      &:last-child { margin-right: 0; }
+
+      &:hover {
+        background-color: $tab-hover;
+        color: $white;
+      }
+
+      &.selected {
+        background-color: $tab-active;
+        color: $white;
+        cursor: default;
+      }
+    }
+  }
+
+  .mobile-analyses {
+    @include show-for(mobile, block);
+
+    label {
+      font-size: 11px;
+      width: 100%;
+    }
+
+    .select {
+      width: 100%;
+      select { width: 100%; }
+    }
+  }
+
+  .parties-districts,
+  .filters { display: flex; }
+
+  .parties,
+  .button-filters {
+    @extend %list-flex;
+
+    flex: 2;
+
+    @include respond-to(mobile) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 7px;
+    }
+
+    li {
+      box-sizing: border-box;
+      margin-right: 3px;
+      &:last-child { margin-right: 0; }
+
+      @include respond-to(mobile) {
+        flex: none;
+        margin: 3px 0 0;
+      }
+    }
+  }
+
+  .districts,
+  .dropdown-filter {
+    @include show-for(desktop, flex);
+
+    flex: 1;
+    margin-left: 15px;
+  }
+
+  .exclude-presiding,
+  .align-checkbox {
+    @include show-for(desktop, flex);
+
+    align-items: center;
+    // justify-content: center;
+    margin-left: 20px;
+    width: 142px;
+    flex: 1;
+
+    label {
+      margin: 0;
+    }
+  }
+}
+
+.party-list-generator {
+  @extend %list-generator;
+
+  @include respond-to(limbo) {
+    .analyses {
+      flex-wrap: wrap;
+      margin-bottom: 11px;
+
+      li {
+        flex: 1;
+        margin-bottom: 3px;
+        min-width: 19%;
+        &:nth-child(5) { margin-right: 0; }
+      }
+    }
+  }
+}
+
+div[id^="orodja-"] .party-list-generator .analyses li {
+  flex: 1;
+  text-align: center;
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.member-list-generator {
+  @extend %list-generator;
+
+  .parties li,
+  .button-filters li {
+    @include respond-to(mobile) {
+      width: calc(25% - 2.25px);
+    }
+  }
+
+  @include respond-to(limbo) {
+    .analyses {
+      flex-wrap: wrap;
+      margin-bottom: 11px;
+
+      li {
+        flex: 1;
+        margin-bottom: 3px;
+        min-width: 19%;
+        &:nth-child(5) { margin-right: 0; }
+      }
+    }
+  }
+}
+
+.session-list-generator {
+  @extend %list-generator;
+
+  .button-filters li {
+    @include respond-to(mobile) {
+      width: calc(33.333% - 2px);
+    }
+  }
+
+  @include respond-to(mobile) {
+    .filters { flex-wrap: wrap; }
+    .button-filters {
+      flex: 0 1 auto;
+      margin-bottom: 7px;
+      width: 100%;
+    }
+    .dropdown-filter {
+      display: block;
+      flex: 1;
+      margin-left: 0;
+      margin-right: 7px;
+    }
+    .align-checkbox {
+      display: flex;
+      padding-right: 4px;
+      width: 124px;
+    }
+  }
+}

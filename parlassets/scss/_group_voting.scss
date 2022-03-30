@@ -1,0 +1,22 @@
+.group_voting {
+    ul {
+        padding: 0;
+        li {
+            width: 10%;
+            background: $background;
+            list-style: none;
+            margin-right: 1%;
+            float: left;
+            padding: 10px 5px 5px 5px;
+            text-align: center;
+            b {
+                font-size: 18px;
+                text-align: justify;
+            }
+            font {
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
