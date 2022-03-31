@@ -29,8 +29,6 @@
     "axios": "^0.26.1",
     "d3": "^6.7.0",
     "date-fns": "^2.25.0",
-    "dotenv-expand": "^5.1.0",
-    "dotenv-flow": "^3.2.0",
     "fastify": "^3.22.0",
     "fastify-cors": "^6.0.2",
     "fastify-static": "^4.4.2",
