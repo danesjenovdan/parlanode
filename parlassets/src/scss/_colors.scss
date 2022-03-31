@@ -3,65 +3,65 @@
 /////////////////////////////
 
 // gradient
-$first: #005554;
-$second: #007a78;
-$third: #c41454;
+$first: #c4a932;
+$second: #7786ea;
+$third: #162691;
 
-$gradient-first: $second;
-$gradient-second: #80bdbc;
-$gradient-third: #009cdd;
+$gradient-first: $first;
+$gradient-second: $second;
+$gradient-third: $third;
 
 // tabs
-$tab-active: $second;
-$tab-hover: rgba($second, 0.7);
-$tab-passive: $first;
+$tab-active: $first;
+$tab-hover: #dac057;
+$tab-passive: #a68d25;
 
 // links
-$link: $first;
-$link-hover-background: #eff7f7;
+$link: $third;
+$link-hover-background: #edeffc;
 
 // card footer buttons
-$card-footer-button-passive-background: $first;
-$card-footer-button-hover-background: $second;
+$card-footer-button-passive-background: #a68d25;
+$card-footer-button-hover-background: $first;
 
 // scroller
-$scroller: #eff7f7;
-$element: $first;
+$scroller: #f2ebc9;
+$element: #a68d25;
 
 // divider
 $divider: #c8c8c8;
 
 // barcharts
-$barchart-this: $gradient-third;
+$barchart-this: $first;
 $barchart-other: $second;
 $barchart-default: $second;
 
 // icons
-$icon-accepted: $second;
-$icon-rejected: $third;
-$icon-session: $third;
-$icon-transcript: $first;
-$icon-transcript-hover-background: #eff7f7;
+$icon-accepted: $third;
+$icon-rejected: $first;
+$icon-session: $first;
+$icon-transcript: #258498;
+$icon-transcript-hover-background: #ceadf2;
 
 
 // buttons
 $button-for: $second;
-$button-against: $third;
-$button-abstained: #009cdd;
-$button-absent: #003130;
+$button-against: #1f35cc;
+$button-abstained: #cfd5f8;
+$button-absent: #0b1347;
 
 // dropdown
 $dropdown-arrow: $first;
-$dropdown-selected-element: #efefef;
+$dropdown-selected-element: #f2ebc9;
 
 // other
-$light-background: #F1F5F7;
-$light-background-link: #900900;
+$light-background: #fcf9f0;
+$light-background-link: $third;
 $tools-arrow: $second;
 $cta-passive-background: $second;
-$cta-hover-background: rgba($second, 0.7);
-$tools-arrow: $cta-passive-background;
-$load-icon: $link;
+$cta-hover-background: $third;
+$tools-arrow: $first;
+$load-icon: $first;
 
 // common
 $white: #ffffff;
@@ -72,15 +72,15 @@ $tools-border: #c8c8c8;
 $tools-background-hover: #dddbdb;
 
 // prisotnost skozi cas chart
-$time-presence-present-passive: #bbebff;
-$time-presence-present-active: $second;
-$time-presence-absent-passive: #ffe0da;
+$time-presence-present-passive: lighten($first, 30%);
+$time-presence-present-active: $first;
+$time-presence-absent-passive: $second;
 $time-presence-absent-active: $third;
 $time-presence-no-term-passive: $font-placeholder;
-$time-presence-no-term-active: $button-absent;
+$time-presence-no-term-active: $font-default;
 
 // raba skozi cas chart
-$time-use-bar-active: $second;
+$time-use-bar-active: #fbbfbb;
 $time-use-bar-passive: $tab-hover;
 
 // time chart
