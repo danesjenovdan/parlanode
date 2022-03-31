@@ -185,6 +185,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
 @import 'parlassets/scss/breakpoints';
 @import 'parlassets/scss/colors';
 
@@ -472,7 +473,7 @@ export default {
     .full-text-link {
       $width: 180px;
       bottom: -36px;
-      left: calc(50% - #{$width/2});
+      left: calc(50% - #{math.div($width, 2)});
       position: absolute;
       width: $width;
       text-align: center;

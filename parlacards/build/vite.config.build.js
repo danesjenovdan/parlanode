@@ -71,7 +71,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': resolve(root, 'cards'),
-        parlassets: resolve(root, '..', 'parlassets'),
+        parlassets: resolve(root, '..', 'parlassets', 'src'),
       },
     },
     css: {
