@@ -11,7 +11,7 @@ resources:
 images:
   - name: parlacards-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija
-    newTag: '48ca4a18536e0250ef9f9e670f41d1d8d4885f4d'
+    newTag: '115381c65ce8da1cc8dec04e528639c338f3915f'
   - name: parlassets-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlassets-slovenija
-    newTag: '48ca4a18536e0250ef9f9e670f41d1d8d4885f4d'
+    newTag: '115381c65ce8da1cc8dec04e528639c338f3915f'
