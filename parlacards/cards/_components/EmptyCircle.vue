@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use 'sass:math';
 @import 'parlassets/scss/colors';
 
 .empty {
@@ -31,7 +32,7 @@ export default {
     border-radius: 50%;
     background-image: url('#{get-parlassets-url()}/img/orodja/primerjalnik.svg');
     background-color: $light-background;
-    background-size: $size / 2.5;
+    background-size: math.div($size, 2.5);
     background-position: center 40px;
     background-repeat: no-repeat;
     font-size: 17px;
@@ -39,12 +40,12 @@ export default {
     font-style: italic;
     font-weight: 300;
     height: $size;
-    left: calc(50% - #{$size / 2});
+    left: calc(50% - #{math.div($size, 2)});
     line-height: 19px;
     padding: 145px 26px 0;
     position: absolute;
     text-align: center;
-    top: calc(50% - #{$size / 2});
+    top: calc(50% - #{math.div($size, 2)});
     width: $size;
   }
 }
