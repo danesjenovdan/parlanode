@@ -1,6 +1,5 @@
 <template>
   <div :id="speech.id" :class="['speech-holder', { 'just-quote': showQuote }]">
-    <input :value="speechContent" type="hidden" class="mywords" />
     <div class="person-session">
       <div class="person">
         <template v-if="getPersonLink(speech.person)">
@@ -36,14 +35,14 @@
     <div class="everything">
       <div class="speech-text">
         <template v-if="showParagraphs">
-        <p v-for="paragraph in speechParagraphs" :key="paragraph">
-          {{ paragraph }}
-        </p>
+          <p v-for="paragraph in speechParagraphs" :key="paragraph">
+            {{ paragraph }}
+          </p>
         </template>
         <template v-else>
           <p>{{ speechContent }}</p>
         </template>
-        <div class="quote-button">“</div>
+        <div class="quote-button"></div>
       </div>
       <div v-if="speech.votes?.length" class="votes">
         <div v-for="vote in speech.votes" :key="vote.id" class="vote">
@@ -93,7 +92,7 @@
           @click="showFullSpeech"
         ></a>
       </div>
-      <div class="quote-button">“</div>
+      <div class="quote-button"></div>
     </div>
     <div class="links">
       <a
@@ -281,6 +280,10 @@ export default {
   text-align: center;
   user-select: none;
   width: 33px;
+
+  &::before {
+    content: '“';
+  }
 
   @include respond-to(mobile) {
     display: none !important;
