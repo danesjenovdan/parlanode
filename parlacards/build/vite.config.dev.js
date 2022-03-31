@@ -7,6 +7,10 @@ import devServeCards from './plugin-dev-serve-cards.js';
 import scssFunctions from './scss-functions.js';
 import { processLocaleMarkdown } from './process-locale-markdown.js';
 
+if (!process.env.VITE_PARLASSETS_URL) {
+  process.env.VITE_PARLASSETS_URL = 'http://localhost:8080';
+}
+
 const dir = dirname(fileURLToPath(import.meta.url));
 const root = resolve(dir, '..');
 

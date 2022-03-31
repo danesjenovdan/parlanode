@@ -26,7 +26,7 @@
     "@sentry/vue": "^6.19.2",
     "@vitejs/plugin-vue": "^1.10.0",
     "@vue/server-renderer": "3.2.22",
-    "axios": "^0.23.0",
+    "axios": "^0.26.1",
     "d3": "^6.7.0",
     "date-fns": "^2.25.0",
     "dotenv-expand": "^5.1.0",
