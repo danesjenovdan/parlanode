@@ -27,7 +27,6 @@ services:
     volumes:
       - ./parlacards/build/:/app/build
       - ./parlacards/cards/:/app/cards
-      - ./parlacards/data/:/app/data
       - ./parlacards/.eslintignore:/app/.eslintignore
       - ./parlacards/.eslintrc.cjs:/app/.eslintrc.cjs
       - ./parlacards/.prettierrc.json:/app/.prettierrc.json

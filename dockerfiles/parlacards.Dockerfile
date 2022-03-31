@@ -33,7 +33,6 @@ RUN yarn && yarn cache clean
 
 # copy all needed files from build stage image
 COPY --from=build /app/build ./build
-COPY --from=build /app/data ./data
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/server ./server
 

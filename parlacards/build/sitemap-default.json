@@ -5,7 +5,7 @@
     "members": "poslanci",
     "parties": "poslanske-skupine",
     "tools": "orodja",
-    "about": "o-projektu",
+    "about": "https://parlameter.org/sl/",
     "media": "za-medije",
     "legal": "pravno-obvestilo",
     "thankYou": "hvala",
@@ -25,13 +25,14 @@
     "wordGroups": "skupine-besed"
   },
   "member": {
-    "base": "p",
+    "leaderBase": "predsednik-dz",
+    "base": "poslanec",
     "overview": "pregled",
     "votings": "glasovanja",
     "speeches": "govori"
   },
   "party": {
-    "base": "ps",
+    "base": "poslanska-skupina",
     "overview": "pregled",
     "votings": "glasovanja",
     "speeches": "govori"
@@ -39,9 +40,10 @@
   "session": {
     "base": "seja",
     "legislation": "zakonodaja",
-    "otherVotings": "druga-glasovanja",
+    "otherVotings": "glasovanja",
     "transcript": "transkript",
     "agenda": "dnevni-red",
-    "vote": "glasovanje"
+    "vote": "glasovanje",
+    "minutes": "zapisnik"
   }
 }

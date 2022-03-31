@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { merge } from 'lodash-es';
-import siteMap from '@/../data/siteMap.default.json';
+import siteMap from '@/../build/sitemap-default.json';
 /* eslint-disable import/no-unresolved */
 import defaultMessages from '@/_i18n/{cardLang}/defaults.yaml';
 import Card from './card.vue';
