@@ -4,22 +4,18 @@ services:
   parlassets:
     build:
       context: .
-      dockerfile: parlassets-dev.Dockerfile
+      dockerfile: dockerfiles/parlassets-dev.Dockerfile
     ports:
       - 8080:8080
     volumes:
-      - ./parlassets/css/:/app/css
-      - ./parlassets/fonts/:/app/fonts
-      - ./parlassets/icons/:/app/icons
-      - ./parlassets/img/:/app/img
-      - ./parlassets/js/:/app/js
-      - ./parlassets/scss/:/app/scss
-      - ./parlassets/postcss.config.js:/app/postcss.config.js
+      - ./parlassets/build/:/app/build
+      - ./parlassets/public/:/app/public
+      - ./parlassets/src/:/app/src
 
   parlacards:
     build:
       context: .
-      dockerfile: parlacards-dev.Dockerfile
+      dockerfile: dockerfiles/parlacards-dev.Dockerfile
     ports:
       - 3000:3000
     environment:
@@ -31,7 +27,6 @@ services:
     volumes:
       - ./parlacards/build/:/app/build
       - ./parlacards/cards/:/app/cards
-      - ./parlacards/data/:/app/data
       - ./parlacards/.eslintignore:/app/.eslintignore
       - ./parlacards/.eslintrc.cjs:/app/.eslintrc.cjs
       - ./parlacards/.prettierrc.json:/app/.prettierrc.json
