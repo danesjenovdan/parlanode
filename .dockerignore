@@ -1,3 +1,6 @@
+# NOTE: This file needs to be in the root folder!
+#       All docker builds are run from the root folder context.
+
 # garbage
 **/.DS_Store
 **/*.log
@@ -18,6 +21,7 @@
 **/.vscode
 **/node_modules/
 
+# parlacards
 parlacards/.env*
 parlacards/.eslintrc.cjs
 parlacards/.eslintignore
@@ -25,4 +29,5 @@ parlacards/.prettierrc.json
 parlacards/jsconfig.json
 parlacards/dist/
 
+# parlassets
 parlassets/scss/style.css

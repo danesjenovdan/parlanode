@@ -1,16 +1,78 @@
 import axios from 'axios';
 
+const getTextFromRange = (containerElement, selectionRange) => {
+  let beforeText = '';
+  let text = '';
+  let currentNode = containerElement.childNodes[0];
+  while (currentNode) {
+    if (currentNode.nodeType === Node.TEXT_NODE) {
+      if (currentNode === selectionRange.startContainer) {
+        text += currentNode.textContent.slice(0, selectionRange.startOffset);
+        beforeText = text;
+        text = '';
+        if (currentNode === selectionRange.endContainer) {
+          text += currentNode.textContent.slice(
+            selectionRange.startOffset,
+            selectionRange.endOffset
+          );
+          break;
+        } else {
+          text += currentNode.textContent.slice(selectionRange.startOffset);
+        }
+      } else if (currentNode === selectionRange.endContainer) {
+        text += currentNode.textContent.slice(0, selectionRange.endOffset);
+        break;
+      } else {
+        text += currentNode.textContent;
+      }
+    } else {
+      if (currentNode === selectionRange.startContainer) {
+        beforeText = text;
+        text = '';
+      }
+      if (currentNode === selectionRange.endContainer) {
+        break;
+      }
+      if (
+        currentNode.nodeType === Node.ELEMENT_NODE &&
+        currentNode.nodeName === 'P' &&
+        text.length
+      ) {
+        text += '\n';
+      }
+      // eslint-disable-next-line prefer-destructuring
+      currentNode = currentNode.childNodes[0];
+      // eslint-disable-next-line no-continue
+      continue;
+    }
+    let nextNode = currentNode.nextSibling;
+    if (
+      !nextNode &&
+      currentNode.parentNode !== selectionRange.commonAncestorContainer
+    ) {
+      nextNode = currentNode.parentNode.nextSibling;
+    }
+    currentNode = nextNode;
+  }
+  return [text, beforeText.length];
+};
+
 const getSelectionRange = (containerElement) => {
   const selection = window.getSelection();
   if (selection && !selection.isCollapsed) {
     if (
-      selection.anchorNode === selection.focusNode &&
-      containerElement.contains(selection.anchorNode)
+      containerElement.contains(selection.anchorNode) &&
+      containerElement.contains(selection.focusNode) &&
+      selection.rangeCount === 1
     ) {
-      return selection.getRangeAt(0);
+      const [text, offset] = getTextFromRange(
+        containerElement,
+        selection.getRangeAt(0)
+      );
+      return [selection.getRangeAt(0), text, offset];
     }
   }
-  return null;
+  return [null, '', 0];
 };
 
 export default {
@@ -42,7 +104,7 @@ export default {
       // Prevent deselection when clicking on selected text
       event.preventDefault();
 
-      const selectionRange = getSelectionRange(speechTextElement);
+      const [selectionRange] = getSelectionRange(speechTextElement);
       if (selectionRange) {
         const textRect = speechTextElement.getBoundingClientRect();
         const selectionRect = selectionRange.getBoundingClientRect();
@@ -61,21 +123,17 @@ export default {
     });
 
     quoteButton.addEventListener('click', () => {
-      const selectionRange = getSelectionRange(speechTextElement);
-      if (selectionRange) {
-        const allText = el.querySelector('.mywords').value;
-        const selectedText = allText.slice(
-          selectionRange.startOffset,
-          selectionRange.endOffset
-        );
+      const [selectionRange, selectedText, startIndex] =
+        getSelectionRange(speechTextElement);
+      if (selectionRange && selectedText) {
         const { urls } = binding.instance.$root.$options.contextData;
         const { locale } = binding.instance.$i18n;
         const url = `${urls.data}/cards/speech/quote/`;
         axios
           .post(url, {
             speech: speechId,
-            start_index: selectionRange.startOffset,
-            end_index: selectionRange.endOffset,
+            start_index: startIndex,
+            end_index: startIndex + selectedText.length,
             quote_content: selectedText,
           })
           .then((response) => {
