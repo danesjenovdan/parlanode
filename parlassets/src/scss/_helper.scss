@@ -121,7 +121,7 @@ $cdn_home_icon: get-parlassets-url() + '/icons/';
   &::after {
     border-color: $dropdown-arrow transparent transparent transparent;
     border-style: solid;
-    border-width: $height $width/2 0 $width/2;
+    border-width: $height $width*0.5 0 $width*0.5;
     content: '';
     height: 0;
     pointer-events: none;
@@ -205,8 +205,8 @@ $cdn_home_icon: get-parlassets-url() + '/icons/';
   $height: 20px;
   line-height: $height;
   position: absolute;
-  top: calc(50% - #{$height / 2});
-  left: calc(50% - #{$width / 2});
+  top: calc(50% - #{$height * 0.5});
+  left: calc(50% - #{$width * 0.5});
 }
 
 input.required.error,

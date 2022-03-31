@@ -10,4 +10,4 @@ WORKDIR /app
 COPY parlassets/package.json parlassets/yarn.lock ./
 RUN yarn
 
-CMD ["yarn", "dev:serve"]
+CMD ["yarn", "dev"]
