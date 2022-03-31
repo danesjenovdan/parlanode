@@ -134,7 +134,7 @@ const fetchCardData = async (dataUrl, id, date) => {
 
 const siteMapCache = {
   value: null,
-  default: fs.readJSONSync('./data/siteMap.default.json'),
+  default: fs.readJSONSync('./build/sitemap-default.json'),
 };
 
 const fetchSiteMap = async () => {

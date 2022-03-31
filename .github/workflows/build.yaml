@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: parlassets.Dockerfile
+          file: dockerfiles/parlassets.Dockerfile
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlassets-lendava:${{ github.sha }}
@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: parlacards.Dockerfile
+          file: dockerfiles/parlacards.Dockerfile
           build-args: |
             VITE_PARLASSETS_URL=https://parlassets-lendava.lb.djnd.si
           push: true

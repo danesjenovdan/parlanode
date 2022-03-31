@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "path": "parlacards"
+    },
+    {
+      "path": "parlassets"
+    },
+    {
+      "path": ".",
+      "name": "root"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "octref.vetur"
+    ]
+  },
+  "settings": {
+    "files.exclude": {
+      "parlacards": true,
+      "parlassets": true
+    }
+  }
+}

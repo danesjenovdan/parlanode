@@ -7,6 +7,10 @@ import vue from '@vitejs/plugin-vue';
 import virtual from '@rollup/plugin-virtual';
 import scssFunctions from './scss-functions.js';
 
+if (!process.env.VITE_PARLASSETS_URL) {
+  throw new Error('process.env.VITE_PARLASSETS_URL is not defined!');
+}
+
 const dir = dirname(fileURLToPath(import.meta.url));
 const root = resolve(dir, '..');
 
@@ -71,7 +75,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': resolve(root, 'cards'),
-        parlassets: resolve(root, '..', 'parlassets'),
+        parlassets: resolve(root, '..', 'parlassets', 'src'),
       },
     },
     css: {
