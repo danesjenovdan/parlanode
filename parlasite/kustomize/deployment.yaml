@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlasite-deployment
+  name: parlasite-bosna-deployment
   labels:
-    app: parlasite
+    app: parlasite-bosna
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlasite
+      app: parlasite-bosna
   template:
     metadata:
       labels:
-        app: parlasite
+        app: parlasite-bosna
     spec:
       securityContext:
         fsGroup: 1000
       containers:
-        - name: parlasite
-          image: parlasite
+        - name: parlasite-bosna
+          image: parlasite-bosna
           ports:
             - containerPort: 3066
           resources:

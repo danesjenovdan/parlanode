@@ -1,22 +1,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parlasite
+  name: parlasite-bosna
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   tls:
     - hosts:
-        - parlasite.lb.djnd.si
-      secretName: parlasite-tls
+        - parlasite-bosna.lb.djnd.si
+      secretName: parlasite-bosna-tls
   rules:
-    - host: parlasite.lb.djnd.si
+    - host: parlasite-bosna.lb.djnd.si
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: parlasite
+                name: parlasite-bosna
                 port:
                   number: 3066
