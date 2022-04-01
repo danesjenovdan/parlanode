@@ -2,7 +2,7 @@ name: Build and publish Docker image
 on:
   push:
     branches:
-      - 'TODO-BRANCH-NAME-HERE'
+      - 'bosna'
 jobs:
   push_to_registry:
     name: Build and push Docker image to registry
@@ -29,8 +29,8 @@ jobs:
           file: dockerfiles/parlassets.Dockerfile
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:latest
+            rg.fr-par.scw.cloud/djnd/parlassets-bosna:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlassets-bosna:latest
       -
         name: Build and push parlacards
         uses: docker/build-push-action@v2
@@ -38,11 +38,11 @@ jobs:
           context: .
           file: dockerfiles/parlacards.Dockerfile
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+            VITE_PARLASSETS_URL=https://parlassets-bosna.lb.djnd.si
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:latest
+            rg.fr-par.scw.cloud/djnd/parlacards-bosna:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlacards-bosna:latest
       -
         name: Update image versions in kustomize/kustomization.yaml
         run: |

@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+        - parlassets-bosna.lb.djnd.si
       secretName: parlassets-tls
   rules:
-    - host: parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+    - host: parlassets-bosna.lb.djnd.si
       http:
         paths:
           - path: /
