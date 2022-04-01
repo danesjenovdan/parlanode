@@ -87,39 +87,6 @@ $time-use-bar-passive: $tab-hover;
 $time-chart-active: $third;
 $time-chart-passive: $first;
 
-
-/////////////////////////////
-//////// OLD COLORS /////////
-/////////////////////////////
-
-$party-colors: (
-  'smc': #8fcfee,
-  'sds': #22a2e0,
-  'desus': #5388aa,
-  'sd': #4f6379,
-  'zl': #857799,
-  'levica': #857799,
-  'nsi': #b7888a,
-  'ps_np': #d9776b,
-  'ps-np': #d9776b,
-  'imns': #ba594c,
-  'sab': #2780aa,
-  'sns': #6a5157,
-  'lmš': #6e6983,
-  'nep': #853f36,
-  'nep_-_zl': #853f36,
-  'nep_-_ač': #853f36,
-  'nep_-_mh': #853f36,
-  'nep_-_bk': #853f36,
-  'nep_-_jv': #853f36,
-
-// added to slovenia
-  'vsi': #c25746,
-  'koalicija': #59566c,
-  'koalicija_2': #59566c,
-);
-
-
 $vote-colors: (
   'for': $button-for,
   'against': $button-against,
@@ -151,11 +118,6 @@ $button-against-hover: rgba($button-against, 0.7);
 $button-absent-hover: rgba($button-absent, 0.7);
 $button-abstained-hover: rgba($button-abstained, 0.7);
 $first-light-hover: #feefec;
-
-$party-colors-hover: ();
-@each $party, $color in $party-colors {
-  $party-colors-hover: map-merge($party-colors-hover, (#{$party}: rgba($color, 0.7)));
-}
 
 $option-colors-hover: (
   'for': $button-for-hover,
