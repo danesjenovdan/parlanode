@@ -12,7 +12,8 @@ const config = {
   },
   locale: 'bs',
   leaderId: '261',
-  rootOrgId: '1',
+  rootOrgId: '6',
+  rootOrgId2: '23',
   mandateId: '1',
 };
 

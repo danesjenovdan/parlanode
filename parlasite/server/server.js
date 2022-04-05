@@ -27,6 +27,7 @@ function setupExpress() {
     app.locals.config = config;
     app.locals.sm = i18n.siteMap;
     app.locals.rootOrgId = config.rootOrgId;
+    app.locals.rootOrgId2 = config.rootOrgId2;
     app.locals.mandateId = config.mandateId;
 
     // serve static assets
