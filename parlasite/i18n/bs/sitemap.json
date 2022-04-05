@@ -1,49 +1,49 @@
 {
     "landing": {
-        "legislation": "zakonodaja",
-        "sessions": "seje",
-        "members": "poslanci",
+        "legislation": "legislativa",
+        "sessions": "sjednice",
+        "members": "poslanici",
         "members2": "delegati",
-        "parties": "poslanske-skupine",
-        "tools": "orodja",
-        "about": "https://parlameter.org/sl/",
+        "parties": "klubovi",
+        "tools": "alati",
+        "about": "https://parlameter.org/",
         "media": "za-medije",
-        "legal": "pravno-obvestilo",
+        "legal": "pravne-napomene",
         "thankYou": "hvala",
         "error": "ups"
     },
     "sessions": {
         "search": {
-            "base": "isci",
+            "base": "trazi",
             "filter": "filter"
         }
     },
     "tools": {
-        "notifications": "obvestila",
-        "voteComparator": "primerjalnik-glasovanj",
-        "discord": "raziskovalec-neenotnosti",
+        "notifications": "obavijesti",
+        "voteComparator": "usporedba-glasanja",
+        "discord": "pretrazivac-razjedinjenosti",
         "compass": "parlamentarni-kompas",
-        "wordGroups": "skupine-besed"
+        "wordGroups": "grupe-rijeci"
     },
     "member": {
-        "leaderBase": "zupan",
-        "base": "p",
+        "leaderBase": "predsjedavajuci",
+        "base": "zastupnik",
         "overview": "pregled",
-        "votings": "glasovanja",
+        "votings": "glasanja",
         "speeches": "govori"
     },
     "party": {
-        "base": "ps",
+        "base": "klub",
         "overview": "pregled",
-        "votings": "glasovanja",
+        "votings": "glasanja",
         "speeches": "govori"
     },
     "session": {
-        "base": "seja",
-        "legislation": "zakonodaja",
-        "otherVotings": "glasovanja",
-        "transcript": "transkript",
+        "base": "sjednica",
+        "legislation": "zakonodavstvo",
+        "otherVotings": "glasanja",
+        "transcript": "stenogram",
         "agenda": "dnevni-red",
-        "vote": "glasovanje"
+        "vote": "glasanje"
     }
 }
