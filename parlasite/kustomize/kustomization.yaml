@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlasite-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlasite-slovenija
-    newTag: '7c10919c5f530ce559799c45fd7e9bbd167a837d'
+    newTag: '47832c86973a07ab5d368664f4ff156edb24799b'
