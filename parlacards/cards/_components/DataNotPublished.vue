@@ -4,8 +4,9 @@
     <p>
       {{ text }}
       <a
+        v-if="linkUrl"
         v-t="'data-not-published.link-text'"
-        :href="$t('data-not-published.link-url')"
+        :href="linkUrl"
         target="_blank"
       ></a>
     </p>
@@ -19,6 +20,18 @@ export default {
     text: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    linkUrl() {
+      if (!this.$te('data-not-published.link-url')) {
+        return null;
+      }
+      const url = this.$t('data-not-published.link-url');
+      if (!url || url === '[empty]') {
+        return null;
+      }
+      return url;
     },
   },
 };

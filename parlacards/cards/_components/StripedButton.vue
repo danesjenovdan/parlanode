@@ -159,13 +159,10 @@ export default {
     }
   }
 
-  $all-colors: map-merge(
-    $proper-vote-colors,
-    map-merge($party-colors, $binary-vote-colors)
-  );
+  $all-colors: map-merge($proper-vote-colors, $binary-vote-colors);
   $all-colors-hover: map-merge(
     $proper-vote-colors-hover,
-    map-merge($party-colors-hover, $binary-vote-colors-hover)
+    $binary-vote-colors-hover
   );
 
   @each $name, $color in $all-colors {
