@@ -40,9 +40,9 @@
     },
     "session": {
         "base": "sjednica",
-        "legislation": "zakonodavstvo",
+        "legislation": "legislativa",
         "otherVotings": "glasanja",
-        "transcript": "stenogram",
+        "transcript": "transkript",
         "agenda": "dnevni-red",
         "vote": "glasanje"
     }
