@@ -92,10 +92,10 @@ confirm: Potrdi
 data-currently-unavailable: Podatki trenutno niso na voljo.
 data-not-published:
   link-text: Opozori jih tukaj!
-  link-url: http://example.com/
-  data-not-available: Parlament teh podatkov ne objavlja.
-  show-of-hands: Parlament ne objavlja poimenskih rezultatov glasovanja z dvigom rok.
-  parlamentary-questions: Parlament ne objavlja svetniških vprašanj in pobud.
+  link-url: ''
+  data-not-available: Občinski svet teh podatkov ne objavlja.
+  show-of-hands: Občinski svet ne objavlja popolnih poimenskih rezultatov glasovanj.
+  parlamentary-questions: Občinski svet ne objavlja svetniških vprašanj in pobud.
 search: Išči
 title-search: Išči po naslovu
 contents-search: Išči po vsebini govorov

@@ -134,7 +134,9 @@ maximum: Najviše
 coalition: koalicija
 opposition: opozicija
 vote-for: Za
+vote-for-plural: Za
 vote-against: Protiv
+vote-against-plural: Protiv
 vote-abstain: Suzdržan
 vote-abstain--m: Suzdržan
 vote-abstain--f: Suzdržana
