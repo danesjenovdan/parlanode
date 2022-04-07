@@ -8,9 +8,20 @@ spec:
   tls:
     - hosts:
         - parlasite-bosna.lb.djnd.si
+        - ba.parlameter.si
       secretName: parlasite-bosna-tls
   rules:
     - host: parlasite-bosna.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlasite-bosna
+                port:
+                  number: 3066
+    - host: ba.parlameter.si
       http:
         paths:
           - path: /
