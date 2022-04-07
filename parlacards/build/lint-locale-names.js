@@ -83,5 +83,5 @@ if (allErrors > 0) {
   process.exit(1);
 } else {
   // eslint-disable-next-line no-console
-  console.error(`\nNO LOCALE FILE NAME ERRORS\n`);
+  console.log(`\nNO LOCALE FILE NAME ERRORS\n`);
 }
