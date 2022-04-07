@@ -1,5 +1,8 @@
 card:
   title: Posljednja sjednica
+  tfidf-title: Riječi koje označavaju sjednicu
+  attendance-title: Prisutnost klubova na sjednici na glasanju
+  votes-title: Glasanja
   info: >-
     # Pregled statistika posljednje sjednice za koju su podaci objavljeni na web
     stranicama Parlamenta BiH [Parlament
