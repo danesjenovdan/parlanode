@@ -8,4 +8,4 @@ resources:
 images:
   - name: parlasite-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlasite-bosna
-    newTag: 'f046e5bdfd8672acef18ee36e7cfc3fec6e8383f'
+    newTag: '635973537ae08e685db8bc87228583f38890dbd3'
