@@ -87,10 +87,6 @@ export default {
   },
   mixins: [common, cancelableRequest],
   props: {
-    contextData: {
-      type: Object,
-      required: true,
-    },
     type: {
       type: String,
       required: true,
