@@ -1,5 +1,5 @@
 <template>
-  <glasovanja :context-data="$options.contextData" type="party" />
+  <glasovanja type="party" />
 </template>
 
 <script>
