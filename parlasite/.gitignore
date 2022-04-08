@@ -1,0 +1,18 @@
+# os garbage
+.DS_Store
+
+# package manager files
+node_modules/
+bower_components/
+*.log
+
+# editor configs
+.idea
+.vscode
+
+# configs
+config/development.js
+config/production.js
+
+# auto-downloaded assets
+/data/*
