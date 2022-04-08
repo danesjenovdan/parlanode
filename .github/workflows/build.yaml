@@ -8,21 +8,20 @@ jobs:
     name: Build and push Docker image to registry
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Check out the repo
+      - name: Check out the repo
         uses: actions/checkout@v2
-      -
-        name: Set up Docker Buildx
+
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      -
-        name: Login to Scaleway
+
+      - name: Login to Scaleway
         uses: docker/login-action@v1
         with:
           registry: rg.fr-par.scw.cloud/djnd
           username: nologin
           password: ${{ secrets.SCW_SECRET_TOKEN }}
-      -
-        name: Build and push parlassets
+
+      - name: Build and push parlassets
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -31,8 +30,8 @@ jobs:
           tags: |
             rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:${{ github.sha }}
             rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:latest
-      -
-        name: Build and push parlacards
+
+      - name: Build and push parlacards
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -43,8 +42,8 @@ jobs:
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:${{ github.sha }}
             rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:latest
-      -
-        name: Build and push parlasite
+
+      - name: Build and push parlasite
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -53,12 +52,12 @@ jobs:
           tags: |
             rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE:${{ github.sha }}
             rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE:latest
-      -
-        name: Update image versions in kustomize/kustomization.yaml
+
+      - name: Update image versions in kustomize/kustomization.yaml
         run: |
           sed -i "s/newTag: .*\+/newTag\: '${{ github.sha }}'/" kustomize/kustomization.yaml
-      -
-        name: Commit and push new image versions
+
+      - name: Commit and push new image versions
         uses: EndBug/add-and-commit@v9
         with:
           add: '.'
