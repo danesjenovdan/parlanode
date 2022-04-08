@@ -1,0 +1,23 @@
+<%- await include('../_partials/header.ejs') %>
+
+<%- await include('./_header.ejs') %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%- await fetchCard('/group/votes/', group.id) %>
+  </div>
+  <!-- <div class="col-md-6">
+    <%# await fetchCard('/group/most-votes-in-common/', group.id) %>
+  </div>
+  <div class="col-md-6">
+    <%# await fetchCard('/group/least-votes-in-common/', group.id) %>
+  </div> -->
+  <div class="col-md-6">
+    <%- await fetchCard('/group/deviation-from-group/', group.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/group/discord/', group.id) %>
+  </div>
+</div>
+
+<%- await include('../_partials/footer.ejs') %>
