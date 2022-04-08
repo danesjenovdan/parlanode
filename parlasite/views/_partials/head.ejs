@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%- pageTitle %></title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="shortcut icon" type="image/x-icon" href="<%- config.urls.cdn %>/icons/favicon.ico">
+  <meta name="google-site-verification" content="KR2vVdu1jrwHQR26kJHqQVzvC9fwJEoM1DOId7y7HWQ">
+
+  <meta name="twitter:creator" content="@danesjenovdan">
+  <meta name="twitter:description" content="<%- i18n('landing.lead') %>">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%- pageTitle %>">
+  <% if (typeof ogImageUrl !== 'undefined') { %>
+    <meta name="twitter:image" content="<%- ogImageUrl %>">
+  <% } else { %>
+    <meta name="twitter:image" content="<%- config.urls.cdn %>/img/OG.png">
+  <% } %>
+
+  <meta property="og:description" content="<%- i18n('landing.lead') %>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%- pageTitle %>">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <% if (typeof ogImageUrl !== 'undefined') { %>
+    <meta property="og:image" content="<%- ogImageUrl %>">
+  <% } else { %>
+    <meta property="og:image" content="<%- config.urls.cdn %>/img/OG.png">
+  <% } %>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,500&amp;subset=latin,latin-ext">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<%- config.urls.cdn %>/scss/style.css">
+
+  <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.find,Promise"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>

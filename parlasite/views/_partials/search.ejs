@@ -1,0 +1,20 @@
+<div class="landing">
+  <div class="session-container session-search-container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="narrow-inner-container">
+          <h2><%- i18n('landing.search.part_one'); %> </h2>
+          <div id="about">
+            <p class="public-col">
+              <%- i18n('landing.search.part_two'); %>
+            </p>
+          </div>
+          <div class="searchForm">
+            <%- await fetchCard('/misc/search/', mandateId); %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- await include('./search-popup.ejs') %>
+</div>
