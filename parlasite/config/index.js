@@ -5,15 +5,15 @@ const config = {
     // cdn: 'http://localhost:8080',
     // cards: 'http://localhost:7004',
     // parladata: 'http://localhost:8000/v3',
-    cdn: 'https://parlassets-ljubljana.lb.djnd.si',
-    cards: 'https://parlacards.lb.djnd.si',
-    parladata: 'https://parladata.lb.djnd.si/v3',
+    cdn: 'https://parlassets-lendava.lb.djnd.si',
+    cards: 'https://parlacards-lendava.lb.djnd.si',
+    parladata: 'https://parladata-lendava.lb.djnd.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
-  locale: 'sl-obcina-ljubljana',
+  locale: 'sl-obcina-lendava',
   leaderId: '261',
   rootOrgId: '1',
-  mandateId: '1',
+  mandateId: '2',
 };
 
 module.exports = config;
