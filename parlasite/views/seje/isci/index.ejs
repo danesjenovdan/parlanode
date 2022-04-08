@@ -1,0 +1,68 @@
+<%- await include('../../_partials/header.ejs') %>
+
+<div class="landing">
+  <div class="session-container session-search-container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="narrow-inner-container">
+          <h2><%- i18n('landing.search.part_one'); %> </h2>
+          <div id="about">
+            <p class="public-col">
+                <%- i18n('landing.search.part_two'); %>
+            </p>
+          </div>
+          <style>
+          /* TODO this is a dirty hack */
+          [id^="misc_search"] {
+            height: 0;
+            z-index: 3;
+          }
+          </style>
+          <div class="search-container">
+            <%- await fetchCard('/misc/search/', mandateId, { text: query }); %>
+          </div>
+          <div class="searchinfo" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- await include('../../_partials/search-popup.ejs') %>
+</div>
+
+<style>
+  .searchinfo {
+    top: auto;
+    bottom: -55px;
+    right: -20px;
+  }
+  @media (max-width: 767px) {
+    .searchinfo {
+      right: -8px;
+    }
+  }
+</style>
+
+<div id="session-search-results">
+  <div class="row">
+    <div class="col-md-12">
+      <%- await fetchCard('/search/speeches/', mandateId, { text: query, people: mps, groups: pgs }) %>
+    </div>
+    <div class="col-md-12">
+      <%- await fetchCard('/search/legislation/', mandateId, { text: query }) %>
+    </div>
+    <div class="col-md-12">
+      <%- await fetchCard('/search/votes/', mandateId, { text: query }) %>
+    </div>
+    <div class="col-md-12">
+      <%- await fetchCard('/search/usage-through-time/', mandateId, { text: query, people: mps, groups: pgs }) %>
+    </div>
+    <div class="col-md-6">
+      <%- await fetchCard('/search/most-used-by-people/', mandateId, { text: query, people: mps, groups: pgs }) %>
+    </div>
+    <div class="col-md-6">
+      <%- await fetchCard('/search/usage-by-group/', mandateId, { text: query, people: mps, groups: pgs }) %>
+    </div>
+  </div>
+</div>
+
+<%- await include('../../_partials/footer.ejs') %>

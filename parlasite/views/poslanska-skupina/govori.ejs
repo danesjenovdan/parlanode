@@ -1,0 +1,20 @@
+<%- await include('../_partials/header.ejs') %>
+
+<%- await include('./_header.ejs') %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%- await fetchCard('/group/speeches/', group.id, { customUrl: `{isci}/search/speeches?parties=${group.id}`, state: { parties: group.id } }) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/group/tfidf/', group.id) %>
+  </div>
+  <!-- <div class="col-md-6">
+    <%# await fetchCard('/group/vocabulary-size/', group.id) %>
+  </div>
+  <div class="col-md-6">
+    <%# await fetchCard('/group/style-scores/', group.id) %>
+  </div> -->
+</div>
+
+<%- await include('../_partials/footer.ejs') %>

@@ -5,12 +5,18 @@ resources:
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+  - parlasite/deployment.yaml
+  - parlasite/ingress.yaml
+  - parlasite/service.yaml
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
   - name: parlacards-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlacards-bosna
+    newTag: 'ab28f9a13b491ef7f0132656dd3752c423a73aa7'
+  - name: parlasite-bosna
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-bosna
     newTag: 'ab28f9a13b491ef7f0132656dd3752c423a73aa7'
   - name: parlassets-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlassets-bosna
