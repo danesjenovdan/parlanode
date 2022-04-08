@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlasite-deployment
+  name: parlasite
   labels:
     app: parlasite
 spec:
@@ -14,17 +14,15 @@ spec:
       labels:
         app: parlasite
     spec:
-      securityContext:
-        fsGroup: 1000
       containers:
         - name: parlasite
-          image: parlasite
+          image: parlasite-TODO-BRANCH-NAME-HERE
           ports:
             - containerPort: 3066
           resources:
             requests:
-              memory: 50Mi
-              cpu: 50m
+              memory: 100Mi
+              cpu: 100m
             limits:
-              memory: 50Mi
-              cpu: 50m
+              memory: 100Mi
+              cpu: 100m

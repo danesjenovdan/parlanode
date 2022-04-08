@@ -44,6 +44,16 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:${{ github.sha }}
             rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:latest
       -
+        name: Build and push parlasite
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: dockerfiles/parlasite.Dockerfile
+          push: true
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE:latest
+      -
         name: Update image versions in kustomize/kustomization.yaml
         run: |
           sed -i "s/newTag: .*\+/newTag\: '${{ github.sha }}'/" kustomize/kustomization.yaml

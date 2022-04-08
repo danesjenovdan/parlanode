@@ -1,22 +1,13 @@
 {
   "name": "parlasite",
-  "version": "1.0.0",
-  "description": "Parlameter frontend server",
-  "main": "run.js",
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon run.js",
-    "lint": "eslint ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danesjenovdan/parlasite.git"
-  },
-  "author": "danesjenovdan",
+  "version": "0.0.0",
+  "author": "Danes je nov dan",
   "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/danesjenovdan/parlasite/issues"
+  "scripts": {
+    "dev": "nodemon run.js",
+    "lint": "eslint .",
+    "start": "node run.js"
   },
-  "homepage": "https://github.com/danesjenovdan/parlasite#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "chalk": "^2.4.1",
@@ -35,10 +26,5 @@
     "eslint-config-airbnb-base": "13.0.0",
     "eslint-plugin-import": "2.12.0",
     "nodemon": "^2.0.15"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "data/*"
-    ]
   }
 }
