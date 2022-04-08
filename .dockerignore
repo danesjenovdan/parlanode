@@ -31,3 +31,9 @@ parlacards/dist/
 
 # parlassets
 parlassets/scss/style.css
+
+# parlasite
+parlasite/.eslintrc.js
+parlasite/.eslintignore
+parlasite/.prettierrc.json
+parlasite/jsconfig.json

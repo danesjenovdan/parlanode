@@ -1,0 +1,42 @@
+<%
+  function isActiveMenu(currentMenu) {
+    if (typeof activeMenu !== 'undefined') {
+      if (activeMenu === currentMenu) {
+        return 'active'
+      }
+    }
+    return '';
+  }
+%>
+<body>
+  <header class="header">
+    <div class="stripeeltop"></div>
+    <div class="container">
+      <div class="menu-container">
+        <a class="logo" href="/">
+          <img class="logo-image-height" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="logo">
+        </a>
+        <div class="menu">
+          <a class="<%- isActiveMenu('sessions')    %>" href="/<%- sm.landing.sessions    %>"><%- i18n('menu.sessions')    %></a>
+          <a class="<%- isActiveMenu('mps')         %>" href="/<%- sm.landing.members     %>"><%- i18n('menu.mps')         %></a>
+          <a class="<%- isActiveMenu('pgs')         %>" href="/<%- sm.landing.parties     %>"><%- i18n('menu.pgs')         %></a>
+          <a class="<%- isActiveMenu('legislation') %>" href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
+          <a class="<%- isActiveMenu('tools')       %>" href="/<%- sm.landing.tools       %>"><%- i18n('menu.tools')       %></a>
+        </div>
+        <div class="open-search"><span class="glyphicon glyphicon-search"></span></div>
+        <div class="menu-search hidden">
+          <%- await fetchCard('/misc/menu-search/', mandateId) %>
+        </div>
+        <div class="close-search hidden"><span class="glyphicon glyphicon-remove"></span></div>
+        <div class="mobile-menu__button">
+          <span class="mobile-menu__bg"></span>
+          <a href="#" class="mobile-menu__hambuger">
+            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--1"></span>
+            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--2"></span>
+            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--3"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
