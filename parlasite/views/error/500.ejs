@@ -1,0 +1,20 @@
+<%- await include('../_partials/header.ejs') %>
+
+<div class="col-lg-12 status404">
+  <div class="narrow-inner-container">
+    <br>
+    <h1>
+      <span class="fo">5</span>
+      <span class="oo">0</span>
+      <span class="of">0</span>
+    </h1>
+    <br>
+    <br>
+    <h2><%- i18n('general.page-not-found-text') %></h2>
+    <div class="searchForm">
+      <%- await fetchCard('/misc/search/', mandateId); %>
+    </div>
+  </div>
+</div>
+
+<%- await include('../_partials/footer.ejs') %>

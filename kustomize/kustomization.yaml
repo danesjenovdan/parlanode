@@ -5,12 +5,18 @@ resources:
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+  - parlasite/deployment.yaml
+  - parlasite/ingress.yaml
+  - parlasite/service.yaml
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
   - name: parlacards-lendava
     newName: rg.fr-par.scw.cloud/djnd/parlacards-lendava
+    newTag: '6742c5f8f60a52540b8644cd4da7e3914c948085'
+  - name: parlasite-lendava
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-lendava
     newTag: '6742c5f8f60a52540b8644cd4da7e3914c948085'
   - name: parlassets-lendava
     newName: rg.fr-par.scw.cloud/djnd/parlassets-lendava
