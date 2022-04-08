@@ -5,12 +5,18 @@ resources:
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+  - parlasite/deployment.yaml
+  - parlasite/ingress.yaml
+  - parlasite/service.yaml
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
   - name: parlacards-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlacards-hrastnik
+    newTag: '03d38a9957d262c11fb2c74677d1876682f0c00a'
+  - name: parlasite-hrastnik
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-hrastnik
     newTag: '03d38a9957d262c11fb2c74677d1876682f0c00a'
   - name: parlassets-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlassets-hrastnik
