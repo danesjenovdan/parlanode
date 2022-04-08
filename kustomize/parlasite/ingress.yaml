@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - parlasite-TODO-BRANCH-NAME-HERE.lb.djnd.si
+        - ljubljana.parlameter.si
       secretName: parlasite-tls
   rules:
-    - host: parlasite-TODO-BRANCH-NAME-HERE.lb.djnd.si
+    - host: ljubljana.parlameter.si
       http:
         paths:
           - path: /
