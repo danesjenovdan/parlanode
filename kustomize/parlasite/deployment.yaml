@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlasite
-          image: parlasite-TODO-BRANCH-NAME-HERE
+          image: parlasite-hrastnik
           ports:
             - containerPort: 3066
           resources:
