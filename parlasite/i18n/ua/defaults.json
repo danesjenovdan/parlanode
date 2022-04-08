@@ -1,0 +1,189 @@
+{
+  "landing": {
+    "title": "Parlameter",
+    "lead": "Parlameter analyses voting and speeches in the parliament to help you monitor your politicians.",
+    "search": {
+      "part_one": "Search",
+      "part_two": "legislation, voting, representatives, parties or their speeches"
+    }
+  },
+  "about": {
+    "lead": "Parlameter analyses voting and speeches in the parliament to help you monitor your politicians.",
+    "afterlead": "User friendly visual design and technologically advanced modular setup increase the transparency of the most important democratic institution.",
+    "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
+    "columns": {
+      "first": {
+        "title": "General public",
+        "paragraph": "Democracy depends on the watchful eyes monitoring the government. A prerequisite for that is a well-informed public. Thank you for caring."
+      },
+      "second": {
+        "title": "Media public",
+        "paragraph": "All existing cards can be embedded on any website. We crunch the data so the media can focus on interpreting them."
+      },
+      "third": {
+        "title": "Developer community",
+        "paragraph": "All data is freely available over several APIs. All of the code is published on Github. You can find everything you need at <a href=\"https://dev.parlameter.si\">the dev page</a>."
+      }
+    },
+    "thanks": "Parlameter is maintained by the community behind the institute <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Today is a new day</a>, that focuses on digital political participation, transparency, and monitoring. Thank you Google DNI, Amebis, U.S. Embassy in Slovenia, and all individuals who have selflessly helped us in developing this tool."
+  },
+  "legal": {
+    "title": "Legal notice (only in Slovenian, sorry)",
+    "body": "<h3>1. ABOUT PARLAMETER</h3><p>Parlameter is a web tool that performs analysis of vote and speeches in the parliament to enable control over the work of our politicians. By providing an insight into the decision making process it is increasing the transparency of the most important democratic institution.</p><p>Three parts form the architecture of the tool: Parla-data, where we collect raw data, Pala-lize, where we calculate our analysis and statistical values and Parla-meter, an online space where all this information comes to life.</p><p>Parlameter content exists in two ways: available on a web page parlameter.si or as an independent card embedded in other web pages. A card is a basic unit with its URL, embed code and \"information text\", which explains the methodology used.</p><p>Web page parlameter.si is divided into five parts: Legislation, Sessions, MPs, Parliamentary groups and Tools.</p><p>We calculate the following analysis pertaining to the MPs: vocabulary diversity, voting patterns, most often/least often vote the same, characterised by the following words, attendance at sessions, attendance at voting events, number of words spoken, number of speeches per session, political compass.</p><p>We calculate the following analysis pertaining to political groups: attendance at sessions, attendance at voting events, vocabulary diversity, hardest/easiest to join, divergence from the political group, voting patterns, marked by words, political compass.</p><p>Parlameter allows you to search through transcripts and generate cards with speeches that use searched term, use of searched term through time, a list of 5 MPs that used the searched term most often and a list of parliamentary groups that used the searched term most often.</p><p>Methodology of each analysis is publicly available in the \"info\" part of each card. </p><p>Parlameter is developed and maintained at the institute Today is a new day. </p><h3>2. INFORMATION SOURCES</h3><p>Because of lack of machine-readable parliamentary data we fill the Parlameter database with a method of syntactic parsing of HTML documents from web pages dz-rs.si in dvk-rs.si. This process can result in mistakes. The institute Today is a new day and their members cannot guarantee for the data on this website and are not responsible for any mistakes. You can read the legal notifications <a href=\"http://www.dz-rs.si/wps/portal/Home/pravnoObvestilo\">here</a> or <a href=\"http://www.dvk-rs.si/index.php/si/pravno-obvestilo\">here</a>.</p><h3>3. INTELLECTUAL PROPERTY</h3><p>Parlameter uses only opensourced code.</p><p>Anyone can use Parlameter cards for free, without a consent of the authors of the application. Institute Today is a new day reserves the right to change that. In that case we will send out an email notification and the change will be in place from the notification onward.</p><h3>4. LIMITS OF LIABILITY</h3><p>All data on the Parlameter web page is not necessarily exact, correct and updated.</p><p>The authors of the application will strive to provide correct and current data. However, we cannot be help accountable for any possible discrepancies or inaccuracies.</p><p>Authors of the application also do not take responsibility for possible mistakes of date sourced from third parties (see point 2).</p><p>We maintain the right to change the order of cards in the application. All lists are sorted by alphabet or, in certain analyses, by value. Order of cards at certain sub-pages is random and does not reflect any editorial decision.</p><p>Authors of the application cannot be held responsible to renumerate</p><ol style=\"list-style:lower-roman\"><li> any possible direct or indirect, random, specific, or any other type of harm resulting from mistakes or inaccuracies of data or analysis in Parlameter.</li></ol><p>We reserve the right to add, remove, change or upgrade information on this tool at any time, in any way, partially or fully, without a reason and without a previous notification.</p><p>Despite the effort to provide correct information mistakes can happen. We strive to discover any inaccuracies as soon as possible. We will be grateful if you notify us of any mistakes you discovers. We will strive to remove all mistakes in 7 working days after we have been notified.</p><p>Parlameter cards are free for anyone, however authors of the tool cannot guarantee the tool will work correctly. We strive to minimise technical mistakes, however we cannot be held responsible for malfunction of servers, or malfunction of the webpage where the card is embedded. Same is true for APIs of Parladata and Parlalize.</p>"
+  },
+  "press": {
+    "todo": true,
+    "title": "For a better and a more beautiful story",
+    "body": "This page contains info on Parlameter, press releases and visual materials. All of these are free to use. For interviews, direct questions or requests for statements email <a href=\"mailto:info@parlameter.si\">info@parlameter.si</a>.",
+    "photos": {
+      "title": "Photos"
+    },
+    "releases": {
+      "title": "Press-releases"
+    },
+    "video": {
+      "title": "Video materials"
+    }
+  },
+  "menu": {
+    "legislation": "Legislation",
+    "sessions": "Sessions",
+    "mps": "Representatives",
+    "pgs": "Parliamentary groups",
+    "tools": "Tools"
+  },
+  "footer": {
+    "about": "About the project",
+    "newsletter_sign_up": "Sign up for the newsletter!",
+    "newsletter_submit": "Submit",
+    "donate": "Donate!",
+    "press": "Press corner",
+    "legal": "Legal notice"
+  },
+  "search_popup": {
+    "title": "How to search?",
+    "first_paragraph": "The default search is broad. (it will return all speeches containing any of the words entered).",
+    "second_paragraph": "If you want to modify your search query you can use the following operators:",
+    "operators": [
+      {
+        "name": "AND",
+        "description": "the engine will return only those results that include all the words in the query (regardless of their order)",
+        "example_title": "Example:",
+        "example_text": "Ivan AND Cankar",
+        "example_result_title": "Results:",
+        "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "\"QUOTATIONS MARKS\"",
+        "description": "the engine will return only the results that contain an exact match between the double quotes",
+        "example_title": "Example:",
+        "example_text": "Humanitarian crisis",
+        "example_result_title": "",
+        "example_result_text": "",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "! (EXCLAMATION POINT)",
+        "description": "results will always include the words marked with an exclamation point, while other words serve to rank the results",
+        "example_title": "Example:",
+        "example_text": "Parliamentary !group",
+        "example_result_title": "Results:",
+        "example_result_text": "Parliamentary group,<br> group of MPs,<br> international group",
+        "example_excluded_result_title": "No search results found",
+        "example_excluded_result_text": "Poslanska služba"
+      },
+      {
+        "name": "-(MINUS)",
+        "description": "the results will not include the words preceded by the minus sign",
+        "example_title": "Example:",
+        "example_text": "-Parliamentary group",
+        "example_result_title": "Results:",
+        "example_result_text": "group of MPs,<br> international group",
+        "example_excluded_result_title": "Not a result:",
+        "example_excluded_result_text": "Parliamentary group"
+      }
+    ]
+  },
+  "donation": {
+    "intro": "Your donation will help ensure Parlameter's lognevity.",
+    "personal": "PERSONAL<br>DONATION",
+    "business": "CORPORATE<br>DONATION",
+    "bitcoin": "BITCOIN DONATION",
+    "business_success": "It's best we discuss this over email.",
+    "business_success_email": "email",
+    "business_success_message": "message",
+    "business_success_send": "SEND",
+    "thank_you": "THANK YOU!",
+    "error": "Oops, something went wrong. :(",
+    "choice": "DONATION OF CHOICE",
+    "amount": "amount",
+    "card": "WITH A CREDIT CARD",
+    "monthly": "monthly donation"
+  },
+  "tools": {
+    "notifications": {
+      "title": "Parlameter notifications",
+      "text": "Parliamentary clipping! Get an email alert every time someone says a word (or more words)."
+    },
+    "voteComparator": {
+      "title": "Vote comparator",
+      "text": "The vote comparator allows you to answer questions such as: When did members of one party vote the same as member of their biggest rival party?"
+    },
+    "discord": {
+      "title": "Discord analysis",
+      "text": "Explore the discord within parliamentary parties based on how much they disagreed on specific pieces of legislation."
+    },
+    "compass": {
+      "title": "Parliamentary compass",
+      "text": "Visualisation of all MPs in a \"virtual space\". The further apart two MPs are the greater the discord in their voting patterns."
+    },
+    "wordGroups": {
+      "title": "Word groups",
+      "text": "Explore who talks most about certain topics or uses certain word groups most often.<br><br>"
+    }
+  },
+  "general": {
+    "coalition": "coalition",
+    "opposition": "opposition",
+    "inactive": "INACTIVE",
+    "overview": "Overview",
+    "voting": "Voting events",
+    "speeches": "Speeches",
+    "data_published": "data published",
+    "in_review": "in review",
+    "vote-result--enacted": "Passed",
+    "vote-result--submitted": "Submitted",
+    "vote-result--rejected": "Rejected",
+    "vote-result--retracted": "Retracted",
+    "vote-result--adopted": "Passed",
+    "vote-result--received": "Received",
+    "vote-result--in_procedure": "In procedure",
+    "legislation": "Legislation",
+    "other_votings": "Other voting events",
+    "agenda": "Dnevni red",
+    "transcripts": "Transcripts",
+    "tools_intro": "Democracy is a continuous process that depends on our participation in it. Use the tools below to help you better engage with it!",
+    "page-not-found-text": "There's nothing here. What are you looking for?",
+    "info_email": "info@parlameter.si"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/parlameter",
+    "twitter": "https://twitter.com/Parlameter_si",
+    "instagram": "[empty]"
+  },
+  "titles": {
+    "session": "Session",
+    "legislation": "Legislation",
+    "other-votings": "Other voting events",
+    "agenda": "Dnevni red",
+    "transcript": "Transcript",
+    "voting": "The vote",
+    "session-list": "List of sessions",
+    "sessions-search": "Search sessions",
+    "thank-you": "Thank you!",
+    "ups": ":("
+  }
+}

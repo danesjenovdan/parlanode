@@ -1,0 +1,5 @@
+<%- await include('../_partials/header.ejs') %>
+
+<%- await fetchCard('/misc/groups/', rootOrgId, { generator: true }) %>
+
+<%- await include('../_partials/footer.ejs') %>

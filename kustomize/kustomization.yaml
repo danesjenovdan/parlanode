@@ -5,12 +5,18 @@ resources:
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+  - parlasite/deployment.yaml
+  - parlasite/ingress.yaml
+  - parlasite/service.yaml
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
   - name: parlacards-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ljubljana
+    newTag: '1016bfc42c8a6e9c2d9726521189149bbf95bd3a'
+  - name: parlasite-ljubljana
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-ljubljana
     newTag: '1016bfc42c8a6e9c2d9726521189149bbf95bd3a'
   - name: parlassets-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ljubljana

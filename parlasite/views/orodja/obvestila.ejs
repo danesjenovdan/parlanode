@@ -1,0 +1,9 @@
+<%- await include('../_partials/header.ejs') %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%- await fetchCard('/tool/notifications/', { state: { generator: true, uid, kid, settings }}) %>
+  </div>
+</div>
+
+<%- await include('../_partials/footer.ejs') %>
