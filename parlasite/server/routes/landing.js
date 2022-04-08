@@ -30,6 +30,14 @@ router.get(`/${sm.landing.members}`, ar((render) => {
   });
 }));
 
+router.get(`/${sm.landing.members2}`, ar((render) => {
+  render('landing/poslanci2', {
+    ogImageUrl: getOgImageUrl('generic', { title: i18n('menu.mps2') }),
+    activeMenu: 'mps2',
+    pageTitle: i18n('menu.mps2'),
+  });
+}));
+
 router.get(`/${sm.landing.parties}`, ar((render) => {
   render('landing/poslanske-skupine', {
     ogImageUrl: getOgImageUrl('generic', { title: i18n('menu.pgs') }),
