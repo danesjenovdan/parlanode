@@ -54,53 +54,53 @@ function sessionClassification(classification) {
   return SESSION_CLASSIFICATIONS[key] || SESSION_CLASSIFICATIONS.unknown;
 }
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
-  const sesData = await getNewData(req.params.id);
-  if (sesData) {
-    if (sesData.session.has_legislation && !locale.startsWith('sl-obcina')) {
-      render('seja/zakonodaja', {
-        ogImageUrl: getOgImageUrl('circle', {
-          title: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
-          h1: sesData.session.name,
-          h2: slovenianDate(sesData.session.start_time),
-          icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
-        }),
-        activeMenu: 'session',
-        pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
-        activeTab: 'zakonodaja',
-        ...sesData,
-      });
-    } else if (sesData.session.has_minutes) {
-      render('seja/dnevni-red', {
-        ogImageUrl: getOgImageUrl('circle', {
-          title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
-          h1: sesData.session.name,
-          h2: slovenianDate(sesData.session.start_time),
-          icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
-        }),
-        activeMenu: 'session',
-        pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
-        activeTab: 'dnevni-red',
-        ...sesData,
-      });
-    } else {
-      render('seja/glasovanja', {
-        ogImageUrl: getOgImageUrl('circle', {
-          title: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
-          h1: sesData.session.name,
-          h2: slovenianDate(sesData.session.start_time),
-          icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
-        }),
-        activeMenu: 'session',
-        pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
-        activeTab: 'glasovanja',
-        ...sesData,
-      });
-    }
-  } else {
-    next();
-  }
-}));
+// router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
+//   const sesData = await getNewData(req.params.id);
+//   if (sesData) {
+//     if (sesData.session.has_legislation && !locale.startsWith('sl-obcina')) {
+//       render('seja/zakonodaja', {
+//         ogImageUrl: getOgImageUrl('circle', {
+//           title: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+//           h1: sesData.session.name,
+//           h2: slovenianDate(sesData.session.start_time),
+//           icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+//         }),
+//         activeMenu: 'session',
+//         pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+//         activeTab: 'zakonodaja',
+//         ...sesData,
+//       });
+//     } else if (sesData.session.has_minutes) {
+//       render('seja/dnevni-red', {
+//         ogImageUrl: getOgImageUrl('circle', {
+//           title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
+//           h1: sesData.session.name,
+//           h2: slovenianDate(sesData.session.start_time),
+//           icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+//         }),
+//         activeMenu: 'session',
+//         pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
+//         activeTab: 'dnevni-red',
+//         ...sesData,
+//       });
+//     } else {
+//       render('seja/glasovanja', {
+//         ogImageUrl: getOgImageUrl('circle', {
+//           title: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
+//           h1: sesData.session.name,
+//           h2: slovenianDate(sesData.session.start_time),
+//           icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+//         }),
+//         activeMenu: 'session',
+//         pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
+//         activeTab: 'glasovanja',
+//         ...sesData,
+//       });
+//     }
+//   } else {
+//     next();
+//   }
+// }));
 
 router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.otherVotings}`], ar(async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
