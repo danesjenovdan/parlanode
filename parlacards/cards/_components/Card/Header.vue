@@ -34,6 +34,7 @@
       <h1 v-else-if="currentBack === 'embed'" v-t="'embed.title'"></h1>
       <h1 v-else-if="currentBack === 'share'" v-t="'share.title'"></h1>
       <h1 v-else-if="currentBack === 'previous'" v-t="'previous.title'"></h1>
+      <h1 v-else-if="currentBack === 'export'" v-t="'export.title'"></h1>
       <h1 v-else>{{ config.title }}</h1>
     </template>
   </div>
