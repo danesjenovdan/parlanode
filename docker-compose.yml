@@ -41,7 +41,6 @@ services:
     volumes:
       - ./parlasite/config/:/app/config
       - ./parlasite/i18n/:/app/i18n
-      - ./parlasite/public/:/app/public
       - ./parlasite/server/:/app/server
       - ./parlasite/views/:/app/views
       # - ./parlasite/.eslintignore:/app/.eslintignore
