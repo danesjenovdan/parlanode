@@ -1,18 +1,16 @@
-const express = require('express');
-const chalk = require('chalk');
-const serveStatic = require('serve-static');
-const bodyParser = require('body-parser');
-const config = require('../config');
-const { i18n: _i18n, asyncRender: ar } = require('./utils');
+import express from 'express';
+import config from '../config/index.js';
+import { i18n as _i18n, asyncRender as ar } from './utils.js';
+import { setupRoutes } from './routes/index.js';
 
-const i18n = _i18n(config.locale);
+export const i18n = _i18n(config.locale);
 
 const app = express();
 
-function setupExpress() {
+export function setupExpress() {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line no-console
-    console.log(`${chalk.magenta('| EXPRESS SERVER |')} - ${chalk.green('starting')}`);
+    console.log(`| EXPRESS SERVER | - starting`);
 
     // disable "X-Powered-By: Express" header
     app.disable('x-powered-by');
@@ -39,17 +37,19 @@ function setupExpress() {
       next();
     });
 
-    // eslint-disable-next-line global-require
-    require('./routes')(app);
+    setupRoutes(app);
 
     // all other routes
-    app.get('*', ar((render, req, res) => {
-      res.status(404);
-      render('error/404', {
-        pageTitle: '404 Not Found',
-        activeMenu: '',
-      });
-    }));
+    app.get(
+      '*',
+      ar((render, req, res) => {
+        res.status(404);
+        render('error/404', {
+          pageTitle: '404 Not Found',
+          activeMenu: '',
+        });
+      })
+    );
 
     // catch-all error handler (needs all 4 args)
     // eslint-disable-next-line no-unused-vars
@@ -69,7 +69,9 @@ function setupExpress() {
     // start listening on port
     const server = app.listen(config.port, () => {
       // eslint-disable-next-line no-console
-      console.log(`${chalk.magenta('| EXPRESS SERVER |')} - ${chalk.green(`started on: http://localhost:${config.port}/`)}`);
+      console.log(
+        `| EXPRESS SERVER | - started on: http://localhost:${config.port}/`
+      );
       resolve();
     });
 
@@ -80,13 +82,3 @@ function setupExpress() {
     server.timeout = config.serverTimeout;
   });
 }
-
-function init() {
-  return Promise.resolve()
-    .then(setupExpress);
-}
-
-module.exports = {
-  init,
-  i18n,
-};

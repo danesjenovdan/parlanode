@@ -1,6 +1,6 @@
-const express = require('express');
-const { asyncRender: ar, getOgImageUrl } = require('../utils');
-const { i18n } = require('../server');
+import express from 'express';
+// const { asyncRender: ar, getOgImageUrl } = require('../utils');
+import { i18n } from '../server.js';
 
 const sm = i18n.siteMap;
 
@@ -79,4 +79,4 @@ router.get(`/${sm.landing.error}`, ar((render) => {
   });
 }));
 
-module.exports = router;
+export default router;

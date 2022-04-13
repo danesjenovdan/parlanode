@@ -1,8 +1,9 @@
-const chalk = require('chalk');
-const fs = require('fs-extra');
-const _ = require('lodash');
-const fetch = require('node-fetch');
-const { urls, locale, defaultCardDate } = require('../config');
+import fs from 'fs-extra'
+import _ from 'lodash-es';
+import fetch from 'node-fetch';
+import config from '../config/index.js';
+
+const {urls, locale} = config;
 
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
@@ -157,7 +158,7 @@ function getOgImageUrl(type, params = {}) {
   return `${url}${query}`;
 }
 
-module.exports = {
+export {
   slovenianDate,
   fetchCard,
   asyncRoute,
