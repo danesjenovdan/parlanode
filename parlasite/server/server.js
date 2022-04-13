@@ -30,11 +30,6 @@ function setupExpress() {
     app.locals.rootOrgId2 = config.rootOrgId2;
     app.locals.mandateId = config.mandateId;
 
-    // serve static assets
-    app.use(serveStatic('public'));
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
-
     // i18n middleware
     app.use('*', (req, res, next) => {
       if (req.query.lang) {
