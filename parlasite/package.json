@@ -4,9 +4,9 @@
   "author": "Danes je nov dan",
   "license": "Unlicense",
   "scripts": {
-    "dev": "nodemon run.js",
+    "dev": "nodemon server/index.js",
     "lint": "eslint .",
-    "start": "node run.js"
+    "start": "node server/index.js"
   },
   "dependencies": {
     "body-parser": "^1.15.2",

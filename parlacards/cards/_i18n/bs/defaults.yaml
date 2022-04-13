@@ -465,5 +465,6 @@ organization-classifications:
   other: Other working bodies
   commission: Commission
 legislation-classifications:
-  act: Act
+  act: Akt
   decree: Decree
+  law: Zakon
