@@ -7,6 +7,9 @@
       "path": "parlassets"
     },
     {
+      "path": "parlasite"
+    },
+    {
       "path": ".",
       "name": "root"
     }
@@ -20,8 +23,9 @@
   },
   "settings": {
     "files.exclude": {
-      "parlacards": true,
-      "parlassets": true
+      "parlacards/": true,
+      "parlassets/": true,
+      "parlasite/": true
     }
   }
 }
