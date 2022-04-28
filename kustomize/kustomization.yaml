@@ -14,10 +14,10 @@ resources:
 images:
   - name: parlacards-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija
-    newTag: '0577b1504a97b208f68e7980e5c8709d9792cc14'
+    newTag: '85efb327b7c08f87c63f2508dc5cc36cc2eed1d5'
   - name: parlasite-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlasite-slovenija
-    newTag: '0577b1504a97b208f68e7980e5c8709d9792cc14'
+    newTag: '85efb327b7c08f87c63f2508dc5cc36cc2eed1d5'
   - name: parlassets-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlassets-slovenija
-    newTag: '0577b1504a97b208f68e7980e5c8709d9792cc14'
+    newTag: '85efb327b7c08f87c63f2508dc5cc36cc2eed1d5'
