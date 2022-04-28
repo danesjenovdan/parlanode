@@ -47,7 +47,7 @@ export default {
       }
       const showExportButton = cardState?.showExportButton;
       if (showExportButton) {
-        buttonsList.push('export')
+        buttonsList.push('export');
       }
       return buttonsList;
     },

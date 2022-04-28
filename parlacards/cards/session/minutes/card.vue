@@ -68,7 +68,7 @@ export default {
       pages = 1,
       page: initialPage = 1,
       count = results?.length ?? 0,
-      per_page = MINUTES_PER_PAGE,
+      per_page: perPage = MINUTES_PER_PAGE,
     } = cardData?.data || {};
 
     const minutesPerPage = Array(pages);
@@ -79,7 +79,7 @@ export default {
     return {
       minutesPerPage,
       count,
-      perPage: per_page,
+      perPage,
       page,
       initialPage,
       fetching: false,

@@ -21,6 +21,7 @@ module.exports = {
       },
     ],
     'no-underscore-dangle': ['error', { allow: ['__INITIAL_STATE__'] }],
+    'vue/multi-word-component-names': ['off'],
     'no-param-reassign': ['off'], // TODO: fix and reenable
     'vue/no-mutating-props': ['off'], // TODO: fix and reenable
   },

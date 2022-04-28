@@ -23,7 +23,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'CardExport',
   data() {
@@ -31,13 +30,13 @@ export default {
     return {
       cardName,
       urls,
-      mandate_id: 1
+      mandate_id: 1,
     };
   },
   methods: {
     exportUrl(format) {
       return `${this.urls.data}/export/${this.cardName}.${format}?mandate_id=${this.mandate_id}`;
-    }
-  }
+    },
+  },
 };
 </script>

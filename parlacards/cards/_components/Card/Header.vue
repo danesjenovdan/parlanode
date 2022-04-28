@@ -6,7 +6,7 @@
           <div
             v-if="config.circleText || config.mediaImage"
             class="media-object img-circle session-logo"
-            :style="{'background-color': (config.circleColor || '#333')}"
+            :style="{ 'background-color': config.circleColor || '#333' }"
           >
             <b v-if="config.circleText">{{ config.circleText }}</b>
             <img v-else :src="`${urls.cdn}/icons/${config.mediaImage}.svg`" />
@@ -20,8 +20,12 @@
             <img :src="`${urls.cdn}/icons/${config.circleIcon}.svg`" />
           </div>
           <div class="header-info-container">
+            <!-- eslint-disable vue/no-v-html -->
             <h1 v-if="config.heading" v-html="config.heading"></h1>
-            <h2 v-if="config.subheading" class="partyinfo">{{ config.subheading }}</h2>
+            <!-- eslint-enable vue/no-v-html -->
+            <h2 v-if="config.subheading" class="partyinfo">
+              {{ config.subheading }}
+            </h2>
             <h2 class="cardname">{{ config.title }}</h2>
           </div>
         </div>
