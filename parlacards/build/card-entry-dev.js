@@ -12,6 +12,7 @@ import cardState from './state.json';
 (async () => {
   let cardMessages = {};
   try {
+    // eslint-disable-next-line import/no-unresolved
     const module = await import('@/_i18n/{cardLang}/{cardName}.yaml');
     cardMessages = module.default ?? {};
   } catch (e) {
