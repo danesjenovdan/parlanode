@@ -13,7 +13,7 @@
     "start": "node server/index.js",
     "start:watch": "nodemon -e js,cjs,mjs,vue,html server/index.js",
     "lint": "yarn lint:eslint && yarn lint:card-names && yarn lint:locale-names && yarn lint:locale-keys",
-    "lint:eslint": "eslint . --ext js,cjs,mjs,vue || exit 0",
+    "lint:eslint": "eslint . --ext js,cjs,mjs,vue",
     "lint:card-names": "node build/lint-card-names.js",
     "lint:locale-names": "node build/lint-locale-names.js",
     "lint:locale-keys": "node build/lint-locale-keys.js"
