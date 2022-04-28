@@ -1,5 +1,6 @@
 card:
   title: Seznam poslancev
+  export: navodila to be
   info: >-
     # Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu.
 

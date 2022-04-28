@@ -1,12 +1,11 @@
 import { createApp } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { merge } from 'lodash-es';
-// eslint-disable-next-line import/no-unresolved
-import Card from '@/{cardName}/card.vue';
-
 // Sentry
 import * as Sentry from '@sentry/vue';
 import { Integrations } from '@sentry/tracing';
+// eslint-disable-next-line import/no-unresolved
+import Card from '@/{cardName}/card.vue';
 
 const { contextData, i18nData } = window.__INITIAL_STATE__;
 

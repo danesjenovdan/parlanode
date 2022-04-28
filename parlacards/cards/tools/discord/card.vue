@@ -350,6 +350,7 @@ export default {
         this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
     fetchVotesForGroup(acronym) {
+      console.log(acronym);
       // this.loading = true;
       // const groupId = find(this.groups, { acronym })?.id;
       // axios
