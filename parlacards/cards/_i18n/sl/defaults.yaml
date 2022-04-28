@@ -218,6 +218,10 @@ embed:
   always-refresh: Podatki naj se vedno osvežujejo
 previous:
   title: Prejšnje verzije
+export:
+  title: Izvozi podatke
+  csv: Izvozi v .csv
+  json: Izvozi v .json
 membership-list:
   no-memberships: Brez članstev.
 style-scores:

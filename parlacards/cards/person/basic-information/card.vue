@@ -192,7 +192,7 @@ export default {
         if (this.results.email.length < 26) {
           return this.results.email;
         }
-        const [addr, domain] = this.results.email?.split('@');
+        const [addr, domain] = this.results.email.split('@');
         if (addr.length < 18) {
           return this.results.email;
         }
