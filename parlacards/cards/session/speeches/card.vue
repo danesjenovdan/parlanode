@@ -74,7 +74,7 @@ export default {
       pages = 1,
       page: initialPage = 1,
       count = results?.length ?? 0,
-      per_page = SPEECHES_PER_PAGE,
+      per_page: perPage = SPEECHES_PER_PAGE,
     } = cardData?.data || {};
 
     const speechesPerPage = Array(pages);
@@ -85,7 +85,7 @@ export default {
     return {
       speechesPerPage,
       count,
-      perPage: per_page,
+      perPage,
       page,
       initialPage,
       fetching: false,
