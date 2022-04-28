@@ -7,8 +7,8 @@
       </div>
       <div
         v-for="agendaItem in agendaItems"
-        :key="agendaItem.id"
         :id="agendaItem.id"
+        :key="agendaItem.id"
         class="agenda-item"
       >
         <div class="name">{{ agendaItem.name }}</div>

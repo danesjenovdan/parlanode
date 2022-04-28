@@ -39,12 +39,17 @@ export default {
   },
   computed: {
     buttons() {
-      const { cardData } = this.$root.$options.contextData;
+      const buttonsList = ['share', 'embed', 'info'];
+      const { cardData, cardState } = this.$root.$options.contextData;
       const previous = cardData?.data?.previous_versions;
       if (previous && previous.length) {
-        return ['share', 'embed', 'info', 'previous'];
+        buttonsList.push('previous');
       }
-      return ['share', 'embed', 'info'];
+      const showExportButton = cardState?.showExportButton;
+      if (showExportButton) {
+        buttonsList.push('export');
+      }
+      return buttonsList;
     },
   },
   methods: {

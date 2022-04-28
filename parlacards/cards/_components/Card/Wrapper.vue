@@ -23,6 +23,8 @@
 
         <card-previous v-else-if="currentBack === 'previous'" />
 
+        <card-export v-else-if="currentBack === 'export'" />
+
         <div v-else v-cloak class="card-content-front">
           <slot />
         </div>
@@ -38,6 +40,7 @@ import CardInfo from '@/_components/Card/Info.vue';
 import CardEmbed from '@/_components/Card/Embed.vue';
 import CardShare from '@/_components/Card/Share.vue';
 import CardPrevious from '@/_components/Card/Previous.vue';
+import CardExport from '@/_components/Card/Export.vue';
 import CardHeader from '@/_components/Card/Header.vue';
 import CardFooter from '@/_components/Card/Footer.vue';
 
@@ -48,6 +51,7 @@ export default {
     CardEmbed,
     CardShare,
     CardPrevious,
+    CardExport,
     CardHeader,
     CardFooter,
   },
