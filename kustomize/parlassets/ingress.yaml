@@ -5,6 +5,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
