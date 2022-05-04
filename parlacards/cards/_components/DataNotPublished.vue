@@ -60,7 +60,6 @@ export default {
     font-size: 18px;
     font-style: italic;
     font-weight: 300;
-    font-family: Roboto Slab, 'Times New Roman', serif;
     line-height: 1.5;
   }
 }

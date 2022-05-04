@@ -72,7 +72,7 @@ export default {
       display: flex;
       flex: 1;
       font-size: 13px;
-      font-weight: 300;
+      font-weight: 400;
       min-height: 51px;
       justify-content: center;
       line-height: 1.25em;

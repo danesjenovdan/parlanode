@@ -65,7 +65,7 @@
 
       &.large-number {
         flex: none;
-        font-size: 36px;
+        font-size: 24px;
         font-weight: 500;
       }
 
@@ -127,14 +127,14 @@
             width: $mobile-image-width;
           }
         }
-        &.large-number { font-size: 30px; }
+        &.large-number { font-size: 24px; }
       }
     }
   }
 }
 
 .person-list {
-  $image-size: 80px;
+  $image-size: 60px;
   $mobile-image-size: 41px;
 
   @include column-list($image-size, $image-size, 18px, $mobile-image-size, $mobile-image-size, 4px);

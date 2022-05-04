@@ -12,9 +12,8 @@
 }
 
 #about .lead-text-container {
-    font-family: "Roboto Slab", sans-serif;
-    color: $white;
-    font-style: italic;
+    font-family: "Open Sans", sans-serif;
+    color: $font-default;
     font-size: 24px;
     // text-align: center;
     margin: 45px 20px 45px 25px;
@@ -32,14 +31,8 @@
 }
 
 #about .lead-text-container .lead-text {
-    background-color: $cta-passive-background;
     padding: 5px 0;
     line-height: 2;
-    /* fix inline multiline text padding */
-    box-shadow: 10px 0 0 $cta-passive-background, -10px 0 0 $cta-passive-background;
-    box-decoration-break: clone;
-    color: $white;
-    font-weight: 300;
 }
 
 #about .lead-text-container a:hover .lead-text,
