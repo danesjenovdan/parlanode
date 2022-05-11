@@ -78,3 +78,42 @@ cardInfo: {
   doubleWidth: true,
 },
 ```
+
+## State
+
+### Analysis options
+
+List of analysis IDs that can be used on misc/members:
+
+- `demographics` - name, age, education, no. of mandates, group, ...
+
+- `presence_votes` - how often each member was present on votings
+
+- `number_of_questions` - how many questions / suggestions each member gave
+
+- `mismatch_of_pg` -  how many times did each member vote differently from their member group
+
+- `working_bodies` - a list of working bodies each member is a part of
+
+- analysis of transcripts:
+
+  - `speeches_per_session` - average number of speeches each member gave per session
+
+  - `spoken_words` - number of words each member spoke
+
+
+#### List of analysis IDs that can be used on misc/groups:
+
+- `seat_count` - how many seats does each group have
+
+- `vote_attendance` - average presence on votings
+
+- `number_of_questions` - how many questions / suggestions each group gave
+
+- `number_of_amendments` - how many amendments each group gave
+
+- `intra_disunion` - how differently do members of each group vote on average
+
+- analysis of transcripts:
+
+  - `vocabulary_size` - how rich vocabulary they use
