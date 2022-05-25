@@ -25,7 +25,11 @@
         class="person-list"
         @scroll="$refs.shadow.check($event.currentTarget)"
       >
-        <empty-state v-if="!filteredMembers?.length" />
+        <li v-if="anonymousVotesPresent" class="item anonymous-votes-exist">
+          <img :src="`${$root.$options.contextData.urls.cdn}/icons/hand-vote.png`" />
+          <span>{{ $t('anonymous-votes-present') }}</span>
+        </li>
+        <empty-state v-if="!filteredMembers?.length && !anonymousVotesPresent" />
         <template v-else>
           <li
             v-for="member in filteredMembers"
@@ -120,6 +124,10 @@ export default {
       default: () => ({}),
     },
     didNotVotePresent: {
+      type: Boolean,
+      default: false,
+    },
+    anonymousVotesPresent: {
       type: Boolean,
       default: false,
     },
@@ -317,6 +325,26 @@ export default {
   .person-party {
     font-size: 14px;
     margin-top: 5px;
+  }
+}
+
+.anonymous-votes-exist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #eef7f7;
+  padding: 20px;
+  
+  img {
+    height: 36px;
+    margin-right: 8px;
+  }
+
+  @include respond-to(desktop) {
+    height: 97px;
+    font-size: 18px;
   }
 }
 

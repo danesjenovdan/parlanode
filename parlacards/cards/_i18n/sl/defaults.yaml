@@ -165,6 +165,7 @@ voted-absent--plural: Odsotni
 voted-did-not-vote--f: Ni glasovala
 voted-did-not-vote--m: Ni glasoval
 voted-did-not-vote--plural: Brez glasu
+anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
