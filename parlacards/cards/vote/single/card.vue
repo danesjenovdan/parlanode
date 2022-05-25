@@ -78,34 +78,37 @@
       <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
         <p-tab :label="$t('mps')">
           <poslanci
-            :members="mappedMembers"
+            :members="filteredMembers"
             :result="results.result"
             :all-votes="allVotes"
             :state="state"
             :did-not-vote-present="didNotVotePresent"
+            :anonymous-votes-present="hasAnonymousVotes"
             @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
           />
         </p-tab>
-        <p-tab :label="$t('parties')">
+        <p-tab v-if="!hasAnonymousVotes" :label="$t('parties')">
           <poslanske-skupine
-            :members="mappedMembers"
+            :members="filteredMembers"
             :parties="extendedGroups"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
             :did-not-vote-present="didNotVotePresent"
+            :anonymous-votes-present="hasAnonymousVotes"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
         <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
           <poslanske-skupine
-            :members="mappedMembers"
+            :members="filteredMembers"
             :parties="results.government_sides"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
             :did-not-vote-present="didNotVotePresent"
+            :anonymous-votes-present="hasAnonymousVotes"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
@@ -124,34 +127,37 @@
         </p-tab>
         <p-tab :label="$t('mps')">
           <poslanci
-            :members="mappedMembers"
+            :members="filteredMembers"
             :result="results.result"
             :all-votes="allVotes"
             :state="state"
             :did-not-vote-present="didNotVotePresent"
+            :anonymous-votes-present="hasAnonymousVotes"
             @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
           />
         </p-tab>
-        <p-tab :label="$t('parties')">
+        <p-tab v-if="!hasAnonymousVotes" :label="$t('parties')">
           <poslanske-skupine
-            :members="mappedMembers"
+            :members="filteredMembers"
             :parties="extendedGroups"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
             :did-not-vote-present="didNotVotePresent"
+            :anonymous-votes-present="hasAnonymousVotes"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
         </p-tab>
         <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
           <poslanske-skupine
-            :members="mappedMembers"
+            :members="filteredMembers"
             :parties="results.government_sides"
             :state="state"
             :selected-party="state.selectedParty || null"
             :selected-option="state.selectedOption || null"
             :did-not-vote-present="didNotVotePresent"
+            :anonymous-votes-present="hasAnonymousVotes"
             @selectedparty="(newParty) => (state.selectedParty = newParty)"
             @selectedoption="(newOption) => (state.selectedOption = newOption)"
           />
@@ -262,29 +268,13 @@ export default {
 
     const didNotVotePresent = allVotes['did not vote'] > 0;
 
-    const mappedMembers = () => {
-      // checks if a member is anonymous and scaffolds its object
-      return results.members.map((member) => {
+    // filters out anonymous members
+    const filteredMembers = () => {
+      return results.members.filter((member) => {
         if (member.person === null) {
-          const mappedMember = member;
-          mappedMember.person = {
-            slug: null,
-            name: this.$t('anonymous.person.name'),
-            honorific_prefix: null,
-            honorific_suffix: null,
-            preferred_pronoun: null,
-            group: {
-              name: this.$t('anonymous.group.name'),
-              acronym: this.$t('anonymous.group.acronym'),
-              slug: null,
-              color: null,
-              classification: 'pg',
-            },
-            image: null,
-          };
-          return mappedMember;
+          return false; // skip
         }
-        return member;
+        return true;
       });
     };
 
@@ -352,7 +342,7 @@ export default {
       allVotes,
       didNotVotePresent,
       extendedGroups: extendedGroups(),
-      mappedMembers: mappedMembers(),
+      filteredMembers: filteredMembers(),
     };
   },
   computed: {
@@ -366,6 +356,9 @@ export default {
     content() {
       return fixAbstractHtml(this.results.abstract);
     },
+    hasAnonymousVotes() {
+      return this.results.members.length > this.filteredMembers.length;
+    }
   },
   methods: {
     focusTab(tabNumber) {
