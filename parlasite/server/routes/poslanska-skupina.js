@@ -1,7 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const { asyncRender: ar, getOgImageUrl } = require('../utils');
-const { urls } = require('../../config');
+const { urls, mandateId } = require('../../config');
 const { i18n } = require('../server');
 
 const sm = i18n.siteMap;
@@ -11,7 +11,7 @@ const router = express.Router();
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0], 10);
   // TODO this shouldn't be hard-coded
-  const response = await fetch(`${urls.parladata}/cards/group/basic-information/?id=${id}`);
+  const response = await fetch(`${urls.parladata}/cards/group/basic-information/?id=${id}&mandate_id=${mandateId}`);
   // response.ok means status is 2xx
   if (response.ok) {
     const data = await response.json();
