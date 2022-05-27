@@ -53,12 +53,15 @@ const loadLocale = async (locale) => {
   return localeCache[locale];
 };
 
-function getCardDataUrl(cardName, id, date, state) {
+function getCardDataUrl(cardName, id, mandateId, date, state) {
   const searchParams = new URLSearchParams();
 
   // base params
   if (id) {
     searchParams.set('id', id);
+  }
+  if (mandateId) {
+    searchParams.set('mandate_id', mandateId);
   }
   if (date) {
     searchParams.set('date', date);
