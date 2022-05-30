@@ -11,9 +11,9 @@ const config = {
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
   locale: 'sl',
-  leaderId: '261',
-  rootOrgId: '1',
-  mandateId: '1',
+  leaderId: '4434',
+  rootOrgId: '137',
+  mandateId: '2',
 };
 
 module.exports = config;
