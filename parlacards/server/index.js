@@ -18,26 +18,11 @@ fastify.register(fastifyStatic, {
 
 const renderCardHandler = async (request, reply) => {
   const { group, method } = request.params;
-  const {
-    id,
-    mandate_id: mandateId,
-    date,
-    locale,
-    template,
-    ...state
-  } = request.query;
+  const { id, date, locale, template, ...state } = request.query;
   const cardName = `${group}/${method}`;
   let html;
   try {
-    html = await renderCard({
-      cardName,
-      id,
-      mandateId,
-      date,
-      locale,
-      template,
-      state,
-    });
+    html = await renderCard({ cardName, id, date, locale, template, state });
     reply.type('text/html').send(html);
   } catch (error) {
     fastify.log.error(error);
