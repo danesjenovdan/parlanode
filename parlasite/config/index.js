@@ -11,9 +11,14 @@ const config = {
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
   locale: 'sl',
-  leaderId: '4434',
-  rootOrgId: '137',
-  mandateId: '2',
+  leaderId: process.env.PARLASITE_LEADER_ID,
+  rootOrgId: process.env.PARLASITE_ROOT_ORG_ID,
+  mandateId: process.env.PARLASITE_MANDATE_ID,
+  defaultCardDate: process.env.PARLASITE_DEFAULT_CARD_DATE,
 };
+
+if (!config.leaderId || !config.rootOrgId || !config.mandateId) {
+  throw new Error('Required config values are not defined!');
+}
 
 module.exports = config;

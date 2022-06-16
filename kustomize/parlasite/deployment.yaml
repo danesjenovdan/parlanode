@@ -26,3 +26,12 @@ spec:
             limits:
               memory: 100Mi
               cpu: 100m
+          env:
+            - name: PARLASITE_LEADER_ID
+              value: "4434"
+            - name: PARLASITE_ROOT_ORG_ID
+              value: "137"
+            - name: PARLASITE_MANDATE_ID
+              value: "2"
+            - name: PARLASITE_DEFAULT_CARD_DATE
+              value: ""
