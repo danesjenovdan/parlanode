@@ -97,6 +97,11 @@ export default {
     speeches() {
       return this.speechesPerPage[this.page - 1] || [];
     },
+    searchUrl() {
+      const url = new URL(this.cardData.url);
+      url.searchParams.set('page', this.page);
+      return url.toString();
+    },
   },
   mounted() {
     document.body.style.overflowAnchor = 'none';
@@ -113,30 +118,26 @@ export default {
       this.scrollToTop();
       if (!this.speechesPerPage[newPage - 1]) {
         this.fetching = true;
-        axios
-          .get(
-            `${this.$root.$options.contextData.urls.data}/cards/${this.cardName}/?id=${this.cardData.id}&page=${newPage}`
-          )
-          .then((response) => {
-            const responsePage = response?.data?.page || 1;
-            this.page = responsePage;
-            this.speechesPerPage[responsePage - 1] = response?.data?.results;
-            this.fetching = false;
+        axios.get(this.searchUrl).then((response) => {
+          const responsePage = response?.data?.page || 1;
+          this.page = responsePage;
+          this.speechesPerPage[responsePage - 1] = response?.data?.results;
+          this.fetching = false;
 
-            // needed if dynamically loaded to reset the css :target and scroll to selected element
-            this.$nextTick(() => {
-              const target = document.getElementById(
-                window.location.hash.slice(1)
-              );
-              if (target) {
-                const tmp = window.location.hash;
-                window.location.hash = '';
-                window.location.hash = tmp;
-              } else {
-                this.scrollToTop();
-              }
-            });
+          // needed if dynamically loaded to reset the css :target and scroll to selected element
+          this.$nextTick(() => {
+            const target = document.getElementById(
+              window.location.hash.slice(1)
+            );
+            if (target) {
+              const tmp = window.location.hash;
+              window.location.hash = '';
+              window.location.hash = tmp;
+            } else {
+              this.scrollToTop();
+            }
           });
+        });
       }
     },
     scrollToTop() {
