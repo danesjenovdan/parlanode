@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const _ = require('lodash');
 const fetch = require('node-fetch');
-const { urls, locale, mandateId } = require('../config');
+const { urls, locale } = require('../config');
 
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
@@ -44,7 +44,6 @@ async function fetchCard(cardPath, id, params = {}) {
 
   params.template = 'site';
   params.locale = locale;
-  params.mandate_id = mandateId;
 
   const cardUrl = `${urls.cards}${cardPath}${stringifyParams(params)}`;
 
