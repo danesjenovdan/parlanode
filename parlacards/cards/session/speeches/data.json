@@ -1,6 +1,6 @@
 {
   "id": 437,
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/session/speeches/?id=437",
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/session/speeches/?id=437&mandate_id=1",
   "data": {
     "results": [
       {
@@ -241,7 +241,7 @@
     "session": {
       "name": "29. redna seja",
       "id": 437,
-      "start_time": "2022-01-31T00:00:00",
+      "start_time": "2022-01-31T12:00:00",
       "end_time": null,
       "organizations": [
         {
