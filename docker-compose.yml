@@ -38,6 +38,11 @@ services:
       dockerfile: dockerfiles/parlasite-dev.Dockerfile
     ports:
       - 3066:3066
+    environment:
+      - PARLASITE_LEADER_ID=1
+      - PARLASITE_ROOT_ORG_ID=1
+      - PARLASITE_MANDATE_ID=1
+      - PARLASITE_DEFAULT_CARD_DATE=
     volumes:
       - ./parlasite/config/:/app/config
       - ./parlasite/i18n/:/app/i18n
