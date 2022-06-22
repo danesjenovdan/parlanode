@@ -67,6 +67,7 @@ const analysesIDs = [
   {
     id: 'intra_disunion',
     precision: 2,
+    unit: 'percent',
   },
   {
     id: 'vocabulary_size',
