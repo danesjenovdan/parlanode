@@ -158,7 +158,7 @@
     "speeches": "Govori",
     "data_published": "objavljeni podaci",
     "in_review": "u pregledu",
-    "vote-result--enacted": "Donesen",
+    "vote-result--enacted": "Usvojen",
     "vote-result--submitted": "Dostavljeno radi informiranja",
     "vote-result--rejected": "Odbijen",
     "vote-result--retracted": "Povučen",
@@ -171,7 +171,8 @@
     "transcripts": "Stenogrami",
     "tools_intro": "Demokracija je kontinuirani proces koji ovisi o našem sudjelovanju u njemu. Pomoći će sljedeći alati!",
     "page-not-found-text": "Ovdje nema ništa. Šta tražiš?",
-    "info_email": "info@zastone.ba"
+    "info_email": "info@zastone.ba",
+    "unaffiliated": "samostalni/a"
   },
   "social": {
     "facebook": "https://www.facebook.com/javnarasprava",
@@ -191,6 +192,8 @@
     "ups": ":("
   },
   "legislation": {
-    "decree": "O"
+    "act": "A",
+    "decree": "O",
+    "law": "Z"
   }
 }
