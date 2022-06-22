@@ -104,6 +104,7 @@ const analysesIDs = [
   },
   {
     id: 'mismatch_of_pg',
+    unit: 'percent',
   },
   {
     id: 'working_bodies',
