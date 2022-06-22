@@ -370,7 +370,10 @@ export default {
             image: this.getPersonPortrait(member),
             imageStyle: { border: this.getPersonBorder(member) },
           },
-          { link: this.getPersonLink(member), text: member.name },
+          {
+            link: this.getPersonLink(member),
+            text: this.getPersonName(member),
+          },
           {
             text: (member.results?.working_bodies || [])
               .map((wb) => wb.name)
@@ -392,7 +395,10 @@ export default {
             image: this.getPersonPortrait(member),
             imageStyle: { border: this.getPersonBorder(member) },
           },
-          { link: this.getPersonLink(member), text: member.name },
+          {
+            link: this.getPersonLink(member),
+            text: this.getPersonName(member),
+          },
           {
             barchart: true,
             value: formattedScore,
