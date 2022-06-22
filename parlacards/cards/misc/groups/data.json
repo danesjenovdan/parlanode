@@ -1,6 +1,6 @@
 {
-  "id": 1,
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/misc/groups/?id=1",
+  "id": 137,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/misc/groups/?id=137",
   "data": {
     "results": [
       {
@@ -9,28 +9,14 @@
         "slug": "2-slovenska-demokratska-stranka",
         "color": "#679BBB",
         "classification": "pg",
+        "is_in_coalition": false,
         "results": {
-          "seat_count": 28,
-          "intra_disunion": 10.1195245809708,
+          "seat_count": 27,
+          "intra_disunion": 23.0555555555555,
           "number_of_amendments": null,
-          "vocabulary_size": 3.1773752859528e-5,
-          "number_of_questions": 1316.0,
-          "vote_attendance": 93.417555013565
-        }
-      },
-      {
-        "name": "Lista Marjana Šarca",
-        "acronym": "LMŠ",
-        "slug": "3-lista-marjana-sarca",
-        "color": "#514E67",
-        "classification": "pg",
-        "results": {
-          "seat_count": 14,
-          "intra_disunion": 8.7809551654652,
-          "number_of_amendments": null,
-          "vocabulary_size": 5.39485021954738e-5,
-          "number_of_questions": 556.0,
-          "vote_attendance": 93.6276614553078
+          "vocabulary_size": 0.000272373762589161,
+          "number_of_questions": 12.0,
+          "vote_attendance": 80.462962962963
         }
       },
       {
@@ -39,28 +25,14 @@
         "slug": "4-socialni-demokrati",
         "color": "#B3422E",
         "classification": "pg",
+        "is_in_coalition": true,
         "results": {
-          "seat_count": 13,
-          "intra_disunion": 17.8353871397052,
+          "seat_count": 7,
+          "intra_disunion": 2.08333333333333,
           "number_of_amendments": null,
-          "vocabulary_size": 8.99496681830132e-5,
-          "number_of_questions": 1530.0,
-          "vote_attendance": 86.1856839967749
-        }
-      },
-      {
-        "name": "Stranka modernega centra",
-        "acronym": "SMC",
-        "slug": "5-stranka-modernega-centra",
-        "color": "#09a2cc",
-        "classification": "pg",
-        "results": {
-          "seat_count": 5,
-          "intra_disunion": 6.83982560353356,
-          "number_of_amendments": null,
-          "vocabulary_size": 0.000133099291735641,
-          "number_of_questions": 182.0,
-          "vote_attendance": 95.2716752554019
+          "vocabulary_size": 0.00183964603437146,
+          "number_of_questions": 0.0,
+          "vote_attendance": 100.0
         }
       },
       {
@@ -69,109 +41,68 @@
         "slug": "6-levica",
         "color": "#FFAFA1",
         "classification": "pg",
+        "is_in_coalition": true,
         "results": {
           "seat_count": 5,
-          "intra_disunion": 15.0586942567751,
+          "intra_disunion": 3.0,
           "number_of_amendments": null,
-          "vocabulary_size": 5.57728149760898e-5,
-          "number_of_questions": 970.0,
-          "vote_attendance": 88.0688857685636
+          "vocabulary_size": 0.00184115702073895,
+          "number_of_questions": 0.0,
+          "vote_attendance": 96.9230769230769
         }
       },
       {
         "name": "Nova Slovenija - Krščanski demokrati",
         "acronym": "NSi",
         "slug": "7-nova-slovenija-krscanski-demokrati",
-        "color": "#31A8B1",
+        "color": "#8E7A86",
         "classification": "pg",
+        "is_in_coalition": false,
         "results": {
-          "seat_count": 7,
-          "intra_disunion": 8.37086719540448,
+          "seat_count": 8,
+          "intra_disunion": 43.75,
           "number_of_amendments": null,
-          "vocabulary_size": 0.000185049588228836,
-          "number_of_questions": 270.0,
-          "vote_attendance": 91.9526866501542
-        }
-      },
-      {
-        "name": "Stranka Alenke Bratušek",
-        "acronym": "SAB",
-        "slug": "8-stranka-alenke-bratusek",
-        "color": "#C9736A",
-        "classification": "pg",
-        "results": {
-          "seat_count": 7,
-          "intra_disunion": 20.7602238976468,
-          "number_of_amendments": null,
-          "vocabulary_size": 0.00015561027194447,
-          "number_of_questions": 306.0,
-          "vote_attendance": 79.8548463677677
-        }
-      },
-      {
-        "name": "Demokratična stranka upokojencev Slovenije",
-        "acronym": "DeSUS",
-        "slug": "9-demokraticna-stranka-upokojencev-slovenije",
-        "color": "#61B485",
-        "classification": "pg",
-        "results": {
-          "seat_count": 4,
-          "intra_disunion": 13.492117888965,
-          "number_of_amendments": null,
-          "vocabulary_size": 0.000271603831979857,
-          "number_of_questions": 44.0,
-          "vote_attendance": 91.3183279742765
+          "vocabulary_size": 0.0020611614787819,
+          "number_of_questions": 0.0,
+          "vote_attendance": 57.1875
         }
       },
       {
         "name": "Italijanska in madžarska narodna skupnost",
         "acronym": "IMNS",
         "slug": "10-italijanska-in-madzarska-narodna-skupnost",
-        "color": "#8E7A86",
-        "classification": "pg",
-        "results": {
-          "seat_count": 2,
-          "intra_disunion": 14.5990404386566,
-          "number_of_amendments": null,
-          "vocabulary_size": 0.00521775690095106,
-          "number_of_questions": 2.0,
-          "vote_attendance": 90.4900616860864
-        }
-      },
-      {
-        "name": "Slovenska nacionalna stranka",
-        "acronym": "SNS",
-        "slug": "11-slovenska-nacionalna-stranka",
-        "color": "#002F42",
-        "classification": "pg",
-        "results": {
-          "seat_count": 3,
-          "intra_disunion": 17.7832990632854,
-          "number_of_amendments": null,
-          "vocabulary_size": 0.000750637095055008,
-          "number_of_questions": 1120.0,
-          "vote_attendance": 83.0157415078708
-        }
-      },
-      {
-        "name": "Poslanska skupina nepovezanih poslancev",
-        "acronym": "NeP",
-        "slug": "90-poslanska-skupina-nepovezanih-poslancev",
         "color": "#C3CB2C",
         "classification": "pg",
+        "is_in_coalition": false,
         "results": {
-          "seat_count": 3,
-          "intra_disunion": 25.2041942604857,
+          "seat_count": 2,
+          "intra_disunion": 28.75,
           "number_of_amendments": null,
-          "vocabulary_size": 0.000287335523945115,
-          "number_of_questions": 25.0,
-          "vote_attendance": 83.0550232685464
+          "vocabulary_size": 0.0402915838303512,
+          "number_of_questions": 0.0,
+          "vote_attendance": 58.75
+        }
+      },
+      {
+        "name": "Svoboda",
+        "acronym": "Svoboda",
+        "slug": "138-svoboda",
+        "color": "#002F42",
+        "classification": "pg",
+        "is_in_coalition": true,
+        "results": {
+          "seat_count": 40,
+          "intra_disunion": 5.85334584115072,
+          "number_of_amendments": null,
+          "vocabulary_size": 0.000538836586349609,
+          "number_of_questions": 0.0,
+          "vote_attendance": 96.8045112781955
         }
       }
     ],
     "mandate": {
-      "description": "VIII",
-      "beginning": null
+      "description": "IX",
+      "beginning": "2022-05-13T00:00:01"
     }
   }
 }
