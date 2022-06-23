@@ -41,6 +41,7 @@ services:
     environment:
       - PARLASITE_LEADER_ID=1
       - PARLASITE_ROOT_ORG_ID=1
+      - PARLASITE_ROOT_ORG_ID2=1
       - PARLASITE_MANDATE_ID=1
       - PARLASITE_DEFAULT_CARD_DATE=
     volumes:
