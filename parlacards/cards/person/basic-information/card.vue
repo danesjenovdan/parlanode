@@ -138,7 +138,6 @@
 </template>
 
 <script>
-import { parseISO, differenceInCalendarYears } from 'date-fns';
 import common from '@/_mixins/common.js';
 import { personOverviewContextUrl } from '@/_mixins/contextUrls.js';
 import { personTitle } from '@/_mixins/titles.js';
