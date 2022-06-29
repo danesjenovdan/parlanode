@@ -153,7 +153,7 @@ function i18n(lang) {
 
 function getOgImageUrl(type, params = {}) {
   const url = `${urls.metaImages}/${type}`;
-  const query = stringifyParams({ theme: locale, ...params, cache: 1 });
+  const query = stringifyParams({ theme: locale, ...params, cache: 2 });
   return `${url}${query}`;
 }
 
