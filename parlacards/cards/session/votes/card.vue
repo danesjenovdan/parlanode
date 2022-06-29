@@ -24,7 +24,7 @@
           class="votes-list-shadow has-filters"
           @scroll="$refs.shadow.check($event.currentTarget)"
         >
-          <empty-state v-if="!votes.length" />
+          <empty-state v-if="!votes.length && !card.isLoading" />
           <template v-else>
             <vote-list-item
               v-for="vote in votes"
