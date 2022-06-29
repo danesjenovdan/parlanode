@@ -76,7 +76,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div v-if="age" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-starost" aria-hidden="true"></span>
         </div>
@@ -145,6 +145,7 @@ import { personTitle } from '@/_mixins/titles.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
+import age from '@/_helpers/age.js';
 
 export default {
   name: 'CardPersonBasicInformation',
@@ -168,10 +169,7 @@ export default {
   },
   computed: {
     age() {
-      return differenceInCalendarYears(
-        new Date(),
-        parseISO(this.results.date_of_birth)
-      );
+      return age(this.results.date_of_birth);
     },
     electedToDistrictKey() {
       let suffix = '';
