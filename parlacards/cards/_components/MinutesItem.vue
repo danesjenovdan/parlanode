@@ -201,6 +201,11 @@ export default {
   ol {
     font-size: 1em;
   }
+
+  p:first-child,
+  ul:first-child {
+    margin-top: 20px;
+  }
 }
 
 .links {
