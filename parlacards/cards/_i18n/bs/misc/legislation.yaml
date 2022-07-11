@@ -1,11 +1,10 @@
 card:
   title: Popis zakona
   info: >-
-    # Popis svih zakona i akata o kojima su u jednom sazivu glasali na
-    sjednicama Hrvatskog sabora, a koje odgovaraju korisničkom izboru (naslov,
-    matično radno tijelo).
+    # Popis svih zakona i akata o kojima se glasalo na sjednici Parlamenta BiH u
+    aktuelnom sazivu.
 
 
-    Podaci o sjednicama preuzeti su s web stranica Hrvatskog sabora.
+    Podaci su preuzeti sa stranice Parlament BiH.
     [Zakoni](http://parlament.ba/oLaw/GetOLawsByStatus?SearchTerm=&MandateId=6)
     [Akti](http://parlament.ba/act/Read?categoryId=8)
