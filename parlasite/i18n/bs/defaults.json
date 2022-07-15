@@ -1,14 +1,14 @@
 {
   "landing": {
     "title": "Parlametar",
-    "lead": "Parlametar je alat, koji pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje Parlamenta Bosne i Hercegovine.",
+    "lead": "Parlametar BiH je alat koji pomoću analize glasanja i transkripata govora zastupnika/ca olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine.",
     "search": {
       "part_one": "Traži",
       "part_two": "zakone, glasanja, zastupnice, klubove ili zastupničke govore"
     }
   },
   "about": {
-    "lead": "Parlametar je alat, koji pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje Parlamenta Bosne i Hercegovine.",
+    "lead": "Parlametar BiH je alat koji pomoću analize glasanja i transkripata govora zastupnika/ca olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine.",
     "afterlead": "Upotrebom user-friendly dizajna i korištenjem tehnološki naprednih modularnih rješenja povećava se transparentnost najvažnije zakonodavne institucije i omogućava učinkovit uvid u proces donošenja odluka.",
     "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
     "columns": {
