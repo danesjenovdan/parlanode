@@ -62,7 +62,7 @@
                 </div>
                 <div
                   :style="{ width: votePercentages['did not vote'] + '%' }"
-                  class="progress-bar ney"
+                  class="progress-bar none"
                 >
                   <span class="sr-only"
                     >{{ votePercentages['did not vote'] }}% did not vote</span
@@ -121,7 +121,7 @@
                 >
                   {{ voteNumbers['did not vote'] }}
                   <div v-t="'vote-did-not-vote-plural'" class="type"></div>
-                  <div class="indicator ney">&nbsp;</div>
+                  <div class="indicator none">&nbsp;</div>
                 </div>
               </div>
             </div>
