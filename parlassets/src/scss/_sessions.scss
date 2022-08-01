@@ -526,6 +526,16 @@
     .indicator.not {
       background: $button-absent;
     }
+    .progress.smallbar .none,
+    .indicator.none {
+      background: repeating-linear-gradient(
+        45deg,
+        #8a8a8a,
+        #8a8a8a 3px,
+        #c8c8c8 3px,
+        #c8c8c8 6px,
+      );
+    }
   }
   a {
     color: inherit;
