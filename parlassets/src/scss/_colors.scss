@@ -92,20 +92,23 @@ $vote-colors: (
   'against': $button-against,
   'absent': $button-absent,
   'abstain': $button-abstained,
+  'did-not-vote': #8a8a8a
 );
 
 $proper-vote-colors: (
   'for': $button-for,
   'against': $button-against,
   'absent': $button-absent,
-  'abstain': $button-abstained
+  'abstain': $button-abstained,
+  'did-not-vote': #8a8a8a
 );
 
 $option-colors: (
   'for': $button-for,
   'against': $button-against,
   'absent': $button-absent,
-  'abstain': $button-abstained
+  'abstain': $button-abstained,
+  'did-not-vote': #8a8a8a
 );
 
 // hover colors TODO
@@ -123,14 +126,16 @@ $option-colors-hover: (
   'for': $button-for-hover,
   'against': $button-against-hover,
   'absent': $button-absent-hover,
-  'abstain': $button-abstained-hover
+  'abstain': $button-abstained-hover,
+  'did-not-vote': #c8c8c8
 );
 
 $proper-vote-colors-hover: (
   'for': $button-for-hover,
   'against': $button-against-hover,
   'absent': $button-absent-hover,
-  'abstain': $button-abstained-hover
+  'abstain': $button-abstained-hover,
+  'did-not-vote': #c8c8c8
 );
 
 $binary-vote-colors: (
