@@ -1,0 +1,163 @@
+{
+    "id": "3385",
+    "url": "https://parladata.lb.djnd.si/v3/cards/session/votes/?id=3791",
+    "data": {
+      "results": [
+          {
+              "all_votes": {
+                  "for": 15,
+                  "against": 0,
+                  "abstain": 0,
+                  "absent": 0,
+                  "did not vote": 3
+              },
+              "passed": true,
+              "id": 192,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Člani občinskega sveta so sprejeli dnevni red",
+              "timestamp": "2020-09-24T17:15:00"
+          },
+          {
+              "all_votes": {
+                  "for": 13,
+                  "against": 0,
+                  "abstain": 0,
+                  "absent": 3,
+                  "did not vote": 2
+              },
+              "passed": true,
+              "id": 193,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Potrdi se Zapisnik 13. redne seje Občinskega sveta Občine Hrastnik, z dne 1.7.2020, Zapisnik 6. korespondenčne seje Občinskega sveta, izvedene v dneh od 10.8.2020 do 13.8.2020 in pregled realizacije sklepov sprejetih na 13. redni seji Občinskega sveta občine Hrastnik, z dne 1.7.2020",
+              "timestamp": "2020-09-24T17:15:00"
+          },
+          {
+              "all_votes": {
+                  "for": 13,
+                  "against": 1,
+                  "abstain": 0,
+                  "absent": 3,
+                  "did not vote": 0
+              },
+              "passed": true,
+              "id": 194,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Občinski svet občine Hrastnik se je seznanil z vsebinama Koncesijske pogodbe za rabo vode za proizvodnjo električne energije na delih vodnega telesa reke Save od Ježice do Suhadola in Sporazuma o ureditvi načina izvajanja koncesije za rabo vode za proizvodnjo električne energije na delih vodnega telesa reke Save od Ježice do Suhadola, ki ju je pripravilo Ministrstvo za okolje in prostor. Občinski svet Občine Hrastnik na navedena dokumenta nima pripomb in se strinja s podpisom oz. pooblašča župana Marka Funkla za podpis Sporazuma o ureditvi načina izvajanja koncesije za rabo vode za proizvodnjo električne energije na delih vodnega telesa reke Save od Ježice do Suhadola",
+              "timestamp": "2020-09-24T17:25:00"
+          },
+          {
+              "all_votes": {
+                  "for": 13,
+                  "against": 0,
+                  "abstain": 0,
+                  "absent": 3,
+                  "did not vote": 2
+              },
+              "passed": true,
+              "id": 195,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Občinski svet Občine Hrastnik:\r\n- je obravnaval predlog Odloka o občinskem podrobnem prostorskem načrtu Spremembe in dopolnitve ureditvenega načrta območja Steklarne Hrastnik (faza dopolnjeni osnutek) v prvi obravnavi in ga potrdil kot primerno osnovo za nadaljevanje postopka sprejetja OPPN\r\n- je potrdil stališče do pripomb podanih v času javne razgrnitve",
+              "timestamp": "2020-09-24T17:55:00"
+          },
+          {
+              "all_votes": {
+                  "for": 14,
+                  "against": 0,
+                  "abstain": 0,
+                  "absent": 3,
+                  "did not vote": 1
+              },
+              "passed": true,
+              "id": 198,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Občinski svet Občine Hrastnik  sprejme 2. Rebalans proračuna Občine Hrastnik za leto 2020 z Odlokom o 2. Rebalansu proračuna Občine Hrastnik za leto 2020",
+              "timestamp": "2020-09-24T17:55:00"
+          },
+          {
+              "all_votes": {
+                  "for": 9,
+                  "against": 2,
+                  "abstain": 0,
+                  "absent": 3,
+                  "did not vote": 4
+              },
+              "passed": null,
+              "id": 196,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "1. Občinski svet Občine Hrastnik je sprejel sklep o Odloku o ustanovitvi Razvojnega sveta Zasavske regije, v predloženi vsebini\r\n2. Občinski svet Občine Hrastnik je sprejel Sklep o imenovanju predstavnikov občine v Razvojni svet Zasavske regije, v predloženi vsebini",
+              "timestamp": "2020-09-24T18:10:00"
+          },
+          {
+              "all_votes": {
+                  "for": 14,
+                  "against": 0,
+                  "abstain": 0,
+                  "absent": 3,
+                  "did not vote": 1
+              },
+              "passed": true,
+              "id": 199,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Občinski svet občine Hrastnik ugotavlja, da z dnem 30. 9. 2020 preneha mandat naslednjim članom sveta Krajevne skupnosti Steklarna: \r\n- Adalbert Zaletel, Grajska pot 11, 1430 Hrastnik\r\n- Matej Kaiser, Podkraj 75, 1430 Hrastnik\r\n- Maruša Špeglič, Za Savo 16, 1430 Hrastnik \r\n- Nina Pečnik, Gore 10 a, 1431 Dol pri Hrastniku",
+              "timestamp": "2020-09-24T18:10:00"
+          },
+          {
+              "all_votes": {
+                  "for": 13,
+                  "against": 0,
+                  "abstain": 0,
+                  "absent": 3,
+                  "did not vote": 2
+              },
+              "passed": true,
+              "id": 200,
+              "is_outlier": false,
+              "has_outliers": false,
+              "has_named_votes": true,
+              "title": "Občinski svet Občine Hrastnik, daje soglasje k razrešitvi Tjaše Polc z mesta v.d. direktorice javnega zavoda Regionalna razvojna agencija Zasavje\r\nObčinski svet Občine Hrastnik, daje soglasje k imenovanju Janija Medveška za direktorja javnega zavoda Regionalna razvojna agencija Zasavje  za obdobje 4 let",
+              "timestamp": "2020-09-24T18:10:00"
+          }
+      ],
+      "mandate": {
+          "description": "Občinski svet Občina Hrastnik 2018 - 2022",
+          "beginning": "2018-12-12T17:00:00"
+      },
+      "session": {
+          "name": "14. redna seja Občinskega sveta Občine Hrastnik",
+          "id": 14,
+          "start_time": "2020-09-24T17:15:00",
+          "end_time": null,
+          "organizations": [
+              {
+                  "name": "Občinski svet Hrastnik",
+                  "acronym": null,
+                  "slug": "6-obcinski-svet-hrastnik",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+              }
+          ],
+          "classification": "regular",
+          "in_review": false
+      },
+      "count": 8,
+      "pages": 1,
+      "page": 1,
+      "per_page": 10
+  }
+  }
+  
