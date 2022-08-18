@@ -114,7 +114,7 @@ export default {
         axios
           .post('https://podpri.lb.djnd.si/api/subscribe/', {
             email: this.inputEmail,
-            segment: this.segmentId,
+            segment_id: this.segmentId,
           })
           .then(() => {
             this.isLoading = false;
