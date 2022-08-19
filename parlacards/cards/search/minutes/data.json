@@ -1,0 +1,63 @@
+{
+  "url": "https://parladata.lb.djnd.si/v3/cards/search/minutes/?id=1&text=hvala",
+  "data": {
+    "results": [
+      {
+        "id": 28631,
+        "name": "1. Potrditev zapisnika 20. seje Mestnega sveta Mestne občine Ljubljana",
+        "order": 1,
+        "content": "# Sample <em>Markdown</em> content\r\n\r\nsome text here some text here some text here some _text here some text here_ some text here some text _**here some text here**_ some text here some text here some text here some text here \r\n\r\n- one\r\n- two\r\n- three\r\n\r\n----\r\n\r\n\r\n\r\n> quote me\r\n\r\n\r\n\r\n```\r\nsome text here some **text here some** text here some text here some text here some text here some text here some text here some text here some text here some text here \r\n```",
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      },
+      {
+        "id": 286312,
+        "name": "1. Potrditev zapisnika 20. seje Mestnega sveta Mestne občine Ljubljana",
+        "order": 1,
+        "content": "# Sample Markdown content\r\n\r\nsome text here some text here some text here some _text here some text here_ some text here some text _**here some text here**_ some text here some text here some text here some text here \r\n\r\n- one\r\n- two\r\n- three\r\n\r\n----\r\n\r\n\r\n\r\n> quote me\r\n\r\n\r\n\r\n```\r\nsome text here some **text here some** text here some text here some text here some text here some text here some text here some text here some text here some text here \r\n```",
+        "session": {
+          "name": "26. seja Mestnega sveta MOL",
+          "id": 3385,
+          "start_time": "2021-10-18T15:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Mestni svet MOL",
+              "acronym": null,
+              "slug": "1-mestni-svet-mol",
+              "color": "#09A2CC",
+              "classification": "root"
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true
+        }
+      }
+    ],
+    "mandate": {
+      "description": "MOL mandat ta naš, kaj je že",
+      "beginning": "2018-12-17T12:00:00"
+    },
+    "count": 2298,
+    "pages": 230,
+    "page": 1,
+    "per_page": 10
+  }
+}
