@@ -10,7 +10,7 @@ import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import NewsletterSignup from '@/_components/NewsletterSignup.vue';
 
 export default {
-  name: 'CardMiscNewsletterSignup',
+  name: 'CardMiscNewsletterSignupBanner',
   components: {
     TransparentWrapper,
     NewsletterSignup,

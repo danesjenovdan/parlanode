@@ -6,7 +6,7 @@
 import SearchMinutes from '@/_components/SearchMinutes.vue';
 
 export default {
-  name: 'CardSearchSpeeches',
+  name: 'CardSearchMinutes',
   components: {
     SearchMinutes,
   },
