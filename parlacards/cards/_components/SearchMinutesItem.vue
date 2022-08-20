@@ -14,7 +14,7 @@
       <a
         :href="getSessionAgendaLink(agendaItem, agendaItem.session)"
         class="funblue-light-hover"
-        v-html="agendaItem.content"
+        v-html="agendaItem.text"
       ></a>
       <!-- eslint-enable vue/no-v-html -->
     </div>
