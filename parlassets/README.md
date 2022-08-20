@@ -1,4 +1,27 @@
 # parlassets
-Assets for frontend for Parlameter
 
-Run `npm install` to install dependencies and compile sass to css.
+Static assets for Parlameter frontend
+
+---
+
+## Developing with docker-compose
+
+See [../README.md](../README.md)
+
+---
+
+## Local development
+
+### Install dependencies
+
+```sh
+yarn
+```
+
+### Build and serve files
+
+Running this command build the css and watch scss files for changes while serving the static files on `http://localhost:8080/` by default.
+
+```sh
+yarn dev
+```

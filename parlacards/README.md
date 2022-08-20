@@ -2,22 +2,15 @@
 
 Embedable cards for Parlameter.
 
-**TODO: Rename repo to parlacards**
+---
+
+## Developing with docker-compose
+
+See [../README.md](../README.md)
 
 ---
 
-# Card development
-
-### Download project
-
-Clone the git repository and run:
-
-```sh
-git config submodule.parlassets.branch ljubljana
-```
-```sh
-git submodule update --init --recursive --remote
-```
+## Local card development
 
 ### Install dependencies
 
@@ -25,7 +18,7 @@ git submodule update --init --recursive --remote
 yarn
 ```
 
-### Run dev server
+### Run card dev server
 
 To develop cards run this command. It will run the card dev server on `http://localhost:3000/` by default.
 
@@ -33,22 +26,33 @@ To develop cards run this command. It will run the card dev server on `http://lo
 yarn dev
 ```
 
-To develop the server that serves the server-side rendered cards run this command. It will run the server on `http://localhost:7004/` by default. Note that you need to have built the cards with `yarn build` at least once before.
+### Run parlassets
+
+The dev server will expect parlassets to be served from port 8080.
+
+In another terminal open run this command to build and serve the static files required.
+
+```sh
+cd ../parlassets && yarn dev
+```
+
+---
+
+## Working on the SSR server
+
+_Note that you need to have built the cards at least once before with `yarn build`_
+
+To work on the server that serves the server-side rendered cards run this command. It will run the server on `http://localhost:3000/` by default.
 
 ```sh
 yarn start:watch
 ```
 
-### See also:
-
-- [Configuring environment](./docs/configuring-local-env.md)
-- [Developing with a local version of `parlassets`](./docs/developing-parlassets.md)
-- [More on how cards work](./docs/how-cards-work.md)
 
 
 ---
 
-# Build and run production server
+## Build and run production server
 
 ### Install dependencies
 
@@ -74,3 +78,9 @@ This runs the production server that will render and serve built cards.
 ```sh
 yarn start
 ```
+
+---
+
+## See also:
+
+- [More on how cards work](./docs/how-cards-work.md)
