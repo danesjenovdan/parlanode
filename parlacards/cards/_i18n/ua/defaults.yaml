@@ -402,3 +402,9 @@ organization-classifications:
 legislation-classifications:
   act: Act
   decree: Decree
+newsletter-signup-title: Sign up to our newsletter!
+newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter, sign up to our newsletter, sign up to our newsletter.
+newsletter-signup-input-placeholder: Email
+newsletter-signup-checkbox-text: Some GDPR consent text
+newsletter-signup-button-text: SIGN UP
+newsletter-signup-unsubscribe-button-text: Unsubscribe me!
