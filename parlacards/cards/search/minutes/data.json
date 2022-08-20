@@ -1,0 +1,285 @@
+{
+  "url": "https://parladata-lendava.lb.djnd.si/v3/cards/search/minutes/?text=Potrditev&id=2",
+  "data": {
+    "results": [
+      {
+        "id": 331,
+        "name": "1. Volitve in imenovanja",
+        "order": 329,
+        "text": "[...] pa določa, da sta funkciji župana in poslanca nezdružljivi. Zato mu mandat župana po samem zakonu preneha z dnem <em>potrditve</em>",
+        "session": {
+          "name": "2. izredna seja občinskega sveta Občine Lendava",
+          "id": 46,
+          "start_time": "2022-05-12T15:00:00",
+          "end_time": "2022-05-12T15:50:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "irregular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": false
+        }
+      },
+      {
+        "id": 305,
+        "name": "0. Potrditev zapisnika 19. redne seje občinskega sveta Občine Lendava",
+        "order": 303,
+        "text": "[...] predlagal, da se pred določitvijo dnevnega reda odloči o <em>potrditvi</em> zapisnika in sprejetih sklepov prejšnjih sej sveta in sicer: 19. redne seje ter 17.  in 18. korespondenčne seje, kar je v skladu s prvim odstavkom 34. in v povezavi s 50. [...]",
+        "session": {
+          "name": "20. Redna seja občinskega sveta Očine Lendava (15.12.2021)",
+          "id": 39,
+          "start_time": "2021-12-15T15:30:00",
+          "end_time": "2021-12-15T18:30:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": false
+        }
+      },
+      {
+        "id": 306,
+        "name": "0.1. Potrditev zapisnika 17. dopisne seje občinske sveta Občine Lendava",
+        "order": 304,
+        "text": "K osnutku zapisnika 17. korespondenčne seje z dne 22. 11. 2021  ni bilo podanih pripomb. \r\n\r\nPredsedujoči je predlagal glasovanje o <em>potrditvi</em>  zapisnika 17. korespondenčne seje z dne 22. 11. 2021.\r\n\r\nPrisotnih je bilo 16 članov občinskega [...]",
+        "session": {
+          "name": "20. Redna seja občinskega sveta Očine Lendava (15.12.2021)",
+          "id": 39,
+          "start_time": "2021-12-15T15:30:00",
+          "end_time": "2021-12-15T18:30:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": false
+        }
+      },
+      {
+        "id": 307,
+        "name": "0.2. Potrditev zapisnika 18. dopisne seje",
+        "order": 305,
+        "text": "K osnutku zapisnika 18. korespondenčne seje z dne 3.  12. 2021  ni bilo podanih pripomb. \r\n\r\nPredsedujoči je predlagal glasovanje o <em>potrditvi</em>  zapisnika 18. korespondenčne seje z dne 3. 12. 2021.\r\n\r\nPrisotnih je bilo 16 članov občinskega [...]",
+        "session": {
+          "name": "20. Redna seja občinskega sveta Očine Lendava (15.12.2021)",
+          "id": 39,
+          "start_time": "2021-12-15T15:30:00",
+          "end_time": "2021-12-15T18:30:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": false
+        }
+      },
+      {
+        "id": 309,
+        "name": "2. Predlog izbire izvajalca javne službe socialnovarstvene storitve pomoč družini na domu na območju občine Lendava in soglasje k njegovi ceni",
+        "order": 307,
+        "text": "[...] neposredne pogodbe posredovati  občinskemu svetu v <em>potrditev</em>.\r\n\r\nObrazložitev  postopka  po objavljeni nameri o sklenitvi neposredne pogodbe za izvajanje javne službe socialnovarstvene storitve pomoč družini na domu na območju občine [...]",
+        "session": {
+          "name": "20. Redna seja občinskega sveta Očine Lendava (15.12.2021)",
+          "id": 39,
+          "start_time": "2021-12-15T15:30:00",
+          "end_time": "2021-12-15T18:30:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": false
+        }
+      },
+      {
+        "id": 318,
+        "name": "7. Predlog programa opravljanja gospodarske javne službe rednega vzdrževanja cest v ob-čini Lendava za obdobje od  1. 1. 2022 do  31.12.2022",
+        "order": 316,
+        "text": "[...] sredstva in ga posreduje pristojnemu organu občine v <em>potrditev</em>.\r\n\r\nProgram je v vlogi izvajalca predstavil Jožef Gerenčer.\r\n\r\nPodal je strukturo rednega vzdrževanja cest, ki vsebuje pregledniško službo,  redno vzdrževanje prometnih površin, [...]",
+        "session": {
+          "name": "20. Redna seja občinskega sveta Očine Lendava (15.12.2021)",
+          "id": 39,
+          "start_time": "2021-12-15T15:30:00",
+          "end_time": "2021-12-15T18:30:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": false
+        }
+      },
+      {
+        "id": 254,
+        "name": "4. Predlog  programa gospodarske javne službe za daljinsko ogrevanje za leto 2022 ter poročilo o poslovanju in izvajanju te gospodarske javne službe za leto 2020",
+        "order": 103,
+        "text": "[...] leto, ter ga predložiti pristojnemu organu koncendenta v <em>potrditev</em>. Prav tako je koncesionar dolžan pripraviti poročilo o poslovanju in izvajanju gospodarske javne službe za preteklo leto.\r\n\r\nObrazložitev programa za leto 2022 je podal dr. [...]",
+        "session": {
+          "name": "19. Redna seja občinskega sveta Občine Lendava (13.10.2021)",
+          "id": 36,
+          "start_time": "2021-10-13T15:30:00",
+          "end_time": "2021-10-13T17:05:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": true
+        }
+      },
+      {
+        "id": 302,
+        "name": "0. Potrditev zapisnika 18. redne seje občinskega sveta Občine Lendava",
+        "order": 300,
+        "text": "[...] podanih  pripomb.  \r\n\r\nPredsedujoči predlaga glasovanje o  <em>potrditvi</em> zapisnika 18. redne seje z dne 14. 7. 2021.  \r\n\r\nPrisotnih je bilo 11 članov občinskega sveta.  \r\n\r\nGlasuje 11 članov občinskega sveta.\r\n\r\nSoglasno je   bil sprejet [...]",
+        "session": {
+          "name": "19. Redna seja občinskega sveta Občine Lendava (13.10.2021)",
+          "id": 36,
+          "start_time": "2021-10-13T15:30:00",
+          "end_time": "2021-10-13T17:05:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": true
+        }
+      },
+      {
+        "id": 303,
+        "name": "0.1. Potrditev zapisnika 16. dopisne seje občinskega sveta Občine Lendava",
+        "order": 301,
+        "text": "K osnutku zapisnika 16. korespondenčne seje z dne 11. 8. 2021  ni bilo podanih pripomb. \r\n\r\nPredsedujoči je predlagal glasovanje o <em>potrditvi</em>  zapisnika 16. korespondenčne seje z dne 11. 8. 2021.\r\n\r\nPrisotnih je bilo 11 članov občinskega [...]",
+        "session": {
+          "name": "19. Redna seja občinskega sveta Občine Lendava (13.10.2021)",
+          "id": 36,
+          "start_time": "2021-10-13T15:30:00",
+          "end_time": "2021-10-13T17:05:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": true
+        }
+      },
+      {
+        "id": 261,
+        "name": "0. Potrditev zapisnika 18. Redne seje",
+        "order": 259,
+        "text": "[...] podal nekaj informacij o poteku seje in sicer: \r\n\r\nPo <em>potrditvi</em> dveh zapisnikov sej, to je 18. redne seje in 16. korespondenčne seje ter po pregledu sprejetih sklepov teh sej bo pri 2. točki dnevnega reda v drugem branju obravnavan Predlog [...]",
+        "session": {
+          "name": "19. Redna seja občinskega sveta Občine Lendava (13.10.2021)",
+          "id": 36,
+          "start_time": "2021-10-13T15:30:00",
+          "end_time": "2021-10-13T17:05:00",
+          "organizations": [
+            {
+              "name": "Občinski svet Občine  Lendava",
+              "acronym": null,
+              "slug": "1-obcinski-svet-obcine-lendava",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": false,
+          "has_minutes": true,
+          "has_legislation": true
+        }
+      }
+    ],
+    "mandate": {
+      "description": "Občinski svet Občine Lendava 2018 - 2022",
+      "beginning": "2018-12-14T15:00:00"
+    },
+    "count": 68,
+    "pages": 7,
+    "page": 1,
+    "per_page": 10
+  }
+}
