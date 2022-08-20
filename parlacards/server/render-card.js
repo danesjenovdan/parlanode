@@ -118,7 +118,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   const cardMessages = localeData[cardName] ?? {};
 
   let cardData = {};
-  if (cardName !== 'misc/error') {
+  if (cardName !== 'misc/error' && !state.no_card_data) {
     const dataUrl = getCardDataUrl(cardName, id, date, state);
     cardData = await fetchCardData(dataUrl, id, date);
 
