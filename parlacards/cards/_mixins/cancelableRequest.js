@@ -1,4 +1,6 @@
-import axios, { CancelToken } from 'axios';
+import axios from 'axios';
+
+const { CancelToken } = axios;
 
 export default {
   data() {
