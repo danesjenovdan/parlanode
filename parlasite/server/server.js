@@ -28,6 +28,7 @@ function setupExpress() {
     app.locals.sm = i18n.siteMap;
     app.locals.rootOrgId = config.rootOrgId;
     app.locals.mandateId = config.mandateId;
+    app.locals.newsletterSegmentId = config.newsletterSegmentId;
 
     // i18n middleware
     app.use('*', (req, res, next) => {
