@@ -32,7 +32,12 @@
             :placeholder="$t('newsletter-signup-input-placeholder')"
             required
           />
-          <button v-if="type === 'banner'" type="submit" class="signup-button">
+          <button
+            v-if="type === 'banner'"
+            type="submit"
+            class="signup-button"
+            :disabled="isLoading || !segmentId"
+          >
             {{ $t('newsletter-signup-button-text') }}
           </button>
         </div>
@@ -53,7 +58,7 @@
           <button
             type="submit"
             class="signup-button"
-            :disabled="!gdprChecked || !inputEmail || isLoading || !segmentId"
+            :disabled="isLoading || !segmentId"
           >
             {{ $t('newsletter-signup-button-text') }}
           </button>
