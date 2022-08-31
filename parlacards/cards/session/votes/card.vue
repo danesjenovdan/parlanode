@@ -55,7 +55,7 @@ import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
 import EmptyState from '@/_components/EmptyState.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 
 export default {
   name: 'CardSessionVotes',

@@ -66,7 +66,7 @@ const getChunkAssets = (chunkName, seenChunks = new Set()) => {
 };
 
 const getClientAssets = (cardName) => {
-  return getChunkAssets(`\u0000virtual:${cardName}`);
+  return getChunkAssets(`virtual:${cardName}`);
 };
 
 const renderAssets = (cardName, modules, mountId) => {

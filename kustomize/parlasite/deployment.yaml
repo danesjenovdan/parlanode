@@ -35,3 +35,5 @@ spec:
               value: "2"
             - name: PARLASITE_DEFAULT_CARD_DATE
               value: ""
+            - name: PARLASITE_NEWSLETTER_SEGMENT_ID
+              value: ""
