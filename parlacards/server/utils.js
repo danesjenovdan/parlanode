@@ -26,14 +26,14 @@ const createError = (statusCode, error, message, code) => {
 const loadCardModule = async (cardName) => {
   let module;
   try {
-    module = await import(`../dist/server/${cardName}.cjs`);
+    module = await import(`../dist/server/${cardName}.js`);
   } catch (error) {
     if (error.code !== 'ERR_MODULE_NOT_FOUND') {
       throw error;
     }
   }
   return {
-    render: module?.default?.default,
+    render: module?.default,
   };
 };
 
