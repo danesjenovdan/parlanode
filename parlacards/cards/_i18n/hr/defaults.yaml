@@ -468,9 +468,9 @@ organization-classifications:
 legislation-classifications:
   act: Act
   decree: Decree
-newsletter-signup-title: Sign up to our newsletter!
-newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter, sign up to our newsletter, sign up to our newsletter.
+newsletter-signup-title: Registracija za Parlametar bilten!
+newsletter-signup-description: Želite li primati podatke o radu Sabora pravovremeno i pregledno, predbilježite se na Parlametar bilten i stizat će vam svaki tjedan.
 newsletter-signup-input-placeholder: Email
-newsletter-signup-checkbox-text: Some GDPR consent text
-newsletter-signup-button-text: SIGN UP
-newsletter-signup-unsubscribe-button-text: Unsubscribe me!
+newsletter-signup-checkbox-text: Vaši podaci čuvaju se dok traje potreba za njihovim korištenjem u skladu sa svrhom za koju je dana privola. Ukoliko s nama podijelite vašu e-mail adresu za potrebe slanja biltena, ona se čuva dok god Gong nudi uslugu slanja biltena, osim u slučaju otkazivanja pretplate – u tom slučaju vaša adresa se uklanja iz baze. Vašim podacima mogu pristupiti isključivo osobe zaposlene u Gongu ovlaštene za pristup podacima, a za svrhe za koje postoji privola korisnika (dakle, za koje ste dali svoje eksplicitno dopuštenje). Zaposlenike Gonga na zaštitu Vaših podataka obvezuje Pravilnik o radu i Pravilnik o zaštiti podataka koji je usuglašen s Općom uredbom o zaštiti podataka.
+newsletter-signup-button-text: Registracija
+newsletter-signup-unsubscribe-button-text: Prestanak registracije!

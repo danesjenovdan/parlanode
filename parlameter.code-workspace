@@ -18,7 +18,8 @@
     "recommendations": [
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
-      "octref.vetur"
+      "vue.volar",
+      "DigitalBrainstem.javascript-ejs-support"
     ]
   },
   "settings": {
