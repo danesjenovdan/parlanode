@@ -52,9 +52,8 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         input: inputs,
         output: {
-          inlineDynamicImports: false,
-          entryFileNames: isSSR ? '[name].cjs' : '[name].[hash].js',
-          chunkFileNames: isSSR ? '[name].cjs' : '[name].[hash].js',
+          entryFileNames: isSSR ? '[name].js' : '[name].[hash].js',
+          chunkFileNames: isSSR ? '[name].js' : '[name].[hash].js',
         },
       },
     },
