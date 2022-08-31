@@ -44,6 +44,7 @@ services:
       - PARLASITE_ROOT_ORG_ID2=1
       - PARLASITE_MANDATE_ID=1
       - PARLASITE_DEFAULT_CARD_DATE=
+      - PARLASITE_NEWSLETTER_SEGMENT_ID=
     volumes:
       - ./parlasite/config/:/app/config
       - ./parlasite/i18n/:/app/i18n

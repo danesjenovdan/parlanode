@@ -246,7 +246,7 @@ export default {
 
     .form-element-checkbox {
       position: relative;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
 
       .checkbox {
         position: absolute;
@@ -257,6 +257,14 @@ export default {
         display: inline;
         width: 1px;
         height: 1px;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        min-height: 22px;
+        font-size: 11px;
+        line-height: 1.1;
       }
     }
   }
