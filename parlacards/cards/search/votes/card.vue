@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { groupBy } from 'lodash';
+import { groupBy } from 'lodash-es';
 import axios from 'axios';
 import common from '@/_mixins/common.js';
 import { searchContextUrl } from '@/_mixins/contextUrls.js';

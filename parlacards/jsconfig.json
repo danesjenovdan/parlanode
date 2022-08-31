@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./cards/*"]
-    }
+    },
+    "jsx": "preserve"
   },
   "exclude": ["node_modules", "dist"]
 }
