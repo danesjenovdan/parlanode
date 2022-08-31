@@ -15,6 +15,7 @@ const config = {
   rootOrgId: process.env.PARLASITE_ROOT_ORG_ID,
   mandateId: process.env.PARLASITE_MANDATE_ID,
   defaultCardDate: process.env.PARLASITE_DEFAULT_CARD_DATE,
+  newsletterSegmentId: process.env.PARLASITE_NEWSLETTER_SEGMENT_ID,
 };
 
 if (!config.leaderId || !config.rootOrgId || !config.mandateId) {
