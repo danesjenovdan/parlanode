@@ -187,6 +187,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     'container-class': contextData.template.frameContainerClass,
     'embed-class': contextData.template.embedContainerClass,
     'context-url': contextData.template.contextUrl,
+    'context-text': defaultMessages?.frame?.['show-in-context'],
     'og-image': contextData.template.ogImage,
     'ssr-outlet': outputHtml,
     'debug-data-url': cardData.url,

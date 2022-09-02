@@ -299,7 +299,7 @@ tools:
   compass: Parlamentarni kompas
   word-groups: Skupine besed
 frame:
-  show-in-context: Pokaži kartico v kontekstu spletnega mesta parlameter.si
+  show-in-context: Oglej si kartico v kontekstu spletnega mesta
 ogText: >-
   Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša
   spremljanje dela v Državnem zboru.
