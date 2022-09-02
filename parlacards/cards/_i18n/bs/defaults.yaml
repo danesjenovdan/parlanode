@@ -267,7 +267,7 @@ tools:
   compass: Parlamentarni kompas
   word-groups: Grupe riječi
 frame:
-  show-in-context: Pokaži karticu u kontekstu web stranice parlameter.javnarasprava.ba
+  show-in-context: Povratak na Parlametar BiH
 ogText: >-
   Parlameter je alat koji, pomoću analize glasanja i stenograma zastupničkih
   nastupa, olakšava praćenje rada Parlamenta BiH.
