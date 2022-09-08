@@ -63,8 +63,11 @@
             {{ $t('newsletter-signup-button-text') }}
           </button>
         </div>
-        <div v-if="isLoading" class="loader-container">
-          <div class="nalagalnik"></div>
+        <div v-if="isLoading || success" class="loader-container">
+          <div v-if="isLoading" class="nalagalnik"></div>
+          <div v-else-if="success" class="success">
+            {{ $t('newsletter-signup-success-text') }}
+          </div>
         </div>
       </form>
     </template>
@@ -99,6 +102,7 @@ export default {
       //
       showUnsubscribe: false,
       isLoading: false,
+      success: false,
     };
   },
   mounted() {
@@ -112,6 +116,7 @@ export default {
       this.token = null;
       this.showUnsubscribe = false;
       this.isLoading = false;
+      this.success = false;
     },
     onSubmit() {
       if (this.gdprChecked && this.inputEmail) {
@@ -120,6 +125,11 @@ export default {
           .post('https://podpri.lb.djnd.si/api/subscribe/', {
             email: this.inputEmail,
             segment_id: this.segmentId,
+          })
+          .then((response) => {
+            if (response.data?.msg === 'mail sent') {
+              this.success = true;
+            }
           })
           .then(() => {
             this.isLoading = false;
@@ -205,10 +215,18 @@ export default {
     display: flex;
     justify-content: center;
     align-content: center;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.75);
 
     .nalagalnik {
       height: 100%;
+    }
+
+    .success {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
     }
   }
 
