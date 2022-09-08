@@ -57,10 +57,13 @@ export default {
   .person-container {
     flex: 2;
     display: flex;
+    padding: 0 7px;
+
     @include respond-to(mobile) {
       flex-grow: 1;
       flex-shrink: 0;
       flex-basis: 100%;
+      padding: 0 4px;
     }
 
     .name {
@@ -68,32 +71,34 @@ export default {
       font-size: 14px;
       font-weight: 300;
       padding-right: 10p;
-      margin: 0 5px 0 15px;
       flex: 1;
       align-self: center;
+
       a {
-        text-decoration: none;
+        padding: 0.15em 0.3em;
+        margin: 0 -0.3em;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
       }
     }
   }
 
   .speech {
     flex: 4;
-    margin-right: 20px;
-    padding-right: 5px;
+    padding: 0 7px;
 
     @include respond-to(mobile) {
-      padding-top: 10px;
+      padding: 10px 4px 0;
     }
 
     a {
       color: $font-default;
-      margin: 0;
       font-size: 14px;
       line-height: 20px;
       font-weight: 300;
       font-family: 'Roboto Slab', serif;
       padding: 0.15em 0.3em;
+      margin: 0 -0.3em;
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
     }
