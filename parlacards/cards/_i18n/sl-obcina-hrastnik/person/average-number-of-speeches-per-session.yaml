@@ -5,7 +5,7 @@ card:
 
 
     Preštejemo govore svetnika_ce, ki jih najdemo v transkriptih,
-    pridobljenih s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/),
+    pridobljenih s spletnega mesta [Občine Hrastnik](https://www.hrastnik.si/),
     in število delimo s številom sej, na katerih je bil_a svetnik_ca
     prisoten_na. Število vseh govorov delimo najprej s številom svetnikov,
     potem pa še s številom vseh sej (na katerih se je govorilo). Individualni
