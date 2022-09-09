@@ -11,27 +11,27 @@
           <div class="col-md-12 filters">
             <search-field
               v-model="textFilter"
-              @update:modelValue="searchPeople"
+              @update:model-value="searchPeople"
             />
             <p-search-dropdown
               v-model="groups"
               :placeholder="partiesPlaceholder"
               class="filter parties"
-              @update:modelValue="searchPeopleImmediate"
+              @update:model-value="searchPeopleImmediate"
             />
             <p-search-dropdown
               v-if="showWorkingBodiesFilter"
               v-model="workingBodies"
               :placeholder="workingBodyPlaceholder"
               class="filter working-bodies"
-              @update:modelValue="searchPeopleImmediate"
+              @update:model-value="searchPeopleImmediate"
             />
             <p-search-dropdown
               v-if="showDistrictsFilter"
               v-model="districts"
               :placeholder="districtsPlaceholder"
               class="filter districts"
-              @update:modelValue="searchPeopleImmediate"
+              @update:model-value="searchPeopleImmediate"
             />
             <div v-if="showGendersFilter" class="genders filter">
               <striped-button
@@ -294,6 +294,13 @@ export default {
             label: this.$t('party'),
             additionalClass: 'optional no-sort',
           });
+        if (this.showDistrictsFilter) {
+          filters.push({
+            id: 'district',
+            label: this.$t('district'),
+            additionalClass: 'optional no-sort',
+          });
+        }
         return filters;
       }
       if (this.currentAnalysis === 'working_bodies') {
@@ -359,7 +366,11 @@ export default {
               });
             }
           }
-
+          if (this.showDistrictsFilter) {
+            items.push(
+              (member.results?.districts || []).map((d) => d.name).join(', ')
+            );
+          }
           return items;
         });
       }
