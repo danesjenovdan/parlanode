@@ -15,6 +15,7 @@ $(function() {
     $('.menu-search').removeClass('hidden');
     $('.open-search').addClass('hidden');
     $('.close-search').removeClass('hidden');
+    $('.menu-search .search-dropdown-input').focus();
   });
   $('.close-search').on('click', function() {
     $('.menu').removeClass('hidden');
