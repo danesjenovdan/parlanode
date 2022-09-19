@@ -152,6 +152,8 @@ voted-abstain--plural: Abstained from voting on
 voted-absent--f: Was absent at
 voted-absent--m: Was absent at
 voted-absent--plural: Didn't vote on
+voted-did-not-vote--f: Did not vote
+voted-did-not-vote--m: Did not vote
 sort-by: Order by
 sort-by--inequality: Discord
 sort-by--date: Date
@@ -229,6 +231,8 @@ event:
   ballot--absent--f: Was ABSENT at {title}
   ballot--abstain--m: ABSTAINED from voting on {title}
   ballot--abstain--f: ABSTAINED from voting on {title}
+  ballot--did-not-vote--m: "DID NOT VOTE"
+  ballot--did-not-vote--f: "DID NOT VOTE"
   speech--m: Spoke at {session} {org}
   speech--f: Spoke at {session} {org}
 months:

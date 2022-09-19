@@ -100,6 +100,8 @@ export default {
             return 'parlaicon-ni';
           case 'abstain':
             return 'parlaicon-kvorum';
+          case 'did not vote':
+            return 'parlaicon-brez-glasu';
           default:
             return '';
         }
@@ -125,7 +127,8 @@ export default {
           gender = this.authors[0].preferred_pronoun === 'she' ? 'f' : 'm';
         }
         if (this.event.type === 'ballot') {
-          return `event.ballot--${this.event.option}--${gender}`;
+          const formattedBallotOptionName = this.event.option.replaceAll(' ', '-');
+          return `event.ballot--${formattedBallotOptionName}--${gender}`;
         }
         if (this.event.type === 'speech') {
           return `event.speech--${gender}`;

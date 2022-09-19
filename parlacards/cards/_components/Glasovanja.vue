@@ -130,6 +130,15 @@ export default {
             : this.$t('vote-absent-plural'),
         selected: voteFilters.includes('absent'),
       },
+      {
+        id: 'did not vote',
+        color: 'did-not-vote',
+        label:
+          this.type === 'person'
+            ? this.$t('vote-did-not-vote')
+            : this.$t('vote-did-not-vote-plural'),
+        selected: voteFilters.includes('did not vote'),
+      },
     ];
 
     return {
@@ -164,7 +173,7 @@ export default {
         .filter((ballot) => ballot.option != null) // api returns null if nobody from this group voted
         .map((ballot) => ({
           ...ballot,
-          label: this.$t(`voted-${ballot.option}--${form}`),
+          label: this.$t(`voted-${ballot.option.replaceAll(' ', '-')}--${form}`),
         }));
 
       return groupBy(ballots, (ballot) => {
