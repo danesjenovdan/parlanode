@@ -147,7 +147,7 @@ vote-abstain--f: Vzdržana
 vote-abstain-plural: Vzdržani
 vote-absent: Odsoten
 vote-absent-plural: Odsotni
-vote-did-not-vote: Ni glasoval
+vote-did-not-vote: Brez glasu
 vote-did-not-vote-plural: Brez glasu
 vote-no-majority: Ni večinskega glasu
 voted-for--f: ZA
@@ -162,8 +162,8 @@ voted-abstain--plural: Vzdržani
 voted-absent--f: Odsotna
 voted-absent--m: Odsoten
 voted-absent--plural: Odsotni
-voted-did-not-vote--f: Ni glasovala
-voted-did-not-vote--m: Ni glasoval
+voted-did-not-vote--f: Brez glasu
+voted-did-not-vote--m: Brez glasu
 voted-did-not-vote--plural: Brez glasu
 anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Razvrsti po
@@ -258,6 +258,8 @@ event:
   ballot--absent--f: Ni bila prisotna na glasovanju o {title}
   ballot--abstain--m: VZDRŽAL se je glasovanja o {title}
   ballot--abstain--f: VZDRŽALA se je glasovanja o {title}
+  ballot--did-not-vote--m: "BREZ GLASU"
+  ballot--did-not-vote--f: "BREZ GLASU"
   speech--m: Govoril na {session} {org}
   speech--f: Govorila na {session} {org}
 months:
