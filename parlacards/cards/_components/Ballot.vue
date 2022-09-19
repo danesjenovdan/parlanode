@@ -1,7 +1,7 @@
 <template>
   <a :href="getVoteLink(ballot.vote)" class="ballot">
     <div class="disunion">
-      <div :class="['icon', ballot.option]"></div>
+      <div :class="['icon', ballot.option.replaceAll(' ', '-')]"></div>
       <div class="text">
         {{ ballot.label }}
       </div>
@@ -219,6 +219,9 @@ export default {
     }
     &.abstain {
       background-image: url('#{get-parlassets-url()}/icons/g_vzdrzan_v2.svg');
+    }
+    &.did-not-vote {
+      background-image: url('#{get-parlassets-url()}/icons/brez-glasu.svg');
     }
   }
 
