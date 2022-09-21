@@ -4,7 +4,10 @@
       <div class="filters">
         <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
-          <search-field v-model="textFilter" @update:modelValue="searchVotes" />
+          <search-field
+            v-model="textFilter"
+            @update:model-value="searchVotes"
+          />
         </div>
         <div class="filter" style="flex: 1"></div>
         <div v-if="type === 'person'" class="filter buttons-filter">
@@ -38,12 +41,17 @@
               {{ formatDate(dayBallots[0].vote?.timestamp) }},
               {{ formatSessionInfo(dayBallots[0].vote?.session) }}
             </div>
-            <ballot
-              v-for="ballot in dayBallots"
-              :key="ballot.vote.id"
-              :ballot="ballot"
-              type="person"
-            />
+            <template v-for="(ballot, i) in dayBallots">
+              <ballot
+                v-if="ballot.vote"
+                :key="ballot.vote.id"
+                :ballot="ballot"
+                type="person"
+              />
+              <div v-else :key="`invalid-${i}`">
+                Invalid ballot (no `vote` property)
+              </div>
+            </template>
           </template>
         </div>
         <div v-if="card.isLoading" class="nalagalnik__wrapper">
@@ -171,10 +179,13 @@ export default {
 
       const ballots = this.ballots
         .filter((ballot) => ballot.option != null) // api returns null if nobody from this group voted
-        .map((ballot) => ({
-          ...ballot,
-          label: this.$t(`voted-${ballot.option.replaceAll(' ', '-')}--${form}`),
-        }));
+        .map((ballot) => {
+          const optionLabel = (ballot.option || '').replace(/\s+/g, '-');
+          return {
+            ...ballot,
+            label: this.$t(`voted-${optionLabel}--${form}`),
+          };
+        });
 
       return groupBy(ballots, (ballot) => {
         const dateTime = ballot.vote?.timestamp || '';
