@@ -179,12 +179,13 @@ export default {
 
       const ballots = this.ballots
         .filter((ballot) => ballot.option != null) // api returns null if nobody from this group voted
-        .map((ballot) => ({
-          ...ballot,
-          label: this.$t(
-            `voted-${ballot.option.replaceAll(' ', '-')}--${form}`
-          ),
-        }));
+        .map((ballot) => {
+          const optionLabel = (ballot.option || '').replace(/\s+/g, '-');
+          return {
+            ...ballot,
+            label: this.$t(`voted-${optionLabel}--${form}`),
+          };
+        });
 
       return groupBy(ballots, (ballot) => {
         const dateTime = ballot.vote?.timestamp || '';
