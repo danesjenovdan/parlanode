@@ -56,9 +56,9 @@
     <div class="col-md-12">
       <%- await fetchCard('/search/votes/', mandateId, { text: query }) %>
     </div>
-    <!-- <div class="col-md-12">
-      <%# await fetchCard('/search/usage-through-time/', mandateId, { text: query, people: mps, groups: pgs }) %>
-    </div> -->
+    <div class="col-md-12">
+      <%- await fetchCard('/search/usage-through-time-in-agenda-items/', mandateId, { text: query, people: mps, groups: pgs }) %>
+    </div>
     <!-- <div class="col-md-6">
       <%# await fetchCard('/search/most-used-by-people/', mandateId, { text: query, people: mps, groups: pgs }) %>
     </div> -->
