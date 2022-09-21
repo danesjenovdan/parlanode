@@ -42,7 +42,7 @@ export default {
         // ogImages.js in the specific card.
         ogImage: `${rootOptions.contextData.urls.cdn}/img/OG.png`,
       };
-    } else {
+    } else if (import.meta.env.DEV) {
       // eslint-disable-next-line no-console
       console.error(
         'Common mixin included more than once!',
