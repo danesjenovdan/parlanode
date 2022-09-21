@@ -127,8 +127,8 @@ export default {
           gender = this.authors[0].preferred_pronoun === 'she' ? 'f' : 'm';
         }
         if (this.event.type === 'ballot') {
-          const formattedBallotOptionName = this.event.option.replaceAll(' ', '-');
-          return `event.ballot--${formattedBallotOptionName}--${gender}`;
+          const optionLabel = (this.event.option || '').replace(/\s+/g, '-');
+          return `event.ballot--${optionLabel}--${gender}`;
         }
         if (this.event.type === 'speech') {
           return `event.speech--${gender}`;
