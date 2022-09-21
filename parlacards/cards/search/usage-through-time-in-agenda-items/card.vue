@@ -23,7 +23,7 @@ import TimeChart from '@/_components/TimeChart.vue';
 import TimeBarChart from '@/_components/TimeBarChart.vue';
 
 export default {
-  name: 'CardSearchUsageThroughTime',
+  name: 'CardSearchUsageThroughTimeInAgendaItems',
   components: {
     PTabs,
     PTab,
