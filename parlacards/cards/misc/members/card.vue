@@ -292,7 +292,7 @@ export default {
           filters.push({
             id: 'group',
             label: this.$t('party'),
-            additionalClass: 'optional no-sort',
+            additionalClass: 'optional',
           });
         if (this.showDistrictsFilter) {
           filters.push({
