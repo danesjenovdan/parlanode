@@ -1,8 +1,7 @@
 card:
-  title: Zadnjih 30 dni aktivnosti
+  title: Zadnje aktivnosti
   info: >-
-    # Povezave do vseh glasovanj in govorov te osebe, ki so se zgodili v zadnjih tridesetih
-    dneh.
+    # Povezave do vseh glasovanj, govorov, vprašanj in pobud te osebe, razvrščenih po datumu od najnovejših do najstarejših.
 
 
     Podatke pridobivamo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).
