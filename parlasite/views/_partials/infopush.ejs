@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-md-12" id="infopush">
+    <div class="infopush__container">
+      <div class="infopush__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="18.3 5 62.4 84.6" fill="currentColor"><path d="M75.4 39.2H36V16s1.7-6 14.1-6 14.2 6.2 14.2 6.2v7.6s.1 1 2.3 1c2.1 0 2.4-1 2.4-1V13.2S67 5 50.1 5c-16.6 0-18.8 8-18.8 8v26.2h-7s-6-.1-6 6.6V83s.1 6.6 6.4 6.6h49.8s6.2-.4 6.2-7.3V46.2s-.3-7-5.3-7zM53.6 72.5s-1.5 1.6-4.1 1.6c-2 0-3.3-1-3.8-1.3-.6-.4-2.5-2.4-2.5-5s1.7-4.4 1.7-4.4v-10s.8-1.9 4.6-1.9 4.6 2 4.6 2v10s1.7 1 1.7 4.3c0 3.1-2.2 4.7-2.2 4.7z"/><path d="M79.2 27.3c-.1.7-.8 1-1.5 1l-5-1.6c-.6-.2-1.1-.6-1-1.2.2-.7.8-.8 1.5-.7l5.1 1c.7.2 1 .8 1 1.5zM74.6 34c-.6.4-1.3.2-1.7-.4L70.5 29c-.4-.6-.5-1.2.1-1.5.6-.4 1.1 0 1.5.5l3 4.3c.3.6.1 1.4-.5 1.7zm3.7-14.8c-.3-.6-1.1-.7-1.7-.4l-4.3 3c-.6.3-1 .8-.6 1.4.4.6 1 .6 1.6.2l4.6-2.5c.6-.3.8-1 .4-1.7z"/></svg>
+      </div>
+      <div class="infopush__content">
+        <p class="lead">Rezultati istraživanja Regionalni index otvorenosti.</p>
+        <p class="lead">Hrvatski sabor među najslabijima u regiji.</p>
+        <!-- <h2>Rezultati istraživanja Regionalni index otvorenosti.</h2> -->
+        <!-- <h2>Hrvatski sabor među najslabijima u regiji.</h2> -->
+      </div>
+      <div class="infopush__cta">
+        <a href="https://gong.hr/2021/09/28/hrvatski-sabor-po-pitanju-otvorenosti-zaostaje-za-parlamentima-u-regiji/" target="_blank" class="btn">Istraživanje</a>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #infopush {
+    margin-top: 35px;
+  }
+
+  #infopush .infopush__container {
+    display: flex;
+    align-items: center;
+    padding: 35px 55px;
+    border: 2px solid #c8c8c8;
+    background-color: #f0f0f0;
+    background-image: linear-gradient(to left, rgba(242, 183, 184, 0.4) 0%, rgba(240, 240, 240, 0.4) 75%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #infopush .infopush__icon {
+    width: 50px;
+    flex-basis: 50px;
+    flex-shrink: 0;
+    color: #ff5555;
+    margin-right: 40px;
+  }
+
+  #infopush .infopush__icon svg {
+    transform: rotate(10deg);
+  }
+
+  #infopush .infopush__content {
+    margin-right: 40px;
+    flex: 1;
+  }
+
+  #infopush .infopush__content h2,
+  #infopush .infopush__content p {
+    margin: 0;
+  }
+
+  #infopush .infopush__content p {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  #infopush .infopush__content h2 {
+    font-weight: 500;
+  }
+
+  #infopush .infopush__cta a {
+    padding: 8px 16px;
+    border: 2px solid #ea5658;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ea5658;
+  }
+
+  @media (max-width: 767px) {
+    #infopush .infopush__container {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 25px 25px;
+    }
+
+    #infopush .infopush__icon {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    #infopush .infopush__content {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+</style>
