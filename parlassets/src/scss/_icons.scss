@@ -103,6 +103,9 @@
     bottom: -5px;
     background-image: url($cdn_home_icon + 'omrezja.svg');
 }
+.parlaicon-unknown {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/question-mark.svg'), '#197197', '#{map-get($proper-vote-colors-hover, against)}')));
+}
 
 $vote-results: (
     'enacted': $icon-accepted,

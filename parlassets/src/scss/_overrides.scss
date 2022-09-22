@@ -6,3 +6,21 @@
     opacity: 0;
   }
 }
+
+[id^="s_seznam-sej"] .session-list {
+  .item .column,
+  .headers .column {
+    flex: 1 !important;
+
+    &:not(:first-child) {
+      text-align: center;
+    }
+  }
+}
+
+[id^="s_zakonodaja-iskanje"],
+[id^="c_zakonodaja"] {
+  .legislation-list a {
+    color: $third;
+  }
+}
