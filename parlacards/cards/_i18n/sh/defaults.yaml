@@ -18,26 +18,26 @@ back: Nazaj
 confirm_trigger: Nastavi opomnik
 add_new_trigger: Dodaj nov opomnik
 steps:
-  - textfirst: >-
-      Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
-      obvestimo.
-    textsecond: >-
-      Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
-      teles, ti to sporočimo po e-pošti.
-  - textfirst: Izberi način ujemanja
-    firstbullet: 'natančno ujemanje:'
-    secondbullet: 'široko ujemanje:'
-  - textfirst: Kako pogosto naj ti pišemo?
-    textsecond: ob dogodku
-    textthird: največ enkrat na dan
-    textfourth: največ enkrat na teden
-  - textfirst: Samo še tvoj e-naslov
-  - textfirst: Zabeleženo!
-    textsecond: Na e-naslov
-    textthird: si vklopil/-a obvestila za iskalni niz
-    textfourth: >-
-      Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
-      mejlu.
+- textfirst: >-
+    Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
+    obvestimo.
+  textsecond: >-
+    Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
+    teles, ti to sporočimo po e-pošti.
+- textfirst: Izberi način ujemanja
+  firstbullet: 'natančno ujemanje:'
+  secondbullet: 'široko ujemanje:'
+- textfirst: Kako pogosto naj ti pišemo?
+  textsecond: ob dogodku
+  textthird: največ enkrat na dan
+  textfourth: največ enkrat na teden
+- textfirst: Samo še tvoj e-naslov
+- textfirst: Zabeleženo!
+  textsecond: Na e-naslov
+  textthird: si vklopil/-a obvestila za iskalni niz
+  textfourth: >-
+    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+    mejlu.
 events:
   event: ob dogodku
   day: največ enkrat na dan
@@ -236,18 +236,18 @@ event:
   speech--m: Govoril na {session} {org}
   speech--f: Govorila na {session} {org}
 months:
-  - januar
-  - februar
-  - marec
-  - april
-  - maj
-  - junij
-  - julij
-  - avgust
-  - september
-  - oktober
-  - november
-  - december
+- januar
+- februar
+- marec
+- april
+- maj
+- junij
+- julij
+- avgust
+- september
+- oktober
+- november
+- december
 vote_types:
   agenda: dnevni red
   whole_law: glasovanje o zakonu v celoti
@@ -334,7 +334,8 @@ analysis-texts:
   mismatch_of_pg:
     label: Neujemanje s poslansko skupino
     titleSuffix: ' po neujemanju s poslansko skupino'
-    explanation: Odstopanje od večinskega glasu poslanske skupine na glasovanjih v DZ.
+    explanation: Odstopanje od večinskega glasu poslanske skupine na glasovanjih v
+      DZ.
 all-votes: vsa glasovanja
 all-working-bodies: vsa matična delovna telesa
 everyone: Vsi
@@ -472,8 +473,9 @@ legislation-classifications:
   act: Act
   decree: Decree
 newsletter-signup-title: Sign up to our newsletter!
-newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter, sign up to our newsletter, sign up to our newsletter.
-newsletter-signup-input-placeholder: EMAILPLACEHOLDER2
+newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter,
+  sign up to our newsletter, sign up to our newsletter.
+newsletter-signup-input-placeholder: Email
 newsletter-signup-checkbox-text: Some GDPR consent text
 newsletter-signup-button-text: SIGN UP
 newsletter-signup-unsubscribe-button-text: Unsubscribe me!
