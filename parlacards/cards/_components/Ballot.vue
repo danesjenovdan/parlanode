@@ -1,7 +1,7 @@
 <template>
   <a :href="getVoteLink(ballot.vote)" class="ballot">
     <div class="disunion">
-      <div :class="['icon', optionClass(ballot)]"></div>
+      <div :class="['icon', optionClass]"></div>
       <div class="text">
         {{ ballot.label }}
       </div>
@@ -53,8 +53,8 @@ export default {
       }
       return glyphClass;
     },
-    optionClass(ballot) {
-      return (ballot.option || '').replace(/\s+/g, '-');
+    optionClass() {
+      return (this.ballot.option || '').replace(/\s+/g, '-');
     },
   },
 };
