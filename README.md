@@ -1,5 +1,20 @@
 # Parlameter frontend
 
+## Notes on translations
+
+Integration with our weblate instance for translations is enabled on this repo.
+
+The base language for translations is `en`.
+
+The following components are added:
+- parlasite - `defaults.json`, `sitemap.json`
+- parlacards - `defaults.yaml`
+- parlacards - card specific `.yaml` files are automatically picked up when pushed to the `dev` branch
+
+## Adding new translation files or keys
+
+**When adding new translation keys/files only add them for `en`. Weblate will create a PR when translations for other languages are created.**
+
 ## Developing with docker-compose
 
 ```sh
