@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-12" id="infopush">
+    <div class="infopush__container">
+      <div class="infopush__icon">
+        <img src="<%- config.urls.cdn %>/icons/broken-page.svg" />
+      </div>
+      <div class="infopush__content">
+        <p>
+          Zvanična internet-stranica Parlamentarne skupštine Bosne i Hercegovine
+          je u kvaru.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #infopush {
+    margin-top: 35px;
+  }
+
+  #infopush .infopush__container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 35px 40px;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  }
+
+  #infopush .infopush__icon {
+    flex-basis: 75px;
+    flex-shrink: 0;
+  }
+
+  #infopush .infopush__icon svg,
+  #infopush .infopush__icon img {
+    width: 100%;
+    height: 100%;
+    max-height: 62px;
+    display: block;
+  }
+
+  #infopush .infopush__content {
+    flex: 1;
+  }
+
+  #infopush .infopush__content p {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    font-size: 21px;
+    font-weight: 300;
+  }
+
+  @media (max-width: 500px) {
+    #infopush .infopush__container {
+      flex-direction: column;
+      gap: 25px;
+      padding: 25px 25px;
+    }
+
+    #infopush .infopush__icon {
+      flex-basis: 62px;
+    }
+
+    #infopush .infopush__content {
+      text-align: center;
+    }
+
+    #infopush .infopush__content p {
+      font-size: 16px;
+    }
+  }
+</style>
