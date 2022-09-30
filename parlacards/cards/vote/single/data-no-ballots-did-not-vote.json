@@ -1,0 +1,53 @@
+{
+  "url": "https://parladata.lb.djnd.si/v3/cards/vote/single/?id=9166",
+  "data": {
+    "results": {
+        "all_votes": {
+            "for": 13,
+            "against": 1,
+            "abstain": 0,
+            "absent": 3,
+            "did not vote": 1
+        },
+        "government_sides": [],
+        "abstract_visible": false,
+        "session": {
+            "name": "14. redna seja Občinskega sveta Občine Hrastnik",
+            "id": 14,
+            "start_time": "2020-09-24T17:15:00",
+            "end_time": null,
+            "organizations": [
+                {
+                    "name": "Občinski svet Hrastnik",
+                    "acronym": null,
+                    "slug": "6-obcinski-svet-hrastnik",
+                    "color": "#09A2CC",
+                    "classification": "root",
+                    "is_in_coalition": false
+                }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": false,
+            "has_minutes": true,
+            "has_legislation": true
+        },
+        "result": {
+            "max_option_percentage": 72.22222222222221,
+            "max_option": "for",
+            "passed": true
+        },
+        "members": [],
+        "groups": [],
+        "id": 194,
+        "agenda_items": null,
+        "documents": [],
+        "title": "Občinski svet občine Hrastnik se je seznanil z vsebinama Koncesijske pogodbe za rabo vode za proizvodnjo električne energije na delih vodnega telesa reke Save od Ježice do Suhadola in Sporazuma o ureditvi načina izvajanja koncesije za rabo vode za proizvodnjo električne energije na delih vodnega telesa reke Save od Ježice do Suhadola, ki ju je pripravilo Ministrstvo za okolje in prostor. Občinski svet Občine Hrastnik na navedena dokumenta nima pripomb in se strinja s podpisom oz. pooblašča župana Marka Funkla za podpis Sporazuma o ureditvi načina izvajanja koncesije za rabo vode za proizvodnjo električne energije na delih vodnega telesa reke Save od Ježice do Suhadola",
+        "legislation": null
+    },
+    "mandate": {
+        "description": "Občinski svet Občina Hrastnik 2018 - 2022",
+        "beginning": "2018-12-12T17:00:00"
+    }
+}
+}
