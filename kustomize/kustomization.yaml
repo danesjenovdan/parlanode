@@ -14,10 +14,10 @@ resources:
 images:
   - name: parlacards-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ajdovscina
-    newTag: 'd9eda8465dcd3fc270ebcbee0f96f53d970b3ad8'
+    newTag: 'b6428b1a7d5d2f62e5a7e3c4af19e7ca84719358'
   - name: parlasite-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ajdovscina
-    newTag: 'd9eda8465dcd3fc270ebcbee0f96f53d970b3ad8'
+    newTag: 'b6428b1a7d5d2f62e5a7e3c4af19e7ca84719358'
   - name: parlassets-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ajdovscina
-    newTag: 'd9eda8465dcd3fc270ebcbee0f96f53d970b3ad8'
+    newTag: 'b6428b1a7d5d2f62e5a7e3c4af19e7ca84719358'
