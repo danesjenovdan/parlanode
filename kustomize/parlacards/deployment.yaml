@@ -30,7 +30,7 @@ spec:
             - name: VITE_PARLASSETS_URL
               value: https://cdn.hrastnik.parlameter.si
             - name: VITE_PARLADATA_URL
-              value: https://data.hrastnik.parlameter.si
+              value: https://data.hrastnik.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
               value: https://glej.hrastnik.parlameter.si
             - name: VITE_PARLASITE_URL

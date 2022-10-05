@@ -7,7 +7,7 @@ const config = {
     // parladata: 'http://localhost:8000/v3',
     cdn: 'https://cdn.hrastnik.parlameter.si',
     cards: 'https://glej.hrastnik.parlameter.si',
-    parladata: 'https://data.hrastnik.parlameter.si',
+    parladata: 'https://data.hrastnik.parlameter.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
   locale: 'sl-obcina-hrastnik',
