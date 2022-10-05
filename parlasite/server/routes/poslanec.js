@@ -8,10 +8,14 @@ const sm = i18n.siteMap;
 
 const router = express.Router();
 
-function redirectIfLeader(req, res, next) {
-  const slug = req.params.slug || '';
+function isLeader(slugParam) {
+  const slug = slugParam || '';
   const id = parseInt(slug.split('-')[0], 10);
-  if (id === Number(leaderId)) {
+  return id === Number(leaderId)
+}
+
+function redirectIfLeader(req, res, next) {
+  if (isLeader(req.params.slug)) {
     res.redirect(`/${sm.member.leaderBase}`);
   } else {
     next();
@@ -31,6 +35,7 @@ async function getNewData(slug) {
         ...data.results,
         id, // TODO this might be simpler if parladata would return the ID
       },
+      isLeader: isLeader(slug),
     };
   }
   return false;
