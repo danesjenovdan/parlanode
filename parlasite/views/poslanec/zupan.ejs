@@ -9,13 +9,12 @@
   <div class="col-md-6">
     <%- await fetchCard('/person/recent-activity/', mp.id) %>
   </div>
-  <div class="col-md-12">
-    <!-- TODO -->
-    <%- await fetchCard('/person/speeches/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
-  </div>
-  <div class="col-md-6">
-    <%- await fetchCard('/person/tfidf/', mp.id) %>
-  </div>
+  <!-- <div class="col-md-12">
+    <%# await fetchCard('/person/speeches/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
+  </div> -->
+  <!-- <div class="col-md-6">
+    <%# await fetchCard('/person/tfidf/', mp.id) %>
+  </div> -->
 </div>
 
 <%- await include('../_partials/footer.ejs') %>
