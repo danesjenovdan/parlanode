@@ -315,7 +315,7 @@ footer.footer {
     height: 35px;
     line-height: 35px;
     position: relative;
-    margin-left: 20px;
+    margin-left: 5px;
     text-decoration: none;
   }
 
@@ -333,7 +333,7 @@ footer.footer {
     height: 35px;
     line-height: 35px;
     position: relative;
-    margin-left: 20px;
+    margin-left: 5px;
     text-decoration: none;
   }
 
@@ -341,15 +341,19 @@ footer.footer {
   .parlaicon-twitter-parlameter .blue,
   .parlaicon-instagram-parlameter .blue {
     fill: $card-footer-button-passive-background;
-    stroke: $card-footer-button-passive-background;
+    // stroke: $card-footer-button-passive-background;
   }
 
   .parlaicon-facebook-parlameter:hover .blue,
   .parlaicon-twitter-parlameter:hover .blue,
   .parlaicon-instagram-parlameter:hover .blue {
     fill: $card-footer-button-hover-background;
-    stroke: $card-footer-button-hover-background;
+    // stroke: $card-footer-button-hover-background;
     text-decoration: none;
+  }
+
+  .social-media {
+    margin: 10px 0;
   }
 
   .doniraj {
