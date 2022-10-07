@@ -1,2 +1,9 @@
 card:
-  title: Točke dnevnega reda, v katerih je bil uporabljen iskalni niz
+  title: Agenda items where the searched query was used
+  info: >-
+    # A list of links to all the agenda items where the searched query was used.
+
+
+    From all minutes for all sessions we identify and print out links to all
+    agenda items where the searched query was mentioned. Results are then sorted
+    by date from newer to older.
