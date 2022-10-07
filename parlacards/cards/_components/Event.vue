@@ -37,7 +37,7 @@
     <template v-else-if="event.type === 'ballot'">
       <i18n-t :keypath="translationKey" tag="div" class="motion">
         <template #title>
-          <a :href="getVoteLink(event)" class="funblue-light-hover">{{
+          <a :href="getVoteLink(event.vote)" class="funblue-light-hover">{{
             event.vote?.title
           }}</a>
         </template>
