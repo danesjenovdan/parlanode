@@ -84,6 +84,8 @@ function getCardDataUrl(cardName, id, date, state) {
 }
 
 const fetchCardData = async (dataUrl, id, date) => {
+  // eslint-disable-next-line no-console
+  console.log(`Fetching card data: dataUrl=${dataUrl} id=${id} date=${date}`);
   if (dataUrl) {
     let response;
     try {
