@@ -8,6 +8,8 @@
       <div class="member-extra-info">
       <% if (mp.group) { %>
         <h2><a href="/<%- sm.party.base %>/<%- mp.group.slug || '' %>"><%= mp.group.name ? mp.group.name : mp.group.acronym ? mp.group.acronym : '' %></a></h2>
+      <% } else if (isLeader) { %>
+        <h2><span><%- i18n('titles.leader') %></span></h2>
       <% } else { %>
         <h2><span><%- i18n('general.unaffiliated') %></span></h2>
       <% } %>
