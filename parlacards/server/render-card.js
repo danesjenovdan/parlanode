@@ -123,6 +123,8 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
     cardData = await fetchCardData(dataUrl, id, date);
 
     if (cardData.error) {
+      // eslint-disable-next-line no-console
+      console.log(`ERROR: cardData.error=${cardData.error}`);
       // if the API answers with a 404 we should gracefully
       // handle it instead of erroring out
       //
@@ -135,6 +137,8 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
       //
       // all other cases error out completely
       if (cardData.error.statusCode === 404) {
+        // eslint-disable-next-line no-console
+        console.log(`ERROR: replaced with misc/error card!`);
         cardName = 'misc/error';
         state.error = cardData.error;
       } else {
