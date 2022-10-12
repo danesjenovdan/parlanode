@@ -1,7 +1,8 @@
 card:
   title: Št. svetniških vprašanj in pobud
   info: >-
-    # Število svetniških vprašanj in pobud, ki jih je svetnik_ca postavil_a v tem mandatu v primerjavi s povprečno in največjo vrednostjo.
+    # Število svetniških vprašanj in pobud, ki jih je svetnik_ca postavil_a v tem
+    mandatu v primerjavi s povprečno in največjo vrednostjo.
 
 
-    Podatke pridobivamo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).
+    Podatke pridobivamo od Občine Ajdovščina in s spletnega mesta [Občine Ajdovščina](https://www.ajdovscina.si/).
