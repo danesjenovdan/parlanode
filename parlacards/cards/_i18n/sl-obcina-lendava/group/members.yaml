@@ -4,5 +4,6 @@ card:
     # Seznam vseh članov svetniškega kluba.
 
 
-    Imena ter slike svetnikov, ki predstavljajo posamezen svetniški klub,
-    pridobivamo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/). Prikazani so samo trenutno aktivni svetniki.
+    Vsebine za to kartico smo pridobili s spletnega mesta [Občine Lendava](https://www.lendava.si/),
+    z izjemo podatkov, ki so nam jih posredovali svetniki. Manjkajoče podatke smo
+    pridobili s pomočjo iskalnika Google.
