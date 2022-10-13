@@ -1,19 +1,49 @@
-import fs from 'fs-extra'
-import _ from 'lodash-es';
-import fetch from 'node-fetch';
-import config from '../config/index.js';
+import fs from 'fs-extra';
+import axios from 'axios';
+import { get as getPath } from 'lodash-es';
 
-const {urls, locale} = config;
+export function getConfig() {
+  return {
+    urls: {
+      cards: process.env.PARLASITE_PARLACARDS_URL,
+      data: process.env.PARLASITE_PARLADATA_URL,
+      cdn: process.env.PARLASITE_PARLASSETS_URL,
+      metaImages: process.env.PARLASITE_METAIMAGES_URL,
+    },
+    defaultLocale: 'sl-obcina-ljubljana', // TODO: move to env var
+    leaderId: process.env.PARLASITE_LEADER_ID,
+    rootOrgId: process.env.PARLASITE_ROOT_ORG_ID,
+    mandateId: process.env.PARLASITE_MANDATE_ID,
+    defaultCardDate: process.env.PARLASITE_DEFAULT_CARD_DATE,
+    newsletterSegmentId: process.env.PARLASITE_NEWSLETTER_SEGMENT_ID,
+  };
+}
+
+export function getLocale(overrideLocale) {
+  let locale = overrideLocale;
+  if (!locale) {
+    const config = getConfig();
+    locale = config.defaultLocale;
+  }
+  return locale;
+}
+
+export function getSiteMap(overrideLocale) {
+  const locale = getLocale(overrideLocale);
+  return fs.readJSONSync(`./i18n/${locale}/sitemap.json`);
+}
+
+function stringify(object) {
+  return typeof object === 'object' ? JSON.stringify(object) : String(object);
+}
 
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
     const query = Object.keys(params)
-      .filter(key => params[key] != null) // maybe params[key] is undefined
+      .filter((key) => params[key] != null) // ignore null or undefined
       .map((key) => {
-        const val = (typeof params[key] === 'object')
-          ? JSON.stringify(params[key])
-          : String(params[key]);
-        return `${key}=${encodeURIComponent(val)}`;
+        const val = stringify(params[key]);
+        return `${encodeURIComponent(key)}=${encodeURIComponent(val)}`;
       })
       .join('&');
     return `?${query}`;
@@ -21,30 +51,25 @@ function stringifyParams(params) {
   return '';
 }
 
-function slovenianDate(isoDate) {
-  if (!isoDate) {
-    return 'Invalid Date';
-  }
-  const date = new Date(isoDate);
-  if (Number.isNaN(date.getTime())) {
-    return 'Invalid Date';
-  }
-  return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
+function alertBox(cardPath, errorText, moreInfoText) {
+  return `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${errorText}</pre><pre>${moreInfoText}</pre></div>`;
 }
 
-async function fetchCard(cardPath, id, params = {}) {
-  // optional second argument
-  if (typeof id === 'object') {
-    params = id;
-    id = undefined;
-  }
+export async function fetchCard(
+  overrideLocale,
+  cardPath,
+  id,
+  extraParams = {}
+) {
+  const { urls, defaultCardDate } = getConfig();
+  const locale = getLocale(overrideLocale);
 
-  if (id) {
-    params.id = id;
-  }
-
-  params.template = 'site';
-  params.locale = locale;
+  const params = {
+    id,
+    template: 'site',
+    locale,
+    ...extraParams,
+  };
 
   if (!params.date && defaultCardDate) {
     params.date = defaultCardDate;
@@ -53,116 +78,62 @@ async function fetchCard(cardPath, id, params = {}) {
   const cardUrl = `${urls.cards}${cardPath}${stringifyParams(params)}`;
 
   // eslint-disable-next-line no-console
-  console.log('Fetching:', cardUrl);
+  console.log('Fetching card:', cardUrl);
 
+  // TODO: return error card fetching card fails
   try {
-    // TODO: if fetch errors dont show 500 but return like for non ok response
-    const res = await fetch(cardUrl);
-    if (res.ok) {
-      const text = await res.text();
-      return text;
-    }
-    const text = await res.text();
-    // eslint-disable-next-line no-console
-    console.error(`Failed to fetch card: status=${res.status} text=${text}`);
-    if (cardPath === '/misc/error') {
-      return `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>Status: ${res.status}</pre><pre>${text}</pre></div>`;
-    }
-    return fetchCard.call(this, '/misc/error', id, { message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` });
+    const response = await axios.get(cardUrl);
+    return String(response.data);
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error('Failed to fetch card:', error);
-    if (cardPath === '/misc/error') {
-      return `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${error}</pre><pre>${error.stack}</pre></div>`;
-    }
-    return fetchCard.call(this, '/misc/error', id, { message: `Failed to fetch card: ${cardPath}` });
+    console.error('Fetching card FAILED:', error);
+    return alertBox(cardPath, cardUrl, error.stack);
   }
 }
 
-const asyncRoute = fn => (...args) => fn(...args).catch(args[2]);
-
-const asyncRender = fn => (req, res, next) => {
-  const render = (view, opts) => {
-    const options = {
-      ...opts,
-      slovenianDate,
-      fetchCard: fetchCard.bind({ req, res }),
-      async: true,
-    };
-    res.render(view, options, (error, promise) => {
-      if (error) {
-        next(error);
-      } else {
-        promise
-          .then(html => res.send(html))
-          .catch(pError => next(pError));
-      }
-    });
-  };
-  try {
-    const ret = fn(render, req, res, next);
-    // if return value is a promise (also true with async functions)
-    if (ret && ret.then && ret.catch) {
-      // catch any async errors
-      ret.catch(error => next(error));
-    }
-  } catch (error) {
-    // catch any sync errors
-    next(error);
-  }
-};
-
-function expandProps(msg, props) {
-  msg = String(msg);
+function expandProps(message, props) {
+  let expandedMessage = message;
   Object.keys(props).forEach((key) => {
-    msg = msg.replace(`{${key}}`, String(props[key]));
+    expandedMessage = expandedMessage.replaceAll(
+      `{${key}}`,
+      stringify(props[key])
+    );
   });
-  return msg;
+  return expandedMessage;
 }
 
-function i18n(lang) {
-  const messages = fs.readJsonSync(`./i18n/${lang}/defaults.json`);
-  const siteMap = fs.readJsonSync(`./i18n/${lang}/sitemap.json`);
+function isEmptyMessage(value) {
+  return value == null || value === '[empty]' || value === '';
+}
+
+export function getTranslations(overrideLocale) {
+  const locale = getLocale(overrideLocale);
+
+  const messages = fs.readJsonSync(`./i18n/${locale}/defaults.json`);
 
   const get = (path, props = {}) => {
-    const msg = messages[path] || _.get(messages, path);
-    if (msg == null || msg === '[empty]' || msg === '') {
+    const message = messages[path] || getPath(messages, path);
+    if (isEmptyMessage(message)) {
       // eslint-disable-next-line no-console
-      console.warn(chalk.yellow(`[i18n] Translation value for lang="${lang}" path="${path}" is missing.`));
+      console.warn(
+        `[i18n] Translation value for locale="${locale}" path="${path}" is missing.`
+      );
       return path;
     }
-    if (typeof msg !== 'string') {
+    if (typeof message !== 'string') {
       // eslint-disable-next-line no-console
-      console.warn(chalk.yellow(`[i18n] Translation value for lang="${lang}" path="${path}" is not a string.`));
-      if (typeof msg === 'object') {
-        return JSON.stringify(msg);
-      }
-      return String(msg);
+      console.warn(
+        `[i18n] Translation value for locale="${locale}" path="${path}" is not a string.`
+      );
+      return stringify(message);
     }
-    return expandProps(msg, props);
+    return expandProps(message, props);
   };
 
   get.exists = (path) => {
-    const msg = messages[path] || _.get(messages, path);
-    return !(msg == null || msg === '[empty]' || msg === '');
+    const message = messages[path] || getPath(messages, path);
+    return !isEmptyMessage(message);
   };
-
-  get.siteMap = siteMap;
 
   return get;
 }
-
-function getOgImageUrl(type, params = {}) {
-  const url = `${urls.metaImages}/${type}`;
-  const query = stringifyParams({ theme: locale, ...params });
-  return `${url}${query}`;
-}
-
-export {
-  slovenianDate,
-  fetchCard,
-  asyncRoute,
-  asyncRender,
-  i18n,
-  getOgImageUrl,
-};
