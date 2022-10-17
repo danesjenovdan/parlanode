@@ -61,6 +61,8 @@ export async function fetchCard(
   id,
   extraParams = {}
 ) {
+  return '';
+
   const { urls, defaultCardDate } = getConfig();
   const locale = getLocale(overrideLocale);
 
@@ -136,4 +138,34 @@ export function getTranslations(overrideLocale) {
   };
 
   return get;
+}
+
+function idFromSlug(slug) {
+  return parseInt(String(slug).split('-')[0], 10);
+}
+
+export async function fetchPageData(cardPath, slug) {
+  const id = idFromSlug(slug);
+  if (id) {
+    const { urls } = getConfig();
+    try {
+      const response = await axios.get(
+        `${urls.data}/cards/${cardPath}/?id=${id}`
+      );
+      return {
+        ...response.data,
+      };
+    } catch (error) {
+      // noop
+    }
+  }
+  return null;
+}
+
+export function getOgImageUrl(type, params = {}) {
+  const { urls, defaultLocale } = getConfig();
+  const locale = getLocale(defaultLocale);
+  const url = `${urls.metaImages}/${type}`;
+  const query = stringifyParams({ theme: locale, ...params });
+  return `${url}${query}`;
 }

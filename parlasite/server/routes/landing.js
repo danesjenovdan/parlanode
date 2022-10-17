@@ -1,82 +1,44 @@
-import express from 'express';
-// const { asyncRender: ar, getOgImageUrl } = require('../utils');
-import { i18n } from '../server.js';
+// // get /seje -> routes/seje.js
 
-const sm = i18n.siteMap;
+// router.get(
+//   `/${sm.landing.members}`,
+//   ar((render) => {
+//     render('landing/poslanci', {
+//       ogImageUrl: getOgImageUrl('generic', { title: i18n('menu.mps') }),
+//       activeMenu: 'mps',
+//       pageTitle: i18n('menu.mps'),
+//     });
+//   })
+// );
 
-const router = express.Router();
+// router.get(
+//   `/${sm.landing.parties}`,
+//   ar((render) => {
+//     render('landing/poslanske-skupine', {
+//       ogImageUrl: getOgImageUrl('generic', { title: i18n('menu.pgs') }),
+//       activeMenu: 'pgs',
+//       pageTitle: i18n('menu.pgs'),
+//     });
+//   })
+// );
 
-/**
- * TOP NAVIGATION
- */
+// // get /orodja -> routes/orodja.js
 
-router.get('/', ar((render, req) => {
-  render('landing', {
-    activeMenu: 'landing',
-    pageTitle: i18n('landing.title'),
-    query: req.query.q,
+export default function registerRoutes(fastify, { sm }, done) {
+  fastify.get('/', async (request, reply) => {
+    return reply.view('landing/index', {
+      activeMenu: 'landing',
+      pageTitle: reply.locals.i18n('landing.title'),
+      query: request.query.q,
+    });
   });
-}));
 
-// get /zakonodaja -> routes/zakonodaja.js
-
-// get /seje -> routes/seje.js
-
-router.get(`/${sm.landing.members}`, ar((render) => {
-  render('landing/poslanci', {
-    ogImageUrl: getOgImageUrl('generic', { title: i18n('menu.mps') }),
-    activeMenu: 'mps',
-    pageTitle: i18n('menu.mps'),
+  fastify.get(`/${sm.landing.legal}`, async (request, reply) => {
+    return reply.view('landing/legal', {
+      activeMenu: 'landing',
+      pageTitle: reply.locals.i18n('legal.title'),
+    });
   });
-}));
 
-router.get(`/${sm.landing.parties}`, ar((render) => {
-  render('landing/poslanske-skupine', {
-    ogImageUrl: getOgImageUrl('generic', { title: i18n('menu.pgs') }),
-    activeMenu: 'pgs',
-    pageTitle: i18n('menu.pgs'),
-  });
-}));
-
-// get /orodja -> routes/orodja.js
-
-/**
- * ABOUT PAGES
- */
-
-router.get(`/${sm.landing.about}`, ar((render) => {
-  render('landing/o-projektu', {
-    activeMenu: 'landing',
-    pageTitle: i18n('footer.about'),
-  });
-}));
-
-router.get(`/${sm.landing.media}`, ar((render) => {
-  render('landing/za-medije', {
-    activeMenu: 'landing',
-    pageTitle: i18n('footer.press'),
-  });
-}));
-
-router.get(`/${sm.landing.legal}`, ar((render) => {
-  render('landing/pravno-obvestilo', {
-    activeMenu: 'landing',
-    pageTitle: i18n('legal.title'),
-  });
-}));
-
-router.get(`/${sm.landing.thankYou}`, ar((render) => {
-  render('landing/hvala', {
-    activeMenu: 'landing',
-    pageTitle: i18n('titles.thank-you'),
-  });
-}));
-
-router.get(`/${sm.landing.error}`, ar((render) => {
-  render('landing/ups', {
-    activeMenu: 'landing',
-    pageTitle: i18n('titles.ups'),
-  });
-}));
-
-export default router;
+  done();
+}

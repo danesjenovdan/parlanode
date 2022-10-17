@@ -20,7 +20,7 @@ async function isMotionValid(sessionId, motionId) {
 
 // TODO the ones for poslanec and poslanska skupina accept a slug
 async function getNewData(id) {
-  const response = await fetch(`${urls.parladata}/cards/session/single/?id=${id}`);
+  const response = await fetch(`${urls.data}/cards/session/single/?id=${id}`);
   // response.ok means status is 2xx
   if (response.ok) {
     const data = await response.json();

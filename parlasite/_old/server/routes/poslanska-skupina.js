@@ -11,7 +11,7 @@ const router = express.Router();
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0], 10);
   // TODO this shouldn't be hard-coded
-  const response = await fetch(`${urls.parladata}/cards/group/basic-information/?id=${id}`);
+  const response = await fetch(`${urls.data}/cards/group/basic-information/?id=${id}`);
   // response.ok means status is 2xx
   if (response.ok) {
     const data = await response.json();
