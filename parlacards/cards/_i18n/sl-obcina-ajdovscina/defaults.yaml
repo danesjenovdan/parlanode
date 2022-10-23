@@ -18,26 +18,26 @@ back: Nazaj
 confirm_trigger: Nastavi opomnik
 add_new_trigger: Dodaj nov opomnik
 steps:
-  - textfirst: >-
-      Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
-      obvestimo.
-    textsecond: >-
-      Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
-      teles, ti to sporočimo po e-pošti.
-  - textfirst: Izberi način ujemanja
-    firstbullet: 'natančno ujemanje:'
-    secondbullet: 'široko ujemanje:'
-  - textfirst: Kako pogosto naj ti pišemo?
-    textsecond: ob dogodku
-    textthird: največ enkrat na dan
-    textfourth: največ enkrat na teden
-  - textfirst: Samo še tvoj e-naslov
-  - textfirst: Zabeleženo!
-    textsecond: Na e-naslov
-    textthird: si vklopil/-a obvestila za iskalni niz
-    textfourth: >-
-      Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
-      mejlu.
+- textfirst: >-
+    Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
+    obvestimo.
+  textsecond: >-
+    Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
+    teles, ti to sporočimo po e-pošti.
+- textfirst: Izberi način ujemanja
+  firstbullet: 'natančno ujemanje:'
+  secondbullet: 'široko ujemanje:'
+- textfirst: Kako pogosto naj ti pišemo?
+  textsecond: ob dogodku
+  textthird: največ enkrat na dan
+  textfourth: največ enkrat na teden
+- textfirst: Samo še tvoj e-naslov
+- textfirst: Zabeleženo!
+  textsecond: Na e-naslov
+  textthird: si vklopil/-a obvestila za iskalni niz
+  textfourth: >-
+    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+    mejlu.
 events:
   event: ob dogodku
   day: največ enkrat na dan
@@ -258,23 +258,23 @@ event:
   ballot--absent--f: Ni bila prisotna na glasovanju o {title}
   ballot--abstain--m: VZDRŽAL se je glasovanja o {title}
   ballot--abstain--f: VZDRŽALA se je glasovanja o {title}
-  ballot--did-not-vote--m: "BREZ GLASU"
-  ballot--did-not-vote--f: "BREZ GLASU"
+  ballot--did-not-vote--m: "BREZ GLASU na glasovanju o {title}"
+  ballot--did-not-vote--f: "BREZ GLASU na glasovanju o {title}"
   speech--m: Govoril na {session} {org}
   speech--f: Govorila na {session} {org}
 months:
-  - januar
-  - februar
-  - marec
-  - april
-  - maj
-  - junij
-  - julij
-  - avgust
-  - september
-  - oktober
-  - november
-  - december
+- januar
+- februar
+- marec
+- april
+- maj
+- junij
+- julij
+- avgust
+- september
+- oktober
+- november
+- december
 vote_types:
   agenda: dnevni red
   whole_law: glasovanje o zakonu v celoti
@@ -361,7 +361,8 @@ analysis-texts:
   mismatch_of_pg:
     label: Neujemanje s svetniškim klubom
     titleSuffix: ' po neujemanju s svetniškim klubom'
-    explanation: Odstopanje od večinskega glasu svetniškega kluba na glasovanjih v DZ.
+    explanation: Odstopanje od večinskega glasu svetniškega kluba na glasovanjih v
+      DZ.
   working_bodies:
     label: Delovna telesa
     titleSuffix: ' po delovnih telesih'
@@ -523,7 +524,8 @@ anonymous:
     name: Neznana poslanska skupina
     acronym: N/A
 newsletter-signup-title: Sign up to our newsletter!
-newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter, sign up to our newsletter, sign up to our newsletter.
+newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter,
+  sign up to our newsletter, sign up to our newsletter.
 newsletter-signup-input-placeholder: Email
 newsletter-signup-checkbox-text: Some GDPR consent text
 newsletter-signup-button-text: SIGN UP
