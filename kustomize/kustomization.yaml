@@ -14,10 +14,10 @@ resources:
 images:
   - name: parlacards-ua
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ua
-    newTag: 'def52df3f0130b8c87ec37229257e8319cb7e3ad'
+    newTag: '489513da641ffc6e47ba5e3838fa9ed5f265d1b7'
   - name: parlasite-ua
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ua
-    newTag: 'def52df3f0130b8c87ec37229257e8319cb7e3ad'
+    newTag: '489513da641ffc6e47ba5e3838fa9ed5f265d1b7'
   - name: parlassets-ua
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ua
-    newTag: 'def52df3f0130b8c87ec37229257e8319cb7e3ad'
+    newTag: '489513da641ffc6e47ba5e3838fa9ed5f265d1b7'
