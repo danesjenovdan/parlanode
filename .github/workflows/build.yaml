@@ -37,7 +37,7 @@ jobs:
           context: .
           file: dockerfiles/parlacards.Dockerfile
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-lendava.lb.djnd.si
+            VITE_PARLASSETS_URL=https://cdn.lendava.parlameter.si
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-lendava:${{ github.sha }}

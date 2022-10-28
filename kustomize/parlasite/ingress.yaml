@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlasite-lendava.lb.djnd.si
+        - lendava.parlameter.si
       secretName: parlasite-tls
   rules:
-    - host: parlasite-lendava.lb.djnd.si
+    - host: lendava.parlameter.si
       http:
         paths:
           - path: /

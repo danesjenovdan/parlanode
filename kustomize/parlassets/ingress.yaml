@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlassets-lendava.lb.djnd.si
+        - cdn.lendava.parlameter.si
       secretName: parlassets-tls
   rules:
-    - host: parlassets-lendava.lb.djnd.si
+    - host: cdn.lendava.parlameter.si
       http:
         paths:
           - path: /
