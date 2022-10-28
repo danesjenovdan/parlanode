@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlacards-ajdovscina.lb.djnd.si
+        - glej.ajdovscina.parlameter.si
       secretName: parlacards-tls
   rules:
-    - host: parlacards-ajdovscina.lb.djnd.si
+    - host: glej.ajdovscina.parlameter.si
       http:
         paths:
           - path: /
