@@ -26,10 +26,14 @@
         @scroll="$refs.shadow.check($event.currentTarget)"
       >
         <li v-if="anonymousVotesPresent" class="item anonymous-votes-exist">
-          <img :src="`${$root.$options.contextData.urls.cdn}/icons/hand-vote.png`" />
+          <img
+            :src="`${$root.$options.contextData.urls.cdn}/icons/hand-vote.png`"
+          />
           <span>{{ $t('anonymous-votes-present') }}</span>
         </li>
-        <empty-state v-if="!filteredMembers?.length && !anonymousVotesPresent" />
+        <empty-state
+          v-if="!filteredMembers?.length && !anonymousVotesPresent"
+        />
         <template v-else>
           <li
             v-for="member in filteredMembers"
@@ -71,7 +75,7 @@
               </div>
             </div>
             <div class="column vote">
-              <div :class="`option option-${member.option}`">
+              <div :class="['option', optionClassName(member.option)]">
                 {{
                   translateOption(
                     member.option,
@@ -240,6 +244,9 @@ export default {
       const form = preferredPronoun === 'she' ? '--f' : '--m';
       return this.$t(`voted-${(option || '').replace(/ /g, '-')}${form}`);
     },
+    optionClassName(option) {
+      return `option-${(option || '').replace(/ /g, '-')}`;
+    },
     toggleVote(id) {
       if (this.allVotes[id] !== 0) {
         this.votes.forEach((vote) => {
@@ -336,7 +343,7 @@ export default {
   font-weight: 700;
   background-color: #eef7f7;
   padding: 20px;
-  
+
   img {
     height: 36px;
     margin-right: 8px;
@@ -376,6 +383,9 @@ export default {
     }
     &.option-abstain {
       background-image: url(#{$icon-path}/vzdrzan_v2.svg);
+    }
+    &.option-did-not-vote {
+      background-image: url(#{$icon-path}/brez-glasu.svg);
     }
   }
 }
