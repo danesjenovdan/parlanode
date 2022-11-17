@@ -14,10 +14,10 @@ resources:
 images:
   - name: parlacards-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlacards-hrastnik
-    newTag: '503e6919f59c8f0c25173c82aadaf2a8ac2ae801'
+    newTag: '8893293683404c57117d7ecff3fcbea40d7e24b6'
   - name: parlasite-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlasite-hrastnik
-    newTag: '503e6919f59c8f0c25173c82aadaf2a8ac2ae801'
+    newTag: '8893293683404c57117d7ecff3fcbea40d7e24b6'
   - name: parlassets-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlassets-hrastnik
-    newTag: '503e6919f59c8f0c25173c82aadaf2a8ac2ae801'
+    newTag: '8893293683404c57117d7ecff3fcbea40d7e24b6'
