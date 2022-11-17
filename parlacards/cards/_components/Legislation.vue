@@ -234,6 +234,10 @@ export default {
     mappedItems() {
       return this.currentPageLegislation.map((legislation) => {
         const status = legislationStatus(legislation.status);
+        let dateString = dateFormatter(legislation.timestamp);
+        if (!dateString || dateString === 'Invalid Date') {
+          dateString = 'N/A';
+        }
 
         const outcomeHtml = `<div class="outcome"><i class="parlaicon ${
           status.iconClass
@@ -261,7 +265,7 @@ export default {
           // TODO optional stuff commented out, this is bad
           // { html: dataIconsHtml },
           this.showEpaColumn ? { text: legislation.epa } : null,
-          { text: dateFormatter(legislation.timestamp || '') || 'N/A' },
+          { text: dateString },
           { html: outcomeHtml },
         ].filter(Boolean);
       });

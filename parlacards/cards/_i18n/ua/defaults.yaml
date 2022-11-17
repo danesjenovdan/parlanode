@@ -344,10 +344,10 @@ all-working-bodies: усі відповідальні комітети
 everyone: Усі
 parliament: парламент
 analysis-not-available: Цей аналіз недоступний.
-party-leader-m: Голова
-party-leader-f: Голова
-deputy-leader-m: Народний депутат
-deputy-leader-f: Народна депутатка
+party-leader--m: Голова
+party-leader--f: Голова
+deputy-leader--m: Народний депутат
+deputy-leader--f: Народна депутатка
 contact: 'Контакти:'
 mp: Народний депутат
 addressee: Звертається до

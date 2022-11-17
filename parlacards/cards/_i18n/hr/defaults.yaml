@@ -18,24 +18,24 @@ back: Natrag
 confirm_trigger: Postavite podsjetnik
 add_new_trigger: Dodaj novi podsjetnik
 steps:
-  - textfirst: >-
-      Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti
-      obavijest.
-    textsecond: >-
-      Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici
-      HS-a.
-  - textfirst: Odaberite način podudaranja
-    firstbullet: 'točno podudaranje:'
-    secondbullet: 'široko podudaranje:'
-  - textfirst: Koliko često želite primati obavijesti?
-    textsecond: po događaju
-    textthird: najviše jednom dnevno
-    textfourth: najviše jednom tjedno
-  - textfirst: Još samo email adresa
-  - textfirst: Zabilježeno!
-    textsecond: Na email adresu
-    textthird: poslana je prijava za Parlametar obavijesti za ključnu riječ
-    textfourth: Pogledaj u inbox!
+- textfirst: >-
+    Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti
+    obavijest.
+  textsecond: >-
+    Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici
+    HS-a.
+- textfirst: Odaberite način podudaranja
+  firstbullet: 'točno podudaranje:'
+  secondbullet: 'široko podudaranje:'
+- textfirst: Koliko često želite primati obavijesti?
+  textsecond: po događaju
+  textthird: najviše jednom dnevno
+  textfourth: najviše jednom tjedno
+- textfirst: Još samo email adresa
+- textfirst: Zabilježeno!
+  textsecond: Na email adresu
+  textthird: poslana je prijava za Parlametar obavijesti za ključnu riječ
+  textfourth: Pogledaj u inbox!
 events:
   event: po događaju
   day: najviše jednom dnevno
@@ -219,9 +219,12 @@ question:
   asked--m: Postavio je pitanje {title} na koje mora odgovoriti {recipient}.
   asked--f: Postavila je pitanje {title} na koje mora odgovoriti {recipient}.
   asked--plural: Postavio je pitanje {title} na koje mora odgovoriti {recipient}.
-  asked--with-name--m: '{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.'
-  asked--with-name--f: '{name} je postavila pitanje {title} na koje mora odgovoriti {recipient}.'
-  asked--with-name--plural: '{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.'
+  asked--with-name--m: '{name} je postavio pitanje {title} na koje mora odgovoriti
+    {recipient}.'
+  asked--with-name--f: '{name} je postavila pitanje {title} na koje mora odgovoriti
+    {recipient}.'
+  asked--with-name--plural: '{name} je postavio pitanje {title} na koje mora odgovoriti
+    {recipient}.'
 event:
   ballot--for--m: Glasao je ZA {title}
   ballot--for--f: Glasala je ZA {title}
@@ -234,18 +237,18 @@ event:
   speech--m: 'Govorio na: {session}'
   speech--f: 'Govorila na: {session}'
 months:
-  - siječanj
-  - veljača
-  - ožujak
-  - travanj
-  - svibanj
-  - lipanj
-  - srpanj
-  - kolovoz
-  - rujan
-  - listopad
-  - studeni
-  - prosinac
+- siječanj
+- veljača
+- ožujak
+- travanj
+- svibanj
+- lipanj
+- srpanj
+- kolovoz
+- rujan
+- listopad
+- studeni
+- prosinac
 vote_types:
   agenda: dnevni red
   whole_law: konačni prijedlog zakona
@@ -338,10 +341,10 @@ all-working-bodies: sva matična radna tijela
 everyone: Svi
 parliament: Sabor
 analysis-not-available: Ova analiza nije dostupna.
-party-leader-m: Predsjednik kluba
-party-leader-f: Predsjednica kluba
-deputy-leader-m: Zamjenik
-deputy-leader-f: Zamjenica
+party-leader--m: Predsjednik kluba
+party-leader--f: Predsjednica kluba
+deputy-leader--m: Zamjenik
+deputy-leader--f: Zamjenica
 number-of-seats: 'Broj zastupničkih mjesta:'
 contact: 'Kontakt:'
 mp: Zastupnica
@@ -466,12 +469,27 @@ organization-classifications:
   other: Other working bodies
   commission: Commission
 legislation-classifications:
-  act: Act
-  decree: Decree
+  act: Akt
+  decree: Uredba
+  law: Zakon
 newsletter-signup-title: Registracija za Parlametar bilten!
-newsletter-signup-description: Želite li primati podatke o radu Sabora pravovremeno i pregledno, predbilježite se na Parlametar bilten i stizat će vam svaki tjedan.
+newsletter-signup-description: Želite li primati podatke o radu Sabora pravovremeno
+  i pregledno, predbilježite se na Parlametar bilten i stizat će vam svaki tjedan.
 newsletter-signup-input-placeholder: Email
-newsletter-signup-checkbox-text: Vaši podaci čuvaju se dok traje potreba za njihovim korištenjem u skladu sa svrhom za koju je dana privola. Ukoliko s nama podijelite vašu e-mail adresu za potrebe slanja biltena, ona se čuva dok god Gong nudi uslugu slanja biltena, osim u slučaju otkazivanja pretplate – u tom slučaju vaša adresa se uklanja iz baze. Vašim podacima mogu pristupiti isključivo osobe zaposlene u Gongu ovlaštene za pristup podacima, a za svrhe za koje postoji privola korisnika (dakle, za koje ste dali svoje eksplicitno dopuštenje). Zaposlenike Gonga na zaštitu Vaših podataka obvezuje Pravilnik o radu i Pravilnik o zaštiti podataka koji je usuglašen s Općom uredbom o zaštiti podataka.
+newsletter-signup-checkbox-text: Vaši podaci čuvaju se dok traje potreba za njihovim
+  korištenjem u skladu sa svrhom za koju je dana privola. Ukoliko s nama podijelite
+  vašu e-mail adresu za potrebe slanja biltena, ona se čuva dok god Gong nudi uslugu
+  slanja biltena, osim u slučaju otkazivanja pretplate – u tom slučaju vaša adresa
+  se uklanja iz baze. Vašim podacima mogu pristupiti isključivo osobe zaposlene u
+  Gongu ovlaštene za pristup podacima, a za svrhe za koje postoji privola korisnika
+  (dakle, za koje ste dali svoje eksplicitno dopuštenje). Zaposlenike Gonga na zaštitu
+  Vaših podataka obvezuje Pravilnik o radu i Pravilnik o zaštiti podataka koji je
+  usuglašen s Općom uredbom o zaštiti podataka.
 newsletter-signup-button-text: Registracija
 newsletter-signup-unsubscribe-button-text: Prestanak registracije!
 newsletter-signup-success-text: Registracija potvrđena!
+vote-for-plural: Za
+vote-against-plural: Protiv
+unaffiliated--f: nepovezana
+unaffiliated--m: nepovezan
+unaffiliated--plural: nepovezani

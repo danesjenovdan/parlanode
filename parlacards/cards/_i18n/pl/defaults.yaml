@@ -341,10 +341,10 @@ all-working-bodies: wszystkie odpowiedzialne komisje
 everyone: Wszystko
 parliament: sejm
 analysis-not-available: Ta analiza ni na voljo.
-party-leader-m: Lider klubu
-party-leader-f: Lider klubu
-deputy-leader-m: Zastępca
-deputy-leader-f: Zastępczyni
+party-leader--m: Lider klubu
+party-leader--f: Lider klubu
+deputy-leader--m: Zastępca
+deputy-leader--f: Zastępczyni
 number-of-seats: 'Liczba miejsc w parlamencie:'
 contact: 'Kontakt:'
 mp: Poseł/Posłanka
