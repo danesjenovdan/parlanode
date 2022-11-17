@@ -341,10 +341,10 @@ all-working-bodies: vsa matična delovna telesa
 everyone: Vsi
 parliament: sabor
 analysis-not-available: Ta analiza ni na voljo.
-party-leader-m: Vodja poslanske skupine
-party-leader-f: Vodja poslanske skupine
-deputy-leader-m: Namestnik
-deputy-leader-f: Namestnica
+party-leader--m: Vodja poslanske skupine
+party-leader--f: Vodja poslanske skupine
+deputy-leader--m: Namestnik
+deputy-leader--f: Namestnica
 number-of-seats: 'Število poslanskih sedežev:'
 contact: 'Kontakt:'
 mp: Poslanec/-ka

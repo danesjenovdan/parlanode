@@ -171,7 +171,8 @@
     "transcripts": "Transcripts",
     "tools_intro": "Democracy is a continuous process that depends on our participation in it. Use the tools below to help you better engage with it!",
     "page-not-found-text": "There's nothing here. What are you looking for?",
-    "info_email": "info@parlameter.si"
+    "info_email": "info@parlameter.si",
+    "unaffiliated": "unaffiliated"
   },
   "social": {
     "facebook": "https://www.facebook.com/parlameter",
@@ -191,6 +192,8 @@
     "ups": ":("
   },
   "legislation": {
-    "decree": "D"
+    "act": "A",
+    "decree": "D",
+    "law": "L"
   }
 }
