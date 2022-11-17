@@ -132,7 +132,9 @@ maximum: Most
 coalition: coalition
 opposition: opposition
 vote-for: For
+vote-for-plural: For
 vote-against: Against
+vote-against-plural: Against
 vote-abstain: Abstained
 vote-abstain--m: Abstained
 vote-abstain--f: Abstained
@@ -161,6 +163,9 @@ filtered-to-none: Brez zadetkov
 mps: MPs
 party: Parliamentary group
 parties: Parliamentary groups
+unaffiliated--f: unaffiliated
+unaffiliated--m: unaffiliated
+unaffiliated--plural: unaffiliated
 time-period: Time frame
 session-type: Session type
 no-results: No hits.
@@ -342,10 +347,10 @@ all-working-bodies: all committees responsible
 everyone: All
 parliament: parliament
 analysis-not-available: Ta analiza ni na voljo.
-party-leader-m: Leader
-party-leader-f: Leader
-deputy-leader-m: Deputy
-deputy-leader-f: Deputy
+party-leader--m: Leader
+party-leader--f: Leader
+deputy-leader--m: Deputy
+deputy-leader--f: Deputy
 number-of-seats: 'Number of seats in the parliament:'
 contact: 'Contact:'
 mp: MP
@@ -470,6 +475,7 @@ organization-classifications:
 legislation-classifications:
   act: Act
   decree: Decree
+  law: Law
 anonymous:
   person:
     name: Unknown person

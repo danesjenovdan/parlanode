@@ -338,10 +338,10 @@ all-working-bodies: sva matična radna tijela
 everyone: Svi
 parliament: Sabor
 analysis-not-available: Ova analiza nije dostupna.
-party-leader-m: Predsjednik kluba
-party-leader-f: Predsjednica kluba
-deputy-leader-m: Zamjenik
-deputy-leader-f: Zamjenica
+party-leader--m: Predsjednik kluba
+party-leader--f: Predsjednica kluba
+deputy-leader--m: Zamjenik
+deputy-leader--f: Zamjenica
 number-of-seats: 'Broj zastupničkih mjesta:'
 contact: 'Kontakt:'
 mp: Zastupnica
