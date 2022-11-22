@@ -30,7 +30,7 @@
     "axios": "^0.26.1",
     "d3": "^6.7.0",
     "date-fns": "^2.25.0",
-    "fastify": "^3.27.4",
+    "fastify": "^3.29.4",
     "fastify-cors": "^6.0.3",
     "fastify-static": "^4.6.1",
     "fs-extra": "^10.0.0",
