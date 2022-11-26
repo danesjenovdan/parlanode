@@ -106,6 +106,8 @@ export default {
 
     const textFilter = cardState?.text || '';
 
+    const allOptions = cardData?.data?.results?.all_options ?? {};
+
     const voteFilters = (cardState?.voteFilter || '').split(',');
     const voteOptions = [
       {
@@ -138,7 +140,9 @@ export default {
             : this.$t('vote-absent-plural'),
         selected: voteFilters.includes('absent'),
       },
-      {
+    ];
+    if ((allOptions['did not vote'] ?? 0) > 0) {
+      voteOptions.push({
         id: 'did not vote',
         color: 'did-not-vote',
         label:
@@ -146,16 +150,16 @@ export default {
             ? this.$t('vote-did-not-vote')
             : this.$t('vote-did-not-vote-plural'),
         selected: voteFilters.includes('did not vote'),
-      },
-    ];
+      });
+    }
 
     return {
       card: {
-        objectCount: cardData?.data?.count,
+        objectCount: cardData?.data?.['ballots:count'] ?? 0,
         currentPage: 1,
         isLoading: false,
       },
-      ballots: cardData?.data?.results ?? [],
+      ballots: cardData?.data?.results?.ballots ?? [],
       textFilter,
       voteOptions,
       selectedSort: 'date',
@@ -201,7 +205,7 @@ export default {
     },
     searchUrl() {
       const url = new URL(this.cardData.url);
-      url.searchParams.set('page', this.card.currentPage);
+      url.searchParams.set('ballots:page', this.card.currentPage);
       url.searchParams.set('text', this.textFilter);
       if (this.selectedVoteOptions.length) {
         const voteOptions = this.selectedVoteOptions
@@ -233,8 +237,8 @@ export default {
       this.card.objectCount = 0;
       this.card.currentPage = 1;
       this.makeRequest(this.searchUrl).then((response) => {
-        this.ballots = response?.data?.results || [];
-        this.card.objectCount = response?.data?.count;
+        this.ballots = response?.data?.results?.ballots || [];
+        this.card.objectCount = response?.data?.['ballots:count'];
         this.card.currentPage = 1;
         this.card.isLoading = false;
       });
@@ -255,8 +259,8 @@ export default {
 
       const requestedPage = this.card.currentPage;
       this.makeRequest(this.searchUrl).then((response) => {
-        if (response?.data?.page === requestedPage) {
-          const newBallots = response?.data?.results || [];
+        if (response?.data?.['ballots:page'] === requestedPage) {
+          const newBallots = response?.data?.results?.ballots || [];
           this.ballots.push(...newBallots);
         }
         this.card.isLoading = false;
