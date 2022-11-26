@@ -1,63 +1,279 @@
 {
+  "id": 1589,
+  "url": "https://parladata-hrvaska.lb.djnd.si/v3/cards/legislation/single/?id=1589",
   "data": {
     "results": {
-      "id": 249,
+      "id": 1589,
       "uid": null,
-      "text": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica skupaj s pripombami.",
-      "epa": null,
-      "status": null,
-      "passed": false,
-      "classification": "decree",
+      "text": "prijedlog zakona o proglašavanju parka prirode \"dinara\"",
+      "epa": "6",
+      "status": "in_procedure",
+      "passed": null,
+      "classification": "law",
       "has_votes": true,
-      "has_abstract": false,
-      "timestamp": "2020-11-16T15:30:00",
+      "has_abstract": true,
+      "timestamp": null,
       "votes": [
         {
           "all_votes": {
-            "absent": 10,
-            "abstain": 0,
-            "for": 35,
-            "against": 0
+            "for": 9,
+            "against": 0,
+            "abstain": 3,
+            "absent": 0,
+            "did not vote": 0
           },
           "passed": true,
-          "id": 2390,
+          "id": 9870,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica skupaj s pripombami."
-        }
-      ],
-      "abstract": null,
-      "documents": [
-        {
-          "id": 26379,
-          "url": "https://www.ljubljana.si/assets/Uploads/13.-a-tocka-Lekarna-predlog-sklepa-o-soglasju-k-osnutu-besedila-pravnega-posla.pdf",
-          "name": "a) Predlog Sklepa o soglasju k osnutku besedila pravnega posla – kupoprodajne in služnostne pogodbe za stavbni zemljišči s parc. št. 2455/3 in parc. št. 2448, obe k. o. 1737 Tabor",
-          "tags": [
-            {
-              "id": 13,
-              "name": "Gradivo",
-              "slug": "gradivo"
-            }
-          ]
+          "title": "Izvješće Odbora za zakonodavstvo o Prijedlogu zakona o proglašenju Parka prirode „Dinara“, P.Z. br. 6",
+          "timestamp": "2020-09-01T12:00:00",
+          "session": {
+            "name": "3. sjednica",
+            "id": 38,
+            "start_time": "2020-09-01T12:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Odbor za zakonodavstvo",
+                "acronym": "Odbor za zakonodavstvo",
+                "slug": "1019-odbor-za-zakonodavstvo",
+                "color": "#09a2cc",
+                "classification": "committee",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": false,
+            "has_minutes": true,
+            "has_legislation": false
+          }
         },
         {
-          "id": 26380,
-          "url": "https://www.ljubljana.si/assets/Uploads/12.-a-tocka-Porocilo-ORN.pdf",
-          "name": "a) Poročilo Odbora za ravnanje z nepremičninami",
-          "tags": [
-            {
-              "id": 15,
-              "name": "Poročila, amandmaji in dodatni predlogi sklepov",
-              "slug": "porocila-amandmaji-in-dodatni-predlogi-sklepov"
-            }
-          ]
+          "all_votes": {
+            "for": 7,
+            "against": 0,
+            "abstain": 5,
+            "absent": 0,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 11113,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Izvješće Odbora za zaštitu okoliša i prirode o Prijedlogu zakona o proglašenju Parka prirode „Dinara“, prvo čitanje, P.Z. br. 6",
+          "timestamp": "2020-09-04T12:00:00",
+          "session": {
+            "name": "1. sjednica",
+            "id": 16,
+            "start_time": "2020-09-04T12:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Odbor za zaštitu okoliša i prirode",
+                "acronym": "Odbor za zaštitu okoliša i prirode",
+                "slug": "960-odbor-za-zastitu-okolisa-i-prirode",
+                "color": "#09a2cc",
+                "classification": "committee",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": false,
+            "has_minutes": true,
+            "has_legislation": false
+          }
+        },
+        {
+          "all_votes": {
+            "for": 105,
+            "against": 0,
+            "abstain": 17,
+            "absent": 180,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 12561,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Prijedlog zakona o proglašavanju Parka prirode \"Dinara\", prvo čitanje, p.z. br. 6 - predlagateljica: Vlada Republike Hrvatske",
+          "timestamp": "2020-09-25T00:00:00",
+          "session": {
+            "name": "3. sjednica",
+            "id": 6,
+            "start_time": "2020-10-16T00:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": "Sabor",
+                "slug": "939-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_minutes": true,
+            "has_legislation": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 136,
+            "against": 0,
+            "abstain": 0,
+            "absent": 166,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 9610,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Konačni prijedlog zakona o proglašavanju Parka prirode \"Dinara\", drugo čitanje, p. z. br. 6 - predlagateljica: Vlada Republike Hrvatske",
+          "timestamp": "2021-02-05T00:00:00",
+          "session": {
+            "name": "6. sjednica",
+            "id": 7,
+            "start_time": "2021-02-05T00:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": "Sabor",
+                "slug": "939-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_minutes": true,
+            "has_legislation": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 9,
+            "against": 0,
+            "abstain": 2,
+            "absent": 0,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 9858,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Izvješće Odbora za zakonodavstvo o Konačnom prijedlogu zakona o proglašavanju Parka prirode „Dinara“, P.Z. br. 6",
+          "timestamp": "2021-01-19T12:00:00",
+          "session": {
+            "name": "16. sjednica",
+            "id": 50,
+            "start_time": "2021-01-19T12:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Odbor za zakonodavstvo",
+                "acronym": "Odbor za zakonodavstvo",
+                "slug": "1019-odbor-za-zakonodavstvo",
+                "color": "#09a2cc",
+                "classification": "committee",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": false,
+            "has_minutes": true,
+            "has_legislation": false
+          }
+        },
+        {
+          "all_votes": {
+            "for": 10,
+            "against": 0,
+            "abstain": 0,
+            "absent": 0,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 11120,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Izvješće Odbora za zaštitu okoliša i prirode o Konačnom prijedlogu zakona o proglašavanju Parka prirode „Dinara“, drugo čitanje, P.Z. br. 6",
+          "timestamp": "2020-11-04T12:00:00",
+          "session": {
+            "name": "5. sjednica",
+            "id": 433,
+            "start_time": "2020-11-04T12:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Odbor za zaštitu okoliša i prirode",
+                "acronym": "Odbor za zaštitu okoliša i prirode",
+                "slug": "960-odbor-za-zastitu-okolisa-i-prirode",
+                "color": "#09a2cc",
+                "classification": "committee",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": false,
+            "has_minutes": true,
+            "has_legislation": false
+          }
+        }
+      ],
+      "abstract": "II.     OCJENA STANJA I OSNOVNA PITANJA KOJA SE TREBAJU UREDITI         Zaštita područja masiva Dinare u kategoriji parka prirode od posebnog je interesa za Republiku Hrvatsku radi očuvanja izvornih prirodnih vrijednosti, bogate georaznolikosti, divljih vrsta flore i faune, endema te cjelokupne raznolikosti prirodnih staništa kao što su vodena staništa rijeke Krke i Cetine s njihovim pritocima, močvarna staništa, stijene i točila, šumska i špiljska staništa te drugih prirodnih vrijednosti proizašlih iz višestoljetne tradicije ljudskog korištenja prostora, poluprirodnih staništa, autohtonih pasmina i sorata te bogatog kulturnog i povijesnog naslijeđa sačuvanog u brojnim arheološkim nalazima i kulturno – povijesnim lokalitetima.         Zbog navedenoga, masiv Dinare (Dinara, hrvatska strana Troglava i Kamešnica), izvorišni dio i gornji tok rijeke Cetine te krška polja (Hrvatačko, Paško i Vrličko) uz Cetinu, potrebno je proglasiti parkom prirode te tim režimom zaštite sačuvati iznimne i višestruke prirodne vrijednosti s vrijednim ekološkim obilježjima, naglašenim krajobraznim i kulturno- povijesnim vrijednostima, uz dopuštanje obavljanja određenih djelatnosti i radnji, u mjeri u kojoj se neće ugroziti njegova bitna obilježja i uloga ovoga prostora.         Ovim se Zakonom uređuje područje masiva Dinare koje se proglašava parkom prirode, ukidaju se postojeći značajni krajobrazi unutar obuhvata parka prirode, utvrđuje se granica parka prirode te se određuje način i rok za osnivanje javne ustanove za upravljanje parkom prirode.         Donošenjem predloženog Zakona zaštitit će se cjelovitost i prirodne te druge vrijednosti masiva Dinare, temeljene na ekološkim, krajobraznim i drugim vrijednostima.         Sukladno odredbama članka 115. Zakona o zaštiti prirode (Narodne novine, br. 80/13, 15/18, 14/19 i 127/19; u daljnjem tekstu ZZP), park prirode je prostrano prirodno ili dijelom kultivirano područje kopna i/ili mora velike bioraznolikosti i/ili georaznolikosti, s vrijednim ekološkim obilježjima, naglašenim krajobraznim i kulturno-povijesnim vrijednostima. U parku prirode dopuštene su gospodarske i druge djelatnosti i zahvati kojima se ne ugrožavaju njegova bitna obilježja i uloga.         Donošenjem ovoga Zakona osigurat će se primjerena pravna i stručna zaštita područja Dinare te omogućiti cjelovito sagledavanje održivog načina obavljanja gospodarskih djelatnosti te iznalaženje optimalnih rješenja za korištenje prirodnih resursa te jačanje turističko–edukativnih sadržaja tog prostora.          Park prirode vrlo je pogodan oblik zaštite područja velike površine budući da omogućava optimalan sklad zaštite prirode i održivost njenog korištenja, odnosno obavljanja dopuštenih djelatnosti.          Osnivanjem Parka prirode „Dinara“ mogu se stvoriti dodatne vrijednosti koje mogu utjecati na poboljšanje života i rada lokalne zajednice na zaštićenom području. Donošenjem predloženog Zakona stvaraju se pravne pretpostavke za donošenje prostornog plana područja posebnih obilježja i plana upravljanja Parkom prirode „Dinara“ kojima će se pobliže urediti zaštita, unapređenje i korištenje te način upravljanja tim zaštićenim dijelom prirode. Prijedlog zakona propisuje da će Vlada Republike Hrvatske u roku od jedne godine od dana stupanja na snagu Zakona uredbom osnovati javnu ustanova za upravljanje Parkom prirode „Dinara“. Time će se kroz osiguravanje sredstava za provedbu mjera očuvanja i zapošljavanje djelatnika za rad u javnoj ustanovi osigurat će se adekvatno upravljanje u svrhu zaštite i očuvanja prirodnih i drugih vrijednosti, provođenje ZZP-a te osigurati neposredan nadzor parka prirode.          Stupanjem na snagu ovoga Zakona prestaje važiti Rješenje Zavoda za zaštitu prirode o proglašenju rijeke Krčić rezervatom prirodnog predjela, broja: 121/1-1964, od 17. travnja 1964.), a predstavničko tijelo Splitsko-dalmatinske županije obvezuje se staviti izvan snage Odluku o proglašenju lokaliteta Rumin zaštićenim krajolikom (Službeni glasnik županije Splitsko – dalmatinske, broj 10/2000) i Odluku o proglašenju lokaliteta Grab zaštićenim krajolikom (Službeni glasnik županije Splitsko – dalmatinske, broj 10/2000) čime će se ukinuti postojeći značajni krajobrazi „Rumin“ i „Grab“, koji su sukladno članku 111. ZZP-a zaštićena područja od lokalnog značaja, a nalaze se unutar novoproglašenog Parka prirode „Dinara“. Budući je park prirode kategorija zaštićenog područja od državnog značaja sukladno navedenom članku 111. ZZP-a, a koja je po režimu zaštite stroža od kategorije značajnog krajobraza, nije opravdano da zaštićena područja kategorija lokalnog značaja i blažeg režima zaštite postoje unutar zaštićenog područja državnog značaja i strožeg režima zaštite.",
+      "documents": [
+        {
+          "id": 9394,
+          "url": "https://www.sabor.hr/sites/default/files/uploads/sabor/2020-07-28/105501/PZ_6.pdf",
+          "name": "PZ_6.pdf",
+          "tags": []
+        },
+        {
+          "id": 9395,
+          "url": "https://www.sabor.hr/sites/default/files/uploads/sabor/2020-09-16/105816/DOPUNA_PREDSTAVNIKA_PREDLAGATELJA_PZ_6.pdf",
+          "name": "DOPUNA_PREDSTAVNIKA_PREDLAGATELJA_PZ_6.pdf",
+          "tags": []
+        },
+        {
+          "id": 7444,
+          "url": "https://www.sabor.hr/sites/default/files/uploads/sabor/2020-10-29/174209/PZ%206.pdf",
+          "name": "PZ 6.pdf",
+          "tags": []
+        },
+        {
+          "id": 7445,
+          "url": "http://www.sabor.hr/sites/default/files/uploads/sabor/2021-01-19/201902/AMANDMAN_Odbor_zakonodavstvo_PZ_6.pdf",
+          "name": "AMANDMAN_Odbor_zakonodavstvo_PZ_6.pdf",
+          "tags": []
+        },
+        {
+          "id": 7446,
+          "url": "http://www.sabor.hr/sites/default/files/uploads/sabor/2021-01-29/112302/AMANDMAN_Miro_Bulj_PZ_6.pdf",
+          "name": "AMANDMAN_Miro_Bulj_PZ_6.pdf",
+          "tags": []
         }
       ]
     },
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "description": "X",
+      "beginning": "2020-07-22T00:00:00"
     }
   }
 }
