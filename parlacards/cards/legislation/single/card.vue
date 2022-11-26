@@ -10,13 +10,13 @@
       <div class="legislation-text">{{ legislation.text }}</div>
     </div>
     <p-tabs class="legislation-tabs">
-      <p-tab v-if="legislation.abstract" :label="$t('abstract')">
-        <!-- <excerpt
-          :content="content"
-          :main-law="excerptData"
+      <p-tab v-if="legislation.has_abstract" :label="$t('abstract')">
+        <excerpt
+          :content="legislation.abstract"
+          :main-law="null"
           :show-parent="false"
-          :icon="data.abstract ? data.icon : ''"
-        /> -->
+          :icon="''"
+        />
       </p-tab>
       <p-tab :label="$t('votings')">
         <div class="votes-list">
@@ -51,6 +51,7 @@ import PTabs from '@/_components/Tabs.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import VoteListItem from '@/_components/VoteListItem.vue';
 import Documents from '@/_components/Documents.vue';
+import Excerpt from '@/_components/Excerpt.vue';
 
 export default {
   name: 'CardLegislationSingle',
@@ -60,6 +61,7 @@ export default {
     ScrollShadow,
     VoteListItem,
     Documents,
+    Excerpt,
   },
   mixins: [common, links],
   cardInfo: {
