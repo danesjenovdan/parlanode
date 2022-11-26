@@ -1,350 +1,426 @@
 {
-  "url": "https://parladata.lb.djnd.si/v3/cards/group/votes/?id=21",
+  "url": "http://localhost:8000/v3/cards/group/votes/?id=138",
+  "id": 138,
   "data": {
-    "results": [
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 7,
-            "abstain": 8,
-            "for": 29,
-            "against": 1
+    "results": {
+      "ballots": [
+        {
+          "vote": {
+            "all_votes": {
+              "for": 78,
+              "against": 0,
+              "abstain": 0,
+              "absent": 12,
+              "did not vote": 0
+            },
+            "passed": true,
+            "id": 6614,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o spremembah in dopolnitvah Zakona o starševskem varstvu in družinskih prejemkih  - Glasovanje o zakonu v celoti",
+            "timestamp": "2022-11-24T15:31:47",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2437,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 182 Pod hribom – del skupaj s pripombami.",
-          "timestamp": "2021-07-05T18:33:05",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "for"
         },
-        "option": "against"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 7,
-            "abstain": 5,
-            "for": 33,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 25,
+              "against": 52,
+              "abstain": 1,
+              "absent": 12,
+              "did not vote": 0
+            },
+            "passed": false,
+            "id": 6615,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o spremembah in dopolnitvah Zakona o starševskem varstvu in družinskih prejemkih  - Amandma: K 30. členu 15. 11. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+            "timestamp": "2022-11-24T15:28:10",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2436,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme dopolnjeni osnutek Odloka o občinskem podrobnem prostorskem načrtu 266 Tacen –zahod – severni del skupaj s pripombami.",
-          "timestamp": "2021-07-05T18:21:15",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "against"
         },
-        "option": "for"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 8,
-            "abstain": 1,
-            "for": 36,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 25,
+              "against": 52,
+              "abstain": 1,
+              "absent": 12,
+              "did not vote": 0
+            },
+            "passed": false,
+            "id": 6616,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o spremembah in dopolnitvah Zakona o starševskem varstvu in družinskih prejemkih  - Amandma: K 27. členu 15. 11. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+            "timestamp": "2022-11-24T15:27:39",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2435,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 385 Zvezna ulica.",
-          "timestamp": "2021-07-05T18:12:38",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "against"
         },
-        "option": "for"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 9,
-            "abstain": 3,
-            "for": 33,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 25,
+              "against": 52,
+              "abstain": 1,
+              "absent": 12,
+              "did not vote": 0
+            },
+            "passed": false,
+            "id": 6617,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o spremembah in dopolnitvah Zakona o starševskem varstvu in družinskih prejemkih  - Amandma: K 26. členu 15. 11. 2022 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
+            "timestamp": "2022-11-24T15:27:09",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2434,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o občinskem podrobnem prostorskem načrtu 121 Poslovna cona Vižmarje.",
-          "timestamp": "2021-07-05T18:07:42",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "against"
         },
-        "option": "for"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 7,
-            "abstain": 4,
-            "for": 34,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 53,
+              "against": 21,
+              "abstain": 3,
+              "absent": 13,
+              "did not vote": 0
+            },
+            "passed": true,
+            "id": 6618,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o zaščiti prijaviteljev - Evidenčni sklep o primernosti predloga zakona",
+            "timestamp": "2022-11-24T15:25:49",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2433,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembah in dopolnitvah Odloka o zazidalnem načrtu za območji urejanja MS 1/2-1 in MR 1/1 ZELENA JAMA.",
-          "timestamp": "2021-07-05T18:03:12",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "for"
         },
-        "option": "for"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 9,
-            "abstain": 2,
-            "for": 34,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 48,
+              "against": 27,
+              "abstain": 3,
+              "absent": 12,
+              "did not vote": 0
+            },
+            "passed": true,
+            "id": 6619,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o spremembi in dopolnitvah Zakona o delovnem času in obveznih počitkih mobilnih delavcev ter o zapisovalni opremi v cestnih prevozih - Glasovanje o zakonu v celoti",
+            "timestamp": "2022-11-24T15:25:06",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2432,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za enoto urejanja prostora GO-225.",
-          "timestamp": "2021-07-05T17:58:06",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "for"
         },
-        "option": "for"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 8,
-            "abstain": 0,
-            "for": 37,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 53,
+              "against": 0,
+              "abstain": 25,
+              "absent": 12,
+              "did not vote": 0
+            },
+            "passed": true,
+            "id": 6620,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o spremembah in dopolnitvah Zakona o voznikih - Glasovanje o zakonu v celoti",
+            "timestamp": "2022-11-24T15:24:07",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2431,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Mestni svet Mestne občine Ljubljana sprejme predlog Sklepa o lokacijski preveritvi za del območja, ki se ureja z Odlokom o občinskem podrobnem prostorskem načrtu 311 Zalog (za prostorsko enoto PE1).",
-          "timestamp": "2021-07-05T17:54:06",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "for"
         },
-        "option": "for"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 14,
-            "abstain": 0,
-            "for": 31,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 53,
+              "against": 23,
+              "abstain": 1,
+              "absent": 13,
+              "did not vote": 0
+            },
+            "passed": true,
+            "id": 6621,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o državnih simbolih - Evidenčni sklep MDT",
+            "timestamp": "2022-11-24T15:23:08",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2430,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "C) PREDLOG ODLOKA O DOPOLNITVAH ODLOKA O POSEBNI RABI JAVNIH POVRŠIN V LASTI MESTNE OBČINE LJUBLJANA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki C: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o dopolnitvah Odloka o posebni rabi javnih površin v lasti Mestne občine Ljubljana.",
-          "timestamp": "2021-07-05T17:45:10",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "for"
         },
-        "option": "for"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 17,
-            "abstain": 0,
-            "for": 28,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 53,
+              "against": 0,
+              "abstain": 23,
+              "absent": 14,
+              "did not vote": 0
+            },
+            "passed": true,
+            "id": 6622,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Zakon o spremembah in dopolnitvi Zakona o državni upravi - Glasovanje o zakonu v celoti",
+            "timestamp": "2022-11-24T15:22:23",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2428,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "B) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O OGLAŠEVANJU S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki B: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o oglaševanju.",
-          "timestamp": "2021-07-05T17:44:59",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
+          "option": "for"
         },
-        "option": "for"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "absent": 16,
-            "abstain": 0,
-            "for": 29,
-            "against": 0
+        {
+          "vote": {
+            "all_votes": {
+              "for": 55,
+              "against": 1,
+              "abstain": 20,
+              "absent": 14,
+              "did not vote": 0
+            },
+            "passed": true,
+            "id": 6623,
+            "is_outlier": false,
+            "has_outliers": false,
+            "has_named_votes": true,
+            "title": "Sklep o soglasju k Programu dela in finančnemu načrtu Agencije za energijo za leto 2023 - Glasovanje o aktu v celoti",
+            "timestamp": "2022-11-24T15:21:27",
+            "session": {
+              "name": "4. redna seja",
+              "id": 2641,
+              "start_time": "2022-11-21T09:00:00",
+              "end_time": null,
+              "organizations": [
+                {
+                  "name": "Državni zbor",
+                  "acronym": "DZ IX",
+                  "slug": "137-drzavni-zbor",
+                  "color": "#09A2CC",
+                  "classification": "root",
+                  "is_in_coalition": false
+                }
+              ],
+              "classification": "regular",
+              "in_review": true,
+              "has_transcript": true,
+              "has_minutes": false,
+              "has_legislation": false
+            }
           },
-          "passed": true,
-          "id": 2426,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "A) PREDLOG ODLOKA O SPREMEMBI IN DOPOLNITVI ODLOKA O DOLOČITVI PLOVBNEGA REŽIMA S PREDLOGOM ZA HITRI POSTOPEK PREDLOG SKLEPA k točki A: Mestni svet Mestne občine Ljubljana sprejme predlog Odloka o spremembi in dopolnitvi Odloka o določitvi plovbnega režima.",
-          "timestamp": "2021-07-05T17:44:45",
-          "session": {
-            "name": "24. seja Mestnega sveta MOL",
-            "id": 80,
-            "start_time": "2021-07-05T15:30:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Mestni svet MOL",
-                "acronym": null,
-                "slug": "1-mestni-svet-mol"
-              }
-            ],
-            "classification": null,
-            "in_review": false
-          }
-        },
-        "option": "for"
-      }
-    ],
+          "option": "for"
+        }
+      ]
+    },
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "description": "IX",
+      "beginning": "2022-05-13T00:00:01"
     },
     "group": {
-      "name": "Slovenska demokratska stranka ",
-      "acronym": "",
-      "slug": "21-slovenska-demokratska-stranka"
+      "name": "Svoboda",
+      "acronym": "Svoboda",
+      "slug": "138-svoboda",
+      "color": "#002F42",
+      "classification": "pg",
+      "is_in_coalition": true
     },
-    "count": 560,
-    "pages": 56,
-    "page": 1,
-    "per_page": 10
+    "ballots:count": 467,
+    "ballots:pages": 47,
+    "ballots:page": 1,
+    "ballots:per_page": 10
   }
 }
