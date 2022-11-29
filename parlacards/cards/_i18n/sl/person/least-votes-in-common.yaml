@@ -2,25 +2,9 @@ card:
   title: Najmanjkrat glasujejo enako
   info: >-
     # Seznam 5 poslancev, ki najmanjkrat glasujejo enako kot izbrani_a
-    poslanec_ka. Poslanci so razvrščeni glede na vrednosti od največje proti
-    najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.
+    poslanec_ka. Poslanci so razvrščeni glede na odstotek ujemanja od najmanjšega proti
+    največjemu.
 
-
-    Izračunamo [evklidsko
-    razdaljo](https://en.wikipedia.org/wiki/Euclidean_distance) med rezultati
-    poslančevih/-kinih glasovanj in rezultati vseh ostalih (pri čemer vrednosti
-    glasov pretvorimo v številčne vrednosti med -1 in 1).
-
-
-    Ko izračunamo "razdaljo" med vsemi poslanci, jih razvrstimo glede na
-    rezultat in prikažemo zadnjih oz. najbolj oddaljenih pet.
-
-
-    Številčne vrednosti glasov
-
-
-    * -1: proti
-
-    * 0: vzdržan_a ali ni prisoten_na
-
-    * 1: za
+    Upoštevamo samo glasovanja, na katerih sta bila prisotna oba poslanca in sta glasovala 
+    za, proti ali se vzdržala. Število ujemajočih se glasov delimo s številom vseh glasovanj,
+    na katerih sta bila oba prisotna.
