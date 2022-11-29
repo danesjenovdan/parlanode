@@ -33,7 +33,7 @@ export default {
       .sort((a, b) => a.value - b.value);
     const people = results.map((entry) => ({
       ...entry.person,
-      score: numberFormatter(entry.value, { precision: 2 }),
+      score: numberFormatter(entry.value, { precision: 2, percent: true }),
     }));
     return {
       people,
