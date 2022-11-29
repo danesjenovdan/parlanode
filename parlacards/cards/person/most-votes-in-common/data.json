@@ -1,84 +1,122 @@
 {
-  "id": 12,
+  "id": 96,
   "data": {
     "results": [
-      {
-        "person": {
-          "slug": "4-martina-vuk",
-          "name": "Martina Vuk",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
+        {
+            "person": {
+                "slug": "85-jozef-horvat",
+                "name": "Jožef Horvat",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Nova Slovenija - Krščanski demokrati",
+                    "acronym": "NSi",
+                    "slug": "7-nova-slovenija-krscanski-demokrati",
+                    "color": "#8E7A86",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P020.png"
+            },
+            "value": 99.48717948717949
         },
-        "value": 11.5325625946708
-      },
-      {
-        "person": {
-          "slug": "5-janez-stariha",
-          "name": "Janez Stariha",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
+        {
+            "person": {
+                "slug": "82-iva-dimic",
+                "name": "Iva Dimic",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "she",
+                "group": {
+                    "name": "Nova Slovenija - Krščanski demokrati",
+                    "acronym": "NSi",
+                    "slug": "7-nova-slovenija-krscanski-demokrati",
+                    "color": "#8E7A86",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P169.jpg"
+            },
+            "value": 99.42196531791907
         },
-        "value": 11.7046999107196
-      },
-      {
-        "person": {
-          "slug": "6-marko-koprivc",
-          "name": "Marko Koprivc",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Socialni demokrati ",
-            "acronym": "",
-            "slug": "6-socialni-demokrati"
-          },
-          "image": null
+        {
+            "person": {
+                "slug": "86-jernej-vrtovec",
+                "name": "Jernej Vrtovec",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Nova Slovenija - Krščanski demokrati",
+                    "acronym": "NSi",
+                    "slug": "7-nova-slovenija-krscanski-demokrati",
+                    "color": "#8E7A86",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P292.png"
+            },
+            "value": 99.29078014184397
         },
-        "value": 0.0
-      },
-      {
-        "person": {
-          "slug": "7-dr-dragan-matic",
-          "name": "dr. Dragan Matić",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Svetniški klub samostojnih svetnikov ",
-            "acronym": "SKSS",
-            "slug": "8-svetniski-klub-samostojnih-svetnikov"
-          },
-          "image": null
+        {
+            "person": {
+                "slug": "5978-janez-zakelj",
+                "name": "Janez Žakelj",
+                "honorific_prefix": "mag.",
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Nova Slovenija - Krščanski demokrati",
+                    "acronym": "NSi",
+                    "slug": "7-nova-slovenija-krscanski-demokrati",
+                    "color": "#8E7A86",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P418.jpg"
+            },
+            "value": 98.98989898989899
         },
-        "value": 13.1529464379659
-      },
-      {
-        "person": {
-          "slug": "8-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "value": 12.1655250605964
-      }
+        {
+            "person": {
+                "slug": "81-aleksander-rebersek",
+                "name": "Aleksander Reberšek",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Nova Slovenija - Krščanski demokrati",
+                    "acronym": "NSi",
+                    "slug": "7-nova-slovenija-krscanski-demokrati",
+                    "color": "#8E7A86",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P338.png"
+            },
+            "value": 98.97435897435898
+        }
     ],
+    "mandate": {
+        "description": "IX",
+        "beginning": "2022-05-13T00:00:01"
+    },
     "person": {
-      "slug": "12-urska-honzak",
-      "name": "Urška Honzak",
-      "honorific_prefix": null,
-      "honorific_suffix": null,
-      "preferred_pronoun": null,
-      "group": null,
-      "image": null
+        "slug": "96-matej-tonin",
+        "name": "Matej Tonin",
+        "honorific_prefix": "mag.",
+        "honorific_suffix": null,
+        "preferred_pronoun": "he",
+        "group": {
+            "name": "Nova Slovenija - Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "7-nova-slovenija-krscanski-demokrati",
+            "color": "#8E7A86",
+            "classification": "pg",
+            "is_in_coalition": false
+        },
+        "image": "/media/P204.png"
     }
   }
 }

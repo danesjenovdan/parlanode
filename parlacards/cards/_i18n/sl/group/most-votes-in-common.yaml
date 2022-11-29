@@ -2,29 +2,15 @@ card:
   title: Največkrat glasujejo enako
   info: >-
     # Seznam 5 poslancev, ki največkrat glasujejo enako kot "glas poslanske
-    skupine". Razvrščeni so glede na vrednosti od najmanjše proti največji.
-    Manjša kot je vrednost, večje je ujemanje glasovanj.
+    skupine". Razvrščeni so glede na odstotek ujemanja od največjega proti najmanjšemu.
 
+    Izračunamo odstotek ujemanja med rezultati glasovanj poslanske skupine in
+    rezultati vseh poslancev. Pri računanju glasu poslanske skupine upoštevamo tisto, 
+    za katero se je pri določenem glasovanju odločilo največ poslancev.
+    
+    Glasovanja, kjer je odsotna celotna poslanska skupina, umaknemo iz analize.
+    Število ujemajočih se glasov delimo s številom vseh glasovanj,
+    na katerih sta bila prisotna tako poslanec_ka kot poslanska skupina.
 
-    Izračunamo evklidsko razdaljo med rezultati glasovanj poslanske skupine in
-    rezultati vseh ostalih poslancev (pri čemer vrednosti glasov pretvorimo v
-    številčne vrednosti med -1 in 1).
-
-
-    Pri računanju rezultata poslanskih skupin ignoriramo "odsotne" glasovnice,
-    da dobimo pozitivno mnenje poslanske skupine. Če je celotna poslanska
-    skupina odsotna, to glasovanje umaknemo iz analize.
-
-
-    Ko izračunamo "razdaljo" med vsemi poslanci, jih razvrstimo glede na
-    rezultat in prikažemo prvih pet.
-
-
-    Številčne vrednosti glasov
-
-
-    * -1: proti
-
-    * 0: vzdržan_a ali ni prisoten_a
-
-    * 1: za
+    Če takih glasovanj ni, je ujemanje 0.
+    
