@@ -2,79 +2,113 @@
   "id": 12,
   "data": {
     "results": [
-      {
-        "person": {
-          "slug": "4-martina-vuk",
-          "name": "Martina Vuk",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
+        {
+            "person": {
+                "slug": "6045-tomaz-lah",
+                "name": "Tomaž Lah",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Svoboda",
+                    "acronym": "Svoboda",
+                    "slug": "138-svoboda",
+                    "color": "#002F42",
+                    "classification": "pg",
+                    "is_in_coalition": true
+                },
+                "image": "/media/P423.jpg"
+            },
+            "value": 31.974921630094045
         },
-        "value": 11.5325625946708
-      },
-      {
-        "person": {
-          "slug": "5-janez-stariha",
-          "name": "Janez Stariha",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
+        {
+            "person": {
+                "slug": "6037-soniboj-knezak",
+                "name": "Soniboj Knežak",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Socialni demokrati",
+                    "acronym": "SD",
+                    "slug": "4-socialni-demokrati",
+                    "color": "#B3422E",
+                    "classification": "pg",
+                    "is_in_coalition": true
+                },
+                "image": "/media/P321.jpg"
+            },
+            "value": 33.134328358208954
         },
-        "value": 11.7046999107196
-      },
-      {
-        "person": {
-          "slug": "6-marko-koprivc",
-          "name": "Marko Koprivc",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Socialni demokrati ",
-            "acronym": "",
-            "slug": "6-socialni-demokrati"
-          },
-          "image": null
+        {
+            "person": {
+                "slug": "6038-aleksander-prosen-kralj",
+                "name": "Aleksander Prosen Kralj",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Svoboda",
+                    "acronym": "Svoboda",
+                    "slug": "138-svoboda",
+                    "color": "#002F42",
+                    "classification": "pg",
+                    "is_in_coalition": true
+                },
+                "image": "/media/P422.jpg"
+            },
+            "value": 33.23442136498516
         },
-        "value": 0.0
-      },
-      {
-        "person": {
-          "slug": "7-dr-dragan-matic",
-          "name": "dr. Dragan Matić",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Svetniški klub samostojnih svetnikov ",
-            "acronym": "",
-            "slug": "8-svetniski-klub-samostojnih-svetnikov"
-          },
-          "image": null
+        {
+            "person": {
+                "slug": "6016-bojan-cebela",
+                "name": "Bojan Čebela",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Svoboda",
+                    "acronym": "Svoboda",
+                    "slug": "138-svoboda",
+                    "color": "#002F42",
+                    "classification": "pg",
+                    "is_in_coalition": true
+                },
+                "image": "/media/P419.jpg"
+            },
+            "value": 33.43195266272189
         },
-        "value": 13.1529464379659
-      },
-      {
-        "person": {
-          "slug": "8-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": null,
-          "image": null
-        },
-        "value": 12.1655250605964
-      }
+        {
+            "person": {
+                "slug": "5935-jozica-derganc",
+                "name": "Jožica Derganc",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "she",
+                "group": {
+                    "name": "Svoboda",
+                    "acronym": "Svoboda",
+                    "slug": "138-svoboda",
+                    "color": "#002F42",
+                    "classification": "pg",
+                    "is_in_coalition": true
+                },
+                "image": "/media/P374.jpg"
+            },
+            "value": 34.036144578313255
+        }
     ],
+    "mandate": {
+        "description": "IX",
+        "beginning": "2022-05-13T00:00:01"
+    },
     "group": {
-      "name": "Svetniški klub samostojnih svetnikov ",
-      "acronym": "",
-      "slug": "8-svetniski-klub-samostojnih-svetnikov"
+        "name": "Slovenska demokratska stranka",
+        "acronym": "SDS",
+        "slug": "2-slovenska-demokratska-stranka",
+        "color": "#679BBB",
+        "classification": "pg",
+        "is_in_coalition": false
     }
   }
 }
