@@ -1,80 +1,114 @@
 {
-  "id": 12,
+  "id": 2,
   "data": {
     "results": [
-      {
-        "person": {
-          "slug": "4-martina-vuk",
-          "name": "Martina Vuk",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
+        {
+            "person": {
+                "slug": "62-branko-grims",
+                "name": "Branko Grims",
+                "honorific_prefix": "mag.",
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Slovenska demokratska stranka",
+                    "acronym": "SDS",
+                    "slug": "2-slovenska-demokratska-stranka",
+                    "color": "#679BBB",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P016.png"
+            },
+            "value": 95.58823529411765
         },
-        "value": 11.5325625946708
-      },
-      {
-        "person": {
-          "slug": "5-janez-stariha",
-          "name": "Janez Stariha",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
+        {
+            "person": {
+                "slug": "52-zan-mahnic",
+                "name": "Žan Mahnič",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "he",
+                "group": {
+                    "name": "Slovenska demokratska stranka",
+                    "acronym": "SDS",
+                    "slug": "2-slovenska-demokratska-stranka",
+                    "color": "#679BBB",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P270.png"
+            },
+            "value": 94.49152542372882
         },
-        "value": 11.7046999107196
-      },
-      {
-        "person": {
-          "slug": "6-marko-koprivc",
-          "name": "Marko Koprivc",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Socialni demokrati ",
-            "acronym": "",
-            "slug": "6-socialni-demokrati"
-          },
-          "image": null
+        {
+            "person": {
+                "slug": "49-anja-bah-zibert",
+                "name": "Anja Bah Žibert",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "she",
+                "group": {
+                    "name": "Slovenska demokratska stranka",
+                    "acronym": "SDS",
+                    "slug": "2-slovenska-demokratska-stranka",
+                    "color": "#679BBB",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P239.png"
+            },
+            "value": 93.20388349514563
         },
-        "value": 0.0
-      },
-      {
-        "person": {
-          "slug": "7-dr-dragan-matic",
-          "name": "dr. Dragan Matić",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": {
-            "name": "Svetniški klub samostojnih svetnikov ",
-            "acronym": "SKSS",
-            "slug": "8-svetniski-klub-samostojnih-svetnikov"
-          },
-          "image": null
+        {
+            "person": {
+                "slug": "47-alenka-jeraj",
+                "name": "Alenka Jeraj",
+                "honorific_prefix": null,
+                "honorific_suffix": null,
+                "preferred_pronoun": "she",
+                "group": {
+                    "name": "Slovenska demokratska stranka",
+                    "acronym": "SDS",
+                    "slug": "2-slovenska-demokratska-stranka",
+                    "color": "#679BBB",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P029.png"
+            },
+            "value": 92.88025889967638
         },
-        "value": 13.1529464379659
-      },
-      {
-        "person": {
-          "slug": "8-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
-          "group": null,
-          "image": null
-        },
-        "value": 12.1655250605964
-      }
+        {
+            "person": {
+                "slug": "32-karmen-furman",
+                "name": "Karmen Furman",
+                "honorific_prefix": "mag.",
+                "honorific_suffix": null,
+                "preferred_pronoun": "she",
+                "group": {
+                    "name": "Slovenska demokratska stranka",
+                    "acronym": "SDS",
+                    "slug": "2-slovenska-demokratska-stranka",
+                    "color": "#679BBB",
+                    "classification": "pg",
+                    "is_in_coalition": false
+                },
+                "image": "/media/P309.png"
+            },
+            "value": 92.82511210762333
+        }
     ],
+    "mandate": {
+        "description": "IX",
+        "beginning": "2022-05-13T00:00:01"
+    },
     "group": {
-      "name": "Svetniški klub samostojnih svetnikov ",
-      "acronym": "SKSS",
-      "slug": "8-svetniski-klub-samostojnih-svetnikov"
+        "name": "Slovenska demokratska stranka",
+        "acronym": "SDS",
+        "slug": "2-slovenska-demokratska-stranka",
+        "color": "#679BBB",
+        "classification": "pg",
+        "is_in_coalition": false
     }
   }
 }
