@@ -24,10 +24,10 @@ export default {
 
     const results = (cardData?.data?.results || [])
       .slice()
-      .sort((a, b) => a.value - b.value);
+      .sort((a, b) => b.value - a.value);
     const people = results.map((entry) => ({
       ...entry.person,
-      score: numberFormatter(entry.value, { precision: 2 }),
+      score: numberFormatter(entry.value, { precision: 2, percent: true }),
     }));
     return {
       people,
