@@ -1,131 +1,164 @@
 {
+  "id": 1043,
+  "url": "http://localhost:8000/v3/cards/group/monthly-vote-attendance/?id=1043",
   "data": {
     "results": [
       {
-        "present": 100.0,
-        "no_mandate": 0.0,
-        "absent": 0.0,
-        "timestamp": "2018-12-01"
-      },
-      {
-        "present": 100.0,
-        "no_mandate": 0.0,
-        "absent": 0.0,
-        "timestamp": "2019-01-01"
-      },
-      {
         "present": 0.0,
         "no_mandate": 0.0,
-        "absent": 100.0,
-        "timestamp": "2019-02-01"
-      },
-      {
-        "present": 61.5384615384615,
-        "no_mandate": 0.0,
-        "absent": 38.4615384615385,
-        "timestamp": "2019-04-01"
-      },
-      {
-        "present": 100.0,
-        "no_mandate": 0.0,
-        "absent": 0.0,
-        "timestamp": "2019-05-01"
-      },
-      {
-        "present": 64.2857142857143,
-        "no_mandate": 0.0,
-        "absent": 35.714285714285694,
-        "timestamp": "2019-06-01"
-      },
-      {
-        "present": 78.5714285714286,
-        "no_mandate": 0.0,
-        "absent": 21.428571428571402,
-        "timestamp": "2019-07-01"
-      },
-      {
-        "present": 0.0,
-        "no_mandate": 0.0,
-        "absent": 100.0,
-        "timestamp": "2019-09-01"
-      },
-      {
-        "present": 94.1176470588235,
-        "no_mandate": 0.0,
-        "absent": 5.8823529411765065,
-        "timestamp": "2019-10-01"
-      },
-      {
-        "present": 88.8888888888889,
-        "no_mandate": 0.0,
-        "absent": 11.1111111111111,
-        "timestamp": "2019-11-01"
-      },
-      {
-        "present": 28.5714285714286,
-        "no_mandate": 0.0,
-        "absent": 71.4285714285714,
-        "timestamp": "2019-12-01"
-      },
-      {
-        "present": 78.5714285714286,
-        "no_mandate": 0.0,
-        "absent": 21.428571428571402,
-        "timestamp": "2020-02-01"
-      },
-      {
-        "present": 95.4545454545455,
-        "no_mandate": 0.0,
-        "absent": 4.545454545454504,
-        "timestamp": "2020-06-01"
-      },
-      {
-        "present": 63.6363636363636,
-        "no_mandate": 0.0,
-        "absent": 36.3636363636364,
-        "timestamp": "2020-07-01"
-      },
-      {
-        "present": 92.5,
-        "no_mandate": 0.0,
-        "absent": 7.5,
+        "no_data": 100.0,
         "timestamp": "2020-09-01"
       },
       {
-        "present": 95.6521739130435,
+        "present": 0.0,
         "no_mandate": 0.0,
-        "absent": 4.347826086956502,
+        "no_data": 100.0,
         "timestamp": "2020-10-01"
       },
       {
-        "present": 88.0,
+        "present": 0.0,
         "no_mandate": 0.0,
-        "absent": 12.0,
+        "no_data": 100.0,
         "timestamp": "2020-11-01"
       },
       {
-        "present": 85.7142857142857,
+        "present": 0.0,
         "no_mandate": 0.0,
-        "absent": 14.285714285714306,
-        "timestamp": "2020-12-01"
-      },
-      {
-        "present": 85.1851851851852,
-        "no_mandate": 0.0,
-        "absent": 14.814814814814795,
+        "no_data": 100.0,
         "timestamp": "2021-01-01"
       },
       {
-        "present": 88.4615384615385,
+        "present": 0.0,
         "no_mandate": 0.0,
-        "absent": 11.538461538461505,
+        "no_data": 100.0,
         "timestamp": "2021-02-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-03-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-04-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-05-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-06-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-07-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-09-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-10-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-11-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2021-12-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2022-01-01"
+      },
+      {
+        "present": 0.0,
+        "no_mandate": 0.0,
+        "no_data": 100.0,
+        "timestamp": "2022-02-01"
+      },
+      {
+        "present": 26.549586776859503,
+        "no_mandate": 0.0,
+        "no_data": 69.42148760330579,
+        "timestamp": "2022-03-01"
+      },
+      {
+        "present": 25.148809523809522,
+        "no_mandate": 0.0,
+        "no_data": 55.952380952380956,
+        "timestamp": "2022-04-01"
+      },
+      {
+        "present": 15.648854961832063,
+        "no_mandate": 0.0,
+        "no_data": 63.358778625954194,
+        "timestamp": "2022-05-01"
+      },
+      {
+        "present": 42.40924092409241,
+        "no_mandate": 0.0,
+        "no_data": 51.15511551155115,
+        "timestamp": "2022-06-01"
+      },
+      {
+        "present": 22.79735682819383,
+        "no_mandate": 0.0,
+        "no_data": 50.66079295154186,
+        "timestamp": "2022-07-01"
+      },
+      {
+        "present": 18.977469670710573,
+        "no_mandate": 0.0,
+        "no_data": 73.65684575389947,
+        "timestamp": "2022-09-01"
+      },
+      {
+        "present": 9.25531914893617,
+        "no_mandate": 0.0,
+        "no_data": 82.97872340425532,
+        "timestamp": "2022-10-01"
+      },
+      {
+        "present": 15.577889447236181,
+        "no_mandate": 0.0,
+        "no_data": 57.78894472361809,
+        "timestamp": "2022-11-01"
       }
     ],
+    "mandate": {
+      "description": "X",
+      "beginning": "2020-07-22T00:00:00"
+    },
     "group": {
-      "name": "Socialni demokrati ",
-      "acronym": "",
-      "slug": "19-socialni-demokrati"
+      "name": "Klub zastupnika Mosta",
+      "acronym": "Most",
+      "slug": "1043-klub-zastupnika-mosta",
+      "color": "#09a2cc",
+      "classification": "pg",
+      "is_in_coalition": false
     }
   }
 }
