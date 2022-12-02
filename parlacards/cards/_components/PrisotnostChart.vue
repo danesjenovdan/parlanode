@@ -51,13 +51,15 @@ export default {
         return {
           present: this.$t(`present--${gender}`),
           absent: this.$t(`absent--${gender}`),
-          'no-term': this.$t(`no-term`),
+          noMandate: this.$t('no-term'),
+          noData: this.$t('no-data'),
         };
       }
       return {
         present: this.$t(`present--plural`),
         absent: this.$t(`absent--plural`),
-        'no-term': this.$t(`no-term`),
+        noMandate: this.$t('no-term'),
+        noData: this.$t('no-data'),
       };
     },
   },
@@ -96,18 +98,23 @@ export default {
         .sort((a, b) => a.timestamp.localeCompare(b.timestamp))
         .map((obj) => {
           const present = Math.max(0, Math.round(obj.present)) || 0;
-          const noTerm = Math.max(0, Math.round(obj.no_mandate)) || 0;
+          const noMandate = Math.max(0, Math.round(obj.no_mandate)) || 0;
+          const noData = Math.max(0, Math.round(obj.no_data)) || 0;
+          const absent = 100 - (present + noMandate + noData);
           return {
             date: obj.timestamp,
             present,
-            absent: 100 - (present + noTerm),
-            'no-term': noTerm,
+            noMandate,
+            noData,
+            absent,
           };
         });
 
+      const dataKeys = ['present', 'absent', 'noData', 'noMandate'];
+
       const series = d3
         .stack()
-        .keys(['present', 'absent', 'no-term'])(data)
+        .keys(dataKeys)(data)
         .map((d) => d.map((v) => ({ ...v, key: d.key })));
 
       const width = 940;
@@ -118,6 +125,30 @@ export default {
         .select(this.$refs.chart)
         .append('svg')
         .attr('viewBox', [0, 0, width, height]);
+
+      // pattern for no data fill
+      const pattern = svg
+        .append('defs')
+        .append('pattern')
+        .attr('id', 'noDataPattern')
+        .attr('width', 12)
+        .attr('height', 12)
+        .attr('patternUnits', 'userSpaceOnUse')
+        .attr('patternTransform', 'rotate(-45)');
+      pattern
+        .append('rect')
+        .attr('fill', '#8a8a8a')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', 12)
+        .attr('height', 6);
+      pattern
+        .append('rect')
+        .attr('fill', '#c8c8c8')
+        .attr('x', 0)
+        .attr('y', 6)
+        .attr('width', 12)
+        .attr('height', 6);
 
       const x = d3
         .scaleBand()
@@ -166,27 +197,30 @@ export default {
               .attr('y', -18);
 
             let textTop = 10;
-            ['present', 'absent', 'no-term'].forEach((key) => {
-              const value = d.data[key];
-              const text = this.translationKeys[key];
-              if (value > 0) {
-                tooltip
-                  .append('text')
-                  .text(`${text}`)
-                  .style('fill', '#fff')
-                  .attr('text-anchor', 'start')
-                  .attr('x', -70)
-                  .attr('y', textTop);
-                tooltip
-                  .append('text')
-                  .text(`${value} %`)
-                  .style('fill', '#fff')
-                  .attr('text-anchor', 'end')
-                  .attr('x', 60)
-                  .attr('y', textTop);
-                textTop += 18;
-              }
-            });
+            dataKeys
+              .slice()
+              .reverse()
+              .forEach((key) => {
+                const value = d.data[key];
+                const text = this.translationKeys[key];
+                if (value > 0) {
+                  tooltip
+                    .append('text')
+                    .text(`${text}`)
+                    .style('fill', '#fff')
+                    .attr('text-anchor', 'start')
+                    .attr('x', -70)
+                    .attr('y', textTop);
+                  tooltip
+                    .append('text')
+                    .text(`${value} %`)
+                    .style('fill', '#fff')
+                    .attr('text-anchor', 'end')
+                    .attr('x', 60)
+                    .attr('y', textTop);
+                  textTop += 18;
+                }
+              });
 
             tooltip.style('display', null);
           })
@@ -239,7 +273,7 @@ export default {
       tooltip
         .append('rect')
         .attr('width', 140)
-        .attr('height', 90)
+        .attr('height', 110)
         .attr('y', -35)
         .attr('x', -75)
         .style('rx', 3)
@@ -291,11 +325,21 @@ export default {
     }
   }
 
-  .prisotnost-bar-no-term {
+  .prisotnost-bar-noMandate {
     fill: $time-presence-no-term-passive;
+    opacity: 0.4;
 
     &.hovered {
-      fill: $time-presence-no-term-active;
+      opacity: 0.8;
+    }
+  }
+
+  .prisotnost-bar-noData {
+    fill: url(#noDataPattern);
+    opacity: 0.4;
+
+    &.hovered {
+      opacity: 0.8;
     }
   }
 
