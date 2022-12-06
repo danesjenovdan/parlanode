@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: parlasite-2022
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - parlasite-ajdovscina2.lb.djnd.si
+      secretName: parlasite-2022-tls
+  rules:
+    - host: parlasite-ajdovscina2.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlasite-2022
+                port:
+                  number: 3066

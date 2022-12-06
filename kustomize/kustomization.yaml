@@ -8,6 +8,9 @@ resources:
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
+  - parlasite-2022/deployment.yaml
+  - parlasite-2022/ingress.yaml
+  - parlasite-2022/service.yaml
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
