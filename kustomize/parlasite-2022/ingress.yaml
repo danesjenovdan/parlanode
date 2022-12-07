@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - ajdovscina.parlameter.si
-      secretName: parlasite-2022-tls
+      secretName: parlasite-2022-tls2
   rules:
     - host: ajdovscina.parlameter.si
       http:
