@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - ajdovscina.parlameter.si
-      secretName: parlasite-2022-tls2
+        - ajd2.lb.djnd.si
+      secretName: parlasite-2022-tls-temp
   rules:
-    - host: ajdovscina.parlameter.si
+    - host: ajd2.lb.djnd.si
       http:
         paths:
           - path: /
