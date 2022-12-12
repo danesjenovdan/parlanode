@@ -1,5 +1,8 @@
 card:
   title: Latest session
+  tfidf-title: Words that marked the session
+  attendance-title: Attendance at voting
+  votes-title: Voting events
   info: >-
     # An overview of analysis of the latest session available at [National
     Assembly of the Republic of
