@@ -494,7 +494,7 @@ vote-against-plural: Protiv
 unaffiliated--f: nepovezana
 unaffiliated--m: nepovezan
 unaffiliated--plural: nepovezani
-ask-person-a-question: Napiši vprašanje za poslanca_ko.
-thank-you-for-the-question: Hvala za poslano vprašanje!
-send: Pošlji
-error-message: Prišlo je do napake.
+ask-person-a-question: Napišite Vaše pitanje za zastupnika/zastupnicu.
+thank-you-for-the-question: Hvala za Vaše pitanje!
+send: Pošalji
+error-message: Ups, nešto se dogodilo.
