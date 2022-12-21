@@ -20,7 +20,9 @@
           <% if (session.has_minutes) { %>
             <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.agenda %>" class="<%- activeTab === 'dnevni-red' ? 'active' : '' %> nav-icon nav-icon-overview"><%- i18n('general.agenda') %></a></li>
           <% } %>
+          <% if (session.has_votes) { %>
           <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.otherVotings %>" class="<%- activeTab === 'glasovanja' ? 'active' : '' %> nav-icon nav-icon-votings"><%- i18n('general.other_votings') %></a></li>
+          <% } %>
           <% if (session.has_transcript) { %>
             <li><a href="/<%- sm.session.base %>/<%- session.id %>/<%- sm.session.transcript %>" class="<%- activeTab === 'transkript' ? 'active' : '' %> nav-icon nav-icon-transcripts"><%- i18n('general.transcripts') %></a></li>
           <% } %>
