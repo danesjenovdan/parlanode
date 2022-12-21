@@ -55,7 +55,10 @@ export default {
     personOgImage,
   ],
   data() {
+    const { cardData } = this.$root.$options.contextData;
+
     return {
+      recaptchaSiteKey: cardData.data?.recaptchaSiteKey,
       recaptcha: null,
       question: '',
       questionError: false,
@@ -65,7 +68,7 @@ export default {
   },
   computed: {
     sendDisabled() {
-      if (!this.recaptcha) {
+      if (this.recaptchaSiteKey && !this.recaptcha) {
         return true;
       }
       if (!this.question?.trim()) {
@@ -75,7 +78,9 @@ export default {
     },
   },
   async mounted() {
-    this.recaptcha = await loadRecaptcha('TODO TOKEN');
+    if (this.recaptchaSiteKey) {
+      this.recaptcha = await loadRecaptcha(this.recaptchaSiteKey);
+    }
   },
   methods: {
     async sendQuestion() {
@@ -83,7 +88,10 @@ export default {
         return;
       }
       try {
-        const token = await this.recaptcha.execute('PublicPersonQuestion');
+        let token = 'no_recaptcha';
+        if (this.recaptchaSiteKey) {
+          token = await this.recaptcha.execute('PublicPersonQuestion');
+        }
         const response = await axios.post(this.cardData.url, {
           recipient_person: this.cardData.id,
           // author_email: 'ivan@email.com',
