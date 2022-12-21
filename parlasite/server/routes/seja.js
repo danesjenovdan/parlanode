@@ -183,6 +183,26 @@ const renderMotion = async (render, req, res, next) => {
   }
 };
 
+const renderEmpty = async (render, req, res, next) => {
+  const sesData = await getNewData(req.params.id);
+  if (sesData) {
+    render('seja/ni-podatkov', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: `${i18n('titles.session')}`,
+        h1: sesData.session.name,
+        h2: slovenianDate(sesData.session.start_time),
+        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+      }),
+      activeMenu: 'session',
+      pageTitle: `${i18n('titles.session')}`,
+      activeTab: 'no-data',
+      ...sesData,
+    });
+  } else {
+    next();
+  }
+};
+
 // dynacally decide what tab to render by default based on session info
 const renderDynamic = async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
@@ -207,8 +227,8 @@ const renderDynamic = async (render, req, res, next) => {
     await renderTranscript(render, req, res, next);
     return;
   }
-  // if none just fallback to rendering votes as the default like before
-  await renderVotes(render, req, res, next);
+
+  await renderEmpty(render, req, res, next);
 };
 
 router.get('/:id(\\d+)', ar(renderDynamic));
