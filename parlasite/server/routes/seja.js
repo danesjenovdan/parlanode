@@ -9,7 +9,7 @@ const sm = i18n.siteMap;
 const router = express.Router();
 
 // TODO: is there a way to preload this?
-async function isMotionValid(sessionId, motionId) {
+async function isMotionValid(/* sessionId, motionId */) {
   return true;
   // TODO: figure out how to know when to return 404
   // THIS IS OLD AND INCOMPATIBLE CODE
@@ -54,55 +54,27 @@ function sessionClassification(classification) {
   return SESSION_CLASSIFICATIONS[key] || SESSION_CLASSIFICATIONS.unknown;
 }
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.legislation}`], ar(async (render, req, res, next) => {
+const renderLegislation = async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
-    if (sesData.session.has_legislation && !locale.startsWith('sl-obcina')) {
-      render('seja/zakonodaja', {
-        ogImageUrl: getOgImageUrl('circle', {
-          title: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
-          h1: sesData.session.name,
-          h2: slovenianDate(sesData.session.start_time),
-          icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
-        }),
-        activeMenu: 'session',
-        pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
-        activeTab: 'zakonodaja',
-        ...sesData,
-      });
-    } else if (sesData.session.has_minutes) {
-      render('seja/dnevni-red', {
-        ogImageUrl: getOgImageUrl('circle', {
-          title: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
-          h1: sesData.session.name,
-          h2: slovenianDate(sesData.session.start_time),
-          icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
-        }),
-        activeMenu: 'session',
-        pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
-        activeTab: 'dnevni-red',
-        ...sesData,
-      });
-    } else {
-      render('seja/glasovanja', {
-        ogImageUrl: getOgImageUrl('circle', {
-          title: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
-          h1: sesData.session.name,
-          h2: slovenianDate(sesData.session.start_time),
-          icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
-        }),
-        activeMenu: 'session',
-        pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
-        activeTab: 'glasovanja',
-        ...sesData,
-      });
-    }
+    render('seja/zakonodaja', {
+      ogImageUrl: getOgImageUrl('circle', {
+        title: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+        h1: sesData.session.name,
+        h2: slovenianDate(sesData.session.start_time),
+        icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
+      }),
+      activeMenu: 'session',
+      pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+      activeTab: 'zakonodaja',
+      ...sesData,
+    });
   } else {
     next();
   }
-}));
+};
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.otherVotings}`], ar(async (render, req, res, next) => {
+const renderVotes = async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     render('seja/glasovanja', {
@@ -120,9 +92,9 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.otherVotings}`], ar(async (re
   } else {
     next();
   }
-}));
+};
 
-router.get(`/:id(\\d+)/${sm.session.agenda}`, ar(async (render, req, res, next) => {
+const renderAgenda = async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     render('seja/dnevni-red', {
@@ -140,9 +112,9 @@ router.get(`/:id(\\d+)/${sm.session.agenda}`, ar(async (render, req, res, next) 
   } else {
     next();
   }
-}));
+};
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.transcript}`], ar(async (render, req, res, next) => {
+const renderTranscript = async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     render('seja/transkript', {
@@ -161,9 +133,9 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.transcript}`], ar(async (rend
   } else {
     next();
   }
-}));
+};
 
-router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.minutes}`], ar(async (render, req, res, next) => {
+const renderMinutes = async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     render('seja/zapisnik', {
@@ -182,9 +154,9 @@ router.get(['/:id(\\d+)', `/:id(\\d+)/${sm.session.minutes}`], ar(async (render,
   } else {
     next();
   }
-}));
+};
 
-router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar(async (render, req, res, next) => {
+const renderMotion = async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     const motionId = Number(req.params.motionId);
@@ -209,6 +181,42 @@ router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar(async (render, re
   } else {
     next();
   }
-}));
+};
+
+// dynacally decide what tab to render by default based on session info
+const renderDynamic = async (render, req, res, next) => {
+  const sesData = await getNewData(req.params.id);
+  if (!sesData) {
+    next();
+    return;
+  }
+
+  if (sesData.session.has_legislation && !locale.startsWith('sl-obcina')) {
+    await renderLegislation(render, req, res, next);
+    return;
+  }
+  if (sesData.session.has_minutes) {
+    await renderAgenda(render, req, res, next);
+    return;
+  }
+  if (sesData.session.has_votes) {
+    await renderVotes(render, req, res, next);
+    return;
+  }
+  if (sesData.session.has_transcript) {
+    await renderTranscript(render, req, res, next);
+    return;
+  }
+  // if none just fallback to rendering votes as the default like before
+  await renderVotes(render, req, res, next);
+};
+
+router.get('/:id(\\d+)', ar(renderDynamic));
+router.get(`/:id(\\d+)/${sm.session.legislation}`, ar(renderLegislation));
+router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar(renderVotes));
+router.get(`/:id(\\d+)/${sm.session.agenda}`, ar(renderAgenda));
+router.get(`/:id(\\d+)/${sm.session.transcript}`, ar(renderTranscript));
+router.get(`/:id(\\d+)/${sm.session.minutes}`, ar(renderMinutes));
+router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar(renderMotion));
 
 module.exports = router;
