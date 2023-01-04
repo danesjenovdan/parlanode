@@ -58,7 +58,7 @@ export default {
     const { cardData } = this.$root.$options.contextData;
 
     return {
-      recaptchaSiteKey: cardData.data?.recaptchaSiteKey,
+      recaptchaData: cardData.data?.recaptcha,
       recaptcha: null,
       question: '',
       questionError: false,
@@ -68,7 +68,7 @@ export default {
   },
   computed: {
     sendDisabled() {
-      if (this.recaptchaSiteKey && !this.recaptcha) {
+      if (this.recaptchaData?.enabled && !this.recaptcha) {
         return true;
       }
       if (!this.question?.trim()) {
@@ -78,8 +78,11 @@ export default {
     },
   },
   async mounted() {
-    if (this.recaptchaSiteKey) {
-      this.recaptcha = await loadRecaptcha(this.recaptchaSiteKey);
+    if (this.recaptchaData?.enabled) {
+      const { siteKey, domain } = this.recaptchaData;
+      this.recaptcha = await loadRecaptcha(siteKey, {
+        useRecaptchaNet: /^(www\.)?recaptcha\.net$/i.test(domain),
+      });
     }
   },
   methods: {
@@ -89,7 +92,7 @@ export default {
       }
       try {
         let token = 'no_recaptcha';
-        if (this.recaptchaSiteKey) {
+        if (this.recaptchaData?.enabled) {
           token = await this.recaptcha.execute('PublicPersonQuestion');
         }
         const response = await axios.post(this.cardData.url, {
