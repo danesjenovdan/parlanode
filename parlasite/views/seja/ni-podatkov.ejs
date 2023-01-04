@@ -1,0 +1,14 @@
+<%- await include('../_partials/header.ejs') %>
+
+<%- await include('./_header.ejs') %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="empty-state-session-no-data">
+      <img src="<%- config.urls.cdn %>/icons/empty.svg" class="no-data-icon">
+      <p class="no-data-text"><%- i18n('general.no-session-data') %></p>
+    </div>
+  </div>
+</div>
+
+<%- await include('../_partials/footer.ejs') %>
