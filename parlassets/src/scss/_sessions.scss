@@ -624,3 +624,19 @@ span.session-date {
   font-size: 16px;
   color: $font-placeholder;
 }
+
+.empty-state-session-no-data {
+  text-align: center;
+
+  .no-data-icon {
+    display: inline-block;
+    width: 100px;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .no-data-text {
+    font-size: 16px;
+    font-weight: 300;
+  }
+}

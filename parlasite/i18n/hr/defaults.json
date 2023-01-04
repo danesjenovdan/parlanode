@@ -172,7 +172,8 @@
     "tools_intro": "Demokracija je kontinuirani proces koji ovisi o našem sudjelovanju u njemu. Pomoći će sljedeći alati!",
     "page-not-found-text": "Ovdje nema ništa. Što tražiš?",
     "info_email": "info@parlametar.hr",
-    "unaffiliated": "nepovezana"
+    "unaffiliated": "nepovezana",
+    "no-session-data": "(Još) nemamo podataka za ovu sjednicu."
   },
   "social": {
     "facebook": "https://www.facebook.com/parlametar",
