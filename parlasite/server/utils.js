@@ -158,6 +158,7 @@ function getOgImageUrl(type, params = {}) {
 }
 
 module.exports = {
+  stringifyParams,
   slovenianDate,
   fetchCard,
   asyncRoute,
