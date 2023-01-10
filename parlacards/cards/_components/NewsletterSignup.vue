@@ -43,14 +43,14 @@
         </div>
         <div class="form-element-checkbox">
           <input
-            id="newsletter-gdpr-check"
+            :id="newsletterGdprCheckElementId"
             v-model="gdprChecked"
             name="newsletter-gdpr-check"
             type="checkbox"
             class="checkbox"
             required
           />
-          <label for="newsletter-gdpr-check">
+          <label :for="newsletterGdprCheckElementId">
             {{ $t('newsletter-signup-checkbox-text') }}
           </label>
         </div>
@@ -104,6 +104,13 @@ export default {
       isLoading: false,
       success: false,
     };
+  },
+  computed: {
+    newsletterGdprCheckElementId() {
+      // use unique id for label[for] and input[id] attributes in case more than
+      // one card is embeded on the same page
+      return `newsletter-gdpr-check__${this.$root.$options.contextData.mountId}`;
+    },
   },
   mounted() {
     if (this.email && this.token) {

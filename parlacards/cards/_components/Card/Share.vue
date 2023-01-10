@@ -2,9 +2,9 @@
   <div class="card-content-share">
     <div class="card-back-content">
       <div class="share-content">
-        <label v-t="'share.direct-link'" for="share-url"></label>
+        <label v-t="'share.direct-link'" :for="shareUrlElementId"></label>
         <input
-          id="share-url"
+          :id="shareUrlElementId"
           ref="urlInput"
           :value="shortenedUrl"
           type="url"
@@ -38,6 +38,11 @@ export default {
   computed: {
     shareUrl() {
       return `${this.cardUrl}&locale=${this.$i18n.locale}&template=share`;
+    },
+    shareUrlElementId() {
+      // use unique id for label[for] and input[id] attributes in case more than
+      // one card is embeded on the same page
+      return `share-url__${this.$root.$options.contextData.mountId}`;
     },
   },
   watch: {
