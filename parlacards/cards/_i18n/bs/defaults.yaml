@@ -268,7 +268,7 @@ tools:
   compass: Parlamentarni kompas
   word-groups: Grupe riječi
 frame:
-  show-in-context: Povratak na Parlametar BiH
+  show-in-context: Povratak na Parlametar
 ogText: >-
   Parlameter je alat koji, pomoću analize glasanja i stenograma zastupničkih
   nastupa, olakšava praćenje rada Parlamenta BiH.
@@ -469,8 +469,8 @@ legislation-classifications:
   act: Akt
   decree: Decree
   law: Zakon
-newsletter-signup-title: Registrujte se za newsletter Parlametar BiH!
-newsletter-signup-description: Ako želite primati pravovremene i pregledne podatke o radu Parlamentarne skupštine BiH, registrujte se na newsletter Parlametar BiH, i bilten će Vam stizati jednom mjesečno.
+newsletter-signup-title: Registrujte se za newsletter Parlametar!
+newsletter-signup-description: Ako želite primati pravovremene i pregledne podatke o radu Parlamentarne skupštine BiH, registrujte se na newsletter Parlametar, i bilten će Vam stizati jednom mjesečno.
 newsletter-signup-input-placeholder: Email
 newsletter-signup-checkbox-text: Vaši podaci čuvaju se dok traje potreba za njihovim korištenjem u skladu sa svrhom za koju je data dozvola. Ukoliko s nama za potrebe slanja newsletter-a podijelite svoju e-mail adresu, ona će se čuvati dok U.G. "Zašto ne" nudi uslugu slanja newsletter-a, osim u slučaju otkazivanja pretplate (u tom slučaju se Vaša adresa uklanja iz baze). Vašim podacima mogu pristupiti isključivo osobe koje su zaposlene u U.G. "Zašto ne" i ovlaštene za pristup podacima, i to za svrhe za koje postoji Vaša dozvola (za koje ste dali svoje eksplicitno dopuštenje). Zaposlenike i zaposlenice U.G. "Zašto ne" na zaštitu Vaših podataka obavezuje Pravilnik o radu i Pravilnik o zaštiti podataka koji je usaglašen s Opštom uredbom o zaštiti podataka.
 newsletter-signup-button-text: Registracija
