@@ -1,9 +1,52 @@
 import fs from 'fs-extra';
 import axios from 'axios';
 
-const getUrls = () => {
+const parseISOLikeDate = (date) => {
+  // parses iso like string (2022-12-31, 2022_12_31, 20221231)
+  if (typeof date === 'string') {
+    const dateString = date.replace(/[^0-9]/g, '');
+    const year = Number.parseInt(dateString.slice(0, 4), 10);
+    const month = Number.parseInt(dateString.slice(4, 6), 10);
+    const day = Number.parseInt(dateString.slice(6, 8), 10);
+    const dateObj = new Date(Date.UTC(year, month - 1, day));
+    if (!Number.isNaN(dateObj.getTime())) {
+      return dateObj;
+    }
+  }
+  return null;
+};
+
+const otherParlasiteUrls = (() => {
+  const keys = Object.keys(process.env)
+    .filter((key) => key.startsWith('VITE_PARLASITE_URL_BEFORE_'))
+    .map((key) => {
+      const url = process.env[key];
+      const dateString = key.replace(/^VITE_PARLASITE_URL_BEFORE_/g, '');
+      const dateObj = parseISOLikeDate(dateString);
+      return {
+        before: dateObj,
+        url,
+      };
+    })
+    .filter(({ before }) => before)
+    .sort((a, b) => a.before - b.before);
+  return keys;
+})();
+
+const getParlasiteUrl = (date) => {
+  const dateObj = parseISOLikeDate(date);
+  if (dateObj) {
+    const other = otherParlasiteUrls.find(({ before }) => dateObj <= before);
+    if (other) {
+      return other.url;
+    }
+  }
+  return process.env.VITE_PARLASITE_URL;
+};
+
+const getUrls = (date) => {
   return {
-    site: process.env.VITE_PARLASITE_URL,
+    site: getParlasiteUrl(date),
     cards: process.env.VITE_PARLACARDS_URL,
     data: process.env.VITE_PARLADATA_URL,
     cdn: process.env.VITE_PARLASSETS_URL,
@@ -78,7 +121,7 @@ function getCardDataUrl(cardName, id, date, state) {
     searchParams.set('groups', state?.groups);
   }
 
-  const { data } = getUrls();
+  const { data } = getUrls(date);
   const qs = searchParams.toString();
   return `${data}/cards/${cardName}/${qs ? `?${qs}` : ''}`;
 }

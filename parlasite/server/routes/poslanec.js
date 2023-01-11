@@ -29,14 +29,17 @@ async function getNewData(slug) {
   // response.ok means status is 2xx
   if (response.ok) {
     const data = await response.json();
-    return {
-      mp: {
-        ...data.person,
-        ...data.results,
-        id, // TODO this might be simpler if parladata would return the ID
-      },
-      isLeader: isLeader(slug),
-    };
+    // only members with valid membership (voter, leader) on this date have a slug
+    if (data.person && data.person.slug) {
+      return {
+        mp: {
+          ...data.person,
+          ...data.results,
+          id, // TODO this might be simpler if parladata would return the ID
+        },
+        isLeader: isLeader(slug),
+      };
+    }
   }
   return false;
 }
