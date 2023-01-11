@@ -154,7 +154,7 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   if (template === 'share' || template === 'embed') {
     cardState.altHeader = true;
   }
-  const urls = getUrls();
+  const urls = getUrls(date);
   const siteMap = await fetchSiteMap();
 
   const uid = Math.random().toString(36).slice(2);
