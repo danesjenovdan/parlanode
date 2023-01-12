@@ -21,11 +21,11 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              memory: 200Mi
-              cpu: 200m
+              memory: 125Mi
+              cpu: 100m
             limits:
-              memory: 200Mi
-              cpu: 200m
+              memory: 125Mi
+              cpu: 100m
           env:
             - name: VITE_PARLASSETS_URL
               value: https://cdn.10.parlametar.hr
