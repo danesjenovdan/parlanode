@@ -34,6 +34,6 @@ spec:
             - name: PARLASITE_MANDATE_ID
               value: "1"
             - name: PARLASITE_DEFAULT_CARD_DATE
-              value: ""
+              value: "2022-12-29"
             - name: PARLASITE_NEWSLETTER_SEGMENT_ID
               value: ""
