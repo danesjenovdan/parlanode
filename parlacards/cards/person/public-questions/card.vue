@@ -46,7 +46,7 @@ import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
 
 export default {
-  name: 'CardPersonBasicInformation',
+  name: 'CardPersonPublicQuestions',
   mixins: [
     common,
     personOverviewContextUrl,
