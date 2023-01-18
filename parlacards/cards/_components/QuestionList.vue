@@ -9,12 +9,21 @@
       <div v-else>
         <div v-for="day in sortedQuestionDays" :key="day.date">
           <div class="date">{{ formatDate(day.date) }}</div>
-          <event
-            v-for="(event, i) in day.events"
-            :key="`${day.date}-${i}`"
-            :event="event"
-            :show-author="showAuthor"
-          />
+          <div v-if="listType == 'events'">
+            <event
+              v-for="(event, i) in day.events"
+              :key="`${day.date}-${i}`"
+              :event="event"
+              :show-author="showAuthor"
+            />
+          </div>
+          <div v-else-if="listType == 'questions'">
+            <question
+              v-for="(question, i) in day.events"
+              :key="`${day.date}-${i}`"
+              :question="question"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -28,6 +37,7 @@
 import { orderBy } from 'lodash-es';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import Event from '@/_components/Event.vue';
+import Question from '@/_components/Question.vue';
 import EmptyState from '@/_components/EmptyState.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
@@ -40,6 +50,7 @@ export default {
   components: {
     ScrollShadow,
     Event,
+    Question,
     EmptyState,
   },
   props: {
@@ -55,6 +66,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    listType: {
+      type: String,
+      default: 'events'
+    }
   },
   emits: ['load-more'],
   computed: {
