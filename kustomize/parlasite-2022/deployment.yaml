@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parlasite-2022
+  labels:
+    app: parlasite-2022
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parlasite-2022
+  template:
+    metadata:
+      labels:
+        app: parlasite-2022
+    spec:
+      containers:
+        - name: parlasite-2022
+          image: parlasite-ljubljana
+          ports:
+            - containerPort: 3066
+          resources:
+            requests:
+              memory: 75Mi
+              cpu: 50m
+            limits:
+              memory: 75Mi
+              cpu: 50m
+          env:
+            - name: PARLASITE_LEADER_ID
+              value: "261"
+            - name: PARLASITE_ROOT_ORG_ID
+              value: "48"
+            - name: PARLASITE_MANDATE_ID
+              value: "2"
+            - name: PARLASITE_DEFAULT_CARD_DATE
+              value: ""
+            - name: PARLASITE_NEWSLETTER_SEGMENT_ID
+              value: ""
