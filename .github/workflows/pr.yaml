@@ -66,3 +66,10 @@ jobs:
           destination_branch: "hrvaska"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into hrvaska"
+
+      - name: pull-request-medvode
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "medvode"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into medvode"
