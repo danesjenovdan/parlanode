@@ -36,6 +36,6 @@ spec:
             - name: VITE_PARLASITE_URL
               value: https://parlasite-bosna-9.lb.djnd.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_11_29
-              value: https://ba.parlameter.si
+              value: https://8.ba.parlameter.si
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter
