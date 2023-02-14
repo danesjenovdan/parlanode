@@ -34,7 +34,7 @@ spec:
             - name: VITE_PARLACARDS_URL
               value: https://parlacards-bosna.lb.djnd.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite-bosna-9.lb.djnd.si
+              value: https://ba.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_11_29
               value: https://8.ba.parlameter.si
             - name: VITE_METAIMAGES_URL

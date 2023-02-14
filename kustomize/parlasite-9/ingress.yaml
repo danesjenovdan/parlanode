@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlasite-bosna-9.lb.djnd.si
+        - ba.parlameter.si
       secretName: parlasite-9-tls
   rules:
-    - host: parlasite-bosna-9.lb.djnd.si
+    - host: ba.parlameter.si
       http:
         paths:
           - path: /
