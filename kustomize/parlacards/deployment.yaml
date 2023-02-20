@@ -28,12 +28,12 @@ spec:
               cpu: 100m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-medvode.lb.djnd.si
+              value: https://cdn.medvode.parlameter.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata-medvode.lb.djnd.si/v3
+              value: https://data.medvode.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards-medvode.lb.djnd.si
+              value: https://glej.medvode.parlameter.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite-medvode.lb.djnd.si
+              value: https://medvode.parlameter.si
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter

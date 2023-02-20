@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlasite-medvode.lb.djnd.si
+        - medvode.parlameter.si
       secretName: parlasite-tls
   rules:
-    - host: parlasite-medvode.lb.djnd.si
+    - host: medvode.parlameter.si
       http:
         paths:
           - path: /
