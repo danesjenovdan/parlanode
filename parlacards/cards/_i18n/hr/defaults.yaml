@@ -465,8 +465,8 @@ sort-by--workingBody: nazivu tijela
 title: Naslov
 other-procedures: Drugi postupci
 organization-classifications:
-  root: Parliament
-  committee: Committees
+  root: Sabor
+  committee: Saborski odbori
   other: Other working bodies
   commission: Commission
 legislation-classifications:
