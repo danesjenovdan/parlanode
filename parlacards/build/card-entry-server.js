@@ -34,7 +34,13 @@ export default async (contextData, i18nData) => {
     // of transactions for performance monitoring.
     // We recommend adjusting this value in production
     tracesSampleRate: 1.0,
-    environment: "lendava",
+    environment: 'lendava',
+    // Ignore some external errors, such as facebook,
+    // twitter, slack bots or link crawlers and scanners.
+    ignoreErrors: [
+      // Outlook Safe Link scanning
+      'Object Not Found Matching Id',
+    ],
   });
 
   try {
