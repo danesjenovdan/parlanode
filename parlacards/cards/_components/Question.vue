@@ -1,5 +1,5 @@
 <template>
-  <div class="event">
+  <div class="question">
     <div :class="['parlaicon', eventIcon]"></div>
     <div
       class="motion"
@@ -10,6 +10,9 @@
         {{ question.text }}
       </span>
     </div>
+  </div>
+  <div class="answer" v-if="question.answer && !shorten">
+    <p>{{ question.answer.text }}</p>
   </div>
 </template>
 
@@ -41,7 +44,7 @@ export default {
 <style lang="scss">
 @import 'parlassets/scss/breakpoints';
 
-.event {
+.question {
   display: flex;
   font-weight: 500;
   font-size: 16px;
@@ -72,4 +75,17 @@ export default {
     }
   }
 }
+
+.answer {
+  margin-left: 40px;
+
+  p {
+    margin-top: -10px;
+  }
+}
+
+.answer:last-child {
+  padding-bottom: 15px;
+}
+
 </style>
