@@ -1,7 +1,7 @@
 {
   "landing": {
     "title": "Parlameter",
-    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v mestnem svetu MOL.",
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v občinskem svetu Občine Medvode.",
     "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
     "search": {
       "part_one": "Išči",
@@ -56,7 +56,7 @@
   "footer": {
     "heading": "Parlameter",
     "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
-    "contact_mail": "mol@parlameter.si",
+    "contact_mail": "info@parlameter.si",
     "about_heading": "O projektu",
     "about": "Predstavitev Parlametra",
     "about_municipality": "O projektu Tvoja občina",
