@@ -14,10 +14,10 @@ resources:
 images:
   - name: parlacards-medvode
     newName: rg.fr-par.scw.cloud/djnd/parlacards-medvode
-    newTag: '8a1649a7f0c1ab193f755900a4b5c1de562512bb'
+    newTag: '6309bfa5752cf8f833846d30a4450599cb22ccec'
   - name: parlasite-medvode
     newName: rg.fr-par.scw.cloud/djnd/parlasite-medvode
-    newTag: '8a1649a7f0c1ab193f755900a4b5c1de562512bb'
+    newTag: '6309bfa5752cf8f833846d30a4450599cb22ccec'
   - name: parlassets-medvode
     newName: rg.fr-par.scw.cloud/djnd/parlassets-medvode
-    newTag: '8a1649a7f0c1ab193f755900a4b5c1de562512bb'
+    newTag: '6309bfa5752cf8f833846d30a4450599cb22ccec'
