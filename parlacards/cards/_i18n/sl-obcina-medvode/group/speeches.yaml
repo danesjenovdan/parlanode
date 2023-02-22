@@ -1,0 +1,10 @@
+card:
+  title: Govori
+  info: >-
+    # Izpis povezav do vseh govorov svetnikov svetniškega kluba v tem sklicu, ki
+    ustrezajo uporabniškemu vnosu, razvrščenih po datumu.
+
+
+    Naložimo povezave do vseh govorov svetnikov izbranega svetniškega kluba, ki
+    jih najdemo v transkriptih, pridobljenih s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/). Ob uporabi filtrov prikažemo tiste, ki ustrezajo uporabniškemu vnosu (časovno
+    obdobje, vsebina govora).
