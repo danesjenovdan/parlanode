@@ -34,6 +34,7 @@ export default async (contextData, i18nData) => {
     // of transactions for performance monitoring.
     // We recommend adjusting this value in production
     tracesSampleRate: 1.0,
+    environment: 'slovenija',
     // Ignore some external errors, such as facebook,
     // twitter, slack bots or link crawlers and scanners.
     ignoreErrors: [
