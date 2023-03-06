@@ -1,7 +1,7 @@
 card:
   title: Glasovanje
   info: >-
-    Nabor glasovanj pridobimo s spletnega mesta [Mestne občine Ljubljana](https://www.ljubljana.si/).
+    Nabor glasovanj pridobimo s spletnega mesta [Občine Medvode](https://www.medvode.si/).
 
 
     Rezultat posameznega glasovanja ima dva različna izpisa: na nivoju svetnikov in
@@ -10,7 +10,7 @@ card:
 
     Prvi zavihek omogoča pregled glasov svetnikov, filtriranje glede na vrednost glasovnice
     (ZA, PROTI, VZDRŽAN/-A, NI GLASOVAL/-A) ter iskanje posameznih svetnikov. Poleg
-    krožnega grafikona se izpisuje večinski glas Mestnega sveta na tem glasovanju.
+    krožnega grafikona se izpisuje večinski glas Občinskega sveta na tem glasovanju.
     "60 % ZA" npr. pomeni, da je ZA glasovalo 60 % vseh svetnikov z glasovalno pravico
     na tem glasovanju.
 
@@ -22,7 +22,7 @@ card:
 
     Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
     pri vzdržanih in odsotnih glasov ne moremo zagotavljati. Prisotnost svetnikov
-    se na sejah mestnega sveta ne preverja na vsakem glasovanju, zato se lahko zgodi,
+    se na sejah občinskega sveta ne preverja na vsakem glasovanju, zato se lahko zgodi,
     da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
     z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
     kot odsotna (rezultat: ni glasoval/a).
