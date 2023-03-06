@@ -1,10 +1,9 @@
 card:
   title: Odloki
   info: >-
-    # Seznam vseh zakonov in aktov, o katerih so ne tej seji glasovali
-    in ustrezajo uporabniškemu vnosu (naslov, matično delovno telo).
+    # Seznam vseh odlokov, o katerih so v tem sklicu glasovali na sejah občinskega
+    sveta in ustrezajo uporabniškemu vnosu (naslov, razvrščanje po datumu, naslovu
+    ali statusu).
 
 
-    Podatke o sejah pridobivamo iz spletnega mesta DZ RS.
-    [Zakoni](https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiZakonov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwN3I30wwkpiAJKG-AAjgb6BbmhigDW2mUM/dz/d5/L2dBISEvZ0FBIS9nQSEh)
-    [Akti](https://www.dz-rs.si/wps/portal/Home/deloDZ/zakonodaja/vObravnavi/predlogiAktov/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N_D18DA08PQIcDbwtnIwNLMz0wwkpiAJKG-AAjgb6BbmhigAUeAnK/dz/d5/L2dBISEvZ0FBIS9nQSEh)
+    Podatke o sejah pridobivamo s spletnega mesta [Občine Medvode](https://www.medvode.si/).
