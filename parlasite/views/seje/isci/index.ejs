@@ -44,8 +44,11 @@
 
 <div id="session-search-results">
   <div class="row">
+    <!-- <div class="col-md-12">
+      <%# await fetchCard('/search/speeches/', mandateId, { text: query, people: mps, groups: pgs }) %>
+    </div> -->
     <div class="col-md-12">
-      <%- await fetchCard('/search/speeches/', mandateId, { text: query, people: mps, groups: pgs }) %>
+      <%- await fetchCard('/search/minutes/', mandateId, { text: query }) %>
     </div>
     <div class="col-md-12">
       <%- await fetchCard('/search/legislation/', mandateId, { text: query }) %>
@@ -54,14 +57,14 @@
       <%- await fetchCard('/search/votes/', mandateId, { text: query }) %>
     </div>
     <div class="col-md-12">
-      <%- await fetchCard('/search/usage-through-time-in-speeches/', mandateId, { text: query, people: mps, groups: pgs }) %>
+      <%- await fetchCard('/search/usage-through-time-in-agenda-items/', mandateId, { text: query, people: mps, groups: pgs }) %>
     </div>
-    <div class="col-md-6">
-      <%- await fetchCard('/search/most-used-by-people/', mandateId, { text: query, people: mps, groups: pgs }) %>
-    </div>
-    <div class="col-md-6">
-      <%- await fetchCard('/search/usage-by-group/', mandateId, { text: query, people: mps, groups: pgs }) %>
-    </div>
+    <!-- <div class="col-md-6">
+      <%# await fetchCard('/search/most-used-by-people/', mandateId, { text: query, people: mps, groups: pgs }) %>
+    </div> -->
+    <!-- <div class="col-md-6">
+      <%# await fetchCard('/search/usage-by-group/', mandateId, { text: query, people: mps, groups: pgs }) %>
+    </div> -->
   </div>
 </div>
 
