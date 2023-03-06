@@ -33,6 +33,7 @@ Sentry.init({
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production
   tracesSampleRate: 1.0,
+  environment: 'medvode',
   // Ignore some external errors, such as facebook,
   // twitter, slack bots or link crawlers and scanners.
   ignoreErrors: [
