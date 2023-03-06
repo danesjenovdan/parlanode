@@ -5,14 +5,7 @@ card:
   votes-title: Glasovanja
   info: >-
     # Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem mestu
-    [Mestne občine Ljubljana](https://www.ljubljana.si/).
-
-
-    ## BESEDE, KI SO ZAZNAMOVALE SEJO
-
-
-    Analizo izvajamo po statistiki [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
-    Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.
+    [Občine Medvode](https://www.medvode.si/).
 
 
     ## PRISOTNOST SVETNIŠKIH KLUBOV NA GLASOVANJIH SEJE
@@ -32,7 +25,7 @@ card:
 
     Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
     pri vzdržanih in odsotnih glasov ne moremo zagotavljati. Prisotnost svetnikov
-    se na sejah mestnega sveta ne preverja na vsakem glasovanju, zato se lahko zgodi,
+    se na sejah občinskega sveta ne preverja na vsakem glasovanju, zato se lahko zgodi,
     da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
     z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
     kot odsotna (rezultat: ni glasoval/a).
