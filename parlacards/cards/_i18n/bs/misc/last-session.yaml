@@ -33,3 +33,33 @@ card:
     poimenice, koristi se i glasanje podizanjem ruke kod kojeg se ne zapisuje poimenice
     ko je digao ruku – odnosno glasao “za” – nego se samo pribilježi da je poslanik/ca
     glasao “za”).
+  info2: >-
+    # Pregled statistike za posljednju održanu sjednicu Doma naroda Parlamentarne
+    skupštine BiH, za koju su podaci objavljeni na zvaničnoj internet-stranici Parlamentarne
+    skupštine BiH.
+
+
+    # Riječi koje označavaju sjednicu
+
+
+    Svi govori sa sjednice preuzimaju se sa zvanične internet-stranice Parlamentarne
+    skupštine BiH, a statistike se izračunavaju pomoću modela [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+
+
+    # Prisutnost klubova na sjednici tokom glasanja
+
+
+    Klubovi su razvrstani prema postocima koji pokazuju na koliko su glasanja njihovi/e
+    delegati/kinje bili/e prisutni/e.
+
+
+    # Glasanja
+
+
+    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (“za”, “protiv”,
+    “suzdržan”) i broj delegata/kinja koji/e nisu glasali/e – te se ispišu rezultati.
+    Ruka gore označava glasanja na kojima se glasalo podizanjem ruke, a ne individualno.
+    (Naime, pored individualnog glasanja, kod kojeg se čitaju imena i prezimena delegata/kinja
+    poimenice, koristi se i glasanje podizanjem ruke, kod kojeg se ne zapisuje poimenice
+    ko je digao ruku – odnosno glasao “za” – nego se samo pribilježi da je delegat/kinja
+    glasao “za”).

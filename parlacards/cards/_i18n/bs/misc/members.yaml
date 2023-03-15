@@ -2,3 +2,5 @@ card:
   title: Popis zastupnika
   info: >-
     # Popis svih trenutno aktivnih poslanika/ca, sortiran abecednim redom.
+  info2: >-
+    # Popis svih trenutno aktivnih delegata/kinja, sortiran abecednim redom.
