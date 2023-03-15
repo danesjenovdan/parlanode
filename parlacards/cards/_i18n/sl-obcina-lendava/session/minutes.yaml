@@ -1,5 +1,5 @@
 card:
   title: Zapisnik
-  info: "# Dnevni red izbrane seje\n\nPrikažemo točke dnevnega reda izbrane seje s\
-    \ povezavami na obravnavane dokumente in zapisnik seje. Podatke pridobimo s spletnega\
-    \ mesta [Občine Lendava](https://www.lendava.si/)."
+  info: "# Zapisnik izbrane seje\n\nZapisnik seje, razdeljen na posamezne točke dnevnega\
+    \ reda. V zapisnik avtomatsko ali ročno dodamo pripadajoča glasovanja. Podatke\
+    \ pridobimo s spletnega mesta [Občine Lendava](https://www.lendava.si/)."
