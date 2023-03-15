@@ -12,10 +12,7 @@
           { full: !halfHeight && !maxHeight, half: halfHeight },
         ]"
       >
-        <card-info
-          v-if="currentBack === 'info'"
-          :info="$te('card.info') ? $t('card.info') : ''"
-        />
+        <card-info v-if="currentBack === 'info'" :info="infoText" />
 
         <card-embed v-else-if="currentBack === 'embed'" />
 
@@ -79,7 +76,19 @@ export default {
       previousHeight: null,
       hasGenerator: this.$slots.generator?.()?.length,
       showGenerator: cardState?.generator,
+      cardInfoKey: cardState?.cardInfoKey,
     };
+  },
+  computed: {
+    infoText() {
+      if (this.cardInfoKey && this.$te(this.cardInfoKey)) {
+        return this.$t(this.cardInfoKey);
+      }
+      if (this.$te('card.info')) {
+        return this.$t('card.info');
+      }
+      return '';
+    },
   },
   watch: {
     currentBack(newBack) {

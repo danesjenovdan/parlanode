@@ -3,6 +3,6 @@ card:
   info: >-
     # Dnevni red izbrane seje
 
-    Prikažemo točke dnevnega reda izbrane seje s povezavami na obravnavane
-    dokumente in zapisnik seje. Podatke pridobimo s spletnega mesta
-    [Občine Hrastnik](https://www.hrastnik.si/).
+
+    Prikažemo točke dnevnega reda izbrane seje s povezavami na obravnavane dokumente
+    in zapisnik seje. Podatke pridobimo s spletnega mesta [Občine Hrastnik](https://www.hrastnik.si/).
