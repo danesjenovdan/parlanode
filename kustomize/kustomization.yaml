@@ -17,10 +17,10 @@ resources:
 images:
   - name: parlacards-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlacards-bosna
-    newTag: '884e164d065fa8f0c4002d759362ec4353e41ec4'
+    newTag: 'e5cbdb52541edf11ffcfda51e24bf5c733e81f0f'
   - name: parlasite-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlasite-bosna
-    newTag: '884e164d065fa8f0c4002d759362ec4353e41ec4'
+    newTag: 'e5cbdb52541edf11ffcfda51e24bf5c733e81f0f'
   - name: parlassets-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlassets-bosna
-    newTag: '884e164d065fa8f0c4002d759362ec4353e41ec4'
+    newTag: 'e5cbdb52541edf11ffcfda51e24bf5c733e81f0f'
