@@ -3,6 +3,6 @@ card:
   info: >-
     # Dnevni red izbrane seje
 
-    Prikažemo točke dnevnega reda izbrane seje s povezavami na obravnavane
-    dokumente in zapisnik seje. Podatke pridobimo s spletnega mesta
-    [DZ RS](https://www.dz-rs.si/).
+
+    Prikažemo točke dnevnega reda izbrane seje s povezavami na obravnavane dokumente
+    in zapisnik seje. Podatke pridobimo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
