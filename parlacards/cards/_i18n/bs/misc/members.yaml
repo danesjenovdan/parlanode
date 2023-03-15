@@ -1,10 +1,4 @@
 card:
   title: Popis zastupnika
   info: >-
-    # Skup svih trenutno aktivnih zastupnika koji odgovaraju korisničkom izboru
-    ({parties}; {districts}). Pregled je sortiran po {sortBy}.
-
-
-    Kolona analiza izražava zajednički rezultat, a kolona Promjena razliku u
-    odnosu na prethodni mjesec. Kolona Promjena ažurira se svaki 1. dan u
-    mjesecu.
+    # Popis svih trenutno aktivnih poslanika/ca, sortiran abecednim redom.
