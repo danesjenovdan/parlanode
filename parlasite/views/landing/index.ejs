@@ -79,11 +79,11 @@
     <%# await fetchCard('/misc/promoted-legislation/', rootOrgId) %>
   </div>
   <div class="col-md-12">
-    <%- await fetchCard('/misc/last-session/', rootOrgId) %>
+    <%- await fetchCard('/misc/last-session/', rootOrgId, { cardTitle: "Posljednja sjednica Predstavničkog doma" }) %>
 
     <div style="height:25px"></div>
 
-    <%- await fetchCard('/misc/last-session/', rootOrgId2, { cardInfoKey: "card.info2" }) %>
+    <%- await fetchCard('/misc/last-session/', rootOrgId2, { cardTitle: "Posljednja sjednica Doma naroda", cardInfoKey: "card.info2" }) %>
   </div>
 </div>
 

@@ -66,7 +66,9 @@ export const sessionHeader = {
         heading: sessionName,
         subheading: session?.date,
         alternative: cardState?.altHeader,
-        title: this.$t('card.title'),
+        title: cardState?.cardTitle
+          ? cardState?.cardTitle
+          : this.$t('card.title'),
       };
     },
   },
