@@ -2,7 +2,7 @@ card:
   title: Lista posiedzeń
   info: >-
     # Lista wszystkich posiedzeń odpowiadającym szukanej frazie. Lista jest
-    sortowana według {sort-by}{just-last-five}.
+    sortowana według {sortBy}{justLastFive}.
 
 
     Dane o posiedzeniach pochodzą ze strony internetowej Sejmu RP, a dokładnie z
