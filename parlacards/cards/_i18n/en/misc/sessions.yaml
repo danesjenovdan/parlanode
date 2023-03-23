@@ -2,7 +2,7 @@ card:
   title: List of sessions
   info: >-
     # A list of all session in this sitting, corresponding to user query
-    ({filter}). The list is filtered by {sort-by}{just-last-five}.
+    ({filter}). The list is filtered by {sortBy}{justLastFive}.
 
 
     Information on the sessions is derived from the National Assembly's web
