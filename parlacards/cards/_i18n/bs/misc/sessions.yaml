@@ -1,11 +1,4 @@
 card:
   title: Popis sjednica
   info: >-
-    # Popis svih sjednica Parlamenta BiH koji odgovara korisničkom unosu
-    ({filter}). Popis je sortiran prema {sortBy}{justLastFive}.
-
-
-    Podaci o sjednicama preuzimaju se sa stranice Parlamenta BiH, tačnije
-    [ovdje](http://parlament.ba/session/Read?ConvernerId=1).
-    [ovdje](http://parlament.ba/session/Read?ConvernerId=1)
-    [ovdje](http://parlament.ba/session/Read?ConvernerId=1)
+    # Popis svih sjednica u aktuelnom mandatu, sortiran redom održavanja sjednica.
