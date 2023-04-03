@@ -1,3 +1,4 @@
+import { assign } from 'lodash-es';
 import sessionClassification from '@/_helpers/sessionClassification.js';
 import stringifyParams from '@/_helpers/stringifyParams.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
@@ -37,7 +38,8 @@ export const partyOgImage = {
 export const sessionOgImage = {
   created() {
     const { template, urls, cardData } = this.$root.$options.contextData;
-    const session = cardData?.data?.session || {};
+    const session =
+      cardData?.data?.session || cardData?.data?.results?.session || {};
     template.ogImage = getOgImageUrl(this, 'circle', {
       title: this.$te('card.title') ? this.$t('card.title') : '',
       h1: session.name,
@@ -59,4 +61,12 @@ export const searchOgImage = {
       icon: `${urls.cdn}/icons/og-search.svg`,
     });
   },
+};
+
+export const defaultOgImage = (comp, overrides = {}) => {
+  const { template, cardState } = comp.$root.$options.contextData;
+  const obj = {
+    title: cardState?.cardTitle ? cardState?.cardTitle : comp.$t('card.title'),
+  };
+  template.ogImage = getOgImageUrl(comp, 'generic', assign({}, obj, overrides));
 };
