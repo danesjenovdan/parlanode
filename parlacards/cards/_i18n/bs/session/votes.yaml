@@ -4,34 +4,27 @@ card:
     # Pregled svih glasanja na sjednici
 
 
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
-    SUZDRŽAN) i broj zastupnika koji nisu glasali te ispišu rezultati.
+    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (“za”, “protiv”,
+    “suzdržan”) i broj parlamentaraca/ki koji/e nisu glasali/e, te se onda ispišu
+    rezultati. Rezultati glasanja preuzimaju se sa zvanične internet-stranice
+    [Parlamentarne skupštine BiH](http://www.parlament.ba/).
 
 
-    Rezultati glasanja preuzimaju se sa stranice [Parlament
-    BiH](http://www.parlament.ba).
+    ## Neočekivana glasanja
 
 
-    Neočekivana glasanja
-
-
-    Za označavanje neočekivanih rezultata koristi se probabilistička metoda
-    analize glavnih komponenti, [kako je implementirana u knjižicama
-    scikit-learn](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
-    i opisana u [M. Tipping and C. Bishop, Probabilistic Principal Component
-    Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3,
-    pp. 611-622](http://www.miketipping.com/papers/met-mppca.pdf).
-
-
-    Sva glasanja pretvaraju se u četverodimenzionalne vektore, gdje svaka
-    komponenta predstavlja broj danih glasova određene vrijednosti (ZA, PROTIV,
-    ODSUTAN, SUZDRŽAN). PCA model prilagođava se matrici, a funkcijom
-    [score_samples](https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485)
-    dobiva se "log-likelihood" svakog glasanja u modelu. Model funkcionira tako
-    da prilikom adaptacije "log-likelihood" vrijednost nastoji maksimizirati za
-    što je moguće više glasanja. Kad se dobiju sve "log-likelihood" vrijednosti,
-    rangiraju se od najmanje do najveće i koristi se četvrtina svih glasanja
-    koji modelu najmanje odgovaraju. Kako u poređenjui s modelom ti glasovi
-    najviše odstupaju, kao takvi su najviše "neočekivani". U kartici su označeni
-    simbolom munje. Ruka gore označava glasanja na kojima se nije glasalo
-    individualno nego podizanjem ruke.
+    Za označavanje neočekivanih rezultata koristi se probabilistička metoda analize
+    glavnih komponenti, kako je implementirana u [knjižicama _scikit-learn_](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
+    i opisana u [M. Tipping and C. Bishop, “Probabilistic Principal Component Analysis” Journal
+    of the Royal Statistical Society, Series B, 61, Part 3, pp. 611-622](http://www.miketipping.com/papers/met-mppca.pdf).
+    Sva glasanja pretvaraju se u četverodimenzionalne vektore, gdje svaka komponenta predstavlja
+    broj datih glasova određene vrijednosti (“za”, “protiv”, “odsutan”, “suzdržan”).
+    PCA model prilagođava se matrici, a funkcijom
+    _[score_samples](https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485)_
+    dobiva se _log-likelihood_ svakog glasanja u modelu. Model funkcioniše tako da se prilikom
+    adaptacije _log-likelihood_ vrijednost nastoji maksimizirati za što je moguće više glasanja.
+    Kad se dobiju sve _log-likelihood_ vrijednosti, rangiraju se od najmanje do najveće i koristi
+    se četvrtina svih glasanja koji modelu najmanje odgovaraju – kako u poređenju s modelom ti
+    glasovi najviše odstupaju, kao takvi su najviše “neočekivani”. Oni su u kartici označeni
+    simbolom munje. Ruka gore označava glasanja na kojima se nije glasalo individualno,
+    nego podizanjem ruke.

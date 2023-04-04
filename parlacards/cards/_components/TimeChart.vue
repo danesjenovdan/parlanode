@@ -13,10 +13,6 @@ export default {
       type: Array,
       default: () => [],
     },
-    tooltipTimeFormat: {
-      type: String,
-      default: '%x', // %x = locale date format
-    },
   },
   watch: {
     data() {
@@ -34,7 +30,7 @@ export default {
       d3.timeFormatDefaultLocale(getD3Locale(this.$i18n.locale));
 
       const monthFormat = d3.timeFormat('%b %y');
-      const dateFormat = d3.timeFormat(this.tooltipTimeFormat);
+      const dateFormat = d3.timeFormat('%B %Y');
 
       const width = 940;
       const height = 420;
@@ -45,16 +41,22 @@ export default {
         .append('svg')
         .attr('viewBox', [0, 0, width, height]);
 
-      // pad min and max date by 1 days so it improves the bottom axis labels
-      const extent = d3.extent(this.data.map((d) => d.date));
-      const minDate = new Date(extent[0]);
-      minDate.setDate(minDate.getDate() - 1);
-      const maxDate = new Date(extent[1]);
-      maxDate.setDate(maxDate.getDate() + 1);
+      const dataDates = this.data
+        .map((d) => d.date)
+        .filter((d, i, a) => {
+          const maxTicks = 24;
+          const factor = Math.ceil(a.length / maxTicks);
+          if (i === 0 || i === a.length - 1) {
+            return true;
+          }
+          return i % factor === 0;
+        });
+
+      const extent = d3.extent(dataDates);
 
       const x = d3
         .scaleTime()
-        .domain([minDate, maxDate])
+        .domain(extent)
         .range([margin.left, width - margin.right]);
 
       const y = d3
@@ -67,7 +69,7 @@ export default {
         .append('g')
         .attr('class', 'axis-bottom')
         .attr('transform', `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(x).tickFormat(monthFormat))
+        .call(d3.axisBottom(x).tickValues(dataDates).tickFormat(monthFormat))
         .call((g) => g.selectAll('.domain').remove());
 
       const line = d3

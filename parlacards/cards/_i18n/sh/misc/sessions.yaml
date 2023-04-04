@@ -2,7 +2,7 @@ card:
   title: Seznam sej
   info: >-
     # Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu
-    ({filter}). Seznam je sortiran po {sort-by}{just-last-five}.
+    ({filter}). Seznam je sortiran po {sortBy}{justLastFive}.
 
 
     Podatke o sejah pridobivamo iz spletnega mesta DZ RS, natančneje od

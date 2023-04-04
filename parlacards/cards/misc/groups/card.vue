@@ -43,6 +43,7 @@ import links from '@/_mixins/links.js';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import { partyListContextUrl } from '@/_mixins/contextUrls.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import EmptyState from '@/_components/EmptyState.vue';
 
@@ -172,6 +173,9 @@ export default {
         return b - a;
       });
     },
+  },
+  created() {
+    defaultOgImage(this);
   },
 };
 </script>
