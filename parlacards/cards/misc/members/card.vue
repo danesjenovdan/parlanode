@@ -78,6 +78,7 @@ import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
 import { memberListContextUrl } from '@/_mixins/contextUrls.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { defaultOgImage } from '@/_mixins/ogImages.js';
 import BlueButtonList from '@/_components/BlueButtonList.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import SearchField from '@/_components/SearchField.vue';
@@ -492,6 +493,9 @@ export default {
     currentSortOrder() {
       this.searchPeopleImmediate();
     },
+  },
+  created() {
+    defaultOgImage(this);
   },
   mounted() {
     // fix sort if different analysis was loaded from state

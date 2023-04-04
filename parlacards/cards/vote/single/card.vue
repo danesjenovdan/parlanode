@@ -171,74 +171,90 @@
       <div v-if="allVotes" class="session_voting row">
         <div class="col-md-6 col-md-offset-3">
           <div class="session_votes">
-              <div class="row">
-                <div
-                  v-if="!(voteNumbers['did not vote'] > 0 && voteNumbers?.for === 0)"
-                  :class="{
-                    'col-xs-2 col-xs-offset-1': numberOfBallotTypes === 5,
-                    'col-xs-3': numberOfBallotTypes === 4,
-                    'col-xs-4': numberOfBallotTypes === 3,
-                    'col-xs-6': numberOfBallotTypes === 2,
-                  }"
-                >
-                  {{ voteNumbers?.for }}
-                  <div v-t="'vote-for-plural'" class="type"></div>
-                  <div class="indicator aye">&nbsp;</div>
-                </div>
-                <div
-                  v-if="!(voteNumbers['did not vote'] > 0 && voteNumbers?.against === 0)"
-                  :class="{
-                    'col-xs-2': numberOfBallotTypes === 5,
-                    'col-xs-3': numberOfBallotTypes === 4,
-                    'col-xs-4': numberOfBallotTypes === 3,
-                    'col-xs-6': numberOfBallotTypes === 2,
-                  }"
-                >
-                  {{ voteNumbers?.against }}
-                  <div v-t="'vote-against-plural'" class="type"></div>
-                  <div class="indicator ney">&nbsp;</div>
-                </div>
-                <div
-                  v-if="!(voteNumbers['did not vote'] > 0 && voteNumbers?.abstain === 0)"
-                  :class="{
-                    'col-xs-2': numberOfBallotTypes === 5,
-                    'col-xs-3': numberOfBallotTypes === 4,
-                    'col-xs-4': numberOfBallotTypes === 3,
-                    'col-xs-6': numberOfBallotTypes === 2,
-                  }"
-                >
-                  {{ voteNumbers?.abstain }}
-                  <div v-t="'vote-abstain-plural'" class="type"></div>
-                  <div class="indicator abstention">&nbsp;</div>
-                </div>
-                <div
-                  v-if="!(voteNumbers['did not vote'] > 0 && voteNumbers?.absent === 0)"
-                  :class="{
-                    'col-xs-2': numberOfBallotTypes === 5,
-                    'col-xs-3': numberOfBallotTypes === 4,
-                    'col-xs-4': numberOfBallotTypes === 3,
-                    'col-xs-6': numberOfBallotTypes === 2,
-                  }"
-                >
-                  {{ voteNumbers?.absent }}
-                  <div v-t="'vote-absent-plural'" class="type"></div>
-                  <div class="indicator not">&nbsp;</div>
-                </div>
-                <div
-                  v-if="voteNumbers['did not vote'] > 0"
-                  :class="{
-                    'col-xs-2': numberOfBallotTypes === 5,
-                    'col-xs-3': numberOfBallotTypes === 4,
-                    'col-xs-4': numberOfBallotTypes === 3,
-                    'col-xs-6': numberOfBallotTypes === 2,
-                  }"
-                >
-                  {{ voteNumbers['did not vote'] }}
-                  <div v-t="'vote-did-not-vote-plural'" class="type"></div>
-                  <div class="indicator none">&nbsp;</div>
-                </div>
+            <div class="row">
+              <div
+                v-if="
+                  !(voteNumbers['did not vote'] > 0 && voteNumbers?.for === 0)
+                "
+                :class="{
+                  'col-xs-2 col-xs-offset-1': numberOfBallotTypes === 5,
+                  'col-xs-3': numberOfBallotTypes === 4,
+                  'col-xs-4': numberOfBallotTypes === 3,
+                  'col-xs-6': numberOfBallotTypes === 2,
+                }"
+              >
+                {{ voteNumbers?.for }}
+                <div v-t="'vote-for-plural'" class="type"></div>
+                <div class="indicator aye">&nbsp;</div>
+              </div>
+              <div
+                v-if="
+                  !(
+                    voteNumbers['did not vote'] > 0 &&
+                    voteNumbers?.against === 0
+                  )
+                "
+                :class="{
+                  'col-xs-2': numberOfBallotTypes === 5,
+                  'col-xs-3': numberOfBallotTypes === 4,
+                  'col-xs-4': numberOfBallotTypes === 3,
+                  'col-xs-6': numberOfBallotTypes === 2,
+                }"
+              >
+                {{ voteNumbers?.against }}
+                <div v-t="'vote-against-plural'" class="type"></div>
+                <div class="indicator ney">&nbsp;</div>
+              </div>
+              <div
+                v-if="
+                  !(
+                    voteNumbers['did not vote'] > 0 &&
+                    voteNumbers?.abstain === 0
+                  )
+                "
+                :class="{
+                  'col-xs-2': numberOfBallotTypes === 5,
+                  'col-xs-3': numberOfBallotTypes === 4,
+                  'col-xs-4': numberOfBallotTypes === 3,
+                  'col-xs-6': numberOfBallotTypes === 2,
+                }"
+              >
+                {{ voteNumbers?.abstain }}
+                <div v-t="'vote-abstain-plural'" class="type"></div>
+                <div class="indicator abstention">&nbsp;</div>
+              </div>
+              <div
+                v-if="
+                  !(
+                    voteNumbers['did not vote'] > 0 && voteNumbers?.absent === 0
+                  )
+                "
+                :class="{
+                  'col-xs-2': numberOfBallotTypes === 5,
+                  'col-xs-3': numberOfBallotTypes === 4,
+                  'col-xs-4': numberOfBallotTypes === 3,
+                  'col-xs-6': numberOfBallotTypes === 2,
+                }"
+              >
+                {{ voteNumbers?.absent }}
+                <div v-t="'vote-absent-plural'" class="type"></div>
+                <div class="indicator not">&nbsp;</div>
+              </div>
+              <div
+                v-if="voteNumbers['did not vote'] > 0"
+                :class="{
+                  'col-xs-2': numberOfBallotTypes === 5,
+                  'col-xs-3': numberOfBallotTypes === 4,
+                  'col-xs-4': numberOfBallotTypes === 3,
+                  'col-xs-6': numberOfBallotTypes === 2,
+                }"
+              >
+                {{ voteNumbers['did not vote'] }}
+                <div v-t="'vote-did-not-vote-plural'" class="type"></div>
+                <div class="indicator none">&nbsp;</div>
               </div>
             </div>
+          </div>
         </div>
       </div>
 
@@ -252,6 +268,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { sum } from 'lodash-es';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { sessionOgImage } from '@/_mixins/ogImages.js';
 import { voteSessionVotesContextUrl } from '@/_mixins/contextUrls.js';
 import { parseVoteTitle } from '@/_helpers/voteTitle.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
@@ -276,7 +293,7 @@ export default {
     DataNotPublished,
     Documents,
   },
-  mixins: [common, links, voteSessionVotesContextUrl],
+  mixins: [common, links, voteSessionVotesContextUrl, sessionOgImage],
   cardInfo: {
     doubleWidth: true,
   },
@@ -392,9 +409,11 @@ export default {
       return percentages;
     },
     numberOfBallotTypes() {
-      const realNumberOfBallotTypes = Object.values(this.voteNumbers).filter((ballotTypeCount) => {
-        return ballotTypeCount > 0
-      }).length;
+      const realNumberOfBallotTypes = Object.values(this.voteNumbers).filter(
+        (ballotTypeCount) => {
+          return ballotTypeCount > 0;
+        }
+      ).length;
       return this.voteNumbers['did not vote'] > 0 ? realNumberOfBallotTypes : 4;
     },
     excerptData() {
@@ -409,7 +428,7 @@ export default {
     },
     hasAnonymousVotes() {
       return this.results.members.length > this.filteredMembers.length;
-    }
+    },
   },
   methods: {
     focusTab(tabNumber) {
