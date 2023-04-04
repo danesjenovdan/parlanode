@@ -19,8 +19,8 @@
     "lint:locale-keys": "node build/lint-locale-keys.js"
   },
   "dependencies": {
-    "@intlify/vite-plugin-vue-i18n": "^2.1.2",
-    "@intlify/vue-i18n-extensions": "^2.0.1",
+    "@intlify/vite-plugin-vue-i18n": "^7.0.0",
+    "@intlify/vue-i18n-extensions": "^5.0.1",
     "@rollup/plugin-virtual": "^2.0.3",
     "@rollup/plugin-yaml": "^3.1.0",
     "@sentry/tracing": "^7.38.0",
@@ -43,7 +43,7 @@
     "sass": "^1.43.2",
     "vite": "^3.0.9",
     "vue": "3.2.38",
-    "vue-i18n": "^9.1.4"
+    "vue-i18n": "^9.2.2"
   },
   "devDependencies": {
     "@types/d3": "^6.7.5",

@@ -2,7 +2,7 @@
   <card-wrapper :header-config="headerConfig">
     <p-tabs>
       <p-tab :label="$t('whole-term')">
-        <time-chart :data="timeChartData" tooltip-time-format="%B %y" />
+        <time-chart :data="timeChartData" />
       </p-tab>
       <p-tab :label="$t('last-year')">
         <time-bar-chart :data="timeChartDataYear" />
