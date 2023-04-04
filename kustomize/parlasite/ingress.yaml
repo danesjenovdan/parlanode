@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - ljubljana.parlameter.si
+        - 2018.ljubljana.parlameter.si
       secretName: parlasite-tls
   rules:
-    - host: ljubljana.parlameter.si
+    - host: 2018.ljubljana.parlameter.si
       http:
         paths:
           - path: /
