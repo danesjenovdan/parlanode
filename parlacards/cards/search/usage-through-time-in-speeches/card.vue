@@ -2,7 +2,7 @@
   <card-wrapper :header-config="headerConfig">
     <p-tabs>
       <p-tab :label="$t('whole-term')">
-        <time-chart :data="timeChartData" tooltip-time-format="%B %y" />
+        <time-chart :data="timeChartData" />
       </p-tab>
       <p-tab :label="$t('last-year')">
         <time-bar-chart :data="timeChartDataYear" />
@@ -38,14 +38,15 @@ export default {
     const { cardData } = this.$root.$options.contextData;
 
     const data = cardData?.data?.results || [];
+
     const timeChartData = data.map((o) => {
       const date = new Date(o.timestamp);
-      date.setDate(1);
       return {
         date,
         value: o.value,
       };
     });
+
     const timeChartDataYear = timeChartData.slice(-12);
     return {
       timeChartData,
