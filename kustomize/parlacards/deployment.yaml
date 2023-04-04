@@ -34,7 +34,7 @@ spec:
             - name: VITE_PARLACARDS_URL
               value: https://glej.ljubljana.parlameter.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite-lj2.lb.djnd.si
+              value: https://ljubljana.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_11_29
               value: https://2018.ljubljana.parlameter.si
             - name: VITE_METAIMAGES_URL
