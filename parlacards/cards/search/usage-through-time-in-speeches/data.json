@@ -1,24 +1,30 @@
 {
   "data": {
     "results": [
-      { "timestamp": "2020-05-22T00:00:00Z", "value": 2 },
-      { "timestamp": "2020-06-22T00:00:00Z", "value": 5 },
-      { "timestamp": "2020-07-22T00:00:00Z", "value": 1 },
-      { "timestamp": "2020-08-22T00:00:00Z", "value": 0 },
-      { "timestamp": "2020-09-22T00:00:00Z", "value": 9 },
-      { "timestamp": "2020-10-22T00:00:00Z", "value": 2 },
-      { "timestamp": "2020-11-22T00:00:00Z", "value": 5 },
-      { "timestamp": "2020-12-22T00:00:00Z", "value": 0 },
-      { "timestamp": "2021-01-22T00:00:00Z", "value": 2 },
-      { "timestamp": "2021-02-22T00:00:00Z", "value": 5 },
-      { "timestamp": "2021-03-22T00:00:00Z", "value": 5 },
-      { "timestamp": "2021-04-22T00:00:00Z", "value": 4 },
-      { "timestamp": "2021-05-22T00:00:00Z", "value": 4 },
-      { "timestamp": "2021-06-22T00:00:00Z", "value": 0 }
+      {
+        "timestamp": "2022-12-01T00:00:00Z",
+        "value": 1
+      },
+      {
+        "timestamp": "2023-01-01T00:00:00Z",
+        "value": 0
+      },
+      {
+        "timestamp": "2023-02-01T00:00:00Z",
+        "value": 9
+      },
+      {
+        "timestamp": "2023-03-01T00:00:00Z",
+        "value": 17
+      },
+      {
+        "timestamp": "2023-04-01T00:00:00Z",
+        "value": 0
+      }
     ],
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": null
+      "description": "Mestni svet MOL 2022–2026",
+      "beginning": "2022-12-12T00:00:00"
     }
   }
 }
