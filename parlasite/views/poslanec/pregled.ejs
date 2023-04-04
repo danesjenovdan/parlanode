@@ -9,6 +9,12 @@
   <div class="col-md-6">
     <%- await fetchCard('/person/recent-activity/', mp.id) %>
   </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/person/public-questions/', mp.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- await fetchCard('/person/public-answers/', mp.id) %>
+  </div>
   <div class="col-md-12">
     <%- await fetchCard('/person/monthly-vote-attendance/', mp.id) %>
   </div>
@@ -20,12 +26,6 @@
   </div>
   <div class="col-md-6">
     <%- await fetchCard('/person/vote-attendance/', mp.id) %>
-  </div>
-  <div class="col-md-6">
-    <%- await fetchCard('/person/public-answers/', mp.id) %>
-  </div>
-  <div class="col-md-6">
-    <%- await fetchCard('/person/public-questions/', mp.id) %>
   </div>
   <div class="col-md-6">
     <%- await fetchCard('/person/memberships/', mp.id) %>
