@@ -216,7 +216,7 @@ const renderDynamic = async (render, req, res, next) => {
     await renderLegislation(render, req, res, next);
     return;
   }
-  if (sesData.session.has_minutes) {
+  if (sesData.session.has_agenda_items) {
     await renderAgenda(render, req, res, next);
     return;
   }
