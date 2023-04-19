@@ -501,9 +501,9 @@ sort-by--workingBody: imenu organizacije
 title: Ime
 other-procedures: Drugi postopki
 speech-link: Povezava do govora v transkriptu
-speech-card-link: Povezava to kartice govora
+speech-card-link: Povezava do kartice govora
 minutes-agenda-link: Povezava do dnevnega reda
-minutes-item-card-link: Povezava to kartice točke zapisnika
+minutes-item-card-link: Povezava do kartice točke zapisnika
 vote-roll-results: Poimensko glasovanje
 mayor: Župan
 website: Spletno mesto
@@ -537,7 +537,8 @@ newsletter-signup-checkbox-text: Some GDPR consent text
 newsletter-signup-button-text: SIGN UP
 newsletter-signup-unsubscribe-button-text: Unsubscribe me!
 newsletter-signup-success-text: Registration successful!
-ask-person-a-question: Pošlji nam svoje vprašanje, mi pa ga bomo po pregledu posredovali poslancu_ki in objavili v kartici Zastavljena vprašanja in odgovori.
+ask-person-a-question: Pošlji nam svoje vprašanje, mi pa ga bomo po pregledu posredovali
+  poslancu_ki in objavili v kartici Zastavljena vprašanja in odgovori.
 thank-you-for-the-question: Hvala za poslano vprašanje!
 send: Pošlji
 error-message: Prišlo je do napake.
