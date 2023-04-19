@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { sum } from 'lodash-es';
 import * as d3 from 'd3';
 
 export default {
@@ -26,10 +27,33 @@ export default {
       // empty the chart container
       this.$refs.chart.textContent = '';
 
-      const sortedData = this.data
+      const preSortedData = this.data
         .slice()
         .filter((d) => d.value > 0)
         .sort((a, b) => b.value - a.value);
+      const dataSum = sum(preSortedData.map((d) => d.value));
+      const otherGroupCutoff = 0.06;
+
+      const sortedData = [];
+
+      while (preSortedData.length) {
+        const item = preSortedData.shift();
+        sortedData.push(item);
+
+        const remainingSum = sum(preSortedData.map((d) => d.value));
+        const remainingPercent = remainingSum / dataSum;
+        if (remainingPercent < otherGroupCutoff) {
+          break;
+        }
+      }
+
+      if (preSortedData.length) {
+        const value = sum(preSortedData.map((d) => d.value));
+        sortedData.push({
+          value,
+          group: { name: this.$t('other'), color: '#888' },
+        });
+      }
 
       const pie = d3
         .pie()
@@ -49,8 +73,8 @@ export default {
         .attr('transform', `translate(${width / 2},${height / 2})`);
 
       const radius = Math.min(width, height) / 2;
-      const radiusScale = 0.7;
-      const outerRadiusScale = 0.9;
+      const radiusScale = 0.6;
+      const outerRadiusScale = 0.75;
 
       const arc = d3
         .arc()

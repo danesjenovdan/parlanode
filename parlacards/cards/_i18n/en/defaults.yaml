@@ -467,7 +467,20 @@ just-last-five: Only the last 5
 sort-by--updated: date when last update was made
 sort-by--workingBody: name of the organisation
 title: Name
-other-procedures: Drugi postopki
+other-procedures: Other procedures
+speech-link: Link to speech in transcript
+speech-card-link: Link to speech card
+minutes-agenda-link: Link to agenda
+minutes-item-card-link: Link to agenda item card
+vote-roll-results: Vote roll
+mayor: Mayor
+website: Website
+budget: Budget
+agenda-items: Agenda items
+agenda-item-point: '{num}. item'
+material: Material
+documents: Documents
+other: Other
 organization-classifications:
   root: Parliament
   committee: Committees
