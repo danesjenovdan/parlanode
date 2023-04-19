@@ -1,73 +1,252 @@
 {
   "data": {
-    "results": [{
-        "group": {
-          "name": "Lista Zorana Jankovića",
-          "acronym": "LZJ",
-          "slug": "22-lista-zorana-jankovica",
-          "color": "#09a2cc",
-          "classification": "pg"
+    "results": [
+        {
+            "group": {
+                "name": "Klub zastupnika Hrvatske demokratske zajednice",
+                "acronym": "HDZ",
+                "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
+                "color": "#09A2CC",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 4661
         },
-        "value": 717
-      },
-      {
-        "group": null,
-        "value": 491
-      },
-      {
-        "group": {
-          "name": "Nova Slovenija – Krščanski demokrati",
-          "acronym": "NSi",
-          "slug": "16-nova-slovenija-krscanski-demokrati",
-          "color": "#09A2CC",
-          "classification": "pg"
+        {
+            "group": {
+                "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+                "acronym": "SDP",
+                "slug": "1009-klub-zastupnika-socijaldemokratske-partije-hrvatske",
+                "color": "#09A2CC",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 1477
         },
-        "value": 251
-      },
-      {
-        "group": {
-          "name": "Levica ",
-          "acronym": "",
-          "slug": "20-levica",
-          "color": "#09a2cc",
-          "classification": "pg"
+        {
+            "group": {
+                "name": "Klub zastupnika Centra i Građansko-liberalnog saveza",
+                "acronym": "Centar i GLAS",
+                "slug": "1040-klub-zastupnika-centra-i-graansko-liberalnog-saveza",
+                "color": "#09A2CC",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 685
         },
-        "value": 208
-      },
-      {
-        "group": {
-          "name": "Svetniški klub samostojnih svetnikov",
-          "acronym": "SKSS",
-          "slug": "18-svetniski-klub-samostojnih-svetnikov",
-          "color": "#09A2CC",
-          "classification": "pg"
+        {
+            "group": {
+                "name": "Klub zastupnika Mosta",
+                "acronym": "Most",
+                "slug": "1043-klub-zastupnika-mosta",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 661
         },
-        "value": 97
-      },
-      {
-        "group": {
-          "name": "Socialni demokrati",
-          "acronym": "SD",
-          "slug": "19-socialni-demokrati",
-          "color": "#CC1244",
-          "classification": "pg"
+        {
+            "group": {
+                "name": "Klub zastupnika Socijaldemokrati",
+                "acronym": "Socijaldemokrati",
+                "slug": "1045-klub-zastupnika-socijaldemokrati",
+                "color": "#09A2CC",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 635
         },
-        "value": 33
-      },
-      {
-        "group": {
-          "name": "Samostojni svetnik Liste kolesarjev in pešcev",
-          "acronym": "LKP",
-          "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev",
-          "color": "#7513CC",
-          "classification": "pg"
+        {
+            "group": {
+                "name": "Klub zastupnika zeleno-lijevog bloka",
+                "acronym": "Zeleno-lijevi blok",
+                "slug": "972-klub-zastupnika-zeleno-lijevog-bloka",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 630
         },
-        "value": 10
-      }
+        {
+            "group": {
+                "name": "Klub zastupnika Domovinskog pokreta",
+                "acronym": "Domovinski pokret",
+                "slug": "957-klub-zastupnika-domovinskog-pokreta",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 383
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Istarskog demokratskog sabora",
+                "acronym": "IDS",
+                "slug": "996-klub-zastupnika-istarskog-demokratskog-sabora",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 352
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Hrvatskih suverenista",
+                "acronym": "Hrvatski suverenisti",
+                "slug": "991-klub-zastupnika-hrvatskih-suverenista",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 268
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Hrvatske seljačke stranke i Radničke fronte",
+                "acronym": "HSS i RF",
+                "slug": "1042-klub-zastupnika-hrvatske-seljacke-stranke-i-radnicke-fronte",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 185
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Mosta nezavisnih lista",
+                "acronym": "Most",
+                "slug": "943-klub-zastupnika-mosta-nezavisnih-lista",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 125
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Za pravednu Hrvatsku",
+                "acronym": "Za pravednu Hrvatsku",
+                "slug": "1046-klub-zastupnika-za-pravednu-hrvatsku",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 120
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Samostalne demokratske srpske stranke",
+                "acronym": "SDSS",
+                "slug": "969-klub-zastupnika-samostalne-demokratske-srpske-stranke",
+                "color": "#09A2CC",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 119
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata, Hrvatske stranke umirovljenika i nezavisnih zastupnika",
+                "acronym": "HNS, HSU i NZ",
+                "slug": "1047-klub-zastupnika-hrvatske-narodne-stranke-liberalnih-demokrata-hrvatske-stranke-umirovljenika-i-nezavisnih-zastupnika",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 88
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka",
+                "acronym": "HSLS i Vladimir Bilek",
+                "slug": "1049-klub-zastupnika-hrvatske-socijalno-liberalne-stranke-i-nezavisnog-zastupnika-vladimira-bileka",
+                "color": "#09A2CC",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 65
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Hrvatske seljačke stranke i Hrvatske stranke umirovljenika",
+                "acronym": "HSS i HSU",
+                "slug": "986-klub-zastupnika-hrvatske-seljacke-stranke-i-hrvatske-stranke-umirovljenika",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 55
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Stranke s Imenom i Prezimenom, Pametnog i Građansko-liberalnog saveza",
+                "acronym": "SIP, Pametno i GLAS",
+                "slug": "1011-klub-zastupnika-stranke-s-imenom-i-prezimenom-pametnog-i-graansko-liberalnog-saveza",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 45
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Fokusa, Reformista i nezavisnih zastupnika",
+                "acronym": "Fokus, Reformisti i NZ",
+                "slug": "1048-klub-zastupnika-fokusa-reformista-i-nezavisnih-zastupnika",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 30
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Hrvatske socijalno-liberalne stranke i Narodne stranke - Reformista",
+                "acronym": "HSLS i Reformisti",
+                "slug": "1005-klub-zastupnika-hrvatske-socijalno-liberalne-stranke-i-narodne-stranke-reformista",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 28
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Fokusa i nezavisnih zastupnika",
+                "acronym": "Fokus i NZ",
+                "slug": "1044-klub-zastupnika-fokusa-i-nezavisnih-zastupnika",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 12
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika Hrvatske narodne stranke - liberalnih demokrata i nezavisnih zastupnika",
+                "acronym": "HNS i NZ",
+                "slug": "998-klub-zastupnika-hrvatske-narodne-stranke-liberalnih-demokrata-i-nezavisnih-zastupnika",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 10
+        },
+        {
+            "group": {
+                "name": "Klub zastupnika nacionalnih manjina",
+                "acronym": "Nacionalne manjine",
+                "slug": "1000-klub-zastupnika-nacionalnih-manjina",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+            },
+            "value": 8
+        }
     ],
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": "2018-12-17T12:00:00"
+        "description": "X",
+        "beginning": "2020-07-22T00:00:00"
     }
-  }
+}
 }
