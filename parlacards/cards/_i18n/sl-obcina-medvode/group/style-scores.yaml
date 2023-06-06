@@ -1,8 +1,8 @@
 card:
   title: Stilne analize
   info: >-
-    # Pogostost uporabe stilno zaznamovanih besed v govorih svetnikov svetniškega
-    kluba.
+    # Pogostost uporabe stilno zaznamovanih besed v govorih svetnikov svetniškege
+    skupine.
 
 
     Z združevanjem kvalifikatorjev
@@ -21,13 +21,13 @@ card:
     kvalifikatorjev.
 
 
-    Črtni graf prikazuje delež posameznega tipa besedja v govorih svetniškega
-    kluba glede na povprečje, izračunano za celoten sklic. Delež se izračuna
-    po naslednjem algoritmu: vzamejo se vsi govori svetniškega kluba, prešteje
+    Črtni graf prikazuje delež posameznega tipa besedja v govorih svetniške
+    skupine glede na povprečje, izračunano za celoten sklic. Delež se izračuna
+    po naslednjem algoritmu: vzamejo se vsi govori svetniške skupine, prešteje
     se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se
-    izvede za vse svetnike, nato se deli vrednost kategorije za svetniški klub
+    izvede za vse svetnike, nato se deli vrednost kategorije za svetniška skupina
     z vrednostjo povprečja (seštevek vrednosti vseh svetnikov, deljen s
-    številom svetnikov). Vrednost vsake kategorije za svetniški klub se
+    številom svetnikov). Vrednost vsake kategorije za svetniško skupino se
     normalizira (min. 1 – max. 100).
 
 
