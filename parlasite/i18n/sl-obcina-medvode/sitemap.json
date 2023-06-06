@@ -3,7 +3,7 @@
         "legislation": "odloki",
         "sessions": "seje",
         "members": "svetniki",
-        "parties": "svetniski-klubi",
+        "parties": "svetniske-skupine",
         "tools": "orodja",
         "about": "https://parlameter.org/sl/",
         "media": "za-medije",
@@ -32,7 +32,7 @@
         "speeches": "govori"
     },
     "party": {
-        "base": "svetniski-klub",
+        "base": "svetniska-skupina",
         "overview": "pregled",
         "votings": "glasovanja",
         "speeches": "govori"
