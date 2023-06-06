@@ -132,12 +132,16 @@ export default {
 
     // create filterOptions from classifications contained in the API response
     const classifications = cardData?.data?.results?.classifications || [];
-    const filterOptions = classifications.map((classification) => ({
-      id: classification,
-      color: 'for', // TODO this color should be properly named
-      label: this.$t(`legislation-classifications.${classification}`),
-      selected: cardState?.filter === classification,
-    }));
+    const filterOptions = classifications
+      .slice()
+      .sort()
+      .reverse()
+      .map((classification) => ({
+        id: classification,
+        color: 'for', // TODO this color should be properly named
+        label: this.$t(`legislation-classifications.${classification}`),
+        selected: cardState?.filter === classification,
+      }));
 
     return {
       legislation: cardData?.data?.results || [],
