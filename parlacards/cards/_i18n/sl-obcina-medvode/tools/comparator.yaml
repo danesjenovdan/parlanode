@@ -2,9 +2,9 @@ card:
   title: Primerjalnik glasovanj
   info: >-
     Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi
-    svetniških klubov uporablja izračunan večinski glas, ki ga izračunamo tako,
-    da preštejemo za katero opcijo je glasovalo največ svetnikov svetniškega
-    kluba.
+    svetniških skupin uporablja izračunan večinski glas, ki ga izračunamo tako,
+    da preštejemo za katero opcijo je glasovalo največ svetnikov svetniške
+    skupine.
 
 
     Rezultate prikazujemo na tri načine:

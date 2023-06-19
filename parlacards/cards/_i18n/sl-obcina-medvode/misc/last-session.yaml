@@ -1,17 +1,17 @@
 card:
   title: Zadnja seja
   tfidf-title: Besede, ki so zaznamovale sejo
-  attendance-title: Prisotnost svetniških klubov na glasovanjih seje
+  attendance-title: Prisotnost svetniških skupin na glasovanjih seje
   votes-title: Glasovanja
   info: >-
     # Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem mestu
     [Občine Medvode](https://www.medvode.si/).
 
 
-    ## PRISOTNOST SVETNIŠKIH KLUBOV NA GLASOVANJIH SEJE
+    ## PRISOTNOST SVETNIŠKIH SKUPIN NA GLASOVANJIH SEJE
 
 
-    Svetniške klube razvrstimo glede na odstotek, ki je seštevek prisotnosti njihovih
+    Svetniške skupine razvrstimo glede na odstotek, ki je seštevek prisotnosti njihovih
     svetnikov in svetnic na glasovanjih izbrane seje.
 
 

@@ -5,7 +5,7 @@ card:
 
 
     Rezultat posameznega glasovanja ima dva različna izpisa: na nivoju svetnikov in
-    na nivoju svetniških klubov.
+    na nivoju svetniških skupin.
 
 
     Prvi zavihek omogoča pregled glasov svetnikov, filtriranje glede na vrednost glasovnice
@@ -15,8 +15,8 @@ card:
     na tem glasovanju.
 
 
-    Drugi zavihek prikazuje glasove svetniških klubov. Na koncu vsake vrstice je izpisan
-    večinski glas svetniškega kluba, gumbi z vrednostmi glasovnic pa odpirajo sezname
+    Drugi zavihek prikazuje glasove svetniških skupin. Na koncu vsake vrstice je izpisan
+    večinski glas svetniške skupine, gumbi z vrednostmi glasovnic pa odpirajo sezname
     svetnikov, ki so oddali tak glas.
 
 
