@@ -1,10 +1,10 @@
 card:
   title: Prisutnost na glasanjima kroz vrijeme
   info: >-
-    # Prisutnost zastupnika na glasanju na sjednicama Parlamenta kroz vrijeme.
+    # Prisutnost parlamentarca/ke na glasanjima na sjednicama Parlamentarne skupštine BiH kroz vrijeme.
 
 
-    Svaki mjesec prebroje se svi glasovi zastupnika i taj broj se podijeli sa
-    zbirom svih glasanja sa sjednica na kojima se moralo glasati taj mjesec. Ako
-    zastupnik u odabranom mjesecu nije imao mandat, prikazuje se u kolikom
-    postotku glasanja nije imao pravo glasati.
+    Nakon prikupljanja podataka sa zvanične internet-stranice Parlamentarne skupštine BiH, prebroje
+    se svi glasovi parlamentarca/ke te se taj broj podijeli sa zbirom svih glasanja sa sjednica na
+    kojima se moralo glasati u tom mjesecu. Ako parlamentarac/ka u odabranom mjesecu nije imao mandat,
+    daje se prikaz postotka glasanja u kojem on/a nije imao/la pravo glasati.

@@ -4,6 +4,13 @@ card:
     # Prisutnost na glasanjima u odnosu na prosječnu i maksimalnu vrijednost.
 
 
-    Prebroje se svi glasovi zastupnika i taj broj se podijeli sa zbirom svih
-    glasanja sa sjednica na kojima se moralo glasati. Rezultat se ispiše skupa s
-    prosječnom i maksimalnom vrijednošću.
+    Svi glasovi zastupnika/ca se prebroje te se taj broj podijeli sa zbirom svih glasanja na
+    sjednicama na kojima se moralo glasati. Rezultat se ispiše zajedno s prosječnom i maksimalnom
+    vrijednošću.
+  info2: >-
+    # Prisutnost na glasanjima u odnosu na prosječnu i maksimalnu vrijednost.
+
+
+    Svi glasovi delegata/kinja se prebroje te se taj broj podijeli sa zbirom svih glasanja na
+    sjednicama na kojima se moralo glasati. Rezultat se ispiše zajedno s prosječnom i maksimalnom
+    vrijednošću.
