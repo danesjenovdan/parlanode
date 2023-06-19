@@ -1,8 +1,8 @@
 card:
   title: Besede, ki jih zaznamujejo
   info: >-
-    # Izpis 10 besed in besednih zvez, ki jih svetniški klub uporablja pogosteje kot
-    ostali svetniški klubi.
+    # Izpis 10 besed in besednih zvez, ki jih svetniška skupina uporablja pogosteje kot
+    ostale svetniške skupine.
 
 
     Analizo izvajamo po statistiki [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
@@ -13,4 +13,4 @@ card:
 
 
     Korpus predstavljajo vsi govori, dokument pa vsi govori svetnikov in svetnic v
-    svetniškem klubu.
+    svetniški skupini.
