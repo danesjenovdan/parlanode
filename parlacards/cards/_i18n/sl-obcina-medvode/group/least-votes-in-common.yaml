@@ -1,17 +1,17 @@
 card:
   title: Najmanjkrat glasujejo enako
   info: >-
-    # Seznam 5 svetnikov, ki najmanjkrat glasujejo enako kot "glas svetniškega kluba". Razvrščeni so glede na vrednosti od največje proti najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.
+    # Seznam 5 svetnikov, ki najmanjkrat glasujejo enako kot "glas svetniške skupine". Razvrščeni so glede na vrednosti od največje proti najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.
 
 
-    Izračunamo evklidsko razdaljo med rezultati glasovanj svetniškega kluba in
+    Izračunamo evklidsko razdaljo med rezultati glasovanj svetniške skupine in
     rezultati vseh ostalih svetnikov (pri čemer vrednosti glasov pretvorimo v
     številčne vrednosti med -1 in 1).
 
 
-    Pri računanju rezultata svetniških klubov ignoriramo "odsotne" glasovnice,
-    da dobimo pozitivno mnenje svetniškega kluba. Če je celoten svetniški klub
-    odsoten, to glasovanje umaknemo iz analize.
+    Pri računanju rezultata svetniških skupin ignoriramo "odsotne" glasovnice,
+    da dobimo pozitivno mnenje svetniške skupine. Če je celotna svetniška skupina
+    odsotna, to glasovanje umaknemo iz analize.
 
 
     Ko izračunamo "razdaljo" med vsemi svetniki, jih razvrstimo glede na
