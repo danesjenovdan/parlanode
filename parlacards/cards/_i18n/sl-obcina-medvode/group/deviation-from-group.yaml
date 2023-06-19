@@ -1,11 +1,11 @@
 card:
-  title: Neujemanje s svetniškim klubom
+  title: Neujemanje s svetniško skupino
   info: >-
-    # Seznam vseh svetnikov svetniškega kluba, ki so razvrščeni glede na vrednost ujemanja z glasom svetniškega kluba. Večja kot je vrednost, manjše je ujemanje.
+    # Seznam vseh svetnikov svetniške skupine, ki so razvrščeni glede na vrednost ujemanja z glasom svetniške skupine. Večja kot je vrednost, manjše je ujemanje.
 
 
-    Za vsako glasovanje izračunamo "glas svetniškega kluba", ki mu pripada
+    Za vsako glasovanje izračunamo "glas svetniške skupine", ki mu pripada
     posamezni_a svetnik_ca. Potem za vsakega člana_ico izračunamo odstotek
     glasovanj, na katerih je svetnik_ca glasoval_a drugače od večinskega
-    glasu svetniškega kluba in rezultate razvrstimo od največjega odstopanja
+    glasu svetniške skupine in rezultate razvrstimo od največjega odstopanja
     proti najmanjšemu.

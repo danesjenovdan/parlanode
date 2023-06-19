@@ -1,10 +1,7 @@
 card:
-  title: Posljednjih 30 dana aktivnosti
+  title: Aktivnosti tokom mandata
   info: >-
-    # Linkovi na sva glasanja i govore posljednjih deset dana aktivnog
-    zastupničkog mandata.
+    # Linkovi na sva glasanja i govore u posljednjih deset dana aktivnog parlamentarnog mandata.
 
 
-    Podaci su preuzeti s web stranice Parlamenta BiH. Na kartici su prikazani
-    linkovi na sva glasanja i govore u posljednjih deset dana aktivnog
-    zastupničkog mandata.
+    Podaci su preuzeti sa zvanične internet-stranice [Parlamentarne skupštine BiH](http://www.parlament.ba/).
