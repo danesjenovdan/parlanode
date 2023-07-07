@@ -34,7 +34,6 @@ export default {
     return {
       cardName,
       urls,
-      mandate_id: 1,
     };
   },
   methods: {
@@ -55,8 +54,11 @@ export default {
 
       return 'UNNECESSARY'
     },
+    getMandateId() {
+      return this.$root.$options.contextData.cardData.data.mandate.id;
+    },
     exportUrl(format) {
-      return `${this.urls.data}/export/${this.cardName}.${format}?mandate_id=${this.mandate_id}&id=${this.getPersonOrGroupOrSessionId()}`;
+      return `${this.urls.data}/export/${this.cardName}.${format}?mandate_id=${this.getMandateId()}&id=${this.getPersonOrGroupOrSessionId()}`;
     },
   },
 };
