@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter-TODO-BRANCH-NAME-HERE
+namespace: parlameter-slovenija
 resources:
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
@@ -8,16 +8,19 @@ resources:
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
+  - parlasite-viii/deployment.yaml
+  - parlasite-viii/ingress.yaml
+  - parlasite-viii/service.yaml
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
-  - name: parlacards-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE
-    newTag: 'latest'
-  - name: parlasite-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE
-    newTag: 'latest'
-  - name: parlassets-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE
-    newTag: 'latest'
+  - name: parlacards-slovenija
+    newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija
+    newTag: 'a527c77fb7ef30d0473657f8ba35f1fcb9244542'
+  - name: parlasite-slovenija
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-slovenija
+    newTag: 'a527c77fb7ef30d0473657f8ba35f1fcb9244542'
+  - name: parlassets-slovenija
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-slovenija
+    newTag: 'a527c77fb7ef30d0473657f8ba35f1fcb9244542'

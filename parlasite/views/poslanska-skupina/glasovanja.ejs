@@ -6,12 +6,12 @@
   <div class="col-md-12">
     <%- await fetchCard('/group/votes/', group.id) %>
   </div>
-  <!-- <div class="col-md-6">
-    <%# await fetchCard('/group/most-votes-in-common/', group.id, { "showExportButton": true }) %>
+  <div class="col-md-6">
+    <%- await fetchCard('/group/most-votes-in-common/', group.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%# await fetchCard('/group/least-votes-in-common/', group.id, { "showExportButton": true }) %>
-  </div> -->
+    <%- await fetchCard('/group/least-votes-in-common/', group.id, { "showExportButton": true }) %>
+  </div>
   <div class="col-md-6">
     <%- await fetchCard('/group/deviation-from-group/', group.id, { "showExportButton": true }) %>
   </div>
