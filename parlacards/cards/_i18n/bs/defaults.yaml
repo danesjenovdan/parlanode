@@ -460,6 +460,7 @@ sort-by--updated: datumu zadnje izmjene podataka o sjednici
 sort-by--workingBody: nazivu tijela
 title: Naslov
 other-procedures: Drugi postopki
+external_analysis: Analize
 organization-classifications:
   root: Parliament
   committee: Committees

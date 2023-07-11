@@ -1,0 +1,435 @@
+{
+  "id": 2263,
+  "url": "https://parladata-bosna.lb.djnd.si/v3/cards/vote/single/?id=2263",
+  "data": {
+    "results": {
+      "all_votes": {
+        "for": 12,
+        "against": 0,
+        "abstain": 1,
+        "absent": 2,
+        "did not vote": 0
+      },
+      "government_sides": [],
+      "abstract_visible": false,
+      "session": {
+        "name": "6. sjednica Doma naroda Parlamentarne skupštine Bosne i Hercegovine",
+        "id": 172,
+        "start_time": "2023-06-15T11:00:00",
+        "end_time": null,
+        "organizations": [
+          {
+            "name": "Dom naroda",
+            "acronym": null,
+            "slug": "34-dom-naroda",
+            "color": "#09A2CC",
+            "classification": "root",
+            "is_in_coalition": false
+          }
+        ],
+        "classification": "regular",
+        "in_review": false,
+        "has_transcript": true,
+        "has_agenda_items": false,
+        "has_minutes": false,
+        "has_legislation": false,
+        "has_votes": true
+      },
+      "result": {
+        "max_option_percentage": 80.0,
+        "max_option": "for",
+        "passed": true
+      },
+      "members": [
+        {
+          "person": {
+            "slug": "424-zelimir-neskovic",
+            "name": "Želimir Nešković",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub srpskog naroda",
+              "acronym": "RS",
+              "slug": "22-klub-srpskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/zelimir_neskovic_2022_-_2026.jpg"
+          },
+          "option": "abstain"
+        },
+        {
+          "person": {
+            "slug": "56-sredoje-novic",
+            "name": "Sredoje Nović",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub srpskog naroda",
+              "acronym": "RS",
+              "slug": "22-klub-srpskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/sredoje-novic.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "423-radovan-kovacevic",
+            "name": "Radovan Kovačević",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub srpskog naroda",
+              "acronym": "RS",
+              "slug": "22-klub-srpskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/radovan_kovacevic_2022_-_2026.jpg"
+          },
+          "option": "absent"
+        },
+        {
+          "person": {
+            "slug": "50-snjezana-novakovic-bursac",
+            "name": "Snježana Novaković – Bursać",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub srpskog naroda",
+              "acronym": "RS",
+              "slug": "22-klub-srpskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/snjezana-novakovic-bursac.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "26-nikola-spiric",
+            "name": "Nikola Špirić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub srpskog naroda",
+              "acronym": "RS",
+              "slug": "22-klub-srpskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/nikola-spiric.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "422-ilija-cvitanovic",
+            "name": "Ilija Cvitanović",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub hrvatskog naroda",
+              "acronym": "FBiH-HR",
+              "slug": "27-klub-hrvatskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/ilija_cvitanovic_2022_-_2026.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "29-marina-pendes",
+            "name": "Marina Pendeš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub hrvatskog naroda",
+              "acronym": "FBiH-HR",
+              "slug": "27-klub-hrvatskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/marina-pendes.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "421-zdenko-cosic",
+            "name": "Zdenko Ćosić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub hrvatskog naroda",
+              "acronym": "FBiH-HR",
+              "slug": "27-klub-hrvatskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/zdenko_cosic_2022_-_2026.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "57-zlatko-miletic",
+            "name": "Zlatko Miletić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub hrvatskog naroda",
+              "acronym": "FBiH-HR",
+              "slug": "27-klub-hrvatskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/zlatko-miletic.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "25-dragan-covic",
+            "name": "Dragan Čović",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub hrvatskog naroda",
+              "acronym": "FBiH-HR",
+              "slug": "27-klub-hrvatskog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/dragan-covic.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "420-dzemal-smajic",
+            "name": "Džemal Smajić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub bošnjačkog naroda",
+              "acronym": "FBiH",
+              "slug": "21-klub-bosnjackog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/dzemal_smajic_2022_-_2026.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "48-safet-softic",
+            "name": "Safet Softić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub bošnjačkog naroda",
+              "acronym": "FBiH",
+              "slug": "21-klub-bosnjackog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/safet-softic.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "417-kemal-ademovic",
+            "name": "Kemal Ademović",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub bošnjačkog naroda",
+              "acronym": "FBiH",
+              "slug": "21-klub-bosnjackog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/kemal_ademovic_2022_-_2026.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "15-dzenan-onlagic",
+            "name": "Dženan Đonlagić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub bošnjačkog naroda",
+              "acronym": "FBiH",
+              "slug": "21-klub-bosnjackog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/dzenan-donlagic.jpg"
+          },
+          "option": "for"
+        },
+        {
+          "person": {
+            "slug": "416-sefik-dzaferovic",
+            "name": "Šefik Džaferović",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub bošnjačkog naroda",
+              "acronym": "FBiH",
+              "slug": "21-klub-bosnjackog-naroda",
+              "color": "#09a2cc",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/sefik_dzaferovic_2022_-_2026.jpg"
+          },
+          "option": "absent"
+        }
+      ],
+      "groups": [
+        {
+          "max": {
+            "max_option_percentage": 80.0,
+            "max_option": "for"
+          },
+          "votes": {
+            "for": 4,
+            "against": 0,
+            "abstain": 0,
+            "absent": 1,
+            "did not vote": 0
+          },
+          "outliers": [],
+          "group": {
+            "name": "Klub bošnjačkog naroda",
+            "acronym": "FBiH",
+            "slug": "21-klub-bosnjackog-naroda",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          }
+        },
+        {
+          "max": {
+            "max_option_percentage": 60.0,
+            "max_option": "for"
+          },
+          "votes": {
+            "for": 3,
+            "against": 0,
+            "abstain": 1,
+            "absent": 1,
+            "did not vote": 0
+          },
+          "outliers": [
+            {
+              "slug": "424-zelimir-neskovic",
+              "name": "Želimir Nešković",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he",
+              "group": {
+                "name": "Klub srpskog naroda",
+                "acronym": "RS",
+                "slug": "22-klub-srpskog-naroda",
+                "color": "#09a2cc",
+                "classification": "pg",
+                "is_in_coalition": false
+              },
+              "image": "https://s3.fr-par.scw.cloud/parlameter/parlameter-bosna/zelimir_neskovic_2022_-_2026.jpg"
+            }
+          ],
+          "group": {
+            "name": "Klub srpskog naroda",
+            "acronym": "RS",
+            "slug": "22-klub-srpskog-naroda",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          }
+        },
+        {
+          "max": {
+            "max_option_percentage": 100.0,
+            "max_option": "for"
+          },
+          "votes": {
+            "for": 5,
+            "against": 0,
+            "abstain": 0,
+            "absent": 0,
+            "did not vote": 0
+          },
+          "outliers": [],
+          "group": {
+            "name": "Klub hrvatskog naroda",
+            "acronym": "FBiH-HR",
+            "slug": "27-klub-hrvatskog-naroda",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          }
+        }
+      ],
+      "id": 2263,
+      "agenda_items": null,
+      "documents": [],
+      "external_analysis": [
+        {
+          "id": 20948,
+          "url": "https://www.javnarasprava.ba/",
+          "name": "Javna razprasva",
+          "tags": []
+        }
+      ],
+      "title": "Izvještaju Zajedničke komisije oba doma o postizanju identičnog teksta Zakona o dopuni Zakona osnovama sigurnosti saobraćaja na putevima u Bosni i Hercegovini - Izvještaj Zajedničke komisije oba doma o postizanju identičnog teksta Zakona o dopuni Zakona osnovama sigurnosti saobraćaja na putevima u Bosni i Hercegovini, predlagač: Predstavnički dom, broj: 01-02-1-687/22 od 6. 6. 2023.; - Ponovljeno (Prvi krug)",
+      "legislation": null
+    },
+    "mandate": {
+      "id": 2,
+      "description": "9",
+      "beginning": "2022-12-01T00:00:00"
+    }
+  }
+}
