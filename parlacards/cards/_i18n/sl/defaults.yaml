@@ -512,6 +512,7 @@ agenda-items: Točke dnevnega reda
 agenda-item-point: '{num}. točka'
 material: Gradivo
 documents: Dokumenti
+external_analysis: Analize
 other: Drugo
 organization-classifications:
   root: Državni zbor
