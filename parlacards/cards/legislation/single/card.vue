@@ -37,6 +37,12 @@
       <p-tab v-if="legislation.documents?.length" :label="$t('documents')">
         <documents :documents="legislation.documents" />
       </p-tab>
+      <p-tab
+        v-if="legislation.external_analysis?.length"
+        :label="$t('external_analysis')"
+      >
+        <documents :documents="legislation.external_analysis" />
+      </p-tab>
     </p-tabs>
   </card-wrapper>
 </template>
