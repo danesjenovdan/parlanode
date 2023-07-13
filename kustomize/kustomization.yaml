@@ -11,6 +11,9 @@ resources:
   - parlasite-viii/deployment.yaml
   - parlasite-viii/ingress.yaml
   - parlasite-viii/service.yaml
+  - parlasite-vii/deployment.yaml
+  - parlasite-vii/ingress.yaml
+  - parlasite-vii/service.yaml
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
