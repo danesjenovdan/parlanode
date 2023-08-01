@@ -34,8 +34,8 @@ spec:
             - name: VITE_PARLACARDS_URL
               value: https://glej.hrastnik.parlameter.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite-hrastnik2.lb.djnd.si
-            - name: VITE_PARLASITE_URL_BEFORE_2022_12_07
               value: https://hrastnik.parlameter.si
+            - name: VITE_PARLASITE_URL_BEFORE_2022_12_07
+              value: https://2018.hrastnik.parlameter.si
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter

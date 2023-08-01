@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - hrastnik.parlameter.si
+        - 2018.hrastnik.parlameter.si
       secretName: parlasite-tls
   rules:
-    - host: hrastnik.parlameter.si
+    - host: 2018.hrastnik.parlameter.si
       http:
         paths:
           - path: /
