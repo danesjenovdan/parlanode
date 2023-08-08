@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parlasite-ix
+  labels:
+    app: parlasite-ix
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parlasite-ix
+  template:
+    metadata:
+      labels:
+        app: parlasite-ix
+    spec:
+      containers:
+        - name: parlasite-ix
+          image: parlasite-hrvaska
+          ports:
+            - containerPort: 3066
+          resources:
+            requests:
+              memory: 75Mi
+              cpu: 50m
+            limits:
+              memory: 75Mi
+              cpu: 50m
+          env:
+            - name: PARLASITE_LEADER_ID
+              value: "0"
+            - name: PARLASITE_ROOT_ORG_ID
+              value: "1067"
+            - name: PARLASITE_MANDATE_ID
+              value: "13"
+            - name: PARLASITE_DEFAULT_CARD_DATE
+              value: "2020-07-20"
+            - name: PARLASITE_NEWSLETTER_SEGMENT_ID
+              value: "2"
