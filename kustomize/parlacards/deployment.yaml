@@ -38,4 +38,4 @@ spec:
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter
             - name: VITE_PARLASITE_URL_BEFORE_2020-07-21
-              value: https://t9.parlameter.si
+              value: https://t9.parlametar.hr
