@@ -233,6 +233,8 @@ event:
   ballot--abstain--f: SUZDRŽALA se od glasanja o {title}
   speech--m: 'Govorio na: {session}'
   speech--f: 'Govorila na: {session}'
+  show-answer: Prikaži odgovor
+  hide-answer: Skrij odgovor
 months:
   - januar
   - februar
@@ -460,6 +462,7 @@ sort-by--updated: datumu zadnje izmjene podataka o sjednici
 sort-by--workingBody: nazivu tijela
 title: Naslov
 other-procedures: Drugi postopki
+external_analysis: Analize
 organization-classifications:
   root: Parliament
   committee: Committees

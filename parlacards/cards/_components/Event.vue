@@ -154,8 +154,8 @@ export default {
   margin: 7px 0;
 
   .parlaicon {
-    height: auto;
     margin-right: 10px;
+    margin-top: 15px;
   }
 
   .motion {
