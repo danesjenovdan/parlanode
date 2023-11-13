@@ -135,6 +135,12 @@
     background-position: 6px center;
     background-size: 50% 50%;
 }
+.card-export {
+    background-image: url($cdn_home_icon + 'export.svg');
+    background-repeat: no-repeat;
+    background-position: 4px 3px;
+    background-size: 70% 70%;
+}
 
 /*
 
