@@ -116,6 +116,12 @@
         <p-tab v-if="results.documents?.length" :label="$t('documents')">
           <documents :documents="results.documents" />
         </p-tab>
+        <p-tab
+          v-if="results.external_analysis?.length"
+          :label="$t('external_analysis')"
+        >
+          <documents :documents="results.external_analysis" />
+        </p-tab>
       </p-tabs>
       <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
         <p-tab v-if="content" :label="$t('summary')">
@@ -164,6 +170,12 @@
         </p-tab>
         <p-tab v-if="results.documents?.length" :label="$t('documents')">
           <documents :documents="results.documents" />
+        </p-tab>
+        <p-tab
+          v-if="results.external_analysis?.length"
+          :label="$t('external_analysis')"
+        >
+          <documents :documents="results.external_analysis" />
         </p-tab>
       </p-tabs>
     </template>

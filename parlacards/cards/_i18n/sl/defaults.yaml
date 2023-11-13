@@ -267,6 +267,8 @@ event:
   ballot--did-not-vote--f: "BREZ GLASU na glasovanju o {title}"
   speech--m: Govoril na {session} {org}
   speech--f: Govorila na {session} {org}
+  show-answer: Prikaži odgovor
+  hide-answer: Skrij odgovor
 months:
 - januar
 - februar
@@ -512,6 +514,7 @@ agenda-items: Točke dnevnega reda
 agenda-item-point: '{num}. točka'
 material: Gradivo
 documents: Dokumenti
+external_analysis: Analize
 other: Drugo
 organization-classifications:
   root: Državni zbor
