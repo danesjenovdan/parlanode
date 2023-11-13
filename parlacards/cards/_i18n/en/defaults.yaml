@@ -480,6 +480,7 @@ agenda-items: Agenda items
 agenda-item-point: '{num}. item'
 material: Material
 documents: Documents
+external_analysis: External analyses
 other: Other
 organization-classifications:
   root: Parliament

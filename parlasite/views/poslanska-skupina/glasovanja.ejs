@@ -7,16 +7,16 @@
     <%- await fetchCard('/group/votes/', group.id) %>
   </div>
   <!-- <div class="col-md-6">
-    <%# await fetchCard('/group/most-votes-in-common/', group.id) %>
+    <%# await fetchCard('/group/most-votes-in-common/', group.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%# await fetchCard('/group/least-votes-in-common/', group.id) %>
+    <%# await fetchCard('/group/least-votes-in-common/', group.id, { "showExportButton": true }) %>
   </div> -->
   <div class="col-md-6">
-    <%- await fetchCard('/group/deviation-from-group/', group.id) %>
+    <%- await fetchCard('/group/deviation-from-group/', group.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/group/discord/', group.id) %>
+    <%- await fetchCard('/group/discord/', group.id, { "showExportButton": true }) %>
   </div>
 </div>
 

@@ -237,6 +237,8 @@ event:
   ballot--abstain--f: SUZDRŽALA se od glasanja o {title}
   speech--m: 'Govorio na: {session}'
   speech--f: 'Govorila na: {session}'
+  show-answer: Prikaži odgovor
+  hide-answer: Skrij odgovor
 months:
 - siječanj
 - veljača
