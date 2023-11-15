@@ -3,7 +3,6 @@
     <question-list
       :question-days="questionDays"
       :is-loading="card.isLoading"
-      list-type="questions"
       @load-more="loadMore"
     />
   </card-wrapper>
