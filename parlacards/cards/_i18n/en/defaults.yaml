@@ -241,6 +241,8 @@ event:
   ballot--did-not-vote--f: "DID NOT VOTE"
   speech--m: Spoke at {session} {org}
   speech--f: Spoke at {session} {org}
+  show-answer: Show answer
+  hide-answer: Hide answer
 months:
   - January
   - February
