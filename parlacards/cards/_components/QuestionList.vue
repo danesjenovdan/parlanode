@@ -11,13 +11,13 @@
           <div class="date">{{ formatDate(day.date) }}</div>
           <div v-for="(event, i) in day.events" :key="`${day.date}-${i}`">
             <event
-              v-if="event.title"
+              v-if="listType == 'events'"
               :key="`${day.date}-${i}`"
               :event="event"
               :show-author="showAuthor"
             />
             <question
-              v-if="event.text"
+              v-if="listType == 'questions'"
               :key="`${day.date}-${i}`"
               :question="event"
               :show-author="false"
@@ -67,6 +67,10 @@ export default {
     isLoading: {
       type: Boolean,
       default: false,
+    },
+    listType: {
+      type: String,
+      default: 'events'
     }
   },
   emits: ['load-more'],
