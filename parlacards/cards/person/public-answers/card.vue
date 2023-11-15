@@ -4,6 +4,7 @@
       :question-days="questionDays"
       :is-loading="card.isLoading"
       @load-more="loadMore"
+      list-type="questions"
     />
   </card-wrapper>
 </template>
