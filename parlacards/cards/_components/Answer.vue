@@ -28,11 +28,20 @@ export default {
   },
   computed: {
     authors() {
-      if (this.event.answer.person_authors || this.event.answer.organization_authors) {
-        const authors = this.event.answer.person_authors.concat(this.event.answer.organization_authors);
-        return authors.map((a) => a.name).join(", ") + ":";
+      let authors = "";
+      if (this.event.answer.person_authors) {
+        authors = this.event.answer.person_authors.map((a) => a.name).join(", ");
       }
-      return "";
+      if (this.event.answer.organization_authors) {
+        const organization_authors = this.event.answer.organization_authors.map((a) => a.name).join(", ");
+        authors = authors.concat(organization_authors);
+      }
+      if (authors) {
+        authors = authors.concat(":");
+        return authors;
+      } else {
+        return "";
+      }
     }
   },
 };
