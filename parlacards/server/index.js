@@ -44,6 +44,9 @@ fastify.get('/:group/:method', renderCardHandler);
 fastify.listen({ port: process.env.PORT || 3000, host: '0.0.0.0' }, (error) => {
   if (error) {
     fastify.log.error(error);
-    process.exit(1);
+    fastify.Sentry.captureException(error);
+    fastify.Sentry.close(30000).then(() => {
+      process.exit(1);
+    });
   }
 });
