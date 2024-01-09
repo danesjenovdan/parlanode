@@ -37,28 +37,14 @@ export default {
     };
   },
   methods: {
-    getPersonOrGroupOrSessionId() {
-      const theData = this.$root.$options.contextData.cardData.data;
-
-      if ('person' in theData) {
-        return theData.person.slug.split('-')[0];
-      }
-
-      if ('group' in theData) {
-        return theData.group.slug.split('-')[0];
-      }
-
-      if ('session' in theData) {
-        return theData.session.id;
-      }
-
-      return 'UNNECESSARY'
-    },
-    getMandateId() {
-      return this.$root.$options.contextData.cardData.data.mandate.id;
-    },
     exportUrl(format) {
-      return `${this.urls.data}/export/${this.cardName}.${format}?mandate_id=${this.getMandateId()}&id=${this.getPersonOrGroupOrSessionId()}`;
+      const { cardData } = this.$root.$options.contextData;
+
+      const params = new URLSearchParams();
+      params.append('id', cardData.id);
+      params.append('mandate_id', cardData.data?.mandate?.id);
+
+      return `${this.urls.data}/export/${this.cardName}.${format}?${params.toString()}`;
     },
   },
 };

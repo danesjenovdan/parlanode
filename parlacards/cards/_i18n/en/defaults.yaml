@@ -209,6 +209,10 @@ embed:
   always-refresh: Data should keep refreshing
 previous:
   title: Previous versions
+export:
+  title: Export data
+  csv: Export .csv
+  json: Export .json
 membership-list:
   no-memberships: No memberships.
 style-scores:
