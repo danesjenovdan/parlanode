@@ -1,4 +1,3 @@
-import 'make-promises-safe';
 import { resolve } from 'path';
 import createFastify from 'fastify';
 import fastifyStatic from '@fastify/static';
@@ -13,6 +12,22 @@ fastify.register(fastifySentry, {
   // We recommend adjusting this value in production, or using tracesSampler
   // for finer control
   tracesSampleRate: 1.0,
+});
+
+process.on('unhandledRejection', (error) => {
+  fastify.log.error(error);
+  fastify.Sentry.captureException(error);
+  fastify.Sentry.close().then(() => {
+    process.exit(2);
+  });
+});
+
+process.on('uncaughtException', (error) => {
+  fastify.log.error(error);
+  fastify.Sentry.captureException(error);
+  fastify.Sentry.close().then(() => {
+    process.exit(3);
+  });
 });
 
 fastify.register(fastifyCors, {
@@ -45,7 +60,7 @@ fastify.listen({ port: process.env.PORT || 3000, host: '0.0.0.0' }, (error) => {
   if (error) {
     fastify.log.error(error);
     fastify.Sentry.captureException(error);
-    fastify.Sentry.close(30000).then(() => {
+    fastify.Sentry.close().then(() => {
       process.exit(1);
     });
   }
