@@ -1,5 +1,5 @@
 import { createSSRApp, ssrUtils } from 'vue';
-import { createI18n } from 'vue-i18n';
+import { createI18n } from 'vue-i18n/dist/vue-i18n.runtime.node.mjs';
 import { renderToString } from '@vue/server-renderer';
 import { merge } from 'lodash-es';
 import * as Sentry from '@sentry/vue';
