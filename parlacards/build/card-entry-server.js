@@ -2,9 +2,7 @@ import { createSSRApp, ssrUtils } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { renderToString } from '@vue/server-renderer';
 import { merge } from 'lodash-es';
-// Sentry
 import * as Sentry from '@sentry/vue';
-import { Integrations } from '@sentry/tracing';
 // eslint-disable-next-line import/no-unresolved
 import Card from '@/{cardName}/card.vue';
 
@@ -25,11 +23,7 @@ export default async (contextData, i18nData) => {
   Sentry.init({
     app,
     dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
-    integrations: [
-      new Integrations.BrowserTracing({
-        tracingOrigins: [/.+\.lb\.djnd\.si/, /.+\.parlameter\.si/],
-      }),
-    ],
+    integrations: [new Sentry.BrowserTracing()],
     // Set tracesSampleRate to 1.0 to capture 100%
     // of transactions for performance monitoring.
     // We recommend adjusting this value in production
@@ -39,6 +33,15 @@ export default async (contextData, i18nData) => {
     ignoreErrors: [
       // Outlook Safe Link scanning
       'Object Not Found Matching Id',
+      // Network errors
+      'Network Error',
+      'Request aborted',
+    ],
+    denyUrls: [
+      // Chrome extensions
+      /extensions\//i,
+      /^chrome:\/\//i,
+      /^chrome-extension:\/\//i,
     ],
   });
 
