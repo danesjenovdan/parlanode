@@ -3,7 +3,15 @@ import { resolve } from 'path';
 import { fastify as createFastify } from 'fastify';
 import fastifyStatic from 'fastify-static';
 import fastifyCors from 'fastify-cors';
+import * as Sentry from '@sentry/node';
 import { renderCard } from './render-card.js';
+
+Sentry.init({
+  dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
+  // We recommend adjusting this value in production, or using tracesSampler
+  // for finer control
+  tracesSampleRate: 1.0,
+});
 
 const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
 
