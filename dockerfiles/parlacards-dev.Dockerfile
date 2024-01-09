@@ -1,7 +1,7 @@
 # ---
 # USE THIS DOCKERFILE ONLY IN DEV WITH DOCKER COMPOSE
 # ---
-FROM node:16-alpine
+FROM node:20-alpine
 
 # set current directory
 WORKDIR /app
