@@ -58,7 +58,12 @@ export default {
       return this.$root.$options.contextData.cardData.data.mandate.id;
     },
     exportUrl(format) {
-      return `${this.urls.data}/export/${this.cardName}.${format}?mandate_id=${this.getMandateId()}&id=${this.getPersonOrGroupOrSessionId()}`;
+      let url = `${this.urls.data}/export/${this.cardName}.${format}?mandate_id=${this.getMandateId()}`
+      const id = this.getPersonOrGroupOrSessionId();
+      if (id !== 'UNNECESSARY') {
+        url += `&id=${id}`;
+      }
+      return url;
     },
   },
 };
