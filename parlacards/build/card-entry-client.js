@@ -1,9 +1,7 @@
 import { createApp } from 'vue';
 import { createI18n } from 'vue-i18n';
 import { merge } from 'lodash-es';
-// Sentry
 import * as Sentry from '@sentry/vue';
-import { Integrations } from '@sentry/tracing';
 // eslint-disable-next-line import/no-unresolved
 import Card from '@/{cardName}/card.vue';
 
@@ -18,17 +16,13 @@ const i18n = createI18n({
 });
 
 const app = createApp({ ...Card, contextData });
-app.config.unwrapInjectedRef = true; // TODO: remove when this is default in next vue release
 
 // SENTRY
 Sentry.init({
   app,
   dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
-  integrations: [
-    new Integrations.BrowserTracing({
-      tracingOrigins: [/.+\.lb\.djnd\.si/, /.+\.parlameter\.si/],
-    }),
-  ],
+  // TODO: temporarily disable tracing until we can figure out why it's not working
+  // integrations: [new Sentry.BrowserTracing()],
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production
@@ -39,6 +33,15 @@ Sentry.init({
   ignoreErrors: [
     // Outlook Safe Link scanning
     'Object Not Found Matching Id',
+    // Network errors
+    'Network Error',
+    'Request aborted',
+  ],
+  denyUrls: [
+    // Chrome extensions
+    /extensions\//i,
+    /^chrome:\/\//i,
+    /^chrome-extension:\/\//i,
   ],
 });
 

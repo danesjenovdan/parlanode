@@ -1,5 +1,6 @@
 # Parlameter frontend
 
+
 ## Notes on translations
 
 Integration with our weblate instance for translations is enabled on this repo.

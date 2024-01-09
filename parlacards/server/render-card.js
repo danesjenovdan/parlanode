@@ -33,7 +33,7 @@ const getTemplate = (templateName) => {
   };
 };
 
-const manifest = fs.readJSONSync('./dist/client/manifest.json');
+const manifest = fs.readJSONSync('./dist/client/.vite/manifest.json');
 
 const getChunkAssets = (chunkName, seenChunks = new Set()) => {
   let entry = null;
