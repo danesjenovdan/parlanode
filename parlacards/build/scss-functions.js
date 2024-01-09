@@ -1,4 +1,4 @@
-import sass from 'sass';
+import * as sass from 'sass';
 
 export default {
   'get-parlassets-url()': () => {
