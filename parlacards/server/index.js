@@ -8,7 +8,10 @@ import { renderCard } from './render-card.js';
 const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
 
 fastify.register(fastifySentry, {
-  dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
+  dsn:
+    process.env.NODE_ENV === 'production'
+      ? 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015'
+      : '',
   // We recommend adjusting this value in production, or using tracesSampler
   // for finer control
   tracesSampleRate: 1.0,
