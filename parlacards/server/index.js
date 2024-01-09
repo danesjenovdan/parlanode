@@ -1,8 +1,8 @@
 import 'make-promises-safe';
 import { resolve } from 'path';
-import { fastify as createFastify } from 'fastify';
-import fastifyStatic from 'fastify-static';
-import fastifyCors from 'fastify-cors';
+import createFastify from 'fastify';
+import fastifyStatic from '@fastify/static';
+import fastifyCors from '@fastify/cors';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import { renderCard } from './render-card.js';
 
@@ -31,16 +31,17 @@ const renderCardHandler = async (request, reply) => {
   let html;
   try {
     html = await renderCard({ cardName, id, date, locale, template, state });
-    reply.type('text/html').send(html);
+    return reply.type('text/html').send(html);
   } catch (error) {
     fastify.log.error(error);
-    reply.status(500).type('text/html').send(error.stack);
+    fastify.Sentry.captureException(error);
+    return reply.status(500).type('text/html').send(error.stack);
   }
 };
 
 fastify.get('/:group/:method', renderCardHandler);
 
-fastify.listen(process.env.PORT || 3000, '0.0.0.0', (error) => {
+fastify.listen({ port: process.env.PORT || 3000, host: '0.0.0.0' }, (error) => {
   if (error) {
     fastify.log.error(error);
     process.exit(1);
