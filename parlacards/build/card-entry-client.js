@@ -16,7 +16,6 @@ const i18n = createI18n({
 });
 
 const app = createApp({ ...Card, contextData });
-app.config.unwrapInjectedRef = true; // TODO: remove when this is default in next vue release
 
 // SENTRY
 Sentry.init({
