@@ -1,7 +1,7 @@
 # ---
 # actual image
 # ---
-FROM node:16-alpine
+FROM node:20-alpine
 
 # set current directory
 WORKDIR /app
