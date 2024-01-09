@@ -1,5 +1,5 @@
 import { createSSRApp, ssrUtils } from 'vue';
-import { createI18n } from 'vue-i18n';
+import { createI18n } from 'vue-i18n/dist/vue-i18n.runtime.node.mjs';
 import { renderToString } from '@vue/server-renderer';
 import { merge } from 'lodash-es';
 import * as Sentry from '@sentry/vue';
@@ -16,7 +16,6 @@ export default async (contextData, i18nData) => {
   });
 
   const app = createSSRApp({ ...Card, contextData });
-  app.config.unwrapInjectedRef = true; // TODO: remove when this is default in next vue release
   app.use(i18n);
 
   // SENTRY
