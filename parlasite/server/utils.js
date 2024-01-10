@@ -54,8 +54,19 @@ async function fetchCard(cardPath, id, params = {}) {
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
 
+  console.log();
+  console.log();
+  console.log('ip', this.req.ip);
+  console.log('hostname', this.req.hostname);
+  console.log('protocol', this.req.protocol);
+  console.log();
+  console.log('x-forwarded-for', this.req.headers['x-forwarded-for']);
+  console.log('x-forwarded-host', this.req.headers['x-forwarded-host']);
+  console.log('x-forwarded-proto', this.req.headers['x-forwarded-proto']);
+  console.log();
+  console.log();
+
   try {
-    // TODO: if fetch errors dont show 500 but return like for non ok response
     const res = await fetch(cardUrl);
     if (res.ok) {
       const text = await res.text();

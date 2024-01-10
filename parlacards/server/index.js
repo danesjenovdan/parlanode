@@ -48,6 +48,14 @@ const renderCardHandler = async (request, reply) => {
   const cardName = `${group}/${method}`;
   let html;
   try {
+    console.log();
+    console.log();
+    console.log(request.ip);
+    console.log(request.hostname);
+    console.log(request.protocol);
+    console.log(request.headers);
+    console.log();
+    console.log();
     html = await renderCard({ cardName, id, date, locale, template, state });
     return reply.type('text/html').send(html);
   } catch (error) {
