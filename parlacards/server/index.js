@@ -3,7 +3,7 @@ import createFastify from 'fastify';
 import fastifyStatic from '@fastify/static';
 import fastifyCors from '@fastify/cors';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
-import { renderCard } from './render-card.js';
+import { HTTPError, renderCard } from './render-card.js';
 
 const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
 
@@ -48,9 +48,25 @@ const renderCardHandler = async (request, reply) => {
   const cardName = `${group}/${method}`;
   let html;
   try {
+    console.log();
+    console.log();
+    console.log(request.ip);
+    console.log(request.hostname);
+    console.log(request.protocol);
+    console.log(request.headers);
+    console.log();
+    console.log();
     html = await renderCard({ cardName, id, date, locale, template, state });
     return reply.type('text/html').send(html);
   } catch (error) {
+    if (error instanceof HTTPError) {
+      if (error.statusCode < 500) {
+        return reply
+          .status(error.statusCode)
+          .type('text/html')
+          .send(error.message);
+      }
+    }
     fastify.log.error(error);
     fastify.Sentry.captureException(error);
     return reply.status(500).type('text/html').send(error.stack);

@@ -9,6 +9,17 @@ import {
   fetchSiteMap,
 } from './utils.js';
 
+class HTTPError extends Error {
+  constructor(statusCode, message, cause) {
+    super(message);
+    this.name = 'HTTPError';
+    this.statusCode = statusCode;
+    if (cause) {
+      this.cause = cause;
+    }
+  }
+}
+
 const templates = {
   dev: fs.readFileSync('./build/card-template-dev.html', 'utf-8'),
   share: fs.readFileSync('./build/card-template-share.html', 'utf-8'),
@@ -18,7 +29,7 @@ const templates = {
 
 const getTemplate = (templateName) => {
   if (!Object.prototype.hasOwnProperty.call(templates, templateName)) {
-    throw new Error(`Template '${templateName}' not found`);
+    throw new HTTPError(404, `Template '${templateName}' not found`);
   }
 
   return (replacements = {}) => {
@@ -94,10 +105,10 @@ const renderInitialState = (state) => {
 
 const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   if (!id) {
-    throw new Error(`Query parameter 'id' missing`);
+    throw new HTTPError(400, `Query parameter 'id' missing`);
   }
   if (!template) {
-    throw new Error(`Query parameter 'template' missing`);
+    throw new HTTPError(400, `Query parameter 'template' missing`);
   }
 
   const renderTemplate = getTemplate(template);
@@ -108,10 +119,10 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   ]);
 
   if (!render) {
-    throw new Error(`Card '${cardName}' not found`);
+    throw new HTTPError(404, `Card '${cardName}' not found`);
   }
   if (!localeData) {
-    throw new Error(`Locale '${locale}' not found`);
+    throw new HTTPError(404, `Locale '${locale}' not found`);
   }
 
   const defaultMessages = localeData.defaults ?? {};
@@ -121,32 +132,6 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   if (cardName !== 'misc/error' && !state.no_card_data) {
     const dataUrl = getCardDataUrl(cardName, id, date, state);
     cardData = await fetchCardData(dataUrl, id, date);
-
-    if (cardData.error) {
-      // eslint-disable-next-line no-console
-      console.log(`ERROR: cardData.error=${cardData.error}`);
-      // if the API answers with a 404 we should gracefully
-      // handle it instead of erroring out
-      //
-      // we change the name of the card to misc/error to render
-      // the error card and we pass the error object to the
-      // card state
-      //
-      // the misc/error card checks if cardState.error.statusCode
-      // equals 404 and reacts accordingly
-      //
-      // all other cases error out completely
-      if (cardData.error.statusCode === 404) {
-        // eslint-disable-next-line no-console
-        console.log(`ERROR: replaced with misc/error card!`);
-        cardName = 'misc/error';
-        state.error = cardData.error;
-      } else {
-        const { error, url } = cardData;
-        const message = error?.message ?? 'Request failed';
-        throw new Error(`${message} (${url})`);
-      }
-    }
   }
 
   const cardState = { ...state };
@@ -200,5 +185,4 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   return html;
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { renderCard };
+export { HTTPError, renderCard };
