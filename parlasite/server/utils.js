@@ -50,13 +50,21 @@ async function fetchCard(cardPath, id, params = {}) {
   }
 
   const cardUrl = `${urls.cards}${cardPath}${stringifyParams(params)}`;
+  const currentUrl = `${this.req.protocol}://${this.req.hostname}${this.req.originalUrl}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
+  // eslint-disable-next-line no-console
+  console.log('  > from:', currentUrl);
 
   try {
-    // TODO: if fetch errors dont show 500 but return like for non ok response
-    const res = await fetch(cardUrl);
+    const res = await fetch(cardUrl, {
+      headers: {
+        'x-parlasite-request-url': cardUrl,
+        'x-parlasite-request-from': currentUrl,
+        'x-parlasite-request-user-agent': this.req.headers['user-agent'],
+      },
+    });
     if (res.ok) {
       const text = await res.text();
       return text;
