@@ -50,24 +50,21 @@ async function fetchCard(cardPath, id, params = {}) {
   }
 
   const cardUrl = `${urls.cards}${cardPath}${stringifyParams(params)}`;
+  const currentUrl = `${this.req.protocol}://${this.req.hostname}${this.req.originalUrl}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
-
-  console.log();
-  console.log();
-  console.log('ip', this.req.ip);
-  console.log('hostname', this.req.hostname);
-  console.log('protocol', this.req.protocol);
-  console.log();
-  console.log('x-forwarded-for', this.req.headers['x-forwarded-for']);
-  console.log('x-forwarded-host', this.req.headers['x-forwarded-host']);
-  console.log('x-forwarded-proto', this.req.headers['x-forwarded-proto']);
-  console.log();
-  console.log();
+  // eslint-disable-next-line no-console
+  console.log('  > from:', currentUrl);
 
   try {
-    const res = await fetch(cardUrl);
+    const res = await fetch(cardUrl, {
+      headers: {
+        'x-parlasite-request-url': cardUrl,
+        'x-parlasite-request-from': currentUrl,
+        'x-parlasite-request-user-agent': this.req.headers['user-agent'],
+      },
+    });
     if (res.ok) {
       const text = await res.text();
       return text;
