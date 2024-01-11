@@ -126,13 +126,28 @@ function getCardDataUrl(cardName, id, date, state) {
   return `${data}/cards/${cardName}/${qs ? `?${qs}` : ''}`;
 }
 
-const fetchCardData = async (dataUrl, id, date) => {
+const fetchCardData = async ({
+  dataUrl,
+  id,
+  date,
+  parlaHeaders,
+  currentUrl,
+}) => {
   // eslint-disable-next-line no-console
-  console.log(`Fetching card data: dataUrl=${dataUrl} id=${id} date=${date}`);
+  console.log('Fetching:', dataUrl);
+  // eslint-disable-next-line no-console
+  console.log('  > from:', currentUrl);
+
   if (dataUrl) {
     let response;
     try {
-      response = await axios.get(dataUrl);
+      response = await axios.get(dataUrl, {
+        headers: {
+          ...parlaHeaders,
+          'x-parlacards-request-url': dataUrl,
+          'x-parlacards-request-from': currentUrl,
+        },
+      });
     } catch (error) {
       return {
         url: dataUrl,
@@ -197,6 +212,16 @@ const fetchSiteMap = async () => {
   }
 };
 
+const getParlaHeaders = (headers) => {
+  const parlaHeaders = {};
+  Object.keys(headers).forEach((key) => {
+    if (key.toLowerCase().startsWith('x-parla')) {
+      parlaHeaders[key.toLowerCase()] = headers[key];
+    }
+  });
+  return parlaHeaders;
+};
+
 export {
   getUrls,
   createError,
@@ -205,4 +230,5 @@ export {
   getCardDataUrl,
   fetchCardData,
   fetchSiteMap,
+  getParlaHeaders,
 };
