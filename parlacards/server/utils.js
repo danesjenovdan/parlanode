@@ -134,7 +134,10 @@ const fetchCardData = async ({
   currentUrl,
 }) => {
   // eslint-disable-next-line no-console
-  console.log(`Fetching card data: dataUrl=${dataUrl} id=${id} date=${date}`);
+  console.log('Fetching:', dataUrl);
+  // eslint-disable-next-line no-console
+  console.log('  > from:', currentUrl);
+
   if (dataUrl) {
     let response;
     try {
