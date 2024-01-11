@@ -4,6 +4,7 @@ import fastifyStatic from '@fastify/static';
 import fastifyCors from '@fastify/cors';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import { HTTPError, renderCard } from './render-card.js';
+import { getParlaHeaders } from './utils.js';
 
 const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
 
@@ -46,17 +47,19 @@ const renderCardHandler = async (request, reply) => {
   const { group, method } = request.params;
   const { id, date, locale, template, ...state } = request.query;
   const cardName = `${group}/${method}`;
-  let html;
+  const currentUrl = `${request.protocol}://${request.hostname}${request.originalUrl}`;
+  const parlaHeaders = getParlaHeaders(request.headers);
   try {
-    console.log();
-    console.log();
-    console.log(request.ip);
-    console.log(request.hostname);
-    console.log(request.protocol);
-    console.log(request.headers);
-    console.log();
-    console.log();
-    html = await renderCard({ cardName, id, date, locale, template, state });
+    const html = await renderCard({
+      cardName,
+      id,
+      date,
+      locale,
+      template,
+      state,
+      currentUrl,
+      parlaHeaders,
+    });
     return reply.type('text/html').send(html);
   } catch (error) {
     if (error instanceof HTTPError) {

@@ -103,7 +103,16 @@ const renderInitialState = (state) => {
   return `<script type="module">window.__INITIAL_STATE__=${json};</script>`;
 };
 
-const renderCard = async ({ cardName, id, date, locale, template, state }) => {
+const renderCard = async ({
+  cardName,
+  id,
+  date,
+  locale,
+  template,
+  state,
+  currentUrl,
+  parlaHeaders,
+}) => {
   if (!id) {
     throw new HTTPError(400, `Query parameter 'id' missing`);
   }
@@ -131,7 +140,13 @@ const renderCard = async ({ cardName, id, date, locale, template, state }) => {
   let cardData = {};
   if (cardName !== 'misc/error' && !state.no_card_data) {
     const dataUrl = getCardDataUrl(cardName, id, date, state);
-    cardData = await fetchCardData(dataUrl, id, date);
+    cardData = await fetchCardData({
+      dataUrl,
+      id,
+      date,
+      currentUrl,
+      parlaHeaders,
+    });
   }
 
   const cardState = { ...state };
