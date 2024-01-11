@@ -21,11 +21,11 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              memory: 125Mi
-              cpu: 100m
+              memory: 250Mi
+              cpu: 200m
             limits:
-              memory: 125Mi
-              cpu: 100m
+              memory: 250Mi
+              cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
               value: https://cdn.ajdovscina.parlameter.si
