@@ -1,0 +1,9 @@
+{
+  "url": "https://data.10.parlametar.hr/v3/cards/vote/single/?id=6615",
+  "data": null,
+  "error": {
+    "statusCode": 404,
+    "error": "AxiosError",
+    "message": "Not Found"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/speech/single/?id=1410151",
+  "data": null,
+  "error": {
+    "statusCode": 404,
+    "error": "AxiosError",
+    "message": "Not Found"
+  }
+}
