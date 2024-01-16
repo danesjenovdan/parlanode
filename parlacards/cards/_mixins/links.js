@@ -71,8 +71,11 @@ export default {
       return `${urls.site}/${sm.session.base}/${session.id}/${sm.session.otherVotings}`;
     },
     getSpeechLink(speech, session, perPage = SPEECHES_PER_PAGE) {
+      if (!speech?.id) {
+        return null;
+      }
       const { urls, siteMap: sm } = this.$root.$options.contextData;
-      const sessId = session?.id || speech?.session?.id || speech?.session_id;
+      const sessId = session?.id || speech.session?.id || speech.session_id;
       const pageNum = Math.floor((speech.the_order - 1) / perPage) + 1;
       const pageUrlPart = pageNum > 1 ? `?page=${pageNum}` : '';
       return `${urls.site}/${sm.session.base}/${sessId}/${sm.session.transcript}${pageUrlPart}#${speech.id}`;

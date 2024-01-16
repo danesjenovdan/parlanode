@@ -2,11 +2,14 @@
   <card-wrapper :header-config="headerConfig" max-height>
     <div class="date-and-stuff">
       <a
+        v-if="results.session?.name"
         :href="getSessionVotesLink(results.session)"
         class="funblue-light-hover"
       >
         {{ results.session?.name }} </a
-      ><span class="date">, {{ formatDate(results.session?.start_time) }}</span>
+      ><span v-if="results.session?.start_time" class="date"
+        >, {{ formatDate(results.session?.start_time) }}</span
+      >
     </div>
 
     <div :class="['summary', { 'fire-badge': results.result?.is_outlier }]">
@@ -319,7 +322,7 @@ export default {
 
     const allVotes = {};
     BALLOT_OPTIONS.forEach((key) => {
-      if (typeof results.all_votes[key] !== 'number') {
+      if (typeof results.all_votes?.[key] !== 'number') {
         allVotes[key] = '?';
       } else {
         allVotes[key] = results.all_votes[key];
@@ -330,7 +333,7 @@ export default {
 
     // filters out anonymous members
     const filteredMembers = () => {
-      return results.members.filter((member) => {
+      return results.members?.filter((member) => {
         if (member.person === null) {
           return false; // skip
         }
@@ -341,7 +344,7 @@ export default {
     const extendedGroups = () => {
       // checks for anonymous members and scaffolds an anonymous group
       if (
-        results.members.filter((member) => member.person === null).length > 0
+        results.members?.filter((member) => member.person === null).length > 0
       ) {
         const ballots = results.members.filter(
           (member) => member.person === null
