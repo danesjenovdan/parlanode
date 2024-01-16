@@ -37,6 +37,8 @@ export default async (contextData, i18nData) => {
       // Network errors
       'Network Error',
       'Request aborted',
+      // Caused by some auto-fill extensions and tools like html2canvas
+      'Blocked a frame with origin',
     ],
     denyUrls: [
       // Chrome extensions
