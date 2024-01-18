@@ -28,9 +28,9 @@ spec:
               cpu: 50m
           env:
             - name: PARLASITE_LEADER_ID
-              value: "261"
-            - name: PARLASITE_ROOT_ORG_ID
               value: "1"
+            - name: PARLASITE_ROOT_ORG_ID
+              value: "2"
             - name: PARLASITE_MANDATE_ID
               value: "1"
             - name: PARLASITE_DEFAULT_CARD_DATE
