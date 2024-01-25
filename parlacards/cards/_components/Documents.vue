@@ -41,7 +41,7 @@ export default {
     groupedDocuments() {
       return groupBy(
         this.documents,
-        (document) => document?.tags?.[0]?.name || this.otherGroupTag
+        (document) => document?.tags?.[0]?.name || this.otherGroupTag,
       );
     },
     hasGroups() {

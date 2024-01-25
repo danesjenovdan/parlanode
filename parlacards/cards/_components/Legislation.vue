@@ -6,7 +6,7 @@
           <div v-t="'title-search'" class="filter-label"></div>
           <search-field
             v-model="textFilter"
-            @update:modelValue="searchLegislation"
+            @update:model-value="searchLegislation"
           />
         </div>
         <div class="filter" style="flex: 1"></div>
@@ -263,7 +263,7 @@ export default {
         return [
           {
             html: `<a href="${this.getLegislationLink(
-              legislation
+              legislation,
             )}" class="funblue-light-hover">${legislation.text}</a>`,
           },
           // TODO optional stuff commented out, this is bad

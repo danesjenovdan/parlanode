@@ -179,7 +179,7 @@ const renderCard = async ({
   const { preloads, styles, scripts } = renderAssets(
     cardName,
     ctx.modules,
-    mountId
+    mountId,
   );
 
   const outputHtml = `${styles}${preloads}<div id="${mountId}">${cardHtml}</div>${initialState}${scripts}`;
