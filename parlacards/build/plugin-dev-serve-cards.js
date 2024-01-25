@@ -20,7 +20,7 @@ export default function devServeCards(env) {
             .map((file) => file.split('/').slice(-3, -1));
           const cardsByGroup = mapValues(
             groupBy(cards, ([g]) => g),
-            (v) => v.map(([, m]) => m)
+            (v) => v.map(([, m]) => m),
           );
           const cardRows = Object.entries(cardsByGroup)
             .map(
@@ -32,10 +32,10 @@ export default function devServeCards(env) {
                     <tr>
                       <td style="border: 1px solid black;">${group}</td>
                       <td style="border: 1px solid black;"><a href="/${group}/${method}">${method}</a></td>
-                    </tr>`
+                    </tr>`,
                   )
                   .join('\n')}
-              </table>`
+              </table>`,
             )
             .join('\n');
           res.end(cardRows);
@@ -46,13 +46,13 @@ export default function devServeCards(env) {
             const html = readFileSync(
               // TODO: uredi, da lahko developas razlicne template (embed/share/site)
               resolve(dir, 'card-entry-dev.html'),
-              'utf-8'
+              'utf-8',
             )
               .replace(/{assetsUrl}/g, env.VITE_PARLASSETS_URL)
               .replace(/{cardName}/g, cardName)
               .replace(
                 /{cardEntry}/g,
-                `/${cardName}/card-entry-dev.js${url.search}`
+                `/${cardName}/card-entry-dev.js${url.search}`,
               );
             server
               .transformIndexHtml(`${cardsPath}/${cardName}/index.html`, html)
@@ -83,7 +83,7 @@ export default function devServeCards(env) {
           const searchParams = new URLSearchParams(search);
           const entryTemplate = readFileSync(
             resolve(dir, 'card-entry-dev.js'),
-            'utf-8'
+            'utf-8',
           );
           return entryTemplate
             .replace(/{cardName}/g, cardName)

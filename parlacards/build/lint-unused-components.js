@@ -7,7 +7,7 @@ const cardsDir = path.resolve('./cards');
 const compNames = glob.sync('./cards/**/*.{vue,js}');
 
 const compNamesNoCard = compNames.filter(
-  (compName) => !compName.endsWith('/card.vue')
+  (compName) => !compName.endsWith('/card.vue'),
 );
 
 const usageCount = compNamesNoCard.reduce((acc, compName) => {
@@ -33,4 +33,5 @@ compNames.forEach((compName) => {
   });
 });
 
+// eslint-disable-next-line no-console
 console.log(usageCount);

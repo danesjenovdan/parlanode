@@ -14,7 +14,7 @@ let missingLocaleFiles = 0;
 
 localeNames.forEach((localeName) => {
   const defaultsLocaleFile = path.resolve(
-    `./cards/_i18n/${localeName}/defaults.yaml`
+    `./cards/_i18n/${localeName}/defaults.yaml`,
   );
   if (!fs.existsSync(defaultsLocaleFile)) {
     // eslint-disable-next-line no-console
@@ -24,7 +24,7 @@ localeNames.forEach((localeName) => {
 
   cardNames.forEach((cardName) => {
     const cardLocaleFile = path.resolve(
-      `./cards/_i18n/${localeName}/${cardName}.yaml`
+      `./cards/_i18n/${localeName}/${cardName}.yaml`,
     );
     if (!fs.existsSync(cardLocaleFile)) {
       // const newDirName = path.dirname(cardLocaleFile);
@@ -68,8 +68,8 @@ localeFiles.forEach((localeFile) => {
     // eslint-disable-next-line no-console
     console.error(
       `EXTRA LOCALE FILE (no card "${possibleCardName}"): ${path.resolve(
-        localeFile
-      )}`
+        localeFile,
+      )}`,
     );
     extraLocaleFiles += 1;
   }
