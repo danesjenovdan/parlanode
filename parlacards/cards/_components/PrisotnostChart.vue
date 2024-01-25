@@ -177,12 +177,12 @@ export default {
             if (x(d.data.date) > 748) {
               tooltip.attr(
                 'transform',
-                `translate(${x(d.data.date) - 70},${y(80)})`
+                `translate(${x(d.data.date) - 70},${y(80)})`,
               );
             } else {
               tooltip.attr(
                 'transform',
-                `translate(${x(d.data.date) + 108},${y(80)})`
+                `translate(${x(d.data.date) + 108},${y(80)})`,
               );
             }
 

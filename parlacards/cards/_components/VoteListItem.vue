@@ -71,7 +71,9 @@
               </div>
               <div class="row">
                 <div
-                  v-if="!(voteNumbers['did not vote'] > 0 && voteNumbers?.for === 0)"
+                  v-if="
+                    !(voteNumbers['did not vote'] > 0 && voteNumbers?.for === 0)
+                  "
                   :class="{
                     'col-xs-2 col-xs-offset-1': numberOfBallotTypes === 5,
                     'col-xs-3': numberOfBallotTypes === 4,
@@ -84,7 +86,12 @@
                   <div class="indicator aye">&nbsp;</div>
                 </div>
                 <div
-                  v-if="!(voteNumbers['did not vote'] > 0 && voteNumbers?.against === 0)"
+                  v-if="
+                    !(
+                      voteNumbers['did not vote'] > 0 &&
+                      voteNumbers?.against === 0
+                    )
+                  "
                   :class="{
                     'col-xs-2': numberOfBallotTypes === 5,
                     'col-xs-3': numberOfBallotTypes === 4,
@@ -97,7 +104,12 @@
                   <div class="indicator ney">&nbsp;</div>
                 </div>
                 <div
-                  v-if="!(voteNumbers['did not vote'] > 0 && voteNumbers?.abstain === 0)"
+                  v-if="
+                    !(
+                      voteNumbers['did not vote'] > 0 &&
+                      voteNumbers?.abstain === 0
+                    )
+                  "
                   :class="{
                     'col-xs-2': numberOfBallotTypes === 5,
                     'col-xs-3': numberOfBallotTypes === 4,
@@ -110,7 +122,12 @@
                   <div class="indicator abstention">&nbsp;</div>
                 </div>
                 <div
-                  v-if="!(voteNumbers['did not vote'] > 0 && voteNumbers?.absent === 0)"
+                  v-if="
+                    !(
+                      voteNumbers['did not vote'] > 0 &&
+                      voteNumbers?.absent === 0
+                    )
+                  "
                   :class="{
                     'col-xs-2': numberOfBallotTypes === 5,
                     'col-xs-3': numberOfBallotTypes === 4,
@@ -203,11 +220,13 @@ export default {
       return percentages;
     },
     numberOfBallotTypes() {
-      const realNumberOfBallotTypes = Object.values(this.voteNumbers).filter((ballotTypeCount) => {
-        return ballotTypeCount > 0
-      }).length;
+      const realNumberOfBallotTypes = Object.values(this.voteNumbers).filter(
+        (ballotTypeCount) => {
+          return ballotTypeCount > 0;
+        },
+      ).length;
       return this.voteNumbers['did not vote'] > 0 ? realNumberOfBallotTypes : 4;
-    }
+    },
   },
 };
 </script>

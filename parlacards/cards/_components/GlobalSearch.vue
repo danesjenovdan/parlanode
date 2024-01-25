@@ -63,7 +63,7 @@ export default {
     dropdownGroups() {
       const personGroups = uniqBy(
         this.people.map((person) => person?.group),
-        (g) => g?.slug
+        (g) => g?.slug,
       );
       return [
         {

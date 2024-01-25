@@ -79,7 +79,7 @@
                 {{
                   translateOption(
                     member.option,
-                    member.person?.preferred_pronoun
+                    member.person?.preferred_pronoun,
                   )
                 }}
               </div>
@@ -172,7 +172,7 @@ export default {
           return ballotOption.id !== 'absent' && ballotOption.id !== 'against';
         }
         return ballotOption.id !== 'did not vote';
-      }
+      },
     );
 
     return {

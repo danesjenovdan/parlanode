@@ -116,6 +116,7 @@ export default {
 
     border-bottom: 1px solid $font-placeholder;
     border-top: 1px solid $font-placeholder;
+    font-family: 'Roboto Slab', 'Times New Roman', serif;
     font-size: 11px;
     font-weight: 300;
     line-height: 1.45em;

@@ -269,7 +269,7 @@ export default {
   color: $white;
   cursor: pointer;
   display: none;
-  font-family: Times New Roman, serif;
+  font-family: 'Times New Roman', serif;
   font-size: 44px;
   height: 33px;
   left: -42px;
