@@ -21,10 +21,10 @@ spec:
             - containerPort: 3000
           resources:
             requests:
-              memory: 250Mi
+              memory: 400Mi
               cpu: 200m
             limits:
-              memory: 250Mi
+              memory: 400Mi
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL

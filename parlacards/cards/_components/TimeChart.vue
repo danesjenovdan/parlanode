@@ -150,11 +150,11 @@ export default {
 
             const xPos = Math.max(
               0 + lastTooltipWidth / 2,
-              Math.min(x(lastTooltipDatum.date), width - lastTooltipWidth / 2)
+              Math.min(x(lastTooltipDatum.date), width - lastTooltipWidth / 2),
             );
             const yPos = Math.max(
               margin.top,
-              Math.min(height - margin.bottom, pointerY)
+              Math.min(height - margin.bottom, pointerY),
             );
 
             tooltip.attr('transform', `translate(${xPos},${yPos - 15})`);

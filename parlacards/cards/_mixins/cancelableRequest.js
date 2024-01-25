@@ -28,7 +28,7 @@ export default {
           (error) => {
             this.cancelRequest = null;
             throw error;
-          }
+          },
         );
       return {
         then(responseHandler) {

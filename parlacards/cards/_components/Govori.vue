@@ -5,14 +5,14 @@
         <div v-t="'contents-search'" class="filter-label"></div>
         <search-field
           v-model="textFilter"
-          @update:modelValue="searchSpeeches"
+          @update:model-value="searchSpeeches"
         />
       </div>
       <div v-if="type === 'party' && allPeople.length" class="filter">
         <div v-t="'mps'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allPeople"
-          @update:modelValue="searchSpeechesImmediate"
+          @update:model-value="searchSpeechesImmediate"
         />
       </div>
       <div class="filter">
@@ -20,7 +20,7 @@
         <p-search-dropdown
           v-model="allMonths"
           :alphabetise="false"
-          @update:modelValue="searchSpeechesImmediate"
+          @update:model-value="searchSpeechesImmediate"
           @clear="searchSpeechesImmediate"
         />
       </div>
@@ -28,7 +28,7 @@
         <div v-t="'session-type'" class="filter-label"></div>
         <p-search-dropdown
           v-model="allWorkingBodies"
-          @update:modelValue="searchSpeechesImmediate"
+          @update:model-value="searchSpeechesImmediate"
           @clear="searchSpeechesImmediate"
         />
       </div>
