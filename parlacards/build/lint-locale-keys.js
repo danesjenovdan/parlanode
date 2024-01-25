@@ -64,7 +64,7 @@ const IGNORED_LOCALES_FOR_MISSING_KEYS = ['en', 'hr', 'sh', 'pl', 'ua'];
 localeNames.forEach((localeName) => {
   const extraKeys = difference(
     allLocaleKeys[localeName],
-    keysIncludedInAllLocales
+    keysIncludedInAllLocales,
   );
 
   allLocaleExtraKeys[localeName] = extraKeys;
@@ -75,7 +75,7 @@ localeNames.forEach((localeName) => {
       .forEach((otherLocaleName) => {
         const missingKeys = difference(
           extraKeys,
-          allLocaleKeys[otherLocaleName]
+          allLocaleKeys[otherLocaleName],
         );
 
         if (

@@ -28,7 +28,7 @@ cardNames.forEach((cardName) => {
       } else {
         // eslint-disable-next-line no-console
         console.error(
-          `WRONG CARD COMPONENT NAME "${match.groups.name}" !== "${correctComponentName}": ${cardFile}`
+          `WRONG CARD COMPONENT NAME "${match.groups.name}" !== "${correctComponentName}": ${cardFile}`,
         );
         wrongCardComponentNames += 1;
       }

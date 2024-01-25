@@ -121,7 +121,7 @@ export default {
       return Math.max(
         this.results.sophisticated,
         this.results.simple,
-        this.results.problematic
+        this.results.problematic,
       );
     },
   },

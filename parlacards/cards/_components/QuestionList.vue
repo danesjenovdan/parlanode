@@ -70,8 +70,8 @@ export default {
     },
     listType: {
       type: String,
-      default: 'events'
-    }
+      default: 'events',
+    },
   },
   emits: ['load-more'],
   computed: {
@@ -116,5 +116,4 @@ export default {
     top: calc(50% - 50px);
   }
 }
-
 </style>

@@ -101,6 +101,7 @@ export default {
           text: this.question,
           recaptcha: token,
         });
+        // eslint-disable-next-line no-console
         console.log('created question:', response.data.id);
         this.questionSent = true;
       } catch (error) {
