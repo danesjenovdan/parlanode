@@ -8,7 +8,7 @@
             <blue-button-list
               v-model="currentFilter"
               :items="filters"
-              @update:modelValue="selectTab"
+              @update:model-value="selectTab"
             />
           </div>
           <!-- only show working bodies dropdown if we have more than one organization -->
@@ -17,7 +17,7 @@
               v-model="workingBodies"
               :placeholder="inputPlaceholder"
               class="dropdown-filter"
-              @update:modelValue="searchSessionsImmediate"
+              @update:model-value="searchSessionsImmediate"
             />
           </div>
         </div>
@@ -133,8 +133,6 @@ export default {
         return returnValue;
       }, {});
 
-    console.log(classifications);
-
     // create tabs
     const tabs = Object.keys(classifications).map((classificationKey) => {
       return {
@@ -188,7 +186,7 @@ export default {
           'organizations',
           this.currentWorkingBodies
             .map((workingBodySlug) => workingBodySlug.split('-')[0])
-            .join(',')
+            .join(','),
         );
       }
 
@@ -259,7 +257,7 @@ export default {
                 })),
               }
             : null,
-        ].filter(Boolean)
+        ].filter(Boolean),
       );
     },
   },

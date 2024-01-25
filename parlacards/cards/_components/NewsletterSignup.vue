@@ -153,7 +153,7 @@ export default {
         .then((response) => {
           if (response.data?.segments?.length) {
             const segment = response.data.segments.find(
-              (s) => s.id === this.segmentId
+              (s) => s.id === this.segmentId,
             );
             if (segment) {
               this.showUnsubscribe = true;
