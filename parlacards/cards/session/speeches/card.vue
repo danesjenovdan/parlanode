@@ -127,7 +127,7 @@ export default {
           // needed if dynamically loaded to reset the css :target and scroll to selected element
           this.$nextTick(() => {
             const target = document.getElementById(
-              window.location.hash.slice(1)
+              window.location.hash.slice(1),
             );
             if (target) {
               const tmp = window.location.hash;

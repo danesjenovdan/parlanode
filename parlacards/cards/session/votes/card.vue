@@ -4,7 +4,10 @@
       <div class="filters">
         <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
-          <search-field v-model="textFilter" @update:modelValue="searchVotes" />
+          <search-field
+            v-model="textFilter"
+            @update:model-value="searchVotes"
+          />
         </div>
         <div class="filter" style="flex: 1"></div>
         <div class="filter buttons-filter">

@@ -105,7 +105,7 @@ export default {
           .on('mouseover', (e, d) => {
             svgGroup
               .selectAll(
-                '.pie-segments path, .pie-lines polyline, .pie-labels text'
+                '.pie-segments path, .pie-lines polyline, .pie-labels text',
               )
               .interrupt()
               .transition()
@@ -113,7 +113,7 @@ export default {
               .style('opacity', 0.33);
             svgGroup
               .selectAll(
-                `[data-group="${d.data.group?.slug || `null-${d.index}`}"]`
+                `[data-group="${d.data.group?.slug || `null-${d.index}`}"]`,
               )
               .interrupt()
               .transition()
@@ -123,7 +123,7 @@ export default {
           .on('mouseout', () => {
             svgGroup
               .selectAll(
-                '.pie-segments path, .pie-lines polyline, .pie-labels text'
+                '.pie-segments path, .pie-lines polyline, .pie-labels text',
               )
               .transition()
               .delay(250)
@@ -225,7 +225,7 @@ export default {
         .attr('points', (d) => {
           const labelBBox = svgGroup
             .select(
-              `text[data-group="${d.data.group?.slug || `null-${d.index}`}"]`
+              `text[data-group="${d.data.group?.slug || `null-${d.index}`}"]`,
             )
             .node()
             .getBBox();
@@ -240,11 +240,11 @@ export default {
           if (
             Math.hypot(
               edgePoint[0] - outerPoint[0],
-              edgePoint[1] - outerPoint[1]
+              edgePoint[1] - outerPoint[1],
             ) >
             Math.hypot(
               edgePoint[0] - labelPoint[0],
-              edgePoint[1] - labelPoint[1]
+              edgePoint[1] - labelPoint[1],
             )
           ) {
             return [edgePoint, labelPoint];

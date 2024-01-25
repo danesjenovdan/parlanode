@@ -82,7 +82,7 @@ export default {
       headerConfig: defaultHeaderConfig(this, {
         heading: cardData?.data?.mandate?.description,
         title: this.$t(
-          `legislation-classifications.${cardData?.data?.results?.classification}`
+          `legislation-classifications.${cardData?.data?.results?.classification}`,
         ),
       }),
     };
