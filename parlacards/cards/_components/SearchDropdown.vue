@@ -188,7 +188,7 @@ export default {
                 item.selected ||
                 (item.label || '')
                   .toLowerCase()
-                  .indexOf(this.localFilter.toLowerCase()) > -1
+                  .indexOf(this.localFilter.toLowerCase()) > -1,
             );
 
         return itemsFiltered
@@ -230,8 +230,8 @@ export default {
           .map((group) => {
             const itemsFromGroup = filterAndSort(
               this.modelValue.filter(
-                (item) => group.items.indexOf(item.id) > -1
-              )
+                (item) => group.items.indexOf(item.id) > -1,
+              ),
             );
 
             itemsFromGroup.forEach((item, index) => {
@@ -252,7 +252,7 @@ export default {
     },
     adjustedPlaceholder() {
       const selectedItem = this.filteredItems.filter(
-        (item) => item.selected
+        (item) => item.selected,
       )[0];
 
       if (this.allowManualValue && !selectedItem && this.manualValue) {
@@ -279,7 +279,7 @@ export default {
     },
     largeItems() {
       return (this.modelValue || []).some(
-        (item) => item?.image || item?.color || item?.colorClass
+        (item) => item?.image || item?.color || item?.colorClass,
       );
     },
   },
@@ -356,7 +356,7 @@ export default {
       const multiplier = this.largeItems ? 2 : 1;
       this.focused = Math.max(
         Math.min(this.filteredItems.length - 1, index),
-        -1
+        -1,
       );
 
       if (!withKeyboard) {

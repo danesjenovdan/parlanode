@@ -1,9 +1,7 @@
 <template>
   <div class="question">
     <div :class="['parlaicon', eventIcon]"></div>
-    <div
-      class="motion"
-    >
+    <div class="motion">
       <span>
         {{ question.text }}
       </span>
@@ -24,8 +22,7 @@ export default {
     },
   },
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
     eventIcon() {
@@ -58,5 +55,4 @@ export default {
     margin-right: 10px;
   }
 }
-
 </style>
