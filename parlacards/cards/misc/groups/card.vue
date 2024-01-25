@@ -146,7 +146,7 @@ export default {
       const maxValue = this.results.reduce(
         (oldValue, nextParty) =>
           Math.max(oldValue, nextParty.results?.[this.currentAnalysis]),
-        0
+        0,
       );
 
       const mappedData = this.results.map((party) => {

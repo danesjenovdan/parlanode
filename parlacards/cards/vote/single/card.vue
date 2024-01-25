@@ -347,21 +347,21 @@ export default {
         results.members?.filter((member) => member.person === null).length > 0
       ) {
         const ballots = results.members.filter(
-          (member) => member.person === null
+          (member) => member.person === null,
         );
         const votes = {};
         votes.for = ballots.filter((ballot) => ballot.option === 'for').length;
         votes.against = ballots.filter(
-          (ballot) => ballot.option === 'against'
+          (ballot) => ballot.option === 'against',
         ).length;
         votes.abstain = ballots.filter(
-          (ballot) => ballot.option === 'abstain'
+          (ballot) => ballot.option === 'abstain',
         ).length;
         votes.absent = ballots.filter(
-          (ballot) => ballot.option === 'absent'
+          (ballot) => ballot.option === 'absent',
         ).length;
         votes['did not vote'] = ballots.filter(
-          (ballot) => ballot.option === 'did not vote'
+          (ballot) => ballot.option === 'did not vote',
         ).length;
 
         const maxOption = Object.keys(votes).reduce((newMaxOption, key) => {
@@ -427,7 +427,7 @@ export default {
       const realNumberOfBallotTypes = Object.values(this.voteNumbers).filter(
         (ballotTypeCount) => {
           return ballotTypeCount > 0;
-        }
+        },
       ).length;
       return this.voteNumbers['did not vote'] > 0 ? realNumberOfBallotTypes : 4;
     },

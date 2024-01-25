@@ -329,7 +329,7 @@ export default {
       } else {
         currentVotingDays = zipObject(
           votes.map((vote, index) => `${getDateFromVote(vote)}-${index}`),
-          votes.map((vote) => [vote])
+          votes.map((vote) => [vote]),
         );
       }
 
@@ -342,7 +342,7 @@ export default {
       });
 
       return mappedVotingDays.filter(
-        (votingDay) => votingDay.ballots.length > 0
+        (votingDay) => votingDay.ballots.length > 0,
       );
     },
     selectGroup(acronym) {
@@ -350,7 +350,8 @@ export default {
         this.selectedGroup !== acronym ? acronym : this.groups[0].acronym;
     },
     fetchVotesForGroup(acronym) {
-      console.log(acronym);
+      // eslint-disable-next-line no-console
+      console.log('TODO: fetchVotesForGroup for', acronym);
       // this.loading = true;
       // const groupId = find(this.groups, { acronym })?.id;
       // axios
@@ -564,7 +565,7 @@ export default {
   .name {
     border-bottom: $section-border;
     border-top: $section-border;
-    font-family: Roboto Slab, Times New Roman, serif;
+    font-family: 'Roboto Slab', 'Times New Roman', serif;
     font-size: 11px;
     font-weight: 300;
     line-height: 1.45em;

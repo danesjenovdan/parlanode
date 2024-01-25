@@ -229,8 +229,8 @@ export default {
       axios
         .get(
           `${this.slugs.urls.isci}/search/speeches?q=${encodeURIComponent(
-            query
-          )}`
+            query,
+          )}`,
         )
         .then((response) => {
           const scoreHigherThanZero = (i) => i.score > 0;
@@ -246,7 +246,7 @@ export default {
                 (
                   party.score /
                   (this.data.orgs[party.party.id] / this.data.all_speeches)
-                ).toFixed(4) || 0
+                ).toFixed(4) || 0,
               ),
               link: this.getPartyLinkSafe(party.party),
             }))
@@ -276,7 +276,7 @@ export default {
                 (
                   person.score /
                   (this.data.people[person.person.id] / this.data.all_speeches)
-                ).toFixed(4)
+                ).toFixed(4),
               ),
               link: this.getPersonLink(person.person),
               portrait: this.getPersonPortrait(person.person),

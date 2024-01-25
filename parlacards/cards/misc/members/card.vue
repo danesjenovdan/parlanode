@@ -197,7 +197,7 @@ export default {
           selected: initialWorkingBodies.includes(g.slug),
           color: g.color,
         };
-      }
+      },
     );
 
     const initialDistricts = (cardState?.districts || '').split(',');
@@ -369,7 +369,7 @@ export default {
           }
           if (this.showDistrictsFilter) {
             items.push(
-              (member.results?.districts || []).map((d) => d.name).join(', ')
+              (member.results?.districts || []).map((d) => d.name).join(', '),
             );
           }
           return items;
@@ -463,7 +463,7 @@ export default {
       if (this.selectedWorkingBodyIds.length) {
         url.searchParams.set(
           'working_bodies',
-          this.selectedWorkingBodyIds.join(',')
+          this.selectedWorkingBodyIds.join(','),
         );
       } else {
         url.searchParams.delete('working_bodies');

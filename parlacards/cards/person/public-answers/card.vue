@@ -3,8 +3,8 @@
     <question-list
       :question-days="questionDays"
       :is-loading="card.isLoading"
-      @load-more="loadMore"
       list-type="questions"
+      @load-more="loadMore"
     />
   </card-wrapper>
 </template>
@@ -18,7 +18,6 @@ import { personTitle } from '@/_mixins/titles.js';
 import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
 import QuestionList from '@/_components/QuestionList.vue';
-
 
 export default {
   name: 'CardPersonPublicAnswers',

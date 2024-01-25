@@ -13,7 +13,7 @@ const getTextFromRange = (containerElement, selectionRange) => {
         if (currentNode === selectionRange.endContainer) {
           text += currentNode.textContent.slice(
             selectionRange.startOffset,
-            selectionRange.endOffset
+            selectionRange.endOffset,
           );
           break;
         } else {
@@ -67,7 +67,7 @@ const getSelectionRange = (containerElement) => {
     ) {
       const [text, offset] = getTextFromRange(
         containerElement,
-        selection.getRangeAt(0)
+        selection.getRangeAt(0),
       );
       return [selection.getRangeAt(0), text, offset];
     }
@@ -138,7 +138,7 @@ export default {
           })
           .then((response) => {
             window.open(
-              `${urls.cards}/speech/quote/?id=${response.data.id}&locale=${locale}&template=share`
+              `${urls.cards}/speech/quote/?id=${response.data.id}&locale=${locale}&template=share`,
             );
           });
       }
