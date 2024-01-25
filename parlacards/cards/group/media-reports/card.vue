@@ -56,7 +56,7 @@ export default {
       const sortedReports = orderBy(
         this.mediaReports,
         ['medium.order', 'report_date'],
-        ['asc', 'desc']
+        ['asc', 'desc'],
       );
       // because objects keys are guarantied to be in insertion order in js
       // and we sorted reports, groupBy will be ordered correctly

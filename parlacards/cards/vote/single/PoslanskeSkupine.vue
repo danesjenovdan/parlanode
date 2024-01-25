@@ -147,7 +147,7 @@ export default {
           return ballotOption.id !== 'absent' && ballotOption.id !== 'against';
         }
         return ballotOption.id !== 'did not vote';
-      }
+      },
     );
     return {
       votes: filteredBallotOptions,
@@ -182,7 +182,7 @@ export default {
         return aValue.localeCompare(bValue, 'sl');
       });
       const optionMembers = sortedMembers.filter(
-        (member) => member.option === this.expandedOption
+        (member) => member.option === this.expandedOption,
       );
       if (['coalition', 'opposition'].includes(this.expandedParty)) {
         const expandedCoalition = this.expandedParty === 'coalition';
@@ -193,7 +193,7 @@ export default {
         });
       }
       return optionMembers.filter(
-        (member) => member.person.group?.slug === this.expandedParty
+        (member) => member.person.group?.slug === this.expandedParty,
       );
     },
   },

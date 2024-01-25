@@ -157,7 +157,7 @@ const fetchCardData = async ({
           error.response?.status ?? 0,
           error.name,
           error.message,
-          error.code
+          error.code,
         ),
         data: error.response?.data,
       };
@@ -170,7 +170,7 @@ const fetchCardData = async ({
         error: createError(
           response.status ?? 0,
           'Error',
-          'Request did not return valid json data'
+          'Request did not return valid json data',
         ),
         data: response.data,
       };
@@ -203,7 +203,7 @@ const fetchSiteMap = async () => {
   }
   try {
     const response = await axios.get(
-      `${process.env.VITE_PARLASITE_URL}/api/sitemap`
+      `${process.env.VITE_PARLASITE_URL}/api/sitemap`,
     );
     siteMapCache.value = response.data;
     return siteMapCache.value;

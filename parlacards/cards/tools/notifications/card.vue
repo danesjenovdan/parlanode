@@ -12,20 +12,17 @@
                 <div class="replaceme padding15">
                   <hr />
                   <div
-                    v-for="keyword in keywords"
-                    :key="keyword.id"
+                    v-for="kw in keywords"
+                    :key="kw.id"
                     :class="[
                       'obvestiladatatpl',
                       'clearfix',
-                      { updatedid: keyword.id === updatedId },
+                      { updatedid: kw.id === updatedId },
                     ]"
                   >
                     <div class="">
                       <div class="search">
-                        <div
-                          v-if="keyword.id === updatedId"
-                          class="updatedText"
-                        >
+                        <div v-if="kw.id === updatedId" class="updatedText">
                           <h4>
                             <span class="glyphicon glyphicon-ok"></span>
                             Uspešno potrjeno!
@@ -34,19 +31,19 @@
 
                         <div class="parta3">
                           <div
-                            :id="`obvestilaKeyword_${keyword.id}`"
+                            :id="`obvestilaKeyword_${kw.id}`"
                             class="obvestilaKeyword"
                           >
-                            {{ keyword.keyword }}
+                            {{ kw.keyword }}
                           </div>
                           <input
-                            :id="`keyword${keyword.id}`"
-                            :value="keyword.keyword"
+                            :id="`keyword${kw.id}`"
+                            :value="kw.keyword"
                             type="hidden"
                           />
                         </div>
 
-                        <div class="parta4" @click="deleteKeyword(keyword)">
+                        <div class="parta4" @click="deleteKeyword(kw)">
                           <div class="obvestiladelete">
                             <div class="exclude-presiding checkbox-twolines">
                               <!-- <span
@@ -117,28 +114,28 @@
                         <div class="parta1">
                           <div class="search-dropdown">
                             <select
-                              :id="`reminder${keyword.id}`"
-                              :name="`reminder${keyword.id}`"
+                              :id="`reminder${kw.id}`"
+                              :name="`reminder${kw.id}`"
                               class="search-dropdown-input reminder"
                             >
                               <option
-                                :selected="keyword.reminder === 'event'"
+                                :selected="kw.reminder === 'event'"
                                 value="event"
-                                @click="reminderCallback(keyword, 'event')"
+                                @click="reminderCallback(kw, 'event')"
                               >
                                 {{ $t('events.event') }}
                               </option>
                               <option
-                                :selected="keyword.reminder === 'day'"
+                                :selected="kw.reminder === 'day'"
                                 value="day"
-                                @click="reminderCallback(keyword, 'day')"
+                                @click="reminderCallback(kw, 'day')"
                               >
                                 {{ $t('events.day') }}
                               </option>
                               <option
-                                :selected="keyword.reminder === 'week'"
+                                :selected="kw.reminder === 'week'"
                                 value="week"
-                                @click="reminderCallback(keyword, 'week')"
+                                @click="reminderCallback(kw, 'week')"
                               >
                                 {{ $t('events.week') }}
                               </option>
@@ -149,21 +146,21 @@
                         <div class="parta2">
                           <div class="search-dropdown">
                             <select
-                              :id="`match_mode${keyword.keyword}`"
-                              :name="`match_mode${keyword.keyword}`"
+                              :id="`match_mode${kw.keyword}`"
+                              :name="`match_mode${kw.keyword}`"
                               class="search-dropdown-input match_mode"
                             >
                               <option
-                                :selected="keyword.mode === 'natancno'"
+                                :selected="kw.mode === 'natancno'"
                                 value="natancno"
-                                @click="modeCallback(keyword, 'natancno')"
+                                @click="modeCallback(kw, 'natancno')"
                               >
                                 {{ $t('modes.precise') }}
                               </option>
                               <option
-                                :selected="keyword.mode === 'siroko'"
+                                :selected="kw.mode === 'siroko'"
                                 value="obe"
-                                @click="modeCallback(keyword, 'siroko')"
+                                @click="modeCallback(kw, 'siroko')"
                               >
                                 {{ $t('modes.broad') }}
                               </option>

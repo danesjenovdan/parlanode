@@ -3,15 +3,14 @@
     <div class="parlaicon parlaicon-odgovor"></div>
     <span v-if="!showAnswer" v-t="'event.show-answer'"></span>
     <span v-if="showAnswer" v-t="'event.hide-answer'"></span>
-    <div class="parlaicon toggle-arrow" :class="{ 'toggled': showAnswer}"></div>
+    <div class="parlaicon toggle-arrow" :class="{ toggled: showAnswer }"></div>
   </div>
-  <div class="answer" v-if="showAnswer">
+  <div v-if="showAnswer" class="answer">
     <p>{{ authors }} {{ event.answer.text }}</p>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'Answer',
   props: {
@@ -19,7 +18,6 @@ export default {
       type: Object,
       required: true,
     },
-    
   },
   data() {
     return {
@@ -28,21 +26,24 @@ export default {
   },
   computed: {
     authors() {
-      let authors = "";
+      let authors = '';
       if (this.event.answer.person_authors) {
-        authors = this.event.answer.person_authors.map((a) => a.name).join(", ");
+        authors = this.event.answer.person_authors
+          .map((a) => a.name)
+          .join(', ');
       }
       if (this.event.answer.organization_authors) {
-        const organization_authors = this.event.answer.organization_authors.map((a) => a.name).join(", ");
-        authors = authors.concat(organization_authors);
+        const organizationAuthors = this.event.answer.organization_authors
+          .map((a) => a.name)
+          .join(', ');
+        authors = authors.concat(organizationAuthors);
       }
       if (authors) {
-        authors = authors.concat(":");
+        authors = authors.concat(':');
         return authors;
-      } else {
-        return "";
       }
-    }
+      return '';
+    },
   },
 };
 </script>
@@ -96,5 +97,4 @@ export default {
     transform: rotate(180deg);
   }
 }
-
 </style>

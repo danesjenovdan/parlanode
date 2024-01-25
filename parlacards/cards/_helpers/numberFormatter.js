@@ -1,14 +1,14 @@
 // non-locale aware version of formatter if Intl is not supported by the browser
 const fallbackFormatter = (
   number,
-  { precision = 0, percent = false, prefix = '' } = {}
+  { precision = 0, percent = false, prefix = '' } = {},
 ) => {
   return prefix + number.toFixed(precision) + (percent ? '%' : '');
 };
 
 export default (
   number,
-  { precision = 0, percent = false, locale = 'sl' } = {}
+  { precision = 0, percent = false, locale = 'sl' } = {},
 ) => {
   // shows "< 0.01" if number is very small like "0.0001245"
   let prefix = '';

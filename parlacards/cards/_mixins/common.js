@@ -46,7 +46,7 @@ export default {
       // eslint-disable-next-line no-console
       console.error(
         'Common mixin included more than once!',
-        'Make sure only the top level component includes it!'
+        'Make sure only the top level component includes it!',
       );
     }
   },
@@ -59,7 +59,7 @@ export default {
       // TODO: replace with stringifyParams
       const stateParams = Object.keys(cardState).reduce((prev, curr) => {
         return `${prev}&${encodeURIComponent(curr)}=${encodeURIComponent(
-          cardState[curr]
+          cardState[curr],
         )}`;
       }, '');
       return `${beforeStateUrl}${stateParams}`;
