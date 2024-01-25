@@ -59,8 +59,8 @@ export default {
       axios
         .get(
           `https://parla.me/shortner/generate?url=${encodeURIComponent(
-            this.shareUrl
-          )}`
+            this.shareUrl,
+          )}`,
         )
         .then((response) => {
           this.shortenedUrl = response.data;

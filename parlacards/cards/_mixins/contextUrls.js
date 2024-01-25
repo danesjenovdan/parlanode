@@ -162,7 +162,7 @@ export const speechSessionTranscriptContextUrl = {
     template.contextUrl = links.methods.getSpeechLink.call(
       this,
       cardData?.data?.results?.speech || cardData?.data?.results,
-      cardData?.data?.results?.session
+      cardData?.data?.results?.session,
     );
   },
 };
@@ -173,7 +173,7 @@ export const voteSessionVotesContextUrl = {
     template.contextUrl = links.methods.getVoteLink.call(
       this,
       cardData?.data?.results,
-      cardData?.data?.results?.session
+      cardData?.data?.results?.session,
     );
   },
 };
@@ -184,7 +184,7 @@ export const agendaSessionVotesContextUrl = {
     template.contextUrl = links.methods.getSessionAgendaLink.call(
       this,
       cardData?.data?.results,
-      cardData?.data?.results?.session
+      cardData?.data?.results?.session,
     );
   },
 };

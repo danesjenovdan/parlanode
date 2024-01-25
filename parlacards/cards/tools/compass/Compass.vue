@@ -34,7 +34,7 @@ export default {
   },
   data() {
     const groupedByParty = Object.values(
-      groupBy(this.compassData, (item) => item.person?.group?.slug)
+      groupBy(this.compassData, (item) => item.person?.group?.slug),
     );
 
     const parties = groupedByParty.map((item) => ({
@@ -95,12 +95,12 @@ export default {
         if (!person.selected) {
           person.selected = true;
           this.showPersonPicture(
-            this.compassData.find((p) => p.person.slug === id)
+            this.compassData.find((p) => p.person.slug === id),
           );
         } else {
           person.selected = false;
           this.hidePersonPicture(
-            this.compassData.find((p) => p.person.slug === id)
+            this.compassData.find((p) => p.person.slug === id),
           );
         }
         return;
@@ -128,7 +128,7 @@ export default {
         .filter((p) => p.selected)
         .forEach((p) => {
           this.hidePersonPicture(
-            this.compassData.find((pp) => pp.person.slug === p.id)
+            this.compassData.find((pp) => pp.person.slug === p.id),
           );
           p.selected = false;
         });
@@ -215,7 +215,7 @@ export default {
 
             tooltip.attr(
               'transform',
-              `translate(${currentZoom.x},${currentZoom.y - 15})`
+              `translate(${currentZoom.x},${currentZoom.y - 15})`,
             );
 
             tooltip
@@ -307,7 +307,7 @@ export default {
         .append('path')
         .attr(
           'd',
-          'M79 28a7 7 0 00-7-7h-9v6h9a1 1 0 011 1v9h6zm0 44v-9h-6v9a1 1 0 01-1 1h-9v6h9a7 7 0 007-7zm-58-9v9a7 7 0 007 7h9v-6h-9a1 1 0 01-1-1v-9zm16-42h-9a7 7 0 00-7 7v9h6v-9a1 1 0 011-1h9z'
+          'M79 28a7 7 0 00-7-7h-9v6h9a1 1 0 011 1v9h6zm0 44v-9h-6v9a1 1 0 01-1 1h-9v6h9a7 7 0 007-7zm-58-9v9a7 7 0 007 7h9v-6h-9a1 1 0 01-1-1v-9zm16-42h-9a7 7 0 00-7 7v9h6v-9a1 1 0 011-1h9z',
         );
 
       this.$nextTick(() => {
