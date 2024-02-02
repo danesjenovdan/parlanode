@@ -3,15 +3,15 @@ kind: Ingress
 metadata:
   name: parlasite
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-production"
+    cert-manager.io/cluster-issuer: "letsencrypt-sandbox"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlasite-trbovlje.lb.djnd.si
+        - trbovlje.parlameter.si
       secretName: parlasite-tls
   rules:
-    - host: parlasite-trbovlje.lb.djnd.si
+    - host: trbovlje.parlameter.si
       http:
         paths:
           - path: /
