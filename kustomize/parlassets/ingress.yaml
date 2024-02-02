@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: parlassets
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-sandbox"
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   ingressClassName: nginx
   tls:
