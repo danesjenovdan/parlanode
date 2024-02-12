@@ -14,10 +14,10 @@ resources:
 images:
   - name: parlacards-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlacards-trbovlje
-    newTag: 'e004a4c4c3afa677470417ca8e6f79469369a2f2'
+    newTag: '20e4bac2cfb9990b9448411d0724b05d5a1d5ed1'
   - name: parlasite-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlasite-trbovlje
-    newTag: 'e004a4c4c3afa677470417ca8e6f79469369a2f2'
+    newTag: '20e4bac2cfb9990b9448411d0724b05d5a1d5ed1'
   - name: parlassets-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlassets-trbovlje
-    newTag: 'e004a4c4c3afa677470417ca8e6f79469369a2f2'
+    newTag: '20e4bac2cfb9990b9448411d0724b05d5a1d5ed1'
