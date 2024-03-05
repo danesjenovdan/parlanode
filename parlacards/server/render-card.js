@@ -55,11 +55,11 @@ const getChunkAssets = (chunkName, seenChunks = new Set()) => {
 
     const chunk = manifest[chunkName];
     if (chunk) {
-      entry = `${process.env.VITE_PARLACARDS_URL}/assets/${chunk.file}`;
+      entry = `${process.env.VITE_PARLASSETS_URL}/assets/${chunk.file}`;
       assets.add(entry);
       if (Array.isArray(chunk.css)) {
         chunk.css.forEach((css) => {
-          assets.add(`${process.env.VITE_PARLACARDS_URL}/assets/${css}`);
+          assets.add(`${process.env.VITE_PARLASSETS_URL}/assets/${css}`);
         });
       }
       if (Array.isArray(chunk.imports)) {
