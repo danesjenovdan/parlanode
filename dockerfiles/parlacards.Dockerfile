@@ -46,4 +46,4 @@ USER node
 # define port
 EXPOSE 3000
 
-CMD ["node", "--max-old-space-size=350", "--optimize-for-size", "server/index.js"]
+CMD ["node", "--max-old-space-size=950", "--optimize-for-size", "server/index.js"]
