@@ -21,11 +21,11 @@ spec:
             - containerPort: 3066
           resources:
             requests:
-              memory: 75Mi
-              cpu: 50m
+              memory: 400Mi
+              cpu: 100m
             limits:
-              memory: 75Mi
-              cpu: 50m
+              memory: 400Mi
+              cpu: 100m
           env:
             - name: PARLASITE_LEADER_ID
               value: "4434"
