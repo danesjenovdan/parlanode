@@ -23,6 +23,10 @@ RUN yarn build
 # ---
 FROM node:20-alpine
 
+# install tini
+RUN apk add --no-cache tini
+ENTRYPOINT ["/sbin/tini", "--"]
+
 # set current directory
 WORKDIR /app
 
@@ -36,6 +40,10 @@ COPY --from=build /app/build ./build
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/server ./server
 
+# set user
+USER node
+
+# define port
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["node", "--max-old-space-size=950", "--optimize-for-size", "server/index.js"]
