@@ -45,18 +45,6 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="parlaicon-container">
-            <span class="parlaicon parlaicon-sedezi" aria-hidden="true" />
-          </div>
-          <div class="bordertop">
-            <span class="key">
-              <span v-t="'number-of-seats'"></span>:
-              <strong>{{ results.number_of_members }}</strong>
-            </span>
-          </div>
-        </div>
-
         <div v-if="results.social_networks?.length" class="row">
           <div class="parlaicon-container">
             <span class="parlaicon parlaicon-omrezja" aria-hidden="true" />
@@ -86,6 +74,18 @@
               <template v-else>
                 <b v-t="'no-social-media'"></b>
               </template>
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="parlaicon-container">
+            <span class="parlaicon parlaicon-sedezi" aria-hidden="true" />
+          </div>
+          <div class="bordertop">
+            <span class="key">
+              <span v-t="'number-of-seats'"></span>:
+              <strong>{{ results.number_of_members }}</strong>
             </span>
           </div>
         </div>
