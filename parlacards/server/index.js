@@ -1,6 +1,4 @@
-import { resolve } from 'path';
 import createFastify from 'fastify';
-import fastifyStatic from '@fastify/static';
 import fastifyCors from '@fastify/cors';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import { HTTPError, renderCard } from './render-card.js';
@@ -36,11 +34,6 @@ process.on('uncaughtException', (error) => {
 
 fastify.register(fastifyCors, {
   origin: '*',
-});
-
-fastify.register(fastifyStatic, {
-  root: resolve('./dist/client'),
-  prefix: '/assets/',
 });
 
 const renderCardHandler = async (request, reply) => {
