@@ -23,4 +23,4 @@ USER node
 # define port
 EXPOSE 3066
 
-CMD ["node", "--max-old-space-size=350", "--optimize-for-size", "server/index.js"]
+CMD ["node", "server/index.js"]

@@ -25,7 +25,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: dockerfiles/parlassets.Dockerfile
+          file: dockerfiles/parlafront.Dockerfile
+          target: parlassets
           build-args: |
             VITE_PARLASSETS_URL=https://parlassets-slovenija.lb.djnd.si
           push: true
@@ -37,7 +38,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: dockerfiles/parlacards.Dockerfile
+          file: dockerfiles/parlafront.Dockerfile
+          target: parlacards
           build-args: |
             VITE_PARLASSETS_URL=https://parlassets-slovenija.lb.djnd.si
           push: true

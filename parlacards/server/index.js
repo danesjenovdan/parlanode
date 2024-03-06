@@ -11,9 +11,6 @@ fastify.register(fastifySentry, {
     process.env.NODE_ENV === 'production'
       ? 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015'
       : '',
-  // We recommend adjusting this value in production, or using tracesSampler
-  // for finer control
-  tracesSampleRate: 1.0,
 });
 
 process.on('unhandledRejection', (error) => {
