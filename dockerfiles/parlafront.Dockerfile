@@ -36,9 +36,9 @@ ENV NODE_ENV=production
 RUN yarn build
 
 # ---
-# actual image
+# actual image for parlassets; use `--target parlassets` to build
 # ---
-FROM nginx:alpine
+FROM nginx:alpine as parlassets
 
 # copy nginx configuration
 COPY parlassets/default.conf /etc/nginx/conf.d/default.conf
@@ -46,3 +46,33 @@ COPY parlassets/default.conf /etc/nginx/conf.d/default.conf
 # copy built files from the 'build' container into the nginx container
 COPY --from=build-parlassets /app/public /usr/share/nginx/html
 COPY --from=build-parlacards /app/dist/client /usr/share/nginx/html/assets
+
+# ---
+# actual image for parlacards; use `--target parlacards` to build
+# ---
+FROM node:20-alpine as parlacards
+
+# install tini
+RUN apk add --no-cache tini
+ENTRYPOINT ["/sbin/tini", "--"]
+
+# set current directory
+WORKDIR /app
+
+# install production dependencies only
+COPY parlacards/package.json parlacards/yarn.lock ./
+ENV NODE_ENV=production
+RUN yarn && yarn cache clean
+
+# copy all needed files from build stage image
+COPY --from=build-parlacards /app/build ./build
+COPY --from=build-parlacards /app/dist ./dist
+COPY --from=build-parlacards /app/server ./server
+
+# set user
+USER node
+
+# define port
+EXPOSE 3000
+
+CMD ["node", "server/index.js"]

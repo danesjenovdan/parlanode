@@ -21,13 +21,6 @@ const app = createApp({ ...Card, contextData });
 Sentry.init({
   app,
   dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
-  // TODO: temporarily disable tracing until we can figure out why it's not working
-  // integrations: [new Sentry.BrowserTracing()],
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
-  tracesSampleRate: 1.0,
-  environment: 'lendava',
   // Ignore some external errors, such as facebook,
   // twitter, slack bots or link crawlers and scanners.
   ignoreErrors: [
