@@ -4,7 +4,7 @@ services:
   parlacards:
     build:
       context: .
-      dockerfile: dockerfiles/parlacards-dev.Dockerfile
+      dockerfile: dockerfiles/dev.parlacards.Dockerfile
     ports:
       - 3000:3000
     environment:
@@ -24,7 +24,7 @@ services:
   parlassets:
     build:
       context: .
-      dockerfile: dockerfiles/parlassets-dev.Dockerfile
+      dockerfile: dockerfiles/dev.parlassets.Dockerfile
     ports:
       - 8080:8080
     volumes:
@@ -35,7 +35,7 @@ services:
   parlasite:
     build:
       context: .
-      dockerfile: dockerfiles/parlasite-dev.Dockerfile
+      dockerfile: dockerfiles/dev.parlasite.Dockerfile
     ports:
       - 3066:3066
     environment:
