@@ -2,7 +2,6 @@ import { createSSRApp, ssrUtils } from 'vue';
 import { createI18n } from 'vue-i18n/dist/vue-i18n.node.mjs';
 import { renderToString } from '@vue/server-renderer';
 import { merge } from 'lodash-es';
-import * as Sentry from '@sentry/vue';
 // eslint-disable-next-line import/no-unresolved
 import Card from '@/{cardName}/card.vue';
 
@@ -17,36 +16,6 @@ export default async (contextData, i18nData) => {
 
   const app = createSSRApp({ ...Card, contextData });
   app.use(i18n);
-
-  // SENTRY
-  Sentry.init({
-    app,
-    dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
-    // TODO: temporarily disable tracing until we can figure out why it's not working
-    // integrations: [new Sentry.BrowserTracing()],
-    // Set tracesSampleRate to 1.0 to capture 100%
-    // of transactions for performance monitoring.
-    // We recommend adjusting this value in production
-    tracesSampleRate: 1.0,
-    environment: 'trbovlje',
-    // Ignore some external errors, such as facebook,
-    // twitter, slack bots or link crawlers and scanners.
-    ignoreErrors: [
-      // Outlook Safe Link scanning
-      'Object Not Found Matching Id',
-      // Network errors
-      'Network Error',
-      'Request aborted',
-      // Caused by some auto-fill extensions and tools like html2canvas
-      'Blocked a frame with origin',
-    ],
-    denyUrls: [
-      // Chrome extensions
-      /extensions\//i,
-      /^chrome:\/\//i,
-      /^chrome-extension:\/\//i,
-    ],
-  });
 
   try {
     const ctx = {};
