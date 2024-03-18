@@ -14,10 +14,10 @@ resources:
 images:
   - name: parlacards-lendava
     newName: rg.fr-par.scw.cloud/djnd/parlacards-lendava
-    newTag: '37826a796dcfeda3f305b97984039bf43fe89ea5'
+    newTag: 'dd102d430940b4f041f98f4fbef0a8f071885196'
   - name: parlasite-lendava
     newName: rg.fr-par.scw.cloud/djnd/parlasite-lendava
-    newTag: '37826a796dcfeda3f305b97984039bf43fe89ea5'
+    newTag: 'dd102d430940b4f041f98f4fbef0a8f071885196'
   - name: parlassets-lendava
     newName: rg.fr-par.scw.cloud/djnd/parlassets-lendava
-    newTag: '37826a796dcfeda3f305b97984039bf43fe89ea5'
+    newTag: 'dd102d430940b4f041f98f4fbef0a8f071885196'
