@@ -17,10 +17,10 @@ resources:
 images:
   - name: parlacards-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ljubljana
-    newTag: 'f961d6f9c91fa3ded957fae5c6803001fc068bee'
+    newTag: 'be7b01f6b3c209cb77815003c9c2d8254d1a8e58'
   - name: parlasite-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ljubljana
-    newTag: 'f961d6f9c91fa3ded957fae5c6803001fc068bee'
+    newTag: 'be7b01f6b3c209cb77815003c9c2d8254d1a8e58'
   - name: parlassets-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ljubljana
-    newTag: 'f961d6f9c91fa3ded957fae5c6803001fc068bee'
+    newTag: 'be7b01f6b3c209cb77815003c9c2d8254d1a8e58'
