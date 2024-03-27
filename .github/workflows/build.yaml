@@ -28,7 +28,7 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlassets
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-trbovlje.lb.djnd.si
+            VITE_PARLASSETS_URL=https://cdn.trbovlje.parlameter.si
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlassets-trbovlje:${{ github.sha }}
@@ -41,7 +41,7 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlacards
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-trbovlje.lb.djnd.si
+            VITE_PARLASSETS_URL=https://cdn.trbovlje.parlameter.si
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-trbovlje:${{ github.sha }}
