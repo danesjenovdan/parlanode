@@ -17,6 +17,21 @@ body {
 }
 // END FIX
 
+// STRETCH BODY TO FULL HEIGHT AND PUSH FOOTER TO BOTTOM
+body.flex-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  > * {
+    width: 100%;
+  }
+
+  > .main-content {
+    flex: 1;
+  }
+}
+
 // MENU
 .menu-container {
   width: 100%;
@@ -429,7 +444,8 @@ footer.footer {
 }
 
 
-.stripeeltop {
+.stripeeltop,
+.stripeelbottom {
   position: relative;
   height: 40px;
   width: 100%;
@@ -441,7 +457,8 @@ footer.footer {
   }
 }
 
-.stripeeltop:before {
+.stripeeltop:before,
+.stripeelbottom:before {
   content: '';
   position: absolute;
   left: -5%;
@@ -454,29 +471,10 @@ footer.footer {
   transform: rotate(1deg);
 }
 
-.stripeelbottom {
-  position: absolute;
-  height: 30px;
-  width: 100%;
-  overflow: hidden;
-  background: colors.$background;
-  /*bottom: 0;*/
+.stripeelbottom:before {
+  top: auto;
+  bottom: 15px;
 }
-
-.stripeelbottom:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  @include helper.gradient('horizontal');
-  top: 15px;
-  -webkit-transform: rotate(1deg);
-  -moz-transform: rotate(1deg);
-  transform: rotate(1deg);
-}
-
-
 
 @include breakpoints.respond-to(desktop) {
   header.header {
