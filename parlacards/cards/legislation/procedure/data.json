@@ -12,11 +12,23 @@
         },
         {
           "id": 14646,
-          "name": "druga obravnava MDT - skrajšani postopek",
+          "name": null,
           "timestamp": "2026-05-20T00:00:00"
         }
       ],
-      "future_considerations": []
+      "future_considerations": [
+        {
+          "id": 14845,
+          "name": "obravnava MDT - ratifikacija",
+          "timestamp": "2026-07-03T00:00:00"
+        },
+        {
+          "id": 14885,
+          "name": "obravnava DZ - ratifikacija obravnava DZ - ratifikacija obravnava DZ - ratifikacija obravnava DZ - ratifikacija obravnava DZ - ratifikacija obravnava DZ - ratifikacija",
+          "timestamp": "2026-07-15T00:00:00"
+        },
+        { "id": 14886, "name": "sprejet predlog", "timestamp": null }
+      ]
     },
     "mandate": {
       "id": 4,
