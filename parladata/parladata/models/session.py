@@ -148,6 +148,7 @@ class SessionOrganizationThrough(models.Model):
     def __str__(self):
         return f"{self.session} - {self.organization} - {self.name}"
 
+
 class Sitting(models.Model):
     session = models.ForeignKey(
         "Session",

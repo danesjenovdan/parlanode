@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0100_summary_approved_at_summary_prompt'),
+        ("parladata", "0100_summary_approved_at_summary_prompt"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='summary',
-            name='is_approved',
+            model_name="summary",
+            name="is_approved",
         ),
     ]

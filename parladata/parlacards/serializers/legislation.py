@@ -177,7 +177,9 @@ class LegislationSummarySerializer(CommonCachableSerializer):
     summary = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):
-        summary = Summary.objects.filter(link__legislation=legislation, approved_at__isnull=False)
+        summary = Summary.objects.filter(
+            link__legislation=legislation, approved_at__isnull=False
+        )
         if summary.exists():
             summary = summary.latest("approved_at")
             return f'LegislationSummarySerializer_{legislation.id}_{summary.id}_{summary.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'

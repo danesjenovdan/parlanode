@@ -6,13 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0097_summary_created_at_summary_updated_at'),
+        ("parladata", "0097_summary_created_at_summary_updated_at"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='link',
-            name='is_parsable',
-            field=models.BooleanField(blank=True, help_text='Indicates whether the link is parsable.', null=True, verbose_name='Is parsable'),
+            model_name="link",
+            name="is_parsable",
+            field=models.BooleanField(
+                blank=True,
+                help_text="Indicates whether the link is parsable.",
+                null=True,
+                verbose_name="Is parsable",
+            ),
         ),
     ]

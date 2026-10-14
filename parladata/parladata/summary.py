@@ -1,11 +1,12 @@
 import os
-import requests
-import pymupdf
-
-from django.conf import settings
-from parladata.models import Summary, Link, Law
-from langchain.chat_models import init_chat_model
 from functools import lru_cache
+
+import pymupdf
+import requests
+from django.conf import settings
+from langchain.chat_models import init_chat_model
+
+from parladata.models import Law, Link, Summary
 
 # https://python.langchain.com/docs/integrations/chat/google_generative_ai/
 SUMMARY_MODEL = os.getenv("SUMMARY_MODEL", "gemini-2.5-flash")
@@ -81,7 +82,9 @@ def seed_summaries():
     """
     Seed summaries for all parsable links that do not yet have a summary.
     """
-    ll=Link.objects.filter(legislation__isnull=False, name__icontains="Predloga zakona")
+    ll = Link.objects.filter(
+        legislation__isnull=False, name__icontains="Predloga zakona"
+    )
     links = ll.exclude(summary__isnull=False, is_parsable=False)
     for link in links:
         summary = create_summary(link)

@@ -58,6 +58,7 @@ class SessionAdmin(admin.ModelAdmin):
     ]
     readonly_fields = ["created_at", "updated_at"]
     list_filter = ("mandate", SessionOrganizationsListFilter)
+
     # prefetch related for performance optimization
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -115,6 +116,7 @@ class SittingAdmin(admin.ModelAdmin):
     list_filter = ("session__mandate",)
     list_per_page = 25
     autocomplete_fields = ["session"]
+
 
 admin.site.register(Sitting, SittingAdmin)
 admin.site.register(Session, SessionAdmin)

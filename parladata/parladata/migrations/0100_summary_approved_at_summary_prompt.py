@@ -6,18 +6,28 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0099_sitting_speech_sitting'),
+        ("parladata", "0099_sitting_speech_sitting"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='summary',
-            name='approved_at',
-            field=models.DateTimeField(blank=True, help_text='The date and time when the summary was approved.', null=True, verbose_name='Approved At'),
+            model_name="summary",
+            name="approved_at",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="The date and time when the summary was approved.",
+                null=True,
+                verbose_name="Approved At",
+            ),
         ),
         migrations.AddField(
-            model_name='summary',
-            name='prompt',
-            field=models.TextField(blank=True, help_text='The prompt used to generate the summary.', null=True, verbose_name='Prompt'),
+            model_name="summary",
+            name="prompt",
+            field=models.TextField(
+                blank=True,
+                help_text="The prompt used to generate the summary.",
+                null=True,
+                verbose_name="Prompt",
+            ),
         ),
     ]
