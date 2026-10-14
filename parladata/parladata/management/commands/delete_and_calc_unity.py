@@ -7,7 +7,9 @@ from parladata.models.motion import Motion
 from parladata.models.organization import (
     CLASSIFICATIONS as ORGANIZATION_CLASSIFICATIONS,
 )
-from parladata.models.organization import Organization
+from parladata.models.organization import (
+    Organization,
+)
 
 
 class Command(BaseCommand):

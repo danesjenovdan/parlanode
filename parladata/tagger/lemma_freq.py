@@ -1,6 +1,7 @@
 #!/usr/bin/python
-import _pickle as pickle
 import sys
+
+import _pickle as pickle
 
 lemma_freq = {}
 for line in sys.stdin:
