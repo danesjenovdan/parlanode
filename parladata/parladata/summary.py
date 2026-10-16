@@ -82,10 +82,10 @@ def seed_summaries():
     """
     Seed summaries for all parsable links that do not yet have a summary.
     """
-    ll = Link.objects.filter(
-        legislation__isnull=False, name__icontains="Predloga zakona"
-    )
-    links = ll.exclude(summary__isnull=False, is_parsable=False)
+    links = Link.objects.filter(
+        legislation__isnull=False, name__icontains="Predloga zakona", summary__isnull=True
+    ).exclude(is_parsable=False)
+
     for link in links:
         summary = create_summary(link)
         if summary:
